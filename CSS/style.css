@@ -1,0 +1,90 @@
+/* 全体のスタイル */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 左側パネルのスタイル */
+.leftPosition {
+  float: left;
+  background-color: #b9b9b9;
+  height: 400px;
+}
+
+/* ファイルアップロードゾーンのスタイル */
+#uploadZone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* 画像リストのスタイル */
+#imageList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  gap: 10px;
+  max-height: 280px; /* 最大の高さを設定 */
+  overflow-y: auto; /* 縦方向にスクロール可能にする */
+}
+
+/* サムネイル画像のスタイル */
+.thumbnail {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* スライドのスタイル */
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7; /* スライドの背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* スライドボックスのスタイル */
+.swiper-slide_box {
+  width: 650px;
+  height: 400px;
+  background-color: #166f7c;
+  position: relative;
+  margin: 0 auto 0;
+}
+
+/* スライドボックス内の入力フィールドのスタイル */
+.swiper-slide_box_input {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* ドロップゾーンのスタイル */
+.dropZone {
+  left: 300px;
+  border: 2px dashed #ccc;
+  font-size: 1em;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  margin: 20px auto;
+}
+
+/* ドロップゾーン内の画像のスタイル */
+.dropZone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
