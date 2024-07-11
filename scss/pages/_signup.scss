@@ -32,7 +32,7 @@
             top: 44px;
             left: 286px;
             @include mq('pc'){
-                left: 570px;
+                left: 557px;
             }
             @include mq('sp'){
                 left: 262px;
@@ -40,16 +40,20 @@
         }
 
         input{
-            width: 100%;
-            padding: 12px 0;
+            width: 90%;
+            padding: 13px 16px;
             margin-top: 5px;
             border: 1.4px solid;
             border-radius: 5px;
+            @include mq('pc'){
+                width: 94%;
+            }
+            @include mq('sp'){
+                padding: 12px 15px;
+            }
 
             &::placeholder{
                 opacity: 0.5;
-                padding-left: 10px;
- 
             }
         }
         
