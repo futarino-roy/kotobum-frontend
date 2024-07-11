@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サインアップ</title>
+    <title>ログイン</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,11 +12,12 @@
 </head>
 <body>
 
-  <div class="signup">
+  <div class="login">
     <div class="form">
-        <h2 class=form_title>管理者サインアップ</h2>
+        <img class="login_img" src="/login/images/login.png" alt="">
+        <h2 class=form_title>ログイン</h2>
 
-        <form id="signup-form">
+        <form id="login-form">
           <div class="form_box">
             <p>ID</p>
             <p class="id">
@@ -30,20 +31,12 @@
             <input type="password" name="password" placeholder="入力してください" required>
           </p>
         </div>
-
-        <div class="form_box">
-          <p>Pass</p>
-          <p class="pass">
-            <input type="password" name="password" placeholder="入力してください" required>
-          </p>
-        </div>
-
-          <button type="submit" class="signupButton" >サインアップ</button>
+          <button type="submit" class="loginButton" >ログイン</button>
 
         </form>
       </div>
 
     </div>
-    <script src="../signup/js/signup.js"></script>
+    <script src="../login/js/login.js"></script>
 </body>
 </html>

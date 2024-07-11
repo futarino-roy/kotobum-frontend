@@ -1,3 +1,17 @@
 button{
-    
+    background-image: url(/signup/images/Button_PC.png);
+    width: 326px;
+    height: 53px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    padding: 0 0 10px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    @include mq('sp'){
+    background-image: url(/signup/images/Button_sp.png);
+    width: 298px;
+    }
 }

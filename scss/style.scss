@@ -2,9 +2,13 @@
 
 @import 'base/variables';
 @import 'base/reset';
+@import 'mixin/mixin';
 @import 'components/buttons';
 @import 'components/modals';
 @import 'module/header';
 @import 'module/footer';
 @import 'pages/signup';
+@import 'pages/login';
+@import 'pages/update';
+
 

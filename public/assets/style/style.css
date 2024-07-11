@@ -1,40 +1,353 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
   margin: 0;
+  background-color: #FDFCF6;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
-.form {
-  text-align: center;
-  width: 500px;
-  margin: 50px auto;
-  padding: 50px;
+button {
+  background-image: url(/signup/images/Button_PC.png);
+  width: 326px;
+  height: 53px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 0 0 10px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.form_title {
+@media screen and (max-width: 767px) {
+  button {
+    background-image: url(/signup/images/Button_sp.png);
+    width: 298px;
+  }
+}
+
+.signup .form {
+  text-align: center;
+  width: 326px;
+  margin: 0 auto;
+  padding: 91px 337px 91px 337px;
+}
+@media screen and (min-width: 1300px) {
+  .signup .form {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .signup .form {
+    width: 298px;
+    padding: 215px 46px 214px 46px;
+  }
+}
+.signup .form_title {
   margin-bottom: 30px;
 }
-.form_box {
+.signup .form_box {
   text-align: left;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  position: relative;
 }
-.form_box input {
+.signup .form_box::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url(/signup/images/Pen.png) no-repeat center center/auto 100%;
+  position: absolute;
+  top: 44px;
+  left: 286px;
+}
+@media screen and (min-width: 1300px) {
+  .signup .form_box::before {
+    left: 570px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .signup .form_box::before {
+    left: 262px;
+  }
+}
+.signup .form_box input {
   width: 100%;
-  padding: 4px;
-  border: 1px solid;
+  padding: 12px 0;
+  margin-top: 5px;
+  border: 1.4px solid;
+  border-radius: 5px;
 }
-.form .submit {
-  width: 120px;
-  height: 30px;
-  padding: 5px;
+.signup .form_box input::-moz-placeholder {
+  opacity: 0.5;
+  padding-left: 10px;
+}
+.signup .form_box input::placeholder {
+  opacity: 0.5;
+  padding-left: 10px;
+}
+.signup .form .signupButton {
+  margin-top: 18px;
+}
+
+.login_img {
+  width: 62px;
+  height: 44px;
+}
+.login .form {
+  text-align: center;
+  width: 326px;
+  margin: 0 auto;
+  padding: 120px 337px 119px 337px;
+}
+@media screen and (min-width: 1300px) {
+  .login .form {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login .form {
+    width: 298px;
+    padding: 215px 46px 214px 46px;
+  }
+}
+.login .form_title {
+  margin-bottom: 30px;
+}
+.login .form_box {
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+}
+.login .form_box::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url(/signup/images/Pen.png) no-repeat center center/auto 100%;
+  position: absolute;
+  top: 44px;
+  left: 286px;
+}
+@media screen and (min-width: 1300px) {
+  .login .form_box::before {
+    left: 570px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login .form_box::before {
+    left: 262px;
+  }
+}
+.login .form_box input {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 5px;
+  border: 1.4px solid;
+  border-radius: 5px;
+}
+.login .form_box input::-moz-placeholder {
+  opacity: 0.5;
+  padding-left: 10px;
+}
+.login .form_box input::placeholder {
+  opacity: 0.5;
+  padding-left: 10px;
+}
+.login .form .loginButton {
+  margin-top: 18px;
+}
+
+.update-container {
+  min-width: 1200px; /* 最大幅を1200pxに設定 */
+}
+
+/* 左側パネルのスタイル */
+.leftPosition {
+  float: left;
+  background-color: #b9b9b9;
+  height: 400px;
+}
+
+.drawer {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.drawer.open {
+  left: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 100px;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.sidebar.open {
+  transform: translateX(250px);
+}
+
+.open-btn {
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  width: 80px;
+}
+
+.content {
+  margin-left: 100px; /* Initial margin */
+  transition: margin-left 0.3s ease;
+}
+
+.content.open {
+  margin-left: 350px; /* Adjusted margin when sidebar opens */
+}
+
+.content-item {
+  display: none;
+}
+
+.content-item.active {
+  display: block;
+}
+
+/* ファイルアップロードゾーンのスタイル */
+#uploadZone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.file_p {
+  color: #000000;
+  background-color: #166f7c;
+  width: 20px;
+  height: auto;
+}
+
+/* 画像リストのスタイル */
+#imageList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  gap: 10px;
+  max-height: 280px; /* 最大の高さを設定 */
+  overflow-y: auto; /* 縦方向にスクロール可能にする */
+}
+
+/* サムネイル画像のスタイル */
+.thumbnail {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* ドロップゾーンのスタイル */
+.dropZone {
+  left: 300px;
+  border: 2px dashed #ccc;
+  font-size: 1em;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  margin: 20px auto;
+}
+
+/* ドロップゾーン内の画像のスタイル */
+.dropZone img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7; /* スライドの背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide_box {
+  width: 650px;
+  height: 400px;
+  background-color: #166f7c;
+  position: relative;
+  margin: 0 auto 0;
+}
+.swiper-slide_box_input {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Croppieモーダルのスタイル */
+.croppie-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#croppie-container {
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
