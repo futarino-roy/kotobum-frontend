@@ -76,7 +76,7 @@ button {
 }
 @media screen and (min-width: 1300px) {
   .signup .form_box::before {
-    left: 570px;
+    left: 557px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -85,19 +85,27 @@ button {
   }
 }
 .signup .form_box input {
-  width: 100%;
-  padding: 12px 0;
+  width: 90%;
+  padding: 13px 16px;
   margin-top: 5px;
   border: 1.4px solid;
   border-radius: 5px;
 }
+@media screen and (min-width: 1300px) {
+  .signup .form_box input {
+    width: 94%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .signup .form_box input {
+    padding: 12px 15px;
+  }
+}
 .signup .form_box input::-moz-placeholder {
   opacity: 0.5;
-  padding-left: 10px;
 }
 .signup .form_box input::placeholder {
   opacity: 0.5;
-  padding-left: 10px;
 }
 .signup .form .signupButton {
   margin-top: 18px;
@@ -143,7 +151,7 @@ button {
 }
 @media screen and (min-width: 1300px) {
   .login .form_box::before {
-    left: 570px;
+    left: 557px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -152,19 +160,27 @@ button {
   }
 }
 .login .form_box input {
-  width: 100%;
-  padding: 12px 0;
+  width: 90%;
+  padding: 13px 16px;
   margin-top: 5px;
   border: 1.4px solid;
   border-radius: 5px;
 }
+@media screen and (min-width: 1300px) {
+  .login .form_box input {
+    width: 94%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login .form_box input {
+    padding: 12px 15px;
+  }
+}
 .login .form_box input::-moz-placeholder {
   opacity: 0.5;
-  padding-left: 10px;
 }
 .login .form_box input::placeholder {
   opacity: 0.5;
-  padding-left: 10px;
 }
 .login .form .loginButton {
   margin-top: 18px;
