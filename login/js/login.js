@@ -1,10 +1,10 @@
-document.getElementById('signup-form').addEventListener('submit', function(event) {
+document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const id = document.querySelector('.id input').value;
     const password = document.querySelector('.pass input').value;
 
-    fetch('', {
+    fetch('', { // ログイン用のAPIエンドポイント
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,14 +16,14 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('ネットワーク応答が正常ではありません');
         }
         return response.json();
     })
     .then(data => {
         console.log('成功:', data);
-        // 成功すると次のページに
-        window.location.href = '';
+        // 成功すると次のページにリダイレクト
+        window.location.href = '/mypage'; // ログイン後に遷移するページ
     })
     .catch(error => {
         console.error('失敗:', error);

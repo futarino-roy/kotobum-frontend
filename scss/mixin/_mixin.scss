@@ -1,0 +1,17 @@
+// レイアウト幅
+$signup-width-inner: 1300px;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "screen and (max-width: 767px)",
+	"tab": "screen and (max-width: #{$signup-width-inner - 1px})",
+	"pc": "screen and (min-width: #{$signup-width-inner})",
+);
+
+@mixin mq($breakpoint: sp) {
+
+	@media #{map-get($breakpoints, $breakpoint)} {
+
+		@content;
+	}
+}

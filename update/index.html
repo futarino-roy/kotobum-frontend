@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スライドショーとドラッグ＆ドロップ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css">
+    <link rel="stylesheet" href="../public/assets/style/style.css"> <!-- 追加のCSSファイル -->
+</head>
+<body>
+
+    <div class="update">
+    <div class="drawer" id="drawer">
+        <button class="close-btn" onclick="toggleDrawer()">×</button>
+        <div id="drawer-content">
+            <!-- コンテンツ1 -->
+            <div id="content1" class="content-item">
+                  <!-- 左側パネル -->
+    <div class="leftPosition">
+        <div id="uploadZone">
+            <input type="file" id="fileInput" accept="image/*" multiple>
+            <p id="file_p">画像を追加</p>
+        </div>
+        <div id="imageList"></div>
+    </div>
+            </div>
+
+            <!-- コンテンツ2 -->
+            <div id="content2" class="content-item">
+                <h2>コンテンツ2のタイトル</h2>
+                <p>コンテンツ2の内容をここに入れます。</p>
+            </div>
+
+            <!-- コンテンツ3 -->
+            <div id="content3" class="content-item">
+                <h2>コンテンツ3のタイトル</h2>
+                <p>コンテンツ3の内容をここに入れます。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <button class="open-btn" onclick="showDrawerContent('content1')">ボタン1</button>
+        <button class="open-btn" onclick="showDrawerContent('content2')">ボタン2</button>
+        <!-- <button class="open-btn" onclick="showDrawerContent('content3')">ボタン3</button> -->
+    </div>
+
+    <div class="content" id="content">
+         <!-- スライダー -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <!-- スライド1 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="swiper-slide_box_input">
+                        <input type="text">
+                    </div>
+                    <div class="dropZone" id="dropZone1">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+
+            <!-- スライド2 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="dropZone" id="dropZone2">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+
+            <!-- スライド3 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="dropZone" id="dropZone3">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+
+            <!-- スライド4 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="dropZone" id="dropZone4">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+
+            <!-- スライド5 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="dropZone" id="dropZone5">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+
+            <!-- スライド6 -->
+            <div class="swiper-slide">
+                <div class="swiper-slide_box">
+                    <div class="dropZone" id="dropZone6">ここにドラッグ＆ドロップ</div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    </div>
+
+          <!-- Croppieモーダル -->
+          <div id="croppieModal" class="croppie-modal">
+            <div id="croppie-container"></div>
+            <button id="crop-button">トリミング</button>
+            <button id="close-button">閉じる</button>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/croppie/croppie.min.js"></script>
+    <script src="../update/js/script.js"></script> <!-- JavaScriptファイル -->
+</body>
+</html>
