@@ -21,7 +21,7 @@ p {
 }
 
 button {
-  background-image: url(/signup/images/Button_PC.png);
+  background-image: url(../../../signup/images/Button_PC.png);
   width: 326px;
   height: 53px;
   background-size: 100%;
@@ -35,7 +35,7 @@ button {
 }
 @media screen and (max-width: 767px) {
   button {
-    background-image: url(/signup/images/Button_sp.png);
+    background-image: url(../../../signup/images/Button_sp.png);
     width: 298px;
   }
 }
@@ -69,7 +69,7 @@ button {
   content: "";
   width: 24px;
   height: 24px;
-  background: url(/signup/images/Pen.png) no-repeat center center/auto 100%;
+  background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
   position: absolute;
   top: 44px;
   left: 286px;

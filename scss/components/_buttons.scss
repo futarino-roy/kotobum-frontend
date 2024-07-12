@@ -1,5 +1,5 @@
 button{
-    background-image: url(/signup/images/Button_PC.png);
+    background-image: url(../../../signup/images/Button_PC.png);
     width: 326px;
     height: 53px;
     background-size: 100%;
@@ -11,7 +11,7 @@ button{
     font-size: 1rem;
     cursor: pointer;
     @include mq('sp'){
-    background-image: url(/signup/images/Button_sp.png);
+    background-image: url(../../../signup/images/Button_sp.png);
     width: 298px;
     }
 }
