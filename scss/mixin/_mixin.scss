@@ -3,7 +3,9 @@ $signup-width-inner: 1300px;
 
 // ブレークポイント
 $breakpoints: (
+	"sp-header": "screen and (max-width: 500px)",
 	"sp": "screen and (max-width: 767px)",
+	"sp-mypage": "screen and (max-width: 850px)",
 	"tab": "screen and (max-width: #{$signup-width-inner - 1px})",
 	"pc": "screen and (min-width: #{$signup-width-inner})",
 );

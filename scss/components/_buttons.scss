@@ -1,5 +1,4 @@
-button{
-    background-image: url(../../../signup/images/Button_PC.png);
+.btn{
     width: 326px;
     height: 53px;
     background-size: 100%;
@@ -10,8 +9,36 @@ button{
     color: #FFFFFF;
     font-size: 1rem;
     cursor: pointer;
-    @include mq('sp'){
-    background-image: url(../../../signup/images/Button_sp.png);
-    width: 298px;
+
+    &-A{
+        background-image: url(../../../signup/images/Button_PC.png);
+
+        @include mq('sp'){
+            background-image: url(../../../signup/images/Button_sp.png);
+            width: 298px;
+            }
+    }
+
+    &-B{
+        background-image: url(../../../mypage/images/Button_wh.png);
+        color: #000000;
+        width: 156px;
+        height: 46px;
+        font-size: 1.125rem;
+    }
+
+    &-C{
+        background-image: url(../../../mypage/images/Button_mi.png);
+        color: #000000;
+        width: 156px;
+        height: 46px;
+        font-size: 1.125rem;
+    }
+
+    &-D{
+        background-image: url(../../../mypage/images/Button_bl.png);
+        width: 156px;
+        height: 46px;
+        font-size: 1.125rem;
     }
 }
