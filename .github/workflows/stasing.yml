@@ -1,0 +1,21 @@
+name: Staging Deployment
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to staging
+      id: staging_deploy_pull
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEV_XSERVER_HOST }}
+        username: ${{ secrets.DEV_XSERVER_USER }}
+        key: ${{ secrets.DEV_XSERVER_SECRET }}
+        script: |
+          cd /var/www/vhosts/kotobum-frontend
+          ./scripts/deploy.sh release
