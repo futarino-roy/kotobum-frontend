@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // 新しいプレビュー画像を表示
         const img = document.createElement("img");
         img.src = imagePath;
-        img.alt = `ここに編集途中のプレビュー画像`;
+        img.alt = ``;
         img.style.width = "100%"; // 必要に応じてスタイルを追加
 
         previewBox.appendChild(img);
