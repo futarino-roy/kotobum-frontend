@@ -146,11 +146,20 @@
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                padding: 19px 0 16px 24px;
-                gap: 34px;
+                padding: 22px 0 0 24px;
 
                 @include mq('sp-mypage'){
-                    padding: 50px 0 16px 24px;
+                    padding: 75px 0 0 15px;
+                }
+
+                &_icon img{
+                    margin: 2px 0 6px;
+
+                    @include mq('sp-mypage'){
+                        width: 27px;
+                        height: 14.86px;
+                        margin: 0 0 5px;
+                    }
                 }
             }
         }
@@ -182,11 +191,20 @@
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                padding: 19px 0 16px 24px;
-                gap: 34px;
+                padding: 22px 0 0 24px;
 
                 @include mq('sp-mypage'){
-                    padding: 50px 0 16px 24px;
+                    padding: 75px 0 0 15px;
+                }
+
+                &_icon img{
+                    margin: 2px 0 6px;
+
+                    @include mq('sp-mypage'){
+                        width: 27px;
+                        height: 14.86px;
+                        margin: 0 0 5px;
+                    }
                 }
             }
         }
