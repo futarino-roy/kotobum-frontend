@@ -11,10 +11,10 @@ fi
 echo "Deployment started ...[branch is $1]"
 
 # 本番環境Xサーバー(mainブランチ)
-# if [ "$1" = "main" ]
-# then
-#     cd /var/www/vhosts/official_front/public/torisetsu
-# fi
+if [ "$1" = "main" ]
+then
+    cd /var/www/vhosts/kotobum-frontend
+fi
 
 # 開発環境Xサーバー(releaseブランチ)
 if [ "$1" = "release" ]
