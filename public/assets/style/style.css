@@ -8,6 +8,7 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   background-color: #FDFCF6;
 }
@@ -93,17 +94,11 @@ header img {
   text-align: center;
   width: 326px;
   margin: 0 auto;
-  padding: 91px 337px 91px 337px;
-}
-@media screen and (min-width: 1300px) {
-  .signup .form {
-    width: 600px;
-  }
+  padding: 10% 5%;
 }
 @media screen and (max-width: 767px) {
   .signup .form {
     width: 298px;
-    padding: 215px 46px 214px 46px;
   }
 }
 .signup .form_title {
@@ -122,11 +117,6 @@ header img {
   position: absolute;
   top: 44px;
   left: 286px;
-}
-@media screen and (min-width: 1300px) {
-  .signup .form_box::before {
-    left: 557px;
-  }
 }
 @media screen and (max-width: 767px) {
   .signup .form_box::before {
@@ -168,17 +158,11 @@ header img {
   text-align: center;
   width: 326px;
   margin: 0 auto;
-  padding: 120px 337px 119px 337px;
-}
-@media screen and (min-width: 1300px) {
-  .login .form {
-    width: 600px;
-  }
+  padding: 10% 2%;
 }
 @media screen and (max-width: 767px) {
   .login .form {
     width: 298px;
-    padding: 215px 46px 214px 46px;
   }
 }
 .login .form_title {
@@ -197,11 +181,6 @@ header img {
   position: absolute;
   top: 44px;
   left: 286px;
-}
-@media screen and (min-width: 1300px) {
-  .login .form_box::before {
-    left: 557px;
-  }
 }
 @media screen and (max-width: 767px) {
   .login .form_box::before {
@@ -236,10 +215,15 @@ header img {
 }
 
 .mypage {
-  width: 100%;
   text-align: center;
   margin-top: 143px;
   margin-bottom: 80px;
+}
+@media screen and (min-width: 1300px) {
+  .mypage {
+    margin-top: 253px;
+    margin-bottom: 180px;
+  }
 }
 @media screen and (max-width: 850px) {
   .mypage {
