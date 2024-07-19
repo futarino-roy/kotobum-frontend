@@ -1,8 +1,12 @@
 .mypage{
-    width: 100%;
     text-align: center;
     margin-top: 143px;
     margin-bottom: 80px;
+
+    @include mq('pc'){
+        margin-top: 253px;
+        margin-bottom: 180px;
+    }
 
     @include mq('sp-mypage'){
         // いるかわからない

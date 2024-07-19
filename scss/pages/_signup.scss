@@ -3,13 +3,14 @@
     text-align: center;
     width: 326px;
     margin: 0 auto;
-    padding: 91px 337px 91px 337px ;
+    padding: 10%5%;
+    // padding: 91px 337px 91px 337px ;
     @include mq('pc'){
-        width: 600px;
+
     }
     @include mq('sp'){
         width: 298px;
-        padding: 215px 46px 214px 46px;
+        // padding: 215px 46px 214px 46px;
     }
 
     &_title{
@@ -32,7 +33,7 @@
             top: 44px;
             left: 286px;
             @include mq('pc'){
-                left: 557px;
+
             }
             @include mq('sp'){
                 left: 262px;
