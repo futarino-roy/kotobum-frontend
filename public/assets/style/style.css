@@ -269,7 +269,9 @@ header img {
 .mypage_flex_left_title_box {
   width: 169px;
   height: 235px;
-  background-color: bisque;
+}
+.mypage_flex_left_title_box img {
+  width: 173px;
 }
 .mypage_flex_left_menu {
   display: flex;
@@ -309,7 +311,9 @@ header img {
 .mypage_flex_right_title_box {
   width: 169px;
   height: 235px;
-  background-color: bisque;
+}
+.mypage_flex_right_title_box img {
+  width: 173px;
 }
 .mypage_flex_right_menu {
   display: flex;
