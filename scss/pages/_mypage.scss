@@ -59,7 +59,11 @@
                 &_box{
                     width: 169px;
                     height: 235px;
-                    background-color: bisque;
+                    // background-color: rgb(255, 228, 196);
+
+                    img{
+                        width: 173px;
+                    }
                 }
             }
 
@@ -104,7 +108,11 @@
                 &_box{
                     width: 169px;
                     height: 235px;
-                    background-color: bisque;
+                    // background-color: bisque;
+
+                    img{
+                        width: 173px;
+                    }
                 }
             }
 
