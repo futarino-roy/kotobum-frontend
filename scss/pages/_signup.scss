@@ -1,67 +1,148 @@
 .signup{
-.form{
+    max-width: 326px;
+    margin: 91px auto;
     text-align: center;
-    width: 326px;
-    margin: 0 auto;
-    padding: 10%5%;
-    // padding: 91px 337px 91px 337px ;
-    @include mq('pc'){
 
+    @include mq('tab'){
+        width: 310px;
+        margin-top: 191px;
     }
+
     @include mq('sp'){
         width: 298px;
-        // padding: 215px 46px 214px 46px;
+        margin-top: 291px;
     }
 
-    &_title{
-        margin-bottom: 30px;
+    .form{
+
+
+        &_title{
+            margin-bottom: 54px;
+
+        }
+
+        &_box{
+            text-align: left;
+            margin-bottom: 44px;
+            position: relative;
+
+            &::before{
+                content: "";
+                width: 27px;
+                height: 26px;
+                background: url(../../../signup/images/Pen.png) no-repeat center center / auto 100% ;
+                position: absolute;
+                top: 40px;
+                left: 284px;
+
+                @include mq('tab'){
+                    left: 268px;
+                }
+
+                @include mq('sp'){
+                    left: 253px;
+                }
+            }
+
+            input{
+                width: 100%;
+                padding: 13px 16px;
+                border: 1.4px solid;
+                border-radius: 5px;
+                box-sizing: border-box;
+
+                &::placeholder{
+                    opacity: 0.5;
+                }
+            }
+        }
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .signup{
+// .form{
+//     text-align: center;
+//     width: 326px;
+//     margin: 0 auto;
+//     padding: 10% 5%;
+//     // padding: 91px 337px 91px 337px ;
+//     @include mq('pc'){
+
+//     }
+//     @include mq('sp'){
+//         width: 298px;
+//         // padding: 215px 46px 214px 46px;
+//     }
+
+//     &_title{
+//         margin-bottom: 30px;
+//     }
 
  
 
-    &_box{
-        text-align: left;
-        margin-bottom: 30px;
-        position: relative;
+//     &_box{
+//         text-align: left;
+//         margin-bottom: 30px;
+//         position: relative;
 
-        &::before{
-            content: "";
-            width: 24px;
-            height: 24px;
-            background: url(../../../signup/images/Pen.png) no-repeat center center / auto 100% ;
-            position: absolute;
-            top: 44px;
-            left: 286px;
-            @include mq('pc'){
+//         &::before{
+//             content: "";
+//             width: 24px;
+//             height: 24px;
+//             background: url(../../../signup/images/Pen.png) no-repeat center center / auto 100% ;
+//             position: absolute;
+//             top: 44px;
+//             left: 286px;
+//             @include mq('pc'){
 
-            }
-            @include mq('sp'){
-                left: 262px;
-            }
-        }
+//             }
+//             @include mq('sp'){
+//                 left: 262px;
+//             }
+//         }
 
-        input{
-            width: 90%;
-            padding: 13px 16px;
-            margin-top: 5px;
-            border: 1.4px solid;
-            border-radius: 5px;
-            @include mq('pc'){
-                width: 94%;
-            }
-            @include mq('sp'){
-                padding: 12px 15px;
-            }
+//         input{
+//             width: 90%;
+//             padding: 13px 16px;
+//             margin-top: 5px;
+//             border: 1.4px solid;
+//             border-radius: 5px;
+//             @include mq('pc'){
+//                 width: 94%;
+//             }
+            // @include mq('sp'){
+            //     padding: 12px 15px;
+            // }
 
-            &::placeholder{
-                opacity: 0.5;
-            }
-        }
+//             &::placeholder{
+//                 opacity: 0.5;
+//             }
+//         }
         
-    }
+//     }
 
-    .signupButton{
-        margin-top: 18px;
-    }
-}
-}
+//     .signupButton{
+//         margin-top: 18px;
+//     }
+// }
+// }
+
+
+
+
+

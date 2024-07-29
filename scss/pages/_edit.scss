@@ -1,0 +1,564 @@
+.edit-body{
+    background: #D5DADC;
+}
+
+.edit{
+
+    &_drawer{
+        // width: 350px;
+        width: 29%;
+        background-color: #535353;
+        color: white;
+        position: fixed;
+        top: 81px;
+        // left: -440px;
+        left: -50%;
+        height: 100%;
+        border-radius: 20px;
+        transition: left 0.3s ease;
+        margin-left: 55px;
+        z-index: 2;
+
+        &.open{
+            left: 0;
+        }
+    
+        @include mq('sp-edit'){
+            width: 100%;
+            left: 0;
+            top: 60%; /* フッターの上に配置 */
+            height: 40%;
+            border-radius: 0;
+            position: fixed;
+            transition: transform 0.3s ease;
+            transform: translateY(100%); /* ドロワーの初期位置 */
+            margin: 0;
+
+            &.open{
+                transform: translateY(0); /* ドロワーを表示する */
+            }
+
+            }
+
+
+            
+
+
+        .close-btn{
+            position: absolute;
+            // top: 29px;
+            top: 21px;
+            // right: 20px;
+            right: 6px;
+            // font-size: 1.5rem;
+            // color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            img{
+                width: 45%;
+            }
+        }
+
+        &_container{
+
+            &_item{
+                display: none;
+
+                &_upload{
+                    // float: left;
+                    text-align: center;
+                    // background-color: #b9b9b9;
+                    height: 100%;
+
+                    // height: 100vh;
+                    // overflow: auto;
+
+                    // margin: 28px 63px 28px 35px  ;
+                    // margin: 7% 15% 0 9%;
+                    // margin: 28px 63px 0 35px;
+                    margin: 28px 17px 0 35px;
+
+                    #uploadZone{
+                        // border: 2px dashed #ccc;
+                        // padding: 20px;
+                        text-align: center;
+                        // margin: 40px auto;
+
+                        &_wrapper{
+                            position: relative;
+                            display: inline-block;
+
+                            #fileButton{
+                                // background-color: #4CAF50; /* ボタンの背景色 */
+                                // color: white; /* テキストの色 */
+                                // padding: 10px 20px; /* パディング */
+                                // border: none; /* ボーダーを無しに */
+                                // cursor: pointer; /* カーソルをポインターに */
+                                // font-size: 16px; /* フォントサイズ */
+                            }
+                        }
+
+                    }
+
+                    .imageList-container{
+                        height: 100vh;
+                        overflow: auto;
+                        height: calc(100vh - 200px);
+
+                        #imageList{
+                            // 多分いりますね
+                            max-width: 350px;
+
+
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            margin: 20px auto;
+                            // gap: 35px;
+                            gap: 14px;
+
+                            // padding: 20px;
+                            // max-height: 280px;
+                            // overflow-y: auto
+                            // overflow-y: hidden;
+
+                            @include mq('pc-edit'){
+                                // padding: 10px;
+                                }
+                        }
+                    }
+                }
+
+                &.active{
+                    display: block;
+                }
+            }
+
+            &_item{
+                display: none;
+
+                &_color{
+                    text-align: center;
+                    // background-color: #b9b9b9;
+                    height: 400px;
+                    // margin: 7% 15% 0 9%;
+                    margin: 28px 40px 0 35px;
+
+                    h2{
+                        font-size: 1.25rem;
+                        text-align: left;
+                    }
+
+                    .color-container{
+                        height: 100vh;
+                        overflow: auto; 
+                        height: calc(100vh - 200px);
+
+                        &_vari{
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            margin: 23px auto;
+                            gap: 27px;
+                            // padding: 20px;
+
+                            .btn-color{
+                                // width: 27.5%;
+                                width: 72px;
+                                height: 37px;
+                                border: none;
+                                border-radius: 5px;
+                                color: transparent;
+                                cursor: pointer;
+
+                                &-1{
+                                    background-color: #e6cd00;
+                                }
+
+                                &-2{
+                                    background-color: #aad24b;
+                                }
+
+                                &-3{
+                                    background-color: #32b973;
+                                }
+
+                                &-4{
+                                    background-color: #23beb9;
+                                }
+
+                                &-5{
+                                    background-color: #6ec8f5;
+                                }
+
+                                &-6{
+                                    background-color: #4b91cd;
+                                }
+
+                                &-7{
+                                    background-color: #645aaa;
+                                }
+
+                                &-8{
+                                    background-color: #b464aa;
+                                }
+
+                                &-9{
+                                    background-color: #eb6ea5;
+                                }
+
+                                &-10{
+                                    background-color: #f06e7d;
+                                }
+
+                                &-11{
+                                    background-color: #f06e46;
+                                }
+
+                                &-12{
+                                    background-color: #f06e46;
+                                }
+
+                                &-13{
+                                    background-color: #e6c300;
+                                }
+
+                                &-14{
+                                    background-color: #82b41e;
+                                }
+
+                                &-15{
+                                    background-color: #009141;
+                                }
+
+                                &-16{
+                                    background-color: #00918c;
+                                }
+
+                                &-17{
+                                    background-color: #00a0dc;
+                                }
+
+                                &-18{
+                                    background-color: #0064aa;
+                                }
+
+                                &-19{
+                                    background-color: #32328c;
+                                }
+
+                                &-20{
+                                    background-color: #87007d;
+                                }
+
+                                &-21{
+                                    background-color: #0064aa;
+                                }
+
+                                &-22{
+                                    background-color: #0064aa;
+                                }
+
+                                &-23{
+                                    background-color: #0064aa;
+                                }
+
+                                &-23{
+                                    background-color: #0064aa;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar{
+        width: 75px;
+        background-color: #252525;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 81px;
+        left: 0;
+        height: 100%;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+        z-index: 1;
+
+        @include mq('sp-edit'){
+            display: none;
+            }
+
+        &.open{
+    
+        }
+
+
+    }
+
+    .sidebar-sp{
+        display: none;
+
+        @include mq('sp-edit'){
+            // display: block;
+            width: 100%;
+            background-color: #252525;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 75px;
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+            z-index: 1;
+            }
+
+            &.open{
+
+                @include mq('sp-edit'){
+                    transform: translateY(0);
+                    }
+            }
+
+    }
+
+    .sideBtn{
+        position: fixed;
+        top: 81px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
+
+        @include mq('sp-edit'){
+            display: none;
+            }
+
+
+        .open-btn{
+            font-size: 16px;
+            background: #252525;
+            // border: 2px solid #436e556e;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            width: 75px;
+            height: 75px;
+
+            img{
+                width: 35px;
+                height: 36px;
+                margin-top: 5px;
+
+            }
+        }
+
+
+    }
+
+    .sideBtn-sp{
+        display: none;
+
+        @include mq('sp-edit'){
+            display: block;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            border-radius: 20px;
+            display: flex;
+            width: 100%;
+            height: 75px;
+            z-index: 3;
+            }
+
+            .open-btn{
+                @include mq('sp-edit'){
+                    flex: 1; /* ボタンを均等に広げる */
+                    font-size: 16px;
+                    background: #252525;
+                    border: none;
+                    border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
+                    color: white;
+                    cursor: pointer;
+                    height: 100%; /* 高さを100%に設定 */
+
+                img{
+                    width: 35px;
+                    height: 36px;
+                    margin-top: 5px;
+                }
+            }
+            }
+
+    }
+
+    .content{
+        // margin-top: 130px;
+        margin-top: 81px;
+        margin-left: 77px; /* 初期マージン */
+        transition: margin-left 0.3s ease;
+
+        @include mq('sp-edit'){
+            display: inline;
+            margin-top: 50px;
+                    
+            }
+
+
+        &.open{
+            // margin-left: 405px; /* サイドバーが開いているときのマージン */
+            margin-left: 32.5%;
+
+            @include mq('pc-edit'){
+                margin-left: 33.5%; 
+                }
+
+                @include mq('pc4-edit'){
+                    margin-left: 31.5%; 
+                    }
+
+                    @include mq('sp-edit'){
+
+                        }
+
+            //     @include mq('tab-edit'){
+            //         margin-left: 36%; 
+            //         }
+        }
+        
+        .swiper{
+
+            &-wrapper{
+
+
+                .swiper-slide{
+                    color: #ffffff;
+                    width: 100%;
+                    height: 100%;
+                    // background-color: #f7f7f7;
+                    display: flex;
+                    gap: 5px;
+                    justify-content: center;
+                    align-items: center;
+
+                    &_box{
+                        background-color: #ffffff;
+                        // width: 528px;
+                        width: 45%;
+
+                        // いるかわからない いや、いりますね
+                        max-width: 500px;
+                        
+                        height: 587px;
+                        position: relative;
+
+                        // margin-top: 80px;
+                        margin: 100px 0 80px;
+
+                        @include mq('sp-edit'){
+                            height: 660px;
+                            }
+
+                        &_input{
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+
+                        }
+
+                        .dropZone{
+                            top: 15%;
+                            left: 50%;
+                            border: 2px dashed #ccc;
+                            font-size: 1rem;
+                            width: 30%;
+                            height: 60%;
+                            position: absolute;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .croppie-modal{
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FFFFFF;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+        z-index: 999;
+
+        #croppie-container{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.thumbnail{
+    // border: 1px solid #ccc;
+    cursor: pointer;
+    // width: 116px;
+    // width: 50%;
+    width: calc(50% - 20px); 
+    object-fit: contain;
+}
+
+
+// .ai{
+//     height: 100vh;
+//     overflow: auto;
+//     height: calc(100vh - 200px);
+// }
+
+// /* 幅・高さを指定 */
+// .swiper-button-prev,
+// .swiper-button-next {
+//   height: 50px;
+//   width: 50px;
+// }
+ 
+// /* 矢印を消す、画像に変更 */
+// .swiper-button-prev:after,
+// .swiper-button-next:after {
+//   content: "";
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   height: 50px;
+//   width: 50px;
+//   margin: auto;
+// }
+ 
+// /* 前に戻る画像パス */
+// .swiper-button-prev:after {
+//   background-image: url(../../../edit/images/Group\ 293.png);
+// }
+// /* 次に進む画像パス */
+// .swiper-button-next:after {
+//   background-image: url(../../../edit/images/Group\ 294.png);
+// }
+
+
+// .swiper-pagination{
+//     top: 45px;
+// }
+
+
+

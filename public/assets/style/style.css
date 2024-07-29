@@ -8,7 +8,6 @@
 }
 
 body {
-  height: 100%;
   margin: 0;
   background-color: #FDFCF6;
 }
@@ -19,6 +18,10 @@ h2 {
 
 p {
   font-size: 1.25rem;
+}
+
+img {
+  max-width: 100%;
 }
 
 .btn {
@@ -36,7 +39,13 @@ p {
 .btn-A {
   background-image: url(../../../signup/images/Button_PC.png);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .btn-A {
+    background-image: url(../../../signup/images/Button_sp.png);
+    width: 310px;
+  }
+}
+@media screen and (max-width: 480px) {
   .btn-A {
     background-image: url(../../../signup/images/Button_sp.png);
     width: 298px;
@@ -49,6 +58,13 @@ p {
   height: 46px;
   font-size: 1.125rem;
 }
+@media screen and (max-width: 480px) {
+  .btn-B {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
 .btn-C {
   background-image: url(../../../mypage/images/Button_mi.png);
   color: #000000;
@@ -56,13 +72,47 @@ p {
   height: 46px;
   font-size: 1.125rem;
 }
+@media screen and (max-width: 480px) {
+  .btn-C {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
 .btn-D {
   background-image: url(../../../mypage/images/Button_bl.png);
   width: 156px;
   height: 46px;
   font-size: 1.125rem;
 }
-
+@media screen and (max-width: 480px) {
+  .btn-D {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+.btn-F {
+  background-image: url(../../../images/Rectangle\ 4664.png);
+  width: 80%;
+  height: 60px;
+  color: #252525;
+  font-size: 1.3rem;
+  margin-right: 25px;
+}
+@media screen and (max-width: 1100px) {
+  .btn-F {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .btn-F {
+    max-width: 350px;
+    height: 73px;
+    font-size: 1.6rem;
+  }
+}
 header {
   position: fixed;
   width: 100%;
@@ -90,55 +140,67 @@ header img {
   }
 }
 
-.signup .form {
-  text-align: center;
-  width: 326px;
-  margin: 0 auto;
-  padding: 10% 5%;
+.edit-header {
+  position: fixed;
+  width: 100%;
+  height: 81px;
+  background: #FDFCF6;
+  padding: 22px 41px 22px 41px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 999;
 }
-@media screen and (max-width: 767px) {
-  .signup .form {
+
+.signup {
+  max-width: 326px;
+  margin: 91px auto;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .signup {
+    width: 310px;
+    margin-top: 191px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .signup {
     width: 298px;
+    margin-top: 291px;
   }
 }
 .signup .form_title {
-  margin-bottom: 30px;
+  margin-bottom: 54px;
 }
 .signup .form_box {
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 44px;
   position: relative;
 }
 .signup .form_box::before {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 26px;
   background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
   position: absolute;
-  top: 44px;
-  left: 286px;
+  top: 40px;
+  left: 284px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .signup .form_box::before {
-    left: 262px;
+    left: 268px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .signup .form_box::before {
+    left: 253px;
   }
 }
 .signup .form_box input {
-  width: 90%;
+  width: 100%;
   padding: 13px 16px;
-  margin-top: 5px;
   border: 1.4px solid;
   border-radius: 5px;
-}
-@media screen and (min-width: 1300px) {
-  .signup .form_box input {
-    width: 94%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .signup .form_box input {
-    padding: 12px 15px;
-  }
+  box-sizing: border-box;
 }
 .signup .form_box input::-moz-placeholder {
   opacity: 0.5;
@@ -146,63 +208,61 @@ header img {
 .signup .form_box input::placeholder {
   opacity: 0.5;
 }
-.signup .form .signupButton {
-  margin-top: 18px;
-}
 
-.login_img {
-  width: 62px;
-  height: 44px;
-}
-.login .form {
+.login {
+  max-width: 326px;
+  margin: 91px auto;
   text-align: center;
-  width: 326px;
-  margin: 0 auto;
-  padding: 10% 2%;
 }
-@media screen and (max-width: 767px) {
-  .login .form {
+.login_img {
+  width: 52px;
+  height: 53px;
+}
+@media screen and (max-width: 768px) {
+  .login {
+    width: 310px;
+    margin-top: 191px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login {
     width: 298px;
+    margin-top: 291px;
   }
 }
 .login .form_title {
-  margin-bottom: 30px;
+  margin-bottom: 54px;
 }
 .login .form_box {
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 44px;
   position: relative;
 }
 .login .form_box::before {
   content: "";
-  width: 24px;
-  height: 24px;
-  background: url(/signup/images/Pen.png) no-repeat center center/auto 100%;
+  width: 27px;
+  height: 26px;
+  background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
   position: absolute;
-  top: 44px;
-  left: 286px;
+  top: 40px;
+  left: 284px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .login .form_box::before {
-    left: 262px;
+    left: 268px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login .form_box::before {
+    left: 253px;
   }
 }
 .login .form_box input {
-  width: 90%;
+  width: 100%;
   padding: 13px 16px;
-  margin-top: 5px;
   border: 1.4px solid;
   border-radius: 5px;
-}
-@media screen and (min-width: 1300px) {
-  .login .form_box input {
-    width: 94%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .login .form_box input {
-    padding: 12px 15px;
-  }
+  box-sizing: border-box;
 }
 .login .form_box input::-moz-placeholder {
   opacity: 0.5;
@@ -210,26 +270,26 @@ header img {
 .login .form_box input::placeholder {
   opacity: 0.5;
 }
-.login .form .loginButton {
-  margin-top: 18px;
-}
 
 .mypage {
+  max-width: 900px;
   text-align: center;
-  margin-top: 143px;
-  margin-bottom: 80px;
+  margin: 143px auto;
+  padding: 0 15px;
 }
 @media screen and (min-width: 1300px) {
   .mypage {
-    margin-top: 253px;
-    margin-bottom: 180px;
+    margin-top: 200px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .mypage {
-    min-width: 435px;
+    margin-top: 153px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage {
     margin-top: 155px;
-    margin-bottom: 67px;
   }
 }
 .mypage_title img {
@@ -238,285 +298,489 @@ header img {
 }
 .mypage_title h2 {
   font-size: 1.375rem;
-  margin-top: 18px;
-  margin-bottom: 50px;
+  margin: 18px 0 50px;
 }
 .mypage_flex {
-  width: auto;
   display: flex;
   justify-content: center;
   gap: 85px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .mypage_flex {
-    flex-direction: column;
-    gap: 55px;
-    align-items: center;
+    display: inline-block;
   }
 }
-.mypage_flex_left_title {
-  float: left;
+@media screen and (max-width: 480px) {
+  .mypage_flex {
+    display: inline-block;
+  }
+}
+.mypage_flex_left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
 }
 .mypage_flex_left_title h2 {
-  text-align: left;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .mypage_flex_left_title h2 {
     margin-bottom: 15px;
   }
 }
-.mypage_flex_left_title_box {
-  width: 169px;
-  height: 235px;
-}
 .mypage_flex_left_title_box img {
-  width: 173px;
+  width: 240px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_left_title_box img {
+    width: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_left_title_box img {
+    width: 200px;
+  }
 }
 .mypage_flex_left_menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 22px 0 0 24px;
+  margin-top: 24px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 480px) {
   .mypage_flex_left_menu {
-    padding: 75px 0 0 15px;
+    margin-top: 47px;
   }
+}
+.mypage_flex_left_menu_icon {
+  margin-bottom: 5px;
 }
 .mypage_flex_left_menu_icon img {
-  margin: 2px 0 6px;
+  width: 27px;
 }
-@media screen and (max-width: 850px) {
-  .mypage_flex_left_menu_icon img {
-    width: 27px;
-    height: 14.86px;
-    margin: 0 0 5px;
+.mypage_flex_right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_right {
+    margin-top: 36px;
   }
 }
-.mypage_flex_right_title {
-  float: left;
-}
 .mypage_flex_right_title h2 {
-  text-align: left;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .mypage_flex_right_title h2 {
     margin-bottom: 15px;
   }
 }
-.mypage_flex_right_title_box {
-  width: 169px;
-  height: 235px;
-}
 .mypage_flex_right_title_box img {
-  width: 173px;
+  width: 240px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_right_title_box img {
+    width: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_right_title_box img {
+    width: 200px;
+  }
 }
 .mypage_flex_right_menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 22px 0 0 24px;
+  margin-top: 24px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 480px) {
   .mypage_flex_right_menu {
-    padding: 75px 0 0 15px;
+    margin-top: 47px;
   }
+}
+.mypage_flex_right_menu_icon {
+  margin-bottom: 5px;
 }
 .mypage_flex_right_menu_icon img {
-  margin: 2px 0 6px;
-}
-@media screen and (max-width: 850px) {
-  .mypage_flex_right_menu_icon img {
-    width: 27px;
-    height: 14.86px;
-    margin: 0 0 5px;
-  }
+  width: 27px;
 }
 
-.update-container {
-  min-width: 1200px; /* 最大幅を1200pxに設定 */
+.edit-body {
+  background: #D5DADC;
 }
 
-/* 左側パネルのスタイル */
-.leftPosition {
-  float: left;
-  background-color: #b9b9b9;
-  height: 400px;
-}
-
-.drawer {
-  width: 250px;
-  background-color: #333;
+.edit_drawer {
+  width: 29%;
+  background-color: #535353;
   color: white;
   position: fixed;
-  top: 0;
-  left: -250px;
+  top: 81px;
+  left: -50%;
   height: 100%;
+  border-radius: 20px;
   transition: left 0.3s ease;
-  z-index: 1;
+  margin-left: 55px;
+  z-index: 2;
 }
-
-.drawer.open {
+.edit_drawer.open {
   left: 0;
 }
-
-.close-btn {
+@media screen and (max-width: 900px) {
+  .edit_drawer {
+    width: 100%;
+    left: 0;
+    top: 60%; /* フッターの上に配置 */
+    height: 40%;
+    border-radius: 0;
+    position: fixed;
+    transition: transform 0.3s ease;
+    transform: translateY(100%); /* ドロワーの初期位置 */
+    margin: 0;
+  }
+  .edit_drawer.open {
+    transform: translateY(0); /* ドロワーを表示する */
+  }
+}
+.edit_drawer .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  color: white;
+  top: 21px;
+  right: 6px;
   background: none;
   border: none;
   cursor: pointer;
 }
-
-.sidebar {
-  width: 100px;
-  background-color: #444;
+.edit_drawer .close-btn img {
+  width: 45%;
+}
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_upload {
+  text-align: center;
+  height: 100%;
+  margin: 28px 17px 0 35px;
+}
+.edit_drawer_container_item_upload #uploadZone {
+  text-align: center;
+}
+.edit_drawer_container_item_upload #uploadZone_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.edit_drawer_container_item_upload .imageList-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+.edit_drawer_container_item_upload .imageList-container #imageList {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px auto;
+  gap: 14px;
+}
+.edit_drawer_container_item.active {
+  display: block;
+}
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_color {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.edit_drawer_container_item_color h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.edit_drawer_container_item_color .color-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+.edit_drawer_container_item_color .color-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 23px auto;
+  gap: 27px;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color {
+  width: 72px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  color: transparent;
+  cursor: pointer;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-1 {
+  background-color: #e6cd00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-2 {
+  background-color: #aad24b;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #32b973;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #23beb9;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #6ec8f5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #4b91cd;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #645aaa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #b464aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #eb6ea5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #f06e7d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #f06e46;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #f06e46;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #e6c300;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-14 {
+  background-color: #82b41e;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #009141;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-16 {
+  background-color: #00918c;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-17 {
+  background-color: #00a0dc;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-18 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-19 {
+  background-color: #32328c;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-20 {
+  background-color: #87007d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-21 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-22 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.edit .sidebar {
+  width: 75px;
+  background-color: #252525;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 81px;
   left: 0;
   height: 100%;
   transition: transform 0.3s ease;
   transform: translateX(0);
-  z-index: 2;
+  z-index: 1;
 }
-
-.sidebar.open {
-  transform: translateX(250px);
+@media screen and (max-width: 900px) {
+  .edit .sidebar {
+    display: none;
+  }
 }
-
-.open-btn {
-  font-size: 16px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px 0;
-  width: 80px;
-}
-
-.content {
-  margin-left: 100px; /* Initial margin */
-  transition: margin-left 0.3s ease;
-}
-
-.content.open {
-  margin-left: 350px; /* Adjusted margin when sidebar opens */
-}
-
-.content-item {
+.edit .sidebar-sp {
   display: none;
 }
-
-.content-item.active {
-  display: block;
+@media screen and (max-width: 900px) {
+  .edit .sidebar-sp {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+    z-index: 1;
+  }
 }
-
-/* ファイルアップロードゾーンのスタイル */
-#uploadZone {
-  border: 2px dashed #ccc;
-  padding: 20px;
-  text-align: center;
-  margin: 40px auto;
+@media screen and (max-width: 900px) {
+  .edit .sidebar-sp.open {
+    transform: translateY(0);
+  }
 }
-
-.file_p {
-  color: #000000;
-  background-color: #166f7c;
-  width: 20px;
-  height: auto;
-}
-
-/* 画像リストのスタイル */
-#imageList {
+.edit .sideBtn {
+  position: fixed;
+  top: 81px;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto;
-  gap: 10px;
-  max-height: 280px; /* 最大の高さを設定 */
-  overflow-y: auto; /* 縦方向にスクロール可能にする */
+  z-index: 3;
 }
-
-/* サムネイル画像のスタイル */
-.thumbnail {
-  border: 1px solid #ccc;
-  padding: 10px;
+@media screen and (max-width: 900px) {
+  .edit .sideBtn {
+    display: none;
+  }
+}
+.edit .sideBtn .open-btn {
+  font-size: 16px;
+  background: #252525;
+  border: none;
+  border-radius: 20px;
+  color: white;
   cursor: pointer;
-  max-width: 200px;
-  max-height: 200px;
+  width: 75px;
+  height: 75px;
 }
-
-/* ドロップゾーンのスタイル */
-.dropZone {
-  left: 300px;
-  border: 2px dashed #ccc;
-  font-size: 1em;
-  width: 150px;
-  height: 200px;
+.edit .sideBtn .open-btn img {
+  width: 35px;
+  height: 36px;
+  margin-top: 5px;
+}
+.edit .sideBtn-sp {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .edit .sideBtn-sp {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    z-index: 3;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .sideBtn-sp .open-btn {
+    flex: 1; /* ボタンを均等に広げる */
+    font-size: 16px;
+    background: #252525;
+    border: none;
+    border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
+    color: white;
+    cursor: pointer;
+    height: 100%; /* 高さを100%に設定 */
+  }
+  .edit .sideBtn-sp .open-btn img {
+    width: 35px;
+    height: 36px;
+    margin-top: 5px;
+  }
+}
+.edit .content {
+  margin-top: 81px;
+  margin-left: 77px; /* 初期マージン */
+  transition: margin-left 0.3s ease;
+}
+@media screen and (max-width: 900px) {
+  .edit .content {
+    display: inline;
+    margin-top: 50px;
+  }
+}
+.edit .content.open {
+  margin-left: 32.5%;
+}
+@media screen and (max-width: 1100px) {
+  .edit .content.open {
+    margin-left: 33.5%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .edit .content.open {
+    margin-left: 31.5%;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
   display: flex;
+  gap: 5px;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  position: absolute;
-  margin: 20px auto;
 }
-
-/* ドロップゾーン内の画像のスタイル */
-.dropZone img {
+.edit .content .swiper-wrapper .swiper-slide_box {
+  background-color: #ffffff;
+  width: 45%;
+  max-width: 500px;
+  height: 587px;
+  position: relative;
+  margin: 100px 0 80px;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    height: 660px;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box_input {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .dropZone {
+  top: 15%;
+  left: 50%;
+  border: 2px dashed #ccc;
+  font-size: 1rem;
+  width: 30%;
+  height: 60%;
+  position: absolute;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .dropZone img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.swiper-slide {
-  color: #ffffff;
-  width: 100%;
-  height: 100%;
-  background-color: #f7f7f7; /* スライドの背景色 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-slide_box {
-  width: 650px;
-  height: 400px;
-  background-color: #166f7c;
-  position: relative;
-  margin: 0 auto 0;
-}
-.swiper-slide_box_input {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-/* Croppieモーダルのスタイル */
-.croppie-modal {
+.edit .croppie-modal {
   display: none;
   position: fixed;
-  z-index: 1000;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #FFFFFF;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.edit .croppie-modal #croppie-container {
+  margin-bottom: 10px;
 }
 
-#croppie-container {
-  margin-bottom: 10px;
+.thumbnail {
+  cursor: pointer;
+  width: calc(50% - 20px);
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */

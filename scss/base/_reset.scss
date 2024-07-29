@@ -7,7 +7,6 @@
 }
 
 body{
-  height: 100%;
   margin: 0;
   background-color: #FDFCF6;
 }
@@ -18,4 +17,8 @@ h2{
 
 p{
   font-size: 1.25rem;
+}
+
+img{
+  max-width: 100%;
 }

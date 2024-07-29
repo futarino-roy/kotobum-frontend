@@ -1,13 +1,40 @@
 // レイアウト幅
 $signup-width-inner: 1300px;
 
-// ブレークポイント
 $breakpoints: (
+
+
+
+
+
+	"sp": "screen and (max-width: 480px)",
+	"tab": "screen and (max-width: 768px)",
+	"pc": "screen and (min-width: 1300px)",
+
 	"sp-header": "screen and (max-width: 500px)",
-	"sp": "screen and (max-width: 767px)",
-	"sp-mypage": "screen and (max-width: 850px)",
-	"tab": "screen and (max-width: #{$signup-width-inner - 1px})",
-	"pc": "screen and (min-width: #{$signup-width-inner})",
+
+	"sp-mypage": "screen and (max-width: 480px)",
+	"tab-mypage": "screen and (max-width: 900px)",
+	"pc-mypage": "screen and (min-width: 1300px)",
+
+	// "sp-edit": "screen and (max-width: 480px)",
+	// "tab-edit": "screen and (max-width: 900px)",
+	// "pc-edit": "screen and (min-width: 1300px)",
+
+
+
+	"sp-edit": "screen and (max-width: 900px)",
+	"pc-edit": "screen and (max-width: 1100px)",
+	"pc2-edit": "screen and (min-width: 1500px)",
+	"pc3-edit": "screen and (min-width: 1700px)",
+	"pc4-edit": "screen and (min-width: 1900px)",
+
+
+
+
+
+	// "tab": "screen and (max-width: #{$signup-width-inner - 1px})",
+	// "pc": "screen and (min-width: #{$signup-width-inner})",
 );
 
 @mixin mq($breakpoint: sp) {
