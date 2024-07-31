@@ -1,5 +1,10 @@
 .edit-body{
     background: #D5DADC;
+    height: auto;
+
+    @include mq('pc-edit'){
+        height: 100vh;
+        }
 }
 
 .edit{
@@ -402,15 +407,20 @@
 
     .content{
         // margin-top: 130px;
-        margin-top: 81px;
+        margin-top: 90px;
         margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
         @include mq('sp-edit'){
-            display: inline;
-            margin-top: 50px;
+                margin: 90px 0 0 0;
+                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                        
+                }
+
+        // @include mq('sp-edit'){
+        //     display: none;
                     
-            }
+        //     }
 
 
         &.open{
@@ -426,6 +436,7 @@
                     }
 
                     @include mq('sp-edit'){
+                        margin: 90px 30% 0 ;
 
                         }
 
@@ -436,35 +447,49 @@
         
         .swiper{
 
+            width: 50%;
+            height: 100%;
+
+            @include mq('sp-edit'){
+                width: 100%;
+                }
+
             &-wrapper{
 
 
                 .swiper-slide{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+
+
+
                     color: #ffffff;
-                    width: 100%;
+                    width: auto;
                     height: 100%;
                     // background-color: #f7f7f7;
-                    display: flex;
-                    gap: 5px;
-                    justify-content: center;
-                    align-items: center;
+                    // display: flex;
+                    // gap: 5px;
+                    // justify-content: center;
+                    // align-items: center;
 
                     &_box{
-                        background-color: #ffffff;
+                        // background-color: #ffffff;
                         // width: 528px;
-                        width: 45%;
+
+
+                    
 
                         // いるかわからない いや、いりますね
                         max-width: 500px;
-                        
-                        height: 587px;
+                    
                         position: relative;
 
                         // margin-top: 80px;
-                        margin: 100px 0 80px;
+                        margin: 64px 0 0;
 
                         @include mq('sp-edit'){
-                            height: 660px;
+                            // height: 660px;
                             }
 
                         &_input{
@@ -510,6 +535,20 @@
             margin-bottom: 10px;
         }
     }
+
+
+
+
+
+
+
+    // .content-sp{
+    //     display: none;
+
+    //     @include mq('sp-edit'){
+    //         display: block;
+    //         }
+    // }
 }
 
 .thumbnail{
@@ -520,6 +559,41 @@
     width: calc(50% - 20px); 
     object-fit: contain;
 }
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev{
+    left: 38%;
+}
+
+.swiper-button-next {
+    left: 58%;
+  }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+ 
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
 
 
 // .ai{
@@ -535,25 +609,8 @@
 //   width: 50px;
 // }
  
-// /* 矢印を消す、画像に変更 */
-// .swiper-button-prev:after,
-// .swiper-button-next:after {
-//   content: "";
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   height: 50px;
-//   width: 50px;
-//   margin: auto;
-// }
- 
-// /* 前に戻る画像パス */
-// .swiper-button-prev:after {
-//   background-image: url(../../../edit/images/Group\ 293.png);
-// }
-// /* 次に進む画像パス */
-// .swiper-button-next:after {
-//   background-image: url(../../../edit/images/Group\ 294.png);
-// }
+/* 矢印を消す、画像に変更 */
+
 
 
 // .swiper-pagination{
@@ -562,3 +619,10 @@
 
 
 
+// 最後に
+// .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+//     /* bottom: var(--swiper-pagination-bottom, 8px); */
+//     top: var(--swiper-pagination-top, 20px);
+//     left: 0;
+//     width: 100%;
+// }
