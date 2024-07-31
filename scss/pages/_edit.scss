@@ -2,7 +2,7 @@
     background: #D5DADC;
     height: auto;
 
-    @include mq('pc-edit'){
+    @include mq('sp-edit'){
         // height: 100vh;
         }
 }
@@ -407,12 +407,12 @@
 
     .content{
         // margin-top: 130px;
-        margin-top: 90px;
+        margin-top: 100px;
         margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
         @include mq('sp-edit'){
-                margin: 90px 0 0 0;
+                margin: 85px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
                 }
@@ -436,9 +436,19 @@
                     }
 
                     @include mq('sp-edit'){
-                        margin: 90px 30% 0 ;
+                        margin: 90px 10% 0 ;
 
                         }
+
+                        @include mq('sp2-edit'){
+                            margin: 90px 20% 0 ;
+    
+                            }
+
+                        //     @include mq('sp3-edit'){
+                        //         margin: 90px 10% 0 ;
+        
+                        //         }
 
             //     @include mq('tab-edit'){
             //         margin-left: 36%; 
@@ -451,7 +461,7 @@
             height: 100%;
 
             @include mq('sp-edit'){
-                width: 70%;
+                width: 85%;
                 }
 
             &-wrapper{
@@ -486,11 +496,16 @@
                         position: relative;
 
                         // margin-top: 80px;
-                        margin: 64px 0 0;
+                        margin: 50px 0 0;
+
+                        @include mq('sp-edit'){
+                            margin: 30px 0 0;
+
+                            }
 
                         @include mq('sp2-edit'){
                             // height: 660px;
-                            width: 80%;
+                            width: 70%;
 
                             }
 
@@ -576,7 +591,7 @@
 }
 
 .swiper-button-prev{
-    left: 38%;
+    left: 36%;
 }
 
 .swiper-button-next {

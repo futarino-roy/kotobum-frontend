@@ -717,13 +717,13 @@ header img {
   }
 }
 .edit .content {
-  margin-top: 90px;
+  margin-top: 100px;
   margin-left: 77px; /* 初期マージン */
   transition: margin-left 0.3s ease;
 }
 @media screen and (max-width: 900px) {
   .edit .content {
-    margin: 90px 0 0 0;
+    margin: 85px 0 0 0;
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
@@ -742,7 +742,12 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content.open {
-    margin: 90px 30% 0;
+    margin: 90px 10% 0;
+  }
+}
+@media screen and (max-width: 380px) {
+  .edit .content.open {
+    margin: 90px 20% 0;
   }
 }
 .edit .content .swiper {
@@ -751,7 +756,7 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper {
-    width: 70%;
+    width: 85%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide {
@@ -765,11 +770,16 @@ header img {
 .edit .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  margin: 64px 0 0;
+  margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    margin: 30px 0 0;
+  }
 }
 @media screen and (max-width: 380px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    width: 80%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 330px) {
@@ -825,7 +835,7 @@ header img {
 }
 
 .swiper-button-prev {
-  left: 38%;
+  left: 36%;
 }
 
 .swiper-button-next {
