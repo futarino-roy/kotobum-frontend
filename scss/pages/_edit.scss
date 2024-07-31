@@ -488,9 +488,17 @@
                         // margin-top: 80px;
                         margin: 64px 0 0;
 
-                        @include mq('sp-edit'){
+                        @include mq('sp2-edit'){
                             // height: 660px;
+                            width: 80%;
+
                             }
+
+                            @include mq('sp3-edit'){
+                                // height: 660px;
+                                width: 50%;
+    
+                                }
 
                         &_input{
                             position: absolute;
