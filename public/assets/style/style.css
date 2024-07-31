@@ -104,7 +104,7 @@ img {
   font-size: 1.125rem;
   padding: 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 480px) {
   .btn-E {
     width: 120px;
     height: 31px;
@@ -742,12 +742,7 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content.open {
-    margin: 90px 10% 0;
-  }
-}
-@media screen and (max-width: 380px) {
-  .edit .content.open {
-    margin: 90px 20% 0;
+    margin: 90px 22% 0;
   }
 }
 .edit .content .swiper {
@@ -756,7 +751,7 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper {
-    width: 85%;
+    width: 80%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide {
@@ -774,7 +769,12 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    margin: 30px 0 0;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
   }
 }
 @media screen and (max-width: 380px) {

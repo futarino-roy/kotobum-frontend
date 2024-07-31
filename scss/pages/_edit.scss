@@ -2,7 +2,7 @@
     background: #D5DADC;
     height: auto;
 
-    @include mq('sp-edit'){
+    @include mq('tab-edit'){
         // height: 100vh;
         }
 }
@@ -28,7 +28,7 @@
             left: 0;
         }
     
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
             width: 100%;
             left: 0;
             top: 60%; /* フッターの上に配置 */
@@ -295,7 +295,7 @@
         transform: translateX(0);
         z-index: 1;
 
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
             display: none;
             }
 
@@ -309,7 +309,7 @@
     .sidebar-sp{
         display: none;
 
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
             // display: block;
             width: 100%;
             background-color: #252525;
@@ -326,7 +326,7 @@
 
             &.open{
 
-                @include mq('sp-edit'){
+                @include mq('tab-edit'){
                     transform: translateY(0);
                     }
             }
@@ -342,7 +342,7 @@
         align-items: center;
         z-index: 3;
 
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
             display: none;
             }
 
@@ -372,7 +372,7 @@
     .sideBtn-sp{
         display: none;
 
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
             display: block;
             position: fixed;
             bottom: 0;
@@ -385,7 +385,7 @@
             }
 
             .open-btn{
-                @include mq('sp-edit'){
+                @include mq('tab-edit'){
                     flex: 1; /* ボタンを均等に広げる */
                     font-size: 16px;
                     background: #252525;
@@ -411,7 +411,7 @@
         margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
-        @include mq('sp-edit'){
+        @include mq('tab-edit'){
                 margin: 85px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
@@ -435,15 +435,15 @@
                     margin-left: 31.5%; 
                     }
 
-                    @include mq('sp-edit'){
-                        margin: 90px 10% 0 ;
+                    @include mq('tab-edit'){
+                        margin: 90px 22% 0 ;
 
                         }
 
-                        @include mq('sp2-edit'){
-                            margin: 90px 20% 0 ;
+                        // @include mq('sp2-edit'){
+                        //     margin: 90px 20% 0 ;
     
-                            }
+                        //     }
 
                         //     @include mq('sp3-edit'){
                         //         margin: 90px 10% 0 ;
@@ -460,8 +460,8 @@
             width: 50%;
             height: 100%;
 
-            @include mq('sp-edit'){
-                width: 85%;
+            @include mq('tab-edit'){
+                width: 80%;
                 }
 
             &-wrapper{
@@ -498,22 +498,23 @@
                         // margin-top: 80px;
                         margin: 50px 0 0;
 
-                        @include mq('sp-edit'){
-                            margin: 30px 0 0;
-
-                            }
-
-                        @include mq('sp2-edit'){
-                            // height: 660px;
+                        @include mq('tab-edit'){
                             width: 70%;
-
                             }
 
-                            @include mq('sp3-edit'){
-                                // height: 660px;
-                                width: 50%;
-    
+                            @include mq('sp-edit'){
+                                width: 100%;
                                 }
+
+                                @include mq('sp2-edit'){
+                                    width: 70%;
+                                    }
+
+                                    @include mq('sp3-edit'){
+                                        // height: 660px;
+                                        width: 50%;
+            
+                                        }
 
                         &_input{
                             position: absolute;
