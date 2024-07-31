@@ -66,6 +66,20 @@
             }
     }
 
+    &-E{
+        background-image: url(../../../images/button-edit.png);
+        width: 152px;
+        height: 38px;
+        font-size: 1.125rem;
+        padding: 0;
+
+        @include mq('sp-edit'){
+            width: 120px;
+            height: 31px;
+            font-size: 1rem;
+            }
+    }
+
     &-F{
         background-image: url(../../../images/Rectangle\ 4664.png);
         width: 80%;

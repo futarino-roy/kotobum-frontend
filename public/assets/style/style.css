@@ -97,6 +97,20 @@ img {
     font-size: 1rem;
   }
 }
+.btn-E {
+  background-image: url(../../../images/button-edit.png);
+  width: 152px;
+  height: 38px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+@media screen and (max-width: 900px) {
+  .btn-E {
+    width: 120px;
+    height: 31px;
+    font-size: 1rem;
+  }
+}
 .btn-F {
   background-image: url(../../../images/Rectangle\ 4664.png);
   width: 80%;
@@ -420,12 +434,6 @@ header img {
   background: #D5DADC;
   height: auto;
 }
-@media screen and (max-width: 1100px) {
-  .edit-body {
-    height: 100vh;
-  }
-}
-
 .edit_drawer {
   width: 29%;
   background-color: #535353;
@@ -743,7 +751,7 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper {
-    width: 100%;
+    width: 70%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide {

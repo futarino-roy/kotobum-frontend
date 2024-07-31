@@ -86,8 +86,12 @@ document.getElementById('fileButton').addEventListener('click', function() {
 
 //   color
 function changeColor(color) {
-    document.getElementById('uniqueColor-1').style.backgroundColor = color;
+    let elements = document.getElementsByClassName('uniqueColor');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = color;
+    }
 }
+
   
 
 

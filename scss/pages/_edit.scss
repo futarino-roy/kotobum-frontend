@@ -3,7 +3,7 @@
     height: auto;
 
     @include mq('pc-edit'){
-        height: 100vh;
+        // height: 100vh;
         }
 }
 
@@ -451,7 +451,7 @@
             height: 100%;
 
             @include mq('sp-edit'){
-                width: 100%;
+                width: 70%;
                 }
 
             &-wrapper{
