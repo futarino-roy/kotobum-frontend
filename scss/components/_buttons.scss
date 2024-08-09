@@ -111,6 +111,20 @@
                         // font-size: 2.1rem;
                         }
 
+                        @include mq('tab-edit'){
+                            width: 230px;
+                            font-size: 1rem;
+                            }
+
+                            @include mq('sp-edit'){
+                                width: 150px;
+                                height: 38px;
+                                font-size: 0.8rem;
+                                }
+
+
+
+
         // @include mq('pc-edit-button'){
         //     height: 67px;
         //     font-size: 1.3rem;

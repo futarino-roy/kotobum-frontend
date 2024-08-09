@@ -132,6 +132,20 @@ img {
     font-size: 1.6rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .btn-F {
+    width: 230px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .btn-F {
+    width: 150px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -497,13 +511,17 @@ header img {
   overflow: auto;
   height: calc(100vh - 200px);
 }
-.edit_drawer_container_item_upload .imageList-container #imageList {
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField {
   max-width: 350px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin: 20px auto;
   gap: 14px;
+}
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField img {
+  width: calc(50% - 10px);
+  cursor: grab;
 }
 .edit_drawer_container_item.active {
   display: block;
@@ -525,16 +543,22 @@ header img {
   overflow: auto;
   height: calc(100vh - 200px);
 }
+@media screen and (max-width: 900px) {
+  .edit_drawer_container_item_color .color-container {
+    height: calc(100vh - 500px);
+  }
+}
 .edit_drawer_container_item_color .color-container_vari {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   margin: 23px auto;
-  gap: 27px;
+  padding: 10px;
+  justify-content: space-between;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color {
-  width: 72px;
+  width: 28%;
   height: 37px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 5px;
   color: transparent;
@@ -612,6 +636,35 @@ header img {
 .edit_drawer_container_item_color .color-container_vari .btn-color-23 {
   background-color: #0064aa;
 }
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_frame {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.edit_drawer_container_item_frame h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.edit_drawer_container_item_frame .frame-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+}
+.edit_drawer_container_item_frame .frame-container_vari .resizeButton {
+  width: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.edit_drawer_container_item_frame .frame-container_vari .resizeButton img {
+  width: 100%;
+  height: auto;
+}
 .edit .sidebar {
   width: 75px;
   background-color: #252525;
@@ -643,7 +696,7 @@ header img {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 75px;
+    height: 45px;
     transition: transform 0.3s ease;
     transform: translateY(0);
     z-index: 1;
@@ -678,6 +731,10 @@ header img {
   width: 75px;
   height: 75px;
 }
+.edit .sideBtn .open-btn.active {
+  background: #535353;
+  border: 2px solid #252525;
+}
 .edit .sideBtn .open-btn img {
   width: 35px;
   height: 36px;
@@ -695,7 +752,7 @@ header img {
     border-radius: 20px;
     display: flex;
     width: 100%;
-    height: 75px;
+    height: 45px;
     z-index: 3;
   }
 }
@@ -710,9 +767,13 @@ header img {
     cursor: pointer;
     height: 100%; /* 高さを100%に設定 */
   }
+  .edit .sideBtn-sp .open-btn.active {
+    background: #535353;
+    border: 2px solid #252525;
+  }
   .edit .sideBtn-sp .open-btn img {
-    width: 35px;
-    height: 36px;
+    width: 24px;
+    height: 25px;
     margin-top: 5px;
   }
 }
@@ -748,10 +809,13 @@ header img {
 .edit .content .swiper {
   width: 50%;
   height: 100%;
+  min-width: 600px;
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper {
+    display: block;
     width: 80%;
+    min-width: auto;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide {
@@ -792,42 +856,6 @@ header img {
   top: 20px;
   left: 20px;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .dropZone {
-  top: 15%;
-  left: 50%;
-  border: 2px dashed #ccc;
-  font-size: 1rem;
-  width: 30%;
-  height: 60%;
-  position: absolute;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .dropZone img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.edit .croppie-modal {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #FFFFFF;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
-.edit .croppie-modal #croppie-container {
-  margin-bottom: 10px;
-}
-
-.thumbnail {
-  cursor: pointer;
-  width: calc(50% - 20px);
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -862,4 +890,137 @@ header img {
   background-image: url(../../../edit/images/Group\ 294.png);
 }
 
-/* 矢印を消す、画像に変更 *//*# sourceMappingURL=style.css.map */
+#dropArea {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+
+#dropArea2 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+
+#dropArea img, #dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+#dropArea .crop-btn, #dropArea2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+#dropArea .crop-btn:hover, #dropArea2 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+
+#dropArea .delete-btn, #dropArea2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+#dropArea .delete-btn:hover, #dropArea2 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+
+#dropArea .delete-btn.show,
+#dropArea2 .delete-btn.show,
+#dropArea .crop-btn.show,
+#dropArea2 .crop-btn.show {
+  display: flex; /* showクラスが付けられたときに表示 */
+}
+
+#dropArea.active, #dropArea2.active {
+  border-color: #f00; /* クリック時の枠の色 */
+}
+
+#dropArea.square, #dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+
+#dropArea.rectangle, #dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+
+#dropArea.mini, #dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+
+.croppie-modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.croppie-modal #croppie-container {
+  margin-bottom: 10px;
+}
+
+#customButton {
+  background-color: #4CAF50; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボタンの枠線を削除 */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  text-align: center; /* 文字を中央に配置 */
+  text-decoration: none; /* テキストの下線を削除 */
+  display: inline-block; /* インラインブロックとして表示 */
+  font-size: 16px; /* フォントサイズ */
+  margin: 4px 2px; /* 外側の余白 */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  border-radius: 4px; /* ボタンの角を丸める */
+}
+
+#customButton:hover {
+  background-color: #45a049; /* ホバー時の背景色 */
+}/*# sourceMappingURL=style.css.map */

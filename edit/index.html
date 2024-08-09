@@ -23,13 +23,15 @@
                     <div class="edit_drawer_container_item_upload">
                         <div id="uploadZone">
                             <div class="uploadZone_wrapper">
-                            <button id="fileButton" class="btn btn-F">画像を追加する</button>
-                            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+                                <form>
+                                    <input id="backInput" type="file" accept="image/*" multiple="multiple" onchange="loadImage(this);" style="display: none;">
+                                    <button type="button" id="frontButton" class="btn btn-F">画像を追加する</button>
+                                </form>
                             </div>
                         </div>
 
                         <div class="imageList-container">
-                        <div id="imageList"></div>
+                            <div id="imgPreviewField"></div>
                         </div>
 
                     </div>
@@ -70,31 +72,56 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="content3" class="edit_drawer_container_item">
+                    <div class="edit_drawer_container_item_frame">
+                        <h2>フレームの選択</h2>
+
+                        <!-- 先にサイドバー空のパターン -->
+                        <!-- <button id="rectangle-button">長方形</button>
+                        <button id="square-button">正方形</button> -->
+
+                        <!-- 先に変えたい枠から選ぶパターン -->
+                         <div class="frame-container">
+                         <div class="frame-container_vari">
+                             <button class="resizeButton" data-size="rectangle"><img src="/edit/images/Group 297.png" alt=""></button>
+                             <button class="resizeButton" data-size="mini"><img src="/edit/images/Group 299.png" alt=""></button>
+                             <button class="resizeButton" data-size="square"><img src="/edit/images/Group 296.png" alt=""></button>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <div class="sidebar" id="sidebar">
-            <!-- <button class="open-btn" onclick="showDrawerContent('content1')">ボタン1</button>
-            <button class="open-btn" onclick="showDrawerContent('content2')">ボタン2</button> -->
         </div>
 
         <div class="sideBtn">
-            <button class="open-btn" onclick="showDrawerContent('content1')">
+            <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
+                <img src="/edit/images/frame.png" alt="">
+            </button>  
+            <button date-content-id="content1" class="open-btn" onclick="showDrawerContent('content1')">
                 <img src="/edit/images/Mask group.png" alt="">
             </button>
-            <button class="open-btn" onclick="showDrawerContent('content2')">
+            <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
                 <img src="/edit/images/color.png" alt="">
-            </button>   
+            </button> 
         </div>
 
         <div class="sidebar-sp" id="sidebar-sp">
         </div>
 
         <div class="sideBtn-sp">
-            <button class="open-btn" onclick="showDrawerContent('content1')">
+            <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
+                <img src="/edit/images/frame.png" alt="">
+            </button>  
+            <button date-content-id="content1" class="open-btn" onclick="showDrawerContent('content1')">
                 <img src="/edit/images/Mask group.png" alt="">
             </button>
-            <button class="open-btn" onclick="showDrawerContent('content2')">
+            <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
                 <img src="/edit/images/color.png" alt="">
             </button>  
         </div>
@@ -108,28 +135,22 @@
                <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
                     <img src="/edit/images/design.png" alt="">
-                       <div class="swiper-slide_box_input">
-                  
-                       </div>
-                       <div class="dropZone" id="dropZone1"></div>
-                   </div>
+                    <div id="dropArea" class="empty"></div>
+                </div>
                </div>
    
                <!-- スライド2 -->
                <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
                     <img src="/edit/images/design.png" alt="">
-                    <!-- <div class="swiper-slide_box_input">
-               
-                    </div>
-                    <div class="dropZone" id="dropZone1">ここにドラッグ＆ドロップ</div> -->
+                    <div id="dropArea2" class="empty"></div>
                 </div>
                </div>
    
                <!-- スライド3 -->
                <div class="swiper-slide">
                    <div class="swiper-slide_box">
-                       <div class="dropZone" id="dropZone3">ここにドラッグ＆ドロップ</div>
+
                    </div>
                </div>
    
@@ -159,14 +180,15 @@
            <div class="swiper-button-next"></div>
        </div>
        </div>
-   
-             <!-- Croppieモーダル -->
-             <div id="croppieModal" class="croppie-modal">
-               <div id="croppie-container"></div>
-               <button id="crop-button">トリミング</button>
-               <button id="close-button">閉じる</button>
-           </div>
     </div>
+
+
+                 <!-- Croppieモーダル -->
+                 <div id="croppieModal" class="croppie-modal">
+                    <div id="croppie-container"></div>
+                    <button id="crop-button">トリミング</button>
+                    <button id="close-button">閉じる</button>
+                </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
