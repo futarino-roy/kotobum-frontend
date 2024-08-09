@@ -335,133 +335,136 @@ const showDrawerContent = (contentId) => {
 // 1の進化系
 let selectedImage = null;
 
-        function loadImage(input) {
-            const imgPreviewField = document.getElementById('imgPreviewField');
-            if (input.files) {
-                const files = Array.from(input.files);
-                files.forEach(file => {
-                    const reader = new FileReader();
+function loadImage(input) {
+    const imgPreviewField = document.getElementById('imgPreviewField');
+    if (input.files) {
+        const files = Array.from(input.files);
+        files.forEach(file => {
+            const reader = new FileReader();
 
-                    reader.onload = function(e) {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.style.left = '0px';
-                        img.style.top = '0px';
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.left = '0px';
+                img.style.top = '0px';
 
-                        imgPreviewField.appendChild(img);
-                        makeDraggable(img);
-                        makeSelectable(img);
-                    }
-
-                    reader.readAsDataURL(file);
-                });
+                imgPreviewField.appendChild(img);
+                makeDraggable(img);
+                makeSelectable(img);
             }
+
+            reader.readAsDataURL(file);
+        });
+    }
+}
+
+function makeDraggable(img) {
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+
+    function onMouseDown(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        initialX = parseFloat(img.style.left) || 0;
+        initialY = parseFloat(img.style.top) || 0;
+        img.style.cursor = 'grabbing';
+    }
+
+    function onMouseMove(e) {
+        if (isDragging) {
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            img.style.left = (initialX + dx) + 'px';
+            img.style.top = (initialY + dy) + 'px';
         }
+    }
 
-        function makeDraggable(img) {
-            let isDragging = false;
-            let startX, startY, initialX, initialY;
+    function onMouseUp() {
+        isDragging = false;
+        img.style.cursor = 'grab';
+    }
 
-            function onMouseDown(e) {
-                isDragging = true;
-                startX = e.clientX;
-                startY = e.clientY;
-                initialX = parseFloat(img.style.left) || 0;
-                initialY = parseFloat(img.style.top) || 0;
-                img.style.cursor = 'grabbing';
-            }
-
-            function onMouseMove(e) {
-                if (isDragging) {
-                    const dx = e.clientX - startX;
-                    const dy = e.clientY - startY;
-                    img.style.left = (initialX + dx) + 'px';
-                    img.style.top = (initialY + dy) + 'px';
-                }
-            }
-
-            function onMouseUp() {
-                isDragging = false;
-                img.style.cursor = 'grab';
-            }
-
-            function onTouchStart(e) {
-                if (e.touches.length === 1) {
-                    isDragging = true;
-                    startX = e.touches[0].clientX;
-                    startY = e.touches[0].clientY;
-                    initialX = parseFloat(img.style.left) || 0;
-                    initialY = parseFloat(img.style.top) || 0;
-                }
-            }
-
-            function onTouchMove(e) {
-                if (isDragging && e.touches.length === 1) {
-                    const dx = e.touches[0].clientX - startX;
-                    const dy = e.touches[0].clientY - startY;
-                    img.style.left = (initialX + dx) + 'px';
-                    img.style.top = (initialY + dy) + 'px';
-                }
-            }
-
-            function onTouchEnd() {
-                isDragging = false;
-            }
-
-            img.addEventListener('mousedown', onMouseDown);
-            img.addEventListener('mousemove', onMouseMove);
-            img.addEventListener('mouseup', onMouseUp);
-            img.addEventListener('mouseleave', onMouseUp);
-
-            img.addEventListener('touchstart', onTouchStart);
-            img.addEventListener('touchmove', onTouchMove);
-            img.addEventListener('touchend', onTouchEnd);
+    function onTouchStart(e) {
+        if (e.touches.length === 1) {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            initialX = parseFloat(img.style.left) || 0;
+            initialY = parseFloat(img.style.top) || 0;
         }
+    }
 
-        function makeSelectable(img) {
-            img.addEventListener('click', function() {
-                // 他の選択された画像を解除
-                const allImgs = document.querySelectorAll('#imgPreviewField img');
-                allImgs.forEach(image => {
-                    image.classList.remove('selected');
-                });
-                // 現在の画像を選択状態にする
-                img.classList.add('selected');
-                selectedImage = img; // 選択した画像を記録する
-            });
+    function onTouchMove(e) {
+        if (isDragging && e.touches.length === 1) {
+            const dx = e.touches[0].clientX - startX;
+            const dy = e.touches[0].clientY - startY;
+            img.style.left = (initialX + dx) + 'px';
+            img.style.top = (initialY + dy) + 'px';
         }
+    }
 
-        function addClickListenerToDropAreas() {
-            const dropArea = document.getElementById('dropArea');
-            const dropArea2 = document.getElementById('dropArea2');
-            
-            dropArea.addEventListener('click', function() {
-                if (selectedImage) {
-                    insertImageToDropArea(this);
-                }
-            });
+    function onTouchEnd() {
+        isDragging = false;
+    }
 
-            dropArea2.addEventListener('click', function() {
-                if (selectedImage) {
-                    insertImageToDropArea(this);
-                }
-            });
+    img.addEventListener('mousedown', onMouseDown);
+    img.addEventListener('mousemove', onMouseMove);
+    img.addEventListener('mouseup', onMouseUp);
+    img.addEventListener('mouseleave', onMouseUp);
+
+    img.addEventListener('touchstart', onTouchStart);
+    img.addEventListener('touchmove', onTouchMove);
+    img.addEventListener('touchend', onTouchEnd);
+}
+
+function makeSelectable(img) {
+    function onSelect() {
+        // 他の選択された画像を解除
+        const allImgs = document.querySelectorAll('#imgPreviewField img');
+        allImgs.forEach(image => {
+            image.classList.remove('selected');
+        });
+        // 現在の画像を選択状態にする
+        img.classList.add('selected');
+        selectedImage = img; // 選択した画像を記録する
+    }
+
+    img.addEventListener('click', onSelect);
+    img.addEventListener('touchstart', onSelect); // タッチイベントでも選択
+}
+
+function addClickListenerToDropAreas() {
+    const dropArea = document.getElementById('dropArea');
+    const dropArea2 = document.getElementById('dropArea2');
+    
+    function handleDropAreaClick(e) {
+        if (selectedImage) {
+            insertImageToDropArea(this);
         }
+    }
 
-        function insertImageToDropArea(dropArea) {
-            const newImage = document.createElement('img');
-            newImage.src = selectedImage.src;
-            newImage.style.width = '100%';
-            newImage.style.height = '100%';
-            dropArea.innerHTML = ''; // 既存の内容をクリア
-            dropArea.appendChild(newImage);
-            // 画像を選択状態から解除
-            selectedImage.classList.remove('selected');
-            selectedImage = null;
-        }
+    dropArea.addEventListener('click', handleDropAreaClick);
+    dropArea.addEventListener('touchstart', handleDropAreaClick); // タッチイベントでの処理も追加
 
-        // ドロップエリアにクリックイベントリスナーを追加
-        addClickListenerToDropAreas();
+    dropArea2.addEventListener('click', handleDropAreaClick);
+    dropArea2.addEventListener('touchstart', handleDropAreaClick); // タッチイベントでの処理も追加
+}
+
+function insertImageToDropArea(dropArea) {
+    const newImage = document.createElement('img');
+    newImage.src = selectedImage.src;
+    newImage.style.width = '100%';
+    newImage.style.height = '100%';
+    dropArea.innerHTML = ''; // 既存の内容をクリア
+    dropArea.appendChild(newImage);
+    // 画像を選択状態から解除
+    selectedImage.classList.remove('selected');
+    selectedImage = null;
+}
+
+// ドロップエリアにクリックイベントリスナーを追加
+addClickListenerToDropAreas();
 
 
 
