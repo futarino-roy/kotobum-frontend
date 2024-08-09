@@ -518,7 +518,6 @@ header img {
 }
 .edit_drawer_container_item_upload .imageList-container #imgPreviewField {
   max-width: 350px;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -528,7 +527,6 @@ header img {
 .edit_drawer_container_item_upload .imageList-container #imgPreviewField img {
   width: calc(50% - 10px);
   cursor: grab;
-  position: absolute;
 }
 .edit_drawer_container_item.active {
   display: block;

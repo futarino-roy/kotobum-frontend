@@ -258,8 +258,10 @@ function loadImage(input) {
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
+                img.style.position = 'absolute'; // ドラッグ可能にするために position を absolute に設定
                 img.style.left = '0px';
                 img.style.top = '0px';
+                img.draggable = true; // ドラッグ可能に設定
 
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
@@ -309,7 +311,7 @@ function makeDraggable(img) {
 
     function onTouchMove(e) {
         if (isDragging && e.touches.length === 1) {
-            e.preventDefault(); // デフォルトのスクロールなどを防ぐ
+            e.preventDefault();
             const dx = e.touches[0].clientX - startX;
             const dy = e.touches[0].clientY - startY;
             img.style.left = (initialX + dx) + 'px';
@@ -324,12 +326,40 @@ function makeDraggable(img) {
     img.addEventListener('mousedown', onMouseDown);
     img.addEventListener('mousemove', onMouseMove);
     img.addEventListener('mouseup', onMouseUp);
-    img.addEventListener('mouseleave', onMouseUp); // ドラッグ中にマウスが要素外に出た場合も対応
+    img.addEventListener('mouseleave', onMouseUp);
 
     img.addEventListener('touchstart', onTouchStart);
     img.addEventListener('touchmove', onTouchMove);
     img.addEventListener('touchend', onTouchEnd);
 }
+
+// ドロップエリアの設定
+function setupDropAreas() {
+    const dropAreas = document.querySelectorAll('#dropArea, #dropArea２');
+    
+    dropAreas.forEach(dropArea => {
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault(); // デフォルトの動作を防ぐ
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault(); // デフォルトの動作を防ぐ
+
+            const img = document.querySelector('img'); // 最初の画像を取得（実際のケースに応じて改良が必要）
+            if (img) {
+                const rect = dropArea.getBoundingClientRect();
+                img.style.left = (e.clientX - rect.left) + 'px';
+                img.style.top = (e.clientY - rect.top) + 'px';
+                img.style.position = 'absolute';
+                dropArea.appendChild(img);
+            }
+        });
+    });
+}
+
+setupDropAreas();
+
+
 
 
 
