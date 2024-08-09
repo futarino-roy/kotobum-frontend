@@ -27,81 +27,9 @@ const swiper = new Swiper(".swiper", {
 
 
  
-// let currentContentId = null;
-
-// // new
-// let activeButton = null;
-
-// const toggleDrawer = () => {
-//     const drawer = document.getElementById('drawer');
-//     const content = document.getElementById('content');
-//     const sidebar = document.getElementById('sidebar');
-
-//     drawer.classList.toggle('open');
-//     sidebar.classList.toggle('open');
-//     content.classList.toggle('open');
-
-//     if (!drawer.classList.contains('open')) {
-//         currentContentId = null; // ドロワーが閉じたときにcurrentContentIdをリセット
-
-//         // new
-//         if (activeButton) {
-//             activeButton.classList.remove('active'); // 選択されたボタンからactiveクラスを削除
-//             activeButton = null;
-//         }
-//     }
-
-// };
-
-// const showDrawerContent = (contentId) => {
-//     const drawerContent = document.getElementById('drawer-content');
-//     const contentElement = document.getElementById(contentId);
-
-//     // new
-//     const clickedButton = document.querySelector(`[date-content-id="${contentId}"]`);
-
-//     if (!contentElement) {
-//         console.error(`Content element with ID '${contentId}' not found.`);
-//         return;
-//     }
-
-//     if (contentId === currentContentId && drawer.classList.contains('open')) {
-//         // 同じボタンをクリックしてドロワーが開いている場合、閉じる
-//         toggleDrawer();
-//         return;
-//     }
-
-//     // 全てのコンテンツを非表示にする
-//     const allContentItems = document.querySelectorAll('.edit_drawer_container_item');
-//     allContentItems.forEach(item => {
-//         item.style.display = 'none';
-//     });
-
-//     // 選択されたコンテンツを表示する
-//     contentElement.style.display = 'block';
-
-
-//     // ボタンのスタイルを更新 new
-//     if (activeButton) {
-//         activeButton.classList.remove('active'); // 以前のボタンからactiveクラスを削除
-//     }
-//     if (clickedButton) {
-//         clickedButton.classList.add('active'); // クリックされたボタンにactiveクラスを追加
-//         activeButton = clickedButton; // 現在のアクティブボタンを更新
-//     }
-
-
-
-//     currentContentId = contentId;
-
-//     if (!drawer.classList.contains('open')) {
-//         toggleDrawer(); // ドロワーが閉じている場合は開く
-//     }
-// };
-
- 
-
 let currentContentId = null;
+
+// new
 let activeButton = null;
 
 const toggleDrawer = () => {
@@ -116,18 +44,21 @@ const toggleDrawer = () => {
     if (!drawer.classList.contains('open')) {
         currentContentId = null; // ドロワーが閉じたときにcurrentContentIdをリセット
 
+        // new
         if (activeButton) {
             activeButton.classList.remove('active'); // 選択されたボタンからactiveクラスを削除
             activeButton = null;
         }
     }
+
 };
 
 const showDrawerContent = (contentId) => {
-    const drawer = document.getElementById('drawer');
     const drawerContent = document.getElementById('drawer-content');
     const contentElement = document.getElementById(contentId);
-    const clickedButton = document.querySelector(`[data-content-id="${contentId}"]`); // 修正: `date-content-id` を `data-content-id` に変更
+
+    // new
+    const clickedButton = document.querySelector(`[date-content-id="${contentId}"]`);
 
     if (!contentElement) {
         console.error(`Content element with ID '${contentId}' not found.`);
@@ -149,7 +80,8 @@ const showDrawerContent = (contentId) => {
     // 選択されたコンテンツを表示する
     contentElement.style.display = 'block';
 
-    // ボタンのスタイルを更新
+
+    // ボタンのスタイルを更新 new
     if (activeButton) {
         activeButton.classList.remove('active'); // 以前のボタンからactiveクラスを削除
     }
@@ -158,6 +90,8 @@ const showDrawerContent = (contentId) => {
         activeButton = clickedButton; // 現在のアクティブボタンを更新
     }
 
+
+
     currentContentId = contentId;
 
     if (!drawer.classList.contains('open')) {
@@ -165,13 +99,7 @@ const showDrawerContent = (contentId) => {
     }
 };
 
-// ドロワー内のクリックイベントを処理する場合は、以下のように記述します
-document.getElementById('drawer').addEventListener('click', (event) => {
-    if (event.target === event.currentTarget) {
-        // ドロワー自身がクリックされた場合のみ閉じる
-        toggleDrawer();
-    }
-});
+ 
 
 
 
