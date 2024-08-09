@@ -4,7 +4,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     const id = document.querySelector('.id input').value;
     const password = document.querySelector('.pass input').value;
 
-    fetch('https://develop-back.kotobum.com/api/resister', {
+    fetch('https://develop-back.kotobum.com/api/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
