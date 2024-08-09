@@ -10,7 +10,8 @@ document.getElementById('signup-form').addEventListener('submit', function(event
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: id,
+            name: text,
+            email: text,
             password: password
         })
     })
