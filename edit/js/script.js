@@ -140,10 +140,8 @@ const showDrawerContent = (contentId) => {
 // }
 
 
-// アップロード タッチ
-let key = 0;
-let draggingElement = null;
-let longPressTimeout;
+// 画像のアップロード タッチ
+let key = 0; // 画像のIDを管理するカウンタ
 
 function loadImage(obj) {
     for (let i = 0; i < obj.files.length; i++) {
@@ -151,65 +149,78 @@ function loadImage(obj) {
         fileReader.onload = function (e) {
             let field = document.getElementById("imgPreviewField");
             let figure = document.createElement("figure");
+            let rmBtn = document.createElement("button");
             let img = new Image();
+            
             img.src = e.target.result; // 画像のプレビュー用データURL
+            rmBtn.className = "remove-btn";
+            rmBtn.textContent = "削除";
+            rmBtn.onclick = function () {
+                document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
+            };
             figure.setAttribute("id", "img-" + key);
             figure.appendChild(img);
-
-            // ドラッグ開始のためのイベントリスナー
-            figure.addEventListener('dragstart', function (event) {
-                event.dataTransfer.setData('text/plain', key); // 画像IDをドラッグデータとして設定
-                draggingElement = figure;
-            });
-
-            // スマホでの長押しドラッグ
-            figure.addEventListener('touchstart', function (event) {
-                let touch = event.touches[0];
-                figure.classList.add('dragging'); // ドラッグ中のスタイルを追加
-                longPressTimeout = setTimeout(() => {
-                    figure.dataset.touchStartX = touch.clientX;
-                    figure.dataset.touchStartY = touch.clientY;
-                    figure.addEventListener('touchmove', onTouchMove);
-                }, 500); // 長押しを500msに設定
-            });
-
-            figure.addEventListener('touchend', function () {
-                clearTimeout(longPressTimeout);
-                figure.classList.remove('dragging'); // ドラッグが終了したときのスタイルを削除
-                figure.removeEventListener('touchmove', onTouchMove);
-            });
-
-            function onTouchMove(event) {
-                let touch = event.touches[0];
-                let offsetX = touch.clientX - figure.dataset.touchStartX;
-                let offsetY = touch.clientY - figure.dataset.touchStartY;
-                figure.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-            }
-
+            figure.appendChild(rmBtn);
             field.appendChild(figure);
             key++; // 次の画像のためにIDをインクリメント
+            
+            // ドラッグのためのイベントリスナーを追加
+            addDragAndDropHandlers(img);
         };
         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
     }
 }
 
-// ドラッグオーバーイベントを処理することで、ドロップを許可
-document.getElementById('imgPreviewField').addEventListener('dragover', function (event) {
-    event.preventDefault();
-});
+function addDragAndDropHandlers(img) {
+    let startX, startY, initialX, initialY;
 
-// ドロップイベントで画像を移動させる
-document.getElementById('imgPreviewField').addEventListener('drop', function (event) {
-    event.preventDefault();
-    let key = event.dataTransfer.getData('text/plain');
-    let figure = document.getElementById('img-' + key);
-    let offsetX = event.clientX - field.getBoundingClientRect().left;
-    let offsetY = event.clientY - field.getBoundingClientRect().top;
-    figure.style.position = 'absolute';
-    figure.style.left = `${offsetX}px`;
-    figure.style.top = `${offsetY}px`;
-    draggingElement = null; // ドラッグ要素をリセット
-});
+    img.addEventListener('mousedown', function(e) {
+        startX = e.clientX;
+        startY = e.clientY;
+        initialX = img.parentElement.offsetLeft;
+        initialY = img.parentElement.offsetTop;
+
+        function onMouseMove(e) {
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            img.parentElement.style.left = (initialX + dx) + 'px';
+            img.parentElement.style.top = (initialY + dy) + 'px';
+        }
+
+        function onMouseUp() {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
+
+    img.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        initialX = img.parentElement.offsetLeft;
+        initialY = img.parentElement.offsetTop;
+
+        function onTouchMove(e) {
+            const dx = e.touches[0].clientX - startX;
+            const dy = e.touches[0].clientY - startY;
+            img.parentElement.style.left = (initialX + dx) + 'px';
+            img.parentElement.style.top = (initialY + dy) + 'px';
+        }
+
+        function onTouchEnd() {
+            img.removeEventListener('touchmove', onTouchMove);
+            img.removeEventListener('touchend', onTouchEnd);
+        }
+
+        img.addEventListener('touchmove', onTouchMove);
+        img.addEventListener('touchend', onTouchEnd);
+    });
+}
+
+
+
 
 
 
