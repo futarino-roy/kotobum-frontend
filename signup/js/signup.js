@@ -27,7 +27,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     .then(data => {
         console.log('成功:', data);
         // 成功すると次のページにリダイレクト
-        window.location.href = '次のページのURL';  // ここにリダイレクト先のURLを指定
+        window.location.href = '/login';  // ここにリダイレクト先のURLを指定
     })
     .catch(error => {
         console.error('失敗:', error);

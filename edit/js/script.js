@@ -248,31 +248,10 @@ const showDrawerContent = (contentId) => {
 
 
 
-function loadImage(input) {
-    const imgPreviewField = document.getElementById('imgPreviewField');
-    if (input.files) {
-        const files = Array.from(input.files);
-        files.forEach(file => {
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.left = '0px';
-                img.style.top = '0px';
-
-                imgPreviewField.appendChild(img);
-                makeDraggable(img);
-            }
-
-            reader.readAsDataURL(file);
-        });
-    }
-}
-
 function makeDraggable(img) {
     let isDragging = false;
     let startX, startY, initialX, initialY;
+    let ghost;
 
     function onMouseDown(e) {
         isDragging = true;
@@ -280,6 +259,15 @@ function makeDraggable(img) {
         startY = e.clientY;
         initialX = parseFloat(img.style.left) || 0;
         initialY = parseFloat(img.style.top) || 0;
+
+        // Create and position the ghost image
+        ghost = img.cloneNode();
+        ghost.style.position = 'absolute';
+        ghost.style.left = img.style.left;
+        ghost.style.top = img.style.top;
+        ghost.style.opacity = '0.5'; // 半透明
+        img.parentElement.appendChild(ghost);
+
         img.style.cursor = 'grabbing';
     }
 
@@ -289,12 +277,22 @@ function makeDraggable(img) {
             const dy = e.clientY - startY;
             img.style.left = (initialX + dx) + 'px';
             img.style.top = (initialY + dy) + 'px';
+
+            // Move the ghost image
+            ghost.style.left = (initialX + dx) + 'px';
+            ghost.style.top = (initialY + dy) + 'px';
         }
     }
 
     function onMouseUp() {
         isDragging = false;
         img.style.cursor = 'grab';
+
+        // Remove the ghost image
+        if (ghost) {
+            ghost.remove();
+            ghost = null;
+        }
     }
 
     function onTouchStart(e) {
@@ -304,6 +302,14 @@ function makeDraggable(img) {
             startY = e.touches[0].clientY;
             initialX = parseFloat(img.style.left) || 0;
             initialY = parseFloat(img.style.top) || 0;
+
+            // Create and position the ghost image
+            ghost = img.cloneNode();
+            ghost.style.position = 'absolute';
+            ghost.style.left = img.style.left;
+            ghost.style.top = img.style.top;
+            ghost.style.opacity = '0.5'; // 半透明
+            img.parentElement.appendChild(ghost);
         }
     }
 
@@ -313,22 +319,33 @@ function makeDraggable(img) {
             const dy = e.touches[0].clientY - startY;
             img.style.left = (initialX + dx) + 'px';
             img.style.top = (initialY + dy) + 'px';
+
+            // Move the ghost image
+            ghost.style.left = (initialX + dx) + 'px';
+            ghost.style.top = (initialY + dy) + 'px';
         }
     }
 
     function onTouchEnd() {
         isDragging = false;
+
+        // Remove the ghost image
+        if (ghost) {
+            ghost.remove();
+            ghost = null;
+        }
     }
 
     img.addEventListener('mousedown', onMouseDown);
     img.addEventListener('mousemove', onMouseMove);
     img.addEventListener('mouseup', onMouseUp);
-    img.addEventListener('mouseleave', onMouseUp); // ドラッグ中にマウスが要素外に出た場合も対応
+    img.addEventListener('mouseleave', onMouseUp);
 
     img.addEventListener('touchstart', onTouchStart);
     img.addEventListener('touchmove', onTouchMove);
     img.addEventListener('touchend', onTouchEnd);
 }
+
 
 
 
