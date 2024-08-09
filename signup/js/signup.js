@@ -1,9 +1,9 @@
 document.getElementById('signup-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const name = document.querySelector('.id input').value;
-    const email = document.querySelector('.id input').value;
-    const password = document.querySelector('.pass input').value;
+    const name = document.querySelector('.name').value;
+    const email = document.querySelector('.email').value;
+    const password = document.querySelector('.pass').value;
 
     fetch('https://develop-back.kotobum.com/api/register', {
         method: 'POST',
