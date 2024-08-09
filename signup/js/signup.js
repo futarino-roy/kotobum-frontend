@@ -1,7 +1,8 @@
 document.getElementById('signup-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const id = document.querySelector('.id input').value;
+    const name = document.querySelector('.id input').value;
+    const email = document.querySelector('.id input').value;
     const password = document.querySelector('.pass input').value;
 
     fetch('https://develop-back.kotobum.com/api/register', {
