@@ -258,10 +258,9 @@ function loadImage(input) {
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                img.style.position = 'absolute'; // ドラッグ可能にするために position を absolute に設定
                 img.style.left = '0px';
                 img.style.top = '0px';
-                img.draggable = true; // ドラッグ可能に設定
+                img.draggable = true;
 
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
@@ -283,6 +282,7 @@ function makeDraggable(img) {
         initialX = parseFloat(img.style.left) || 0;
         initialY = parseFloat(img.style.top) || 0;
         img.style.cursor = 'grabbing';
+        img.style.zIndex = 1000; // ドラッグ中は他の要素の上に表示
     }
 
     function onMouseMove(e) {
@@ -297,6 +297,7 @@ function makeDraggable(img) {
     function onMouseUp() {
         isDragging = false;
         img.style.cursor = 'grab';
+        img.style.zIndex = ''; // zIndexをリセット
     }
 
     function onTouchStart(e) {
@@ -336,7 +337,7 @@ function makeDraggable(img) {
 // ドロップエリアの設定
 function setupDropAreas() {
     const dropAreas = document.querySelectorAll('#dropArea, #dropArea２');
-    
+
     dropAreas.forEach(dropArea => {
         dropArea.addEventListener('dragover', (e) => {
             e.preventDefault(); // デフォルトの動作を防ぐ
@@ -345,12 +346,16 @@ function setupDropAreas() {
         dropArea.addEventListener('drop', (e) => {
             e.preventDefault(); // デフォルトの動作を防ぐ
 
-            const img = document.querySelector('img'); // 最初の画像を取得（実際のケースに応じて改良が必要）
+            const img = document.querySelector('img'); // 最初の画像を取得（複数画像対応の場合は調整が必要）
             if (img) {
                 const rect = dropArea.getBoundingClientRect();
-                img.style.left = (e.clientX - rect.left) + 'px';
-                img.style.top = (e.clientY - rect.top) + 'px';
+                const imgRect = img.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const offsetY = e.clientY - rect.top;
+
                 img.style.position = 'absolute';
+                img.style.left = (offsetX - (imgRect.width / 2)) + 'px'; // 画像の中央をドロップ位置に合わせる
+                img.style.top = (offsetY - (imgRect.height / 2)) + 'px';
                 dropArea.appendChild(img);
             }
         });
