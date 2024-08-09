@@ -528,6 +528,9 @@ header img {
   width: calc(50% - 10px);
   cursor: grab;
 }
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
+  border: 3px solid blue;
+}
 .edit_drawer_container_item.active {
   display: block;
 }

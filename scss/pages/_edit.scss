@@ -121,6 +121,10 @@
                             img{
                                 width: calc(50% - 10px);
                                 cursor: grab;
+
+                                &.selected{
+                                    border: 3px solid blue;
+                                }
                                 
                             }
 
