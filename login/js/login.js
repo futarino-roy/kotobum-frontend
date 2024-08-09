@@ -1,16 +1,16 @@
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const id = document.querySelector('.id input').value;
-    const password = document.querySelector('.pass input').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
 
-    fetch('', { // ログイン用のAPIエンドポイント
+    fetch('https://develop-back.kotobum.com/api/login', { // ログイン用のAPIエンドポイント
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: id,
+            email: email,
             password: password
         })
     })
