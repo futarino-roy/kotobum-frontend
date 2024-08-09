@@ -659,35 +659,68 @@ function changeColor(color) {
 
 
 // 先に変えたい枠から選ぶパターン
+// document.addEventListener('DOMContentLoaded', () => {
+//     const dropArea1 = document.getElementById('dropArea');
+//     const dropArea2 = document.getElementById('dropArea2');
+//     const resizeButtons = document.querySelectorAll('.resizeButton');
+//     let activeDropArea = null;
+
+//     // ドロップエリアがクリックされたときの処理
+//     dropArea1.addEventListener('click', () => {
+//         dropArea1.classList.add('active');
+//         dropArea2.classList.remove('active');
+//         activeDropArea = dropArea1;
+//     });
+    
+//     dropArea2.addEventListener('click', () => {
+//         dropArea1.classList.remove('active');
+//         dropArea2.classList.add('active');
+//         activeDropArea = dropArea2;
+//     });
+
+//     // サイズ変更ボタンがクリックされたときの処理
+//     resizeButtons.forEach(button => {
+//         button.addEventListener('click', () => {
+//             if (activeDropArea) {
+//                 // サイズをすべてリセット
+//                 activeDropArea.classList.remove('square', 'rectangle', 'mini');
+//                 // ボタンの data-size 属性に基づいてサイズを変更
+//                 const size = button.getAttribute('data-size');
+//                 activeDropArea.classList.add(size);
+//             }
+//         });
+//     });
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
     const dropArea1 = document.getElementById('dropArea');
     const dropArea2 = document.getElementById('dropArea2');
     const resizeButtons = document.querySelectorAll('.resizeButton');
     let activeDropArea = null;
 
-    // ドロップエリアがクリックされたときの処理
-    dropArea1.addEventListener('click', () => {
-        dropArea1.classList.add('active');
-        dropArea2.classList.remove('active');
-        activeDropArea = dropArea1;
-    });
-    
-    dropArea2.addEventListener('click', () => {
+    // ドロップエリアがクリックまたはタッチされたときの処理
+    const handleDropAreaInteraction = (dropArea) => {
         dropArea1.classList.remove('active');
-        dropArea2.classList.add('active');
-        activeDropArea = dropArea2;
-    });
+        dropArea2.classList.remove('active');
+        dropArea.classList.add('active');
+        activeDropArea = dropArea;
+    };
 
-    // サイズ変更ボタンがクリックされたときの処理
+    dropArea1.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea1));
+    dropArea2.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea2));
+
+    // サイズ変更ボタンがクリックまたはタッチされたときの処理
+    const handleResizeButtonInteraction = (button) => {
+        if (activeDropArea) {
+            // サイズをすべてリセット
+            activeDropArea.classList.remove('square', 'rectangle', 'mini');
+            // ボタンの data-size 属性に基づいてサイズを変更
+            const size = button.getAttribute('data-size');
+            activeDropArea.classList.add(size);
+        }
+    };
+
     resizeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if (activeDropArea) {
-                // サイズをすべてリセット
-                activeDropArea.classList.remove('square', 'rectangle', 'mini');
-                // ボタンの data-size 属性に基づいてサイズを変更
-                const size = button.getAttribute('data-size');
-                activeDropArea.classList.add(size);
-            }
-        });
+        button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
     });
 });
