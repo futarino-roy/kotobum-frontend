@@ -110,34 +110,36 @@ const showDrawerContent = (contentId) => {
 
  
 
-// // グローバル変数
-// let key = 0; // 画像のIDを管理するカウンタ
+// グローバル変数
+let key = 0; // 画像のIDを管理するカウンタ
 
-// // // 画像のアップロード処理
-// function loadImage(obj) {
-//     for (let i = 0; i < obj.files.length; i++) {
-//         let fileReader = new FileReader();
-//         fileReader.onload = function (e) {
-//             let field = document.getElementById("imgPreviewField");
-//             let figure = document.createElement("figure");
-//             let rmBtn = document.createElement("input");
-//             let img = new Image();
-//             img.src = e.target.result; // 画像のプレビュー用データURL
-//             rmBtn.type = "button";
-//             rmBtn.name = key; // 画像のID
-//             // rmBtn.value = "削除";
-//             rmBtn.onclick = function () {
-//                 document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
-//             };
-//             figure.setAttribute("id", "img-" + key);
-//             figure.appendChild(img);
-//             // figure.appendChild(rmBtn);
-//             field.appendChild(figure);
-//             key++; // 次の画像のためにIDをインクリメント
-//         };
-//         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
-//     }
-// }
+// // 画像のアップロード処理
+function loadImage(obj) {
+    for (let i = 0; i < obj.files.length; i++) {
+        let fileReader = new FileReader();
+        fileReader.onload = function (e) {
+            let field = document.getElementById("imgPreviewField");
+            let figure = document.createElement("figure");
+            let rmBtn = document.createElement("input");
+            let img = new Image();
+            img.src = e.target.result; // 画像のプレビュー用データURL
+            rmBtn.type = "button";
+            rmBtn.name = key; // 画像のID
+            // rmBtn.value = "削除";
+            rmBtn.onclick = function () {
+                document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
+            };
+            figure.setAttribute("id", "img-" + key);
+            figure.appendChild(img);
+            // figure.appendChild(rmBtn);
+            field.appendChild(figure);
+            key++; // 次の画像のためにIDをインクリメント
+        };
+        fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
+    }
+}
+
+
 
 
 // // 画像のアップロード タッチ
@@ -222,74 +224,7 @@ const showDrawerContent = (contentId) => {
 
 
 
-let key = 0; // 画像のIDを管理するカウンタ
 
-// 画像のアップロード処理
-function loadImage(obj) {
-    for (let i = 0; i < obj.files.length; i++) {
-        let fileReader = new FileReader();
-        fileReader.onload = function (e) {
-            let field = document.getElementById("imgPreviewField");
-            let figure = document.createElement("figure");
-            let img = new Image();
-            img.src = e.target.result; // 画像のプレビュー用データURL
-            figure.setAttribute("id", "img-" + key);
-            figure.appendChild(img);
-            field.appendChild(figure);
-            key++; // 次の画像のためにIDをインクリメント
-
-            // ドラッグイベントの設定
-            makeDraggable(figure);
-        };
-        fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
-    }
-}
-
-// 画像をドラッグ可能にする関数
-function makeDraggable(element) {
-    let offsetX, offsetY, isDragging = false;
-
-    element.addEventListener('mousedown', (e) => {
-        offsetX = e.clientX - element.getBoundingClientRect().left;
-        offsetY = e.clientY - element.getBoundingClientRect().top;
-        isDragging = true;
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            let x = e.clientX - offsetX;
-            let y = e.clientY - offsetY;
-            element.style.left = `${x}px`;
-            element.style.top = `${y}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-
-    // スマートフォン対応
-    element.addEventListener('touchstart', (e) => {
-        let touch = e.touches[0];
-        offsetX = touch.clientX - element.getBoundingClientRect().left;
-        offsetY = touch.clientY - element.getBoundingClientRect().top;
-        isDragging = true;
-    });
-
-    element.addEventListener('touchmove', (e) => {
-        if (isDragging) {
-            let touch = e.touches[0];
-            let x = touch.clientX - offsetX;
-            let y = touch.clientY - offsetY;
-            element.style.left = `${x}px`;
-            element.style.top = `${y}px`;
-        }
-    });
-
-    element.addEventListener('touchend', () => {
-        isDragging = false;
-    });
-}
 
 
 
