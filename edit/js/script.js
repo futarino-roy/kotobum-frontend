@@ -258,10 +258,8 @@ function loadImage(input) {
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                img.style.position = 'absolute'; // 画像が移動するために絶対位置に設定
                 img.style.left = '0px';
                 img.style.top = '0px';
-                img.style.cursor = 'grab'; // デフォルトのカーソルを設定
 
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
@@ -331,7 +329,6 @@ function makeDraggable(img) {
     img.addEventListener('touchmove', onTouchMove);
     img.addEventListener('touchend', onTouchEnd);
 }
-
 
 
 
