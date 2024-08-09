@@ -511,6 +511,11 @@ header img {
   overflow: auto;
   height: calc(100vh - 200px);
 }
+@media screen and (max-width: 900px) {
+  .edit_drawer_container_item_upload .imageList-container {
+    height: calc(100vh - 500px);
+  }
+}
 .edit_drawer_container_item_upload .imageList-container #imgPreviewField {
   max-width: 350px;
   display: flex;

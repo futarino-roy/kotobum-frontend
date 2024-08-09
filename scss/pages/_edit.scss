@@ -101,6 +101,10 @@
                         overflow: auto;
                         height: calc(100vh - 200px);
 
+                        @include mq('tab-edit'){
+                            height: calc(100vh - 500px);
+                            }
+
 
                         #imgPreviewField{
                             // 多分いりますね
