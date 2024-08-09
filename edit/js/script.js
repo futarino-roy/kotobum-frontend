@@ -110,7 +110,7 @@ const showDrawerContent = (contentId) => {
 
  
 
-// グローバル変数
+// // グローバル変数
 // let key = 0; // 画像のIDを管理するカウンタ
 
 // // // 画像のアップロード処理
@@ -140,84 +140,169 @@ const showDrawerContent = (contentId) => {
 // }
 
 
-// 画像のアップロード タッチ
+// // 画像のアップロード タッチ
+// let key = 0; // 画像のIDを管理するカウンタ
+
+// function loadImage(obj) {
+//     for (let i = 0; i < obj.files.length; i++) {
+//         let fileReader = new FileReader();
+//         fileReader.onload = function (e) {
+//             let field = document.getElementById("imgPreviewField");
+//             let figure = document.createElement("figure");
+//             let rmBtn = document.createElement("button");
+//             let img = new Image();
+            
+//             img.src = e.target.result; // 画像のプレビュー用データURL
+//             rmBtn.className = "remove-btn";
+//             rmBtn.textContent = "削除";
+//             rmBtn.onclick = function () {
+//                 document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
+//             };
+//             figure.setAttribute("id", "img-" + key);
+//             figure.appendChild(img);
+//             figure.appendChild(rmBtn);
+//             field.appendChild(figure);
+//             key++; // 次の画像のためにIDをインクリメント
+            
+//             // ドラッグのためのイベントリスナーを追加
+//             addDragAndDropHandlers(img);
+//         };
+//         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
+//     }
+// }
+
+// function addDragAndDropHandlers(img) {
+//     let startX, startY, initialX, initialY;
+
+//     img.addEventListener('mousedown', function(e) {
+//         startX = e.clientX;
+//         startY = e.clientY;
+//         initialX = img.parentElement.offsetLeft;
+//         initialY = img.parentElement.offsetTop;
+
+//         function onMouseMove(e) {
+//             const dx = e.clientX - startX;
+//             const dy = e.clientY - startY;
+//             img.parentElement.style.left = (initialX + dx) + 'px';
+//             img.parentElement.style.top = (initialY + dy) + 'px';
+//         }
+
+//         function onMouseUp() {
+//             document.removeEventListener('mousemove', onMouseMove);
+//             document.removeEventListener('mouseup', onMouseUp);
+//         }
+
+//         document.addEventListener('mousemove', onMouseMove);
+//         document.addEventListener('mouseup', onMouseUp);
+//     });
+
+//     img.addEventListener('touchstart', function(e) {
+//         startX = e.touches[0].clientX;
+//         startY = e.touches[0].clientY;
+//         initialX = img.parentElement.offsetLeft;
+//         initialY = img.parentElement.offsetTop;
+
+//         function onTouchMove(e) {
+//             const dx = e.touches[0].clientX - startX;
+//             const dy = e.touches[0].clientY - startY;
+//             img.parentElement.style.left = (initialX + dx) + 'px';
+//             img.parentElement.style.top = (initialY + dy) + 'px';
+//         }
+
+//         function onTouchEnd() {
+//             img.removeEventListener('touchmove', onTouchMove);
+//             img.removeEventListener('touchend', onTouchEnd);
+//         }
+
+//         img.addEventListener('touchmove', onTouchMove);
+//         img.addEventListener('touchend', onTouchEnd);
+//     });
+// }
+
+
+
+
 let key = 0; // 画像のIDを管理するカウンタ
 
+// 画像のアップロード処理
 function loadImage(obj) {
     for (let i = 0; i < obj.files.length; i++) {
         let fileReader = new FileReader();
         fileReader.onload = function (e) {
             let field = document.getElementById("imgPreviewField");
             let figure = document.createElement("figure");
-            let rmBtn = document.createElement("button");
             let img = new Image();
-            
             img.src = e.target.result; // 画像のプレビュー用データURL
-            rmBtn.className = "remove-btn";
-            rmBtn.textContent = "削除";
-            rmBtn.onclick = function () {
-                document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
-            };
             figure.setAttribute("id", "img-" + key);
             figure.appendChild(img);
-            figure.appendChild(rmBtn);
             field.appendChild(figure);
             key++; // 次の画像のためにIDをインクリメント
-            
-            // ドラッグのためのイベントリスナーを追加
-            addDragAndDropHandlers(img);
+
+            // ドラッグイベントの設定
+            makeDraggable(figure);
         };
         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
     }
 }
 
-function addDragAndDropHandlers(img) {
-    let startX, startY, initialX, initialY;
+// 画像をドラッグ可能にする関数
+function makeDraggable(element) {
+    let offsetX, offsetY, isDragging = false;
 
-    img.addEventListener('mousedown', function(e) {
-        startX = e.clientX;
-        startY = e.clientY;
-        initialX = img.parentElement.offsetLeft;
-        initialY = img.parentElement.offsetTop;
-
-        function onMouseMove(e) {
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-            img.parentElement.style.left = (initialX + dx) + 'px';
-            img.parentElement.style.top = (initialY + dy) + 'px';
-        }
-
-        function onMouseUp() {
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
+    element.addEventListener('mousedown', (e) => {
+        offsetX = e.clientX - element.getBoundingClientRect().left;
+        offsetY = e.clientY - element.getBoundingClientRect().top;
+        isDragging = true;
     });
 
-    img.addEventListener('touchstart', function(e) {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-        initialX = img.parentElement.offsetLeft;
-        initialY = img.parentElement.offsetTop;
-
-        function onTouchMove(e) {
-            const dx = e.touches[0].clientX - startX;
-            const dy = e.touches[0].clientY - startY;
-            img.parentElement.style.left = (initialX + dx) + 'px';
-            img.parentElement.style.top = (initialY + dy) + 'px';
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            let x = e.clientX - offsetX;
+            let y = e.clientY - offsetY;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
         }
+    });
 
-        function onTouchEnd() {
-            img.removeEventListener('touchmove', onTouchMove);
-            img.removeEventListener('touchend', onTouchEnd);
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    // スマートフォン対応
+    element.addEventListener('touchstart', (e) => {
+        let touch = e.touches[0];
+        offsetX = touch.clientX - element.getBoundingClientRect().left;
+        offsetY = touch.clientY - element.getBoundingClientRect().top;
+        isDragging = true;
+    });
+
+    element.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            let touch = e.touches[0];
+            let x = touch.clientX - offsetX;
+            let y = touch.clientY - offsetY;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
         }
+    });
 
-        img.addEventListener('touchmove', onTouchMove);
-        img.addEventListener('touchend', onTouchEnd);
+    element.addEventListener('touchend', () => {
+        isDragging = false;
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
