@@ -309,6 +309,7 @@ function makeDraggable(img) {
 
     function onTouchMove(e) {
         if (isDragging && e.touches.length === 1) {
+            e.preventDefault(); // デフォルトのスクロールなどを防ぐ
             const dx = e.touches[0].clientX - startX;
             const dy = e.touches[0].clientY - startY;
             img.style.left = (initialX + dx) + 'px';

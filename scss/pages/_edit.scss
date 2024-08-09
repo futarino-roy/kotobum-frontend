@@ -111,6 +111,7 @@
                             max-width: 350px;
 
 
+                            position: relative;
                             display: flex;
                             flex-wrap: wrap;
                             align-items: center;
@@ -121,6 +122,7 @@
                             img{
                                 width: calc(50% - 10px);
                                 cursor: grab;
+                                position: absolute;
                                 
                             }
 
