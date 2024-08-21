@@ -1019,4 +1019,40 @@ header img {
 
 #customButton:hover {
   background-color: #45a049; /* ホバー時の背景色 */
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.crop-button {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */
