@@ -7,6 +7,12 @@
   font-style: normal;
 }
 
+button, input, select, textarea {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   background-color: #FDFCF6;
@@ -119,7 +125,7 @@ img {
   font-size: 1.3rem;
   margin-right: 25px;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .btn-F {
     height: 50px;
     font-size: 1.2rem;
@@ -143,6 +149,40 @@ img {
     width: 150px;
     height: 38px;
     font-size: 0.8rem;
+  }
+}
+.btn-G {
+  background-image: url(../../../images/modal1.png);
+  width: 130px;
+  height: 32px;
+  font-size: 1.125rem;
+  padding: 0;
+  color: #000000;
+  background-size: contain;
+}
+@media screen and (max-width: 900px) {
+  .btn-G {
+    background-image: url(../../../images/modal1\ sp.png);
+    width: 234px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+.btn-H {
+  background-image: url(../../../images/modal2.png);
+  width: 130px;
+  height: 32px;
+  font-size: 1.125rem;
+  padding: 0;
+  color: #ffffff;
+  background-size: contain;
+}
+@media screen and (max-width: 900px) {
+  .btn-H {
+    background-image: url(../../../images/modal2\ sp.png);
+    width: 234px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
 
@@ -656,6 +696,10 @@ header img {
   font-size: 1.25rem;
   text-align: left;
 }
+.edit_drawer_container_item_frame .frame-container {
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
 .edit_drawer_container_item_frame .frame-container_vari {
   display: flex;
   flex-wrap: wrap;
@@ -778,6 +822,18 @@ header img {
   margin-left: 77px; /* 初期マージン */
   transition: margin-left 0.3s ease;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content {
+    margin: 140px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .edit .content {
+    margin: 200px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
 @media screen and (max-width: 900px) {
   .edit .content {
     margin: 85px 0 0 0;
@@ -787,7 +843,7 @@ header img {
 .edit .content.open {
   margin-left: 32.5%;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .edit .content.open {
     margin-left: 33.5%;
   }
@@ -803,9 +859,18 @@ header img {
   }
 }
 .edit .content .swiper {
-  width: 50%;
+  width: 600px;
   height: 100%;
-  min-width: 600px;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper {
+    width: 450px;
+  }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper {
@@ -847,10 +912,25 @@ header img {
     width: 50%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box_input {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  width: 88%;
+  height: 90%;
+  top: 16px;
+  opacity: 0.8;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60%;
+  height: 20%;
+  margin: 10% 0 10%;
 }
 
 .swiper-button-prev,
@@ -887,9 +967,7 @@ header img {
 }
 
 #dropArea {
-  position: absolute;
-  top: 20%;
-  left: 20%;
+  position: relative;
   width: 60%;
   height: 60%;
   font-size: 1rem;
@@ -898,9 +976,7 @@ header img {
 }
 
 #dropArea2 {
-  position: absolute;
-  top: 20%;
-  left: 20%;
+  position: relative;
   width: 60%;
   height: 60%;
   font-size: 1rem;
@@ -990,17 +1066,51 @@ header img {
 
 .croppie-modal {
   display: none;
+  border-radius: 20px;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFFFFF;
+  background-color: #FDFCF6;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 .croppie-modal #croppie-container {
   margin-bottom: 10px;
+}
+.croppie-modal #croppie-container .cr-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px; /* バーの高さを設定 */
+  background-color: rgba(83, 83, 83, 0.3490196078); /* バーの色を黒に設定 */
+  border-radius: 5px; /* バーの角を丸くする */
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+}
+.croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px; /* アイコンの幅 */
+  height: 35px; /* アイコンの高さ */
+  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
+  margin-top: -15px;
+  cursor: pointer;
+  border: none; /* 余分なボーダーを消す */
+}
+.croppie-modal .btn-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .croppie-modal .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
 }
 
 #customButton {
@@ -1055,4 +1165,165 @@ header img {
   cursor: pointer;
   font-size: 16px;
   opacity: 0.8;
+}
+
+.preview-body {
+  background: #D5DADC;
+  height: auto;
+}
+.preview .content {
+  margin-top: 100px;
+  margin-left: 77px; /* 初期マージン */
+  transition: margin-left 0.3s ease;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content {
+    margin: 140px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .preview .content {
+    margin: 200px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content {
+    margin: 85px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+.preview .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box {
+  max-width: 500px;
+  position: relative;
+  margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  width: 88%;
+  height: 90%;
+  top: 16px;
+  opacity: 0.8;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60%;
+  height: 20%;
+  margin: 10% 0 10%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+#dropArea {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+
+#dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+
+#dropArea img, #dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

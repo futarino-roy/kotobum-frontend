@@ -19,14 +19,6 @@ const swiper = new Swiper(".swiper", {
 
 
  
- 
-
-
-
-
-
-
- 
 let currentContentId = null;
 
 // new
@@ -100,368 +92,6 @@ const showDrawerContent = (contentId) => {
 };
 
  
-
-
-
-
-
-
-
-
- 
-
-// // グローバル変数
-// let key = 0; // 画像のIDを管理するカウンタ
-
-// // // 画像のアップロード処理
-// function loadImage(obj) {
-//     for (let i = 0; i < obj.files.length; i++) {
-//         let fileReader = new FileReader();
-//         fileReader.onload = function (e) {
-//             let field = document.getElementById("imgPreviewField");
-//             let figure = document.createElement("figure");
-//             let rmBtn = document.createElement("input");
-//             let img = new Image();
-//             img.src = e.target.result; // 画像のプレビュー用データURL
-//             rmBtn.type = "button";
-//             rmBtn.name = key; // 画像のID
-//             // rmBtn.value = "削除";
-//             rmBtn.onclick = function () {
-//                 document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
-//             };
-//             figure.setAttribute("id", "img-" + key);
-//             figure.appendChild(img);
-//             // figure.appendChild(rmBtn);
-//             field.appendChild(figure);
-//             key++; // 次の画像のためにIDをインクリメント
-//         };
-//         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
-//     }
-// }
-
-
-
-
-
-
-// // 画像のアップロード タッチ
-// let key = 0; // 画像のIDを管理するカウンタ
-
-// function loadImage(obj) {
-//     for (let i = 0; i < obj.files.length; i++) {
-//         let fileReader = new FileReader();
-//         fileReader.onload = function (e) {
-//             let field = document.getElementById("imgPreviewField");
-//             let figure = document.createElement("figure");
-//             let rmBtn = document.createElement("button");
-//             let img = new Image();
-            
-//             img.src = e.target.result; // 画像のプレビュー用データURL
-//             rmBtn.className = "remove-btn";
-//             rmBtn.textContent = "削除";
-//             rmBtn.onclick = function () {
-//                 document.getElementById("img-" + rmBtn.name).remove(); // 画像を削除する処理
-//             };
-//             figure.setAttribute("id", "img-" + key);
-//             figure.appendChild(img);
-//             figure.appendChild(rmBtn);
-//             field.appendChild(figure);
-//             key++; // 次の画像のためにIDをインクリメント
-            
-//             // ドラッグのためのイベントリスナーを追加
-//             addDragAndDropHandlers(img);
-//         };
-//         fileReader.readAsDataURL(obj.files[i]); // 画像ファイルをデータURLに変換
-//     }
-// }
-
-// function addDragAndDropHandlers(img) {
-//     let startX, startY, initialX, initialY;
-
-//     img.addEventListener('mousedown', function(e) {
-//         startX = e.clientX;
-//         startY = e.clientY;
-//         initialX = img.parentElement.offsetLeft;
-//         initialY = img.parentElement.offsetTop;
-
-//         function onMouseMove(e) {
-//             const dx = e.clientX - startX;
-//             const dy = e.clientY - startY;
-//             img.parentElement.style.left = (initialX + dx) + 'px';
-//             img.parentElement.style.top = (initialY + dy) + 'px';
-//         }
-
-//         function onMouseUp() {
-//             document.removeEventListener('mousemove', onMouseMove);
-//             document.removeEventListener('mouseup', onMouseUp);
-//         }
-
-//         document.addEventListener('mousemove', onMouseMove);
-//         document.addEventListener('mouseup', onMouseUp);
-//     });
-
-//     img.addEventListener('touchstart', function(e) {
-//         startX = e.touches[0].clientX;
-//         startY = e.touches[0].clientY;
-//         initialX = img.parentElement.offsetLeft;
-//         initialY = img.parentElement.offsetTop;
-
-//         function onTouchMove(e) {
-//             const dx = e.touches[0].clientX - startX;
-//             const dy = e.touches[0].clientY - startY;
-//             img.parentElement.style.left = (initialX + dx) + 'px';
-//             img.parentElement.style.top = (initialY + dy) + 'px';
-//         }
-
-//         function onTouchEnd() {
-//             img.removeEventListener('touchmove', onTouchMove);
-//             img.removeEventListener('touchend', onTouchEnd);
-//         }
-
-//         img.addEventListener('touchmove', onTouchMove);
-//         img.addEventListener('touchend', onTouchEnd);
-//     });
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 1
-// function loadImage(input) {
-//     const imgPreviewField = document.getElementById('imgPreviewField');
-//     if (input.files) {
-//         const files = Array.from(input.files);
-//         files.forEach(file => {
-//             const reader = new FileReader();
-
-//             reader.onload = function(e) {
-//                 const img = document.createElement('img');
-//                 img.src = e.target.result;
-//                 img.style.left = '0px';
-//                 img.style.top = '0px';
-
-//                 imgPreviewField.appendChild(img);
-//                 makeDraggable(img);
-//             }
-
-//             reader.readAsDataURL(file);
-//         });
-//     }
-// }
-
-// function makeDraggable(img) {
-//     let isDragging = false;
-//     let startX, startY, initialX, initialY;
-
-//     function onMouseDown(e) {
-//         isDragging = true;
-//         startX = e.clientX;
-//         startY = e.clientY;
-//         initialX = parseFloat(img.style.left) || 0;
-//         initialY = parseFloat(img.style.top) || 0;
-//         img.style.cursor = 'grabbing';
-//     }
-
-//     function onMouseMove(e) {
-//         if (isDragging) {
-//             const dx = e.clientX - startX;
-//             const dy = e.clientY - startY;
-//             img.style.left = (initialX + dx) + 'px';
-//             img.style.top = (initialY + dy) + 'px';
-//         }
-//     }
-
-//     function onMouseUp() {
-//         isDragging = false;
-//         img.style.cursor = 'grab';
-//     }
-
-//     function onTouchStart(e) {
-//         if (e.touches.length === 1) {
-//             isDragging = true;
-//             startX = e.touches[0].clientX;
-//             startY = e.touches[0].clientY;
-//             initialX = parseFloat(img.style.left) || 0;
-//             initialY = parseFloat(img.style.top) || 0;
-//         }
-//     }
-
-//     function onTouchMove(e) {
-//         if (isDragging && e.touches.length === 1) {
-//             const dx = e.touches[0].clientX - startX;
-//             const dy = e.touches[0].clientY - startY;
-//             img.style.left = (initialX + dx) + 'px';
-//             img.style.top = (initialY + dy) + 'px';
-//         }
-//     }
-
-//     function onTouchEnd() {
-//         isDragging = false;
-//     }
-
-//     img.addEventListener('mousedown', onMouseDown);
-//     img.addEventListener('mousemove', onMouseMove);
-//     img.addEventListener('mouseup', onMouseUp);
-//     img.addEventListener('mouseleave', onMouseUp); // ドラッグ中にマウスが要素外に出た場合も対応
-
-//     img.addEventListener('touchstart', onTouchStart);
-//     img.addEventListener('touchmove', onTouchMove);
-//     img.addEventListener('touchend', onTouchEnd);
-// }
-
-
-
-// 1の進化系
-// let selectedImage = null;
-
-//         function loadImage(input) {
-//             const imgPreviewField = document.getElementById('imgPreviewField');
-//             if (input.files) {
-//                 const files = Array.from(input.files);
-//                 files.forEach(file => {
-//                     const reader = new FileReader();
-
-//                     reader.onload = function(e) {
-//                         const img = document.createElement('img');
-//                         img.src = e.target.result;
-//                         img.style.left = '0px';
-//                         img.style.top = '0px';
-
-//                         imgPreviewField.appendChild(img);
-//                         makeDraggable(img);
-//                         makeSelectable(img);
-//                     }
-
-//                     reader.readAsDataURL(file);
-//                 });
-//             }
-//         }
-
-//         function makeDraggable(img) {
-//             let isDragging = false;
-//             let startX, startY, initialX, initialY;
-
-//             function onMouseDown(e) {
-//                 isDragging = true;
-//                 startX = e.clientX;
-//                 startY = e.clientY;
-//                 initialX = parseFloat(img.style.left) || 0;
-//                 initialY = parseFloat(img.style.top) || 0;
-//                 img.style.cursor = 'grabbing';
-//             }
-
-//             function onMouseMove(e) {
-//                 if (isDragging) {
-//                     const dx = e.clientX - startX;
-//                     const dy = e.clientY - startY;
-//                     img.style.left = (initialX + dx) + 'px';
-//                     img.style.top = (initialY + dy) + 'px';
-//                 }
-//             }
-
-//             function onMouseUp() {
-//                 isDragging = false;
-//                 img.style.cursor = 'grab';
-//             }
-
-//             function onTouchStart(e) {
-//                 if (e.touches.length === 1) {
-//                     isDragging = true;
-//                     startX = e.touches[0].clientX;
-//                     startY = e.touches[0].clientY;
-//                     initialX = parseFloat(img.style.left) || 0;
-//                     initialY = parseFloat(img.style.top) || 0;
-//                 }
-//             }
-
-//             function onTouchMove(e) {
-//                 if (isDragging && e.touches.length === 1) {
-//                     const dx = e.touches[0].clientX - startX;
-//                     const dy = e.touches[0].clientY - startY;
-//                     img.style.left = (initialX + dx) + 'px';
-//                     img.style.top = (initialY + dy) + 'px';
-//                 }
-//             }
-
-//             function onTouchEnd() {
-//                 isDragging = false;
-//             }
-
-//             img.addEventListener('mousedown', onMouseDown);
-//             img.addEventListener('mousemove', onMouseMove);
-//             img.addEventListener('mouseup', onMouseUp);
-//             img.addEventListener('mouseleave', onMouseUp);
-
-//             img.addEventListener('touchstart', onTouchStart);
-//             img.addEventListener('touchmove', onTouchMove);
-//             img.addEventListener('touchend', onTouchEnd);
-//         }
-
-//         function makeSelectable(img) {
-//             img.addEventListener('click', function() {
-//                 // 他の選択された画像を解除
-//                 const allImgs = document.querySelectorAll('#imgPreviewField img');
-//                 allImgs.forEach(image => {
-//                     image.classList.remove('selected');
-//                 });
-//                 // 現在の画像を選択状態にする
-//                 img.classList.add('selected');
-//                 selectedImage = img; // 選択した画像を記録する
-//             });
-//         }
-
-//         function addClickListenerToDropAreas() {
-//             const dropArea = document.getElementById('dropArea');
-//             const dropArea2 = document.getElementById('dropArea2');
-            
-//             dropArea.addEventListener('click', function() {
-//                 if (selectedImage) {
-//                     insertImageToDropArea(this);
-//                 }
-//             });
-
-//             dropArea2.addEventListener('click', function() {
-//                 if (selectedImage) {
-//                     insertImageToDropArea(this);
-//                 }
-//             });
-//         }
-
-//         function insertImageToDropArea(dropArea) {
-//             const newImage = document.createElement('img');
-//             newImage.src = selectedImage.src;
-//             newImage.style.width = '100%';
-//             newImage.style.height = '100%';
-//             dropArea.innerHTML = ''; // 既存の内容をクリア
-//             dropArea.appendChild(newImage);
-//             // 画像を選択状態から解除
-//             selectedImage.classList.remove('selected');
-//             selectedImage = null;
-//         }
-
-//         // ドロップエリアにクリックイベントリスナーを追加
-//         addClickListenerToDropAreas();
 
 
 
@@ -580,7 +210,6 @@ function addClickListenerToDropAreas() {
 }
 
 function insertImageToDropArea(dropArea) {
-    // 既存の内容をクリア
     dropArea.innerHTML = '';
 
     const newImage = document.createElement('img');
@@ -593,7 +222,7 @@ function insertImageToDropArea(dropArea) {
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', function(e) {
         e.stopPropagation();
-        dropArea.innerHTML = ''; // 画像とボタンを削除
+        dropArea.innerHTML = '';
     });
 
     const cropButton = document.createElement('button');
@@ -601,8 +230,7 @@ function insertImageToDropArea(dropArea) {
     cropButton.classList.add('crop-button');
     cropButton.addEventListener('click', function(e) {
         e.stopPropagation();
-        alert('トリミング機能はまだ実装されていません。');
-        // トリミング機能の実装はここに追加
+        openCroppieModal(dropArea);
     });
 
     dropArea.appendChild(newImage);
@@ -614,7 +242,95 @@ function insertImageToDropArea(dropArea) {
     selectedImage = null;
 }
 
+function openCroppieModal(container) {
+    const croppieModal = document.getElementById('croppieModal');
+    const croppieContainer = document.getElementById('croppie-container');
+
+    let croppieInstance;
+    if (croppieInstance) {
+        croppieInstance.destroy();
+    }
+
+    croppieInstance = new Croppie(croppieContainer, {
+        viewport: { width: 200, height: 200 },
+        boundary: { width: 300, height: 300 },
+        showZoomer: true,
+        enableResize: false
+    });
+
+    const img = container.querySelector('img');
+    croppieInstance.bind({
+        url: img.src
+    });
+
+    croppieModal.style.display = 'block';
+
+    document.getElementById('crop-button').onclick = function() {
+        croppieInstance.result({
+             type: 'canvas', 
+             size: 'original',
+             format: 'png' ,
+             quality:1
+        }).then(function(croppedImage) {
+            img.src = croppedImage;
+            croppieModal.style.display = 'none';
+        });
+    };
+
+    document.getElementById('close-button').onclick = function() {
+        croppieModal.style.display = 'none';
+    };
+}
+
+document.addEventListener('click', function(event) {
+    const isInsideDropArea = event.target.closest('.with-buttons');
+
+    if (!isInsideDropArea) {
+        const dropAreas = document.querySelectorAll('.with-buttons');
+        dropAreas.forEach(dropArea => {
+            const cropButton = dropArea.querySelector('.crop-button');
+            const deleteButton = dropArea.querySelector('.delete-button');
+            
+            if (cropButton && deleteButton) {
+                cropButton.style.display = 'none';
+                deleteButton.style.display = 'none';
+            }
+        });
+    } else {
+        const cropButton = isInsideDropArea.querySelector('.crop-button');
+        const deleteButton = isInsideDropArea.querySelector('.delete-button');
+        
+        if (cropButton && deleteButton) {
+            cropButton.style.display = 'block';
+            deleteButton.style.display = 'block';
+        }
+    }
+});
+
 addClickListenerToDropAreas();
+
+
+
+// 上の保存版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -632,96 +348,19 @@ document.getElementById('frontButton').addEventListener('click', function() {
 
 
 
-
-
-
-// function loadImage(input) {
-//     const previewField = document.getElementById('imgPreviewField');
-
-//     Array.from(input.files).forEach(file => {
-//         if (file.type.startsWith('image/')) {
-//             const reader = new FileReader();
-//             reader.onload = (event) => {
-//                 const img = new Image();
-//                 img.src = event.target.result;
-//                 img.classList.add('thumbnail');
-//                 previewField.appendChild(img);
-//             };
-//             reader.readAsDataURL(file);
-//         }
-//     });
-// }
-
-
-
-
-
-// function loadImage(input) {
-//     const imgPreviewField = document.getElementById('imgPreviewField');
-//     if (input.files) {
-//         const files = Array.from(input.files);
-//         files.forEach(file => {
-//             const reader = new FileReader();
-
-//             reader.onload = function(e) {
-//                 const img = document.createElement('img');
-//                 img.src = e.target.result;
-//                 imgPreviewField.appendChild(img);
-//             }
-
-//             reader.readAsDataURL(file);
-//         });
-//     }
-// }
-
-// function handleDrop(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     const dataTransfer = e.dataTransfer;
-//     if (dataTransfer && dataTransfer.files) {
-//         loadImage({ files: dataTransfer.files });
-//     }
-// }
-
-// function handleDragOver(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     e.currentTarget.classList.add('dragover');
-// }
-
-// function handleDragLeave(e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     e.currentTarget.classList.remove('dragover');
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const uploadZone = document.getElementById('uploadZone');
-
-//     uploadZone.addEventListener('drop', handleDrop);
-//     uploadZone.addEventListener('dragover', handleDragOver);
-//     uploadZone.addEventListener('dragleave', handleDragLeave);
-// });
-
-
-
-
-
-
-
-
-
-
 // ドラッグ＆ドロップ処理
+// ドラッグオーバー時の処理
 function handleDragOver(event) {
     event.preventDefault();
     this.style.backgroundColor = "#d0f0c0"; // ドラッグ中の背景色変更
 }
 
+// ドラッグが離れたときの処理
 function handleDragLeave(event) {
     this.style.backgroundColor = "transparent"; // ドラッグが離れたときの背景色リセット
 }
 
+// ドロップ時の処理
 function handleDrop(event) {
     event.preventDefault();
     this.style.backgroundColor = "transparent";
@@ -734,28 +373,21 @@ function handleDrop(event) {
             this.innerHTML = ""; // 既存の内容をクリア
             let img = new Image();
             img.src = e.target.result; // 画像データURLを設定
-
-
-
-
-            // 画像クリック時の挙動 new
             img.classList.add("draggable-image"); // 画像にクラスを追加
-            img.onclick = function() {
-                // 画像がクリックされたときにボタンを表示
-                showButtons(this.parentNode);
-                event.stopPropagation(); // クリックイベントのバブリングを防ぐ
+            img.onclick = function () {
+                showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
             };
-
-
-
-
             this.appendChild(img);
             addButtons(this); // 削除ボタンとトリミングボタンを追加
+
+            // ローカルストレージに画像データを保存
+            saveImageToLocalStorage(e.target.result, this.id);
         }.bind(this);
         fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
     }
 }
 
+// タッチエンド時の処理
 function handleTouchDrop(event) {
     event.preventDefault();
     const touch = event.changedTouches[0];
@@ -772,6 +404,9 @@ function handleTouchDrop(event) {
                 img.src = e.target.result; // 画像データURLを設定
                 dropArea.appendChild(img);
                 addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+
+                // ローカルストレージに画像データを保存
+                saveImageToLocalStorage(e.target.result, dropArea.id);
             };
             fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
         }
@@ -781,8 +416,7 @@ function handleTouchDrop(event) {
 // 削除ボタンとトリミングボタンの追加
 function addButtons(container) {
     // 削除ボタンが既に存在するか確認
-    let existingDeleteButton = container.querySelector(".delete-btn");
-    if (!existingDeleteButton) {
+    if (!container.querySelector(".delete-btn")) {
         let deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-btn");
         deleteButton.textContent = "×";
@@ -790,18 +424,16 @@ function addButtons(container) {
             container.innerHTML = ""; // 画像を削除
             container.classList.remove("selected"); // 選択状態を解除
             container.style.backgroundColor = "transparent"; // 背景色をリセット
+            hideButtons(); // ボタンを非表示にする
 
-
-            hideButtons(); // ボタンを非表示にする new
-
-
+            // ローカルストレージから画像データを削除
+            clearImageFromLocalStorage(container.id);
         };
         container.appendChild(deleteButton);
     }
-    
+
     // トリミングボタンが既に存在するか確認
-    let existingCropButton = container.querySelector(".crop-btn");
-    if (!existingCropButton) {
+    if (!container.querySelector(".crop-btn")) {
         let cropButton = document.createElement("button");
         cropButton.classList.add("crop-btn");
         cropButton.textContent = "ト";
@@ -813,17 +445,15 @@ function addButtons(container) {
     }
 }
 
-
-
-// ボタンを表示する関数 new
+// ボタンを表示する関数
 function showButtons(container) {
-    const deleteButtons = container.querySelectorAll(".delete-btn");
-    deleteButtons.forEach(button => button.style.display = "flex");
-    const cropButtons = container.querySelectorAll(".crop-btn");
-    cropButtons.forEach(button => button.style.display = "flex");
+    container.querySelectorAll(".delete-btn, .crop-btn").forEach(button => button.style.display = "flex");
 }
 
-
+// ボタンを非表示にする関数
+function hideButtons() {
+    document.querySelectorAll(".delete-btn, .crop-btn").forEach(button => button.style.display = "none");
+}
 
 // トリミングモーダル処理
 let croppieInstance; // Croppie インスタンスを保持
@@ -851,31 +481,31 @@ function openCroppieModal(container) {
     });
 
     // トリミングボタンのイベント
-    document.getElementById('crop-button').onclick = function() {
+    document.getElementById('crop-button').onclick = function () {
         croppieInstance.result({
-             type: 'canvas', 
-             size: 'original',
-             format: 'png' ,
-             quality:1
-            }).then(function (croppedImage) {
+            type: 'canvas',
+            size: 'original',
+            format: 'png',
+            quality: 1
+        }).then(function (croppedImage) {
             container.querySelector('img').src = croppedImage; // トリミング後の画像を更新
             croppieModal.style.display = 'none'; // モーダルを閉じる
+
+            // トリミング後の画像データをローカルストレージに保存
+            saveImageToLocalStorage(croppedImage, container.id);
         });
     };
 
     // 閉じるボタンのイベント
-    document.getElementById('close-button').onclick = function() {
+    document.getElementById('close-button').onclick = function () {
         croppieModal.style.display = 'none'; // モーダルを閉じる
     };
 }
 
 // 画像のクリックイベント処理
 function handleElementClick(event) {
-
-    // new
     if (event.target.classList.contains('draggable-image')) {
-
-        // 画像がクリックされた場合、ボタンを表示 new
+        // 画像がクリックされた場合、ボタンを表示
         showButtons(event.target.parentNode);
         return;
     }
@@ -885,21 +515,42 @@ function handleElementClick(event) {
         return;
     }
 
-    // その他のクリック時の処理 
-    // new
+    // その他のクリック時の処理
     hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
 }
 
-
-// 画像以外をクリックしたときに削除ボタンとトリミングボタンを非表示にする関数 new
-function hideButtons() {
-    const deleteButtons = document.querySelectorAll(".delete-btn");
-    const cropButtons = document.querySelectorAll(".crop-btn");
-    
-    deleteButtons.forEach(button => button.style.display = "none");
-    cropButtons.forEach(button => button.style.display = "none");
+// ローカルストレージに画像データを保存
+function saveImageToLocalStorage(imageData, containerId) {
+    localStorage.setItem(`image_${containerId}`, imageData);
 }
 
+// ローカルストレージから画像データを取得
+function loadImageFromLocalStorage(containerId) {
+    return localStorage.getItem(`image_${containerId}`);
+}
+
+// ローカルストレージから画像データを削除
+function clearImageFromLocalStorage(containerId) {
+    localStorage.removeItem(`image_${containerId}`);
+}
+
+// サーバーに画像データを保存する関数
+function saveImageToServer(imageData, containerId) {
+    fetch('/save-image', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ image: imageData, id: containerId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Image saved to server:', data);
+    })
+    .catch(error => {
+        console.error('Error saving image to server:', error);
+    });
+}
 
 // ドキュメントが読み込まれた後の処理
 document.addEventListener("DOMContentLoaded", function () {
@@ -910,14 +561,29 @@ document.addEventListener("DOMContentLoaded", function () {
         dropArea.addEventListener("dragleave", handleDragLeave); // ドラッグが離れたときの処理
         dropArea.addEventListener("drop", handleDrop); // ドロップ時の処理
         dropArea.addEventListener("touchstart", function (event) {
-            event.preventDefault();
-        }, { passive: false }); // タッチスタート時の処理（デフォルトの動作を防ぐ）
+            event.preventDefault(); // タッチスタート時の処理（デフォルトの動作を防ぐ）
+        }, { passive: false });
         dropArea.addEventListener("touchend", handleTouchDrop, { passive: false }); // タッチエンド時の処理
         dropArea.addEventListener("click", handleElementClick); // クリック時の処理
-        dropArea.addEventListener("touchstart", handleElementClick, { passive: false }); // タッチスタート時の処理（クリックと同じ）
     });
 
-    // ドキュメント全体をクリックしたときにボタンを非表示にする new
+    // ページが読み込まれたときにローカルストレージから画像を復元
+    emptyElements.forEach(function(dropArea) {
+        const imageData = loadImageFromLocalStorage(dropArea.id);
+        if (imageData) {
+            dropArea.innerHTML = ""; // 既存の内容をクリア
+            let img = new Image();
+            img.src = imageData; // 画像データURLを設定
+            img.classList.add("draggable-image");
+            img.onclick = function() {
+                showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+            };
+            dropArea.appendChild(img);
+            addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+        }
+    });
+
+    // ドキュメント全体をクリックしたときにボタンを非表示にする
     document.addEventListener("click", function(event) {
         if (!event.target.classList.contains('delete-btn') &&
             !event.target.classList.contains('crop-btn') &&
@@ -926,377 +592,155 @@ document.addEventListener("DOMContentLoaded", function () {
             hideButtons();
         }
     });
+
+    // 保存ボタンにクリックイベントリスナーを追加
+    document.querySelector(".btn-E").addEventListener("click", function() {
+        emptyElements.forEach(function(dropArea) {
+            const imageData = loadImageFromLocalStorage(dropArea.id);
+            if (imageData) {
+                // ローカルストレージに画像データが保存されている場合
+                saveImageToServer(imageData, dropArea.id); // サーバーに画像データを送信
+            }
+        });
+        alert("画像データがサーバーに保存されました。");
+    });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // プレビューボタンにクリックイベントリスナーを追加
+    document.querySelector(".btn-preview").addEventListener("click", function() {
+        window.location.href = "../preview/index.html"; // プレビューページに遷移
+    });
 });
 
 
 
 
 
-// // ドラッグ＆ドロップ処理 タッチ
-// function handleDragOver(event) {
-//     event.preventDefault(); // デフォルトの動作を防ぐ
-//     this.style.backgroundColor = "#d0f0c0"; // ドラッグ中の背景色変更
-// }
-
-// function handleDragLeave(event) {
-//     this.style.backgroundColor = "transparent"; // ドラッグが離れたときの背景色リセット
-// }
-
-// function handleDrop(event) {
-//     event.preventDefault(); // デフォルトの動作を防ぐ
-//     this.style.backgroundColor = "transparent"; // 背景色リセット
-
-//     const files = event.dataTransfer.files; // ドロップされたファイルの取得
-//     if (files.length > 0) {
-//         let file = files[0];
-//         let fileReader = new FileReader();
-//         fileReader.onload = function (e) {
-//             this.innerHTML = ""; // 既存の内容をクリア
-//             let img = new Image();
-//             img.src = e.target.result; // 画像データURLを設定
-
-//             // 画像クリック時の挙動
-//             img.classList.add("draggable-image"); // 画像にクラスを追加
-//             img.onclick = function() {
-//                 showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
-//                 event.stopPropagation(); // クリックイベントのバブリングを防ぐ
-//             };
-
-//             this.appendChild(img);
-//             addButtons(this); // 削除ボタンとトリミングボタンを追加
-//         }.bind(this);
-//         fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
-//     }
-// }
-
-// function handleTouchDrop(event) {
-//     event.preventDefault(); // デフォルトの動作を防ぐ
-//     const touch = event.changedTouches[0];
-//     const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
-
-//     if (dropArea && dropArea.classList.contains("empty")) {
-//         const files = event.dataTransfer.files;
-//         if (files.length > 0) {
-//             let file = files[0];
-//             let fileReader = new FileReader();
-//             fileReader.onload = function (e) {
-//                 dropArea.innerHTML = ""; // 既存の内容をクリア
-//                 let img = new Image();
-//                 img.src = e.target.result; // 画像データURLを設定
-//                 dropArea.appendChild(img);
-//                 addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
-//             };
-//             fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
-//         }
-//     }
-// }
-
-// // 削除ボタンとトリミングボタンの追加
-// function addButtons(container) {
-//     // 削除ボタンが既に存在するか確認
-//     let existingDeleteButton = container.querySelector(".delete-btn");
-//     if (!existingDeleteButton) {
-//         let deleteButton = document.createElement("button");
-//         deleteButton.classList.add("delete-btn");
-//         deleteButton.textContent = "×";
-//         deleteButton.onclick = function () {
-//             container.innerHTML = ""; // 画像を削除
-//             container.classList.remove("selected"); // 選択状態を解除
-//             container.style.backgroundColor = "transparent"; // 背景色をリセット
-
-//             hideButtons(); // ボタンを非表示にする
-//         };
-//         container.appendChild(deleteButton);
-//     }
-    
-//     // トリミングボタンが既に存在するか確認
-//     let existingCropButton = container.querySelector(".crop-btn");
-//     if (!existingCropButton) {
-//         let cropButton = document.createElement("button");
-//         cropButton.classList.add("crop-btn");
-//         cropButton.textContent = "ト";
-//         cropButton.onclick = function (event) {
-//             event.stopPropagation(); // クリックイベントのバブリングを防ぐ
-//             openCroppieModal(container); // トリミングモーダルを開く関数
-//         };
-//         container.appendChild(cropButton);
-//     }
-// }
-
-// // ボタンを表示する関数
-// function showButtons(container) {
-//     const deleteButtons = container.querySelectorAll(".delete-btn");
-//     deleteButtons.forEach(button => button.style.display = "flex");
-//     const cropButtons = container.querySelectorAll(".crop-btn");
-//     cropButtons.forEach(button => button.style.display = "flex");
-// }
-
-// // ボタンを非表示にする関数
-// function hideButtons() {
-//     const deleteButtons = document.querySelectorAll(".delete-btn");
-//     const cropButtons = document.querySelectorAll(".crop-btn");
-    
-//     deleteButtons.forEach(button => button.style.display = "none");
-//     cropButtons.forEach(button => button.style.display = "none");
-// }
-
-// // トリミングモーダル処理
-// let croppieInstance; // Croppie インスタンスを保持
-
-// function openCroppieModal(container) {
-//     const croppieModal = document.getElementById('croppieModal');
-//     const croppieContainer = document.getElementById('croppie-container');
-//     croppieModal.style.display = 'block';
-
-//     // Croppieの設定
-//     if (croppieInstance) {
-//         croppieInstance.destroy(); // 既存のインスタンスを破棄
-//     }
-
-//     croppieInstance = new Croppie(croppieContainer, {
-//         viewport: { width: 200, height: 200 },
-//         boundary: { width: 300, height: 300 },
-//         showZoomer: true,
-//         enableResize: false
-//     });
-
-//     const img = container.querySelector('img');
-//     croppieInstance.bind({
-//         url: img.src
-//     });
-
-//     // トリミングボタンのイベント
-//     document.getElementById('crop-button').onclick = function() {
-//         croppieInstance.result({
-//             type: 'canvas', 
-//             size: 'original',
-//             format: 'jpeg',
-//             quality: 1
-//         }).then(function (croppedImage) {
-//             container.querySelector('img').src = croppedImage; // トリミング後の画像を更新
-//             croppieModal.style.display = 'none'; // モーダルを閉じる
-//         });
-//     };
-
-//     // 閉じるボタンのイベント
-//     document.getElementById('close-button').onclick = function() {
-//         croppieModal.style.display = 'none'; // モーダルを閉じる
-//     };
-// }
-
-// // 画像のクリックイベント処理
-// function handleElementClick(event) {
-//     if (event.target.classList.contains('draggable-image')) {
-//         showButtons(event.target.parentNode); // 画像がクリックされた場合、ボタンを表示
-//         return;
-//     }
-
-//     if (event.target.classList.contains('delete-btn') || event.target.classList.contains('crop-btn')) {
-//         // 削除ボタンやトリミングボタンがクリックされた場合の処理
-//         return;
-//     }
-
-//     hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
-// }
-
-// // タッチ開始時にボタンを非表示にする関数
-// function handleTouchStart(event) {
-//     if (!event.target.classList.contains('delete-btn') &&
-//         !event.target.classList.contains('crop-btn') &&
-//         !event.target.classList.contains('draggable-image') &&
-//         !event.target.classList.contains('empty')) {
-//         hideButtons(); // タッチでボタンを非表示にする
-//     }
-// }
-
-// // ドキュメントが読み込まれた後の処理
-// document.addEventListener("DOMContentLoaded", function () {
-//     const emptyElements = document.querySelectorAll(".empty");
-
-//     emptyElements.forEach(function (dropArea) {
-//         dropArea.addEventListener("dragover", handleDragOver); // ドラッグオーバー時の処理
-//         dropArea.addEventListener("dragleave", handleDragLeave); // ドラッグが離れたときの処理
-//         dropArea.addEventListener("drop", handleDrop); // ドロップ時の処理
-//         dropArea.addEventListener("touchstart", function (event) {
-//             event.preventDefault(); // タッチスタート時のデフォルト動作を防ぐ
-//         }, { passive: false });
-//         dropArea.addEventListener("touchend", handleTouchDrop, { passive: false }); // タッチエンド時の処理
-//         dropArea.addEventListener("click", handleElementClick); // クリック時の処理
-//         dropArea.addEventListener("touchend", handleElementClick, { passive: false }); // タッチエンド時の処理
-//     });
-
-//     // ドキュメント全体をクリックしたときにボタンを非表示にする
-//     document.addEventListener("click", function(event) {
-//         if (!event.target.classList.contains('delete-btn') &&
-//             !event.target.classList.contains('crop-btn') &&
-//             !event.target.classList.contains('draggable-image') &&
-//             !event.target.classList.contains('empty')) {
-//             hideButtons(); // クリックでボタンを非表示にする
-//         }
-//     });
-
-//     // ドキュメント全体をタッチしたときにボタンを非表示にする
-//     document.addEventListener("touchstart", handleTouchStart, { passive: false });
-// });
 
 
 
 
 
 
- 
-
-// //  upload
-// const fileInput = document.getElementById('fileInput');
-// const imageList = document.getElementById('imageList');
-
-// fileInput.addEventListener('change', (e) => {
-//     Array.from(e.target.files).forEach(file => {
-//         if (file.type.startsWith('image/')) {
-//             const reader = new FileReader();
-//             reader.onload = (event) => {
-//                 const img = new Image();
-//                 img.src = event.target.result;
-//                 img.classList.add('thumbnail');
-//                 img.draggable = true;
-//                 img.addEventListener('dragstart', handleDragStart);
-//                 imageList.appendChild(img);
-//             };
-//             reader.readAsDataURL(file);
-//         }
-//     });
-// });
-
-// document.getElementById('fileButton').addEventListener('click', function() {
-//     document.getElementById('fileInput').click();
-//   });
-  
-//   document.getElementById('fileInput').addEventListener('change', function() {
-//     // ファイルが選択された後の処理をここに書く
-//     console.log(this.files);
-//   });
 
 
-//   color
-function changeColor(color) {
-    let elements = document.getElementsByClassName('uniqueColor');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = color;
-    }
+// テキストエリアの内容をローカルストレージに保存する関数
+function saveTextToLocalStorage() {
+    const textArea1 = document.getElementById('textArea');
+    const textArea2 = document.getElementById('textArea2');
+
+    localStorage.setItem('textArea1', textArea1.value);
+    localStorage.setItem('textArea2', textArea2.value);
 }
 
+// テキストエリアの内容をローカルストレージから読み込む関数
+function loadTextFromLocalStorage() {
+    const textArea1 = document.getElementById('textArea');
+    const textArea2 = document.getElementById('textArea2');
+
+    textArea1.value = localStorage.getItem('textArea1') || '';
+    textArea2.value = localStorage.getItem('textArea2') || '';
+}
+
+// テキストエリアの内容をサーバーに送信する関数
+function saveTextToServer() {
+    const textArea1 = document.getElementById('textArea').value;
+    const textArea2 = document.getElementById('textArea2').value;
+
+    fetch('/save-text', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text1: textArea1, text2: textArea2 })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Text saved to server:', data);
+        alert("テキストデータがサーバーに保存されました。");
+    })
+    .catch(error => {
+        console.error('Error saving text to server:', error);
+    });
+}
+
+// テキストエリアの最大文字数を制限する関数
+function enforceMaxLength(textarea, maxLength) {
+    textarea.addEventListener('input', function () {
+        // 入力された文字列を取得
+        const value = this.value;
+
+        // 現在の文字列の長さを計算
+        const currentLength = Array.from(value).length;
+
+        // 最大文字数を超えた場合はカットする
+        if (currentLength > maxLength) {
+            this.value = Array.from(value).slice(0, maxLength).join('');
+        }
+
+        adjustHeight(this);
+        saveTextToLocalStorage(); // ローカルストレージに保存
+    });
+
+    // 高さ調整関数
+    function adjustHeight(textarea) {
+        textarea.style.height = 'auto'; // 高さをリセットしてから
+        textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
+    }
+
+    // 初期読み込み時にも調整
+    adjustHeight(textarea);
+}
+
+// 最大文字数を設定
+const maxLength = 20; // 変更したい場合はここで設定
+
+const textareas = document.querySelectorAll('#textArea, #textArea2');
+
+textareas.forEach(textarea => {
+    enforceMaxLength(textarea, maxLength);
+});
+
+// ドキュメントが読み込まれたときにローカルストレージからテキストを復元
+document.addEventListener("DOMContentLoaded", function () {
+    loadTextFromLocalStorage();
+
+    // 保存ボタンにクリックイベントリスナーを追加
+    document.querySelector(".btn-E").addEventListener("click", function() {
+        // 画像データの保存処理
+        emptyElements.forEach(function(dropArea) {
+            const imageData = loadImageFromLocalStorage(dropArea.id);
+            if (imageData) {
+                saveImageToServer(imageData, dropArea.id); // サーバーに画像データを送信
+            }
+        });
+
+        // テキストデータの保存処理
+        saveTextToServer();
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // 枠選択 先にサイドバーからのパターン
-// const rectangleButton = document.getElementById('rectangle-button');
-// const squareButton = document.getElementById('square-button');
-// const dropArea = document.getElementById('dropArea');
-// const dropArea2 = document.getElementById('dropArea2');
-
-// // ボタンがクリックされたときに枠の色を赤色に変更
-// function setBorderColor(color) {
-//     dropArea.style.borderColor = color;
-//     dropArea2.style.borderColor = color;
-// }
-
-// // ボタンにイベントリスナーを追加
-// rectangleButton.addEventListener('click', function() {
-//     setBorderColor('red');
-//     dropArea.dataset.shape = 'rectangle'; // 長方形の形を設定
-//     dropArea2.dataset.shape = 'rectangle';
-// });
-
-// squareButton.addEventListener('click', function() {
-//     setBorderColor('red');
-//     dropArea.dataset.shape = 'square'; // 正方形の形を設定
-//     dropArea2.dataset.shape = 'square';
-// });
-
-// // ボタン以外がクリックされたときに枠の色を元に戻す
-// document.addEventListener('click', function(event) {
-//     if (!event.target.closest('button')) {
-//         setBorderColor('#ccc'); // 枠の色を初期の灰色に戻す
-//     }
-// });
-
-// // ドロップエリアがクリックされたときに枠の大きさを変更する
-// function resizeDropArea(event) {
-//     const target = event.currentTarget; // クリックした要素を取得
-//     const shape = target.dataset.shape;
-//     if (shape === 'rectangle') {
-//         target.style.width = '20%'; // 長方形の幅
-//         target.style.height = '150px'; // 長方形の高さ
-//     } else if (shape === 'square') {
-//         target.style.width = '20%'; // 正方形のサイズ
-//         target.style.height = '20%'; // 正方形のサイズ
-//     }
-// }
-
-// // ドロップエリアとその中の画像にクリックイベントリスナーを追加
-// dropArea.addEventListener('click', resizeDropArea);
-// dropArea2.addEventListener('click', resizeDropArea);
-
-
-
-
-
-// 先に変えたい枠から選ぶパターン
-// document.addEventListener('DOMContentLoaded', () => {
-//     const dropArea1 = document.getElementById('dropArea');
-//     const dropArea2 = document.getElementById('dropArea2');
-//     const resizeButtons = document.querySelectorAll('.resizeButton');
-//     let activeDropArea = null;
-
-//     // ドロップエリアがクリックされたときの処理
-//     dropArea1.addEventListener('click', () => {
-//         dropArea1.classList.add('active');
-//         dropArea2.classList.remove('active');
-//         activeDropArea = dropArea1;
-//     });
-    
-//     dropArea2.addEventListener('click', () => {
-//         dropArea1.classList.remove('active');
-//         dropArea2.classList.add('active');
-//         activeDropArea = dropArea2;
-//     });
-
-//     // サイズ変更ボタンがクリックされたときの処理
-//     resizeButtons.forEach(button => {
-//         button.addEventListener('click', () => {
-//             if (activeDropArea) {
-//                 // サイズをすべてリセット
-//                 activeDropArea.classList.remove('square', 'rectangle', 'mini');
-//                 // ボタンの data-size 属性に基づいてサイズを変更
-//                 const size = button.getAttribute('data-size');
-//                 activeDropArea.classList.add(size);
-//             }
-//         });
-//     });
-// });
-
-
 // 先に変えたい枠から選ぶパターン タッチ
 document.addEventListener('DOMContentLoaded', () => {
     const dropArea1 = document.getElementById('dropArea');
     const dropArea2 = document.getElementById('dropArea2');
     const resizeButtons = document.querySelectorAll('.resizeButton');
+    const saveButton = document.querySelector('.btn-E');
     let activeDropArea = null;
 
     // ドロップエリアがクリックまたはタッチされたときの処理
@@ -1318,10 +762,120 @@ document.addEventListener('DOMContentLoaded', () => {
             // ボタンの data-size 属性に基づいてサイズを変更
             const size = button.getAttribute('data-size');
             activeDropArea.classList.add(size);
+
+            // サイズ情報をローカルストレージに保存
+            localStorage.setItem('dropAreaSize', size);
         }
     };
 
     resizeButtons.forEach(button => {
         button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
     });
+
+    // 保存ボタンがクリックされたときの処理
+    saveButton.addEventListener('click', () => {
+        if (activeDropArea) {
+            const size = localStorage.getItem('dropAreaSize');
+
+            // サーバにサイズ情報を送信
+            fetch('/save-size', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    dropAreaId: activeDropArea.id,
+                    size: size
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('成功:', data);
+            })
+            .catch(error => {
+                console.error('エラー:', error);
+            });
+        }
+    });
+
+    // ページロード時にローカルストレージからサイズを復元
+    const savedSize = localStorage.getItem('dropAreaSize');
+    if (savedSize) {
+        dropArea1.classList.add(savedSize);
+        dropArea2.classList.add(savedSize);
+    }
 });
+
+
+
+
+//   color
+// 色変更処理
+function changeColor(color) {
+    let elements = document.getElementsByClassName('uniqueColor');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = color;
+    }
+
+    // 色をローカルストレージに保存
+    localStorage.setItem('backgroundColor', color);
+}
+
+// ページ読み込み時にローカルストレージから色を取得して適用する
+document.addEventListener('DOMContentLoaded', function () {
+    const savedColor = localStorage.getItem('backgroundColor');
+    if (savedColor) {
+        changeColor(savedColor);
+    }
+});
+
+// 保存ボタンのクリックイベント設定
+document.querySelector('.btn-E').addEventListener('click', function() {
+    const color = localStorage.getItem('backgroundColor');
+    
+    if (color) {
+        fetch('/saveColor', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ color: color })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('色がサーバに保存されました:', data);
+        })
+        .catch(error => {
+            console.error('保存中にエラーが発生しました:', error);
+        });
+    } else {
+        console.log('保存する色が設定されていません。');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function previewSlides() {
+//     // スライド1の内容を取得
+//     const text1 = document.getElementById('textArea').value;
+//     // スライド2の内容を取得
+//     const text2 = document.getElementById('textArea2').value;
+
+//     // ストレージに保存 (例: sessionStorage)
+//     sessionStorage.setItem('slide1Text', text1);
+//     sessionStorage.setItem('slide2Text', text2);
+
+//     // プレビューページに遷移 (URLを設定)
+//     window.location.href = '../preview/index.html';
+// }
+

@@ -157,4 +157,39 @@
         //         }
         
     }
+
+    
+    &-G{
+        background-image: url(../../../images/modal1.png);
+        width: 130px;
+        height: 32px;
+        font-size: 1.125rem;
+        padding: 0;
+        color: #000000;
+        background-size: contain;
+
+        @include mq('tab-edit'){
+            background-image: url(../../../images/modal1\ sp.png);
+            width: 234px;
+            height: 35px;
+            font-size: 1rem;
+            }
+    }
+
+    &-H{
+        background-image: url(../../../images/modal2.png);
+        width: 130px;
+        height: 32px;
+        font-size: 1.125rem;
+        padding: 0;
+        color: #ffffff;
+        background-size: contain;
+
+        @include mq('tab-edit'){
+            background-image: url(../../../images/modal2\ sp.png);
+            width: 234px;
+            height: 35px;
+            font-size: 1rem;
+            }
+    }
 }

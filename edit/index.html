@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>編集ページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css">
     <link rel="stylesheet" href="../public/assets/style/style.css">
@@ -11,8 +14,8 @@
 <body class="edit-body">
     <header class="edit-header">
         <button class="btn btn-E">保存する</button>
+        <button class="btn-preview">プレビュー</button>
     </header>
-
 
     <div class="edit">
         <div id="drawer" class="edit_drawer">
@@ -76,11 +79,6 @@
                 <div id="content3" class="edit_drawer_container_item">
                     <div class="edit_drawer_container_item_frame">
                         <h2>フレームの選択</h2>
-
-                        <!-- 先にサイドバー空のパターン -->
-                        <!-- <button id="rectangle-button">長方形</button>
-                        <button id="square-button">正方形</button> -->
-
                         <!-- 先に変えたい枠から選ぶパターン -->
                          <div class="frame-container">
                          <div class="frame-container_vari">
@@ -111,22 +109,6 @@
             </button> 
         </div>
 
-        <!-- <div class="sidebar-sp" id="sidebar-sp">
-        </div> -->
-
-        <!-- <div class="sideBtn-sp">
-            <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
-                <img src="/edit/images/frame.png" alt="">
-            </button>  
-            <button date-content-id="content1" class="open-btn" onclick="showDrawerContent('content1')">
-                <img src="/edit/images/Mask group.png" alt="">
-            </button>
-            <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
-                <img src="/edit/images/color.png" alt="">
-            </button>  
-        </div> -->
-
-
         <div class="content" id="content">
             <!-- スライダー -->
        <div class="swiper">
@@ -135,7 +117,10 @@
                <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
                     <img src="/edit/images/design.png" alt="">
-                    <div id="dropArea" class="empty"></div>
+                    <div class="input-drop">
+                        <textarea id="textArea" rows="1"></textarea>
+                        <div id="dropArea" class="empty"></div>
+                    </div>
                 </div>
                </div>
    
@@ -143,38 +128,14 @@
                <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
                     <img src="/edit/images/design.png" alt="">
-                    <div id="dropArea2" class="empty"></div>
+                    <div class="input-drop">
+                        <textarea id="textArea2" rows="1" maxlength="20"></textarea>
+                        <div id="dropArea2" class="empty"></div>
+                    </div>
                 </div>
                </div>
-   
-               <!-- スライド3 -->
-               <div class="swiper-slide">
-                   <div class="swiper-slide_box">
-
-                   </div>
-               </div>
-   
-               <!-- スライド4 -->
-               <div class="swiper-slide">
-                   <div class="swiper-slide_box">
-                       <div class="dropZone" id="dropZone4">ここにドラッグ＆ドロップ</div>
-                   </div>
-               </div>
-   
-               <!-- スライド5 -->
-               <div class="swiper-slide">
-                   <div class="swiper-slide_box">
-                       <div class="dropZone" id="dropZone5">ここにドラッグ＆ドロップ</div>
-                   </div>
-               </div>
-   
-               <!-- スライド6 -->
-               <div class="swiper-slide">
-                   <div class="swiper-slide_box">
-                       <div class="dropZone" id="dropZone6">ここにドラッグ＆ドロップ</div>
-                   </div>
-               </div>
            </div>
+
            <div class="swiper-pagination"></div>
            <div class="swiper-button-prev"></div>
            <div class="swiper-button-next"></div>
@@ -182,12 +143,13 @@
        </div>
     </div>
 
-
                  <!-- Croppieモーダル -->
                  <div id="croppieModal" class="croppie-modal">
                     <div id="croppie-container"></div>
-                    <button id="crop-button">トリミング</button>
-                    <button id="close-button">閉じる</button>
+                    <div class="btn-wrapper">
+                    <button id="crop-button" class="btn btn-G">適用する</button>
+                    <button id="close-button" class="btn btn-H">キャンセル</button>
+                </div>
                 </div>
 
 

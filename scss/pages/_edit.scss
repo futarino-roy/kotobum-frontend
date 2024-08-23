@@ -316,7 +316,8 @@
                     }
 
                     .frame-container{
-
+                        overflow: auto; 
+                        height: calc(100vh - 200px);
 
                         &_vari{
                             display: flex;
@@ -543,6 +544,18 @@
         margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
+        @include mq('pc2-edit'){
+            margin: 140px 0 0 0;
+            transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                    
+            }
+
+            @include mq('pc3-edit'){
+                margin: 200px 0 0 0;
+                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                        
+                } 
+
         @include mq('tab-edit'){
                 margin: 85px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
@@ -584,10 +597,18 @@
         
         .swiper{
 
-            width: 50%;
+            width: 600px;
             height: 100%;
 
-            min-width: 600px;
+            // min-width: 600px;
+
+            @include mq('pc2-edit'){
+                width: 900px;
+                }
+
+            @include mq('pc-edit'){
+                width: 450px;
+                }
 
             @include mq('tab-edit'){
                 display: block;
@@ -649,12 +670,29 @@
             
                                         }
 
-                        &_input{
-                            position: absolute;
-                            top: 20px;
-                            left: 20px;
+                                        .input-drop{
+                                            position: absolute;
+                                            width: 88%;
+                                            // background: aliceblue;
+                                            height: 90%;
+                                            top: 16px;
+                                            opacity: 0.8;
+                                            left: 6%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
 
-                        }
+                                            textarea{
+                                                overflow: hidden;
+                                                text-align: center;
+                                                resize: none;
+                                                width: 60%;
+                                                height: 20%;
+                                                margin: 10% 0 10%;
+                                            }
+
+                                        }
 
 
                     }
@@ -718,9 +756,9 @@
 
 // トリミングボタン、削除ボタン関連
 #dropArea{
-    position: absolute;
-    top: 20%;
-    left: 20%;
+    position: relative;
+    // top: 20%;
+    // left: 20%;
     width: 60%;
     height: 60%;
     font-size: 1rem;
@@ -728,10 +766,11 @@
     cursor: pointer;
 }
 
+
 #dropArea2{
-    position: absolute;
-    top: 20%;
-    left: 20%;
+    position: relative;
+    // top: 20%;
+    // left: 20%;
     width: 60%;
     height: 60%;
     font-size: 1rem;
@@ -834,19 +873,60 @@
 
 .croppie-modal{
     display: none;
+    border-radius: 20px;
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFFFFF;
+    background-color: #FDFCF6;
     padding: 20px;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     z-index: 999;
 
     #croppie-container{
         margin-bottom: 10px;
+
+        .cr-slider{
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px; /* バーの高さを設定 */
+            background-color: #53535359; /* バーの色を黒に設定 */
+            border-radius: 5px; /* バーの角を丸くする */
+            margin: 0;
+            padding: 0;
+            opacity: 0.8;
+            // box-sizing: border-box;
+        }
+
+        .cr-slider::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            appearance: none;
+            width: 35px; /* アイコンの幅 */
+            height: 35px; /* アイコンの高さ */
+            background: url('/edit/images/Ellipse\ 7.png') no-repeat center; /* アイコン画像を指定 */
+            margin-top: -15px;
+
+
+            cursor: pointer;
+            border: none; /* 余分なボーダーを消す */
+        }
     }
+
+    .btn-wrapper{
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        @include mq('tab-edit'){
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            }
+    }
+
 }
+
 
 
 
@@ -915,3 +995,10 @@
     font-size: 16px;
     opacity: 0.8;
 }
+
+
+
+
+
+
+

@@ -1,0 +1,256 @@
+.preview-body{
+    background: #D5DADC;
+    height: auto;
+
+    @include mq('tab-edit'){
+        // height: 100vh;
+        }
+}
+
+.preview{
+
+    .content{
+        // margin-top: 130px;
+        margin-top: 100px;
+        margin-left: 77px; /* 初期マージン */
+        transition: margin-left 0.3s ease;
+
+        @include mq('pc2-edit'){
+            margin: 140px 0 0 0;
+            transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                    
+            }
+
+            @include mq('pc3-edit'){
+                margin: 200px 0 0 0;
+                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                        
+                } 
+
+        @include mq('tab-edit'){
+                margin: 85px 0 0 0;
+                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                        
+                }              
+
+
+
+        
+        .swiper{
+
+            width: 600px;
+            height: 100%;
+
+            // min-width: 600px;
+
+            @include mq('pc2-edit'){
+                width: 900px;
+                }
+
+            @include mq('pc-edit'){
+                width: 450px;
+                }
+
+            @include mq('tab-edit'){
+                display: block;
+                width: 80%;
+                min-width: auto;
+                }
+
+
+
+            &-wrapper{
+
+
+                .swiper-slide{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+
+
+
+                    color: #ffffff;
+                    width: auto;
+                    height: 100%;
+                    // background-color: #f7f7f7;
+                    // display: flex;
+                    // gap: 5px;
+                    // justify-content: center;
+                    // align-items: center;
+
+                    &_box{
+                        // background-color: #ffffff;
+                        // width: 528px;
+
+
+                    
+
+                        // いるかわからない いや、いりますね
+                        max-width: 500px;
+                    
+                        position: relative;
+
+                        // margin-top: 80px;
+                        margin: 50px 0 0;
+
+                        @include mq('tab-edit'){
+                            width: 70%;
+                            }
+
+                            @include mq('sp-edit'){
+                                width: 100%;
+                                }
+
+                                @include mq('sp2-edit'){
+                                    width: 70%;
+                                    }
+
+                                    @include mq('sp3-edit'){
+                                        // height: 660px;
+                                        width: 50%;
+            
+                                        }
+
+                                        .input-drop{
+                                            position: absolute;
+                                            width: 88%;
+                                            // background: aliceblue;
+                                            height: 90%;
+                                            top: 16px;
+                                            opacity: 0.8;
+                                            left: 6%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
+
+                                            textarea{
+                                                overflow: hidden;
+                                                text-align: center;
+                                                resize: none;
+                                                width: 60%;
+                                                height: 20%;
+                                                margin: 10% 0 10%;
+                                            }
+
+                                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+.swiper-pagination{
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev{
+    left: 36%;
+}
+
+.swiper-button-next {
+    left: 58%;
+  }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+ 
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// トリミングボタン、削除ボタン関連
+#dropArea{
+    position: relative;
+    // top: 20%;
+    // left: 20%;
+    width: 60%;
+    height: 60%;
+    font-size: 1rem;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+}
+
+
+#dropArea2{
+    position: relative;
+    // top: 20%;
+    // left: 20%;
+    width: 60%;
+    height: 60%;
+    font-size: 1rem;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+}
+
+#dropArea img, #dropArea2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
