@@ -36,11 +36,19 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token'); // トークンを取得
+
+    if (!token) {
+        console.error('トークンが見つかりません。サインインしてください。');
+        alert('サインインしてください。');
+        return;
+    }
+
     fetch('https://develop-back.kotobum.com/api/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}` // トークンをローカルストレージから取得
+            'Authorization': `Bearer ${token}` // トークンをヘッダーに追加
         }
     })
     .then(response => {
@@ -53,11 +61,17 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(data => {
         const name = data.name; // サーバーから取得した名前
-        document.querySelector('header p').textContent = `${name} 様`; // 名前を表示
+        const headerParagraph = document.querySelector('header p');
+        if (headerParagraph) {
+            headerParagraph.textContent = `${name} 様`; // 名前を表示
+        } else {
+            console.error('HTML 内に <header> <p> が見つかりません。');
+        }
     })
     .catch(error => {
         console.error('失敗:', error);
         alert('名前の取得に失敗しました。もう一度お試しください。');
     });
 });
+
 
