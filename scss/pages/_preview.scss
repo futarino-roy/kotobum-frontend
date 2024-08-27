@@ -12,43 +12,46 @@
     .content{
         // margin-top: 130px;
         margin-top: 100px;
-        margin-left: 77px; /* 初期マージン */
-        transition: margin-left 0.3s ease;
 
         @include mq('pc2-edit'){
             margin: 140px 0 0 0;
-            transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+
                     
             }
 
             @include mq('pc3-edit'){
-                margin: 200px 0 0 0;
-                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                margin: 180px 0 0 0;
+
                         
                 } 
 
         @include mq('tab-edit'){
-                margin: 85px 0 0 0;
-                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+                margin: 150px 0 0 0;
+
                         
-                }              
+                }          
+                
+                
+                @include mq('tab2-edit'){
+                    margin: 120px 0 0 0;
+                    }
 
 
 
         
         .swiper{
 
-            width: 600px;
+            width: 400px;
             height: 100%;
 
             // min-width: 600px;
 
             @include mq('pc2-edit'){
-                width: 900px;
+                width: 700px;
                 }
 
             @include mq('pc-edit'){
-                width: 450px;
+                width: 300px;
                 }
 
             @include mq('tab-edit'){
@@ -94,15 +97,19 @@
                         margin: 50px 0 0;
 
                         @include mq('tab-edit'){
-                            width: 70%;
+                            width: 80%;
                             }
 
+                            @include mq('tab2-edit'){
+                                width: 50%;
+                                }
+
                             @include mq('sp-edit'){
-                                width: 100%;
+                                width: 70%;
                                 }
 
                                 @include mq('sp2-edit'){
-                                    width: 70%;
+                                    width: 60%;
                                     }
 
                                     @include mq('sp3-edit'){
@@ -124,13 +131,760 @@
                                             align-items: center;
                                             justify-content: center;
 
+                                            #dropArea1{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea2{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea3{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea4{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea5{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea6{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea7{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea8{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea9{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea10{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea11{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea12{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea13{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea14{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea15{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea16{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea17{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea18{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea19{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea20{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea21{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea22{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea23{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea24{
+                                                position: relative;
+                                                // top: 20%;
+                                                // left: 20%;
+                                                width: 60%;
+                                                height: 60%;
+                                                font-size: 1rem;
+                                                border: 2px solid #ccc;
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
                                             textarea{
                                                 overflow: hidden;
                                                 text-align: center;
                                                 resize: none;
                                                 width: 60%;
-                                                height: 20%;
+                                                height: auto;
                                                 margin: 10% 0 10%;
+                                                outline: none;
+                                                pointer-events: none;
+                                                cursor: not-allowed;
                                             }
 
                                         }
@@ -140,6 +894,21 @@
                 }
             }
         }
+    }
+
+    .button-flex{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 30px;
+
+        @include mq('tab-edit'){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            }
+
     }
 }
 
@@ -196,35 +965,10 @@
 
 
 // トリミングボタン、削除ボタン関連
-#dropArea{
-    position: relative;
-    // top: 20%;
-    // left: 20%;
-    width: 60%;
-    height: 60%;
-    font-size: 1rem;
-    border: 2px dashed #ccc;
-    cursor: pointer;
-}
 
 
-#dropArea2{
-    position: relative;
-    // top: 20%;
-    // left: 20%;
-    width: 60%;
-    height: 60%;
-    font-size: 1rem;
-    border: 2px dashed #ccc;
-    cursor: pointer;
-}
 
-#dropArea img, #dropArea2 img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
+
 
 
 

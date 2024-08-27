@@ -1,8 +1,8 @@
 
 .mypage{
-    max-width: 900px;
+    max-width: 600px;
     text-align: center;
-    margin: 143px auto;
+    margin: 143px auto 0;
     padding: 0 15px;
 
     @include mq('pc-mypage'){

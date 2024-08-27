@@ -32,3 +32,32 @@
 //     // プレビュー画像を表示
 //     showPreviewImage();
 // });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://develop-back.kotobum.com/api/user', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}` // トークンをローカルストレージから取得
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {
+                throw new Error(`Network response was not ok: ${response.status} ${response.statusText}. ${text}`);
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        const username = data.name; // サーバーから取得した名前
+        document.querySelector('header p').textContent = `${username} 様`; // 名前を表示
+    })
+    .catch(error => {
+        console.error('失敗:', error);
+        alert('名前の取得に失敗しました。もう一度お試しください。');
+    });
+});
+

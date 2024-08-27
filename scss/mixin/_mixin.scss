@@ -8,7 +8,8 @@ $breakpoints: (
 
 
 	"sp": "screen and (max-width: 480px)",
-	"tab": "screen and (max-width: 768px)",
+	"tab2": "screen and (max-width: 700px)",
+	"tab": "screen and (max-width: 900px)",
 	"pc": "screen and (min-width: 1300px)",
 
 	"sp-header": "screen and (max-width: 500px)",
@@ -27,6 +28,7 @@ $breakpoints: (
 	"sp3-edit": "screen and (max-width: 330px)",
 	"sp2-edit": "screen and (max-width: 380px)",
 	"sp-edit": "screen and (max-width: 480px)",
+	"tab2-edit": "screen and (max-width: 700px)",
 	"tab-edit": "screen and (max-width: 900px)",
 	"pc-edit": "screen and (max-width: 1200px)",
 	"pc2-edit": "screen and (min-width: 1500px)",

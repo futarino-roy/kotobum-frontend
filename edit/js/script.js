@@ -18,6 +18,47 @@ const swiper = new Swiper(".swiper", {
 });
 
 
+// document.addEventListener("DOMContentLoaded", function() {
+//     // プレビューボタンにクリックイベントリスナーを追加
+//     document.querySelector(".btn-preview").addEventListener("click", function() {
+//         window.location.href = "../preview/index.html"; // プレビューページに遷移
+//     });
+// });
+
+
+
+
+// メインのスライドからプレビュー
+document.addEventListener("DOMContentLoaded", function() {
+    // プレビューボタンにクリックイベントリスナーを追加
+    document.querySelector(".btn-preview").addEventListener("click", function() {
+        // 現在のスライドインデックスを取得
+        const currentSlideIndex = swiper.realIndex;
+        
+        // プレビューページのURLを動的に設定
+        const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
+        
+        // プレビューページに遷移
+        window.location.href = previewUrl;
+    });
+});
+
+
+// プレビューのスライドからメイン
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const slideNumber = urlParams.get('slide');
+
+    if (slideNumber) {
+        swiper.slideTo(slideNumber - 1, 0);  // スライド番号に対応するインデックスに移動
+        console.log(`Returning to slide ${slideNumber} in the main page`);
+    }
+});
+
+
+
+
+
  
 let currentContentId = null;
 
@@ -96,6 +137,228 @@ const showDrawerContent = (contentId) => {
 
 
 // 1の進化系の進化系
+// let selectedImage = null;
+
+// function loadImage(input) {
+//     const imgPreviewField = document.getElementById('imgPreviewField');
+//     if (input.files) {
+//         const files = Array.from(input.files);
+//         files.forEach(file => {
+//             const reader = new FileReader();
+
+//             reader.onload = function(e) {
+//                 const img = document.createElement('img');
+//                 img.src = e.target.result;
+//                 img.style.left = '0px';
+//                 img.style.top = '0px';
+
+//                 imgPreviewField.appendChild(img);
+//                 makeDraggable(img);
+//                 makeSelectable(img);
+//             }
+
+//             reader.readAsDataURL(file);
+//         });
+//     }
+// }
+
+// function makeDraggable(img) {
+//     let isDragging = false;
+//     let startX, startY, initialX, initialY;
+
+//     function onMouseDown(e) {
+//         isDragging = true;
+//         startX = e.clientX;
+//         startY = e.clientY;
+//         initialX = parseFloat(img.style.left) || 0;
+//         initialY = parseFloat(img.style.top) || 0;
+//         img.style.cursor = 'grabbing';
+//     }
+
+//     function onMouseMove(e) {
+//         if (isDragging) {
+//             const dx = e.clientX - startX;
+//             const dy = e.clientY - startY;
+//             img.style.left = (initialX + dx) + 'px';
+//             img.style.top = (initialY + dy) + 'px';
+//         }
+//     }
+
+//     function onMouseUp() {
+//         isDragging = false;
+//         img.style.cursor = 'grab';
+//     }
+
+//     function onTouchStart(e) {
+//         if (e.touches.length === 1) {
+//             isDragging = true;
+//             startX = e.touches[0].clientX;
+//             startY = e.touches[0].clientY;
+//             initialX = parseFloat(img.style.left) || 0;
+//             initialY = parseFloat(img.style.top) || 0;
+//         }
+//     }
+
+//     function onTouchMove(e) {
+//         if (isDragging && e.touches.length === 1) {
+//             const dx = e.touches[0].clientX - startX;
+//             const dy = e.touches[0].clientY - startY;
+//             img.style.left = (initialX + dx) + 'px';
+//             img.style.top = (initialY + dy) + 'px';
+//         }
+//     }
+
+//     function onTouchEnd() {
+//         isDragging = false;
+//     }
+
+//     img.addEventListener('mousedown', onMouseDown);
+//     img.addEventListener('mousemove', onMouseMove);
+//     img.addEventListener('mouseup', onMouseUp);
+//     img.addEventListener('mouseleave', onMouseUp);
+
+//     img.addEventListener('touchstart', onTouchStart);
+//     img.addEventListener('touchmove', onTouchMove);
+//     img.addEventListener('touchend', onTouchEnd);
+// }
+
+// function makeSelectable(img) {
+//     img.addEventListener('click', function() {
+//         const allImgs = document.querySelectorAll('#imgPreviewField img');
+//         allImgs.forEach(image => {
+//             image.classList.remove('selected');
+//         });
+//         img.classList.add('selected');
+//         selectedImage = img;
+//     });
+// }
+
+// function addClickListenerToDropAreas() {
+//     const dropArea = document.getElementById('dropArea');
+//     const dropArea2 = document.getElementById('dropArea2');
+//     const dropArea3 = document.getElementById('dropArea3');
+    
+//     dropArea.addEventListener('click', function() {
+//         if (selectedImage) {
+//             insertImageToDropArea(this);
+//         }
+//     });
+
+//     dropArea2.addEventListener('click', function() {
+//         if (selectedImage) {
+//             insertImageToDropArea(this);
+//         }
+//     });
+
+//     dropArea3.addEventListener('click', function() {
+//         if (selectedImage) {
+//             insertImageToDropArea(this);
+//         }
+//     });
+// }
+
+// function insertImageToDropArea(dropArea) {
+//     dropArea.innerHTML = '';
+
+//     const newImage = document.createElement('img');
+//     newImage.src = selectedImage.src;
+//     newImage.style.width = '100%';
+//     newImage.style.height = '100%';
+
+//     const deleteButton = document.createElement('button');
+//     deleteButton.textContent = '削除';
+//     deleteButton.classList.add('delete-button');
+//     deleteButton.addEventListener('click', function(e) {
+//         e.stopPropagation();
+//         dropArea.innerHTML = '';
+//     });
+
+//     const cropButton = document.createElement('button');
+//     cropButton.textContent = 'トリミング';
+//     cropButton.classList.add('crop-button');
+//     cropButton.addEventListener('click', function(e) {
+//         e.stopPropagation();
+//         openCroppieModal(dropArea);
+//     });
+
+//     dropArea.appendChild(newImage);
+//     dropArea.appendChild(deleteButton);
+//     dropArea.appendChild(cropButton);
+//     dropArea.classList.add('with-buttons');
+
+//     selectedImage.classList.remove('selected');
+//     selectedImage = null;
+// }
+
+// function openCroppieModal(container) {
+//     const croppieModal = document.getElementById('croppieModal');
+//     const croppieContainer = document.getElementById('croppie-container');
+
+//     let croppieInstance;
+//     if (croppieInstance) {
+//         croppieInstance.destroy();
+//     }
+
+//     croppieInstance = new Croppie(croppieContainer, {
+//         viewport: { width: 200, height: 200 },
+//         boundary: { width: 300, height: 300 },
+//         showZoomer: true,
+//         enableResize: false
+//     });
+
+//     const img = container.querySelector('img');
+//     croppieInstance.bind({
+//         url: img.src
+//     });
+
+//     croppieModal.style.display = 'block';
+
+//     document.getElementById('crop-button').onclick = function() {
+//         croppieInstance.result({
+//              type: 'canvas', 
+//              size: 'original',
+//              format: 'png' ,
+//              quality:1
+//         }).then(function(croppedImage) {
+//             img.src = croppedImage;
+//             croppieModal.style.display = 'none';
+//         });
+//     };
+
+//     document.getElementById('close-button').onclick = function() {
+//         croppieModal.style.display = 'none';
+//     };
+// }
+
+// document.addEventListener('click', function(event) {
+//     const isInsideDropArea = event.target.closest('.with-buttons');
+
+//     if (!isInsideDropArea) {
+//         const dropAreas = document.querySelectorAll('.with-buttons');
+//         dropAreas.forEach(dropArea => {
+//             const cropButton = dropArea.querySelector('.crop-button');
+//             const deleteButton = dropArea.querySelector('.delete-button');
+            
+//             if (cropButton && deleteButton) {
+//                 cropButton.style.display = 'none';
+//                 deleteButton.style.display = 'none';
+//             }
+//         });
+//     } else {
+//         const cropButton = isInsideDropArea.querySelector('.crop-button');
+//         const deleteButton = isInsideDropArea.querySelector('.delete-button');
+        
+//         if (cropButton && deleteButton) {
+//             cropButton.style.display = 'block';
+//             deleteButton.style.display = 'block';
+//         }
+//     }
+// });
+
+// addClickListenerToDropAreas();
+
+
+// 24個版
 let selectedImage = null;
 
 function loadImage(input) {
@@ -193,20 +456,16 @@ function makeSelectable(img) {
 }
 
 function addClickListenerToDropAreas() {
-    const dropArea = document.getElementById('dropArea');
-    const dropArea2 = document.getElementById('dropArea2');
-    
-    dropArea.addEventListener('click', function() {
-        if (selectedImage) {
-            insertImageToDropArea(this);
+    for (let i = 1; i <= 24; i++) {
+        const dropArea = document.getElementById(`dropArea${i}`);
+        if (dropArea) {
+            dropArea.addEventListener('click', function() {
+                if (selectedImage) {
+                    insertImageToDropArea(this);
+                }
+            });
         }
-    });
-
-    dropArea2.addEventListener('click', function() {
-        if (selectedImage) {
-            insertImageToDropArea(this);
-        }
-    });
+    }
 }
 
 function insertImageToDropArea(dropArea) {
@@ -267,10 +526,10 @@ function openCroppieModal(container) {
 
     document.getElementById('crop-button').onclick = function() {
         croppieInstance.result({
-             type: 'canvas', 
-             size: 'original',
-             format: 'png' ,
-             quality:1
+            type: 'canvas',
+            size: 'original',
+            format: 'png',
+            quality: 1
         }).then(function(croppedImage) {
             img.src = croppedImage;
             croppieModal.style.display = 'none';
@@ -311,7 +570,7 @@ addClickListenerToDropAreas();
 
 
 
-// 上の保存版
+
 
 
 
@@ -342,6 +601,9 @@ addClickListenerToDropAreas();
 document.getElementById('frontButton').addEventListener('click', function() {
     document.getElementById('backInput').click();
 });
+
+
+
 
 
 
@@ -609,12 +871,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    // プレビューボタンにクリックイベントリスナーを追加
-    document.querySelector(".btn-preview").addEventListener("click", function() {
-        window.location.href = "../preview/index.html"; // プレビューページに遷移
-    });
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     // プレビューボタンにクリックイベントリスナーを追加
+//     document.querySelector(".btn-preview").addEventListener("click", function() {
+//         window.location.href = "../preview/index.html"; // プレビューページに遷移
+//     });
+// });
 
 
 
@@ -629,34 +891,144 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // テキストエリアの内容をローカルストレージに保存する関数
-function saveTextToLocalStorage() {
-    const textArea1 = document.getElementById('textArea');
-    const textArea2 = document.getElementById('textArea2');
+// テキストエリアの内容をローカルストレージに保存する関数
+// function saveTextToLocalStorage() {
+//     const textArea1 = document.getElementById('textArea');
+//     const textArea2 = document.getElementById('textArea2');
+//     const textArea3 = document.getElementById('textArea3');
 
-    localStorage.setItem('textArea1', textArea1.value);
-    localStorage.setItem('textArea2', textArea2.value);
+//     localStorage.setItem('textArea1', textArea1.value);
+//     localStorage.setItem('textArea2', textArea2.value);
+//     localStorage.setItem('textArea3', textArea3.value);
+// }
+
+// // テキストエリアの内容をローカルストレージから読み込む関数
+// function loadTextFromLocalStorage() {
+//     const textArea1 = document.getElementById('textArea');
+//     const textArea2 = document.getElementById('textArea2');
+//     const textArea3 = document.getElementById('textArea3');
+
+//     textArea1.value = localStorage.getItem('textArea1') || '';
+//     textArea2.value = localStorage.getItem('textArea2') || '';
+//     textArea3.value = localStorage.getItem('textArea3') || '';
+// }
+
+// // テキストエリアの内容をサーバーに送信する関数
+// function saveTextToServer() {
+//     const textArea1 = document.getElementById('textArea').value;
+//     const textArea2 = document.getElementById('textArea2').value;
+//     const textArea3 = document.getElementById('textArea3').value;
+
+//     fetch('/save-text', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ text1: textArea1, text2: textArea2, text3: textArea3 })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Text saved to server:', data);
+//         alert("テキストデータがサーバーに保存されました。");
+//     })
+//     .catch(error => {
+//         console.error('Error saving text to server:', error);
+//     });
+// }
+
+// // テキストエリアの最大文字数を制限する関数
+// function enforceMaxLength(textarea, maxLength) {
+//     textarea.addEventListener('input', function () {
+//         // 入力された文字列を取得
+//         const value = this.value;
+
+//         // 現在の文字列の長さを計算
+//         const currentLength = Array.from(value).length;
+
+//         // 最大文字数を超えた場合はカットする
+//         if (currentLength > maxLength) {
+//             this.value = Array.from(value).slice(0, maxLength).join('');
+//         }
+
+//         adjustHeight(this);
+//         saveTextToLocalStorage(); // ローカルストレージに保存
+//     });
+
+//     // 初期読み込み時にも調整
+//     adjustHeight(textarea);
+// }
+
+// // 高さ調整関数
+// function adjustHeight(textarea) {
+//     textarea.style.height = 'auto'; // 高さをリセットしてから
+//     textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
+// }
+
+// // 最大文字数を設定
+// const maxLength = 20; // 変更したい場合はここで設定
+
+// const textareas = document.querySelectorAll('#textArea, #textArea2, #textArea3');
+
+// textareas.forEach(textarea => {
+//     enforceMaxLength(textarea, maxLength);
+// });
+
+// // ドキュメントが読み込まれたときにローカルストレージからテキストを復元
+// document.addEventListener("DOMContentLoaded", function () {
+//     loadTextFromLocalStorage();
+
+//     // テキストエリアの高さを調整
+//     setTimeout(() => {
+//         textareas.forEach(textarea => adjustHeight(textarea));
+//     }, 100);
+
+//     // 保存ボタンにクリックイベントリスナーを追加
+//     document.querySelector(".btn-E").addEventListener("click", function() {
+//         // 画像データの保存処理（画像関連の処理が必要な場合）
+//         emptyElements.forEach(function(dropArea) {
+//             const imageData = loadImageFromLocalStorage(dropArea.id);
+//             if (imageData) {
+//                 saveImageToServer(imageData, dropArea.id); // サーバーに画像データを送信
+//             }
+//         });
+
+//         // テキストデータの保存処理
+//         saveTextToServer();
+//     });
+// });
+
+
+
+
+// 24個版
+function saveTextToLocalStorage() {
+    for (let i = 1; i <= 24; i++) {
+        const textArea = document.getElementById(`textArea${i}`);
+        localStorage.setItem(`textArea${i}`, textArea.value);
+    }
 }
 
 // テキストエリアの内容をローカルストレージから読み込む関数
 function loadTextFromLocalStorage() {
-    const textArea1 = document.getElementById('textArea');
-    const textArea2 = document.getElementById('textArea2');
-
-    textArea1.value = localStorage.getItem('textArea1') || '';
-    textArea2.value = localStorage.getItem('textArea2') || '';
+    for (let i = 1; i <= 24; i++) {
+        const textArea = document.getElementById(`textArea${i}`);
+        textArea.value = localStorage.getItem(`textArea${i}`) || '';
+    }
 }
 
 // テキストエリアの内容をサーバーに送信する関数
 function saveTextToServer() {
-    const textArea1 = document.getElementById('textArea').value;
-    const textArea2 = document.getElementById('textArea2').value;
+    let textData = {};
+    for (let i = 1; i <= 24; i++) {
+        textData[`text${i}`] = document.getElementById(`textArea${i}`).value;
+    }
 
     fetch('/save-text', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ text1: textArea1, text2: textArea2 })
+        body: JSON.stringify(textData)
     })
     .then(response => response.json())
     .then(data => {
@@ -671,55 +1043,52 @@ function saveTextToServer() {
 // テキストエリアの最大文字数を制限する関数
 function enforceMaxLength(textarea, maxLength) {
     textarea.addEventListener('input', function () {
-        // 入力された文字列を取得
         const value = this.value;
-
-        // 現在の文字列の長さを計算
         const currentLength = Array.from(value).length;
 
-        // 最大文字数を超えた場合はカットする
         if (currentLength > maxLength) {
             this.value = Array.from(value).slice(0, maxLength).join('');
         }
 
         adjustHeight(this);
-        saveTextToLocalStorage(); // ローカルストレージに保存
+        saveTextToLocalStorage();
     });
 
-    // 高さ調整関数
-    function adjustHeight(textarea) {
-        textarea.style.height = 'auto'; // 高さをリセットしてから
-        textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
-    }
-
-    // 初期読み込み時にも調整
     adjustHeight(textarea);
 }
 
+// 高さ調整関数
+function adjustHeight(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+}
+
 // 最大文字数を設定
-const maxLength = 20; // 変更したい場合はここで設定
+const maxLength = 20;
+const textareas = [];
 
-const textareas = document.querySelectorAll('#textArea, #textArea2');
-
-textareas.forEach(textarea => {
+for (let i = 1; i <= 24; i++) {
+    const textarea = document.getElementById(`textArea${i}`);
+    textareas.push(textarea);
     enforceMaxLength(textarea, maxLength);
-});
+}
 
 // ドキュメントが読み込まれたときにローカルストレージからテキストを復元
 document.addEventListener("DOMContentLoaded", function () {
     loadTextFromLocalStorage();
 
-    // 保存ボタンにクリックイベントリスナーを追加
+    setTimeout(() => {
+        textareas.forEach(textarea => adjustHeight(textarea));
+    }, 100);
+
     document.querySelector(".btn-E").addEventListener("click", function() {
-        // 画像データの保存処理
         emptyElements.forEach(function(dropArea) {
             const imageData = loadImageFromLocalStorage(dropArea.id);
             if (imageData) {
-                saveImageToServer(imageData, dropArea.id); // サーバーに画像データを送信
+                saveImageToServer(imageData, dropArea.id);
             }
         });
 
-        // テキストデータの保存処理
         saveTextToServer();
     });
 });
@@ -734,25 +1103,110 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
   
 // 先に変えたい枠から選ぶパターン タッチ
+// document.addEventListener('DOMContentLoaded', () => {
+//     const dropArea1 = document.getElementById('dropArea');
+//     const dropArea2 = document.getElementById('dropArea2');
+//     const dropArea3 = document.getElementById('dropArea3');
+//     const resizeButtons = document.querySelectorAll('.resizeButton');
+//     const saveButton = document.querySelector('.btn-E');
+//     let activeDropArea = null;
+
+//     // ドロップエリアがクリックまたはタッチされたときの処理
+//     const handleDropAreaInteraction = (dropArea) => {
+//         dropArea1.classList.remove('active');
+//         dropArea2.classList.remove('active');
+//         dropArea3.classList.remove('active');
+//         dropArea.classList.add('active');
+//         activeDropArea = dropArea;
+//     };
+
+//     dropArea1.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea1));
+//     dropArea2.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea2));
+//     dropArea3.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea3));
+
+//     // サイズ変更ボタンがクリックまたはタッチされたときの処理
+//     const handleResizeButtonInteraction = (button) => {
+//         if (activeDropArea) {
+//             // サイズをすべてリセット
+//             activeDropArea.classList.remove('square', 'rectangle', 'mini');
+//             // ボタンの data-size 属性に基づいてサイズを変更
+//             const size = button.getAttribute('data-size');
+//             activeDropArea.classList.add(size);
+
+//             // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+//             localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+//         }
+//     };
+
+//     resizeButtons.forEach(button => {
+//         button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
+//     });
+
+//     // 保存ボタンがクリックされたときの処理
+//     saveButton.addEventListener('click', () => {
+//         if (activeDropArea) {
+//             const size = localStorage.getItem(`dropAreaSize_${activeDropArea.id}`);
+
+//             // サーバにサイズ情報を送信
+//             fetch('/save-size', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     dropAreaId: activeDropArea.id,
+//                     size: size
+//                 })
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 console.log('成功:', data);
+//             })
+//             .catch(error => {
+//                 console.error('エラー:', error);
+//             });
+//         }
+//     });
+
+//     // ページロード時にローカルストレージからサイズを復元
+//     ['dropArea', 'dropArea2', 'dropArea3'].forEach(dropAreaId => {
+//         const savedSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+//         const dropArea = document.getElementById(dropAreaId);
+//         if (savedSize) {
+//             dropArea.classList.add(savedSize);
+//         }
+//     });
+// });
+
+
+
+// 24個版
 document.addEventListener('DOMContentLoaded', () => {
-    const dropArea1 = document.getElementById('dropArea');
-    const dropArea2 = document.getElementById('dropArea2');
+    const numberOfDropAreas = 24; // ドロップエリアの数
+    const dropAreas = [];
     const resizeButtons = document.querySelectorAll('.resizeButton');
     const saveButton = document.querySelector('.btn-E');
     let activeDropArea = null;
 
+    // ドロップエリアを作成し、配列に追加
+    for (let i = 1; i <= numberOfDropAreas; i++) {
+        const dropArea = document.getElementById(`dropArea${i}`);
+        if (dropArea) {
+            dropAreas.push(dropArea);
+            dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
+        }
+    }
+
     // ドロップエリアがクリックまたはタッチされたときの処理
     const handleDropAreaInteraction = (dropArea) => {
-        dropArea1.classList.remove('active');
-        dropArea2.classList.remove('active');
+        dropAreas.forEach(area => area.classList.remove('active'));
         dropArea.classList.add('active');
         activeDropArea = dropArea;
     };
-
-    dropArea1.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea1));
-    dropArea2.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea2));
 
     // サイズ変更ボタンがクリックまたはタッチされたときの処理
     const handleResizeButtonInteraction = (button) => {
@@ -763,8 +1217,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = button.getAttribute('data-size');
             activeDropArea.classList.add(size);
 
-            // サイズ情報をローカルストレージに保存
-            localStorage.setItem('dropAreaSize', size);
+            // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+            localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
         }
     };
 
@@ -775,7 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 保存ボタンがクリックされたときの処理
     saveButton.addEventListener('click', () => {
         if (activeDropArea) {
-            const size = localStorage.getItem('dropAreaSize');
+            const size = localStorage.getItem(`dropAreaSize_${activeDropArea.id}`);
 
             // サーバにサイズ情報を送信
             fetch('/save-size', {
@@ -799,12 +1253,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ページロード時にローカルストレージからサイズを復元
-    const savedSize = localStorage.getItem('dropAreaSize');
-    if (savedSize) {
-        dropArea1.classList.add(savedSize);
-        dropArea2.classList.add(savedSize);
+    for (let i = 1; i <= numberOfDropAreas; i++) {
+        const dropArea = document.getElementById(`dropArea${i}`);
+        if (dropArea) {
+            const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
+            if (savedSize) {
+                dropArea.classList.add(savedSize);
+            }
+        }
     }
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -852,6 +1318,12 @@ document.querySelector('.btn-E').addEventListener('click', function() {
         console.log('保存する色が設定されていません。');
     }
 });
+
+
+
+
+
+
 
 
 

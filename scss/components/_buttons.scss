@@ -121,6 +121,7 @@
                                 height: 38px;
                                 font-size: 0.8rem;
                                 }
+                                
 
 
 
@@ -189,6 +190,48 @@
             background-image: url(../../../images/modal2\ sp.png);
             width: 234px;
             height: 35px;
+            font-size: 1rem;
+            }
+    }
+
+    &-I{
+        background-image: url(../../../images/button-edit.png);
+        width: 152px;
+        height: 38px;
+        font-size: 1.125rem;
+        padding: 0;
+
+        @include mq('sp-edit'){
+            width: 120px;
+            height: 31px;
+            font-size: 1rem;
+            }
+    }
+
+    &-J{
+        background-image: url(../../../images/button-edit.png);
+        width: 152px;
+        height: 38px;
+        font-size: 1.125rem;
+        padding: 0;
+
+        @include mq('sp-edit'){
+            width: 120px;
+            height: 31px;
+            font-size: 1rem;
+            }
+    }
+
+    &-K{
+        background-image: url(../../../images/button-edit.png);
+        width: 152px;
+        height: 38px;
+        font-size: 1.125rem;
+        padding: 0;
+
+        @include mq('sp-edit'){
+            width: 120px;
+            height: 31px;
             font-size: 1rem;
             }
     }

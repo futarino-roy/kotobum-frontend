@@ -1,6 +1,6 @@
 .login{
     max-width: 326px;
-    margin: 91px auto;
+    margin: 60px auto 0;
     text-align: center;
 
     &_img{
@@ -13,9 +13,13 @@
         margin-top: 191px;
     }
 
+    @include mq('tab2'){
+        margin-top: 100px;
+    }
+
     @include mq('sp'){
         width: 298px;
-        margin-top: 291px;
+        margin-top: 70px;
     }
 
     .form{

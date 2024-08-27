@@ -1,6 +1,6 @@
 .signup{
     max-width: 326px;
-    margin: 91px auto;
+    margin: 30px auto 0;
     text-align: center;
 
     @include mq('tab'){
@@ -8,9 +8,13 @@
         margin-top: 191px;
     }
 
+    @include mq('tab2'){
+        margin-top: 80px;
+    }
+
     @include mq('sp'){
         width: 298px;
-        margin-top: 291px;
+        margin-top: 50px;
     }
 
     .form{
