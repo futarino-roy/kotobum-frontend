@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
     })
     .then(data => {
-        const username = data.name; // サーバーから取得した名前
-        document.querySelector('header p').textContent = `${username} 様`; // 名前を表示
+        const name = data.name; // サーバーから取得した名前
+        document.querySelector('header p').textContent = `${name} 様`; // 名前を表示
     })
     .catch(error => {
         console.error('失敗:', error);
