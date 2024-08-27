@@ -37,6 +37,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('token'); // トークンを取得
+    console.log('取得したトークン:', token); // トークンをコンソールに表示
 
     if (!token) {
         console.error('トークンが見つかりません。サインインしてください。');
@@ -60,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
     })
     .then(data => {
-        const name = data.name; // サーバーから取得した名前
+        const username = data.name; // サーバーから取得した名前
         const headerParagraph = document.querySelector('header p');
         if (headerParagraph) {
-            headerParagraph.textContent = `${name} 様`; // 名前を表示
+            headerParagraph.textContent = `${username} 様`; // 名前を表示
         } else {
             console.error('HTML 内に <header> <p> が見つかりません。');
         }
@@ -73,5 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('名前の取得に失敗しました。もう一度お試しください。');
     });
 });
+
 
 
