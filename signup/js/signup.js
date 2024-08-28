@@ -59,7 +59,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     const name = document.querySelector('input[name="name"]').value.trim();
     const email = document.querySelector('input[name="email"]').value.trim();
     const password = document.querySelector('input[name="password"]').value;
-    const book = document.querySelector('input[name="book"]:checked').value; // AまたはBを取得
+    const template = document.querySelector('input[name="template"]:checked').value; // AまたはBを取得
 
     // 簡単なバリデーション
     if (!name || !email || !password || !book) {
