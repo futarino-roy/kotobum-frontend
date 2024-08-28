@@ -104,15 +104,17 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     .then(data => {
         console.log('成功:', data);
         localStorage.setItem('token', data.token); // トークンを保存
-        const book = data.book; // サーバーからbook情報を取得
 
-        // 選択されたbookに基づいてリダイレクト
+        // サーバーから取得した情報
+        const template = data.template; // サーバーから「template」情報を取得
+
+        // 選択されたtemplateに基づいてリダイレクト
         if (template === 'A') {
             window.location.href = '../mypage';
         } else if (template === 'B') {
             window.location.href = '/mypageB';
         } else {
-            window.location.href = '/mypage'; // book情報が無い場合のデフォルト
+            window.location.href = '/mypage'; // template情報が無い場合のデフォルト
         }
     })
     .catch(error => {

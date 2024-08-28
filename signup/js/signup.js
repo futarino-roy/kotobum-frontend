@@ -105,4 +105,3 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         alert('サインアップに失敗しました。もう一度お試しください。');
     });
 });
-
