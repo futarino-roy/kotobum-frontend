@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // プレビューからメイン
 document.getElementById('editBack').addEventListener('click', function() {
     const currentSlideIndex = swiper.realIndex;  // 現在のスライドインデックスを取得
-    const mainPageUrl = `../edit/index.html?slide=${currentSlideIndex + 1}`;  // スライド番号をクエリパラメータに追加
+    const mainPageUrl = `../editB/index.html?slide=${currentSlideIndex + 1}`;  // スライド番号をクエリパラメータに追加
     window.location.href = mainPageUrl;  // メインページに遷移
 });
 
@@ -49,14 +49,14 @@ document.getElementById('editBack').addEventListener('click', function() {
 
 
 
-// 画像の挿入
+// 画像の挿入 13~24
 document.addEventListener('DOMContentLoaded', function() {
     // 各 dropArea の画像を更新
     updateDropAreas();
 });
 
 function updateDropAreas() {
-    for (let i = 1; i <= 24; i++) {
+    for (let i = 13; i <= 24; i++) {
         const dropArea = document.getElementById(`dropArea${i}`);
         if (dropArea) {
             const savedImageSrc = localStorage.getItem(`dropArea${i}`);
@@ -106,13 +106,13 @@ function updateDropAreas() {
 //     }
 // });
 
-// 画像のドラッグ24個版
+// 画像のドラッグ 13~24
 document.addEventListener("DOMContentLoaded", function() {
     // ドロップエリアの数
     const numDropAreas = 24;
 
     // 各ドロップエリアをループして処理
-    for (let i = 1; i <= numDropAreas; i++) {
+    for (let i = 13; i <= numDropAreas; i++) {
         // ドロップエリアごとのコンテナを取得
         const dropAreaContainer = document.getElementById(`dropArea${i}`);
 
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// テキスト24個版
+// テキスト 13~24
 function adjustTextareaHeight(textarea) {
     textarea.style.height = 'auto'; // 高さをリセット
     textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
@@ -231,7 +231,7 @@ function adjustTextareaHeight(textarea) {
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
-    for (let i = 1; i <= 24; i++) {
+    for (let i = 13; i <= 24; i++) {
         const textArea = document.getElementById(`previewTextArea${i}`);
         if (textArea) {
             textArea.value = localStorage.getItem(`textArea${i}`) || '';

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B面の表紙のプレビューページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css">
+    <link rel="stylesheet" href="../public/assets/style/style.css">
+</head>
+<body class="cover-preview-body">
+    <header class="preview-header">
+        <button class="btn btn-I">校了</button>
+    </header>
+
+    <div class="cover-preview">
+
+
+
+
+        <div class="content" id="content">
+
+       <div class="swiper">
+           <div class="swiper-wrapper">
+       
+
+               <div class="swiper-slide">
+                <div class="swiper-slide_box uniqueColor">
+                    <img src="/preview/images/template/p1@2x.png" alt="">
+                    <div class="input-drop">
+                        <textarea id="coverBPreviewTextArea1" rows="1" readonly></textarea>
+                        <div id="coverB-dropArea1" class="empty"></div>
+                    </div>
+                </div>
+               </div>
+   
+         
+               <div class="swiper-slide">
+                <div class="swiper-slide_box uniqueColor">
+                    <img src="/preview/images/template/p2@2x.png" alt="">
+                    <div class="input-drop">
+                        <textarea id="coverBPreviewTextArea2" rows="1" maxlength="20" readonly></textarea>
+                        <div id="coverB-dropArea2" class="empty"></div>
+                    </div>
+                </div>
+               </div>
+
+           </div>
+
+           <div class="swiper-pagination"></div>
+           <div class="swiper-button-prev"></div>
+           <div class="swiper-button-next"></div>
+       </div>
+       </div>
+
+
+       <div class="button-flex">
+        <button class="btn btn-J" id="editBack">編集する</button>
+        <a href="../mypage/index.html"><button class="btn btn-K">マイページへ</button></a>
+       </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/croppie/croppie.min.js"></script>
+    <script src="/coverB-preview/js/script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレビューページ</title>
+    <style>
+        .image-preview {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        #dropArea{
+            position: relative;
+            width: 60%;
+            height: 60%;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="dropArea" class="empty"></div>
+<div id="dropArea2" class="empty"></div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html> -->
