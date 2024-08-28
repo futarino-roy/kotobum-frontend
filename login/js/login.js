@@ -114,7 +114,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         } else if (template === 'B') {
             window.location.href = '/mypageB';
         } else {
-            window.location.href = '/mypage'; // template情報が無い場合のデフォルト
+            window.location.href = '../edit'; // template情報が無い場合のデフォルト
         }
     })
     .catch(error => {
