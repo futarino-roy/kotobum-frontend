@@ -108,7 +108,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
         // 選択されたbookに基づいてリダイレクト
         if (template === 'A') {
-            window.location.href = '/mypage';
+            window.location.href = '../mypage';
         } else if (template === 'B') {
             window.location.href = '/mypageB';
         } else {
