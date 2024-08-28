@@ -62,7 +62,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     const template = document.querySelector('input[name="template"]:checked').value; // AまたはBを取得
 
     // 簡単なバリデーション
-    if (!name || !email || !password || !book) {
+    if (!name || !email || !password || !template) {
         alert('すべてのフィールドを入力してください。');
         return;
     }
