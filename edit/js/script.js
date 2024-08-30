@@ -3653,7 +3653,7 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 
 document.getElementById('sendButton').addEventListener('click', function () {
     // サーバからアルバムIDを取得
-    fetch('https://develop-back.kotobum.com/api/user/alubm') // アルバムIDを取得するためのエンドポイントに変更してください
+    fetch('https://develop-back.kotobum.com/api/user/album') // アルバムIDを取得するためのエンドポイントに変更してください
         .then(response => response.json())
         .then(albumData => {
             const albumId = albumData.albumId; // 実際のレスポンス構造に合わせて修正
