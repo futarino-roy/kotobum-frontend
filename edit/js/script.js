@@ -3654,6 +3654,9 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 document.getElementById('sendButton').addEventListener('click', function () {
     // 認証トークンの設定（例：ローカルストレージやCookieから取得）
     const token = localStorage.getItem('authToken'); // 例：トークンがローカルストレージに保存されている場合
+    
+    // トークンが正しく取得できているか確認
+    console.log('取得したトークン:', token);
 
     // トークンが存在しない場合、エラーを表示して終了
     if (!token) {
@@ -3669,109 +3672,115 @@ document.getElementById('sendButton').addEventListener('click', function () {
             'Content-Type': 'application/json'
         }
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(albumData => {
-            const albumId = albumData.albumId; // 実際のレスポンス構造に合わせて修正
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(albumData => {
+        console.log('取得したアルバムデータ:', albumData); // アルバムデータを確認
 
-            // アルバムIDが取得できたかチェック
-            if (!albumId) {
-                console.error('アルバムIDを取得できませんでした。');
-                return;
-            }
+        const albumId = albumData.albumId; // 実際のレスポンス構造に合わせて修正
 
-            // 取得したい別のページのURL
-            const otherPageUrl = '../preview/index.html'; // 例: 同一ドメイン内の別のページ
+        // アルバムIDが取得できたかチェック
+        if (!albumId) {
+            console.error('アルバムIDを取得できませんでした。');
+            return;
+        }
 
-            // 別のHTMLページの内容を取得
-            return fetch(otherPageUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
-                    }
-                    return response.text();
-                })
-                .then(htmlContent => {
-                    // ページのすべてのスタイルシートを取得
-                    let cssContent = '';
-                    let cssUrls = [];
-                    const cssPromises = [];
+        // 取得したい別のページのURL
+        const otherPageUrl = '../preview/index.html'; // 例: 同一ドメイン内の別のページ
 
-                    // 現在のページのスタイルシートをループして処理
-                    for (let sheet of document.styleSheets) {
-                        try {
-                            if (sheet.href) {
-                                // 外部CSSファイルのURLを取得
-                                cssUrls.push(sheet.href);
+        // 別のHTMLページの内容を取得
+        return fetch(otherPageUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(htmlContent => {
+                // ページのすべてのスタイルシートを取得
+                let cssContent = '';
+                let cssUrls = [];
+                const cssPromises = [];
 
-                                // 外部CSSファイルの内容を取得するためにfetchを使用
-                                cssPromises.push(
-                                    fetch(sheet.href)
-                                        .then(response => response.text())
-                                        .then(text => {
-                                            cssContent += text;
-                                        })
-                                        .catch(e => {
-                                            console.warn('スタイルシートの取得エラー:', e);
-                                        })
-                                );
-                            } else {
-                                // インラインスタイルシートの内容を取得
-                                for (let rule of sheet.cssRules) {
-                                    cssContent += rule.cssText;
-                                }
+                // 現在のページのスタイルシートをループして処理
+                for (let sheet of document.styleSheets) {
+                    try {
+                        if (sheet.href) {
+                            // 外部CSSファイルのURLを取得
+                            cssUrls.push(sheet.href);
+
+                            // 外部CSSファイルの内容を取得するためにfetchを使用
+                            cssPromises.push(
+                                fetch(sheet.href)
+                                    .then(response => response.text())
+                                    .then(text => {
+                                        cssContent += text;
+                                    })
+                                    .catch(e => {
+                                        console.warn('スタイルシートの取得エラー:', e);
+                                    })
+                            );
+                        } else {
+                            // インラインスタイルシートの内容を取得
+                            for (let rule of sheet.cssRules) {
+                                cssContent += rule.cssText;
                             }
-                        } catch (e) {
-                            console.warn('スタイルシートの取得エラー:', e);
                         }
+                    } catch (e) {
+                        console.warn('スタイルシートの取得エラー:', e);
                     }
+                }
 
-                    // すべてのfetchリクエストが完了するのを待つ
-                    return Promise.all(cssPromises).then(() => ({
-                        htmlContent,
-                        cssContent,
-                        cssUrls
-                    }));
-                });
-        })
-        .then(({ htmlContent, cssContent, cssUrls }) => {
-            // ローカルストレージのすべてのデータを取得
-            let localStorageData = {};
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                localStorageData[key] = localStorage.getItem(key);
-            }
-
-            // FormDataオブジェクトを作成してbodyに代入
-            const body = new FormData();
-            body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
-            body.append('cssContent', cssContent);    // 現在のページのCSSの内容
-            body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
-            body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
-
-            // fetch APIを使ってサーバに送信
-            return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`,  // トークンを追加
-                },
-                body: body // bodyを指定
+                // すべてのfetchリクエストが完了するのを待つ
+                return Promise.all(cssPromises).then(() => ({
+                    htmlContent,
+                    cssContent,
+                    cssUrls
+                }));
             });
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch(error => {
-            console.error(error.message);
+    })
+    .then(({ htmlContent, cssContent, cssUrls }) => {
+        console.log('取得したHTMLコンテンツ:', htmlContent);
+        console.log('取得したCSSコンテンツ:', cssContent);
+        console.log('取得したCSS URL:', cssUrls);
+
+        // ローカルストレージのすべてのデータを取得
+        let localStorageData = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            localStorageData[key] = localStorage.getItem(key);
+        }
+
+        // FormDataオブジェクトを作成してbodyに代入
+        const body = new FormData();
+        body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
+        body.append('cssContent', cssContent);    // 現在のページのCSSの内容
+        body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
+        body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
+
+        // fetch APIを使ってサーバに送信
+        return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,  // トークンを追加
+            },
+            body: body // bodyを指定
         });
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.error('エラー:', error.message);
+    });
 });
