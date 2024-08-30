@@ -49,28 +49,53 @@ document.getElementById('editBack').addEventListener('click', function() {
 
 
 
-// 画像の挿入
+// 画像の挿入 24個版
+// document.addEventListener('DOMContentLoaded', function() {
+//     // 各 dropArea の画像を更新
+//     updateDropAreas();
+// });
+
+// function updateDropAreas() {
+//     for (let i = 1; i <= 24; i++) {
+//         const dropArea = document.getElementById(`dropArea${i}`);
+//         if (dropArea) {
+//             const savedImageSrc = localStorage.getItem(`dropArea${i}`);
+//             if (savedImageSrc) {
+//                 const img = document.createElement('img');
+//                 img.src = savedImageSrc;
+//                 dropArea.innerHTML = ''; // 現在の内容をクリア
+//                 dropArea.appendChild(img);
+//                 dropArea.classList.remove('empty');
+//             }
+//         }
+//     }
+// }
+
+
+
+// 画像の挿入 柔軟版
 document.addEventListener('DOMContentLoaded', function() {
     // 各 dropArea の画像を更新
     updateDropAreas();
 });
 
 function updateDropAreas() {
-    for (let i = 1; i <= 24; i++) {
-        const dropArea = document.getElementById(`dropArea${i}`);
-        if (dropArea) {
-            const savedImageSrc = localStorage.getItem(`dropArea${i}`);
-            if (savedImageSrc) {
-                const img = document.createElement('img');
-                img.src = savedImageSrc;
-                dropArea.innerHTML = ''; // 現在の内容をクリア
-                dropArea.appendChild(img);
-                dropArea.classList.remove('empty');
-            }
-        }
-    }
-}
+    // クラス 'empty' を持つすべての要素を取得
+    const dropAreas = document.querySelectorAll('.empty');
 
+    dropAreas.forEach((dropArea) => {
+        const id = dropArea.id; // 各 dropArea の id を取得 (例: 'dropArea1', 'dropArea2' ...)
+        const savedImageSrc = localStorage.getItem(id);
+        
+        if (savedImageSrc) {
+            const img = document.createElement('img');
+            img.src = savedImageSrc;
+            dropArea.innerHTML = ''; // 現在の内容をクリア
+            dropArea.appendChild(img);
+            dropArea.classList.remove('empty');
+        }
+    });
+}
 
 
 
@@ -107,25 +132,48 @@ function updateDropAreas() {
 // });
 
 // 画像のドラッグ24個版
+// document.addEventListener("DOMContentLoaded", function() {
+//     // ドロップエリアの数
+//     const numDropAreas = 24;
+
+//     // 各ドロップエリアをループして処理
+//     for (let i = 1; i <= numDropAreas; i++) {
+//         // ドロップエリアごとのコンテナを取得
+//         const dropAreaContainer = document.getElementById(`dropArea${i}`);
+
+//         // ローカルストレージから画像データを取得
+//         const imageData = localStorage.getItem(`image_dropArea${i}`);
+//         if (imageData) {
+//             const img = new Image();
+//             img.src = imageData;
+//             img.classList.add("image-preview");
+//             dropAreaContainer.appendChild(img);
+//         }
+//     }
+// });
+
+
+
+// 画像のドラッグ 柔軟版
 document.addEventListener("DOMContentLoaded", function() {
-    // ドロップエリアの数
-    const numDropAreas = 24;
+    // すべてのドロップエリア要素を取得
+    const dropAreas = document.querySelectorAll('[id^="dropArea"]');
 
     // 各ドロップエリアをループして処理
-    for (let i = 1; i <= numDropAreas; i++) {
-        // ドロップエリアごとのコンテナを取得
-        const dropAreaContainer = document.getElementById(`dropArea${i}`);
+    dropAreas.forEach(function(dropAreaContainer) {
+        // ドロップエリアのIDからローカルストレージのキーを生成
+        const dropAreaId = dropAreaContainer.id;
+        const imageData = localStorage.getItem(`image_${dropAreaId}`);
 
-        // ローカルストレージから画像データを取得
-        const imageData = localStorage.getItem(`image_dropArea${i}`);
         if (imageData) {
             const img = new Image();
             img.src = imageData;
             img.classList.add("image-preview");
             dropAreaContainer.appendChild(img);
         }
-    }
+    });
 });
+
 
 
 
@@ -164,27 +212,52 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // 枠24個版
-document.addEventListener("DOMContentLoaded", function() {
-    // ドロップエリアの数
-    const numDropAreas = 24;
+// document.addEventListener("DOMContentLoaded", function() {
+//     // ドロップエリアの数
+//     const numDropAreas = 24;
 
+//     // 枠のサイズ変更処理
+//     function applyBorders() {
+//         for (let i = 1; i <= numDropAreas; i++) {
+//             const dropAreaContainer = document.getElementById(`dropArea${i}`);
+//             if (dropAreaContainer) {
+//                 // ローカルストレージから枠のサイズを取得して適用
+//                 const dropAreaSize = localStorage.getItem(`dropAreaSize_dropArea${i}`);
+//                 if (dropAreaSize) {
+//                     dropAreaContainer.classList.add(dropAreaSize);
+//                 }
+//             }
+//         }
+//     }
+
+//     // 枠のサイズ変更を適用
+//     applyBorders();
+// });
+
+
+// 枠 柔軟版
+document.addEventListener("DOMContentLoaded", function() {
     // 枠のサイズ変更処理
     function applyBorders() {
-        for (let i = 1; i <= numDropAreas; i++) {
-            const dropAreaContainer = document.getElementById(`dropArea${i}`);
-            if (dropAreaContainer) {
-                // ローカルストレージから枠のサイズを取得して適用
-                const dropAreaSize = localStorage.getItem(`dropAreaSize_dropArea${i}`);
-                if (dropAreaSize) {
-                    dropAreaContainer.classList.add(dropAreaSize);
-                }
+        // dropAreaを含む全ての要素を取得
+        const dropAreas = document.querySelectorAll('[id^="dropArea"]');
+        
+        dropAreas.forEach(dropAreaContainer => {
+            // IDからサイズの情報を取得
+            const dropAreaId = dropAreaContainer.id;
+            const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+            
+            if (dropAreaSize) {
+                dropAreaContainer.classList.add(dropAreaSize);
             }
-        }
+        });
     }
 
     // 枠のサイズ変更を適用
     applyBorders();
 });
+
+
 
 
 
@@ -224,6 +297,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // テキスト24個版
+// function adjustTextareaHeight(textarea) {
+//     textarea.style.height = 'auto'; // 高さをリセット
+//     textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
+// }
+
+// // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
+// function loadTextForPreview() {
+//     for (let i = 1; i <= 24; i++) {
+//         const textArea = document.getElementById(`previewTextArea${i}`);
+//         if (textArea) {
+//             textArea.value = localStorage.getItem(`textArea${i}`) || '';
+
+//             // テキストエリアの高さを調整
+//             adjustTextareaHeight(textArea);
+//         }
+//     }
+// }
+
+// // ドキュメントが読み込まれたときにテキストを表示
+// document.addEventListener("DOMContentLoaded", function () {
+//     loadTextForPreview();
+// });
+
+
+
+
+
+// テキスト 柔軟版
 function adjustTextareaHeight(textarea) {
     textarea.style.height = 'auto'; // 高さをリセット
     textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
@@ -231,15 +332,16 @@ function adjustTextareaHeight(textarea) {
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
-    for (let i = 1; i <= 24; i++) {
-        const textArea = document.getElementById(`previewTextArea${i}`);
-        if (textArea) {
-            textArea.value = localStorage.getItem(`textArea${i}`) || '';
+    // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
+    const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+    
+    textAreas.forEach(textArea => {
+        const index = textArea.id.replace('previewTextArea', ''); // IDからインデックスを取得
+        textArea.value = localStorage.getItem(`textArea${index}`) || '';
 
-            // テキストエリアの高さを調整
-            adjustTextareaHeight(textArea);
-        }
-    }
+        // テキストエリアの高さを調整
+        adjustTextareaHeight(textArea);
+    });
 }
 
 // ドキュメントが読み込まれたときにテキストを表示
@@ -253,14 +355,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
     const savedColor = localStorage.getItem('backgroundColor');
     if (savedColor) {
+        // 背景色を適用
         let elements = document.getElementsByClassName('uniqueColor');
         for (let i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor = savedColor;
+        }
+        
+        // テキスト色を適用
+        let textElements = document.getElementsByClassName('text-color');
+        for (let i = 0; i < textElements.length; i++) {
+            textElements[i].style.color = savedColor;
         }
     }
 }
@@ -269,6 +379,7 @@ function applySavedColor() {
 document.addEventListener('DOMContentLoaded', function () {
     applySavedColor();
 });
+
 
 
 

@@ -1735,7 +1735,7 @@ header img {
      object-fit: cover;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
   position: relative;
   width: 60%;
   height: 60%;
@@ -1743,7 +1743,7 @@ header img {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .crop-btn {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
   position: absolute;
   top: 5px;
   right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
@@ -1756,13 +1756,13 @@ header img {
   cursor: pointer;
   opacity: 0.8;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .crop-btn:hover {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
   opacity: 1;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .crop-btn.show {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
   display: flex;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .delete-btn {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -1775,28 +1775,28 @@ header img {
   cursor: pointer;
   opacity: 0.8;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .delete-btn:hover {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
   opacity: 1;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 .delete-btn.show {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
   display: flex;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.active {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
   border-color: #f00;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.square {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
   width: 57%;
   height: 40%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.rectangle {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.rectangle {
   width: 62%;
   height: 30%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.mini {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.mini {
   width: 52%;
   height: 20%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 img {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -2725,8 +2725,208 @@ header img {
   resize: none;
   width: 60%;
   height: 20%;
-  margin: 10% 0 10%;
-  font-size: 0.8rem;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  margin: 0;
+  margin: 1% 0 5%;
+  font-size: 0.45rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 0.33rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 0.65rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 1.9vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  margin: 0;
+  margin-top: 5%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  margin: 0;
+  margin-top: 20%;
+  margin-right: 35%;
+  width: 20%;
+  color: #FEF8F6;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  margin: 0;
+  color: #FEF8F6;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 2.5vw;
+  }
 }
 
 .swiper-button-prev,
@@ -3187,31 +3387,26 @@ header img {
 }
 @media screen and (min-width: 1700px) {
   .preview .content {
-    margin: 180px 0 0 0;
+    margin: 200px 0 0 0;
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content {
-    margin: 150px 0 0 0;
-  }
-}
-@media screen and (max-width: 700px) {
-  .preview .content {
-    margin: 120px 0 0 0;
+    margin: 85px 0 0 0;
   }
 }
 .preview .content .swiper {
-  width: 400px;
+  width: 600px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper {
-    width: 700px;
+    width: 900px;
   }
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper {
-    width: 300px;
+    width: 450px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -3236,22 +3431,17 @@ header img {
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 700px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
-    width: 50%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 480px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 380px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
-    width: 60%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 330px) {
@@ -3276,7 +3466,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
   width: 57%;
@@ -3301,7 +3491,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
   width: 57%;
@@ -3326,7 +3516,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.square {
   width: 57%;
@@ -3351,7 +3541,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.square {
   width: 57%;
@@ -3376,7 +3566,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.square {
   width: 57%;
@@ -3401,7 +3591,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.square {
   width: 57%;
@@ -3426,7 +3616,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.square {
   width: 57%;
@@ -3451,7 +3641,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.square {
   width: 57%;
@@ -3476,7 +3666,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
   width: 57%;
@@ -3501,7 +3691,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.square {
   width: 57%;
@@ -3526,7 +3716,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
   width: 57%;
@@ -3551,7 +3741,7 @@ header img {
   width: 60%;
   height: 60%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: none;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.square {
   width: 57%;
@@ -3877,16 +4067,217 @@ header img {
   resize: none;
   width: 60%;
   height: auto;
-  margin: 10% 0 10%;
+  margin: 5% 0 5%;
+  border: none;
   outline: none;
   pointer-events: none;
   cursor: not-allowed;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+  margin: 0;
+  margin: 1% 0 5%;
+  font-size: 0.45rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 0.33rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 0.65rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 1.9vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-3 {
+  margin: 0;
+  margin-top: 5%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
   font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+  margin: 0;
+  margin-top: 20%;
+  margin-right: 35%;
+  width: 20%;
+  color: #ffffff;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 2.5vw;
+  }
 }
 .preview .button-flex {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
   gap: 30px;
 }
 @media screen and (max-width: 900px) {

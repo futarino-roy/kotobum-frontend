@@ -108,18 +108,21 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         // サーバーから取得した情報
         const template = data.template; // サーバーから「template」情報を取得
 
+        // テンプレート情報をコンソールに出力
+        console.log('取得したテンプレート情報:', template);
+
         // 選択されたtemplateに基づいてリダイレクト
         if (template === 'A') {
             window.location.href = '../mypage';
         } else if (template === 'B') {
             window.location.href = '../mypageB';
         } else {
-            window.location.href = '/mypage'; // template情報が無い場合のデフォルト
+            window.location.href = '/mypageB'; // template情報が無い場合のデフォルト
         }
     })
     .catch(error => {
         console.error('失敗:', error);
-        showError('ログインに失敗しました。メールアドレスまたはパスワードを確認してください。');
+        showError('ログインに失敗しました。エラーの詳細: ' + error.message);
     });
 });
 
