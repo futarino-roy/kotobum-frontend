@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const token = localStorage.getItem('authToken'); // トークンを取得
+    const token = localStorage.getItem('token'); // トークンを取得
     console.log('取得したトークン:', token); // トークンをコンソールに表示
 
     if (!token) {

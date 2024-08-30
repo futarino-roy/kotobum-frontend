@@ -103,7 +103,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     })
     .then(data => {
         console.log('成功:', data);
-        localStorage.setItem('authToken', data.token); // トークンを保存
+        localStorage.setItem('token', data.token); // トークンを保存
 
         // サーバーから取得した情報
         const template = data.template; // サーバーから「template」情報を取得
