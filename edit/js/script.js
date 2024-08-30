@@ -3631,7 +3631,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
                 // fetch APIを使ってサーバに送信
                 fetch('https://develop-back.kotobum.com/api/albums/{album}/body', {  
                     method: 'POST',
-                    body: body
+                    body: formData // 修正：ここでformDataを指定
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -3646,3 +3646,4 @@ document.getElementById('sendButton').addEventListener('click', function () {
             console.error('別のHTMLページの取得エラー:', error);
         });
 });
+
