@@ -3572,9 +3572,10 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 // 異なるページの内容を取得してサーバに送信
 // 異なるページの内容を取得してサーバに送信
 document.getElementById('sendButton').addEventListener('click', function () {
+    // アルバムIDを動的に取得
+    const albumId = document.getElementById('albumIdInput').value; // 例: ユーザーが入力したアルバムID
     // 取得したい別のページのURL
-    const otherPageUrl = '../preview/index.html';  // 例: 同一ドメイン内の別のページ
-
+    const otherPageUrl = '../preview/index.html';
     // 別のHTMLページの内容を取得
     fetch(otherPageUrl)
         .then(response => response.text())
@@ -3583,15 +3584,10 @@ document.getElementById('sendButton').addEventListener('click', function () {
             let cssContent = '';
             let cssUrls = [];
             const cssPromises = [];
-
-            // 現在のページのスタイルシートをループして処理
             for (let sheet of document.styleSheets) {
                 try {
                     if (sheet.href) {
-                        // 外部CSSファイルのURLを取得
                         cssUrls.push(sheet.href);
-
-                        // 外部CSSファイルの内容を取得するためにfetchを使用
                         cssPromises.push(
                             fetch(sheet.href)
                                 .then(response => response.text())
@@ -3603,7 +3599,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
                                 })
                         );
                     } else {
-                        // インラインスタイルシートの内容を取得
                         for (let rule of sheet.cssRules) {
                             cssContent += rule.cssText;
                         }
@@ -3612,27 +3607,20 @@ document.getElementById('sendButton').addEventListener('click', function () {
                     console.warn('スタイルシートの取得エラー:', e);
                 }
             }
-
-            // すべてのfetchリクエストが完了するのを待つ
             Promise.all(cssPromises).then(() => {
-                // ローカルストレージのすべてのデータを取得
                 let localStorageData = {};
                 for (let i = 0; i < localStorage.length; i++) {
                     const key = localStorage.key(i);
                     localStorageData[key] = localStorage.getItem(key);
                 }
-
-                // FormDataオブジェクトを作成してbodyに代入
                 const body = new FormData();
-                body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
-                body.append('cssContent', cssContent);    // 現在のページのCSSの内容
-                body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
-                body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
-
-                // fetch APIを使ってサーバに送信
-                fetch('https://develop-back.kotobum.com/api/albums/${albumId}/body', {  
+                body.append('htmlContent', htmlContent);
+                body.append('cssContent', cssContent);
+                body.append('cssUrls', JSON.stringify(cssUrls));
+                body.append('localStorageData', JSON.stringify(localStorageData));
+                fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
                     method: 'POST',
-                    body: body // bodyを指定
+                    body: body
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -3647,5 +3635,12 @@ document.getElementById('sendButton').addEventListener('click', function () {
             console.error('別のHTMLページの取得エラー:', error);
         });
 });
+
+
+
+
+
+
+
 
 
