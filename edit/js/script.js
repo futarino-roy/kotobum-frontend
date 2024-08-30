@@ -3630,7 +3630,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
                 body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
 
                 // fetch APIを使ってサーバに送信
-                fetch('https://develop-back.kotobum.com/api/albums/{album}/body', {  
+                fetch('https://develop-back.kotobum.com/api/albums/${albumId}/body', {  
                     method: 'POST',
                     body: body // bodyを指定
                 })
