@@ -3571,76 +3571,178 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 
 // 異なるページの内容を取得してサーバに送信
 // 異なるページの内容を取得してサーバに送信
+// document.getElementById('sendButton').addEventListener('click', function () {
+//     // 取得したい別のページのURL
+//     const otherPageUrl = '../preview/index.html';  // 例: 同一ドメイン内の別のページ
+
+//     // 別のHTMLページの内容を取得
+//     fetch(otherPageUrl)
+//         .then(response => response.text())
+//         .then(htmlContent => {
+//             // ページのすべてのスタイルシートを取得
+//             let cssContent = '';
+//             let cssUrls = [];
+//             const cssPromises = [];
+
+//             // 現在のページのスタイルシートをループして処理
+//             for (let sheet of document.styleSheets) {
+//                 try {
+//                     if (sheet.href) {
+//                         // 外部CSSファイルのURLを取得
+//                         cssUrls.push(sheet.href);
+
+//                         // 外部CSSファイルの内容を取得するためにfetchを使用
+//                         cssPromises.push(
+//                             fetch(sheet.href)
+//                                 .then(response => response.text())
+//                                 .then(text => {
+//                                     cssContent += text;
+//                                 })
+//                                 .catch(e => {
+//                                     console.warn('スタイルシートの取得エラー:', e);
+//                                 })
+//                         );
+//                     } else {
+//                         // インラインスタイルシートの内容を取得
+//                         for (let rule of sheet.cssRules) {
+//                             cssContent += rule.cssText;
+//                         }
+//                     }
+//                 } catch (e) {
+//                     console.warn('スタイルシートの取得エラー:', e);
+//                 }
+//             }
+
+//             // すべてのfetchリクエストが完了するのを待つ
+//             Promise.all(cssPromises).then(() => {
+//                 // ローカルストレージのすべてのデータを取得
+//                 let localStorageData = {};
+//                 for (let i = 0; i < localStorage.length; i++) {
+//                     const key = localStorage.key(i);
+//                     localStorageData[key] = localStorage.getItem(key);
+//                 }
+
+//                 // FormDataオブジェクトを作成してbodyに代入
+//                 const body = new FormData();
+//                 body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
+//                 body.append('cssContent', cssContent);    // 現在のページのCSSの内容
+//                 body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
+//                 body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
+
+//                 // fetch APIを使ってサーバに送信
+//                 fetch('https://develop-back.kotobum.com/api/albums/{album}/body', {  
+//                     method: 'POST',
+//                     body: body // bodyを指定
+//                 })
+//                 .then(response => response.json())
+//                 .then(data => {
+//                     console.log('Success:', data);
+//                 })
+//                 .catch((error) => {
+//                     console.error('Error:', error);
+//                 });
+//             });
+//         })
+//         .catch((error) => {
+//             console.error('別のHTMLページの取得エラー:', error);
+//         });
+// });
+
+
+
+
 document.getElementById('sendButton').addEventListener('click', function () {
-    // アルバムIDを動的に取得
-    const albumId = document.getElementById('albumIdInput').value; // 例: ユーザーが入力したアルバムID
-    // 取得したい別のページのURL
-    const otherPageUrl = '../preview/index.html';
-    // 別のHTMLページの内容を取得
-    fetch(otherPageUrl)
-        .then(response => response.text())
-        .then(htmlContent => {
-            // ページのすべてのスタイルシートを取得
-            let cssContent = '';
-            let cssUrls = [];
-            const cssPromises = [];
-            for (let sheet of document.styleSheets) {
-                try {
-                    if (sheet.href) {
-                        cssUrls.push(sheet.href);
-                        cssPromises.push(
-                            fetch(sheet.href)
-                                .then(response => response.text())
-                                .then(text => {
-                                    cssContent += text;
-                                })
-                                .catch(e => {
-                                    console.warn('スタイルシートの取得エラー:', e);
-                                })
-                        );
-                    } else {
-                        for (let rule of sheet.cssRules) {
-                            cssContent += rule.cssText;
+    // サーバからアルバムIDを取得
+    fetch('https://develop-back.kotobum.com/api/user/alubm') // アルバムIDを取得するためのエンドポイントに変更してください
+        .then(response => response.json())
+        .then(albumData => {
+            const albumId = albumData.albumId; // 実際のレスポンス構造に合わせて修正
+
+            // アルバムIDが取得できたかチェック
+            if (!albumId) {
+                console.error('アルバムIDを取得できませんでした。');
+                return;
+            }
+
+            // 取得したい別のページのURL
+            const otherPageUrl = '../preview/index.html'; // 例: 同一ドメイン内の別のページ
+
+            // 別のHTMLページの内容を取得
+            fetch(otherPageUrl)
+                .then(response => response.text())
+                .then(htmlContent => {
+                    // ページのすべてのスタイルシートを取得
+                    let cssContent = '';
+                    let cssUrls = [];
+                    const cssPromises = [];
+
+                    // 現在のページのスタイルシートをループして処理
+                    for (let sheet of document.styleSheets) {
+                        try {
+                            if (sheet.href) {
+                                // 外部CSSファイルのURLを取得
+                                cssUrls.push(sheet.href);
+
+                                // 外部CSSファイルの内容を取得するためにfetchを使用
+                                cssPromises.push(
+                                    fetch(sheet.href)
+                                        .then(response => response.text())
+                                        .then(text => {
+                                            cssContent += text;
+                                        })
+                                        .catch(e => {
+                                            console.warn('スタイルシートの取得エラー:', e);
+                                        })
+                                );
+                            } else {
+                                // インラインスタイルシートの内容を取得
+                                for (let rule of sheet.cssRules) {
+                                    cssContent += rule.cssText;
+                                }
+                            }
+                        } catch (e) {
+                            console.warn('スタイルシートの取得エラー:', e);
                         }
                     }
-                } catch (e) {
-                    console.warn('スタイルシートの取得エラー:', e);
-                }
-            }
-            Promise.all(cssPromises).then(() => {
-                let localStorageData = {};
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    localStorageData[key] = localStorage.getItem(key);
-                }
-                const body = new FormData();
-                body.append('htmlContent', htmlContent);
-                body.append('cssContent', cssContent);
-                body.append('cssUrls', JSON.stringify(cssUrls));
-                body.append('localStorageData', JSON.stringify(localStorageData));
-                fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-                    method: 'POST',
-                    body: body
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
+
+                    // すべてのfetchリクエストが完了するのを待つ
+                    Promise.all(cssPromises).then(() => {
+                        // ローカルストレージのすべてのデータを取得
+                        let localStorageData = {};
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const key = localStorage.key(i);
+                            localStorageData[key] = localStorage.getItem(key);
+                        }
+
+                        // FormDataオブジェクトを作成してbodyに代入
+                        const body = new FormData();
+                        body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
+                        body.append('cssContent', cssContent);    // 現在のページのCSSの内容
+                        body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
+                        body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
+
+                        // fetch APIを使ってサーバに送信
+                        fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {  
+                            method: 'POST',
+                            body: body // bodyを指定
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                    });
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
+                    console.error('別のHTMLページの取得エラー:', error);
                 });
-            });
         })
-        .catch((error) => {
-            console.error('別のHTMLページの取得エラー:', error);
+        .catch(error => {
+            console.error('アルバムIDの取得エラー:', error);
         });
 });
-
-
-
-
-
-
 
 
 

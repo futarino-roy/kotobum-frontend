@@ -13,6 +13,10 @@ button, input, select, textarea {
   font-style: normal;
 }
 
+input {
+  touch-action: manipulation;
+}
+
 body {
   margin: 0;
   background-color: #FDFCF6;
