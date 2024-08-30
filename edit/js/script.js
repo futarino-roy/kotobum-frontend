@@ -3570,6 +3570,7 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 
 
 // 異なるページの内容を取得してサーバに送信
+// 異なるページの内容を取得してサーバに送信
 document.getElementById('sendButton').addEventListener('click', function () {
     // 取得したい別のページのURL
     const otherPageUrl = '../preview/index.html';  // 例: 同一ドメイン内の別のページ
@@ -3621,17 +3622,17 @@ document.getElementById('sendButton').addEventListener('click', function () {
                     localStorageData[key] = localStorage.getItem(key);
                 }
 
-                // FormDataオブジェクトを作成
-                const formData = new FormData();
-                formData.append('htmlContent', htmlContent);  // 別のHTMLページの内容
-                formData.append('cssContent', cssContent);    // 現在のページのCSSの内容
-                formData.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
-                formData.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
+                // FormDataオブジェクトを作成してbodyに代入
+                const body = new FormData();
+                body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
+                body.append('cssContent', cssContent);    // 現在のページのCSSの内容
+                body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
+                body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
 
                 // fetch APIを使ってサーバに送信
                 fetch('https://develop-back.kotobum.com/api/albums/{album}/body', {  
                     method: 'POST',
-                    body: formData // 修正：ここでformDataを指定
+                    body: body // bodyを指定
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -3646,4 +3647,5 @@ document.getElementById('sendButton').addEventListener('click', function () {
             console.error('別のHTMLページの取得エラー:', error);
         });
 });
+
 
