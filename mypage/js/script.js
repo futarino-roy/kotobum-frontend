@@ -1,16 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ローカルストレージからトークンを取得
     const token = localStorage.getItem('authToken'); // トークンを取得
     console.log('取得したトークン:', token); // トークンをコンソールに表示
 
-    // トークンが存在しない場合はエラーを表示し、処理を終了
     if (!token) {
         console.error('トークンが見つかりません。サインインしてください。');
         alert('サインインしてください。');
         return;
     }
 
-    // サーバーからユーザー情報を取得
     fetch('https://develop-back.kotobum.com/api/user', {
         method: 'GET',
         headers: {
@@ -27,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
     })
     .then(data => {
-        // サーバーから取得したユーザー名
-        const username = data.name; 
+        const username = data.name; // サーバーから取得した名前
         const headerParagraph = document.querySelector('header p');
-        
         if (headerParagraph) {
             headerParagraph.textContent = `${username} 様`; // 名前を表示
         } else {
@@ -42,3 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('名前の取得に失敗しました。もう一度お試しください。');
     });
 });
+
+
+

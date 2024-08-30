@@ -102,14 +102,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         return response.json();
     })
     .then(data => {
-        console.log('ログイン成功:', data);
-
-        // トークンをローカルストレージに保存
+        console.log('成功:', data);
         localStorage.setItem('authToken', data.token); // トークンを保存
-
-        // 保存されたトークンの確認
-        const savedToken = localStorage.getItem('authToken');
-        console.log('保存されたトークン:', savedToken);
 
         // サーバーから取得した情報
         const template = data.template; // サーバーから「template」情報を取得
@@ -127,7 +121,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         }
     })
     .catch(error => {
-        console.error('ログイン失敗:', error);
+        console.error('失敗:', error);
         showError('ログインに失敗しました。エラーの詳細: ' + error.message);
     });
 });
@@ -141,4 +135,3 @@ function showError(message) {
         alert(message); // Fallback
     }
 }
-
