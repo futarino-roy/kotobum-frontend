@@ -3653,7 +3653,7 @@ document.querySelector('.btn-E').addEventListener('click', function() {
 
 document.getElementById('sendButton').addEventListener('click', function () {
     // 認証トークンの設定（例：ローカルストレージやCookieから取得）
-    const token = localStorage.getItem('authToken'); // 例：トークンがローカルストレージに保存されている場合
+    const token = localStorage.getItem('token'); // 例：トークンがローカルストレージに保存されている場合
     
     // トークンが正しく取得できているか確認
     console.log('取得したトークン:', token);
