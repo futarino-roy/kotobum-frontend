@@ -7,7 +7,7 @@
         }
 }
 
-.edit{
+.editB{
 
     &_drawer{
         // width: 350px;
@@ -3037,6 +3037,7 @@
                                                 margin: 5% 0 5%;
                                                 font-size: 0.4rem;
                                                 line-height: 1.9;
+                                                writing-mode: vertical-rl;
                                                 background-color: transparent;
 
                                                 @include mq('pc-edit'){
@@ -3062,12 +3063,13 @@
 
                                             #textArea{
 
-                                                &1-1{
+                                                &13-1{
                                                     margin: 0;
                                                     font-size: 1.2rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
                                                     color: #FEF8F6;
+                                                    writing-mode: horizontal-tb;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.9rem;
@@ -3088,13 +3090,14 @@
 
                                                 }
 
-                                                &1-2{
+                                                &13-2{
                                                     margin: 0;
                                                     margin: 1% 0 5%;
                                                     font-size: 0.45rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
                                                     color: #FEF8F6;
+                                                    writing-mode: horizontal-tb;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.33rem;
