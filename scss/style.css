@@ -330,24 +330,14 @@ header img {
     left: 253px;
   }
 }
-.signup .form_box input {
-  width: 100%;
-  padding: 13px 16px;
-  border: 1.4px solid;
-  border-radius: 5px;
-  box-sizing: border-box;
+.signup .form_box .input-container {
   display: flex;
 }
-.signup .form_box input::-moz-placeholder {
+.signup .form_box .input-container::-moz-placeholder {
   opacity: 0.5;
 }
-.signup .form_box input::placeholder {
+.signup .form_box .input-container::placeholder {
   opacity: 0.5;
-}
-.signup .form .input-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
 }
 
 .login {
