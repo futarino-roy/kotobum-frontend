@@ -3271,7 +3271,90 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 
-// 枠変更 柔軟版
+
+
+
+
+
+// 枠変更 柔軟版 新
+// document.addEventListener('DOMContentLoaded', () => {
+//     const dropAreas = [];
+//     const resizeButtons = document.querySelectorAll('.resizeButton');
+//     const saveButton = document.querySelector('.btn-E');
+//     let activeDropArea = null;
+
+//     // ドロップエリアをすべて取得し、配列に追加
+//     document.querySelectorAll('[id^="dropArea"]').forEach(dropArea => {
+//         dropAreas.push(dropArea);
+//         dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
+//     });
+
+//     // ドロップエリアがクリックまたはタッチされたときの処理
+//     const handleDropAreaInteraction = (dropArea) => {
+//         dropAreas.forEach(area => area.classList.remove('active'));
+//         dropArea.classList.add('active');
+//         activeDropArea = dropArea;
+//     };
+
+//     // サイズ変更ボタンがクリックまたはタッチされたときの処理
+//     const handleResizeButtonInteraction = (button) => {
+//         if (activeDropArea) {
+//             // サイズをすべてリセット
+//             activeDropArea.classList.remove('square', 'rectangle', 'mini');
+//             // ボタンの data-size 属性に基づいてサイズを変更
+//             const size = button.getAttribute('data-size');
+//             activeDropArea.classList.add(size);
+
+//             // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+//             localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+//         }
+//     };
+
+//     resizeButtons.forEach(button => {
+//         button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
+//     });
+
+//     // 保存ボタンがクリックされたときの処理
+//     saveButton.addEventListener('click', () => {
+//         if (activeDropArea) {
+//             const size = localStorage.getItem(`dropAreaSize_${activeDropArea.id}`);
+
+//             // サーバにサイズ情報を送信する処理をコメントアウト
+//             /*
+//             fetch('/save-size', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     dropAreaId: activeDropArea.id,
+//                     size: size
+//                 })
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 console.log('成功:', data);
+//             })
+//             .catch(error => {
+//                 console.error('エラー:', error);
+//             });
+//             */
+//         }
+//     });
+
+//     // ページロード時にローカルストレージからサイズを復元
+//     dropAreas.forEach(dropArea => {
+//         const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
+//         if (savedSize) {
+//             dropArea.classList.add(savedSize);
+//         }
+//     });
+// });
+
+
+
+
+// 枠変更 12-~3変更できない版
 document.addEventListener('DOMContentLoaded', () => {
     const dropAreas = [];
     const resizeButtons = document.querySelectorAll('.resizeButton');
@@ -3294,14 +3377,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // サイズ変更ボタンがクリックまたはタッチされたときの処理
     const handleResizeButtonInteraction = (button) => {
         if (activeDropArea) {
-            // サイズをすべてリセット
-            activeDropArea.classList.remove('square', 'rectangle', 'mini');
-            // ボタンの data-size 属性に基づいてサイズを変更
-            const size = button.getAttribute('data-size');
-            activeDropArea.classList.add(size);
+            // サイズ変更を禁止するドロップエリアのリスト
+            const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
 
-            // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-            localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+            // サイズ変更を禁止するドロップエリアでない場合のみ処理
+            if (!restrictedDropAreas.includes(activeDropArea.id)) {
+                // サイズをすべてリセット
+                activeDropArea.classList.remove('square', 'rectangle', 'mini');
+                // ボタンの data-size 属性に基づいてサイズを変更
+                const size = button.getAttribute('data-size');
+                activeDropArea.classList.add(size);
+
+                // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+                localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+            }
         }
     };
 
@@ -3345,7 +3434,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
 
 
