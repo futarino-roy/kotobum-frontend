@@ -349,6 +349,53 @@ header img {
   justify-content: space-between;
   font-size: 20px;
 }
+.signup .form .input-container .visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+}
+.signup .form .input-container label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+.signup .form .input-container label::before,
+.signup .form .input-container label ::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.signup .form .input-container label::before {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+}
+.signup .form .input-container label::after {
+  background-color: #ddd;
+  border-radius: 50%;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  left: 7px;
+}
+
+input:checked + label::after {
+  opacity: 1;
+}
 
 .login {
   max-width: 326px;
