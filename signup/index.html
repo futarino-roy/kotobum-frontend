@@ -1,67 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>サインアップ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/assets/style/style.css">
-
-</head>
-<body>
-
-  <div class="signup">
-    <div class="form">
-        <h2 class=form_title>管理者サインアップ</h2>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/assets/style/style.css" />
+  </head>
+  <body>
+    <div class="signup">
+      <div class="form">
+        <h2 class="form_title">管理者サインアップ</h2>
         <form id="signup-form">
           <div class="form_box">
             <p>Name</p>
             <p class="name">
-              <input type="text" name="name" placeholder="入力してください" required>
-          </p>
+              <input
+                type="text"
+                name="name"
+                placeholder="入力してください"
+                required
+              />
+            </p>
           </div>
-
-        <div class="form_box">
-          <p>ID</p>
-          <p class="email">
-            <input type="email" name="email" placeholder="入力してください" required>
-          </p>
-        </div>
-
-        <div class="form_box">
-          <p>Pass</p>
-          <p class="pass">
-            <input type="password" name="password" placeholder="入力してください" required>
-          </p>
-        </div>
-
-        <div class="input-container">
-        <!-- <input type="radio" name="template" value="A">
+          <div class="form_box">
+            <p>ID</p>
+            <p class="email">
+              <input
+                type="email"
+                name="email"
+                placeholder="入力してください"
+                required
+              />
+            </p>
+          </div>
+          <div class="form_box">
+            <p>Pass</p>
+            <p class="pass">
+              <input
+                type="password"
+                name="password"
+                placeholder="入力してください"
+                required
+              />
+            </p>
+          </div>
+          <div class="input-container">
+            <!-- <input type="radio" name="template" value="A">
         <label for="">A面</label>
         <input type="radio" name="template" value="B">B面 -->
-
-
-        <input  class="visually-hidden" type="radio" name="fruits" id="apple"  />
-        <label for="apple">A</label>
-        <input class="visually-hidden" type="radio" name="fruits" id="orange"/>
-        <label for="orange">B</label>
-
-
-
-        </div>
-
-
-
-
-            <button type="submit" class="btn btn-A" >サインアップ</button>
-
+            <input
+              class="visually-hidden"
+              type="radio"
+              name="fruits"
+              id="apple"
+            />
+            <label for="apple">A</label>
+            <input
+              class="visually-hidden"
+              type="radio"
+              name="fruits"
+              id="orange"
+            />
+            <label for="orange">B</label>
+          </div>
+          <button type="submit" class="btn btn-A">サインアップ</button>
         </form>
       </div>
-
     </div>
     <script src="../signup/js/signup.js"></script>
-</body>
+  </body>
 </html>
