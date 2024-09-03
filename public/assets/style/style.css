@@ -367,7 +367,8 @@ header img {
   cursor: pointer;
   padding-left: 30px;
 }
-.signup .form .input-container label::before, .signup .form .input-container label ::after {
+.signup .form .input-container label::before,
+.signup .form .input-container label ::after {
   content: "";
   display: block;
   border-radius: 50%;
