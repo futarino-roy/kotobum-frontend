@@ -720,7 +720,7 @@
                                             #dropArea1{
                                                 position: relative;
                                                 width: 60%;
-                                                height: 60%;
+                                                height: 30%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
                                                 cursor: pointer;
@@ -805,7 +805,7 @@
                                             #dropArea2{
                                                 position: relative;
                                                 width: 60%;
-                                                height: 60%;
+                                                height: 30%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
                                                 cursor: pointer;
@@ -890,7 +890,7 @@
                                             #dropArea3{
                                                 position: relative;
                                                 width: 60%;
-                                                height: 60%;
+                                                height: 30%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
                                                 cursor: pointer;
@@ -3033,6 +3033,7 @@
                                                 text-align: center;
                                                 resize: none;
                                                 width: 60%;
+                                                max-width: 60%;
                                                 height: 20%;
                                                 margin: 5% 0 5%;
                                                 font-size: 0.4rem;

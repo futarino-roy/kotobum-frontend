@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
-    const savedColor = localStorage.getItem('backgroundColor');
+    const savedColor = localStorage.getItem('backgroundColorA');
     if (savedColor) {
         // 背景色を適用
         let elements = document.getElementsByClassName('uniqueColor');
@@ -379,6 +379,7 @@ function applySavedColor() {
 document.addEventListener('DOMContentLoaded', function () {
     applySavedColor();
 });
+
 
 
 

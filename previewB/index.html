@@ -13,10 +13,12 @@
 </head>
 <body class="preview-body">
     <header class="preview-header">
+        <button class="btn btn-J" id="editBack">編集する</button>
+        <a href="../mypage/index.html"><button class="btn btn-K">マイページへ</button></a>
         <button class="btn btn-I">校了</button>
     </header>
 
-    <div class="preview">
+    <div class="previewB">
 
 
 
@@ -28,11 +30,13 @@
        
 
                <div class="swiper-slide">
-                <div class="swiper-slide_box uniqueColor">
+                <div class="swiper-slide_box uniqueColorB">
                     <img src="/preview/images/template/p13@2x.png" alt="">
                     <div class="input-drop">
-                        <textarea id="previewTextArea13" rows="1" maxlength="20" readonly></textarea>
+                        <textarea id="previewTextArea13-1" rows="1" maxlength="16" class="text-colorB" readonly></textarea>
+                        <textarea id="previewTextArea13-2" rows="1" maxlength="32" class="text-colorB" readonly></textarea>
                         <div id="dropArea13" class="empty"></div>
+                        <textarea id="previewTextArea13-3" rows="1" maxlength="72" readonly></textarea>
                     </div>
                 </div>
                </div>
@@ -155,13 +159,6 @@
            <div class="swiper-button-next"></div>
        </div>
        </div>
-
-
-       <div class="button-flex">
-        <button class="btn btn-J" id="editBack">編集する</button>
-        <a href="../mypage/index.html"><button class="btn btn-K">マイページへ</button></a>
-       </div>
-
     </div>
 
 
@@ -171,36 +168,3 @@
     <script src="/previewB/js/script.js"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プレビューページ</title>
-    <style>
-        .image-preview {
-            max-width: 100%;
-            height: auto;
-            margin: 10px 0;
-        }
-
-        #dropArea{
-            position: relative;
-            width: 60%;
-            height: 60%;
-            font-size: 1rem;
-        }
-    </style>
-</head>
-<body>
-
-
-    <div id="dropArea" class="empty"></div>
-<div id="dropArea2" class="empty"></div>
-
-
-    <script src="js/script.js"></script>
-</body>
-</html> -->
