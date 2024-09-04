@@ -494,7 +494,7 @@ function makeDraggable(img) {
 }
 
 function makeSelectable(img) {
-    img.addEventListener('touchstart', function() { // 変更: 'click' から 'touchstart' へ
+    img.addEventListener('touchstart', function() {
         const allImgs = document.querySelectorAll('#imgPreviewField img');
         allImgs.forEach(image => {
             image.classList.remove('selected');
@@ -508,6 +508,13 @@ function addClickListenerToDropAreas() {
     const dropAreas = document.querySelectorAll('.empty');
     dropAreas.forEach(dropArea => {
         dropArea.addEventListener('click', function() {
+            if (selectedImage) {
+                insertImageToDropArea(this);
+            }
+        });
+
+        dropArea.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // タッチイベントのデフォルト動作を防ぐ
             if (selectedImage) {
                 insertImageToDropArea(this);
             }
@@ -658,6 +665,7 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
 
 
 
