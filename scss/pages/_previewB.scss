@@ -123,7 +123,7 @@
                                             align-items: center;
                                             justify-content: center;
 
-                                            .background-textArea6-1{
+                                            .background-textArea18-1{
                                                 position: relative;
                                                 width: 43%;
                                                 height: 20%;
@@ -137,7 +137,16 @@
                                                 justify-content: center;
                                             }
 
-                                            .flex-area12-2{
+                                            .flex-area24-1{
+                                                width: 60%;
+                                                height: 20%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                gap: 5%;
+                                            }
+                                            
+                                            .flex-area24-2{
                                                 width: 60%;
                                                 height: 20%;
                                                 display: flex;
@@ -145,39 +154,28 @@
                                                 align-items: center;
                                                 gap: 5%;
                                                 margin: 5% 0 5%;
-                                            }
-
-                                            .flex-area12-3{
-                                                width: 60%;
-                                                height: 20%;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                gap: 5%;
 
                                             }
 
                                             #dropArea13{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -190,25 +188,23 @@
 
                                             #dropArea14{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -219,27 +215,25 @@
                                                 }
                                             }
 
-                                            #dropArea3{
+                                            #dropArea15{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -250,27 +244,25 @@
                                                 }
                                             }
 
-                                            #dropArea4{
+                                            #dropArea16{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -281,27 +273,25 @@
                                                 }
                                             }
 
-                                            #dropArea5{
+                                            #dropArea17{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -312,27 +302,25 @@
                                                 }
                                             }
 
-                                            #dropArea6{
+                                            #dropArea18{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -343,27 +331,25 @@
                                                 }
                                             }
 
-                                            #dropArea7{
+                                            #dropArea18{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -374,27 +360,25 @@
                                                 }
                                             }
 
-                                            #dropArea8{
+                                            #dropArea19{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -405,27 +389,25 @@
                                                 }
                                             }
 
-                                            #dropArea9{
+                                            #dropArea20{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -436,27 +418,25 @@
                                                 }
                                             }
 
-                                            #dropArea10{
+                                            #dropArea21{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
                                                 &.square{
-                                                    width: 57%;
-                                                    height: 40%;
+                                                    width: 45%;
+                                                    height: 32%;
                                                 }
 
                                                 &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
+                                                    width: 45%;
+                                                    height: 25%;
                                                 }
 
                                                 &.mini{
-                                                    width: 52%;
+                                                    width: 45%;
                                                     height: 20%;
                                                 }
 
@@ -467,14 +447,75 @@
                                                 }
                                             }
 
-                                            #dropArea11{
+                                            #dropArea22{
                                                 position: relative;
-                                                // top: 20%;
-                                                // left: 20%;
-                                                width: 60%;
-                                                height: 60%;
+                                                width: 45%;
+                                                height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
+
+                                                &.square{
+                                                    width: 45%;
+                                                    height: 32%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 45%;
+                                                    height: 25%;
+                                                }
+
+                                                &.mini{
+                                                    width: 45%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea23{
+                                                position: relative;
+                                                width: 45%;
+                                                height: 25%;
+                                                font-size: 1rem;
+                                                border: none;
+
+                                                &.square{
+                                                    width: 45%;
+                                                    height: 32%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 45%;
+                                                    height: 25%;
+                                                }
+
+                                                &.mini{
+                                                    width: 45%;
+                                                    height: 20%;
+                                                }
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            #dropArea24-1{
+                                                position: relative;
+                                                width: 60%;
+                                                height: 100%;
+                                                font-size: 1rem;
+                                                border: none;
+
+                                                // 枠サイズ変更関連---
+                                                &.active{
+                                                    border-color: #f00;
+                                                }
 
                                                 &.square{
                                                     width: 57%;
@@ -491,68 +532,60 @@
                                                     height: 20%;
                                                 }
 
+                                                // --------------------------
+
                                                 img{
                                                     width: 100%;
                                                     height: 100%;
                                                     object-fit: cover;
+                                                    cursor: pointer;
                                                 }
                                             }
 
-                                            #dropArea12-1{
-                                                margin-top: 0%;
+                                            #dropArea24-2{
+                                                position: relative;
+                                                width: 60%;
+                                                height: 100%;
+                                                font-size: 1rem;
+                                                border: none;
+
+                                                // 枠サイズ変更関連---
+                                                &.active{
+                                                    border-color: #f00;
+                                                }
+
+                                                &.square{
+                                                    width: 57%;
+                                                    height: 40%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 62%;
+                                                    height: 30%;
+                                                }
+
+                                                &.mini{
+                                                    width: 52%;
+                                                    height: 20%;
+                                                }
+
+                                                // --------------------------
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            #dropArea24-3{
                                                 position: relative;
                                                 width: 60%;
                                                 height: 25%;
                                                 font-size: 1rem;
                                                 border: none;
 
-                                                // ドロップ後ボタン-----------
-                                                .crop-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                                                    background: url(/edit/images/crop.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-
-                                                .delete-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 5px;
-                                                    background: url(/edit/images/delete.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-                                                // ----------------------------------
-                                                
-
                                                 // 枠サイズ変更関連---
                                                 &.active{
                                                     border-color: #f00;
@@ -583,189 +616,22 @@
                                                 }
                                             }
 
-                                            #dropArea12-2{
-                                                position: relative;
-                                                width: 60%;
-                                                height: 100%;
-                                                font-size: 1rem;
-                                                border: none;
 
-                                                // ドロップ後ボタン-----------
-                                                .crop-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                                                    background: url(/edit/images/crop.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
 
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-
-                                                .delete-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 5px;
-                                                    background: url(/edit/images/delete.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-                                                // ----------------------------------
-                                                
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: #f00;
-                                                }
-
-                                                &.square{
-                                                    width: 57%;
-                                                    height: 40%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
-                                                }
-
-                                                &.mini{
-                                                    width: 52%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
-
-                                            #dropArea12-3{
-                                                position: relative;
-                                                width: 60%;
-                                                height: 100%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                // ドロップ後ボタン-----------
-                                                .crop-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                                                    background: url(/edit/images/crop.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-
-                                                .delete-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 5px;
-                                                    background: url(/edit/images/delete.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-                                                // ----------------------------------
-                                                
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: #f00;
-                                                }
-
-                                                &.square{
-                                                    width: 57%;
-                                                    height: 40%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
-                                                }
-
-                                                &.mini{
-                                                    width: 52%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
 
                                             textarea{
                                                 overflow: hidden;
                                                 text-align: center;
                                                 resize: none;
-                                                width: 60%;
-                                                height: auto;
-                                                margin: 5% 0 5%;
+                                                max-width: 60%;
+                                                height: 20%;
+                                                font-size: 0.4rem;
+                                                line-height: 1.9;
+                                                background-color: transparent;
                                                 border: none;
                                                 outline: none;
                                                 pointer-events: none;
                                                 cursor: not-allowed;
-                                                font-size: 0.4rem;
-                                                line-height: 1.9;
-                                                writing-mode: vertical-rl;
-                                                background-color: transparent;
 
                                                 @include mq('pc-edit'){
                                                     font-size: 0.3rem;
@@ -787,12 +653,10 @@
                                             #previewTextArea{
 
                                                 &13-1{
-                                                    margin: 0;
+                                                    width: 60% !important;
                                                     font-size: 1.2rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
-                                                    color: #FEF8F6;
-                                                    writing-mode: horizontal-tb;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.9rem;
@@ -814,13 +678,11 @@
                                                 }
 
                                                 &13-2{
-                                                    margin: 0;
+                                                    width: 60% !important;
                                                     margin: 1% 0 5%;
                                                     font-size: 0.45rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
-                                                    color: #FEF8F6;
-                                                    writing-mode: horizontal-tb;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.33rem;
@@ -842,14 +704,18 @@
                                                 }
 
                                                 &13-3{
-                                                    width: auto;
+                                                    min-height: 15%;
+                                                    margin-top: 5%;
+                                                    writing-mode: vertical-rl;
                                                 }
 
-                                                &2{
+                                                &14, &22{
+                                                    min-height: 20%;
+                                                    margin-bottom: 5%;
                                                     font-size: 0.6rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
-                                                    color: #FEF8F6;
+                                                    writing-mode: vertical-rl;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.45rem;
@@ -868,11 +734,17 @@
                                                             }
                                                 }
 
-                                                &4{
+                                                &15, &17, &19{
+                                                    writing-mode: vertical-rl;
+                                                    min-height: 70%;
+                                                }
+
+                                                &16, &20{
+                                                    width: 60% !important;
+                                                    margin-bottom: 5%;
                                                     font-size: 0.6rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
-                                                    color: #FEF8F6;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.45rem;
@@ -891,7 +763,7 @@
                                                             }
                                                 }
 
-                                                &6-1{
+                                                &18-1{
                                                     margin: 0;
                                                     position: absolute;
                                                     width: 63%;
@@ -917,7 +789,7 @@
                                                             }
                                                 }
 
-                                                &6-2{
+                                                &18-2{
                                                     margin: 5% 0 15%;
                                                     color: #FEF8F6;
                                                     font-size: 0.6rem;
@@ -941,51 +813,21 @@
                                                             }
                                                 }
 
-                                                &8{
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-                                                    color: #FEF8F6;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
+                                                &21-1, &21-2, &23-1, &23-2 {
+                                                    min-height: 30%;
+                                                    margin-bottom: 5%;
+                                                    writing-mode: vertical-rl;
                                                 }
 
-                                                &10{
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-                                                    color: #FEF8F6;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
+                                                &24-1, &24-2 {
+                                                    min-height: 100%;
+                                                    writing-mode: vertical-rl;
                                                 }
+
+
+
+
+                                    
                                             }
 
 

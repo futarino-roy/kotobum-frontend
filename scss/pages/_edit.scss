@@ -3032,7 +3032,7 @@
                                                 overflow: hidden;
                                                 text-align: center;
                                                 resize: none;
-                                                width: 60%;
+                                                width: 60% !important;
                                                 max-width: 60%;
                                                 height: 20%;
                                                 margin: 5% 0 5%;
@@ -3224,7 +3224,6 @@
                                                     font-size: 0.6rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
-                                                    color: #FEF8F6;
 
                                                     @include mq('pc-edit'){
                                                         font-size: 0.45rem;
