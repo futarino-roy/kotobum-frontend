@@ -519,6 +519,15 @@ function addClickListenerToDropAreas() {
                 insertImageToDropArea(this);
             }
         });
+
+        // ボタンの表示と非表示の処理
+        dropArea.addEventListener('click', function(e) {
+            showHideButtons(this, e);
+        });
+
+        dropArea.addEventListener('touchstart', function(e) {
+            showHideButtons(this, e);
+        });
     });
 }
 
@@ -641,6 +650,17 @@ function restoreDropAreas() {
     });
 }
 
+function showHideButtons(dropArea, e) {
+    e.stopPropagation(); // イベントの伝播を防ぐ
+    const cropButton = dropArea.querySelector('.crop-button');
+    const deleteButton = dropArea.querySelector('.delete-button');
+    
+    if (cropButton && deleteButton) {
+        cropButton.style.display = 'block';
+        deleteButton.style.display = 'block';
+    }
+}
+
 document.addEventListener('click', function(event) {
     const isInsideDropArea = event.target.closest('.with-buttons');
 
@@ -655,16 +675,9 @@ document.addEventListener('click', function(event) {
                 deleteButton.style.display = 'none';
             }
         });
-    } else {
-        const cropButton = isInsideDropArea.querySelector('.crop-button');
-        const deleteButton = isInsideDropArea.querySelector('.delete-button');
-        
-        if (cropButton && deleteButton) {
-            cropButton.style.display = 'block';
-            deleteButton.style.display = 'block';
-        }
     }
 });
+
 
 
 
