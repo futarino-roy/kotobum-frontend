@@ -73,27 +73,93 @@ document.getElementById('editBack').addEventListener('click', function() {
 
 
 
-// 画像の挿入 柔軟版
+// 画像の挿入 
+// document.addEventListener('DOMContentLoaded', function() {
+//     // 各 dropArea の画像を更新
+//     updateDropAreas();
+// });
+
+// function updateDropAreas() {
+//     // クラス 'empty' を持つすべての要素を取得
+//     const dropAreas = document.querySelectorAll('.empty');
+
+//     dropAreas.forEach((dropArea) => {
+//         const id = dropArea.id; // 各 dropArea の id を取得 (例: 'dropArea1', 'dropArea2' ...)
+//         const savedImageSrc = localStorage.getItem(id);
+        
+//         if (savedImageSrc) {
+//             const img = document.createElement('img');
+//             img.src = savedImageSrc;
+//             dropArea.innerHTML = ''; // 現在の内容をクリア
+//             dropArea.appendChild(img);
+//             dropArea.classList.remove('empty');
+//         }
+//     });
+// }
+
+// 画像の挿入 indexedDB版
 document.addEventListener('DOMContentLoaded', function() {
     // 各 dropArea の画像を更新
     updateDropAreas();
 });
 
-function updateDropAreas() {
+// IndexedDBのセットアップ
+const dbName = 'photoBookDB';
+const dbVersion = 1; // バージョン番号
+let db;
+
+// データベースを開く
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(dbName, dbVersion);
+
+        request.onupgradeneeded = function(e) {
+            db = e.target.result;
+            if (!db.objectStoreNames.contains('dropAreaImages')) {
+                db.createObjectStore('dropAreaImages', { keyPath: 'id' });
+            }
+        };
+
+        request.onsuccess = function(e) {
+            db = e.target.result;
+            resolve();
+        };
+
+        request.onerror = function(e) {
+            console.error('IndexedDB open error:', e.target.errorCode);
+            reject(e.target.errorCode);
+        };
+    });
+}
+
+// 各 dropArea の画像を更新
+async function updateDropAreas() {
+    await openDB();
+
     // クラス 'empty' を持つすべての要素を取得
     const dropAreas = document.querySelectorAll('.empty');
 
-    dropAreas.forEach((dropArea) => {
+    dropAreas.forEach(dropArea => {
         const id = dropArea.id; // 各 dropArea の id を取得 (例: 'dropArea1', 'dropArea2' ...)
-        const savedImageSrc = localStorage.getItem(id);
         
-        if (savedImageSrc) {
-            const img = document.createElement('img');
-            img.src = savedImageSrc;
-            dropArea.innerHTML = ''; // 現在の内容をクリア
-            dropArea.appendChild(img);
-            dropArea.classList.remove('empty');
-        }
+        const transaction = db.transaction('dropAreaImages', 'readonly');
+        const store = transaction.objectStore('dropAreaImages');
+        const request = store.get(id);
+        
+        request.onsuccess = function(e) {
+            const result = e.target.result;
+            if (result) {
+                const img = document.createElement('img');
+                img.src = result.src;
+                dropArea.innerHTML = ''; // 現在の内容をクリア
+                dropArea.appendChild(img);
+                dropArea.classList.remove('empty');
+            }
+        };
+
+        request.onerror = function(e) {
+            console.error('IndexedDB read error:', e.target.errorCode);
+        };
     });
 }
 
