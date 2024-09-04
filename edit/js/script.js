@@ -675,47 +675,37 @@ const showDrawerContent = (contentId) => {
 
 // スマホでindexedDB版
 let selectedImage = null;
-
-document.addEventListener('DOMContentLoaded', function() {
-    // データベースを開く
-    openDB();
-
-    // ドロップエリアの復元
-    restoreDropAreas();
-
-    // ドロップエリアのタッチリスナー追加
-    addTouchListenerToDropAreas();
-
-    // 保存ボタンのクリックリスナー追加
-    document.getElementById('saveButton').addEventListener('click', function() {
-        saveDropAreaImages();
-    });
-});
-
-// IndexedDBのセットアップ
-const dbName = 'photoBookDB';
-const dbVersion = 1; // バージョン番号
 let db;
 
-// データベースを開く
-function openDB() {
-    const request = indexedDB.open(dbName, dbVersion);
+// IndexedDBのセットアップ
+function openDatabase() {
+    const request = indexedDB.open('imageDB', 1);
 
-    request.onupgradeneeded = function(e) {
-        db = e.target.result;
-        if (!db.objectStoreNames.contains('dropAreaImages')) {
-            db.createObjectStore('dropAreaImages', { keyPath: 'id' });
-        }
+    request.onupgradeneeded = function(event) {
+        db = event.target.result;
+        const objectStore = db.createObjectStore('images', { keyPath: 'id' });
+        objectStore.createIndex('src', 'src', { unique: false });
     };
 
-    request.onsuccess = function(e) {
-        db = e.target.result;
+    request.onsuccess = function(event) {
+        db = event.target.result;
     };
 
-    request.onerror = function(e) {
-        console.error('IndexedDB open error:', e.target.errorCode);
+    request.onerror = function(event) {
+        console.error('Database error:', event.target.errorCode);
     };
 }
+
+openDatabase();
+
+document.addEventListener('DOMContentLoaded', function() {
+    restoreDropAreas();
+    addTouchListenerToDropAreas();
+
+    document.getElementById('saveButton').addEventListener('click', function() {
+        // サーバに画像を送信する処理は削除済み
+    });
+});
 
 function loadImage(input) {
     const imgPreviewField = document.getElementById('imgPreviewField');
@@ -733,7 +723,7 @@ function loadImage(input) {
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
                 makeTouchable(img);
-            }
+            };
 
             reader.readAsDataURL(file);
         });
@@ -841,7 +831,7 @@ function insertImageToDropArea(dropArea) {
     newImage.style.height = '100%';
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = '';
+    deleteButton.textContent = '削除';
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
@@ -850,7 +840,7 @@ function insertImageToDropArea(dropArea) {
     });
 
     const cropButton = document.createElement('button');
-    cropButton.textContent = '';
+    cropButton.textContent = 'トリミング';
     cropButton.classList.add('crop-button');
     cropButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
@@ -868,27 +858,85 @@ function insertImageToDropArea(dropArea) {
     saveDropAreaImages();
 }
 
+function saveImageToIndexedDB(id, src) {
+    const transaction = db.transaction(['images'], 'readwrite');
+    const objectStore = transaction.objectStore('images');
+    const request = objectStore.put({ id, src });
+
+    request.onsuccess = function() {
+        console.log('Image saved to IndexedDB');
+    };
+
+    request.onerror = function(event) {
+        console.error('Error saving image:', event.target.errorCode);
+    };
+}
+
+function loadImageFromIndexedDB(id, callback) {
+    const transaction = db.transaction(['images']);
+    const objectStore = transaction.objectStore('images');
+    const request = objectStore.get(id);
+
+    request.onsuccess = function(event) {
+        const result = event.target.result;
+        if (result) {
+            callback(result.src);
+        } else {
+            console.log('Image not found in IndexedDB');
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error('Error retrieving image:', event.target.errorCode);
+    };
+}
+
 function saveDropAreaImages() {
-    const transaction = db.transaction('dropAreaImages', 'readwrite');
-    const store = transaction.objectStore('dropAreaImages');
     const dropAreas = document.querySelectorAll('.empty');
-    
     dropAreas.forEach(dropArea => {
         const img = dropArea.querySelector('img');
         if (img) {
-            store.put({ id: dropArea.id, src: img.src });
+            saveImageToIndexedDB(dropArea.id, img.src);
         } else {
-            store.delete(dropArea.id);
+            const transaction = db.transaction(['images'], 'readwrite');
+            const objectStore = transaction.objectStore('images');
+            objectStore.delete(dropArea.id);
         }
     });
+}
 
-    transaction.oncomplete = function() {
-        console.log('Images saved to IndexedDB');
-    };
+function restoreDropAreas() {
+    const dropAreas = document.querySelectorAll('.empty');
+    dropAreas.forEach(dropArea => {
+        loadImageFromIndexedDB(dropArea.id, (src) => {
+            const newImage = document.createElement('img');
+            newImage.src = src;
+            newImage.style.width = '100%';
+            newImage.style.height = '100%';
 
-    transaction.onerror = function(e) {
-        console.error('IndexedDB save error:', e.target.errorCode);
-    };
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '削除';
+            deleteButton.classList.add('delete-button');
+            deleteButton.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                dropArea.innerHTML = '';
+                saveDropAreaImages();
+            });
+
+            const cropButton = document.createElement('button');
+            cropButton.textContent = 'トリミング';
+            cropButton.classList.add('crop-button');
+            cropButton.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                openCroppieModal(dropArea);
+            });
+
+            dropArea.appendChild(newImage);
+            dropArea.appendChild(deleteButton);
+            dropArea.appendChild(cropButton);
+            dropArea.classList.add('with-buttons');
+        });
+    });
 }
 
 function openCroppieModal(container) {
@@ -911,10 +959,10 @@ function openCroppieModal(container) {
 
     document.getElementById('crop-button').addEventListener('touchstart', function() {
         croppieInstance.result({
-             type: 'canvas', 
-             size: 'original',
-             format: 'png',
-             quality: 1
+            type: 'canvas', 
+            size: 'original',
+            format: 'png',
+            quality: 1
         }).then(function(croppedImage) {
             img.src = croppedImage;
             croppieModal.style.display = 'none';
@@ -924,52 +972,6 @@ function openCroppieModal(container) {
 
     document.getElementById('close-button').addEventListener('touchstart', function() {
         croppieModal.style.display = 'none';
-    });
-}
-
-function restoreDropAreas() {
-    const transaction = db.transaction('dropAreaImages', 'readonly');
-    const store = transaction.objectStore('dropAreaImages');
-    const dropAreas = document.querySelectorAll('.empty');
-
-    dropAreas.forEach(dropArea => {
-        const request = store.get(dropArea.id);
-
-        request.onsuccess = function(e) {
-            const result = e.target.result;
-            if (result) {
-                const newImage = document.createElement('img');
-                newImage.src = result.src;
-                newImage.style.width = '100%';
-                newImage.style.height = '100%';
-
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = '削除';
-                deleteButton.classList.add('delete-button');
-                deleteButton.addEventListener('touchstart', function(e) {
-                    e.stopPropagation();
-                    dropArea.innerHTML = '';
-                    saveDropAreaImages();
-                });
-
-                const cropButton = document.createElement('button');
-                cropButton.textContent = 'トリミング';
-                cropButton.classList.add('crop-button');
-                cropButton.addEventListener('touchstart', function(e) {
-                    e.stopPropagation();
-                    openCroppieModal(dropArea);
-                });
-
-                dropArea.appendChild(newImage);
-                dropArea.appendChild(deleteButton);
-                dropArea.appendChild(cropButton);
-                dropArea.classList.add('with-buttons');
-            }
-        };
-
-        request.onerror = function(e) {
-            console.error('IndexedDB read error:', e.target.errorCode);
-        };
     });
 }
 
@@ -997,6 +999,7 @@ document.addEventListener('touchstart', function(event) {
         }
     }
 });
+
 
 
 
