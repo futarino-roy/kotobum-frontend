@@ -129,7 +129,7 @@ const showDrawerContent = (contentId) => {
 
 
 
-// 画像のアップロードと挿入 柔軟版
+// 画像のアップロードと挿入 スマホなし
 // let selectedImage = null;
 
 // document.addEventListener('DOMContentLoaded', function() {
@@ -395,6 +395,8 @@ const showDrawerContent = (contentId) => {
 // });
 
 
+
+// 画像のアップロードと挿入 スマホあり
 let selectedImage = null;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -534,7 +536,7 @@ function insertImageToDropArea(dropArea) {
     newImage.style.height = '100%';
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = '';
+    deleteButton.textContent = '削除';
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
@@ -543,7 +545,7 @@ function insertImageToDropArea(dropArea) {
     });
 
     const cropButton = document.createElement('button');
-    cropButton.textContent = '';
+    cropButton.textContent = 'トリミング';
     cropButton.classList.add('crop-button');
     cropButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
@@ -668,6 +670,7 @@ document.addEventListener('touchstart', function(event) {
         }
     }
 });
+
 
 
 
