@@ -98,70 +98,68 @@ document.getElementById('editBack').addEventListener('click', function() {
 // }
 
 // 画像の挿入 indexedDB版
+// IndexedDBから画像を読み込み、対応するdropAreaに表示する関数
+function restoreDropAreas() {
+    if (!db) {
+        console.error('Database not initialized');
+        return;
+    }
+
+    const dropAreas = document.querySelectorAll('.empty');
+    dropAreas.forEach(dropArea => {
+        const id = dropArea.id;
+
+        if (!id) return; // IDが設定されていないdropAreaはスキップ
+
+        loadImageFromIndexedDB(id, (src) => {
+            if (src) {
+                const img = document.createElement('img');
+                img.src = src;
+                img.style.width = '100%';
+                img.style.height = '100%';
+
+                dropArea.innerHTML = ''; // 既存の内容をクリア
+                dropArea.appendChild(img);
+                dropArea.classList.add('with-buttons');
+            }
+        });
+    });
+}
+
+// IndexedDBから画像を読み込む関数
+function loadImageFromIndexedDB(id, callback) {
+    if (!db) {
+        console.error('Database not initialized');
+        return;
+    }
+
+    const transaction = db.transaction(['images']);
+    const objectStore = transaction.objectStore('images');
+    const request = objectStore.get(id);
+
+    request.onsuccess = function(event) {
+        const result = event.target.result;
+        if (result) {
+            callback(result.src);
+        } else {
+            console.log('Image not found in IndexedDB');
+            callback(null);
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error('Error retrieving image:', event.target.errorCode);
+    };
+}
+
+// ドキュメントが読み込まれた後にデータベースを開き、アプリを初期化
 document.addEventListener('DOMContentLoaded', function() {
-    // 各 dropArea の画像を更新
-    updateDropAreas();
+    openDatabase(() => {
+        restoreDropAreas();
+        addTouchListenerToDropAreas();
+    });
 });
 
-// IndexedDBのセットアップ
-const dbName = 'photoBookDB';
-const dbVersion = 1; // バージョン番号
-let db;
-
-// データベースを開く
-function openDB() {
-    return new Promise((resolve, reject) => {
-        const request = indexedDB.open(dbName, dbVersion);
-
-        request.onupgradeneeded = function(e) {
-            db = e.target.result;
-            if (!db.objectStoreNames.contains('dropAreaImages')) {
-                db.createObjectStore('dropAreaImages', { keyPath: 'id' });
-            }
-        };
-
-        request.onsuccess = function(e) {
-            db = e.target.result;
-            resolve();
-        };
-
-        request.onerror = function(e) {
-            console.error('IndexedDB open error:', e.target.errorCode);
-            reject(e.target.errorCode);
-        };
-    });
-}
-
-// 各 dropArea の画像を更新
-async function updateDropAreas() {
-    await openDB();
-
-    // クラス 'empty' を持つすべての要素を取得
-    const dropAreas = document.querySelectorAll('.empty');
-
-    dropAreas.forEach(dropArea => {
-        const id = dropArea.id; // 各 dropArea の id を取得 (例: 'dropArea1', 'dropArea2' ...)
-        
-        const transaction = db.transaction('dropAreaImages', 'readonly');
-        const store = transaction.objectStore('dropAreaImages');
-        const request = store.get(id);
-        
-        request.onsuccess = function(e) {
-            const result = e.target.result;
-            if (result) {
-                const img = document.createElement('img');
-                img.src = result.src;
-                dropArea.innerHTML = ''; // 現在の内容をクリア
-                dropArea.appendChild(img);
-                dropArea.classList.remove('empty');
-            }
-        };
-
-        request.onerror = function(e) {
-            console.error('IndexedDB read error:', e.target.errorCode);
-        };
-    });
-}
 
 
 
