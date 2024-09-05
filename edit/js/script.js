@@ -699,7 +699,6 @@ function initIndexedDB() {
 initIndexedDB();
 
 document.addEventListener('DOMContentLoaded', function() {
-    restoreDropAreas();
     addTouchListenerToDropAreas();
     document.getElementById('saveButton').addEventListener('click', function() {
         // サーバに画像を送信する処理は削除済み
@@ -722,7 +721,7 @@ function loadImage(input) {
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
                 makeTouchable(img);
-            }
+            };
 
             reader.readAsDataURL(file);
         });
@@ -820,6 +819,14 @@ function addTouchListenerToDropAreas() {
                 insertImageToDropArea(this);
             }
         });
+
+        dropArea.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (selectedImage) {
+                console.log('Selected image:', selectedImage);
+                insertImageToDropArea(this);
+            }
+        });
     });
 }
 
@@ -841,6 +848,11 @@ function insertImageToDropArea(dropArea) {
     const deleteButton = document.createElement('button');
     deleteButton.textContent = '削除';
     deleteButton.classList.add('delete-button');
+    deleteButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropArea.innerHTML = '';
+        deleteImageFromIndexedDB(dropArea.id);
+    });
     deleteButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
         dropArea.innerHTML = '';
@@ -850,6 +862,10 @@ function insertImageToDropArea(dropArea) {
     const cropButton = document.createElement('button');
     cropButton.textContent = 'トリミング';
     cropButton.classList.add('crop-button');
+    cropButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openCroppieModal(dropArea);
+    });
     cropButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
         openCroppieModal(dropArea);
@@ -912,6 +928,11 @@ function restoreDropAreas() {
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = '削除';
                 deleteButton.classList.add('delete-button');
+                deleteButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropArea.innerHTML = '';
+                    deleteImageFromIndexedDB(dropArea.id);
+                });
                 deleteButton.addEventListener('touchstart', function(e) {
                     e.stopPropagation();
                     dropArea.innerHTML = '';
@@ -921,6 +942,10 @@ function restoreDropAreas() {
                 const cropButton = document.createElement('button');
                 cropButton.textContent = 'トリミング';
                 cropButton.classList.add('crop-button');
+                cropButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openCroppieModal(dropArea);
+                });
                 cropButton.addEventListener('touchstart', function(e) {
                     e.stopPropagation();
                     openCroppieModal(dropArea);
@@ -953,7 +978,7 @@ function openCroppieModal(container) {
 
     croppieModal.style.display = 'block';
 
-    document.getElementById('crop-button').addEventListener('touchstart', function() {
+    document.getElementById('crop-button').addEventListener('click', function() {
         croppieInstance.result({
             type: 'canvas', 
             size: 'original',
@@ -963,11 +988,13 @@ function openCroppieModal(container) {
             img.src = croppedImage;
             saveImageToIndexedDB(container.id, croppedImage);
             croppieModal.style.display = 'none';
+            croppieInstance.destroy(); // Clean up Croppie instance
         });
     });
 
-    document.getElementById('close-button').addEventListener('touchstart', function() {
+    document.getElementById('close-button').addEventListener('click', function() {
         croppieModal.style.display = 'none';
+        croppieInstance.destroy(); // Clean up Croppie instance
     });
 }
 
