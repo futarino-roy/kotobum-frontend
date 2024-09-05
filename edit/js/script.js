@@ -814,11 +814,10 @@ function addTouchListenerToDropAreas() {
     const dropAreas = document.querySelectorAll('.empty');
     dropAreas.forEach(dropArea => {
         dropArea.addEventListener('touchstart', function(e) {
-            console.log('Touch event detected on drop area');
+            e.preventDefault();  // Prevent default touch behavior
             if (selectedImage) {
                 console.log('Selected image:', selectedImage);
                 insertImageToDropArea(this);
-                e.preventDefault();  // Prevent default touch behavior
             }
         });
     });
@@ -956,10 +955,10 @@ function openCroppieModal(container) {
 
     document.getElementById('crop-button').addEventListener('touchstart', function() {
         croppieInstance.result({
-             type: 'canvas', 
-             size: 'original',
-             format: 'png',
-             quality: 1
+            type: 'canvas', 
+            size: 'original',
+            format: 'png',
+            quality: 1
         }).then(function(croppedImage) {
             img.src = croppedImage;
             saveImageToIndexedDB(container.id, croppedImage);
@@ -1010,6 +1009,7 @@ document.addEventListener('touchstart', function(event) {
         }
     }
 });
+
 
 
 
