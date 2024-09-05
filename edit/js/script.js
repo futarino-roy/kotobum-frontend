@@ -674,21 +674,21 @@ const showDrawerContent = (contentId) => {
 
 
 // 処理1
-let imageDB;
+let myImageDB1;
 
 // 新しいIndexedDBの初期化
 function initNewIndexedDB() {
-    const request = indexedDB.open('NewImageDatabase', 1);
+    const request = indexedDB.open('NewImageDatabase1', 1); // データベース名に数字を追加
 
     request.onupgradeneeded = function(event) {
-        imageDB = event.target.result;
-        if (!imageDB.objectStoreNames.contains('images')) {
-            imageDB.createObjectStore('images', { keyPath: 'id' });
+        myImageDB1 = event.target.result;
+        if (!myImageDB1.objectStoreNames.contains('images')) {
+            myImageDB1.createObjectStore('images', { keyPath: 'id' });
         }
     };
 
     request.onsuccess = function(event) {
-        imageDB = event.target.result;
+        myImageDB1 = event.target.result;
         console.log('New IndexedDB initialized.');
         restoreDropAreas(); // データベースから画像を復元
     };
@@ -853,12 +853,12 @@ function insertImageToDropArea(dropArea) {
     deleteButton.addEventListener('click', function(e) {
         e.stopPropagation();
         dropArea.innerHTML = '';
-        deleteImageFromIndexedDB(dropArea.id);
+        deleteImageFromNewIndexedDB(dropArea.id);
     });
     deleteButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
         dropArea.innerHTML = '';
-        deleteImageFromIndexedDB(dropArea.id);
+        deleteImageFromNewIndexedDB(dropArea.id);
     });
 
     const cropButton = document.createElement('button');
@@ -886,12 +886,12 @@ function insertImageToDropArea(dropArea) {
 }
 
 function saveImageToNewIndexedDB(id, imageData) {
-    if (!imageDB) {
+    if (!myImageDB1) {
         console.error('Database not initialized.');
         return;
     }
 
-    const transaction = imageDB.transaction(['images'], 'readwrite');
+    const transaction = myImageDB1.transaction(['images'], 'readwrite');
     const store = transaction.objectStore('images');
     store.put({ id: id, data: imageData });
 
@@ -905,12 +905,12 @@ function saveImageToNewIndexedDB(id, imageData) {
 }
 
 function getImageFromNewIndexedDB(id, callback) {
-    if (!imageDB) {
+    if (!myImageDB1) {
         console.error('Database not initialized.');
         return;
     }
 
-    const transaction = imageDB.transaction(['images']);
+    const transaction = myImageDB1.transaction(['images']);
     const store = transaction.objectStore('images');
     const request = store.get(id);
 
@@ -975,12 +975,12 @@ function restoreDropAreas() {
 }
 
 function deleteImageFromNewIndexedDB(id) {
-    if (!imageDB) {
+    if (!myImageDB1) {
         console.error('Database not initialized.');
         return;
     }
 
-    const transaction = imageDB.transaction(['images'], 'readwrite');
+    const transaction = myImageDB1.transaction(['images'], 'readwrite');
     const store = transaction.objectStore('images');
     const request = store.delete(id);
 
@@ -997,6 +997,7 @@ function openCroppieModal(dropArea) {
     // Croppieモーダルの表示処理
     console.log('Croppie modal open for drop area:', dropArea);
 }
+
 
 
 
@@ -1268,17 +1269,18 @@ function handleDragLeave(event) {
 }
 
 // IndexedDBへの接続
+let myimageDB2;
 const request = indexedDB.open("ImageDB", 1);
 
 request.onupgradeneeded = function (event) {
-    db = event.target.result;
-    if (!db.objectStoreNames.contains("images")) {
-        db.createObjectStore("images", { keyPath: "id" });
+    myimageDB2 = event.target.result;
+    if (!myimageDB2.objectStoreNames.contains("images")) {
+        myimageDB2.createObjectStore("images", { keyPath: "id" });
     }
 };
 
 request.onsuccess = function (event) {
-    db = event.target.result;
+    myimageDB2 = event.target.result;
     loadAllImages(); // ページロード時にすべての画像をロード
 };
 
@@ -1288,7 +1290,7 @@ request.onerror = function (event) {
 
 // 画像をIndexedDBに保存
 function saveImageToIndexedDB(imageData, containerId) {
-    const transaction = db.transaction(["images"], "readwrite");
+    const transaction = myimageDB2.transaction(["images"], "readwrite");
     const store = transaction.objectStore("images");
     const request = store.put({ id: containerId, data: imageData });
 
@@ -1303,7 +1305,7 @@ function saveImageToIndexedDB(imageData, containerId) {
 
 // IndexedDBから画像を取得
 function loadImageFromIndexedDB(containerId, callback) {
-    const transaction = db.transaction(["images"], "readonly");
+    const transaction = myimageDB2.transaction(["images"], "readonly");
     const store = transaction.objectStore("images");
     const request = store.get(containerId);
 
@@ -1319,7 +1321,7 @@ function loadImageFromIndexedDB(containerId, callback) {
 
 // IndexedDBから画像を削除
 function clearImageFromIndexedDB(containerId) {
-    const transaction = db.transaction(["images"], "readwrite");
+    const transaction = myimageDB2.transaction(["images"], "readwrite");
     const store = transaction.objectStore("images");
     const request = store.delete(containerId);
 
@@ -1539,6 +1541,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 
