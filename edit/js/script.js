@@ -677,31 +677,30 @@ const showDrawerContent = (contentId) => {
 let selectedImage = null;
 let db;
 
-// IndexedDBのセットアップ
-function openDatabase() {
-    const request = indexedDB.open('imageDB', 1);
+// IndexedDBの初期化
+function initIndexedDB() {
+    const request = indexedDB.open('ImageDatabase', 1);
 
     request.onupgradeneeded = function(event) {
         db = event.target.result;
-        const objectStore = db.createObjectStore('images', { keyPath: 'id' });
-        objectStore.createIndex('src', 'src', { unique: false });
+        db.createObjectStore('images', { keyPath: 'id' });
     };
 
     request.onsuccess = function(event) {
         db = event.target.result;
+        restoreDropAreas(); // データベースからの画像復元を呼び出す
     };
 
     request.onerror = function(event) {
-        console.error('Database error:', event.target.errorCode);
+        console.error('IndexedDB error:', event.target.errorCode);
     };
 }
 
-openDatabase();
+initIndexedDB();
 
 document.addEventListener('DOMContentLoaded', function() {
     restoreDropAreas();
     addTouchListenerToDropAreas();
-
     document.getElementById('saveButton').addEventListener('click', function() {
         // サーバに画像を送信する処理は削除済み
     });
@@ -723,7 +722,7 @@ function loadImage(input) {
                 imgPreviewField.appendChild(img);
                 makeDraggable(img);
                 makeTouchable(img);
-            };
+            }
 
             reader.readAsDataURL(file);
         });
@@ -836,7 +835,7 @@ function insertImageToDropArea(dropArea) {
     deleteButton.addEventListener('touchstart', function(e) {
         e.stopPropagation();
         dropArea.innerHTML = '';
-        saveDropAreaImages();
+        deleteImageFromIndexedDB(dropArea.id);
     });
 
     const cropButton = document.createElement('button');
@@ -855,34 +854,34 @@ function insertImageToDropArea(dropArea) {
     selectedImage.classList.remove('selected');
     selectedImage = null;
 
-    saveDropAreaImages();
+    saveImageToIndexedDB(dropArea.id, newImage.src);
 }
 
 function saveImageToIndexedDB(id, src) {
     const transaction = db.transaction(['images'], 'readwrite');
-    const objectStore = transaction.objectStore('images');
-    const request = objectStore.put({ id, src });
+    const store = transaction.objectStore('images');
+    store.put({ id: id, src: src });
 
-    request.onsuccess = function() {
-        console.log('Image saved to IndexedDB');
+    transaction.oncomplete = function() {
+        console.log('Image saved to IndexedDB.');
     };
 
-    request.onerror = function(event) {
+    transaction.onerror = function(event) {
         console.error('Error saving image:', event.target.errorCode);
     };
 }
 
-function loadImageFromIndexedDB(id, callback) {
+function getImageFromIndexedDB(id, callback) {
     const transaction = db.transaction(['images']);
-    const objectStore = transaction.objectStore('images');
-    const request = objectStore.get(id);
+    const store = transaction.objectStore('images');
+    const request = store.get(id);
 
     request.onsuccess = function(event) {
         const result = event.target.result;
         if (result) {
             callback(result.src);
         } else {
-            console.log('Image not found in IndexedDB');
+            console.log('No image found with ID:', id);
         }
     };
 
@@ -891,50 +890,38 @@ function loadImageFromIndexedDB(id, callback) {
     };
 }
 
-function saveDropAreaImages() {
-    const dropAreas = document.querySelectorAll('.empty');
-    dropAreas.forEach(dropArea => {
-        const img = dropArea.querySelector('img');
-        if (img) {
-            saveImageToIndexedDB(dropArea.id, img.src);
-        } else {
-            const transaction = db.transaction(['images'], 'readwrite');
-            const objectStore = transaction.objectStore('images');
-            objectStore.delete(dropArea.id);
-        }
-    });
-}
-
 function restoreDropAreas() {
     const dropAreas = document.querySelectorAll('.empty');
     dropAreas.forEach(dropArea => {
-        loadImageFromIndexedDB(dropArea.id, (src) => {
-            const newImage = document.createElement('img');
-            newImage.src = src;
-            newImage.style.width = '100%';
-            newImage.style.height = '100%';
+        getImageFromIndexedDB(dropArea.id, function(src) {
+            if (src) {
+                const newImage = document.createElement('img');
+                newImage.src = src;
+                newImage.style.width = '100%';
+                newImage.style.height = '100%';
 
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = '削除';
-            deleteButton.classList.add('delete-button');
-            deleteButton.addEventListener('touchstart', function(e) {
-                e.stopPropagation();
-                dropArea.innerHTML = '';
-                saveDropAreaImages();
-            });
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = '削除';
+                deleteButton.classList.add('delete-button');
+                deleteButton.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                    dropArea.innerHTML = '';
+                    deleteImageFromIndexedDB(dropArea.id);
+                });
 
-            const cropButton = document.createElement('button');
-            cropButton.textContent = 'トリミング';
-            cropButton.classList.add('crop-button');
-            cropButton.addEventListener('touchstart', function(e) {
-                e.stopPropagation();
-                openCroppieModal(dropArea);
-            });
+                const cropButton = document.createElement('button');
+                cropButton.textContent = 'トリミング';
+                cropButton.classList.add('crop-button');
+                cropButton.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                    openCroppieModal(dropArea);
+                });
 
-            dropArea.appendChild(newImage);
-            dropArea.appendChild(deleteButton);
-            dropArea.appendChild(cropButton);
-            dropArea.classList.add('with-buttons');
+                dropArea.appendChild(newImage);
+                dropArea.appendChild(deleteButton);
+                dropArea.appendChild(cropButton);
+                dropArea.classList.add('with-buttons');
+            }
         });
     });
 }
@@ -959,20 +946,34 @@ function openCroppieModal(container) {
 
     document.getElementById('crop-button').addEventListener('touchstart', function() {
         croppieInstance.result({
-            type: 'canvas', 
-            size: 'original',
-            format: 'png',
-            quality: 1
+             type: 'canvas', 
+             size: 'original',
+             format: 'png',
+             quality: 1
         }).then(function(croppedImage) {
             img.src = croppedImage;
+            saveImageToIndexedDB(container.id, croppedImage);
             croppieModal.style.display = 'none';
-            saveDropAreaImages();
         });
     });
 
     document.getElementById('close-button').addEventListener('touchstart', function() {
         croppieModal.style.display = 'none';
     });
+}
+
+function deleteImageFromIndexedDB(id) {
+    const transaction = db.transaction(['images'], 'readwrite');
+    const store = transaction.objectStore('images');
+    store.delete(id);
+
+    transaction.oncomplete = function() {
+        console.log('Image deleted from IndexedDB.');
+    };
+
+    transaction.onerror = function(event) {
+        console.error('Error deleting image:', event.target.errorCode);
+    };
 }
 
 document.addEventListener('touchstart', function(event) {
@@ -1014,6 +1015,7 @@ document.addEventListener('touchstart', function(event) {
 
 
 
+
 // inputボタンのデザイン
 document.getElementById('frontButton').addEventListener('click', function() {
     document.getElementById('backInput').click();
@@ -1025,6 +1027,239 @@ document.getElementById('frontButton').addEventListener('click', function() {
 
 // 画像のドラッグ＆ドロップ
 // ドラッグオーバー時の処理
+// function handleDragOver(event) {
+//     event.preventDefault();
+//     this.style.backgroundColor = "#d0f0c0"; // ドラッグ中の背景色変更
+// }
+
+// // ドラッグが離れたときの処理
+// function handleDragLeave(event) {
+//     this.style.backgroundColor = "transparent"; // ドラッグが離れたときの背景色リセット
+// }
+
+// // ドロップ時の処理
+// function handleDrop(event) {
+//     event.preventDefault();
+//     this.style.backgroundColor = "transparent";
+
+//     const files = event.dataTransfer.files;
+//     if (files.length > 0) {
+//         let file = files[0];
+//         let fileReader = new FileReader();
+//         fileReader.onload = function (e) {
+//             this.innerHTML = ""; // 既存の内容をクリア
+//             let img = new Image();
+//             img.src = e.target.result; // 画像データURLを設定
+//             img.classList.add("draggable-image"); // 画像にクラスを追加
+//             img.onclick = function () {
+//                 showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+//             };
+//             this.appendChild(img);
+//             addButtons(this); // 削除ボタンとトリミングボタンを追加
+
+//             // ローカルストレージに画像データを保存
+//             saveImageToLocalStorage(e.target.result, this.id);
+//         }.bind(this);
+//         fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
+//     }
+// }
+
+// // タッチエンド時の処理
+// function handleTouchDrop(event) {
+//     event.preventDefault();
+//     const touch = event.changedTouches[0];
+//     const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
+
+//     if (dropArea && dropArea.classList.contains("empty")) {
+//         const files = event.dataTransfer.files;
+//         if (files.length > 0) {
+//             let file = files[0];
+//             let fileReader = new FileReader();
+//             fileReader.onload = function (e) {
+//                 dropArea.innerHTML = ""; // 既存の内容をクリア
+//                 let img = new Image();
+//                 img.src = e.target.result; // 画像データURLを設定
+//                 dropArea.appendChild(img);
+//                 addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+
+//                 // ローカルストレージに画像データを保存
+//                 saveImageToLocalStorage(e.target.result, dropArea.id);
+//             };
+//             fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
+//         }
+//     }
+// }
+
+// // 削除ボタンとトリミングボタンの追加
+// function addButtons(container) {
+//     // 削除ボタンが既に存在するか確認
+//     if (!container.querySelector(".delete-btn")) {
+//         let deleteButton = document.createElement("button");
+//         deleteButton.classList.add("delete-btn");
+//         deleteButton.textContent = "";
+//         deleteButton.onclick = function () {
+//             container.innerHTML = ""; // 画像を削除
+//             container.classList.remove("selected"); // 選択状態を解除
+//             container.style.backgroundColor = "transparent"; // 背景色をリセット
+//             hideButtons(); // ボタンを非表示にする
+
+//             // ローカルストレージから画像データを削除
+//             clearImageFromLocalStorage(container.id);
+//         };
+//         container.appendChild(deleteButton);
+//     }
+
+//     // トリミングボタンが既に存在するか確認
+//     if (!container.querySelector(".crop-btn")) {
+//         let cropButton = document.createElement("button");
+//         cropButton.classList.add("crop-btn");
+//         cropButton.textContent = "";
+//         cropButton.onclick = function (event) {
+//             event.stopPropagation(); // クリックイベントのバブリングを防ぐ
+//             openCroppieModal(container); // トリミングモーダルを開く関数
+//         };
+//         container.appendChild(cropButton);
+//     }
+// }
+
+// // ボタンを表示する関数
+// function showButtons(container) {
+//     container.querySelectorAll(".delete-btn, .crop-btn").forEach(button => button.style.display = "flex");
+// }
+
+// // ボタンを非表示にする関数
+// function hideButtons() {
+//     document.querySelectorAll(".delete-btn, .crop-btn").forEach(button => button.style.display = "none");
+// }
+
+// // トリミングモーダル処理
+// let croppieInstance; // Croppie インスタンスを保持
+
+// function openCroppieModal(container) {
+//     const croppieModal = document.getElementById('croppieModal');
+//     const croppieContainer = document.getElementById('croppie-container');
+//     croppieModal.style.display = 'block';
+
+//     // Croppieの設定
+//     if (croppieInstance) {
+//         croppieInstance.destroy(); // 既存のインスタンスを破棄
+//     }
+
+//     croppieInstance = new Croppie(croppieContainer, {
+//         viewport: { width: 200, height: 200 },
+//         boundary: { width: 300, height: 300 },
+//         showZoomer: true,
+//         enableResize: false
+//     });
+
+//     const img = container.querySelector('img');
+//     croppieInstance.bind({
+//         url: img.src
+//     });
+
+//     // トリミングボタンのイベント
+//     document.getElementById('crop-button').onclick = function () {
+//         croppieInstance.result({
+//             type: 'canvas',
+//             size: 'original',
+//             format: 'png',
+//             quality: 1
+//         }).then(function (croppedImage) {
+//             container.querySelector('img').src = croppedImage; // トリミング後の画像を更新
+//             croppieModal.style.display = 'none'; // モーダルを閉じる
+
+//             // トリミング後の画像データをローカルストレージに保存
+//             saveImageToLocalStorage(croppedImage, container.id);
+//         });
+//     };
+
+//     // 閉じるボタンのイベント
+//     document.getElementById('close-button').onclick = function () {
+//         croppieModal.style.display = 'none'; // モーダルを閉じる
+//     };
+// }
+
+// // 画像のクリックイベント処理
+// function handleElementClick(event) {
+//     if (event.target.classList.contains('draggable-image')) {
+//         // 画像がクリックされた場合、ボタンを表示
+//         showButtons(event.target.parentNode);
+//         return;
+//     }
+
+//     if (event.target.classList.contains('delete-btn') || event.target.classList.contains('crop-btn')) {
+//         // 削除ボタンやトリミングボタンがクリックされた場合の処理
+//         return;
+//     }
+
+//     // その他のクリック時の処理
+//     hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
+// }
+
+// // ローカルストレージに画像データを保存
+// function saveImageToLocalStorage(imageData, containerId) {
+//     localStorage.setItem(`image_${containerId}`, imageData);
+// }
+
+// // ローカルストレージから画像データを取得
+// function loadImageFromLocalStorage(containerId) {
+//     return localStorage.getItem(`image_${containerId}`);
+// }
+
+// // ローカルストレージから画像データを削除
+// function clearImageFromLocalStorage(containerId) {
+//     localStorage.removeItem(`image_${containerId}`);
+// }
+
+// // ドキュメントが読み込まれた後の処理
+// document.addEventListener("DOMContentLoaded", function () {
+//     const emptyElements = document.querySelectorAll(".empty");
+
+//     emptyElements.forEach(function (dropArea) {
+//         dropArea.addEventListener("dragover", handleDragOver); // ドラッグオーバー時の処理
+//         dropArea.addEventListener("dragleave", handleDragLeave); // ドラッグが離れたときの処理
+//         dropArea.addEventListener("drop", handleDrop); // ドロップ時の処理
+//         dropArea.addEventListener("touchstart", function (event) {
+//             event.preventDefault(); // タッチスタート時の処理（デフォルトの動作を防ぐ）
+//         }, { passive: false });
+//         dropArea.addEventListener("touchend", handleTouchDrop, { passive: false }); // タッチエンド時の処理
+//         dropArea.addEventListener("click", handleElementClick); // クリック時の処理
+//     });
+
+//     // ページが読み込まれたときにローカルストレージから画像を復元
+//     emptyElements.forEach(function(dropArea) {
+//         const imageData = loadImageFromLocalStorage(dropArea.id);
+//         if (imageData) {
+//             dropArea.innerHTML = ""; // 既存の内容をクリア
+//             let img = new Image();
+//             img.src = imageData; // 画像データURLを設定
+//             img.classList.add("draggable-image");
+//             img.onclick = function() {
+//                 showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+//             };
+//             dropArea.appendChild(img);
+//             addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+//         }
+//     });
+
+//     // ドキュメント全体をクリックしたときにボタンを非表示にする
+//     document.addEventListener("click", function(event) {
+//         if (!event.target.classList.contains('delete-btn') &&
+//             !event.target.classList.contains('crop-btn') &&
+//             !event.target.classList.contains('draggable-image') &&
+//             !event.target.classList.contains('empty')) {
+//             hideButtons();
+//         }
+//     });
+// });
+
+
+
+
+
+
+// DB版
+// ドラッグオーバー時の処理
 function handleDragOver(event) {
     event.preventDefault();
     this.style.backgroundColor = "#d0f0c0"; // ドラッグ中の背景色変更
@@ -1033,6 +1268,91 @@ function handleDragOver(event) {
 // ドラッグが離れたときの処理
 function handleDragLeave(event) {
     this.style.backgroundColor = "transparent"; // ドラッグが離れたときの背景色リセット
+}
+
+// IndexedDBへの接続
+const request = indexedDB.open("ImageDB", 1);
+
+request.onupgradeneeded = function (event) {
+    db = event.target.result;
+    if (!db.objectStoreNames.contains("images")) {
+        db.createObjectStore("images", { keyPath: "id" });
+    }
+};
+
+request.onsuccess = function (event) {
+    db = event.target.result;
+    loadAllImages(); // ページロード時にすべての画像をロード
+};
+
+request.onerror = function (event) {
+    console.error("IndexedDBに接続できませんでした:", event.target.error);
+};
+
+// 画像をIndexedDBに保存
+function saveImageToIndexedDB(imageData, containerId) {
+    const transaction = db.transaction(["images"], "readwrite");
+    const store = transaction.objectStore("images");
+    const request = store.put({ id: containerId, data: imageData });
+
+    request.onsuccess = function () {
+        console.log("画像がIndexedDBに保存されました:", containerId);
+    };
+
+    request.onerror = function (event) {
+        console.error("画像の保存に失敗しました:", event.target.error);
+    };
+}
+
+// IndexedDBから画像を取得
+function loadImageFromIndexedDB(containerId, callback) {
+    const transaction = db.transaction(["images"], "readonly");
+    const store = transaction.objectStore("images");
+    const request = store.get(containerId);
+
+    request.onsuccess = function (event) {
+        callback(event.target.result ? event.target.result.data : null);
+    };
+
+    request.onerror = function (event) {
+        console.error("画像の取得に失敗しました:", event.target.error);
+        callback(null);
+    };
+}
+
+// IndexedDBから画像を削除
+function clearImageFromIndexedDB(containerId) {
+    const transaction = db.transaction(["images"], "readwrite");
+    const store = transaction.objectStore("images");
+    const request = store.delete(containerId);
+
+    request.onsuccess = function () {
+        console.log("画像がIndexedDBから削除されました:", containerId);
+    };
+
+    request.onerror = function (event) {
+        console.error("画像の削除に失敗しました:", event.target.error);
+    };
+}
+
+// すべての画像をロードする
+function loadAllImages() {
+    const emptyElements = document.querySelectorAll(".empty");
+    emptyElements.forEach(function (dropArea) {
+        loadImageFromIndexedDB(dropArea.id, function (imageData) {
+            if (imageData) {
+                dropArea.innerHTML = ""; // 既存の内容をクリア
+                let img = new Image();
+                img.src = imageData; // 画像データURLを設定
+                img.classList.add("draggable-image");
+                img.onclick = function () {
+                    showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+                };
+                dropArea.appendChild(img);
+                addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+            }
+        });
+    });
 }
 
 // ドロップ時の処理
@@ -1055,8 +1375,8 @@ function handleDrop(event) {
             this.appendChild(img);
             addButtons(this); // 削除ボタンとトリミングボタンを追加
 
-            // ローカルストレージに画像データを保存
-            saveImageToLocalStorage(e.target.result, this.id);
+            // IndexedDBに画像データを保存
+            saveImageToIndexedDB(e.target.result, this.id);
         }.bind(this);
         fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
     }
@@ -1080,8 +1400,8 @@ function handleTouchDrop(event) {
                 dropArea.appendChild(img);
                 addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
 
-                // ローカルストレージに画像データを保存
-                saveImageToLocalStorage(e.target.result, dropArea.id);
+                // IndexedDBに画像データを保存
+                saveImageToIndexedDB(e.target.result, dropArea.id);
             };
             fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
         }
@@ -1094,15 +1414,15 @@ function addButtons(container) {
     if (!container.querySelector(".delete-btn")) {
         let deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-btn");
-        deleteButton.textContent = "";
+        deleteButton.textContent = "削除"; // ボタンのテキストを設定
         deleteButton.onclick = function () {
             container.innerHTML = ""; // 画像を削除
             container.classList.remove("selected"); // 選択状態を解除
             container.style.backgroundColor = "transparent"; // 背景色をリセット
             hideButtons(); // ボタンを非表示にする
 
-            // ローカルストレージから画像データを削除
-            clearImageFromLocalStorage(container.id);
+            // IndexedDBから画像データを削除
+            clearImageFromIndexedDB(container.id);
         };
         container.appendChild(deleteButton);
     }
@@ -1111,7 +1431,7 @@ function addButtons(container) {
     if (!container.querySelector(".crop-btn")) {
         let cropButton = document.createElement("button");
         cropButton.classList.add("crop-btn");
-        cropButton.textContent = "";
+        cropButton.textContent = "トリミング"; // ボタンのテキストを設定
         cropButton.onclick = function (event) {
             event.stopPropagation(); // クリックイベントのバブリングを防ぐ
             openCroppieModal(container); // トリミングモーダルを開く関数
@@ -1166,8 +1486,8 @@ function openCroppieModal(container) {
             container.querySelector('img').src = croppedImage; // トリミング後の画像を更新
             croppieModal.style.display = 'none'; // モーダルを閉じる
 
-            // トリミング後の画像データをローカルストレージに保存
-            saveImageToLocalStorage(croppedImage, container.id);
+            // トリミング後の画像データをIndexedDBに保存
+            saveImageToIndexedDB(croppedImage, container.id);
         });
     };
 
@@ -1194,21 +1514,6 @@ function handleElementClick(event) {
     hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
 }
 
-// ローカルストレージに画像データを保存
-function saveImageToLocalStorage(imageData, containerId) {
-    localStorage.setItem(`image_${containerId}`, imageData);
-}
-
-// ローカルストレージから画像データを取得
-function loadImageFromLocalStorage(containerId) {
-    return localStorage.getItem(`image_${containerId}`);
-}
-
-// ローカルストレージから画像データを削除
-function clearImageFromLocalStorage(containerId) {
-    localStorage.removeItem(`image_${containerId}`);
-}
-
 // ドキュメントが読み込まれた後の処理
 document.addEventListener("DOMContentLoaded", function () {
     const emptyElements = document.querySelectorAll(".empty");
@@ -1224,24 +1529,11 @@ document.addEventListener("DOMContentLoaded", function () {
         dropArea.addEventListener("click", handleElementClick); // クリック時の処理
     });
 
-    // ページが読み込まれたときにローカルストレージから画像を復元
-    emptyElements.forEach(function(dropArea) {
-        const imageData = loadImageFromLocalStorage(dropArea.id);
-        if (imageData) {
-            dropArea.innerHTML = ""; // 既存の内容をクリア
-            let img = new Image();
-            img.src = imageData; // 画像データURLを設定
-            img.classList.add("draggable-image");
-            img.onclick = function() {
-                showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
-            };
-            dropArea.appendChild(img);
-            addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
-        }
-    });
+    // ページが読み込まれたときにIndexedDBから画像を復元
+    loadAllImages();
 
     // ドキュメント全体をクリックしたときにボタンを非表示にする
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
         if (!event.target.classList.contains('delete-btn') &&
             !event.target.classList.contains('crop-btn') &&
             !event.target.classList.contains('draggable-image') &&
@@ -1250,6 +1542,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
+
 
 
 
