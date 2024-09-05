@@ -813,15 +813,25 @@ function makeTouchable(img) {
 function addTouchListenerToDropAreas() {
     const dropAreas = document.querySelectorAll('.empty');
     dropAreas.forEach(dropArea => {
-        dropArea.addEventListener('touchstart', function() {
+        dropArea.addEventListener('touchstart', function(e) {
+            console.log('Touch event detected on drop area');
             if (selectedImage) {
+                console.log('Selected image:', selectedImage);
                 insertImageToDropArea(this);
+                e.preventDefault();  // Prevent default touch behavior
             }
         });
     });
 }
 
 function insertImageToDropArea(dropArea) {
+    console.log('Inserting image into drop area', dropArea);
+
+    if (!selectedImage) {
+        console.log('No image selected');
+        return;
+    }
+
     dropArea.innerHTML = '';
 
     const newImage = document.createElement('img');
@@ -1000,6 +1010,7 @@ document.addEventListener('touchstart', function(event) {
         }
     }
 });
+
 
 
 
