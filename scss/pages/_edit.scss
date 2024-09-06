@@ -1,6 +1,7 @@
 .edit-body{
     background: #D5DADC;
-    height: auto;
+    height: 100vh;
+
 
     @include mq('tab-edit'){
         // height: 100vh;
@@ -8,6 +9,15 @@
 }
 
 .edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include mq('tab-edit'){
+        // height: 100vh;
+        display: block;
+        }
 
     &_drawer{
         // width: 350px;
@@ -540,24 +550,24 @@
 
     .content{
         // margin-top: 130px;
-        margin-top: 100px;
-        margin-left: 77px; /* 初期マージン */
+        // margin-top: 100px;
+        // margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
         @include mq('pc2-edit'){
-            margin: 140px 0 0 0;
+            // margin: 140px 0 0 0;
             transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                     
             }
 
             @include mq('pc3-edit'){
-                margin: 200px 0 0 0;
+                // margin: 200px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
                 } 
 
         @include mq('tab-edit'){
-                margin: 85px 0 0 0;
+                // margin: 85px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
                 }              
