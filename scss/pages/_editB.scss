@@ -697,24 +697,42 @@
                                                 justify-content: center;
                                             }
 
-                                            .flex-area24-1{
-                                                width: 60%;
-                                                height: 20%;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                gap: 5%;
-                                            }
+                                            // .flex-area24-1{
+                                            //     width: 60%;
+                                            //     height: 20%;
+                                            //     display: flex;
+                                            //     justify-content: center;
+                                            //     align-items: center;
+                                            //     gap: 5%;
+                                            // }
                                             
-                                            .flex-area24-2{
+                                            // .flex-area24-2{
+                                            //     width: 60%;
+                                            //     height: 20%;
+                                            //     display: flex;
+                                            //     justify-content: center;
+                                            //     align-items: center;
+                                            //     gap: 5%;
+                                            //     margin: 5% 0 5%;
+
+                                            // }
+
+                                            .flex24{
                                                 width: 60%;
-                                                height: 20%;
+                                                height: 40%;
                                                 display: flex;
                                                 justify-content: center;
-                                                align-items: center;
                                                 gap: 5%;
-                                                margin: 5% 0 5%;
 
+                                                .drop24{
+                                                    width: 60%;
+                                                    height: 100%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    gap: 5%;
+                                                }
                                             }
 
                                             #dropArea13{
@@ -1656,7 +1674,8 @@
 
                                             #dropArea24-1{
                                                 position: relative;
-                                                width: 60%;
+                                                // width: 60%;
+                                                width: 100%;
                                                 height: 100%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
@@ -1741,7 +1760,8 @@
 
                                             #dropArea24-2{
                                                 position: relative;
-                                                width: 60%;
+                                                // width: 60%;
+                                                width: 100%;
                                                 height: 100%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
@@ -1828,6 +1848,7 @@
                                                 position: relative;
                                                 width: 60%;
                                                 height: 25%;
+                                                margin-top: 5%;
                                                 font-size: 1rem;
                                                 border: 2px dashed #ccc;
                                                 cursor: pointer;
@@ -1941,7 +1962,7 @@
                                             #textArea{
 
                                                 &13-1{
-                                                    width: 60% !important;
+                                                    min-width: 60%;
                                                     font-size: 1.2rem;
                                                     line-height: 1.5;
                                                     font-weight: bold;
@@ -1966,7 +1987,7 @@
                                                 }
 
                                                 &13-2{
-                                                    width: 60% !important;
+                                                    min-width: 60%;
                                                     margin: 1% 0 5%;
                                                     font-size: 0.45rem;
                                                     line-height: 1.5;
@@ -1993,6 +2014,7 @@
 
                                                 &13-3{
                                                     min-height: 15%;
+                                                    max-height: 15%;
                                                     margin-top: 5%;
                                                     writing-mode: vertical-rl;
                                       
@@ -2000,6 +2022,7 @@
                                                 }
 
                                                 &14, &22{
+                                                    max-height: 20%;
                                                     min-height: 20%;
                                                     margin-bottom: 5%;
                                                     font-size: 0.6rem;
@@ -2025,12 +2048,13 @@
                                                 }
 
                                                 &15, &17, &19{
-                                                    writing-mode: vertical-rl;
+                                                    max-height: 70%;
                                                     min-height: 70%;
+                                                    writing-mode: vertical-rl;
                                                 }
 
                                                 &16, &20{
-                                                    width: 60% !important;
+                                                    min-width: 60%;
                                                     margin-bottom: 5%;
                                                     font-size: 0.6rem;
                                                     line-height: 1.5;
@@ -2105,12 +2129,15 @@
 
                                                 &21-1, &21-2, &23-1, &23-2 {
                                                     min-height: 30%;
-                                                    margin-bottom: 5%;
+                                                    max-height: 30%;
+                                                    margin-bottom: 2.5%;
+                                                    margin-top: 2.5%;
                                                     writing-mode: vertical-rl;
                                                 }
 
                                                 &24-1, &24-2 {
                                                     min-height: 100%;
+                                                    max-height: 100%;
                                                     writing-mode: vertical-rl;
                                                 }
                                             }
