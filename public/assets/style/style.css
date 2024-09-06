@@ -2950,22 +2950,21 @@ input:checked + label::after {
   align-items: center;
   justify-content: center;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area24-1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
   width: 60%;
-  height: 20%;
+  height: 40%;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 5%;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area24-2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .drop24 {
   width: 60%;
-  height: 20%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 5%;
-  margin: 5% 0 5%;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 {
   position: relative;
@@ -3717,7 +3716,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
   position: relative;
-  width: 60%;
+  width: 100%;
   height: 100%;
   font-size: 1rem;
   border: 2px dashed #ccc;
@@ -3785,7 +3784,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 {
   position: relative;
-  width: 60%;
+  width: 100%;
   height: 100%;
   font-size: 1rem;
   border: 2px dashed #ccc;
@@ -3855,6 +3854,7 @@ input:checked + label::after {
   position: relative;
   width: 60%;
   height: 25%;
+  margin-top: 5%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -3950,7 +3950,7 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-  width: 60% !important;
+  min-width: 60%;
   font-size: 1.2rem;
   line-height: 1.5;
   font-weight: bold;
@@ -3976,7 +3976,7 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-  width: 60% !important;
+  min-width: 60%;
   margin: 1% 0 5%;
   font-size: 0.45rem;
   line-height: 1.5;
@@ -4004,10 +4004,12 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
   min-height: 15%;
+  max-height: 15%;
   margin-top: 5%;
   writing-mode: vertical-rl;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
+  max-height: 20%;
   min-height: 20%;
   margin-bottom: 5%;
   font-size: 0.6rem;
@@ -4036,11 +4038,12 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19 {
-  writing-mode: vertical-rl;
+  max-height: 70%;
   min-height: 70%;
+  writing-mode: vertical-rl;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
-  width: 60% !important;
+  min-width: 60%;
   margin-bottom: 5%;
   font-size: 0.6rem;
   line-height: 1.5;
@@ -4124,11 +4127,14 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21-1, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
   min-height: 30%;
-  margin-bottom: 5%;
+  max-height: 30%;
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
   writing-mode: vertical-rl;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
   min-height: 100%;
+  max-height: 100%;
   writing-mode: vertical-rl;
 }
 
