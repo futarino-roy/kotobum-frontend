@@ -10,26 +10,59 @@
   font-size: 1rem;
   cursor: pointer;
 
-  &-A {
-    background-image: url(../../../signup/images/Button_PC.png);
+  &-large {
+    background-image: url(../../../images/Button_pc_large_bl.png);
 
     @include mq("tab") {
-      background-image: url(../../../signup/images/Button_sp.png);
-      width: 310px;
-    }
-
-    @include mq("sp") {
-      background-image: url(../../../signup/images/Button_sp.png);
-      width: 298px;
+      background-image: url(../../../images/Button_sp_large_bl.png);
     }
   }
 
-  &-B {
-    background-image: url(../../../mypage/images/Button_wh.png);
-    color: #000000;
-    width: 156px;
-    height: 46px;
-    font-size: 1.125rem;
+  &-small {
+
+    &_wh{
+      background-image: url(/images/Button_pc_small_wh.png);
+      color: #000000;
+      width: 156px;
+      height: 46px;
+      font-size: 1.125rem;
+
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_small_wh.png);
+      }
+
+    
+
+    }
+
+    &_gr{
+      background-image: url(/images/Button_pc_small_gr.png);
+      color: #000000;
+      width: 156px;
+      height: 46px;
+      font-size: 1.125rem;
+
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_small_gr.png);
+      }
+    }
+
+    &_bl{
+      background-image: url(/images/Button_pc_small_bl.png);
+      color: #ffffff;
+      width: 156px;
+      height: 46px;
+      font-size: 1.125rem;
+
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_small_bl.png);
+        width: 30%;
+        height: 100%;
+        color: #ffffff;
+        font-size: 3vw;
+        padding: 2% 0 7%;
+      }
+    }
 
     @include mq("sp-mypage") {
       width: 130px;
@@ -38,88 +71,62 @@
     }
   }
 
-  &-C {
-    background-image: url(../../../mypage/images/Button_mi.png);
-    color: #000000;
-    width: 156px;
-    height: 46px;
-    font-size: 1.125rem;
 
-    @include mq("sp-mypage") {
-      width: 130px;
-      height: 40px;
-      font-size: 1rem;
-    }
-  }
+  &-middle {
 
-  &-D {
-    background-image: url(../../../mypage/images/Button_bl.png);
-    width: 156px;
-    height: 46px;
-    font-size: 1.125rem;
+    &_wh{
+      background-image: url(/images/Button_pc_middle_wh.png);
+      width: 85%;
+      height: 100%;
+      color: #252525;
+      font-size: 1.5vw;
+      padding: 2% 0 7%;
+      // margin-right: 25px;
 
-    @include mq("sp-mypage") {
-      width: 130px;
-      height: 40px;
-      font-size: 1rem;
-    }
-  }
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_middle_wh.png);
+        width: 55%;
+        font-size: 3.5vw;
+        padding: 2% 0 7%;
+      }
 
-  &-E {
-    background-image: url(../../../images/button-edit.png);
-    width: 152px;
-    height: 38px;
-    font-size: 1.125rem;
-    padding: 0;
 
-    @include mq("sp-edit") {
-      width: 120px;
-      height: 31px;
-      font-size: 1rem;
-    }
-  }
-
-  &-F {
-    background-image: url(../../../images/Rectangle\ 4664.png);
-    width: 80%;
-    height: 60px;
-    color: #252525;
-    font-size: 1.3rem;
-    // margin-right: 25px;
-
-    @include mq("pc-edit") {
-      height: 60px;
-      font-size: 20px;
     }
 
-    @include mq("pc2-edit") {
-      max-width: 350px;
-      //   height: 73px;
-      font-size: 1.6rem;
-    }
 
-    @include mq("pc3-edit") {
-      // width: 100%;
-      // height: 84px;
-      // font-size: 1.8rem;
-    }
+    // @include mq("pc-edit") {
+    //   height: 60px;
+    //   font-size: 20px;
+    // }
 
-    @include mq("pc4-edit") {
-      // width: 100%;
-      // height: 94px;
-      // font-size: 2.1rem;
-    }
+    // @include mq("pc2-edit") {
+    //   max-width: 350px;
+    //   //   height: 73px;
+    //   font-size: 1.6rem;
+    // }
 
-    @include mq("tab-edit") {
-      width: 230px;
-      font-size: 1rem;
-    }
+    // @include mq("pc3-edit") {
+    //   // width: 100%;
+    //   // height: 84px;
+    //   // font-size: 1.8rem;
+    // }
 
-    @include mq("sp-edit") {
-      width: 150px;
-      height: 38px;
-      font-size: 0.8rem;
-    }
+    // @include mq("pc4-edit") {
+    //   // width: 100%;
+    //   // height: 94px;
+    //   // font-size: 2.1rem;
+    // }
+
+    // @include mq("tab-edit") {
+    //   width: 230px;
+    //   font-size: 1rem;
+    // }
+
+    // @include mq("sp-edit") {
+    //   width: 150px;
+    //   height: 38px;
+    //   font-size: 0.8rem;
+    // }
 
     // @include mq('pc-edit-button'){
     //     height: 67px;

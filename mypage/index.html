@@ -33,15 +33,15 @@
             </div>
           </div>
           <div class="mypage_flex_left_menu">
-            <a href=""><button class="btn btn-B">編集</button></a>
+            <a href=""><button class="btn btn-small_wh">編集</button></a>
             <div class="mypage_flex_left_menu_icon">
               <img src="/mypage/images/down.png" alt="" />
             </div>
-            <a href=""><button class="btn btn-C">プレビュー</button></a>
+            <a href=""><button class="btn btn-small_gr">プレビュー</button></a>
             <div class="mypage_flex_left_menu_icon">
               <img src="/mypage/images/down.png" alt="" />
             </div>
-            <button class="btn btn-D modal-open js-modal-open">校了</button>
+            <button class="btn btn-small_bl  js-modal-open" data-target="#modal1" >校了</button>
           </div>
         </div>
         <div class="mypage_flex_right">
@@ -53,29 +53,43 @@
           </div>
           <div class="mypage_flex_right_menu">
             <a href="../edit/index.html"
-              ><button class="btn btn-B">編集</button></a
+              ><button class="btn btn-small_wh">編集</button></a
             >
             <div class="mypage_flex_right_menu_icon">
               <img src="/mypage/images/down.png" alt="" />
             </div>
             <a href="../preview/index.html"
-              ><button class="btn btn-C">プレビュー</button></a
+              ><button class="btn btn-small_gr">プレビュー</button></a
             >
             <div class="mypage_flex_right_menu_icon">
               <img src="/mypage/images/down.png" alt="" />
             </div>
-            <a href=""><button class="btn btn-D modal-open js-modal-open">校了</button></a>
+            <button class="btn btn-small_bl  js-modal-open2" data-target="#modal1">校了</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- モーダル本体 -->
-    <div class="modal js-modal">
+    <div id="modal1" class="modal js-modal">
       <div class="modal-container">
         <!-- モーダル内部のコンテンツ -->
         <div class="modal-content">
           <p class="modal-content__check">校了しますか？</p>
+          <p class="modal-content__text">校了すると追加の原稿修正は<br>できなくなります</p>
+          <button class="btn btn-L modal-content__button modal-content__button-pc">校了する</button>
+          <button class="btn btn-L modal-content__button modal-content__button-sp">校了</button>
+          <button class="btn btn-F modal-content__butto">編集画面へ</button></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modal2" class="modal js-modal2">
+      <div class="modal-container">
+        <!-- モーダル内部のコンテンツ -->
+        <div class="modal-content">
+          <p class="modal-content__check">校了しますか</p>
           <p class="modal-content__text">校了すると追加の原稿修正は<br>できなくなります</p>
           <button class="btn btn-L modal-content__button modal-content__button-pc">校了する</button>
           <button class="btn btn-L modal-content__button modal-content__button-sp">校了</button>
