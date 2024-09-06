@@ -1,20 +1,25 @@
 .signup {
-  max-width: 326px;
-  margin: 30px auto 0;
+  // max-width: 326px;
+  // margin: 30px auto 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
+
 
   @include mq("tab") {
-    width: 310px;
-    margin-top: 191px;
+    // width: 310px;
+    // margin-top: 191px;
   }
 
   @include mq("tab2") {
-    margin-top: 80px;
+    // margin-top: 80px;
   }
 
   @include mq("sp") {
-    width: 298px;
-    margin-top: 50px;
+    // width: 298px;
+    // margin-top: 50px;
   }
 
   .form {
@@ -34,21 +39,21 @@
         background: url(../../../signup/images/Pen.png) no-repeat center center /
           auto 100%;
         position: absolute;
-        top: 40px;
-        left: 284px;
+        top: 53%;
+        left: 86%;
 
         @include mq("tab") {
-          left: 268px;
+          // left: 268px;
         }
 
         @include mq("sp") {
-          left: 253px;
+          // left: 253px;
         }
       }
 
       input {
         width: 100%;
-        padding: 13px 16px;
+        padding: 4% 7%;
         border: 1.4px solid;
         border-radius: 5px;
         box-sizing: border-box;

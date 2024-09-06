@@ -310,26 +310,11 @@ header img {
 }
 
 .signup {
-  max-width: 326px;
-  margin: 30px auto 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   text-align: center;
-}
-@media screen and (max-width: 900px) {
-  .signup {
-    width: 310px;
-    margin-top: 191px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .signup {
-    margin-top: 80px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .signup {
-    width: 298px;
-    margin-top: 50px;
-  }
+  justify-content: center;
 }
 .signup .form_title {
   margin-bottom: 54px;
@@ -345,22 +330,12 @@ header img {
   height: 26px;
   background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
   position: absolute;
-  top: 40px;
-  left: 284px;
-}
-@media screen and (max-width: 900px) {
-  .signup .form_box::before {
-    left: 268px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .signup .form_box::before {
-    left: 253px;
-  }
+  top: 53%;
+  left: 86%;
 }
 .signup .form_box input {
   width: 100%;
-  padding: 13px 16px;
+  padding: 4% 7%;
   border: 1.4px solid;
   border-radius: 5px;
   box-sizing: border-box;
@@ -426,30 +401,15 @@ input:checked + label::after {
 }
 
 .login {
-  max-width: 326px;
-  margin: 60px auto 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
 }
 .login_img {
   width: 52px;
   height: 53px;
-}
-@media screen and (max-width: 900px) {
-  .login {
-    width: 310px;
-    margin-top: 191px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .login {
-    margin-top: 100px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .login {
-    width: 298px;
-    margin-top: 70px;
-  }
 }
 .login .form_title {
   margin-bottom: 54px;
@@ -465,25 +425,16 @@ input:checked + label::after {
   height: 26px;
   background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
   position: absolute;
-  top: 40px;
-  left: 284px;
-}
-@media screen and (max-width: 900px) {
-  .login .form_box::before {
-    left: 268px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .login .form_box::before {
-    left: 253px;
-  }
+  top: 53%;
+  left: 86%;
 }
 .login .form_box input {
   width: 100%;
-  padding: 13px 16px;
+  padding: 4% 7%;
   border: 1.4px solid;
   border-radius: 5px;
   box-sizing: border-box;
+  display: flex;
 }
 .login .form_box input::-moz-placeholder {
   opacity: 0.5;
