@@ -41,20 +41,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //要素を取得
-const modal = document.querySelector(".js-modal"),
-  open = document.querySelector(".js-modal-open"),
-  close = document.querySelector(".js-modal-close");
+// const modal = document.querySelectorAll(".js-modal, .js-modal2");
+const openButtons = document.querySelectorAll(
+  ".js-modal-open, .js-modal-open2"
+);
 
 //「開くボタン」をクリックしてモーダルを開く
-function modalOpen() {
-  modal.classList.add("is-active");
-}
-open.addEventListener("click", modalOpen);
+openButtons.forEach((button) => {
+  button.addEventListener("click", modalOpen);
+});
 
-//「モーダルの外側」をクリックしてモーダルを閉じる
-function modalOut(e) {
-  if (e.target == modal) {
-    modal.classList.remove("is-active");
+function modalOpen(event) {
+  const target = event.currentTarget.getAttribute("data-target");
+  console.log(`クリックされたボタンのターゲット: ${target}`); // コンソールにクリックされたボタンのターゲットを表示
+
+  const modal = document.querySelector(target);
+  if (modal) {
+    console.log(`開かれたモーダル: ${modal.id}`); // コンソールに開かれたモーダルのIDを表示
+    modal.classList.add("is-active");
+  } else {
+    console.error(`モーダルが見つかりません: ${target}`); // モーダルが見つからない場合のエラーログ
   }
 }
-addEventListener("click", modalOut);
+// open.addEventListener("click", modalOpen);
+
+// //「モーダルの外側」をクリックしてモーダルを閉じる
+// function modalOut(e) {
+//   if (e.target == modal) {
+//     modal.classList.remove("is-active");
+//   }
+// }
+// addEventListener("click", modalOut);
+
+// const modal = document.querySelector(".js-modal"),
+//   openButtons = document.querySelectorAll(".js-modal-open, .js-modal-open2"); // 複数の開くボタンを取得
+// openButtons.forEach((button) => {
+//   button.addEventListener("click", modalOpen);
+// });
+// // モーダルを開く処理
+// function modalOpen() {
+//   modal.classList.add("is-active");
+// }

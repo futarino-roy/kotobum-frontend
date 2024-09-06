@@ -93,6 +93,11 @@ img {
 @media screen and (max-width: 900px) {
   .btn-small_bl {
     background-image: url(../../../images/Button_sp_small_bl.png);
+  }
+}
+@media screen and (max-width: 900px) {
+  .btn-small_bl-preview {
+    background-image: url(../../../images/Button_sp_small_bl.png);
     width: 30%;
     height: 100%;
     color: #ffffff;
@@ -118,6 +123,22 @@ img {
 @media screen and (max-width: 900px) {
   .btn-middle_wh {
     background-image: url(../../../images/Button_sp_middle_wh.png);
+    width: 55%;
+    font-size: 3.5vw;
+    padding: 2% 0 7%;
+  }
+}
+.btn-middle_bl {
+  background-image: url(/images/Button_pc_middle_bl.png);
+  width: 85%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 1.5vw;
+  padding: 2% 0 7%;
+}
+@media screen and (max-width: 900px) {
+  .btn-middle_bl {
+    background-image: url(../../../images/Button_sp_middle_bl.png);
     width: 55%;
     font-size: 3.5vw;
     padding: 2% 0 7%;
@@ -412,226 +433,6 @@ input:checked + label::after {
   opacity: 0.5;
 }
 
-@media screen and (min-width: 1300px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
-@media screen and (min-width: 901px) and (max-width: 1499px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
-
-.mypage {
-  max-width: 600px;
-  text-align: center;
-  margin: 80px auto 0;
-  padding: 0 15px;
-}
-.mypage_title img {
-  width: 62px;
-  height: 44px;
-}
-.mypage_title h2 {
-  font-size: 1.375rem;
-  margin: 18px 0 50px;
-}
-.mypage_flex {
-  display: flex;
-  justify-content: center;
-  gap: 85px;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex {
-    display: inline-block;
-  }
-}
-@media screen and (max-width: 480px) {
-  .mypage_flex {
-    display: inline-block;
-  }
-}
-.mypage_flex_left {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  text-align: left;
-}
-.mypage_flex_left_title h2 {
-  margin-bottom: 9px;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex_left_title h2 {
-    margin-bottom: 15px;
-  }
-}
-.mypage_flex_left_title_box img {
-  width: 240px;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex_left_title_box img {
-    width: 220px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .mypage_flex_left_title_box img {
-    width: 200px;
-  }
-}
-.mypage_flex_left_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 24px;
-}
-@media screen and (max-width: 480px) {
-  .mypage_flex_left_menu {
-    margin-top: 47px;
-  }
-}
-.mypage_flex_left_menu_icon {
-  margin-bottom: 5px;
-}
-.mypage_flex_left_menu_icon img {
-  width: 27px;
-}
-.mypage_flex_right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  text-align: left;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex_right {
-    margin-top: 36px;
-  }
-}
-.mypage_flex_right_title h2 {
-  margin-bottom: 9px;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex_right_title h2 {
-    margin-bottom: 15px;
-  }
-}
-.mypage_flex_right_title_box img {
-  width: 240px;
-}
-@media screen and (max-width: 900px) {
-  .mypage_flex_right_title_box img {
-    width: 220px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .mypage_flex_right_title_box img {
-    width: 200px;
-  }
-}
-.mypage_flex_right_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 24px;
-}
-@media screen and (max-width: 480px) {
-  .mypage_flex_right_menu {
-    margin-top: 47px;
-  }
-}
-.mypage_flex_right_menu_icon {
-  margin-bottom: 5px;
-}
-.mypage_flex_right_menu_icon img {
-  width: 27px;
-}
-
-/* モーダルと背景の指定 */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px 20px;
-  overflow: auto;
-  box-sizing: border-box;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-
-/* モーダルの擬似要素の指定 */
-.modal:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  margin-left: -0.2em;
-}
-
-/* クラスが追加された時の指定 */
-.modal.is-active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* モーダル内側の指定 */
-.modal-container {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 451px;
-  max-height: 313px;
-  width: 80%;
-  height: auto;
-  background-color: #fdfcf6;
-  border-radius: 10px;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px;
-  max-width: 90%;
-}
-.modal-content__check {
-  font-size: 20px;
-}
-.modal-content__text {
-  font-size: 16px;
-}
-.modal-content__button-sp {
-  display: none;
-}
-@media screen and (min-width: 1300px) {
-  .modal-content .modal-content__button-pc {
-    display: block;
-  }
-  .modal-content .modal-content__button-sp {
-    display: none;
-  }
-}
-@media screen and (max-width: 480px) {
-  .modal-content .modal-content__button-pc {
-    display: none;
-  }
-  .modal-content .modal-content__button-sp {
-    display: block;
-  }
-}
-
-/* モーダル内側の指定 */
 @media screen and (min-width: 1300px) {
   body {
     overflow: hidden;
