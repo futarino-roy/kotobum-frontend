@@ -19,8 +19,7 @@
   }
 
   &-small {
-
-    &_wh{
+    &_wh {
       background-image: url(/images/Button_pc_small_wh.png);
       color: #000000;
       width: 156px;
@@ -30,12 +29,9 @@
       @include mq("tab") {
         background-image: url(../../../images/Button_sp_small_wh.png);
       }
-
-    
-
     }
 
-    &_gr{
+    &_gr {
       background-image: url(/images/Button_pc_small_gr.png);
       color: #000000;
       width: 156px;
@@ -47,13 +43,18 @@
       }
     }
 
-    &_bl{
+    &_bl {
       background-image: url(/images/Button_pc_small_bl.png);
       color: #ffffff;
       width: 156px;
       height: 46px;
       font-size: 1.125rem;
 
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_small_bl.png);
+      }
+    }
+    &_bl-preview {
       @include mq("tab") {
         background-image: url(../../../images/Button_sp_small_bl.png);
         width: 30%;
@@ -71,10 +72,8 @@
     }
   }
 
-
   &-middle {
-
-    &_wh{
+    &_wh {
       background-image: url(/images/Button_pc_middle_wh.png);
       width: 85%;
       height: 100%;
@@ -89,10 +88,24 @@
         font-size: 3.5vw;
         padding: 2% 0 7%;
       }
-
-
     }
 
+    &_bl {
+      background-image: url(/images/Button_pc_middle_bl.png);
+      width: 85%;
+      height: 100%;
+      color: #ffffff;
+      font-size: 1.5vw;
+      padding: 2% 0 7%;
+      // margin-right: 25px;
+
+      @include mq("tab") {
+        background-image: url(../../../images/Button_sp_middle_bl.png);
+        width: 55%;
+        font-size: 3.5vw;
+        padding: 2% 0 7%;
+      }
+    }
 
     // @include mq("pc-edit") {
     //   height: 60px;
