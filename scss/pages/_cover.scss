@@ -432,7 +432,6 @@
 
 
     .content{
-
         transition: margin-left 0.3s ease;
 
         @include mq('pc2-edit'){
@@ -455,7 +454,6 @@
 
 
         &.open{
-            // margin-left: 405px; /* サイドバーが開いているときのマージン */
             margin-left: 32.5%;
 
             @include mq('pc-edit'){

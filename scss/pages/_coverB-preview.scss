@@ -1,0 +1,211 @@
+.coverB-preview-body{
+    background: #D5DADC;
+}
+
+.coverB-preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+    @include mq('tab-edit'){
+        display: block;
+        }
+
+    .content{
+ 
+        .swiper{
+            width: 600px;
+            height: 100%;
+
+            @include mq('pc2-edit'){
+                width: 900px;
+                }
+
+            @include mq('pc-edit'){
+                width: 450px;
+                }
+
+            @include mq('tab-edit'){
+                display: block;
+                width: 80%;
+                min-width: auto;
+                }
+
+
+
+            &-wrapper{
+
+                .swiper-slide{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    color: #ffffff;
+                    width: auto;
+                    height: 100%;
+
+                    &_box{
+                        width: 50%;
+                        max-width: 500px;
+                        position: relative;
+
+                        @include mq('tab-edit'){
+                            width: 70%;
+                            margin: 50px 0 0;
+                            }
+
+                            @include mq('sp-edit'){
+                                width: 100%;
+                                }
+
+                                @include mq('sp2-edit'){
+                                    width: 70%;
+                                    }
+
+                                    @include mq('sp3-edit'){
+                                        width: 50%;
+            
+                                        }
+
+                                        .input-drop{
+                                            position: absolute;
+                                            width: 88%;
+                                            // background: aliceblue;
+                                            height: 90%;
+                                            top: 16px;
+                                            opacity: 0.8;
+                                            left: 6%;
+                                            display: flex;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            justify-content: center;
+
+                                            #dropArea0-1{
+                                                position: relative;
+                                                width: 45%;
+                                                height: 25%;
+                                                font-size: 1rem;
+
+                                                &.square{
+                                                    width: 45%;
+                                                    height: 32%;
+                                                }
+
+                                                &.rectangle{
+                                                    width: 45%;
+                                                    height: 25%;
+                                                }
+
+                                                &.mini{
+                                                    width: 45%;
+                                                    height: 20%;
+                                                }
+
+                                                // --------------------------
+
+                                                img{
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+.swiper-pagination{
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev{
+    left: 36%;
+}
+
+.swiper-button-next {
+    left: 58%;
+  }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+ 
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// トリミングボタン、削除ボタン関連
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

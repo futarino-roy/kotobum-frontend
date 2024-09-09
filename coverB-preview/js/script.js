@@ -1,23 +1,15 @@
 const swiper = new Swiper(".swiper", {
     pagination: {
         el: ".swiper-pagination",
-        type: "fraction"
+        type: "fraction",
     },
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        prevEl: ".swiper-button-prev",
     },
-    slidesPerView: 1, // デフォルトは1枚
-    slidesPerGroup: 1, // デフォルトは1枚ずつ進む
-    breakpoints: {
-        900: {
-            slidesPerView: 2, // 900px以上の場合は2枚表示
-            slidesPerGroup: 2, // 900px以上の場合は2枚ずつ進む
-        }
-    }
+    slidesPerView: 1, // 常に1枚のスライドを表示
+    slidesPerGroup: 1, // 常に1スライドずつ移動
 });
-
-
 
 // メインのスライドからプレビュー
 document.addEventListener("DOMContentLoaded", function() {
@@ -45,74 +37,77 @@ document.getElementById('editBack').addEventListener('click', function() {
 
 
 
-// 画像のアップロードと挿入
-document.addEventListener('DOMContentLoaded', function() {
-    // cover-dropArea1 と cover-dropArea2 の画像を更新
-    updateDropAreas();
-});
 
-function updateDropAreas() {
-    // cover-dropArea1 の画像を更新
-    const dropArea1 = document.getElementById('coverB-dropArea1');
-    if (dropArea1) {
-        const savedImageSrc1 = localStorage.getItem('coverB-dropArea1');
-        if (savedImageSrc1) {
-            const img1 = document.createElement('img');
-            img1.src = savedImageSrc1;
-            dropArea1.innerHTML = ''; // 現在の内容をクリア
-            dropArea1.appendChild(img1);
-            dropArea1.classList.remove('empty');
-        }
-    }
 
-    // cover-dropArea2 の画像を更新
-    const dropArea2 = document.getElementById('coverB-dropArea2');
-    if (dropArea2) {
-        const savedImageSrc2 = localStorage.getItem('coverB-dropArea2');
-        if (savedImageSrc2) {
-            const img2 = document.createElement('img');
-            img2.src = savedImageSrc2;
-            dropArea2.innerHTML = ''; // 現在の内容をクリア
-            dropArea2.appendChild(img2);
-            dropArea2.classList.remove('empty');
-        }
-    }
+
+
+
+// 画像の挿入 indexedDB
+let myImageDB1;
+
+// IndexedDBの初期化
+function initIndexedDBForPreview() {
+    const request = indexedDB.open('NewImageDatabase1', 1);
+
+    request.onsuccess = function(event) {
+        myImageDB1 = event.target.result;
+        console.log('IndexedDB connected for preview.');
+        restoreDropAreasInPreview(); // プレビューページのドロップエリアに画像を復元
+    };
+
+    request.onerror = function(event) {
+        console.error('Error connecting to IndexedDB:', event.target.errorCode);
+    };
 }
 
+// ドロップエリアに画像を復元する
+function restoreDropAreasInPreview() {
+    const dropAreas = document.querySelectorAll('.empty'); // すべてのドロップエリアを取得
+    dropAreas.forEach(dropArea => {
+        // 各ドロップエリアのIDを使ってIndexedDBから画像を取得
+        getImageFromIndexedDB(dropArea.id, function(imageData) {
+            if (imageData) {
+                // 画像要素を作成して表示
+                const img = document.createElement('img');
+                img.src = imageData;
+                img.style.width = '100%';
+                img.style.height = '100%';
 
+                dropArea.innerHTML = ''; // 既存の内容をクリア
+                dropArea.appendChild(img); // 画像をドロップエリアに追加
+            }
+        });
+    });
+}
 
-
-
-
-
-
-
-
-
-// // 画像のドラッグ
-// ページが読み込まれたときの処理
-document.addEventListener("DOMContentLoaded", function() {
-    // ドロップエリアごとのコンテナを取得
-    const dropArea1Container = document.getElementById('coverB-dropArea1');
-    const dropArea2Container = document.getElementById('coverB-dropArea2');
-
-    // ローカルストレージからドロップエリア1の画像データを取得して表示
-    const dropArea1ImageData = localStorage.getItem('image_coverB-dropArea1');
-    if (dropArea1ImageData) {
-        const img1 = new Image();
-        img1.src = dropArea1ImageData;
-        img1.classList.add("image-preview");
-        dropArea1Container.appendChild(img1);
+// IndexedDBから画像を取得する
+function getImageFromIndexedDB(id, callback) {
+    if (!myImageDB1) {
+        console.error('Database not initialized.');
+        return;
     }
 
-    // ローカルストレージからドロップエリア2の画像データを取得して表示
-    const dropArea2ImageData = localStorage.getItem('image_coverB-dropArea2');
-    if (dropArea2ImageData) {
-        const img2 = new Image();
-        img2.src = dropArea2ImageData;
-        img2.classList.add("image-preview");
-        dropArea2Container.appendChild(img2);
-    }
+    const transaction = myImageDB1.transaction(['images']);
+    const store = transaction.objectStore('images');
+    const request = store.get(id);
+
+    request.onsuccess = function(event) {
+        const result = event.target.result;
+        if (result) {
+            callback(result.data); // 保存された画像データをコールバック関数で返す
+        } else {
+            console.log('No image found with ID:', id);
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error('Error retrieving image:', event.target.errorCode);
+    };
+}
+
+// ページが読み込まれたときにIndexedDBを初期化
+document.addEventListener('DOMContentLoaded', function() {
+    initIndexedDBForPreview();
 });
 
 
@@ -124,27 +119,87 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+// 画像のドラッグ indexedDB
+let myimageDB2;
+const request = indexedDB.open("ImageDB", 1);
+
+request.onupgradeneeded = function (event) {
+    myimageDB2 = event.target.result;
+    if (!myimageDB2.objectStoreNames.contains("images")) {
+        myimageDB2.createObjectStore("images", { keyPath: "id" });
+    }
+};
+
+request.onsuccess = function (event) {
+    myimageDB2 = event.target.result;
+    loadAllImages(); // ページロード時にすべての画像をロード
+};
+
+request.onerror = function (event) {
+    console.error("IndexedDBに接続できませんでした:", event.target.error);
+};
+
+// IndexedDBから画像を取得
+function loadImageFromIndexedDB(containerId, callback) {
+    const transaction = myimageDB2.transaction(["images"], "readonly");
+    const store = transaction.objectStore("images");
+    const request = store.get(containerId);
+
+    request.onsuccess = function (event) {
+        callback(event.target.result ? event.target.result.data : null);
+    };
+
+    request.onerror = function (event) {
+        console.error("画像の取得に失敗しました:", event.target.error);
+        callback(null);
+    };
+}
+
+// すべての画像をロードする
+function loadAllImages() {
+    const emptyElements = document.querySelectorAll(".empty");
+    emptyElements.forEach(function (dropArea) {
+        loadImageFromIndexedDB(dropArea.id, function (imageData) {
+            if (imageData) {
+                dropArea.innerHTML = ""; // 既存の内容をクリア
+                let img = new Image();
+                img.src = imageData; // 画像データURLを設定
+                img.classList.add("draggable-image");
+                dropArea.appendChild(img);
+            }
+        });
+    });
+}
+
+// ドキュメントが読み込まれた後の処理
+document.addEventListener("DOMContentLoaded", function () {
+    loadAllImages(); // ページがロードされたときにすべての画像を表示
+
+    // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
+});
 
 
-// 枠
+
+
+
+
+
+// 枠 柔軟版
 document.addEventListener("DOMContentLoaded", function() {
-    // ドロップエリアごとのコンテナを取得
-    const dropArea1Container = document.getElementById('coverB-dropArea1');
-    const dropArea2Container = document.getElementById('coverB-dropArea2');
-
     // 枠のサイズ変更処理
     function applyBorders() {
-        // ローカルストレージからドロップエリア1の枠のサイズを取得して適用
-        const dropArea1Size = localStorage.getItem('dropAreaSize_coverB-dropArea1');
-        if (dropArea1Size) {
-            dropArea1Container.classList.add(dropArea1Size);
-        }
-
-        // ローカルストレージからドロップエリア2の枠のサイズを取得して適用
-        const dropArea2Size = localStorage.getItem('dropAreaSize_coverB-dropArea2');
-        if (dropArea2Size) {
-            dropArea2Container.classList.add(dropArea2Size);
-        }
+        // dropAreaを含む全ての要素を取得
+        const dropAreas = document.querySelectorAll('[id^="dropArea"]');
+        
+        dropAreas.forEach(dropAreaContainer => {
+            // IDからサイズの情報を取得
+            const dropAreaId = dropAreaContainer.id;
+            const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+            
+            if (dropAreaSize) {
+                dropAreaContainer.classList.add(dropAreaSize);
+            }
+        });
     }
 
     // 枠のサイズ変更を適用
@@ -163,26 +218,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// テキスト
-// テキストエリアの高さを自動調整する関数
-// テキストエリアの高さを調整する関数
+
+
+
+
+
+// テキスト 柔軟版
 function adjustTextareaHeight(textarea) {
     textarea.style.height = 'auto'; // 高さをリセット
     textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
 }
 
-// プレビューページでローカルストレージからテキストを読み込み、テキストエリアに表示する関数
+// プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
-    const coverTextArea1 = document.getElementById('coverBPreviewTextArea1');
-    const coverTextArea2 = document.getElementById('coverBPreviewTextArea2');
+    // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
+    const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+    
+    textAreas.forEach(textArea => {
+        const index = textArea.id.replace('previewTextArea', ''); // IDからインデックスを取得
+        textArea.value = localStorage.getItem(`textArea${index}`) || '';
 
-    // ローカルストレージからデータを読み込み、テキストエリアに表示
-    coverTextArea1.value = localStorage.getItem('coverB-textArea1') || '';
-    coverTextArea2.value = localStorage.getItem('coverB-textArea2') || '';
-
-    // テキストエリアの高さを調整
-    adjustTextareaHeight(coverTextArea1);
-    adjustTextareaHeight(coverTextArea2);
+        // テキストエリアの高さを調整
+        adjustTextareaHeight(textArea);
+    });
 }
 
 // ドキュメントが読み込まれたときにテキストを表示
@@ -197,18 +255,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
-    const savedColor = localStorage.getItem('backgroundColor');
+    const savedColor = localStorage.getItem('backgroundColorA');
     if (savedColor) {
+        // 背景色を適用
         let elements = document.getElementsByClassName('uniqueColor');
         for (let i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor = savedColor;
+        }
+        
+        // テキスト色を適用
+        let textElements = document.getElementsByClassName('text-color');
+        for (let i = 0; i < textElements.length; i++) {
+            textElements[i].style.color = savedColor;
         }
     }
 }
@@ -217,6 +278,8 @@ function applySavedColor() {
 document.addEventListener('DOMContentLoaded', function () {
     applySavedColor();
 });
+
+
 
 
 

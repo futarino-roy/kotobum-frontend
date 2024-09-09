@@ -468,6 +468,10 @@ function openCroppieModal(dropArea) {
 
 
 
+
+
+
+
 //　画像のドラッグ＆ドロップ indexedDBに保存
 function handleDragOver(event) {
     event.preventDefault();
