@@ -63,9 +63,43 @@ function modalOpen(event) {
     console.error(`モーダルが見つかりません: ${target}`); // モーダルが見つからない場合のエラーログ
   }
 }
+
+// モーダル外側をクリックしてモーダルを閉じる
+modals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modalClose(event);
+    }
+  });
+});
+
+// モーダルを閉じる関数
+function modalClose(event) {
+  const modal = event.currentTarget.closest(".js-modal, .js-modal2");
+  if (modal) {
+    console.log(`閉じられたモーダル: ${modal.id}`);
+    // コンソールに閉じられたモーダルのIDを表示
+    modal.classList.remove("is-active");
+  } else {
+    console.error("閉じる対象のモーダルが見つかりません");
+    // 閉じる対象のモーダルが見つからない場合のエラーログ
+  }
+}
+
+// 閉じるボタンにクリックイベントを追加
+// closeButtons.forEach((button) => {
+//   button.addEventListener("click", modalClose);
+// });
+// // モーダルの外側をクリックしてモーダルを閉じる処理
+// document.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("js-modal1")) {
+//     e.target.classList.remove("is-active");
+//   }
+// });
+
 // open.addEventListener("click", modalOpen);
 
-// //「モーダルの外側」をクリックしてモーダルを閉じる
+//「モーダルの外側」をクリックしてモーダルを閉じる
 // function modalOut(e) {
 //   if (e.target == modal) {
 //     modal.classList.remove("is-active");
