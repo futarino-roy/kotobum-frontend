@@ -1,717 +1,755 @@
-.coverB-body{
-    background: #D5DADC;
+.coverB-body {
+  background: #d5dadc;
 }
 
-.coverB{
+.coverB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+
+  @include mq("tab-edit") {
+    display: block;
+  }
+
+  &_drawer {
+    width: 29%;
+    background-color: #535353;
+    color: white;
+    position: fixed;
+    top: 81px;
+    left: -50%;
+    height: 100%;
+    border-radius: 20px;
+    transition: left 0.3s ease;
+    margin-left: 55px;
+    z-index: 2;
+
+    &.open {
+      left: 0;
+    }
+
+    @include mq("tab-edit") {
+      width: 100%;
+      left: 0;
+      top: 60%;
+      height: 40%;
+      border-radius: 0;
+      position: fixed;
+      transition: transform 0.3s ease;
+      transform: translateY(100%);
+      margin: 0;
+
+      &.open {
+        transform: translateY(0);
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      // top: 29px;
+      top: 21px;
+      // right: 20px;
+      right: 6px;
+      // font-size: 1.5rem;
+      // color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 45%;
+      }
+    }
+
+    &_container {
+      &_item {
+        display: none;
+
+        &_upload {
+          text-align: center;
+          height: 100%;
+          margin: 28px 17px 0 35px;
+
+          #uploadZone {
+            text-align: center;
+
+            &_wrapper {
+              position: relative;
+              display: inline-block;
+            }
+          }
+
+          .imageList-container {
+            height: 100vh;
+            overflow: auto;
+            height: calc(100vh - 200px);
+
+            @include mq("tab-edit") {
+              height: calc(100vh - 500px);
+            }
+
+            #imgPreviewField {
+              // 多分いりますね
+              max-width: 350px;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              margin: 20px auto;
+              gap: 14px;
+
+              img {
+                width: calc(50% - 10px);
+                cursor: grab;
+
+                &.selected {
+                  border: 3px solid blue;
+                }
+              }
+            }
+          }
+        }
+
+        &.active {
+          display: block;
+        }
+      }
+
+      &_item {
+        display: none;
+
+        &_color {
+          text-align: center;
+          height: 400px;
+          margin: 28px 40px 0 35px;
+
+          h2 {
+            font-size: 1.25rem;
+            text-align: left;
+          }
+
+          .color-container {
+            height: 100vh;
+            overflow: auto;
+            height: calc(100vh - 200px);
+
+            @include mq("tab-edit") {
+              height: calc(100vh - 500px);
+            }
+
+            &_vari {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 23px auto;
+              padding: 10px;
+              justify-content: space-between;
+
+              .btn-color {
+                width: 28%;
+                height: 37px;
+                margin-bottom: 20px;
+                border: none;
+                border-radius: 5px;
+                color: transparent;
+                cursor: pointer;
+
+                &-1 {
+                  background-color: #e6cd00;
+                }
+
+                &-2 {
+                  background-color: #aad24b;
+                }
+
+                &-3 {
+                  background-color: #32b973;
+                }
+
+                &-4 {
+                  background-color: #23beb9;
+                }
+
+                &-5 {
+                  background-color: #6ec8f5;
+                }
+
+                &-6 {
+                  background-color: #4b91cd;
+                }
+
+                &-7 {
+                  background-color: #645aaa;
+                }
+
+                &-8 {
+                  background-color: #b464aa;
+                }
+
+                &-9 {
+                  background-color: #eb6ea5;
+                }
+
+                &-10 {
+                  background-color: #f06e7d;
+                }
+
+                &-11 {
+                  background-color: #f06e46;
+                }
+
+                &-12 {
+                  background-color: #f06e46;
+                }
+
+                &-13 {
+                  background-color: #e6c300;
+                }
+
+                &-14 {
+                  background-color: #82b41e;
+                }
+
+                &-15 {
+                  background-color: #009141;
+                }
+
+                &-16 {
+                  background-color: #00918c;
+                }
+
+                &-17 {
+                  background-color: #00a0dc;
+                }
+
+                &-18 {
+                  background-color: #0064aa;
+                }
+
+                &-19 {
+                  background-color: #32328c;
+                }
+
+                &-20 {
+                  background-color: #87007d;
+                }
+
+                &-21 {
+                  background-color: #0064aa;
+                }
+
+                &-22 {
+                  background-color: #0064aa;
+                }
+
+                &-23 {
+                  background-color: #0064aa;
+                }
+
+                &-23 {
+                  background-color: #0064aa;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &_item {
+        display: none;
+
+        &_frame {
+          text-align: center;
+          height: 400px;
+          margin: 28px 40px 0 35px;
+
+          h2 {
+            font-size: 1.25rem;
+            text-align: left;
+          }
+
+          .frame-container {
+            overflow: auto;
+            height: calc(100vh - 200px);
+
+            &_vari {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 23px auto;
+              padding: 10px;
+
+              .resizeButton {
+                width: 50%;
+                cursor: pointer;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    width: 75px;
+    background-color: #252525;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 90vh;
+    position: fixed;
+    top: 81px;
+    left: 0;
+    height: 100%;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1;
 
-    @include mq('tab-edit'){
-        display: block;
-        }
+    @include mq("tab-edit") {
+      // display: none;
+      width: 100%;
+      background-color: #252525;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      height: 45px;
+      transition: transform 0.3s ease;
+      transform: translateY(0);
+      z-index: 1;
+    }
 
-    &_drawer{
-        width: 29%;
-        background-color: #535353;
+    &.open {
+      @include mq("tab-edit") {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .sideBtn {
+    position: fixed;
+    top: 81px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+
+    @include mq("tab-edit") {
+      // display: none;
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+      height: 45px;
+      z-index: 3;
+    }
+
+    .open-btn {
+      font-size: 16px;
+      background: #252525;
+      // border: 2px solid #436e556e;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      width: 75px;
+      height: 75px;
+
+      @include mq("tab-edit") {
+        flex: 1; /* ボタンを均等に広げる */
+        font-size: 16px;
+        background: #252525;
+        border: none;
+        border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
         color: white;
-        position: fixed;
-        top: 81px;
-        left: -50%;
-        height: 100%;
-        border-radius: 20px;
-        transition: left 0.3s ease;
-        margin-left: 55px;
-        z-index: 2;
+        cursor: pointer;
+        width: auto;
+        height: 100%; /* 高さを100%に設定 */
+      }
 
-        &.open{
-            left: 0;
+      &.active {
+        background: #535353;
+        border: 2px solid #252525;
+      }
+
+      img {
+        width: 35px;
+        height: 36px;
+        margin-top: 5px;
+
+        @include mq("tab-edit") {
+          width: 24px;
+          height: 25px;
+          margin-top: 5px;
         }
-    
-        @include mq('tab-edit'){
-            width: 100%;
-            left: 0;
-            top: 60%;
-            height: 40%;
-            border-radius: 0;
-            position: fixed;
-            transition: transform 0.3s ease;
-            transform: translateY(100%);
-            margin: 0;
+      }
+    }
+  }
 
-            &.open{
-                transform: translateY(0);
-            }
+  .content {
+    transition: margin-left 0.3s ease;
 
-            }
-
-
-            
-
-
-        .close-btn{
-            position: absolute;
-            // top: 29px;
-            top: 21px;
-            // right: 20px;
-            right: 6px;
-            // font-size: 1.5rem;
-            // color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-
-            img{
-                width: 45%;
-            }
-        }
-
-        &_container{
-
-            &_item{
-                display: none;
-
-                &_upload{
-                    text-align: center;
-                    height: 100%;
-                    margin: 28px 17px 0 35px;
-
-                    #uploadZone{
-                        text-align: center;
-
-                        &_wrapper{
-                            position: relative;
-                            display: inline-block;
-                        }
-
-                    }
-
-                    .imageList-container{
-                        height: 100vh;
-                        overflow: auto;
-                        height: calc(100vh - 200px);
-
-                        @include mq('tab-edit'){
-                            height: calc(100vh - 500px);
-                            }
-
-
-                        #imgPreviewField{
-
-                            // 多分いりますね
-                            max-width: 350px;
-                            display: flex;
-                            flex-wrap: wrap;
-                            align-items: center;
-                            margin: 20px auto;
-                            gap: 14px;
-
-                            img{
-                                width: calc(50% - 10px);
-                                cursor: grab;
-
-                                &.selected{
-                                    border: 3px solid blue;
-                                }
-                                
-                            }
-
-                        }
-                    }
-                }
-
-                &.active{
-                    display: block;
-                }
-            }
-
-            &_item{
-                display: none;
-
-                &_color{
-                    text-align: center;
-                    height: 400px;
-                    margin: 28px 40px 0 35px;
-
-                    h2{
-                        font-size: 1.25rem;
-                        text-align: left;
-                    }
-
-                    .color-container{
-                        height: 100vh;
-                        overflow: auto; 
-                        height: calc(100vh - 200px);
-
-                        @include mq('tab-edit'){
-                            height: calc(100vh - 500px);
-                            }
-
-                        &_vari{
-                            display: flex;
-                            flex-wrap: wrap;
-                            margin: 23px auto;
-                            padding: 10px;
-                            justify-content: space-between;
-
-
-                            .btn-color{
-                                width: 28%;
-                                height: 37px;
-                                margin-bottom: 20px;
-                                border: none;
-                                border-radius: 5px;
-                                color: transparent;
-                                cursor: pointer;
-
-                                &-1{
-                                    background-color: #e6cd00;
-                                }
-
-                                &-2{
-                                    background-color: #aad24b;
-                                }
-
-                                &-3{
-                                    background-color: #32b973;
-                                }
-
-                                &-4{
-                                    background-color: #23beb9;
-                                }
-
-                                &-5{
-                                    background-color: #6ec8f5;
-                                }
-
-                                &-6{
-                                    background-color: #4b91cd;
-                                }
-
-                                &-7{
-                                    background-color: #645aaa;
-                                }
-
-                                &-8{
-                                    background-color: #b464aa;
-                                }
-
-                                &-9{
-                                    background-color: #eb6ea5;
-                                }
-
-                                &-10{
-                                    background-color: #f06e7d;
-                                }
-
-                                &-11{
-                                    background-color: #f06e46;
-                                }
-
-                                &-12{
-                                    background-color: #f06e46;
-                                }
-
-                                &-13{
-                                    background-color: #e6c300;
-                                }
-
-                                &-14{
-                                    background-color: #82b41e;
-                                }
-
-                                &-15{
-                                    background-color: #009141;
-                                }
-
-                                &-16{
-                                    background-color: #00918c;
-                                }
-
-                                &-17{
-                                    background-color: #00a0dc;
-                                }
-
-                                &-18{
-                                    background-color: #0064aa;
-                                }
-
-                                &-19{
-                                    background-color: #32328c;
-                                }
-
-                                &-20{
-                                    background-color: #87007d;
-                                }
-
-                                &-21{
-                                    background-color: #0064aa;
-                                }
-
-                                &-22{
-                                    background-color: #0064aa;
-                                }
-
-                                &-23{
-                                    background-color: #0064aa;
-                                }
-
-                                &-23{
-                                    background-color: #0064aa;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            &_item{
-                display: none;
-
-                &_frame{
-                    text-align: center;
-                    height: 400px;
-                    margin: 28px 40px 0 35px;
-
-                    h2{
-                        font-size: 1.25rem;
-                        text-align: left;
-                    }
-
-                    .frame-container{
-                        overflow: auto; 
-                        height: calc(100vh - 200px);
-
-                        &_vari{
-                            display: flex;
-                            flex-wrap: wrap;
-                            margin: 23px auto;
-                            padding: 10px;
-
-                                
-                                .resizeButton{
-                                    width: 50%;
-                                    cursor: pointer;
-                                    padding: 0;
-                                    border: none;
-                                    background-color: transparent;
-
-                                    img{
-                                        width: 100%;
-                                        height: auto;
-                                    }
-                                }
-    
-                        }
-                    }
-                }
-
-                
-            }
-        }
+    @include mq("pc2-edit") {
+      // margin: 140px 0 0 0;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease,
+        margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
 
-    .sidebar{
-        width: 75px;
-        background-color: #252525;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        top: 81px;
-        left: 0;
-        height: 100%;
-        transition: transform 0.3s ease;
-        transform: translateX(0);
-        z-index: 1;
-
-        @include mq('tab-edit'){
-            // display: none;
-            width: 100%;
-            background-color: #252525;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: center;
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            left: 0;
-            height: 45px;
-            transition: transform 0.3s ease;
-            transform: translateY(0);
-            z-index: 1;
-            }
-
-        &.open{
-
-            @include mq('tab-edit'){
-                transform: translateY(0);
-                }
-        }
-
-
+    @include mq("pc3-edit") {
+      // margin: 200px 0 0 0;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease,
+        margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
 
+    @include mq("tab-edit") {
+      // margin: 85px 0 0 0;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease,
+        margin-bottom 0.3s ease, margin-left 0.3s ease;
+    }
 
-    .sideBtn{
-        position: fixed;
-        top: 81px;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 3;
+    &.open {
+      // margin-left: 405px; /* サイドバーが開いているときのマージン */
+      margin-left: 32.5%;
 
-        @include mq('tab-edit'){
-            // display: none;
-            position: fixed;
-            top: auto;
-            bottom: 0;
-            left: 0;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            width: 100%;
-            height: 45px;
-            z-index: 3;
+      @include mq("pc-edit") {
+        margin-left: 33.5%;
+      }
 
+      @include mq("pc4-edit") {
+        margin-left: 31.5%;
+      }
+
+      @include mq("tab-edit") {
+        margin: 0 10%;
+      }
+    }
+
+    .swiper {
+      width: 600px;
+      height: 100%;
+
+      @include mq("pc2-edit") {
+        width: 900px;
+      }
+
+      @include mq("pc-edit") {
+        width: 450px;
+      }
+
+      @include mq("tab-edit") {
+        display: block;
+        width: 80%;
+        min-width: auto;
+      }
+
+      &-wrapper {
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          color: #ffffff;
+          width: auto;
+          height: 100%;
+
+          &_box {
+            width: 50%;
+            max-width: 500px;
+            position: relative;
+
+            @include mq("tab-edit") {
+              width: 70%;
+              margin: 50px 0 0;
             }
 
+            @include mq("sp-edit") {
+              width: 100%;
+            }
 
-        .open-btn{
-            font-size: 16px;
-            background: #252525;
-            // border: 2px solid #436e556e;
-            border: none;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-            width: 75px;
-            height: 75px;
+            @include mq("sp2-edit") {
+              width: 50%;
+            }
 
-            @include mq('tab-edit'){
-                flex: 1; /* ボタンを均等に広げる */
-                font-size: 16px;
-                background: #252525;
-                border: none;
-                border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
-                color: white;
+            @include mq("sp3-edit") {
+              // height: 660px;
+              width: 50%;
+            }
+
+            .input-drop {
+              position: absolute;
+              left: 11%;
+              top: 8%;
+              width: 84%;
+              height: 83%;
+              // background: rgb(178, 203, 225);
+              opacity: 0.8;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: end;
+
+              #dropAreaB {
+                position: absolute;
+                width: 90%;
+                height: 60%;
+                font-size: 1rem;
+                border: 2px dashed #ccc;
                 cursor: pointer;
-                width: auto;
-                height: 100%; /* 高さを100%に設定 */
-    
-                }
+                bottom: 10px;
 
-            &.active{
-                background: #535353;
-                border: 2px solid #252525 ;
-            }
+                // ドロップ後ボタン-----------
+                .crop-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 33px;
+                  background: url(/edit/images/crop.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
 
+                  &:hover {
+                    opacity: 1;
+                  }
 
-            img{
-                width: 35px;
-                height: 36px;
-                margin-top: 5px;
-
-                @include mq('tab-edit'){
-                    width: 24px;
-                    height: 25px;
-                    margin-top: 5px;
-        
-                    }
-                
-            }
-        }
-
-
-    }
-
-
-    .content{
-
-        transition: margin-left 0.3s ease;
-
-        @include mq('pc2-edit'){
-            // margin: 140px 0 0 0;
-            transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
-                    
-            }
-
-            @include mq('pc3-edit'){
-                // margin: 200px 0 0 0;
-                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
-                        
-                } 
-
-        @include mq('tab-edit'){
-                // margin: 85px 0 0 0;
-                transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
-                        
-                }              
-
-
-        &.open{
-            // margin-left: 405px; /* サイドバーが開いているときのマージン */
-            margin-left: 32.5%;
-
-            @include mq('pc-edit'){
-                margin-left: 33.5%; 
-                }
-
-                @include mq('pc4-edit'){
-                    margin-left: 31.5%; 
-                    }
-
-                    @include mq('tab-edit'){
-                        margin: 0 10% ;
-
-                        }
-        }
-        
-        .swiper{     
-            width: 600px;
-            height: 100%;
-
-            @include mq('pc2-edit'){
-                width: 900px;
-                }
-
-            @include mq('pc-edit'){
-                width: 450px;
-                }
-
-            @include mq('tab-edit'){
-                display: block;
-                width: 80%;
-                min-width: auto;
-                }
-
-
-
-            &-wrapper{
-
-                .swiper-slide{
+                  &.show {
                     display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    color: #ffffff;
-                    width: auto;
-                    height: 100%;
-
-
-                    &_box{
-                        width: 50%;
-                        max-width: 500px;
-                        position: relative;
-
-                        @include mq('tab-edit'){
-                            width: 70%;
-                            margin: 50px 0 0;
-                            }
-
-                            @include mq('sp-edit'){
-                                width: 100%;
-                                }
-
-                                @include mq('sp2-edit'){
-                                    width: 70%;
-                                    }
-
-                                    @include mq('sp3-edit'){
-                                        // height: 660px;
-                                        width: 50%;
-            
-                                        }
-
-                                        .input-drop{
-                                            position: absolute;
-                                            width: 88%;
-                                            // background: aliceblue;
-                                            height: 90%;
-                                            top: 16px;
-                                            opacity: 0.8;
-                                            left: 6%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                            justify-content: center;
-
-                                            #dropAreaB{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: 2px dashed #ccc;
-                                                cursor: pointer;
-
-                                                // ドロップ後ボタン-----------
-                                                .crop-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 33px;
-                                                    background: url(/edit/images/crop.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-
-                                                .delete-btn{
-                                                    position: absolute;
-                                                    top: 5px;
-                                                    right: 5px;
-                                                    background: url(/edit/images/delete.png);
-                                                    background-size: contain;
-                                                    background-repeat: no-repeat;
-                                                    border: none;
-                                                    width: 28px;
-                                                    height: 28px;
-                                                    cursor: pointer;
-                                                    opacity: 0.8;
-
-                                                    &:hover{
-                                                        opacity: 1;
-                                                    }
-
-                                                    &.show{
-                                                        display: flex;
-                                                    }
-                                                }
-                                                // ----------------------------------
-                                                
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: rgba(49, 163, 138, 0.534);
-                                                }
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
-
-                                            textarea {
-                                                overflow: hidden;
-                                                text-align: center;
-                                                resize: none;
-                                                width: 60% !important;
-                                                max-width: 60%;
-                                                height: 20%;
-                                                margin: 5% 0 5%;
-                                                font-size: 0.4rem;
-                                                line-height: 1.9;
-                                                background-color: transparent;
-
-                                                @include mq('pc-edit'){
-                                                    font-size: 0.3rem;
-                                                    }
-
-                                                @include mq('pc2-edit'){
-                                                    font-size: 0.6rem;
-                                                    }
-
-                                                    @include mq('tab-edit'){
-                                                        font-size: 1.2vw;
-                                                        }
-
-                                                        @include mq('sp-edit'){
-                                                            font-size: 1.7vw;
-                                                            }
-    
-                                            }
-
-                                            #textArea{
-
-                                                &B-1{
-                                                    margin: 0;
-                                                    font-size: 1.2rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-                                                    color: #FEF8F6;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 1.7rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 3.5vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 5vw;
-                                                            }
-                                                }
-                                            }
-
-
-                                        }
-
-
-                    }
+                  }
                 }
+
+                .delete-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                  background: url(/edit/images/delete.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+                // ----------------------------------
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: rgba(49, 163, 138, 0.534);
+                }
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              textarea {
+                overflow: hidden;
+                text-align: center;
+                resize: none;
+                // width: 60% !important;
+                max-width: 60%;
+                height: 20%;
+                margin: 5% 0 5%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
+
+                @include mq("pc-edit") {
+                  font-size: 0.3rem;
+                }
+
+                @include mq("pc2-edit") {
+                  font-size: 0.6rem;
+                }
+
+                @include mq("tab-edit") {
+                  font-size: 1.2vw;
+                }
+
+                @include mq("sp-edit") {
+                  font-size: 1.7vw;
+                }
+              }
+
+              //　テキストエリア　ここを変える！
+              #textArea {
+                &B-1 {
+                  margin: 0;
+                  position: absolute;
+                  width: 13.5% !important;
+                  height: 5% !important;
+                  top: 14.5%;
+                  right: 77%;
+                  line-height: 0.9;
+                  font-weight: bold;
+                  font-size: 1rem;
+                  color: #ffffff !important;
+                  @include mq("pc-edit") {
+                    font-size: 0.8rem;
+                  }
+                  @include mq("pc2-edit") {
+                    font-size: 1.5rem;
+                  }
+                  @include mq("tab-edit") {
+                    font-size: 3vw;
+                  }
+                  @include mq("sp2-edit") {
+                    font-size: 2vw;
+                  }
+                }
+                &B-2 {
+                  position: absolute;
+                  top: 20%;
+                  left: 7.5%;
+                  height: 3% !important;
+                  width: 16% !important;
+
+                  margin: 0;
+                  font-size: 0.4rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+
+                  @include mq("pc-edit") {
+                    font-size: 0.3rem;
+                  }
+
+                  @include mq("pc2-edit") {
+                    font-size: 0.6rem;
+                  }
+
+                  @include mq("tab-edit") {
+                    font-size: 1.2vw;
+                  }
+
+                  @include mq("sp-edit") {
+                    font-size: 1.7vw;
+                  }
+                }
+                &B-3 {
+                  margin: 0;
+                  position: absolute;
+                  width: 40% !important;
+                  height: 10% !important;
+                  top: 3%;
+                  right: 5%;
+                  font-weight: bold;
+                  font-size: 1.1rem;
+
+                  @include mq("pc-edit") {
+                    font-size: 0.9rem;
+                  }
+                  @include mq("pc2-edit") {
+                    font-size: 1.7rem;
+                  }
+                  @include mq("tab-edit") {
+                    font-size: 3.3vw;
+                  }
+                  @include mq("sp-edit") {
+                    font-size: 4.8vw;
+                  }
+                  @include mq("sp2-edit") {
+                    font-size: 2.7vw;
+                  }
+
+                  // position: absolute;
+                  // top: 2%;
+                  // right: 4%;
+                  // height: 8% !important;
+                  // width: 34% !important;
+
+                  // margin: 0;
+                  // font-size: 1.2rem;
+                  // line-height: 1.5;
+                  // font-weight: bold;
+                  // color: #fef8f6;
+
+                  // @include mq("pc-edit") {
+                  //   font-size: 0.9rem;
+                  // }
+
+                  // @include mq("pc2-edit") {
+                  //   font-size: 1.7rem;
+                  // }
+
+                  // @include mq("tab-edit") {
+                  //   font-size: 2.5vw;
+                  // }
+
+                  // @include mq("sp-edit") {
+                  //   font-size: 5vw;
+                  // }
+                }
+              }
             }
+          }
         }
+      }
     }
+  }
 }
 
-
-
-
-.swiper-pagination{
+.swiper-pagination {
 }
-
 
 .swiper-button-prev,
 .swiper-button-next {
   top: 32px;
 }
 
-.swiper-button-prev{
-    left: 36%;
+.swiper-button-prev {
+  left: 36%;
 }
 
 .swiper-button-next {
-    left: 58%;
-  }
+  left: 58%;
+}
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
@@ -722,7 +760,7 @@
   width: 50px;
   margin: auto;
 }
- 
+
 /* 前に戻る画像パス */
 .swiper-button-prev:after {
   background-image: url(../../../edit/images/Group\ 293.png);
@@ -732,126 +770,102 @@
   background-image: url(../../../edit/images/Group\ 294.png);
 }
 
+.croppie-modal {
+  display: none;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdfcf6;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+  z-index: 999;
 
+  #croppie-container {
+    margin-bottom: 10px;
 
-.croppie-modal{
-    display: none;
-    border-radius: 20px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FDFCF6;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
-    z-index: 999;
-
-    #croppie-container{
-        margin-bottom: 10px;
-
-        .cr-slider{
-            -webkit-appearance: none;
-            width: 100%;
-            height: 4px;
-            background-color: #53535359;
-            border-radius: 5px;
-            margin: 0;
-            padding: 0;
-            opacity: 0.8;
-            // box-sizing: border-box;
-        }
-
-        .cr-slider::-webkit-slider-thumb{
-            -webkit-appearance: none;
-            appearance: none;
-            width: 35px;
-            height: 35px;
-            background: url('/edit/images/Ellipse\ 7.png') no-repeat center; /* アイコン画像を指定 */
-            margin-top: -15px;
-
-
-            cursor: pointer;
-            border: none;
-        }
+    .cr-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background-color: #53535359;
+      border-radius: 5px;
+      margin: 0;
+      padding: 0;
+      opacity: 0.8;
+      // box-sizing: border-box;
     }
 
-    .btn-wrapper{
-        margin-top: 35px;
-        display: flex;
-        justify-content: space-between;
+    .cr-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 35px;
+      height: 35px;
+      background: url("/edit/images/Ellipse\ 7.png") no-repeat center; /* アイコン画像を指定 */
+      margin-top: -15px;
 
-        @include mq('tab-edit'){
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            }
+      cursor: pointer;
+      border: none;
     }
+  }
 
+  .btn-wrapper {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq("tab-edit") {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
 }
 
-
-
-
-
-
-
-
-
 #customButton {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 #customButton:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
-
-
-
-
-
-
-
 
 .delete-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: url(/edit/images/delete.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    opacity: 0.8;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
 }
 
-.crop-button{
-    position: absolute;
-    top: 5px;
-    right: 33px;
-    background: url(/edit/images/crop.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    opacity: 0.8;
+.crop-button {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
 }
-
-
-
-
-
