@@ -125,8 +125,8 @@ img {
   .btn-middle_wh {
     background-image: url(../../../images/Button_sp_middle_wh.png);
     width: 55%;
-    font-size: 3.5vw;
-    padding: 2% 0 7%;
+    font-size: 2.5vw;
+    padding: 1% 0 7%;
   }
 }
 .btn-middle_bl {
@@ -141,8 +141,8 @@ img {
   .btn-middle_bl {
     background-image: url(../../../images/Button_sp_middle_bl.png);
     width: 55%;
-    font-size: 3.5vw;
-    padding: 2% 0 7%;
+    font-size: 2.5vw;
+    padding: 1% 0 7%;
   }
 }
 .btn-G {
@@ -290,7 +290,6 @@ header img {
 }
 
 .preview-header {
-  position: fixed;
   width: 100%;
   height: 81px;
   background: #fdfcf6;
@@ -656,13 +655,14 @@ input:checked + label::after {
 /* モーダル内側の指定 */
 .edit-body {
   background: #D5DADC;
-  height: 100vh;
 }
+
 .edit {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 @media screen and (max-width: 900px) {
   .edit {
@@ -1031,7 +1031,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit .content.open {
-    margin: 90px 22% 0;
+    margin: 0 10%;
   }
 }
 .edit .content .swiper {
@@ -1066,11 +1066,11 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  margin: 50px 0 0;
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
+    margin: 50px 0 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1141,7 +1141,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1209,7 +1209,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1277,7 +1277,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1345,7 +1345,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1413,7 +1413,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1481,7 +1481,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1549,7 +1549,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1617,7 +1617,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1685,7 +1685,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1753,7 +1753,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1821,7 +1821,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1890,7 +1890,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1958,7 +1958,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -2026,7 +2026,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -2385,9 +2385,9 @@ input:checked + label::after {
 .croppie-modal #croppie-container .cr-slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 4px; /* バーの高さを設定 */
-  background-color: rgba(83, 83, 83, 0.3490196078); /* バーの色を黒に設定 */
-  border-radius: 5px; /* バーの角を丸くする */
+  height: 4px;
+  background-color: rgba(83, 83, 83, 0.3490196078);
+  border-radius: 5px;
   margin: 0;
   padding: 0;
   opacity: 0.8;
@@ -2395,12 +2395,12 @@ input:checked + label::after {
 .croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 35px; /* アイコンの幅 */
-  height: 35px; /* アイコンの高さ */
+  width: 35px;
+  height: 35px;
   background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
   margin-top: -15px;
   cursor: pointer;
-  border: none; /* 余分なボーダーを消す */
+  border: none;
 }
 .croppie-modal .btn-wrapper {
   margin-top: 35px;
@@ -2417,21 +2417,21 @@ input:checked + label::after {
 }
 
 #customButton {
-  background-color: #4CAF50; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* ボタンの枠線を削除 */
-  padding: 10px 20px; /* ボタンの内側の余白 */
-  text-align: center; /* 文字を中央に配置 */
-  text-decoration: none; /* テキストの下線を削除 */
-  display: inline-block; /* インラインブロックとして表示 */
-  font-size: 16px; /* フォントサイズ */
-  margin: 4px 2px; /* 外側の余白 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  border-radius: 4px; /* ボタンの角を丸める */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 #customButton:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
 }
 
 .delete-button {
@@ -2451,7 +2451,7 @@ input:checked + label::after {
 .crop-button {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -2464,7 +2464,18 @@ input:checked + label::after {
 
 .editB-body {
   background: #D5DADC;
-  height: auto;
+}
+.editB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+@media screen and (max-width: 900px) {
+  .editB {
+    display: block;
+  }
 }
 .editB_drawer {
   width: 29%;
@@ -2796,25 +2807,20 @@ input:checked + label::after {
   }
 }
 .editB .content {
-  margin-top: 100px;
-  margin-left: 77px; /* 初期マージン */
   transition: margin-left 0.3s ease;
 }
 @media screen and (min-width: 1500px) {
   .editB .content {
-    margin: 140px 0 0 0;
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (min-width: 1700px) {
   .editB .content {
-    margin: 200px 0 0 0;
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (max-width: 900px) {
   .editB .content {
-    margin: 85px 0 0 0;
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
@@ -2833,7 +2839,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content.open {
-    margin: 90px 22% 0;
+    margin: 0 10%;
   }
 }
 .editB .content .swiper {
@@ -2868,11 +2874,11 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  margin: 50px 0 0;
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
+    margin: 50px 0 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -4154,9 +4160,9 @@ input:checked + label::after {
 .croppie-modal #croppie-container .cr-slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 4px; /* バーの高さを設定 */
-  background-color: rgba(83, 83, 83, 0.3490196078); /* バーの色を黒に設定 */
-  border-radius: 5px; /* バーの角を丸くする */
+  height: 4px;
+  background-color: rgba(83, 83, 83, 0.3490196078);
+  border-radius: 5px;
   margin: 0;
   padding: 0;
   opacity: 0.8;
@@ -4164,12 +4170,12 @@ input:checked + label::after {
 .croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 35px; /* アイコンの幅 */
-  height: 35px; /* アイコンの高さ */
+  width: 35px;
+  height: 35px;
   background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
   margin-top: -15px;
   cursor: pointer;
-  border: none; /* 余分なボーダーを消す */
+  border: none;
 }
 .croppie-modal .btn-wrapper {
   margin-top: 35px;
@@ -4186,21 +4192,21 @@ input:checked + label::after {
 }
 
 #customButton {
-  background-color: #4CAF50; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* ボタンの枠線を削除 */
-  padding: 10px 20px; /* ボタンの内側の余白 */
-  text-align: center; /* 文字を中央に配置 */
-  text-decoration: none; /* テキストの下線を削除 */
-  display: inline-block; /* インラインブロックとして表示 */
-  font-size: 16px; /* フォントサイズ */
-  margin: 4px 2px; /* 外側の余白 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  border-radius: 4px; /* ボタンの角を丸める */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 #customButton:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
 }
 
 .delete-button {
@@ -4220,7 +4226,7 @@ input:checked + label::after {
 .crop-button {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -4231,342 +4237,20 @@ input:checked + label::after {
   opacity: 0.8;
 }
 
-#cover-dropArea1 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-#cover-dropArea1 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#cover-dropArea1 .crop-btn:hover {
-  background: rgb(0, 255, 0);
-  opacity: 1;
-}
-#cover-dropArea1 .crop-btn.show {
-  display: flex;
-}
-#cover-dropArea1 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#cover-dropArea1 .delete-btn:hover {
-  background: rgb(255, 0, 0);
-  opacity: 1;
-}
-#cover-dropArea1 .delete-btn.show {
-  display: flex;
-}
-#cover-dropArea1.active {
-  border-color: #f00;
-}
-#cover-dropArea1.square {
-  width: 57%;
-  height: 40%;
-}
-#cover-dropArea1.rectangle {
-  width: 62%;
-  height: 30%;
-}
-#cover-dropArea1.mini {
-  width: 52%;
-  height: 20%;
-}
-#cover-dropArea1 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-
-#cover-dropArea2 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-#cover-dropArea2 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#cover-dropArea2 .crop-btn:hover {
-  background: rgb(0, 255, 0);
-  opacity: 1;
-}
-#cover-dropArea2 .crop-btn.show {
-  display: flex;
-}
-#cover-dropArea2 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#cover-dropArea2 .delete-btn:hover {
-  background: rgb(255, 0, 0);
-  opacity: 1;
-}
-#cover-dropArea2 .delete-btn.show {
-  display: flex;
-}
-#cover-dropArea2.active {
-  border-color: #f00;
-}
-#cover-dropArea2.square {
-  width: 57%;
-  height: 40%;
-}
-#cover-dropArea2.rectangle {
-  width: 62%;
-  height: 30%;
-}
-#cover-dropArea2.mini {
-  width: 52%;
-  height: 20%;
-}
-#cover-dropArea2 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-
-#coverB-dropArea1 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-#coverB-dropArea1 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#coverB-dropArea1 .crop-btn:hover {
-  background: rgb(0, 255, 0);
-  opacity: 1;
-}
-#coverB-dropArea1 .crop-btn.show {
-  display: flex;
-}
-#coverB-dropArea1 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#coverB-dropArea1 .delete-btn:hover {
-  background: rgb(255, 0, 0);
-  opacity: 1;
-}
-#coverB-dropArea1 .delete-btn.show {
-  display: flex;
-}
-#coverB-dropArea1.active {
-  border-color: #f00;
-}
-#coverB-dropArea1.square {
-  width: 57%;
-  height: 40%;
-}
-#coverB-dropArea1.rectangle {
-  width: 62%;
-  height: 30%;
-}
-#coverB-dropArea1.mini {
-  width: 52%;
-  height: 20%;
-}
-#coverB-dropArea1 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-
-#coverB-dropArea2 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-#coverB-dropArea2 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#coverB-dropArea2 .crop-btn:hover {
-  background: rgb(0, 255, 0);
-  opacity: 1;
-}
-#coverB-dropArea2 .crop-btn.show {
-  display: flex;
-}
-#coverB-dropArea2 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#coverB-dropArea2 .delete-btn:hover {
-  background: rgb(255, 0, 0);
-  opacity: 1;
-}
-#coverB-dropArea2 .delete-btn.show {
-  display: flex;
-}
-#coverB-dropArea2.active {
-  border-color: #f00;
-}
-#coverB-dropArea2.square {
-  width: 57%;
-  height: 40%;
-}
-#coverB-dropArea2.rectangle {
-  width: 62%;
-  height: 30%;
-}
-#coverB-dropArea2.mini {
-  width: 52%;
-  height: 20%;
-}
-#coverB-dropArea2 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-
 .preview-body {
   background: #D5DADC;
-  height: auto;
 }
-.preview .content {
-  margin-top: 100px;
-}
-@media screen and (min-width: 1500px) {
-  .preview .content {
-    margin: 140px 0 0 0;
-  }
-}
-@media screen and (min-width: 1700px) {
-  .preview .content {
-    margin: 200px 0 0 0;
-  }
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
 @media screen and (max-width: 900px) {
-  .preview .content {
-    margin: 85px 0 0 0;
+  .preview {
+    display: block;
   }
 }
 .preview .content .swiper {
@@ -4601,11 +4285,11 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  margin: 50px 0 0;
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
+    margin: 50px 0 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -5745,24 +5429,18 @@ input:checked + label::after {
 
 .preview-body {
   background: #D5DADC;
-  height: auto;
 }
-.previewB .content {
-  margin-top: 100px;
-}
-@media screen and (min-width: 1500px) {
-  .previewB .content {
-    margin: 140px 0 0 0;
-  }
-}
-@media screen and (min-width: 1700px) {
-  .previewB .content {
-    margin: 200px 0 0 0;
-  }
+
+.previewB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
 @media screen and (max-width: 900px) {
-  .previewB .content {
-    margin: 85px 0 0 0;
+  .previewB {
+    display: block;
   }
 }
 .previewB .content .swiper {
@@ -5797,11 +5475,11 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  margin: 50px 0 0;
 }
 @media screen and (max-width: 900px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
+    margin: 50px 0 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -6511,45 +6189,1814 @@ input:checked + label::after {
   background-image: url(../../../edit/images/Group\ 294.png);
 }
 
-.cover-preview-body {
+.cover-body {
   background: #D5DADC;
-  height: auto;
 }
-.cover-preview .content {
-  margin-top: 100px;
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
-@media screen and (min-width: 1500px) {
-  .cover-preview .content {
-    margin: 140px 0 0 0;
+@media screen and (max-width: 900px) {
+  .cover {
+    display: block;
   }
 }
-@media screen and (min-width: 1700px) {
-  .cover-preview .content {
-    margin: 180px 0 0 0;
+.cover_drawer {
+  width: 29%;
+  background-color: #535353;
+  color: white;
+  position: fixed;
+  top: 81px;
+  left: -50%;
+  height: 100%;
+  border-radius: 20px;
+  transition: left 0.3s ease;
+  margin-left: 55px;
+  z-index: 2;
+}
+.cover_drawer.open {
+  left: 0;
+}
+@media screen and (max-width: 900px) {
+  .cover_drawer {
+    width: 100%;
+    left: 0;
+    top: 60%;
+    height: 40%;
+    border-radius: 0;
+    position: fixed;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    margin: 0;
+  }
+  .cover_drawer.open {
+    transform: translateY(0);
+  }
+}
+.cover_drawer .close-btn {
+  position: absolute;
+  top: 21px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cover_drawer .close-btn img {
+  width: 45%;
+}
+.cover_drawer_container_item {
+  display: none;
+}
+.cover_drawer_container_item_upload {
+  text-align: center;
+  height: 100%;
+  margin: 28px 17px 0 35px;
+}
+.cover_drawer_container_item_upload #uploadZone {
+  text-align: center;
+}
+.cover_drawer_container_item_upload #uploadZone_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.cover_drawer_container_item_upload .imageList-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .cover_drawer_container_item_upload .imageList-container {
+    height: calc(100vh - 500px);
+  }
+}
+.cover_drawer_container_item_upload .imageList-container #imgPreviewField {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px auto;
+  gap: 14px;
+}
+.cover_drawer_container_item_upload .imageList-container #imgPreviewField img {
+  width: calc(50% - 10px);
+  cursor: grab;
+}
+.cover_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
+  border: 3px solid blue;
+}
+.cover_drawer_container_item.active {
+  display: block;
+}
+.cover_drawer_container_item {
+  display: none;
+}
+.cover_drawer_container_item_color {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.cover_drawer_container_item_color h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.cover_drawer_container_item_color .color-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .cover_drawer_container_item_color .color-container {
+    height: calc(100vh - 500px);
+  }
+}
+.cover_drawer_container_item_color .color-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color {
+  width: 28%;
+  height: 37px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  color: transparent;
+  cursor: pointer;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-1 {
+  background-color: #e6cd00;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-2 {
+  background-color: #aad24b;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #32b973;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #23beb9;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #6ec8f5;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #4b91cd;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #645aaa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #b464aa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #eb6ea5;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #f06e7d;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #f06e46;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #f06e46;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #e6c300;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-14 {
+  background-color: #82b41e;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #009141;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-16 {
+  background-color: #00918c;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-17 {
+  background-color: #00a0dc;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-18 {
+  background-color: #0064aa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-19 {
+  background-color: #32328c;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-20 {
+  background-color: #87007d;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-21 {
+  background-color: #0064aa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-22 {
+  background-color: #0064aa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.cover_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.cover_drawer_container_item {
+  display: none;
+}
+.cover_drawer_container_item_frame {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.cover_drawer_container_item_frame h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.cover_drawer_container_item_frame .frame-container {
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+.cover_drawer_container_item_frame .frame-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+}
+.cover_drawer_container_item_frame .frame-container_vari .resizeButton {
+  width: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.cover_drawer_container_item_frame .frame-container_vari .resizeButton img {
+  width: 100%;
+  height: auto;
+}
+.cover .sidebar {
+  width: 75px;
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 81px;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  .cover .sidebar {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: 45px;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+    z-index: 1;
   }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .content {
-    margin: 150px 0 0 0;
+  .cover .sidebar.open {
+    transform: translateY(0);
   }
 }
-@media screen and (max-width: 700px) {
-  .cover-preview .content {
-    margin: 120px 0 0 0;
+.cover .sideBtn {
+  position: fixed;
+  top: 81px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+@media screen and (max-width: 900px) {
+  .cover .sideBtn {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 45px;
+    z-index: 3;
+  }
+}
+.cover .sideBtn .open-btn {
+  font-size: 16px;
+  background: #252525;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+  height: 75px;
+}
+@media screen and (max-width: 900px) {
+  .cover .sideBtn .open-btn {
+    flex: 1; /* ボタンを均等に広げる */
+    font-size: 16px;
+    background: #252525;
+    border: none;
+    border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
+    color: white;
+    cursor: pointer;
+    width: auto;
+    height: 100%; /* 高さを100%に設定 */
+  }
+}
+.cover .sideBtn .open-btn.active {
+  background: #535353;
+  border: 2px solid #252525;
+}
+.cover .sideBtn .open-btn img {
+  width: 35px;
+  height: 36px;
+  margin-top: 5px;
+}
+@media screen and (max-width: 900px) {
+  .cover .sideBtn .open-btn img {
+    width: 24px;
+    height: 25px;
+    margin-top: 5px;
+  }
+}
+.cover .content {
+  transition: margin-left 0.3s ease;
+}
+@media screen and (min-width: 1500px) {
+  .cover .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .cover .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+.cover .content.open {
+  margin-left: 32.5%;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content.open {
+    margin-left: 33.5%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .cover .content.open {
+    margin-left: 31.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content.open {
+    margin: 0 25%;
+  }
+}
+.cover .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+    margin: 50px 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .cover .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  left: 5%;
+  top: 8%;
+  width: 82%;
+  height: 84%;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin: 5% 0 5%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-3 {
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
+  position: absolute;
+  top: 40%;
+  left: 6%;
+  width: 87%;
+  height: 55%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.active {
+  border-color: rgba(49, 163, 138, 0.534);
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.square {
+  width: 45%;
+  height: 32%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.rectangle {
+  width: 45%;
+  height: 25%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.mini {
+  width: 45%;
+  height: 20%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+  margin-top: 0%;
+  position: relative;
+  width: 60%;
+  height: 25%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
+  border-color: #f00;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
+  width: 57%;
+  height: 40%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.mini {
+  width: 52%;
+  height: 20%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.active {
+  border-color: #f00;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
+  width: 57%;
+  height: 40%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.mini {
+  width: 52%;
+  height: 20%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.active {
+  border-color: #f00;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
+  width: 57%;
+  height: 40%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.mini {
+  width: 52%;
+  height: 20%;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60% !important;
+  max-width: 60%;
+  height: 20%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
+  margin: 0;
+  position: absolute;
+  width: 13.5% !important;
+  height: 5% !important;
+  top: 14.5%;
+  left: 77%;
+  line-height: 0.9;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
+    font-size: 2vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+  margin: 0;
+  position: absolute;
+  width: 16% !important;
+  height: 3% !important;
+  top: 20%;
+  left: 76%;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 0.4rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
+    font-size: 0.8vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+  margin: 0;
+  position: absolute;
+  width: 40% !important;
+  height: 10% !important;
+  top: 5%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 2.7vw;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+.croppie-modal {
+  display: none;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FDFCF6;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.croppie-modal #croppie-container {
+  margin-bottom: 10px;
+}
+.croppie-modal #croppie-container .cr-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(83, 83, 83, 0.3490196078);
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+}
+.croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
+  margin-top: -15px;
+  cursor: pointer;
+  border: none;
+}
+.croppie-modal .btn-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .croppie-modal .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+#customButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#customButton:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.crop-button {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.coverB-body {
+  background: #d5dadc;
+}
+
+.coverB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+@media screen and (max-width: 900px) {
+  .coverB {
+    display: block;
+  }
+}
+.coverB_drawer {
+  width: 29%;
+  background-color: #535353;
+  color: white;
+  position: fixed;
+  top: 81px;
+  left: -50%;
+  height: 100%;
+  border-radius: 20px;
+  transition: left 0.3s ease;
+  margin-left: 55px;
+  z-index: 2;
+}
+.coverB_drawer.open {
+  left: 0;
+}
+@media screen and (max-width: 900px) {
+  .coverB_drawer {
+    width: 100%;
+    left: 0;
+    top: 60%;
+    height: 40%;
+    border-radius: 0;
+    position: fixed;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    margin: 0;
+  }
+  .coverB_drawer.open {
+    transform: translateY(0);
+  }
+}
+.coverB_drawer .close-btn {
+  position: absolute;
+  top: 21px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.coverB_drawer .close-btn img {
+  width: 45%;
+}
+.coverB_drawer_container_item {
+  display: none;
+}
+.coverB_drawer_container_item_upload {
+  text-align: center;
+  height: 100%;
+  margin: 28px 17px 0 35px;
+}
+.coverB_drawer_container_item_upload #uploadZone {
+  text-align: center;
+}
+.coverB_drawer_container_item_upload #uploadZone_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.coverB_drawer_container_item_upload .imageList-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .coverB_drawer_container_item_upload .imageList-container {
+    height: calc(100vh - 500px);
+  }
+}
+.coverB_drawer_container_item_upload .imageList-container #imgPreviewField {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px auto;
+  gap: 14px;
+}
+.coverB_drawer_container_item_upload .imageList-container #imgPreviewField img {
+  width: calc(50% - 10px);
+  cursor: grab;
+}
+.coverB_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
+  border: 3px solid blue;
+}
+.coverB_drawer_container_item.active {
+  display: block;
+}
+.coverB_drawer_container_item {
+  display: none;
+}
+.coverB_drawer_container_item_color {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.coverB_drawer_container_item_color h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.coverB_drawer_container_item_color .color-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .coverB_drawer_container_item_color .color-container {
+    height: calc(100vh - 500px);
+  }
+}
+.coverB_drawer_container_item_color .color-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color {
+  width: 28%;
+  height: 37px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  color: transparent;
+  cursor: pointer;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-1 {
+  background-color: #e6cd00;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-2 {
+  background-color: #aad24b;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #32b973;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #23beb9;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #6ec8f5;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #4b91cd;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #645aaa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #b464aa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #eb6ea5;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #f06e7d;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #f06e46;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #f06e46;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #e6c300;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-14 {
+  background-color: #82b41e;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #009141;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-16 {
+  background-color: #00918c;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-17 {
+  background-color: #00a0dc;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-18 {
+  background-color: #0064aa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-19 {
+  background-color: #32328c;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-20 {
+  background-color: #87007d;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-21 {
+  background-color: #0064aa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-22 {
+  background-color: #0064aa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.coverB_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.coverB_drawer_container_item {
+  display: none;
+}
+.coverB_drawer_container_item_frame {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.coverB_drawer_container_item_frame h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.coverB_drawer_container_item_frame .frame-container {
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+.coverB_drawer_container_item_frame .frame-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+}
+.coverB_drawer_container_item_frame .frame-container_vari .resizeButton {
+  width: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.coverB_drawer_container_item_frame .frame-container_vari .resizeButton img {
+  width: 100%;
+  height: auto;
+}
+.coverB .sidebar {
+  width: 75px;
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 81px;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  .coverB .sidebar {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: 45px;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .sidebar.open {
+    transform: translateY(0);
+  }
+}
+.coverB .sideBtn {
+  position: fixed;
+  top: 81px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+@media screen and (max-width: 900px) {
+  .coverB .sideBtn {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 45px;
+    z-index: 3;
+  }
+}
+.coverB .sideBtn .open-btn {
+  font-size: 16px;
+  background: #252525;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+  height: 75px;
+}
+@media screen and (max-width: 900px) {
+  .coverB .sideBtn .open-btn {
+    flex: 1; /* ボタンを均等に広げる */
+    font-size: 16px;
+    background: #252525;
+    border: none;
+    border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
+    color: white;
+    cursor: pointer;
+    width: auto;
+    height: 100%; /* 高さを100%に設定 */
+  }
+}
+.coverB .sideBtn .open-btn.active {
+  background: #535353;
+  border: 2px solid #252525;
+}
+.coverB .sideBtn .open-btn img {
+  width: 35px;
+  height: 36px;
+  margin-top: 5px;
+}
+@media screen and (max-width: 900px) {
+  .coverB .sideBtn .open-btn img {
+    width: 24px;
+    height: 25px;
+    margin-top: 5px;
+  }
+}
+.coverB .content {
+  transition: margin-left 0.3s ease;
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .coverB .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content {
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+.coverB .content.open {
+  margin-left: 32.5%;
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content.open {
+    margin-left: 33.5%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .coverB .content.open {
+    margin-left: 31.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content.open {
+    margin: 0 10%;
+  }
+}
+.coverB .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+    margin: 50px 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  left: 11%;
+  top: 8%;
+  width: 84%;
+  height: 83%;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
+  position: absolute;
+  width: 90%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  bottom: 10px;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn:hover {
+  opacity: 1;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn.show {
+  display: flex;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn:hover {
+  opacity: 1;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn.show {
+  display: flex;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.active {
+  border-color: rgba(49, 163, 138, 0.534);
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.square {
+  width: 45%;
+  height: 32%;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.rectangle {
+  width: 45%;
+  height: 25%;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.mini {
+  width: 45%;
+  height: 20%;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  max-width: 60%;
+  height: 20%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
+  margin: 0;
+  position: absolute;
+  width: 13.5% !important;
+  height: 5% !important;
+  top: 14.5%;
+  right: 77%;
+  line-height: 0.9;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff !important;
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
+    font-size: 2vw;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
+  position: absolute;
+  top: 20%;
+  left: 7.5%;
+  height: 3% !important;
+  width: 16% !important;
+  margin: 0;
+  font-size: 0.4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
+    font-size: 1.7vw;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+  margin: 0;
+  position: absolute;
+  width: 40% !important;
+  height: 10% !important;
+  top: 3%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
+    font-size: 2.7vw;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+.croppie-modal {
+  display: none;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdfcf6;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.croppie-modal #croppie-container {
+  margin-bottom: 10px;
+}
+.croppie-modal #croppie-container .cr-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(83, 83, 83, 0.3490196078);
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+}
+.croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
+  margin-top: -15px;
+  cursor: pointer;
+  border: none;
+}
+.croppie-modal .btn-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .croppie-modal .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+#customButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#customButton:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.crop-button {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.cover-preview-body {
+  background: #D5DADC;
+}
+
+.cover-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+@media screen and (max-width: 900px) {
+  .cover-preview {
+    display: block;
   }
 }
 .cover-preview .content .swiper {
-  width: 400px;
+  width: 600px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper {
-    width: 700px;
+    width: 900px;
   }
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper {
-    width: 300px;
+    width: 450px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -6568,28 +8015,24 @@ input:checked + label::after {
   height: 100%;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
-  margin: 50px 0 0;
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 700px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 50%;
+    width: 70%;
+    margin: 50px 0 0;
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 60%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 330px) {
@@ -6599,89 +8042,492 @@ input:checked + label::after {
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  width: 88%;
-  height: 90%;
-  top: 16px;
+  left: 5%;
+  top: 8%;
+  width: 82%;
+  height: 84%;
   opacity: 0.8;
-  left: 6%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
-  position: relative;
-  width: 60%;
-  height: 60%;
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
+  position: absolute;
+  top: 40%;
+  left: 6%;
+  width: 87%;
+  height: 55%;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border: none;
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
-  width: 57%;
-  height: 40%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.mini {
-  width: 52%;
-  height: 20%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
-  width: 57%;
-  height: 40%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.mini {
-  width: 52%;
-  height: 20%;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  cursor: pointer;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
   text-align: center;
   resize: none;
-  width: 60%;
-  height: auto;
-  margin: 10% 0 10%;
+  width: 60% !important;
+  max-width: 60%;
+  height: 20%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+  border: none;
   outline: none;
   pointer-events: none;
   cursor: not-allowed;
-  font-size: 0.6rem;
 }
-.cover-preview .button-flex {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  gap: 30px;
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .button-flex {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+  margin: 0;
+  position: absolute;
+  width: 13.5% !important;
+  height: 5% !important;
+  top: 14.5%;
+  left: 77%;
+  line-height: 0.9;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 2vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  margin: 0;
+  position: absolute;
+  width: 16% !important;
+  height: 3% !important;
+  top: 20%;
+  left: 76%;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 0.4rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.8vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  margin: 0;
+  position: absolute;
+  width: 40% !important;
+  height: 10% !important;
+  top: 5%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 2.7vw;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+.coverB-preview-body {
+  background: #d5dadc;
+}
+
+.coverB-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview {
+    display: block;
+  }
+}
+.coverB-preview .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .coverB-preview .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .coverB-preview .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+    margin: 50px 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  left: 11%;
+  top: 8%;
+  width: 84%;
+  height: 83%;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
+  position: absolute;
+  width: 90%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  bottom: 10px;
+  border: none;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn:hover {
+  opacity: 1;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn.show {
+  display: flex;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn:hover {
+  opacity: 1;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn.show {
+  display: flex;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.active {
+  border-color: rgba(49, 163, 138, 0.534);
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.square {
+  width: 45%;
+  height: 32%;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.rectangle {
+  width: 45%;
+  height: 25%;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.mini {
+  width: 45%;
+  height: 20%;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  max-width: 60%;
+  height: 20%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+@media screen and (max-width: 1200px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+  margin: 0;
+  position: absolute;
+  width: 13.5% !important;
+  height: 5% !important;
+  top: 14.5%;
+  right: 77%;
+  line-height: 0.9;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff !important;
+}
+@media screen and (max-width: 1200px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+    font-size: 2vw;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+  position: absolute;
+  top: 20%;
+  left: 7.5%;
+  height: 3% !important;
+  width: 16% !important;
+  margin: 0;
+  font-size: 0.4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+}
+@media screen and (max-width: 1200px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+    font-size: 1.7vw;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+  margin: 0;
+  position: absolute;
+  width: 40% !important;
+  height: 10% !important;
+  top: 3%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+    font-size: 2.7vw;
   }
 }
 

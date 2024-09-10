@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css">
     <link rel="stylesheet" href="../public/assets/style/style.css">
 </head>
-<body class="edit-body">
+<body class="cover-body">
     <header class="edit-header">
-        <button class="btn btn-E">保存する</button>
+        <button id="sendButton" class="btn btn-small_bl">保存する</button>
         <button class="btn-preview">プレビュー</button>
     </header>
 
-    <div class="edit">
+    <div class="cover">
         <div id="drawer" class="edit_drawer">
             <button class="close-btn" onclick="toggleDrawer()"><img src="/edit/images/Vector 46.png" alt=""></button>
             <div id="drawer-content" class="edit_drawer_container">
@@ -28,7 +28,7 @@
                             <div class="uploadZone_wrapper">
                                 <form>
                                     <input id="backInput" type="file" accept="image/*" multiple="multiple" onchange="loadImage(this);" style="display: none;">
-                                    <button type="button" id="frontButton" class="btn btn-F">画像を追加する</button>
+                                    <button type="button" id="frontButton" class="btn btn-middle_wh">画像を追加する</button>
                                 </form>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
         <div class="sideBtn">
             <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
                 <img src="/edit/images/frame.png" alt="">
-            </button>  
+            </button>
             <button date-content-id="content1" class="open-btn" onclick="showDrawerContent('content1')">
                 <img src="/edit/images/Mask group.png" alt="">
             </button>
@@ -110,30 +110,26 @@
         </div>
 
         <div class="content" id="content">
-            <!-- スライダー -->
+    
        <div class="swiper">
            <div class="swiper-wrapper">
-               <!-- スライド1 -->
-               <div class="swiper-slide">
+     
+
+            <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
-                    <img src="/edit/images/template/p1@2x.png" alt="">
+                    <img src="/cover/imgges/template/coverA.png" alt="">
                     <div class="input-drop">
-                        <textarea id="cover-textArea1" rows="1"></textarea>
-                        <div id="cover-dropArea1" class="empty"></div>
-                    </div>
+              
+                            <textarea id="textAreaA-1" rows="1" maxlength="4" class="text-empty"></textarea>
+                   
+                            <textarea id="textAreaA-2" rows="1" maxlength="11" class="text-empty text-color"></textarea>
+                            <textarea id="textAreaA-3" rows="1" maxlength="8" class="text-empty text-color"></textarea>
+               
+                       <div id="dropAreaA" class="empty"></div>
+                    <!-- </div> -->
                 </div>
                </div>
-   
-               <!-- スライド2 -->
-               <div class="swiper-slide">
-                <div class="swiper-slide_box uniqueColor">
-                    <img src="/edit/images/template/p2@2x.png" alt="">
-                    <div class="input-drop">
-                        <textarea id="cover-textArea2" rows="1" maxlength="20"></textarea>
-                        <div id="cover-dropArea2" class="empty"></div>
-                    </div>
-                </div>
-               </div>
+
 
            </div>
 

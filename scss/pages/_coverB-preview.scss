@@ -1,0 +1,353 @@
+.coverB-preview-body {
+  background: #d5dadc;
+}
+
+.coverB-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+
+  @include mq("tab-edit") {
+    display: block;
+  }
+
+  .content {
+    .swiper {
+      width: 600px;
+      height: 100%;
+
+      @include mq("pc2-edit") {
+        width: 900px;
+      }
+
+      @include mq("pc-edit") {
+        width: 450px;
+      }
+
+      @include mq("tab-edit") {
+        display: block;
+        width: 80%;
+        min-width: auto;
+      }
+
+      &-wrapper {
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          color: #ffffff;
+          width: auto;
+          height: 100%;
+
+          &_box {
+            width: 50%;
+            max-width: 500px;
+            position: relative;
+
+            @include mq("tab-edit") {
+              width: 70%;
+              margin: 50px 0 0;
+            }
+
+            @include mq("sp-edit") {
+              width: 100%;
+            }
+
+            @include mq("sp2-edit") {
+              width: 70%;
+            }
+
+            @include mq("sp3-edit") {
+              width: 50%;
+            }
+
+            .input-drop {
+              position: absolute;
+              left: 11%;
+              top: 8%;
+              width: 84%;
+              height: 83%;
+              // background: rgb(178, 203, 225);
+              opacity: 0.8;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: end;
+
+              #dropAreaB {
+                position: absolute;
+                width: 90%;
+                height: 60%;
+                font-size: 1rem;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                bottom: 10px;
+
+                border: none;
+
+                // ドロップ後ボタン-----------
+                .crop-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 33px;
+                  background: url(/edit/images/crop.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+
+                .delete-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                  background: url(/edit/images/delete.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+                // ----------------------------------
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: rgba(49, 163, 138, 0.534);
+                }
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              textarea {
+                overflow: hidden;
+                text-align: center;
+                resize: none;
+                // width: 60% !important;
+                max-width: 60%;
+                height: 20%;
+                margin: 5% 0 5%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
+
+                border: none;
+                outline: none;
+                pointer-events: none;
+                cursor: not-allowed;
+
+                @include mq("pc-edit") {
+                  font-size: 0.3rem;
+                }
+
+                @include mq("pc2-edit") {
+                  font-size: 0.6rem;
+                }
+
+                @include mq("tab-edit") {
+                  font-size: 1.2vw;
+                }
+
+                @include mq("sp-edit") {
+                  font-size: 1.7vw;
+                }
+              }
+
+              //　テキストエリア　ここを変える！
+              #previewTextArea {
+                &B-1 {
+                  margin: 0;
+                  position: absolute;
+                  width: 13.5% !important;
+                  height: 5% !important;
+                  top: 14.5%;
+                  right: 77%;
+                  line-height: 0.9;
+                  font-weight: bold;
+                  font-size: 1rem;
+                  color: #ffffff !important;
+                  @include mq("pc-edit") {
+                    font-size: 0.8rem;
+                  }
+                  @include mq("pc2-edit") {
+                    font-size: 1.5rem;
+                  }
+                  @include mq("tab-edit") {
+                    font-size: 3vw;
+                  }
+                  @include mq("sp2-edit") {
+                    font-size: 2vw;
+                  }
+                }
+                &B-2 {
+                  position: absolute;
+                  top: 20%;
+                  left: 7.5%;
+                  height: 3% !important;
+                  width: 16% !important;
+
+                  margin: 0;
+                  font-size: 0.4rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+
+                  @include mq("pc-edit") {
+                    font-size: 0.3rem;
+                  }
+
+                  @include mq("pc2-edit") {
+                    font-size: 0.6rem;
+                  }
+
+                  @include mq("tab-edit") {
+                    font-size: 1.2vw;
+                  }
+
+                  @include mq("sp-edit") {
+                    font-size: 1.7vw;
+                  }
+                }
+                &B-3 {
+                  margin: 0;
+                  position: absolute;
+                  width: 40% !important;
+                  height: 10% !important;
+                  top: 3%;
+                  right: 5%;
+                  font-weight: bold;
+                  font-size: 1.1rem;
+
+                  @include mq("pc-edit") {
+                    font-size: 0.9rem;
+                  }
+                  @include mq("pc2-edit") {
+                    font-size: 1.7rem;
+                  }
+                  @include mq("tab-edit") {
+                    font-size: 3.3vw;
+                  }
+                  @include mq("sp-edit") {
+                    font-size: 4.8vw;
+                  }
+                  @include mq("sp2-edit") {
+                    font-size: 2.7vw;
+                  }
+
+                  // position: absolute;
+                  // top: 2%;
+                  // right: 4%;
+                  // height: 8% !important;
+                  // width: 34% !important;
+
+                  // margin: 0;
+                  // font-size: 1.2rem;
+                  // line-height: 1.5;
+                  // font-weight: bold;
+                  // color: #fef8f6;
+
+                  // @include mq("pc-edit") {
+                  //   font-size: 0.9rem;
+                  // }
+
+                  // @include mq("pc2-edit") {
+                  //   font-size: 1.7rem;
+                  // }
+
+                  // @include mq("tab-edit") {
+                  //   font-size: 2.5vw;
+                  // }
+
+                  // @include mq("sp-edit") {
+                  //   font-size: 5vw;
+                  // }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+// トリミングボタン、削除ボタン関連

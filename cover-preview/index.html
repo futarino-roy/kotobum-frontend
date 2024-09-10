@@ -13,7 +13,9 @@
 </head>
 <body class="cover-preview-body">
     <header class="preview-header">
-        <button class="btn btn-I">校了</button>
+        <button class="btn btn-small_bl-preview" id="editBack">編集する</button>
+        <button class="btn btn-small_bl-preview">マイページへ</button>
+        <button class="btn btn-small_bl-preview">校了</button>
     </header>
 
     <div class="cover-preview">
@@ -29,25 +31,19 @@
 
                <div class="swiper-slide">
                 <div class="swiper-slide_box uniqueColor">
-                    <img src="/preview/images/template/p1@2x.png" alt="">
+                    <img src="/cover/imgges/template/coverA.png" alt="">
                     <div class="input-drop">
-                        <textarea id="coverPreviewTextArea1" rows="1" readonly></textarea>
-                        <div id="cover-dropArea1" class="empty"></div>
-                    </div>
+              
+                        <textarea id="previewTextAreaA-1" rows="1" maxlength="4" class="text-empty"></textarea>
+               
+                        <textarea id="previewTextAreaA-2" rows="1" maxlength="11" class="text-empty text-color"></textarea>
+                        <textarea id="previewTextAreaA-3" rows="1" maxlength="8" class="text-empty text-color"></textarea>
+           
+                   <div id="dropAreaA" class="empty"></div>
+                <!-- </div> -->
+            </div>
                 </div>
                </div>
-   
-         
-               <div class="swiper-slide">
-                <div class="swiper-slide_box uniqueColor">
-                    <img src="/preview/images/template/p2@2x.png" alt="">
-                    <div class="input-drop">
-                        <textarea id="coverPreviewTextArea2" rows="1" maxlength="20" readonly></textarea>
-                        <div id="cover-dropArea2" class="empty"></div>
-                    </div>
-                </div>
-               </div>
-
            </div>
 
            <div class="swiper-pagination"></div>
@@ -55,13 +51,6 @@
            <div class="swiper-button-next"></div>
        </div>
        </div>
-
-
-       <div class="button-flex">
-        <button class="btn btn-J" id="editBack">編集する</button>
-        <a href="../mypage/index.html"><button class="btn btn-K">マイページへ</button></a>
-       </div>
-
     </div>
 
 
@@ -71,36 +60,3 @@
     <script src="/cover-preview/js/script.js"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プレビューページ</title>
-    <style>
-        .image-preview {
-            max-width: 100%;
-            height: auto;
-            margin: 10px 0;
-        }
-
-        #dropArea{
-            position: relative;
-            width: 60%;
-            height: 60%;
-            font-size: 1rem;
-        }
-    </style>
-</head>
-<body>
-
-
-    <div id="dropArea" class="empty"></div>
-<div id="dropArea2" class="empty"></div>
-
-
-    <script src="js/script.js"></script>
-</body>
-</html> -->

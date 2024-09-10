@@ -1,13 +1,22 @@
 .editB-body{
     background: #D5DADC;
-    height: auto;
 
     @include mq('tab-edit'){
-        // height: 100vh;
+
         }
 }
 
 .editB{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+
+    @include mq('tab-edit'){
+        display: block;
+        }
 
     &_drawer{
         // width: 350px;
@@ -390,32 +399,6 @@
 
     }
 
-    // .sidebar-sp{
-    //     display: none;
-
-    //     @include mq('tab-edit'){
-    //         // display: block;
-    //         width: 100%;
-    //         background-color: #252525;
-    //         display: flex;
-    //         justify-content: center;
-    //         position: fixed;
-    //         bottom: 0;
-    //         left: 0;
-    //         height: 45px;
-    //         transition: transform 0.3s ease;
-    //         transform: translateY(0);
-    //         z-index: 1;
-    //         }
-
-    //         &.open{
-
-    //             @include mq('tab-edit'){
-    //                 transform: translateY(0);
-    //                 }
-    //         }
-
-    // }
 
     .sideBtn{
         position: fixed;
@@ -491,80 +474,27 @@
 
     }
 
-    // .sideBtn-sp{
-    //     display: none;
-
-    //     @include mq('tab-edit'){
-    //         display: block;
-    //         position: fixed;
-    //         bottom: 0;
-    //         left: 0;
-    //         border-radius: 20px;
-    //         display: flex;
-    //         width: 100%;
-    //         height: 45px;
-    //         z-index: 3;
-    //         }
-
-    //         .open-btn{
-                
-    //             @include mq('tab-edit'){
-    //                 flex: 1; /* ボタンを均等に広げる */
-    //                 font-size: 16px;
-    //                 background: #252525;
-    //                 border: none;
-    //                 border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
-    //                 color: white;
-    //                 cursor: pointer;
-    //                 height: 100%; /* 高さを100%に設定 */
-
-
-    //                 &.active {
-    //                     background: #535353;
-    //                     border: 2px solid #252525;
-    //                 }
-
-
-                    
-    //             img{
-    //                 width: 24px;
-    //                 height: 25px;
-    //                 margin-top: 5px;
-    //             }
-
-
-    //         }
-    //         }
-
-    // }
 
     .content{
-        // margin-top: 130px;
-        margin-top: 100px;
-        margin-left: 77px; /* 初期マージン */
         transition: margin-left 0.3s ease;
 
         @include mq('pc2-edit'){
-            margin: 140px 0 0 0;
             transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                     
             }
 
             @include mq('pc3-edit'){
-                margin: 200px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
                 } 
 
         @include mq('tab-edit'){
-                margin: 85px 0 0 0;
                 transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
                         
                 }              
 
 
         &.open{
-            // margin-left: 405px; /* サイドバーが開いているときのマージン */
             margin-left: 32.5%;
 
             @include mq('pc-edit'){
@@ -576,23 +506,9 @@
                     }
 
                     @include mq('tab-edit'){
-                        margin: 90px 22% 0 ;
+                        margin: 0 10% ;
 
                         }
-
-                        // @include mq('sp2-edit'){
-                        //     margin: 90px 20% 0 ;
-    
-                        //     }
-
-                        //     @include mq('sp3-edit'){
-                        //         margin: 90px 10% 0 ;
-        
-                        //         }
-
-            //     @include mq('tab-edit'){
-            //         margin-left: 36%; 
-            //         }
         }
         
         .swiper{
@@ -638,22 +554,12 @@
                     // align-items: center;
 
                     &_box{
-                        // background-color: #ffffff;
-                        // width: 528px;
-
-
-                    
-
-                        // いるかわからない いや、いりますね
                         max-width: 500px;
-                    
                         position: relative;
-
-                        // margin-top: 80px;
-                        margin: 50px 0 0;
 
                         @include mq('tab-edit'){
                             width: 70%;
+                            margin: 50px 0 0;
                             }
 
                             @include mq('sp-edit'){
@@ -696,26 +602,6 @@
                                                 align-items: center;
                                                 justify-content: center;
                                             }
-
-                                            // .flex-area24-1{
-                                            //     width: 60%;
-                                            //     height: 20%;
-                                            //     display: flex;
-                                            //     justify-content: center;
-                                            //     align-items: center;
-                                            //     gap: 5%;
-                                            // }
-                                            
-                                            // .flex-area24-2{
-                                            //     width: 60%;
-                                            //     height: 20%;
-                                            //     display: flex;
-                                            //     justify-content: center;
-                                            //     align-items: center;
-                                            //     gap: 5%;
-                                            //     margin: 5% 0 5%;
-
-                                            // }
 
                                             .flex24{
                                                 width: 60%;
@@ -2196,108 +2082,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-// トリミングボタン、削除ボタン関連
-
-
-
-
-// #dropArea .crop-btn, #dropArea2 .crop-btn #dropArea3 .crop-btn{
-//     position: absolute;
-//     top: 5px;
-//     right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
-//     background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
-//     color: white;
-//     border: none;
-//     border-radius: 50%;
-//     width: 30px;
-//     height: 30px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     cursor: pointer;
-//     font-size: 16px;
-//     opacity: 0.8;
-// }
-
-
-// #dropArea .crop-btn:hover, #dropArea2 .crop-btn:hover, #dropArea3 .crop-btn:hover{
-//     background: rgba(0, 255, 0, 1);
-//     opacity: 1;
-// }
-
-
-// #dropArea .delete-btn, #dropArea2 .delete-btn, #dropArea3 .delete-bt{
-//     position: absolute;
-//     top: 5px;
-//     right: 5px;
-//     background: rgba(255, 0, 0, 0.7);
-//     color: white;
-//     border: none;
-//     border-radius: 50%;
-//     width: 30px;
-//     height: 30px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     cursor: pointer;
-//     font-size: 16px;
-//     opacity: 0.8;
-// }
-
-// #dropArea .delete-btn:hover, #dropArea2 .delete-btn:hover, #dropArea3 .delete-btn:hover{
-//     background: rgba(255, 0, 0, 1);
-//     opacity: 1;
-// }
-
-
-// #dropArea .delete-btn.show,
-// #dropArea2 .delete-btn.show,
-// #dropArea3 .delete-btn.show,
-// #dropArea .crop-btn.show,
-// #dropArea2 .crop-btn.show,
-// #dropArea3 .crop-btn.show {
-//     display: flex; /* showクラスが付けられたときに表示 */
-// }
-
-
-
-
-
-// 枠サイズ変更関連
-// #dropArea.active, #dropArea2.active {
-//     border-color: #f00; /* クリック時の枠の色 */
-// }
-
-
-// #dropArea.square, #dropArea2.square {
-//     width: 57%;
-//     height: 40%;
-// }
-
-// #dropArea.rectangle, #dropArea2.rectangle {
-//     width: 62%;
-//     height: 30%;
-// }
-
-// #dropArea.mini, #dropArea2.mini {
-//     width: 52%;
-//     height: 20%;
-
-// }
-
-
-
-
-
 .croppie-modal{
     display: none;
     border-radius: 20px;
@@ -2316,9 +2100,9 @@
         .cr-slider{
             -webkit-appearance: none;
             width: 100%;
-            height: 4px; /* バーの高さを設定 */
-            background-color: #53535359; /* バーの色を黒に設定 */
-            border-radius: 5px; /* バーの角を丸くする */
+            height: 4px;
+            background-color: #53535359;
+            border-radius: 5px;
             margin: 0;
             padding: 0;
             opacity: 0.8;
@@ -2328,14 +2112,14 @@
         .cr-slider::-webkit-slider-thumb{
             -webkit-appearance: none;
             appearance: none;
-            width: 35px; /* アイコンの幅 */
-            height: 35px; /* アイコンの高さ */
+            width: 35px;
+            height: 35px;
             background: url('/edit/images/Ellipse\ 7.png') no-repeat center; /* アイコン画像を指定 */
             margin-top: -15px;
 
 
             cursor: pointer;
-            border: none; /* 余分なボーダーを消す */
+            border: none;
         }
     }
 
@@ -2363,21 +2147,21 @@
 
 
 #customButton {
-    background-color: #4CAF50; /* ボタンの背景色 */
-    color: white;              /* ボタンの文字色 */
-    border: none;              /* ボタンの枠線を削除 */
-    padding: 10px 20px;        /* ボタンの内側の余白 */
-    text-align: center;        /* 文字を中央に配置 */
-    text-decoration: none;     /* テキストの下線を削除 */
-    display: inline-block;     /* インラインブロックとして表示 */
-    font-size: 16px;           /* フォントサイズ */
-    margin: 4px 2px;           /* 外側の余白 */
-    cursor: pointer;           /* カーソルをポインターに変更 */
-    border-radius: 4px;        /* ボタンの角を丸める */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 #customButton:hover {
-    background-color: #45a049; /* ホバー時の背景色 */
+    background-color: #45a049;
 }
 
 
@@ -2386,7 +2170,7 @@
 
 
 
-// 1の進化系の進化系
+
 .delete-button {
     position: absolute;
     top: 5px;
@@ -2404,7 +2188,7 @@
 .crop-button{
     position: absolute;
     top: 5px;
-    right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+    right: 33px;
     background: url(/edit/images/crop.png);
     background-size: contain;
     background-repeat: no-repeat;
