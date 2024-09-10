@@ -70,37 +70,26 @@
 
                                         .input-drop{
                                             position: absolute;
-                                            width: 88%;
-                                            // background: aliceblue;
-                                            height: 90%;
-                                            top: 16px;
+                                            left: 5%;
+                                            top: 8%;
+                                            width: 82%;
+                                            height: 84%;
                                             opacity: 0.8;
-                                            left: 6%;
                                             display: flex;
                                             flex-direction: column;
                                             align-items: center;
-                                            justify-content: center;
+                                            justify-content: end;
 
-                                            #dropArea0-1{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
+                                            #dropAreaA{
+                                                position: absolute;
+                                                top: 40%;
+                                                left: 6%;
+                                                width: 87%;
+                                                height: 55%;
                                                 font-size: 1rem;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
+                                                border: 2px dashed #ccc;
+                                                cursor: pointer;
+                                                border: none;
 
                                                 // --------------------------
 
@@ -109,6 +98,155 @@
                                                     height: 100%;
                                                     object-fit: cover;
                                                     cursor: pointer;
+                                                }
+                                            }
+
+                                            textarea {
+                                                overflow: hidden;
+                                                text-align: center;
+                                                resize: none;
+                                                width: 60% !important;
+                                                max-width: 60%;
+                                                height: 20%;
+                                                margin: 5% 0 5%;
+                                                font-size: 0.4rem;
+                                                line-height: 1.9;
+                                                background-color: transparent;
+                                                border: none;
+                                                outline: none;
+                                                pointer-events: none;
+                                                cursor: not-allowed;
+
+
+                                                @include mq('pc-edit'){
+                                                    font-size: 0.3rem;
+                                                    }
+
+                                                @include mq('pc2-edit'){
+                                                    font-size: 0.6rem;
+                                                    }
+
+                                                    @include mq('tab-edit'){
+                                                        font-size: 1.2vw;
+                                                        }
+
+                                                        @include mq('sp-edit'){
+                                                            font-size: 1.7vw;
+                                                            }
+    
+                                            }
+
+                                            #previewTextArea{
+
+                                                &A-1{
+                               
+                                                    margin: 0;
+                                                    position: absolute;
+                                                    width: 13.5% !important;
+                                                    height: 5% !important;
+                                                    top: 14.5%;
+                                                    left: 77%;
+                                                    line-height: 0.9;
+                                                    font-weight: bold;
+                                                    font-size: 1rem;
+                                                    color: #ffffff;
+
+
+                                                    @include mq('pc-edit'){
+                                                        font-size: 0.8rem;
+                                                        }
+
+                                                    @include mq('pc2-edit'){
+                                                        font-size: 1.5rem;
+                                                        }
+
+                                                        @include mq('tab-edit'){
+                                                            font-size: 3vw;
+                                                            }
+
+                                                            @include mq('sp2-edit'){
+                                                                font-size: 2vw;
+                                                                }
+
+
+    
+
+                                                }
+
+                                                &A-2{
+                               
+                                                    margin: 0;
+                                                    position: absolute;
+                                                    width: 16% !important;
+                                                    height: 3% !important;
+                                                    top: 20%;
+                                                    left: 76%;
+                                                    line-height: 1.5;
+                                                    font-weight: bold;
+                                                    font-size: 0.4rem;
+
+                                                  
+
+                                                    @include mq("pc-edit") {
+                                                        font-size: 0.3rem;
+                                                      }
+                                                      @include mq("pc2-edit") {
+                                                        font-size: 0.6rem;
+                                                      }
+                                                      @include mq("tab-edit") {
+                                                        font-size: 1.2vw;
+                                                      }
+                                                      @include mq("sp-edit") {
+                                                        font-size: 1.7vw;
+                                                      }
+
+                                                      @include mq("sp2-edit") {
+                                                        font-size: 0.8vw;
+                                                      }
+
+
+    
+
+                                                }
+
+                                                
+
+                                                
+
+
+                                                &A-3{
+                                                    margin: 0;
+                                                    position: absolute;
+                                                    width: 40% !important;
+                                                    height: 10% !important;
+                                                    top: 5%;
+                                                    left: 5%;
+                                                    font-weight: bold;
+                                                    font-size: 1.1rem;
+
+                                                    @include mq('pc-edit'){
+                                                        font-size: 0.9rem;
+                                                        }
+
+                                                    @include mq('pc2-edit'){
+                                                        font-size: 1.7rem;
+                                                        }
+
+                                                        @include mq('tab-edit'){
+                                                            font-size: 3.3vw;
+                                                            }
+
+                                                            @include mq('sp-edit'){
+                                                       font-size: 4.8vw;
+
+
+                                                            }
+    
+                                                        @include mq('sp2-edit'){
+                                                       font-size: 2.7vw;
+
+
+                                                            }
                                                 }
                                             }
                                         }
