@@ -1055,6 +1055,10 @@ input:checked + label::after {
   max-width: 500px;
   position: relative;
 }
+.edit .content .swiper-wrapper .swiper-slide_box img {
+  -webkit-clip-path: inset(5% 6%);
+          clip-path: inset(5% 6%); /* 四角形の内側を残し外側を隠す */
+}
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
@@ -1079,8 +1083,8 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 88%;
-  height: 90%;
-  top: 16px;
+  height: 92%;
+  top: 24px;
   opacity: 0.8;
   left: 6%;
   display: flex;
