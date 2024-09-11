@@ -635,6 +635,10 @@ input:checked + label::after {
     display: block;
   }
 }
+.modal-content a {
+  text-decoration: none;
+  color: black;
+}
 
 /* モーダル内側の指定 */
 .edit-body {
