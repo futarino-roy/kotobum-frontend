@@ -2119,20 +2119,31 @@
 
 
 .swiper-pagination{
+ 
 }
 
 
 .swiper-button-prev,
 .swiper-button-next {
   top: 32px;
+
+  @include mq('tab-edit'){
+  top: var(--swiper-navigation-top-offset, 50%);
+    }
 }
 
 .swiper-button-prev{
     left: 36%;
+    @include mq('tab-edit'){
+        left: auto;
+          }
 }
 
 .swiper-button-next {
     left: 58%;
+    @include mq('tab-edit'){
+        left: auto;
+          }
   }
 
 .swiper-button-prev:after,

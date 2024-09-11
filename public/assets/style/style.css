@@ -2322,13 +2322,29 @@ input:checked + label::after {
 .swiper-button-next {
   top: 32px;
 }
+@media screen and (max-width: 900px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: var(--swiper-navigation-top-offset, 50%);
+  }
+}
 
 .swiper-button-prev {
   left: 36%;
 }
+@media screen and (max-width: 900px) {
+  .swiper-button-prev {
+    left: auto;
+  }
+}
 
 .swiper-button-next {
   left: 58%;
+}
+@media screen and (max-width: 900px) {
+  .swiper-button-next {
+    left: auto;
+  }
 }
 
 .swiper-button-prev:after,
@@ -4093,39 +4109,6 @@ input:checked + label::after {
   writing-mode: vertical-rl;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .croppie-modal {
   display: none;
   border-radius: 20px;
@@ -5378,39 +5361,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .preview-body {
   background: #D5DADC;
 }
@@ -6138,39 +6088,6 @@ input:checked + label::after {
     justify-content: center;
     align-items: center;
   }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }
 
 .cover-body {
@@ -7049,39 +6966,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .croppie-modal {
   display: none;
   border-radius: 20px;
@@ -7830,39 +7714,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .croppie-modal {
   display: none;
   border-radius: 20px;
@@ -8474,39 +8325,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .coverB-preview-body {
   background: #d5dadc;
 }
@@ -8798,37 +8616,4 @@ input:checked + label::after {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
     font-size: 2.7vw;
   }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }/*# sourceMappingURL=style.css.map */
