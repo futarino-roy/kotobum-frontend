@@ -1,852 +1,834 @@
-.preview-body{
-    background: #D5DADC;
+.preview-body {
+  background: #d5dadc;
 }
 
-.previewB{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+.previewB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 
-    @include mq('tab-edit'){
+  @include mq('tab-edit') {
+    display: block;
+  }
+
+  .content {
+    .swiper {
+      width: 600px;
+      height: 100%;
+
+      @include mq('pc2-edit') {
+        width: 900px;
+      }
+
+      @include mq('pc-edit') {
+        width: 450px;
+      }
+
+      @include mq('tab-edit') {
         display: block;
-        }
-
-    .content{
-        
-        .swiper{
-
-            width: 600px;
-            height: 100%;
-
-            @include mq('pc2-edit'){
-                width: 900px;
-                }
-
-            @include mq('pc-edit'){
-                width: 450px;
-                }
-
-            @include mq('tab-edit'){
-                display: block;
-                width: 80%;
-                min-width: auto;
-                }
-
-
-
-            &-wrapper{
-
-
-                .swiper-slide{
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    color: #ffffff;
-                    width: auto;
-                    height: 100%;
-
-                    &_box{
-                        max-width: 500px;
-                        position: relative;
-
-
-                        @include mq('tab-edit'){
-                            width: 70%;
-                            margin: 50px 0 0;
-                            }
-
-                            @include mq('sp-edit'){
-                                width: 100%;
-                                }
-
-                                @include mq('sp2-edit'){
-                                    width: 70%;
-                                    }
-
-                                    @include mq('sp3-edit'){
-                                        width: 50%;
-            
-                                        }
-
-                                        .input-drop{
-                                            position: absolute;
-                                            width: 88%;
-                                            height: 90%;
-                                            top: 16px;
-                                            opacity: 0.8;
-                                            left: 6%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                            justify-content: center;
-
-                                            .background-textArea18-1{
-                                                position: relative;
-                                                width: 43%;
-                                                height: 20%;
-                                                background-image: url(/edit/images/cloud.png);
-                                                background-size: contain;
-                                                background-repeat: no-repeat;
-                                                margin-bottom: 5%;
-                                                margin-right: 22%;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                            }
-
-                                            .flex-area24-1{
-                                                width: 60%;
-                                                height: 20%;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                gap: 5%;
-                                            }
-                                            
-                                            .flex-area24-2{
-                                                width: 60%;
-                                                height: 20%;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                gap: 5%;
-                                                margin: 5% 0 5%;
-
-                                            }
-
-                                            #dropArea13{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea14{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea15{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea16{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea17{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea18{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea18{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea19{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea20{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea21{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea22{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea23{
-                                                position: relative;
-                                                width: 45%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                &.square{
-                                                    width: 45%;
-                                                    height: 32%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 45%;
-                                                    height: 25%;
-                                                }
-
-                                                &.mini{
-                                                    width: 45%;
-                                                    height: 20%;
-                                                }
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                }
-                                            }
-
-                                            #dropArea24-1{
-                                                position: relative;
-                                                width: 60%;
-                                                height: 100%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: #f00;
-                                                }
-
-                                                &.square{
-                                                    width: 57%;
-                                                    height: 40%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
-                                                }
-
-                                                &.mini{
-                                                    width: 52%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
-
-                                            #dropArea24-2{
-                                                position: relative;
-                                                width: 60%;
-                                                height: 100%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: #f00;
-                                                }
-
-                                                &.square{
-                                                    width: 57%;
-                                                    height: 40%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
-                                                }
-
-                                                &.mini{
-                                                    width: 52%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
-
-                                            #dropArea24-3{
-                                                position: relative;
-                                                width: 60%;
-                                                height: 25%;
-                                                font-size: 1rem;
-                                                border: none;
-
-                                                // 枠サイズ変更関連---
-                                                &.active{
-                                                    border-color: #f00;
-                                                }
-
-                                                &.square{
-                                                    width: 57%;
-                                                    height: 40%;
-                                                }
-
-                                                &.rectangle{
-                                                    width: 62%;
-                                                    height: 30%;
-                                                }
-
-                                                &.mini{
-                                                    width: 52%;
-                                                    height: 20%;
-                                                }
-
-                                                // --------------------------
-
-                                                img{
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    object-fit: cover;
-                                                    cursor: pointer;
-                                                }
-                                            }
-
-
-
-
-                                            textarea{
-                                                overflow: hidden;
-                                                text-align: center;
-                                                resize: none;
-                                                max-width: 60%;
-                                                height: 20%;
-                                                font-size: 0.4rem;
-                                                line-height: 1.9;
-                                                background-color: transparent;
-                                                border: none;
-                                                outline: none;
-                                                pointer-events: none;
-                                                cursor: not-allowed;
-
-                                                @include mq('pc-edit'){
-                                                    font-size: 0.3rem;
-                                                    }
-
-                                                @include mq('pc2-edit'){
-                                                    font-size: 0.6rem;
-                                                    }
-
-                                                    @include mq('tab-edit'){
-                                                        font-size: 1.2vw;
-                                                        }
-
-                                                        @include mq('sp-edit'){
-                                                            font-size: 1.7vw;
-                                                            }
-                                            }
-
-                                            #previewTextArea{
-
-                                                &13-1{
-                                                    width: 60% !important;
-                                                    font-size: 1.2rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 1.7rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 3.5vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 5vw;
-                                                            }
-
-
-                                                }
-
-                                                &13-2{
-                                                    width: 60% !important;
-                                                    margin: 1% 0 5%;
-                                                    font-size: 0.45rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.33rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.65rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.3vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 1.9vw;
-                                                            }
-
-
-                                                }
-
-                                                &13-3{
-                                                    min-height: 15%;
-                                                    margin-top: 5%;
-                                                    writing-mode: vertical-rl;
-                                                }
-
-                                                &14, &22{
-                                                    min-height: 20%;
-                                                    margin-bottom: 5%;
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-                                                    writing-mode: vertical-rl;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
-                                                }
-
-                                                &15, &17, &19{
-                                                    writing-mode: vertical-rl;
-                                                    min-height: 70%;
-                                                }
-
-                                                &16, &20{
-                                                    width: 60% !important;
-                                                    margin-bottom: 5%;
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
-                                                }
-
-                                                &18-1{
-                                                    margin: 0;
-                                                    position: absolute;
-                                                    width: 63%;
-                                                    color: #FEF8F6;
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
-                                                }
-
-                                                &18-2{
-                                                    margin: 5% 0 15%;
-                                                    color: #FEF8F6;
-                                                    font-size: 0.6rem;
-                                                    line-height: 1.5;
-                                                    font-weight: bold;
-
-                                                    @include mq('pc-edit'){
-                                                        font-size: 0.45rem;
-                                                        }
-
-                                                    @include mq('pc2-edit'){
-                                                        font-size: 0.9rem;
-                                                        }
-
-                                                        @include mq('tab-edit'){
-                                                            font-size: 1.8vw;
-                                                            }
-    
-                                                        @include mq('sp-edit'){
-                                                            font-size: 2.5vw;
-                                                            }
-                                                }
-
-                                                &21-1, &21-2, &23-1, &23-2 {
-                                                    min-height: 30%;
-                                                    margin-bottom: 5%;
-                                                    writing-mode: vertical-rl;
-                                                }
-
-                                                &24-1, &24-2 {
-                                                    min-height: 100%;
-                                                    writing-mode: vertical-rl;
-                                                }
-
-
-
-
-                                    
-                                            }
-
-
-
-                                        }
-
-
-                    }
-                }
+        width: 80%;
+        min-width: auto;
+      }
+
+      &-wrapper {
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          color: #ffffff;
+          width: auto;
+          height: 100%;
+
+          &_box {
+            max-width: 500px;
+            position: relative;
+            clip-path: inset(20px 21px 26px 21px);
+            @include mq('pc2-edit') {
+              clip-path: inset(31px 31px 35px 30px);
             }
-        }
-    }
-
-    .button-flex{
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 30px;
-
-        @include mq('tab-edit'){
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
+            @include mq('pc-edit') {
+              clip-path: inset(16px 16px 21px 17px);
+            }
+            @include mq('tab-edit') {
+              width: 70%;
+              margin: 50px 0 0;
+              clip-path: inset(5% 7% 6% 7%);
+            }
+            @include mq('sp-edit') {
+              width: 100%;
+              clip-path: inset(5% 7% 6% 7%);
+            }
+            @include mq('sp2-edit') {
+              width: 70%;
+              clip-path: inset(5% 7% 7% 7%);
+            }
+            @include mq('sp3-edit') {
+              // height: 660px;
+              width: 50%;
+              clip-path: inset(5% 7% 8% 7%);
             }
 
+            .input-drop {
+              position: absolute;
+              width: 88%;
+              height: 90%;
+              top: 16px;
+              opacity: 0.8;
+              left: 6%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              .background-textArea18-1 {
+                position: relative;
+                width: 43%;
+                height: 20%;
+                background-image: url(/edit/images/cloud.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-bottom: 5%;
+                margin-right: 22%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+
+              .flex-area24-1 {
+                width: 60%;
+                height: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5%;
+              }
+
+              .flex-area24-2 {
+                width: 60%;
+                height: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5%;
+                margin: 5% 0 5%;
+              }
+
+              #dropArea13 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea14 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea15 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea16 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea17 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea18 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea18 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea19 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea20 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea21 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea22 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea23 {
+                position: relative;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea24-1 {
+                position: relative;
+                width: 60%;
+                height: 100%;
+                font-size: 1rem;
+                border: none;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #f00;
+                }
+
+                &.square {
+                  width: 57%;
+                  height: 40%;
+                }
+
+                &.rectangle {
+                  width: 62%;
+                  height: 30%;
+                }
+
+                &.mini {
+                  width: 52%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              #dropArea24-2 {
+                position: relative;
+                width: 60%;
+                height: 100%;
+                font-size: 1rem;
+                border: none;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #f00;
+                }
+
+                &.square {
+                  width: 57%;
+                  height: 40%;
+                }
+
+                &.rectangle {
+                  width: 62%;
+                  height: 30%;
+                }
+
+                &.mini {
+                  width: 52%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              #dropArea24-3 {
+                position: relative;
+                width: 60%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #f00;
+                }
+
+                &.square {
+                  width: 57%;
+                  height: 40%;
+                }
+
+                &.rectangle {
+                  width: 62%;
+                  height: 30%;
+                }
+
+                &.mini {
+                  width: 52%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              textarea {
+                overflow: hidden;
+                text-align: center;
+                resize: none;
+                max-width: 60%;
+                height: 20%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                pointer-events: none;
+                cursor: not-allowed;
+
+                @include mq('pc-edit') {
+                  font-size: 0.3rem;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.6rem;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.2vw;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 1.7vw;
+                }
+              }
+
+              #previewTextArea {
+                &13-1 {
+                  width: 60% !important;
+                  font-size: 1.2rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 1.7rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 3.5vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 5vw;
+                  }
+                }
+
+                &13-2 {
+                  width: 60% !important;
+                  margin: 1% 0 5%;
+                  font-size: 0.45rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.33rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.65rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.3vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.9vw;
+                  }
+                }
+
+                &13-3 {
+                  min-height: 15%;
+                  margin-top: 5%;
+                  writing-mode: vertical-rl;
+                }
+
+                &14,
+                &22 {
+                  min-height: 20%;
+                  margin-bottom: 5%;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  writing-mode: vertical-rl;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.8vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
+
+                &15,
+                &17,
+                &19 {
+                  writing-mode: vertical-rl;
+                  min-height: 70%;
+                }
+
+                &16,
+                &20 {
+                  width: 60% !important;
+                  margin-bottom: 5%;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.8vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
+
+                &18-1 {
+                  margin: 0;
+                  position: absolute;
+                  width: 63%;
+                  color: #fef8f6;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.8vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
+
+                &18-2 {
+                  margin: 5% 0 15%;
+                  color: #fef8f6;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.8vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
+
+                &21-1,
+                &21-2,
+                &23-1,
+                &23-2 {
+                  min-height: 30%;
+                  margin-bottom: 5%;
+                  writing-mode: vertical-rl;
+                }
+
+                &24-1,
+                &24-2 {
+                  min-height: 100%;
+                  writing-mode: vertical-rl;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
+
+  .button-flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+
+    @include mq('tab-edit') {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
-
-
-
-
-.swiper-pagination{
-}
-
+// .swiper-pagination {
+// }
 
 .swiper-button-prev,
 .swiper-button-next {
   top: 32px;
 }
 
-.swiper-button-prev{
-    left: 36%;
+.swiper-button-prev {
+  left: 36%;
 }
 
 .swiper-button-next {
-    left: 58%;
-  }
+  left: 58%;
+}
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  content: "";
+  content: '';
   background-repeat: no-repeat;
   background-size: contain;
   height: 50px;
   width: 50px;
   margin: auto;
 }
- 
+
 /* 前に戻る画像パス */
 .swiper-button-prev:after {
   background-image: url(../../../edit/images/Group\ 293.png);
@@ -856,49 +838,4 @@
   background-image: url(../../../edit/images/Group\ 294.png);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 // トリミングボタン、削除ボタン関連
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
