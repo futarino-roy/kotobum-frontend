@@ -642,7 +642,7 @@ input:checked + label::after {
 
 /* モーダル内側の指定 */
 .edit-body {
-  background: #D5DADC;
+  background: #d5dadc;
 }
 
 .edit {
@@ -2108,7 +2108,7 @@ input:checked + label::after {
   font-size: 1.2rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #FEF8F6;
+  color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
@@ -2136,7 +2136,7 @@ input:checked + label::after {
   font-size: 0.45rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #FEF8F6;
+  color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
@@ -2166,7 +2166,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #FEF8F6;
+  color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
@@ -2192,7 +2192,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #FEF8F6;
+  color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
@@ -2218,7 +2218,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 63%;
-  color: #FEF8F6;
+  color: #fef8f6;
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
@@ -2245,7 +2245,7 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
   margin: 5% 0 15%;
-  color: #FEF8F6;
+  color: #fef8f6;
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
@@ -2299,7 +2299,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #FEF8F6;
+  color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
@@ -2362,7 +2362,7 @@ input:checked + label::after {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FDFCF6;
+  background-color: #fdfcf6;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 999;
@@ -2405,7 +2405,7 @@ input:checked + label::after {
 }
 
 #customButton {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -2451,7 +2451,7 @@ input:checked + label::after {
 }
 
 .editB-body {
-  background: #D5DADC;
+  background: #d5dadc;
 }
 .editB {
   display: flex;
@@ -2593,73 +2593,217 @@ input:checked + label::after {
   background-color: #e6cd00;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-2 {
-  background-color: #aad24b;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-3 {
-  background-color: #32b973;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-4 {
-  background-color: #23beb9;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-5 {
-  background-color: #6ec8f5;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-6 {
-  background-color: #4b91cd;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-7 {
-  background-color: #645aaa;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-8 {
-  background-color: #b464aa;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-9 {
-  background-color: #eb6ea5;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-10 {
-  background-color: #f06e7d;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-11 {
-  background-color: #f06e46;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-12 {
-  background-color: #f06e46;
-}
-.editB_drawer_container_item_color .color-container_vari .btn-color-13 {
   background-color: #e6c300;
 }
-.editB_drawer_container_item_color .color-container_vari .btn-color-14 {
-  background-color: #82b41e;
+.editB_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #c7de00;
 }
-.editB_drawer_container_item_color .color-container_vari .btn-color-15 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #aa9600;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #8c7d00;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #826e00;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #aad24b;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #82d41e;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #7daa19;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #648c0e;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #466900;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #3c5f00;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #32b973;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-14 {
   background-color: #009141;
 }
+.editB_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #05873c;
+}
 .editB_drawer_container_item_color .color-container_vari .btn-color-16 {
-  background-color: #00918c;
+  background-color: #007332;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-17 {
-  background-color: #00a0dc;
+  background-color: #00551e;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-18 {
-  background-color: #0064aa;
+  background-color: #003714;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-19 {
-  background-color: #32328c;
+  background-color: #23beb9;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-20 {
-  background-color: #87007d;
+  background-color: #00918c;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-21 {
-  background-color: #0064aa;
+  background-color: #008782;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-22 {
-  background-color: #0064aa;
+  background-color: #05736e;
 }
 .editB_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #005a50;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-24 {
+  background-color: #003c37;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-25 {
+  background-color: #6ec8f5;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-26 {
+  background-color: #00a0dc;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-27 {
+  background-color: #008ccd;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-28 {
+  background-color: #0078aa;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-29 {
+  background-color: #005a82;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-30 {
+  background-color: #004664;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-31 {
+  background-color: #4d91cd;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-32 {
   background-color: #0064aa;
 }
-.editB_drawer_container_item_color .color-container_vari .btn-color-23 {
-  background-color: #0064aa;
+.editB_drawer_container_item_color .color-container_vari .btn-color-33 {
+  background-color: #005aa0;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-34 {
+  background-color: #004b87;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-35 {
+  background-color: #003264;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-36 {
+  background-color: #002346;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-37 {
+  background-color: #645aaa;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-38 {
+  background-color: #32328c;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-39 {
+  background-color: #1e1e7d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-40 {
+  background-color: #0f0a64;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-41 {
+  background-color: #05004d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-42 {
+  background-color: #00002d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-43 {
+  background-color: #b464aa;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-44 {
+  background-color: #87007d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-45 {
+  background-color: #7d0073;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-46 {
+  background-color: #69005f;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-47 {
+  background-color: #500046;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-48 {
+  background-color: #32002d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-49 {
+  background-color: #eb6ea5;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-50 {
+  background-color: #d70078;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-51 {
+  background-color: #c8006e;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-52 {
+  background-color: #a5005a;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-53 {
+  background-color: #7d0041;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-54 {
+  background-color: #5f0032;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-55 {
+  background-color: #f06e7d;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-56 {
+  background-color: #d7004b;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-57 {
+  background-color: #c80041;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-58 {
+  background-color: #a50037;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-59 {
+  background-color: #7d0023;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-60 {
+  background-color: #5f0019;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-61 {
+  background-color: #f06e46;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-62 {
+  background-color: #d7000f;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-63 {
+  background-color: #c8000a;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-64 {
+  background-color: #a50000;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-65 {
+  background-color: #7d0000;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-66 {
+  background-color: #500000;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-67 {
+  background-color: #ffb937;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-68 {
+  background-color: #e18c00;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-69 {
+  background-color: #d28200;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-70 {
+  background-color: #aa6900;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-71 {
+  background-color: #825000;
+}
+.editB_drawer_container_item_color .color-container_vari .btn-color-72 {
+  background-color: #643c00;
 }
 .editB_drawer_container_item {
   display: none;
@@ -4032,7 +4176,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 63%;
-  color: #FEF8F6;
+  color: #fef8f6;
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
@@ -4059,7 +4203,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18-2 {
   margin: 5% 0 15%;
-  color: #FEF8F6;
+  color: #fef8f6;
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
@@ -4137,7 +4281,7 @@ input:checked + label::after {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FDFCF6;
+  background-color: #fdfcf6;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 999;
@@ -4180,7 +4324,7 @@ input:checked + label::after {
 }
 
 #customButton {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
