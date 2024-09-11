@@ -785,73 +785,217 @@ input:checked + label::after {
   background-color: #e6cd00;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-2 {
-  background-color: #aad24b;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-3 {
-  background-color: #32b973;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-4 {
-  background-color: #23beb9;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-5 {
-  background-color: #6ec8f5;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-6 {
-  background-color: #4b91cd;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-7 {
-  background-color: #645aaa;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-8 {
-  background-color: #b464aa;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-9 {
-  background-color: #eb6ea5;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-10 {
-  background-color: #f06e7d;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-11 {
-  background-color: #f06e46;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-12 {
-  background-color: #f06e46;
-}
-.edit_drawer_container_item_color .color-container_vari .btn-color-13 {
   background-color: #e6c300;
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-14 {
-  background-color: #82b41e;
+.edit_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #c7de00;
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-15 {
+.edit_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #aa9600;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #8c7d00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #826e00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #aad24b;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #82d41e;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #7daa19;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #648c0e;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #466900;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #3c5f00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #32b973;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-14 {
   background-color: #009141;
 }
+.edit_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #05873c;
+}
 .edit_drawer_container_item_color .color-container_vari .btn-color-16 {
-  background-color: #00918c;
+  background-color: #007332;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-17 {
-  background-color: #00a0dc;
+  background-color: #00551e;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-18 {
-  background-color: #0064aa;
+  background-color: #003714;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-19 {
-  background-color: #32328c;
+  background-color: #23beb9;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-20 {
-  background-color: #87007d;
+  background-color: #00918c;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-21 {
-  background-color: #0064aa;
+  background-color: #008782;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-22 {
-  background-color: #0064aa;
+  background-color: #05736e;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #005a50;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-24 {
+  background-color: #003c37;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-25 {
+  background-color: #6ec8f5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-26 {
+  background-color: #00a0dc;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-27 {
+  background-color: #008ccd;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-28 {
+  background-color: #0078aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-29 {
+  background-color: #005a82;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-30 {
+  background-color: #004664;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-31 {
+  background-color: #4d91cd;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-32 {
   background-color: #0064aa;
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
-  background-color: #0064aa;
+.edit_drawer_container_item_color .color-container_vari .btn-color-33 {
+  background-color: #005aa0;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-34 {
+  background-color: #004b87;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-35 {
+  background-color: #003264;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-36 {
+  background-color: #002346;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-37 {
+  background-color: #645aaa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-38 {
+  background-color: #32328c;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-39 {
+  background-color: #1e1e7d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-40 {
+  background-color: #0f0a64;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-41 {
+  background-color: #05004d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-42 {
+  background-color: #00002d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-43 {
+  background-color: #b464aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-44 {
+  background-color: #87007d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-45 {
+  background-color: #7d0073;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-46 {
+  background-color: #69005f;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-47 {
+  background-color: #500046;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-48 {
+  background-color: #32002d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-49 {
+  background-color: #eb6ea5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-50 {
+  background-color: #d70078;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-51 {
+  background-color: #c8006e;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-52 {
+  background-color: #a5005a;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-53 {
+  background-color: #7d0041;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-54 {
+  background-color: #5f0032;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-55 {
+  background-color: #f06e7d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-56 {
+  background-color: #d7004b;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-57 {
+  background-color: #c80041;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-58 {
+  background-color: #a50037;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-59 {
+  background-color: #7d0023;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-60 {
+  background-color: #5f0019;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-61 {
+  background-color: #f06e46;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-62 {
+  background-color: #d7000f;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-63 {
+  background-color: #c8000a;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-64 {
+  background-color: #a50000;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-65 {
+  background-color: #7d0000;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-66 {
+  background-color: #500000;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-67 {
+  background-color: #ffb937;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-68 {
+  background-color: #e18c00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-69 {
+  background-color: #d28200;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-70 {
+  background-color: #aa6900;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-71 {
+  background-color: #825000;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-72 {
+  background-color: #643c00;
 }
 .edit_drawer_container_item {
   display: none;
