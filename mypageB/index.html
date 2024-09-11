@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B面マイページ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/assets/style/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../mypage/images/kotobumm.png" alt="" />
+      <p>様</p>
+    </header>
+
+    <div class="mypage">
+      <div class="mypage_title">
+        <img src="/mypage/images/mypage.png" alt="" />
+        <h2>B面マイページ</h2>
+      </div>
+
+      <div class="mypage_flex">
+        <div class="mypage_flex_left">
+          <div class="mypage_flex_left_title">
+            <h2>表紙</h2>
+            <div class="mypage_flex_left_title_box">
+              <img src="/mypage/images/image 115.png" alt="" />
+            </div>
+          </div>
+          <div class="mypage_flex_left_menu">
+            <a href="/coverB/index.html"
+              ><button class="btn btn-small_wh">編集</button></a
+            >
+            <div class="mypage_flex_left_menu_icon">
+              <img src="/mypage/images/down.png" alt="" />
+            </div>
+            <a href="/coverB-preview/index.html"
+              ><button class="btn btn-small_gr">プレビュー</button></a
+            >
+            <div class="mypage_flex_left_menu_icon">
+              <img src="/mypage/images/down.png" alt="" />
+            </div>
+            <button
+              class="btn btn-small_bl js-modal-open"
+              data-target="#modal1"
+            >
+              校了
+            </button>
+          </div>
+        </div>
+        <div class="mypage_flex_right">
+          <div class="mypage_flex_right_title">
+            <h2>中身</h2>
+            <div class="mypage_flex_right_title_box" id="photobook-preview">
+              <img src="/mypage/images/image 117.png" alt="" />
+            </div>
+          </div>
+          <div class="mypage_flex_right_menu">
+            <a href="/editB/index.html"
+              ><button class="btn btn-small_wh">編集</button></a
+            >
+            <div class="mypage_flex_right_menu_icon">
+              <img src="/mypage/images/down.png" alt="" />
+            </div>
+            <a href="/previewB/index.html"
+              ><button class="btn btn-small_gr">プレビュー</button></a
+            >
+            <div class="mypage_flex_right_menu_icon">
+              <img src="/mypage/images/down.png" alt="" />
+            </div>
+            <button
+              class="btn btn-small_bl js-modal-open2"
+              data-target="#modal2"
+            >
+              校了
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- モーダル本体 L -->
+    <div class="modal js-modal1" id="modal1">
+      <div class="modal-container">
+        <!-- モーダル内部のコンテンツ -->
+        <div class="modal-content">
+          <p class="modal-content__check">校了しますか？</p>
+          <p class="modal-content__text">
+            校了すると追加の原稿修正は<br />できなくなります
+          </p>
+          <button
+            class="btn btn-middle_bl modal-content__button modal-content__button-pc"
+          >
+            校了する
+          </button>
+          <button
+            class="btn btn-small_bl modal-content__button modal-content__button-sp"
+          >
+            校了
+          </button>
+          <button
+            class="btn btn-middle_wh modal-content__button modal-content__button-pc"
+          >
+            <a href="/coverB/index.html"> 編集画面へ </a>
+          </button>
+          <button
+            class="btn btn-small_wh modal-content__button modal-content__button-sp"
+          >
+            <a href="/coverB/index.html"> 編集画面へ </a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- モーダル本体 R -->
+    <div class="modal js-modal2" id="modal2">
+      <div class="modal-container">
+        <!-- モーダル内部のコンテンツ -->
+        <div class="modal-content">
+          <p class="modal-content__check">校了しますか？</p>
+          <p class="modal-content__text">
+            校了すると追加の原稿修正は<br />できなくなります
+          </p>
+          <button
+            class="btn btn-middle_bl modal-content__button modal-content__button-pc"
+          >
+            校了する
+          </button>
+          <button
+            class="btn btn-small_bl modal-content__button modal-content__button-sp"
+          >
+            校了
+          </button>
+          <button
+            class="btn btn-middle_wh modal-content__butto modal-content__button-pc"
+          >
+            <a href="/editB/index.html"> 編集画面へ </a>
+          </button>
+          <button
+            class="btn btn-small_wh modal-content__button modal-content__button-sp"
+          >
+            <a href="/editB/index.html"> 編集画面へ </a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../mypageB/js/script.js"></script>
+  </body>
+</html>

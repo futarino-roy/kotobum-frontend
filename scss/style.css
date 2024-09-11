@@ -1,0 +1,4816 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button, input, select, textarea {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input {
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  background-color: #FDFCF6;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  width: 326px;
+  height: 53px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 0 0 10px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-A {
+  background-image: url(../../../signup/images/Button_PC.png);
+}
+@media screen and (max-width: 900px) {
+  .btn-A {
+    background-image: url(../../../signup/images/Button_sp.png);
+    width: 310px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .btn-A {
+    background-image: url(../../../signup/images/Button_sp.png);
+    width: 298px;
+  }
+}
+.btn-B {
+  background-image: url(../../../mypage/images/Button_wh.png);
+  color: #000000;
+  width: 156px;
+  height: 46px;
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 480px) {
+  .btn-B {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+.btn-C {
+  background-image: url(../../../mypage/images/Button_mi.png);
+  color: #000000;
+  width: 156px;
+  height: 46px;
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 480px) {
+  .btn-C {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+.btn-D {
+  background-image: url(../../../mypage/images/Button_bl.png);
+  width: 156px;
+  height: 46px;
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 480px) {
+  .btn-D {
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+.btn-E {
+  background-image: url(../../../images/button-edit.png);
+  width: 152px;
+  height: 38px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .btn-E {
+    width: 120px;
+    height: 31px;
+    font-size: 1rem;
+  }
+}
+.btn-F {
+  background-image: url(../../../images/Rectangle\ 4664.png);
+  width: 80%;
+  height: 60px;
+  color: #252525;
+  font-size: 1.3rem;
+  margin-right: 25px;
+}
+@media screen and (max-width: 1200px) {
+  .btn-F {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .btn-F {
+    max-width: 350px;
+    height: 73px;
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .btn-F {
+    width: 230px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .btn-F {
+    width: 150px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+}
+.btn-G {
+  background-image: url(../../../images/modal1.png);
+  width: 130px;
+  height: 32px;
+  font-size: 1.125rem;
+  padding: 0;
+  color: #000000;
+  background-size: contain;
+}
+@media screen and (max-width: 900px) {
+  .btn-G {
+    background-image: url(../../../images/modal1\ sp.png);
+    width: 234px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+.btn-H {
+  background-image: url(../../../images/modal2.png);
+  width: 130px;
+  height: 32px;
+  font-size: 1.125rem;
+  padding: 0;
+  color: #ffffff;
+  background-size: contain;
+}
+@media screen and (max-width: 900px) {
+  .btn-H {
+    background-image: url(../../../images/modal2\ sp.png);
+    width: 234px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+.btn-I {
+  background-image: url(../../../images/button-edit.png);
+  width: 152px;
+  height: 38px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .btn-I {
+    width: 120px;
+    height: 31px;
+    font-size: 1rem;
+  }
+}
+.btn-J {
+  background-image: url(../../../images/button-edit.png);
+  width: 152px;
+  height: 38px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .btn-J {
+    width: 120px;
+    height: 31px;
+    font-size: 1rem;
+  }
+}
+.btn-K {
+  background-image: url(../../../images/button-edit.png);
+  width: 152px;
+  height: 38px;
+  font-size: 1.125rem;
+  padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .btn-K {
+    width: 120px;
+    height: 31px;
+    font-size: 1rem;
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 81px;
+  background: #CCC;
+  padding: 22px 68.74px 21px 59.51px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header img {
+  width: 76.95px;
+  height: 38px;
+}
+@media screen and (max-width: 500px) {
+  header {
+    padding: 11px 25px;
+  }
+  header img {
+    width: 63px;
+    height: 32px;
+  }
+}
+
+.edit-header {
+  position: fixed;
+  width: 100%;
+  height: 81px;
+  background: #FDFCF6;
+  padding: 22px 41px 22px 41px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 999;
+}
+
+.preview-header {
+  position: fixed;
+  width: 100%;
+  height: 81px;
+  background: #FDFCF6;
+  padding: 22px 41px 22px 41px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 999;
+}
+
+.signup {
+  max-width: 326px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .signup {
+    width: 310px;
+    margin-top: 191px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .signup {
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .signup {
+    width: 298px;
+    margin-top: 50px;
+  }
+}
+.signup .form_title {
+  margin-bottom: 54px;
+}
+.signup .form_box {
+  text-align: left;
+  margin-bottom: 44px;
+  position: relative;
+}
+.signup .form_box::before {
+  content: "";
+  width: 27px;
+  height: 26px;
+  background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
+  position: absolute;
+  top: 40px;
+  left: 284px;
+}
+@media screen and (max-width: 900px) {
+  .signup .form_box::before {
+    left: 268px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .signup .form_box::before {
+    left: 253px;
+  }
+}
+.signup .form_box .input-container {
+  display: flex;
+}
+.signup .form_box .input-container::-moz-placeholder {
+  opacity: 0.5;
+}
+.signup .form_box .input-container::placeholder {
+  opacity: 0.5;
+}
+
+.login {
+  max-width: 326px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+.login_img {
+  width: 52px;
+  height: 53px;
+}
+@media screen and (max-width: 900px) {
+  .login {
+    width: 310px;
+    margin-top: 191px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .login {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login {
+    width: 298px;
+    margin-top: 70px;
+  }
+}
+.login .form_title {
+  margin-bottom: 54px;
+}
+.login .form_box {
+  text-align: left;
+  margin-bottom: 44px;
+  position: relative;
+}
+.login .form_box::before {
+  content: "";
+  width: 27px;
+  height: 26px;
+  background: url(../../../signup/images/Pen.png) no-repeat center center/auto 100%;
+  position: absolute;
+  top: 40px;
+  left: 284px;
+}
+@media screen and (max-width: 900px) {
+  .login .form_box::before {
+    left: 268px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login .form_box::before {
+    left: 253px;
+  }
+}
+.login .form_box input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.4px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.login .form_box input::-moz-placeholder {
+  opacity: 0.5;
+}
+.login .form_box input::placeholder {
+  opacity: 0.5;
+}
+
+.mypage {
+  max-width: 600px;
+  text-align: center;
+  margin: 143px auto 0;
+  padding: 0 15px;
+}
+@media screen and (min-width: 1300px) {
+  .mypage {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .mypage {
+    margin-top: 153px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage {
+    margin-top: 155px;
+  }
+}
+.mypage_title img {
+  width: 62px;
+  height: 44px;
+}
+.mypage_title h2 {
+  font-size: 1.375rem;
+  margin: 18px 0 50px;
+}
+.mypage_flex {
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex {
+    display: inline-block;
+  }
+}
+.mypage_flex_left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+}
+.mypage_flex_left_title h2 {
+  margin-bottom: 9px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_left_title h2 {
+    margin-bottom: 15px;
+  }
+}
+.mypage_flex_left_title_box img {
+  width: 240px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_left_title_box img {
+    width: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_left_title_box img {
+    width: 200px;
+  }
+}
+.mypage_flex_left_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_left_menu {
+    margin-top: 47px;
+  }
+}
+.mypage_flex_left_menu_icon {
+  margin-bottom: 5px;
+}
+.mypage_flex_left_menu_icon img {
+  width: 27px;
+}
+.mypage_flex_right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_right {
+    margin-top: 36px;
+  }
+}
+.mypage_flex_right_title h2 {
+  margin-bottom: 9px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_right_title h2 {
+    margin-bottom: 15px;
+  }
+}
+.mypage_flex_right_title_box img {
+  width: 240px;
+}
+@media screen and (max-width: 900px) {
+  .mypage_flex_right_title_box img {
+    width: 220px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_right_title_box img {
+    width: 200px;
+  }
+}
+.mypage_flex_right_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+@media screen and (max-width: 480px) {
+  .mypage_flex_right_menu {
+    margin-top: 47px;
+  }
+}
+.mypage_flex_right_menu_icon {
+  margin-bottom: 5px;
+}
+.mypage_flex_right_menu_icon img {
+  width: 27px;
+}
+
+.edit-body {
+  background: #D5DADC;
+  height: auto;
+}
+.edit_drawer {
+  width: 29%;
+  background-color: #535353;
+  color: white;
+  position: fixed;
+  top: 81px;
+  left: -50%;
+  height: 100%;
+  border-radius: 20px;
+  transition: left 0.3s ease;
+  margin-left: 55px;
+  z-index: 2;
+}
+.edit_drawer.open {
+  left: 0;
+}
+@media screen and (max-width: 900px) {
+  .edit_drawer {
+    width: 100%;
+    left: 0;
+    top: 60%; /* フッターの上に配置 */
+    height: 40%;
+    border-radius: 0;
+    position: fixed;
+    transition: transform 0.3s ease;
+    transform: translateY(100%); /* ドロワーの初期位置 */
+    margin: 0;
+  }
+  .edit_drawer.open {
+    transform: translateY(0); /* ドロワーを表示する */
+  }
+}
+.edit_drawer .close-btn {
+  position: absolute;
+  top: 21px;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.edit_drawer .close-btn img {
+  width: 45%;
+}
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_upload {
+  text-align: center;
+  height: 100%;
+  margin: 28px 17px 0 35px;
+}
+.edit_drawer_container_item_upload #uploadZone {
+  text-align: center;
+}
+.edit_drawer_container_item_upload #uploadZone_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.edit_drawer_container_item_upload .imageList-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .edit_drawer_container_item_upload .imageList-container {
+    height: calc(100vh - 500px);
+  }
+}
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px auto;
+  gap: 14px;
+}
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField img {
+  width: calc(50% - 10px);
+  cursor: grab;
+}
+.edit_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
+  border: 3px solid blue;
+}
+.edit_drawer_container_item.active {
+  display: block;
+}
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_color {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.edit_drawer_container_item_color h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.edit_drawer_container_item_color .color-container {
+  height: 100vh;
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .edit_drawer_container_item_color .color-container {
+    height: calc(100vh - 500px);
+  }
+}
+.edit_drawer_container_item_color .color-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color {
+  width: 28%;
+  height: 37px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  color: transparent;
+  cursor: pointer;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-1 {
+  background-color: #e6cd00;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-2 {
+  background-color: #aad24b;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-3 {
+  background-color: #32b973;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-4 {
+  background-color: #23beb9;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-5 {
+  background-color: #6ec8f5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-6 {
+  background-color: #4b91cd;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-7 {
+  background-color: #645aaa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-8 {
+  background-color: #b464aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-9 {
+  background-color: #eb6ea5;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-10 {
+  background-color: #f06e7d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-11 {
+  background-color: #f06e46;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-12 {
+  background-color: #f06e46;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-13 {
+  background-color: #e6c300;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-14 {
+  background-color: #82b41e;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-15 {
+  background-color: #009141;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-16 {
+  background-color: #00918c;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-17 {
+  background-color: #00a0dc;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-18 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-19 {
+  background-color: #32328c;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-20 {
+  background-color: #87007d;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-21 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-22 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+  background-color: #0064aa;
+}
+.edit_drawer_container_item {
+  display: none;
+}
+.edit_drawer_container_item_frame {
+  text-align: center;
+  height: 400px;
+  margin: 28px 40px 0 35px;
+}
+.edit_drawer_container_item_frame h2 {
+  font-size: 1.25rem;
+  text-align: left;
+}
+.edit_drawer_container_item_frame .frame-container {
+  overflow: auto;
+  height: calc(100vh - 200px);
+}
+.edit_drawer_container_item_frame .frame-container_vari {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 23px auto;
+  padding: 10px;
+}
+.edit_drawer_container_item_frame .frame-container_vari .resizeButton {
+  width: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.edit_drawer_container_item_frame .frame-container_vari .resizeButton img {
+  width: 100%;
+  height: auto;
+}
+.edit .sidebar {
+  width: 75px;
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 81px;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  .edit .sidebar {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: 45px;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .sidebar.open {
+    transform: translateY(0);
+  }
+}
+.edit .sideBtn {
+  position: fixed;
+  top: 81px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+@media screen and (max-width: 900px) {
+  .edit .sideBtn {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 45px;
+    z-index: 3;
+  }
+}
+.edit .sideBtn .open-btn {
+  font-size: 16px;
+  background: #252525;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  width: 75px;
+  height: 75px;
+}
+@media screen and (max-width: 900px) {
+  .edit .sideBtn .open-btn {
+    flex: 1; /* ボタンを均等に広げる */
+    font-size: 16px;
+    background: #252525;
+    border: none;
+    border-radius: 20px 20px 0 0; /* ボタンの角を丸めない */
+    color: white;
+    cursor: pointer;
+    width: auto;
+    height: 100%; /* 高さを100%に設定 */
+  }
+}
+.edit .sideBtn .open-btn.active {
+  background: #535353;
+  border: 2px solid #252525;
+}
+.edit .sideBtn .open-btn img {
+  width: 35px;
+  height: 36px;
+  margin-top: 5px;
+}
+@media screen and (max-width: 900px) {
+  .edit .sideBtn .open-btn img {
+    width: 24px;
+    height: 25px;
+    margin-top: 5px;
+  }
+}
+.edit .content {
+  margin-top: 100px;
+  margin-left: 77px; /* 初期マージン */
+  transition: margin-left 0.3s ease;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content {
+    margin: 140px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .edit .content {
+    margin: 200px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content {
+    margin: 85px 0 0 0;
+    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+  }
+}
+.edit .content.open {
+  margin-left: 32.5%;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content.open {
+    margin-left: 33.5%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .edit .content.open {
+    margin-left: 31.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content.open {
+    margin: 90px 22% 0;
+  }
+}
+.edit .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box {
+  max-width: 500px;
+  position: relative;
+  margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .edit .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  width: 88%;
+  height: 90%;
+  top: 16px;
+  opacity: 0.8;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
+  position: relative;
+  width: 43%;
+  height: 20%;
+  background-image: url(/edit/images/cloud.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 5%;
+  margin-right: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin: 5% 0 5%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-3 {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+  margin-top: 0%;
+  position: relative;
+  width: 60%;
+  height: 25%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn:hover {
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .crop-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 .delete-btn.show {
+  display: flex;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.active {
+  border-color: #f00;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.square {
+  width: 57%;
+  height: 40%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.mini {
+  width: 52%;
+  height: 20%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60%;
+  height: 20%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+    font-size: 5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  margin: 0;
+  margin: 1% 0 5%;
+  font-size: 0.45rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 0.33rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 0.65rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+    font-size: 1.9vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  margin: 0;
+  margin-top: 5%;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  margin: 0;
+  position: absolute;
+  width: 63%;
+  color: #FEF8F6;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  margin: 5% 0 15%;
+  color: #FEF8F6;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+    font-size: 2.5vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+  margin: 0;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  height: auto;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+    font-size: 2.5vw;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+.croppie-modal {
+  display: none;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FDFCF6;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.croppie-modal #croppie-container {
+  margin-bottom: 10px;
+}
+.croppie-modal #croppie-container .cr-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px; /* バーの高さを設定 */
+  background-color: rgba(83, 83, 83, 0.3490196078); /* バーの色を黒に設定 */
+  border-radius: 5px; /* バーの角を丸くする */
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+}
+.croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px; /* アイコンの幅 */
+  height: 35px; /* アイコンの高さ */
+  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
+  margin-top: -15px;
+  cursor: pointer;
+  border: none; /* 余分なボーダーを消す */
+}
+.croppie-modal .btn-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .croppie-modal .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+#customButton {
+  background-color: #4CAF50; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボタンの枠線を削除 */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  text-align: center; /* 文字を中央に配置 */
+  text-decoration: none; /* テキストの下線を削除 */
+  display: inline-block; /* インラインブロックとして表示 */
+  font-size: 16px; /* フォントサイズ */
+  margin: 4px 2px; /* 外側の余白 */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  border-radius: 4px; /* ボタンの角を丸める */
+}
+
+#customButton:hover {
+  background-color: #45a049; /* ホバー時の背景色 */
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.crop-button {
+  position: absolute;
+  top: 5px;
+  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#cover-dropArea1 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+#cover-dropArea1 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#cover-dropArea1 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+#cover-dropArea1 .crop-btn.show {
+  display: flex;
+}
+#cover-dropArea1 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#cover-dropArea1 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+#cover-dropArea1 .delete-btn.show {
+  display: flex;
+}
+#cover-dropArea1.active {
+  border-color: #f00;
+}
+#cover-dropArea1.square {
+  width: 57%;
+  height: 40%;
+}
+#cover-dropArea1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+#cover-dropArea1.mini {
+  width: 52%;
+  height: 20%;
+}
+#cover-dropArea1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+#cover-dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+#cover-dropArea2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#cover-dropArea2 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+#cover-dropArea2 .crop-btn.show {
+  display: flex;
+}
+#cover-dropArea2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#cover-dropArea2 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+#cover-dropArea2 .delete-btn.show {
+  display: flex;
+}
+#cover-dropArea2.active {
+  border-color: #f00;
+}
+#cover-dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+#cover-dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+#cover-dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+#cover-dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+#coverB-dropArea1 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+#coverB-dropArea1 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#coverB-dropArea1 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+#coverB-dropArea1 .crop-btn.show {
+  display: flex;
+}
+#coverB-dropArea1 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#coverB-dropArea1 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+#coverB-dropArea1 .delete-btn.show {
+  display: flex;
+}
+#coverB-dropArea1.active {
+  border-color: #f00;
+}
+#coverB-dropArea1.square {
+  width: 57%;
+  height: 40%;
+}
+#coverB-dropArea1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+#coverB-dropArea1.mini {
+  width: 52%;
+  height: 20%;
+}
+#coverB-dropArea1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+#coverB-dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+#coverB-dropArea2 .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 45px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  background: rgba(0, 255, 0, 0.7); /* トリミングボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#coverB-dropArea2 .crop-btn:hover {
+  background: rgb(0, 255, 0);
+  opacity: 1;
+}
+#coverB-dropArea2 .crop-btn.show {
+  display: flex;
+}
+#coverB-dropArea2 .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+}
+#coverB-dropArea2 .delete-btn:hover {
+  background: rgb(255, 0, 0);
+  opacity: 1;
+}
+#coverB-dropArea2 .delete-btn.show {
+  display: flex;
+}
+#coverB-dropArea2.active {
+  border-color: #f00;
+}
+#coverB-dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+#coverB-dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+#coverB-dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+#coverB-dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.preview-body {
+  background: #D5DADC;
+  height: auto;
+}
+.preview .content {
+  margin-top: 100px;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content {
+    margin: 140px 0 0 0;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .preview .content {
+    margin: 200px 0 0 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content {
+    margin: 85px 0 0 0;
+  }
+}
+.preview .content .swiper {
+  width: 600px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box {
+  max-width: 500px;
+  position: relative;
+  margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  width: 88%;
+  height: 90%;
+  top: 16px;
+  opacity: 0.8;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
+  position: relative;
+  width: 43%;
+  height: 20%;
+  background-image: url(/edit/images/cloud.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 5%;
+  margin-right: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: none;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.square {
+  width: 57%;
+  height: 40%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.mini {
+  width: 52%;
+  height: 20%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60%;
+  height: auto;
+  margin: 5% 0 5%;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+    font-size: 1.7vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+    font-size: 5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+  margin: 0;
+  margin: 1% 0 5%;
+  font-size: 0.45rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 0.33rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 0.65rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+    font-size: 1.9vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-3 {
+  margin: 0;
+  margin-top: 5%;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+  margin: 0;
+  position: absolute;
+  width: 63%;
+  color: #FEF8F6;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+  margin: 5% 0 15%;
+  color: #FEF8F6;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #FEF8F6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 2.5vw;
+  }
+}
+.preview .button-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px;
+}
+@media screen and (max-width: 900px) {
+  .preview .button-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}
+
+.cover-preview-body {
+  background: #D5DADC;
+  height: auto;
+}
+.cover-preview .content {
+  margin-top: 100px;
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content {
+    margin: 140px 0 0 0;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .cover-preview .content {
+    margin: 180px 0 0 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content {
+    margin: 150px 0 0 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cover-preview .content {
+    margin: 120px 0 0 0;
+  }
+}
+.cover-preview .content .swiper {
+  width: 400px;
+  height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper {
+    display: block;
+    width: 80%;
+    min-width: auto;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  height: 100%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box {
+  max-width: 500px;
+  position: relative;
+  margin: 50px 0 0;
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
+  position: absolute;
+  width: 88%;
+  height: 90%;
+  top: 16px;
+  opacity: 0.8;
+  left: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
+  width: 57%;
+  height: 40%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.mini {
+  width: 52%;
+  height: 20%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
+  width: 57%;
+  height: 40%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.rectangle {
+  width: 62%;
+  height: 30%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.mini {
+  width: 52%;
+  height: 20%;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  width: 60%;
+  height: auto;
+  margin: 10% 0 10%;
+  outline: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  font-size: 0.6rem;
+}
+.cover-preview .button-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .button-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32px;
+}
+
+.swiper-button-prev {
+  left: 36%;
+}
+
+.swiper-button-next {
+  left: 58%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+/* 前に戻る画像パス */
+.swiper-button-prev:after {
+  background-image: url(../../../edit/images/Group\ 293.png);
+}
+
+/* 次に進む画像パス */
+.swiper-button-next:after {
+  background-image: url(../../../edit/images/Group\ 294.png);
+}/*# sourceMappingURL=style.css.map */
