@@ -10,6 +10,12 @@
   font-size: 1rem;
   cursor: pointer;
 
+  transition: transform 0.1s;
+
+  &:active{
+    transform: translateY(4px);
+  }
+
   &-large {
     background-image: url(../../../images/Button_pc_large_bl.png);
 
@@ -54,14 +60,22 @@
         background-image: url(../../../images/Button_sp_small_bl.png);
       }
     }
+
     &_bl-preview {
+      background-image: url(../../../images/Button_pc_small_bl.png);
+      width: 14%;
+      color: #ffffff;
+      font-size: 2vw;
+      padding: 0 0 4%;
+      height: 100%;
+
       @include mq("tab") {
         background-image: url(../../../images/Button_sp_small_bl.png);
         width: 30%;
         height: 100%;
-        color: #ffffff;
-        font-size: 3vw;
-        padding: 2% 0 7%;
+        font-size: 4vw;
+        padding: 0 0 9%;
+
       }
     }
 
@@ -85,8 +99,8 @@
       @include mq("tab") {
         background-image: url(../../../images/Button_sp_middle_wh.png);
         width: 55%;
-        font-size: 2.5vw;
-        padding: 1% 0 7%;
+        font-size: 4vw;
+        padding: 2% 0 6%;
       }
     }
 
