@@ -471,8 +471,7 @@ function openCroppieModal(dropArea) {
 
 
 
-
-//　画像のドラッグ＆ドロップ indexedDBに保存
+// 画像のドラッグ＆ドロップ indexedDBに保存
 function handleDragOver(event) {
     event.preventDefault();
     this.style.backgroundColor = "#d0f0c0"; // ドラッグ中の背景色変更
@@ -597,12 +596,14 @@ function handleDrop(event) {
 }
 
 // タッチエンド時の処理
-function handleTouchDrop(event) {
+function handleTouchEnd(event) {
     event.preventDefault();
     const touch = event.changedTouches[0];
     const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
 
-    if (dropArea && dropArea.classList.contains("empty")) {
+    if (!dropArea.classList.contains("empty") && !dropArea.classList.contains("draggable-image")) {
+        hideButtons();
+    } else if (dropArea && dropArea.classList.contains("empty")) {
         const files = event.dataTransfer.files;
         if (files.length > 0) {
             let file = files[0];
@@ -611,6 +612,10 @@ function handleTouchDrop(event) {
                 dropArea.innerHTML = ""; // 既存の内容をクリア
                 let img = new Image();
                 img.src = e.target.result; // 画像データURLを設定
+                img.classList.add("draggable-image"); // 画像にクラスを追加
+                img.onclick = function () {
+                    showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+                };
                 dropArea.appendChild(img);
                 addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
 
@@ -716,16 +721,10 @@ function handleElementClick(event) {
     if (event.target.classList.contains('draggable-image')) {
         // 画像がクリックされた場合、ボタンを表示
         showButtons(event.target.parentNode);
-        return;
+    } else {
+        // その他のクリック時の処理
+        hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
     }
-
-    if (event.target.classList.contains('delete-btn') || event.target.classList.contains('crop-btn')) {
-        // 削除ボタンやトリミングボタンがクリックされた場合の処理
-        return;
-    }
-
-    // その他のクリック時の処理
-    hideButtons(); // 画像以外をクリックした場合にボタンを非表示にする
 }
 
 // ドキュメントが読み込まれた後の処理
@@ -739,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dropArea.addEventListener("touchstart", function (event) {
             event.preventDefault(); // タッチスタート時の処理（デフォルトの動作を防ぐ）
         }, { passive: false });
-        dropArea.addEventListener("touchend", handleTouchDrop, { passive: false }); // タッチエンド時の処理
+        dropArea.addEventListener("touchend", handleTouchEnd, { passive: false }); // タッチエンド時の処理
         dropArea.addEventListener("click", handleElementClick); // クリック時の処理
     });
 
