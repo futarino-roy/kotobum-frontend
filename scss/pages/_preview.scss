@@ -1,15 +1,15 @@
-.preview-body {
+.cover-preview-body {
   background: #d5dadc;
 }
 
-.preview {
+.cover-preview {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh;
 
-  @include mq('tab-edit') {
+  @include mq("tab-edit") {
     display: block;
   }
 
@@ -18,17 +18,15 @@
       width: 600px;
       height: 100%;
 
-      // min-width: 600px;
-
-      @include mq('pc2-edit') {
+      @include mq("pc2-edit") {
         width: 900px;
       }
 
-      @include mq('pc-edit') {
+      @include mq("pc-edit") {
         width: 450px;
       }
 
-      @include mq('tab-edit') {
+      @include mq("tab-edit") {
         display: block;
         width: 80%;
         min-width: auto;
@@ -39,71 +37,54 @@
           display: flex;
           justify-content: center;
           text-align: center;
-
           color: #ffffff;
           width: auto;
           height: 100%;
-          // background-color: #f7f7f7;
-          // display: flex;
-          // gap: 5px;
-          // justify-content: center;
-          // align-items: center;
 
           &_box {
+            width: 50%;
             max-width: 500px;
             position: relative;
-            clip-path: inset(20px 21px 26px 21px);
-            @include mq('pc2-edit') {
-              clip-path: inset(31px 31px 35px 30px);
-            }
-            @include mq('pc-edit') {
-              clip-path: inset(16px 16px 21px 17px);
-            }
-            @include mq('tab-edit') {
+
+            @include mq("tab-edit") {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(5% 7% 6% 7%);
             }
-            @include mq('sp-edit') {
+
+            @include mq("sp-edit") {
               width: 100%;
-              clip-path: inset(5% 7% 6% 7%);
             }
-            @include mq('sp2-edit') {
-              width: 70%;
-              clip-path: inset(5% 7% 7% 7%);
-            }
-            @include mq('sp3-edit') {
-              // height: 660px;
+
+            @include mq("sp2-edit") {
               width: 50%;
-              clip-path: inset(5% 7% 8% 7%);
+            }
+
+            @include mq("sp3-edit") {
+              width: 50%;
             }
 
             .input-drop {
               position: absolute;
-              width: 88%;
-              // background: aliceblue;
-              height: 90%;
-              top: 16px;
+              left: 5%;
+              top: 8%;
+              width: 82%;
+              height: 84%;
               opacity: 0.8;
-              left: 6%;
               display: flex;
               flex-direction: column;
               align-items: center;
-              justify-content: center;
-
-              .background-textArea6-1 {
-                position: relative;
-                width: 43%;
-                height: 20%;
-                background-image: url(/edit/images/cloud.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                margin-bottom: 5%;
-                margin-right: 22%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              }
+              justify-content: end;
+              // position: absolute;
+              // width: 80%;
+              // // background: aliceblue;
+              // height: 90%;
+              // top: 16px;
+              // opacity: 0.8;
+              // left: 6%;
+              // display: flex;
+              // flex-direction: column;
+              // align-items: center;
+              // justify-content: center;
 
               .flex-area12-2 {
                 width: 60%;
@@ -124,12 +105,67 @@
                 gap: 5%;
               }
 
-              #dropArea1 {
-                position: relative;
-                width: 45%;
-                height: 25%;
+              #dropAreaA {
+                position: absolute;
+                top: 40%;
+                left: 6%;
+                width: 87%;
+                height: 55%;
                 font-size: 1rem;
+                border: 2px dashed #ccc;
+                cursor: pointer;
                 border: none;
+
+                // ドロップ後ボタン-----------
+                .crop-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 33px;
+                  background: url(/edit/images/crop.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+
+                .delete-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                  background: url(/edit/images/delete.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+                // ----------------------------------
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: rgba(49, 163, 138, 0.534);
+                }
 
                 &.square {
                   width: 45%;
@@ -146,300 +182,13 @@
                   height: 20%;
                 }
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea2 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
+                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
-                }
-              }
-
-              #dropArea3 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea4 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea5 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea6 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea7 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea8 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea9 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea10 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea11 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
+                  cursor: pointer;
                 }
               }
 
@@ -449,13 +198,14 @@
                 width: 60%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
                   position: absolute;
                   top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+                  right: 33px;
                   background: url(/edit/images/crop.png);
                   background-size: contain;
                   background-repeat: no-repeat;
@@ -532,13 +282,14 @@
                 width: 60%;
                 height: 100%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
                   position: absolute;
                   top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+                  right: 33px;
                   background: url(/edit/images/crop.png);
                   background-size: contain;
                   background-repeat: no-repeat;
@@ -615,13 +366,14 @@
                 width: 60%;
                 height: 100%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
                   position: absolute;
                   top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+                  right: 33px;
                   background: url(/edit/images/crop.png);
                   background-size: contain;
                   background-repeat: no-repeat;
@@ -693,604 +445,126 @@
                 }
               }
 
-              #dropArea13 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea14 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea15 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea16 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea17 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea18 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea19 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea20 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea21 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea22 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea23 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea24 {
-                position: relative;
-                // top: 20%;
-                // left: 20%;
-                width: 60%;
-                height: 60%;
-                font-size: 1rem;
-                border: 2px solid #ccc;
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
               textarea {
                 overflow: hidden;
                 text-align: center;
                 resize: none;
-                width: 60%;
-                height: auto;
+                width: 60% !important;
+                max-width: 60%;
+                height: 20%;
                 margin: 5% 0 5%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
                 border: none;
                 outline: none;
                 pointer-events: none;
                 cursor: not-allowed;
-                font-size: 0.4rem;
-                line-height: 1.9;
-                background-color: transparent;
 
-                @include mq('pc-edit') {
+                @include mq("pc-edit") {
                   font-size: 0.3rem;
                 }
 
-                @include mq('pc2-edit') {
+                @include mq("pc2-edit") {
                   font-size: 0.6rem;
                 }
 
-                @include mq('tab-edit') {
+                @include mq("tab-edit") {
                   font-size: 1.2vw;
                 }
 
-                @include mq('sp-edit') {
+                @include mq("sp-edit") {
                   font-size: 1.7vw;
                 }
               }
 
               #previewTextArea {
-                &1-1 {
+                &A-1 {
                   margin: 0;
-                  font-size: 1.2rem;
+                  position: absolute;
+                  width: 13.5% !important;
+                  height: 5% !important;
+                  top: 14.5%;
+                  left: 77%;
+                  line-height: 0.9;
+                  font-weight: bold;
+                  font-size: 1rem;
+                  color: #ffffff;
+
+                  @include mq("pc-edit") {
+                    font-size: 0.8rem;
+                  }
+
+                  @include mq("pc2-edit") {
+                    font-size: 1.5rem;
+                  }
+
+                  @include mq("tab-edit") {
+                    font-size: 3vw;
+                  }
+
+                  @include mq("sp2-edit") {
+                    font-size: 2vw;
+                  }
+                }
+
+                &A-2 {
+                  margin: 0;
+                  position: absolute;
+                  width: 16% !important;
+                  height: 3% !important;
+                  top: 20%;
+                  left: 76%;
                   line-height: 1.5;
                   font-weight: bold;
-                  color: #fef8f6;
+                  font-size: 0.4rem;
 
-                  @include mq('pc-edit') {
+                  @include mq("pc-edit") {
+                    font-size: 0.3rem;
+                  }
+                  @include mq("pc2-edit") {
+                    font-size: 0.6rem;
+                  }
+                  @include mq("tab-edit") {
+                    font-size: 1.2vw;
+                  }
+                  @include mq("sp-edit") {
+                    font-size: 1.7vw;
+                  }
+
+                  @include mq("sp2-edit") {
+                    font-size: 0.8vw;
+                  }
+                }
+
+                &A-3 {
+                  margin: 0;
+                  position: absolute;
+                  width: 40% !important;
+                  height: 10% !important;
+                  top: 5%;
+                  left: 5%;
+                  font-weight: bold;
+                  font-size: 1.1rem;
+
+                  @include mq("pc-edit") {
                     font-size: 0.9rem;
                   }
 
-                  @include mq('pc2-edit') {
+                  @include mq("pc2-edit") {
                     font-size: 1.7rem;
                   }
 
-                  @include mq('tab-edit') {
-                    font-size: 3.5vw;
+                  @include mq("tab-edit") {
+                    font-size: 3.3vw;
                   }
 
-                  @include mq('sp-edit') {
-                    font-size: 5vw;
-                  }
-                }
-
-                &1-2 {
-                  margin: 0;
-                  margin: 1% 0 5%;
-                  font-size: 0.45rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.33rem;
+                  @include mq("sp-edit") {
+                    font-size: 4.8vw;
                   }
 
-                  @include mq('pc2-edit') {
-                    font-size: 0.65rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.3vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 1.9vw;
-                  }
-                }
-
-                &1-3 {
-                  margin: 0;
-                  margin-top: 5%;
-                }
-
-                &2 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &4 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &6-1 {
-                  margin: 0;
-                  position: absolute;
-                  width: 63%;
-                  color: #fef8f6;
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &6-2 {
-                  margin: 5% 0 15%;
-                  color: #fef8f6;
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &8 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &10 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
+                  @include mq("sp2-edit") {
+                    font-size: 2.7vw;
                   }
                 }
               }
@@ -1300,54 +574,41 @@
       }
     }
   }
-
-  .button-flex {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 30px;
-
-    @include mq('tab-edit') {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 }
 
-.swiper-pagination {
-}
+// .swiper-pagination {
+// }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
+// .swiper-button-prev,
+// .swiper-button-next {
+//   top: 32px;
+// }
 
-.swiper-button-prev {
-  left: 36%;
-}
+// .swiper-button-prev {
+//   left: 36%;
+// }
 
-.swiper-button-next {
-  left: 58%;
-}
+// .swiper-button-next {
+//   left: 58%;
+// }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: '';
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
+// .swiper-button-prev:after,
+// .swiper-button-next:after {
+//   content: "";
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   height: 50px;
+//   width: 50px;
+//   margin: auto;
+// }
 
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
+// /* 前に戻る画像パス */
+// .swiper-button-prev:after {
+//   background-image: url(../../../edit/images/Group\ 293.png);
+// }
+// /* 次に進む画像パス */
+// .swiper-button-next:after {
+//   background-image: url(../../../edit/images/Group\ 294.png);
+// }
 
 // トリミングボタン、削除ボタン関連

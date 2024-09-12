@@ -287,7 +287,7 @@ function insertImageToDropArea(dropArea) {
   newImage.style.height = "100%";
 
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "削除";
+  deleteButton.textContent = "";
   deleteButton.classList.add("delete-button");
   deleteButton.addEventListener("click", function (e) {
     e.stopPropagation();
@@ -301,7 +301,7 @@ function insertImageToDropArea(dropArea) {
   });
 
   const cropButton = document.createElement("button");
-  cropButton.textContent = "トリミング";
+  cropButton.textContent = "";
   cropButton.classList.add("crop-button");
   cropButton.addEventListener("click", function (e) {
     e.stopPropagation();
@@ -378,7 +378,7 @@ function restoreDropAreas() {
         newImage.style.height = "100%";
 
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "削除";
+        deleteButton.textContent = "";
         deleteButton.classList.add("delete-button");
         deleteButton.addEventListener("click", function (e) {
           e.stopPropagation();
@@ -392,7 +392,7 @@ function restoreDropAreas() {
         });
 
         const cropButton = document.createElement("button");
-        cropButton.textContent = "トリミング";
+        cropButton.textContent = "";
         cropButton.classList.add("crop-button");
         cropButton.addEventListener("click", function (e) {
           e.stopPropagation();

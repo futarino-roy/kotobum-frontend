@@ -378,7 +378,7 @@ function restoreDropAreas() {
         newImage.style.height = "100%";
 
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "削除";
+        deleteButton.textContent = "";
         deleteButton.classList.add("delete-button");
         deleteButton.addEventListener("click", function (e) {
           e.stopPropagation();
@@ -392,7 +392,7 @@ function restoreDropAreas() {
         });
 
         const cropButton = document.createElement("button");
-        cropButton.textContent = "トリミング";
+        cropButton.textContent = "";
         cropButton.classList.add("crop-button");
         cropButton.addEventListener("click", function (e) {
           e.stopPropagation();
@@ -593,7 +593,7 @@ function addButtons(container) {
   if (!container.querySelector(".delete-btn")) {
     let deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-btn");
-    deleteButton.textContent = "削除"; // ボタンのテキストを設定
+    deleteButton.textContent = ""; // ボタンのテキストを設定
     deleteButton.onclick = function () {
       container.innerHTML = ""; // 画像を削除
       container.classList.remove("selected"); // 選択状態を解除
@@ -610,7 +610,7 @@ function addButtons(container) {
   if (!container.querySelector(".crop-btn")) {
     let cropButton = document.createElement("button");
     cropButton.classList.add("crop-btn");
-    cropButton.textContent = "トリミング"; // ボタンのテキストを設定
+    cropButton.textContent = ""; // ボタンのテキストを設定
     cropButton.onclick = function (event) {
       event.stopPropagation(); // クリックイベントのバブリングを防ぐ
       openCroppieModal(container); // トリミングモーダルを開く関数

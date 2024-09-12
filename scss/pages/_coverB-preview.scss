@@ -9,7 +9,7 @@
   align-items: center;
   height: 90vh;
 
-  @include mq('tab-edit') {
+  @include mq("tab-edit") {
     display: block;
   }
 
@@ -18,15 +18,15 @@
       width: 600px;
       height: 100%;
 
-      @include mq('pc2-edit') {
+      @include mq("pc2-edit") {
         width: 900px;
       }
 
-      @include mq('pc-edit') {
+      @include mq("pc-edit") {
         width: 450px;
       }
 
-      @include mq('tab-edit') {
+      @include mq("tab-edit") {
         display: block;
         width: 80%;
         min-width: auto;
@@ -42,6 +42,7 @@
           height: 100%;
 
           &_box {
+            width: 50%;
             max-width: 500px;
             position: relative;
             clip-path: inset(20px 21px 26px 21px);
@@ -141,9 +142,9 @@
                 // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
+                // &.active {
+                //   border-color: rgba(49, 163, 138, 0.534);
+                // }
 
                 &.square {
                   width: 45%;
@@ -187,19 +188,19 @@
                 pointer-events: none;
                 cursor: not-allowed;
 
-                @include mq('pc-edit') {
+                @include mq("pc-edit") {
                   font-size: 0.3rem;
                 }
 
-                @include mq('pc2-edit') {
+                @include mq("pc2-edit") {
                   font-size: 0.6rem;
                 }
 
-                @include mq('tab-edit') {
+                @include mq("tab-edit") {
                   font-size: 1.2vw;
                 }
 
-                @include mq('sp-edit') {
+                @include mq("sp-edit") {
                   font-size: 1.7vw;
                 }
               }
@@ -215,18 +216,18 @@
                   right: 77%;
                   line-height: 0.9;
                   font-weight: bold;
-                  font-size: 1.6rem;
+                  font-size: 1rem;
                   color: #ffffff !important;
-                  @include mq('pc-edit') {
+                  @include mq("pc-edit") {
+                    font-size: 0.8rem;
+                  }
+                  @include mq("pc2-edit") {
                     font-size: 1.5rem;
                   }
-                  @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                  }
-                  @include mq('tab-edit') {
+                  @include mq("tab-edit") {
                     font-size: 3vw;
                   }
-                  @include mq('sp2-edit') {
+                  @include mq("sp2-edit") {
                     font-size: 2vw;
                   }
                 }
@@ -243,22 +244,22 @@
                   font-weight: bold;
                   color: #fef8f6;
 
-                  @include mq('pc-edit') {
+                  @include mq("pc-edit") {
                     font-size: 0.3rem;
                   }
 
-                  @include mq('pc2-edit') {
+                  @include mq("pc2-edit") {
                     font-size: 0.6rem;
                   }
 
-                  @include mq('tab-edit') {
+                  @include mq("tab-edit") {
                     font-size: 1.2vw;
                   }
 
-                  @include mq('sp-edit') {
+                  @include mq("sp-edit") {
                     font-size: 1.7vw;
                   }
-                  @include mq('sp2-edit') {
+                  @include mq("sp2-edit") {
                     font-size: 0.8vw;
                   }
                 }
@@ -272,19 +273,19 @@
                   font-weight: bold;
                   font-size: 1.1rem;
 
-                  @include mq('pc-edit') {
+                  @include mq("pc-edit") {
                     font-size: 0.9rem;
                   }
-                  @include mq('pc2-edit') {
+                  @include mq("pc2-edit") {
                     font-size: 1.7rem;
                   }
-                  @include mq('tab-edit') {
+                  @include mq("tab-edit") {
                     font-size: 3.3vw;
                   }
-                  @include mq('sp-edit') {
+                  @include mq("sp-edit") {
                     font-size: 4.8vw;
                   }
-                  @include mq('sp2-edit') {
+                  @include mq("sp2-edit") {
                     font-size: 2.7vw;
                   }
 
@@ -325,39 +326,39 @@
   }
 }
 
-.swiper-pagination {
-}
+// .swiper-pagination {
+// }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
+// .swiper-button-prev,
+// .swiper-button-next {
+//   top: 32px;
+// }
 
-.swiper-button-prev {
-  left: 36%;
-}
+// .swiper-button-prev {
+//   left: 36%;
+// }
 
-.swiper-button-next {
-  left: 58%;
-}
+// .swiper-button-next {
+//   left: 58%;
+// }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: '';
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
+// .swiper-button-prev:after,
+// .swiper-button-next:after {
+//   content: "";
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   height: 50px;
+//   width: 50px;
+//   margin: auto;
+// }
 
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
+// /* 前に戻る画像パス */
+// .swiper-button-prev:after {
+//   background-image: url(../../../edit/images/Group\ 293.png);
+// }
+// /* 次に進む画像パス */
+// .swiper-button-next:after {
+//   background-image: url(../../../edit/images/Group\ 294.png);
+// }
 
 // トリミングボタン、削除ボタン関連

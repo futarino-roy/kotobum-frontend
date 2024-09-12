@@ -1335,7 +1335,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
   width: 45%;
@@ -1403,7 +1403,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
   width: 45%;
@@ -1471,7 +1471,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.square {
   width: 45%;
@@ -1539,7 +1539,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.square {
   width: 45%;
@@ -1607,7 +1607,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.square {
   width: 45%;
@@ -1675,7 +1675,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.square {
   width: 45%;
@@ -1743,7 +1743,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.square {
   width: 45%;
@@ -1811,7 +1811,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.square {
   width: 45%;
@@ -1879,7 +1879,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
   width: 45%;
@@ -1947,7 +1947,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.square {
   width: 45%;
@@ -2015,7 +2015,7 @@ input:checked + label::after {
   display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
   width: 45%;
@@ -2083,9 +2083,6 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
   display: flex;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
-  border-color: #f00;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
   width: 57%;
   height: 40%;
@@ -2151,9 +2148,6 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
   display: flex;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.active {
-  border-color: #f00;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
   width: 57%;
   height: 40%;
@@ -2218,9 +2212,6 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
   display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.active {
-  border-color: #f00;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
   width: 57%;
@@ -2492,17 +2483,12 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
 .swiper-button-prev {
-  left: 36%;
+  left: 0;
 }
 
 .swiper-button-next {
-  left: 58%;
+  right: 0;
 }
 
 .swiper-button-prev:after,
@@ -2555,10 +2541,11 @@ input:checked + label::after {
   appearance: none;
   width: 35px;
   height: 35px;
-  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
+  background: url("/edit/images/croppie.png") no-repeat center; /* アイコン画像を指定 */
   margin-top: -15px;
   cursor: pointer;
   border: none;
+  background-size: contain;
 }
 .croppie-modal .btn-wrapper {
   margin-top: 35px;
@@ -3308,7 +3295,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.square {
   width: 45%;
@@ -3376,7 +3363,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.square {
   width: 45%;
@@ -3444,7 +3431,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.square {
   width: 45%;
@@ -3512,7 +3499,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.square {
   width: 45%;
@@ -3580,7 +3567,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.square {
   width: 45%;
@@ -3648,7 +3635,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
   width: 45%;
@@ -3716,7 +3703,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.square {
   width: 45%;
@@ -3784,7 +3771,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.square {
   width: 45%;
@@ -3852,7 +3839,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.square {
   width: 45%;
@@ -3920,7 +3907,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.square {
   width: 45%;
@@ -3988,7 +3975,7 @@ input:checked + label::after {
   display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.active {
-  border-color: rgba(49, 163, 138, 0.534);
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.square {
   width: 45%;
@@ -4055,9 +4042,6 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .delete-btn.show {
   display: flex;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1.active {
-  border-color: #f00;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1.square {
   width: 57%;
   height: 40%;
@@ -4122,9 +4106,6 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .delete-btn.show {
   display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2.active {
-  border-color: #f00;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2.square {
   width: 57%;
@@ -4191,9 +4172,6 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .delete-btn.show {
   display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3.active {
-  border-color: #f00;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3.square {
   width: 57%;
@@ -4433,39 +4411,6 @@ input:checked + label::after {
   writing-mode: vertical-rl;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .croppie-modal {
   display: none;
   border-radius: 20px;
@@ -4490,16 +4435,6 @@ input:checked + label::after {
   margin: 0;
   padding: 0;
   opacity: 0.8;
-}
-.croppie-modal #croppie-container .cr-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 35px;
-  height: 35px;
-  background: url("/edit/images/Ellipse 7.png") no-repeat center; /* アイコン画像を指定 */
-  margin-top: -15px;
-  cursor: pointer;
-  border: none;
 }
 .croppie-modal .btn-wrapper {
   margin-top: 35px;
@@ -4561,11 +4496,11 @@ input:checked + label::after {
   opacity: 0.8;
 }
 
-.preview-body {
+.cover-preview-body {
   background: #d5dadc;
 }
 
-.preview {
+.cover-preview {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4573,32 +4508,32 @@ input:checked + label::after {
   height: 90vh;
 }
 @media screen and (max-width: 900px) {
-  .preview {
+  .cover-preview {
     display: block;
   }
 }
-.preview .content .swiper {
+.cover-preview .content .swiper {
   width: 600px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
-  .preview .content .swiper {
+  .cover-preview .content .swiper {
     width: 900px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .preview .content .swiper {
+  .cover-preview .content .swiper {
     width: 450px;
   }
 }
 @media screen and (max-width: 900px) {
-  .preview .content .swiper {
+  .cover-preview .content .swiper {
     display: block;
     width: 80%;
     min-width: auto;
   }
 }
-.preview .content .swiper-wrapper .swiper-slide {
+.cover-preview .content .swiper-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -4606,79 +4541,45 @@ input:checked + label::after {
   width: auto;
   height: 100%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box {
+.cover-preview .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
-  }
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
-  }
 }
 @media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
   }
 }
 @media screen and (max-width: 330px) {
-  .preview .content .swiper-wrapper .swiper-slide_box {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
   }
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  width: 88%;
-  height: 90%;
-  top: 16px;
+  left: 5%;
+  top: 8%;
+  width: 82%;
+  height: 84%;
   opacity: 0.8;
-  left: 6%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
-  position: relative;
-  width: 43%;
-  height: 20%;
-  background-image: url(/edit/images/cloud.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-bottom: 5%;
-  margin-right: 22%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
   width: 60%;
   height: 20%;
   display: flex;
@@ -4687,7 +4588,7 @@ input:checked + label::after {
   gap: 5%;
   margin: 5% 0 5%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-3 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-3 {
   width: 60%;
   height: 20%;
   display: flex;
@@ -4695,293 +4596,90 @@ input:checked + label::after {
   align-items: center;
   gap: 5%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
-  position: relative;
-  width: 45%;
-  height: 25%;
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
+  position: absolute;
+  top: 40%;
+  left: 6%;
+  width: 87%;
+  height: 55%;
   font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
   border: none;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.square {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn.show {
+  display: flex;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn.show {
+  display: flex;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.active {
+  border-color: rgba(49, 163, 138, 0.534);
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.square {
   width: 45%;
   height: 32%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.rectangle {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.rectangle {
   width: 45%;
   height: 25%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.mini {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.mini {
   width: 45%;
   height: 20%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
-  width: 45%;
-  height: 32%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.mini {
-  width: 45%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
   margin-top: 0%;
   position: relative;
   width: 60%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -4991,13 +4689,13 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -5010,45 +4708,46 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.active {
   border-color: #f00;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
   width: 57%;
   height: 40%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.rectangle {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.rectangle {
   width: 62%;
   height: 30%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.mini {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.mini {
   width: 52%;
   height: 20%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
   position: relative;
   width: 60%;
   height: 100%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -5058,13 +4757,13 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -5077,45 +4776,46 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.active {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.active {
   border-color: #f00;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
   width: 57%;
   height: 40%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.rectangle {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.rectangle {
   width: 62%;
   height: 30%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.mini {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.mini {
   width: 52%;
   height: 20%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
   position: relative;
   width: 60%;
   height: 100%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
   position: absolute;
   top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
+  right: 33px;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -5125,13 +4825,13 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -5144,633 +4844,172 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn:hover {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn:hover {
   opacity: 1;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
   display: flex;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.active {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.active {
   border-color: #f00;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
   width: 57%;
   height: 40%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.rectangle {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.rectangle {
   width: 62%;
   height: 30%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.mini {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.mini {
   width: 52%;
   height: 20%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 {
-  position: relative;
-  width: 60%;
-  height: 60%;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.square {
-  width: 57%;
-  height: 40%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.rectangle {
-  width: 62%;
-  height: 30%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24.mini {
-  width: 52%;
-  height: 20%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
   text-align: center;
   resize: none;
-  width: 60%;
-  height: auto;
+  width: 60% !important;
+  max-width: 60%;
+  height: 20%;
   margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
   border: none;
   outline: none;
   pointer-events: none;
   cursor: not-allowed;
-  font-size: 0.4rem;
-  line-height: 1.9;
-  background-color: transparent;
 }
 @media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 0.3rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 0.6rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.2vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.7vw;
   }
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
   margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.5;
+  position: absolute;
+  width: 13.5% !important;
+  height: 5% !important;
+  top: 14.5%;
+  left: 77%;
+  line-height: 0.9;
   font-weight: bold;
-  color: #fef8f6;
+  font-size: 1rem;
+  color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+    font-size: 2vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  margin: 0;
+  position: absolute;
+  width: 16% !important;
+  height: 3% !important;
+  top: 20%;
+  left: 76%;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 0.4rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+    font-size: 0.8vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  margin: 0;
+  position: absolute;
+  width: 40% !important;
+  height: 10% !important;
+  top: 5%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
     font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
     font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 3.5vw;
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 3.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 5vw;
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 4.8vw;
   }
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-  margin: 0;
-  margin: 1% 0 5%;
-  font-size: 0.45rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 0.33rem;
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+    font-size: 2.7vw;
   }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 0.65rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 1.3vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 1.9vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-3 {
-  margin: 0;
-  margin-top: 5%;
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2 {
-    font-size: 2.5vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4 {
-    font-size: 2.5vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-  margin: 0;
-  position: absolute;
-  width: 63%;
-  color: #fef8f6;
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 2.5vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-  margin: 5% 0 15%;
-  color: #fef8f6;
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 2.5vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
-    font-size: 2.5vw;
-  }
-}
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-  font-size: 0.6rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 0.45rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 2.5vw;
-  }
-}
-.preview .button-flex {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 30px;
-}
-@media screen and (max-width: 900px) {
-  .preview .button-flex {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }
 
 .preview-body {
@@ -6524,39 +5763,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .cover-body {
   background: #d5dadc;
 }
@@ -7112,6 +6318,7 @@ input:checked + label::after {
   height: 100%;
 }
 .cover .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
   -webkit-clip-path: inset(20px 21px 26px 21px);
@@ -7234,9 +6441,6 @@ input:checked + label::after {
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn.show {
   display: flex;
-}
-.cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.active {
-  border-color: rgba(49, 163, 138, 0.534);
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA.square {
   width: 45%;
@@ -7503,12 +6707,12 @@ input:checked + label::after {
   left: 77%;
   line-height: 0.9;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -7596,39 +6800,6 @@ input:checked + label::after {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 2.7vw;
   }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }
 
 .croppie-modal {
@@ -8281,6 +7452,7 @@ input:checked + label::after {
   height: 100%;
 }
 .coverB .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
   -webkit-clip-path: inset(20px 21px 26px 21px);
@@ -8448,12 +7620,12 @@ input:checked + label::after {
   right: 77%;
   line-height: 0.9;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #ffffff !important;
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -8542,39 +7714,6 @@ input:checked + label::after {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
     font-size: 2.7vw;
   }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }
 
 .croppie-modal {
@@ -8718,6 +7857,7 @@ input:checked + label::after {
   height: 100%;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
   -webkit-clip-path: inset(20px 21px 26px 21px);
@@ -9209,39 +8349,6 @@ input:checked + label::after {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
 .coverB-preview-body {
   background: #d5dadc;
 }
@@ -9288,6 +8395,7 @@ input:checked + label::after {
   height: 100%;
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
   max-width: 500px;
   position: relative;
   -webkit-clip-path: inset(20px 21px 26px 21px);
@@ -9394,9 +8502,6 @@ input:checked + label::after {
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn.show {
   display: flex;
 }
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.active {
-  border-color: rgba(49, 163, 138, 0.534);
-}
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB.square {
   width: 45%;
   height: 32%;
@@ -9460,12 +8565,12 @@ input:checked + label::after {
   right: 77%;
   line-height: 0.9;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #ffffff !important;
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -9554,37 +8659,4 @@ input:checked + label::after {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
     font-size: 2.7vw;
   }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
 }/*# sourceMappingURL=style.css.map */

@@ -846,7 +846,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -930,7 +930,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1014,7 +1014,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1098,7 +1098,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1182,7 +1182,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1266,7 +1266,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1350,7 +1350,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1434,7 +1434,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1518,7 +1518,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1602,7 +1602,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1686,7 +1686,7 @@
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1770,9 +1770,9 @@
                 // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #00000089;
+                // }
 
                 &.square {
                   width: 57%;
@@ -1854,9 +1854,9 @@
                 // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #00000089;
+                // }
 
                 &.square {
                   width: 57%;
@@ -1938,9 +1938,9 @@
                 // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #00000089;
+                // }
 
                 &.square {
                   width: 57%;
@@ -2203,17 +2203,17 @@
 .swiper-pagination {
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
+// .swiper-button-prev,
+// .swiper-button-next {
+//   top: 32px;
+// }
 
 .swiper-button-prev {
-  left: 36%;
+  left: 0;
 }
 
 .swiper-button-next {
-  left: 58%;
+  right: 0;
 }
 
 .swiper-button-prev:after,
@@ -2267,11 +2267,11 @@
       appearance: none;
       width: 35px;
       height: 35px;
-      background: url('/edit/images/Ellipse\ 7.png') no-repeat center; /* アイコン画像を指定 */
+      background: url('/edit/images/croppie.png') no-repeat center; /* アイコン画像を指定 */
       margin-top: -15px;
-
       cursor: pointer;
       border: none;
+      background-size: contain;
     }
   }
 
