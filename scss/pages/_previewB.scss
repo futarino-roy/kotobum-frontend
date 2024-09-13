@@ -789,53 +789,15 @@
     }
   }
 
-  .button-flex {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 30px;
+  .button-grid{
+    display: none;
 
-    @include mq('tab-edit') {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    @include mq('tab') {
+      display: block;    
+      display: grid;
+      place-items: center;
+      height: 15vh;
     }
   }
+
 }
-
-// // .swiper-pagination {
-// // }
-
-// .swiper-button-prev,
-// .swiper-button-next {
-//   top: 32px;
-// }
-
-// .swiper-button-prev {
-//   left: 36%;
-// }
-
-// .swiper-button-next {
-//   left: 58%;
-// }
-
-// .swiper-button-prev:after,
-// .swiper-button-next:after {
-//   content: '';
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   height: 50px;
-//   width: 50px;
-//   margin: auto;
-// }
-
-// /* 前に戻る画像パス */
-// .swiper-button-prev:after {
-//   background-image: url(../../../edit/images/Group\ 293.png);
-// }
-// /* 次に進む画像パス */
-// .swiper-button-next:after {
-//   background-image: url(../../../edit/images/Group\ 294.png);
-// }
-
-// トリミングボタン、削除ボタン関連

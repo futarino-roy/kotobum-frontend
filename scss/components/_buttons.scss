@@ -49,22 +49,69 @@
       @include mq('tab') {
         background-image: url(../../../images/Button_sp_small_bl.png);
       }
-    }
-    &_bl-preview {
-      @include mq('tab') {
-        background-image: url(../../../images/Button_sp_small_bl.png);
-        width: 30%;
-        height: 100%;
-        color: #ffffff;
-        font-size: 3vw;
-        padding: 2% 0 7%;
+
+      &-mypc{
+
+        @include mq('tab') {
+          display: none;
+        }
+      }
+
+      &-mytab{
+        display: none;
+
+        @include mq('tab') {
+          display: block;
+          background-image: url(/images/Button_sp_large_bl.png);
+          width: 326px;
+          height: 53px;
+
+          @include mq('sp') {
+            width: 207px;
+            height: 38px;  
+          }
+
+        }
+      }
+
+      &-edpc{
+
+
+        @include mq('tab') {
+          display: none;
+        }
+
+      }
+
+      &-edtab{
+        display: none;
+
+        @include mq('tab') {
+          display: block;
+          background-image: url(/images/Button_sp_large_bl.png);
+          width: 326px;
+          height: 53px;
+
+          @include mq('sp') {
+            width: 207px;
+            height: 38px;  
+          }
+        }
       }
     }
-    @include mq('sp-mypage') {
-      width: 130px;
-      height: 40px;
-      font-size: 1rem;
-    }
+    // &_bl-preview {
+    //   background-image: url(/images/Button_pc_small_bl.png);
+    //   color: #ffffff;
+    //   width: 156px;
+    //   height: 46px;
+    //   font-size: 1.125rem;
+
+
+    //   @include mq('tab') {
+    //     background-image: url(/images/Button_sp_small_bl.png);
+
+    //   }
+    // }
   }
   &-middle {
     &_wh {
@@ -92,9 +139,7 @@
       // margin-right: 25px;
       @include mq('tab') {
         background-image: url(../../../images/Button_sp_middle_bl.png);
-        width: 55%;
-        font-size: 2.5vw;
-        padding: 1% 0 7%;
+ 
       }
     }
     // @include mq("pc-edit") {

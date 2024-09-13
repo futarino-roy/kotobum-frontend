@@ -1,6 +1,4 @@
 header {
-  //  一応消す。
-  //   position: fixed;
   width: 100%;
   height: 81px;
   background: #ccc;
@@ -45,4 +43,10 @@ header {
   display: flex;
   justify-content: flex-end;
   z-index: 999;
+
+  @include mq('tab') {
+    padding: 10px; /* ヘッダーの内側の余白 */
+
+  }
+
 }
