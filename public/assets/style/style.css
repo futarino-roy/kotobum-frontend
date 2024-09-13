@@ -2579,6 +2579,7 @@ input:checked + label::after {
   background-color: #45a049;
 }
 
+/* 削除ボタンのスタイル */
 .delete-button {
   position: absolute;
   top: 5px;
@@ -2591,8 +2592,10 @@ input:checked + label::after {
   height: 28px;
   cursor: pointer;
   opacity: 0.8;
+  display: flex; /* 初期状態で表示 */
 }
 
+/* トリミングボタンのスタイル */
 .crop-button {
   position: absolute;
   top: 5px;
@@ -2605,6 +2608,13 @@ input:checked + label::after {
   height: 28px;
   cursor: pointer;
   opacity: 0.8;
+  display: flex; /* 初期状態で表示 */
+}
+
+/* ボタンを非表示にするためのクラス */
+.hide-buttons .delete-button,
+.hide-buttons .crop-button {
+  display: none; /* 非表示 */
 }
 
 .editB-body {
