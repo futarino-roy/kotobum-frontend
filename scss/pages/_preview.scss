@@ -17,16 +17,19 @@
   .content {
 
     .swiper {
-      width: 600px;
+      // width: 600px;
+      width: 700px;
       height: 100%;
 
 
       @include mq('pc2-edit') {
-        width: 900px;
+        // width: 900px;
+        width: 1000px;
       }
 
       @include mq('pc-edit') {
-        width: 450px;
+        // width: 450px;
+        width: 550px;
       }
 
       @include mq('tab-edit') {
@@ -47,12 +50,12 @@
           &_box {
             max-width: 500px;
             position: relative;
-            clip-path: inset(20px 21px 26px 21px);
+            clip-path: inset(21px 24px 26px 21px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 31px 35px 30px);
+              clip-path: inset(32px 34px 35px 30px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(16px 16px 21px 17px);
+              clip-path: inset(18px 19px 21px 17px);
             }
             @include mq('tab-edit') {
               width: 70%;
@@ -1289,7 +1292,7 @@
                 max-width: 60%;
                 height: 20%;
                 margin: 5% 0 5%;
-                font-size: 0.4rem;
+                font-size: 0.48rem;
                 line-height: 1.9;
                 background-color: transparent;
                 border: none;
@@ -1298,11 +1301,11 @@
                 cursor: not-allowed;
 
                 @include mq('pc-edit') {
-                  font-size: 0.3rem;
+                  font-size: 0.37rem;
                 }
 
                 @include mq('pc2-edit') {
-                  font-size: 0.6rem;
+                  font-size: 0.68rem;
                 }
 
                 @include mq('tab-edit') {
@@ -1312,22 +1315,28 @@
                 @include mq('sp-edit') {
                   font-size: 1.7vw;
                 }
+
+                @include mq('sp2-edit') {
+                  font-size: 1.2vw;
+                }
               }
 
               #previewTextArea {
                 &1-1 {
                   margin: 0;
-                  font-size: 1.2rem;
+                  // font-size: 1.2rem;
+                  font-size: 1.4rem;
                   line-height: 1.5;
                   font-weight: bold;
                   color: #fef8f6;
 
                   @include mq('pc-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1.1rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 1.7rem;
+                    // font-size: 1.7rem;
+                    font-size: 2rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1337,22 +1346,26 @@
                   @include mq('sp-edit') {
                     font-size: 5vw;
                   }
+
+                  @include mq('sp2-edit') {
+                    font-size: 3.5vw;
+                  }
                 }
 
                 &1-2 {
                   margin: 0;
                   margin: 1% 0 5%;
-                  font-size: 0.45rem;
+                  font-size: 0.52rem;
                   line-height: 1.5;
                   font-weight: bold;
                   color: #fef8f6;
 
                   @include mq('pc-edit') {
-                    font-size: 0.33rem;
+                    font-size: 0.4rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.65rem;
+                    font-size: 0.75rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1362,6 +1375,10 @@
                   @include mq('sp-edit') {
                     font-size: 1.9vw;
                   }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.3vw;
+                  }
                 }
 
                 &1-3 {
@@ -1369,18 +1386,18 @@
                   margin-top: 5%;
                 }
 
-                &2 {
-                  font-size: 0.6rem;
+                &2, &4, &8, &10 {
+                  font-size: 0.7rem;
                   line-height: 1.5;
                   font-weight: bold;
                   color: #fef8f6;
 
                   @include mq('pc-edit') {
-                    font-size: 0.45rem;
+                    font-size: 0.56rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1390,28 +1407,9 @@
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
                   }
-                }
 
-                &4 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
+                  @include mq('sp2-edit') {
                     font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
                   }
                 }
 
@@ -1420,12 +1418,12 @@
                   position: absolute;
                   width: 63%;
                   color: #fef8f6;
-                  font-size: 0.6rem;
+                  font-size: 0.65rem;
                   line-height: 1.5;
                   font-weight: bold;
 
                   @include mq('pc-edit') {
-                    font-size: 0.45rem;
+                    font-size: 0.55rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1438,22 +1436,26 @@
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                  }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.8vw;
                   }
                 }
 
                 &6-2 {
                   margin: 5% 0 15%;
                   color: #fef8f6;
-                  font-size: 0.6rem;
+                  font-size: 0.7rem;
                   line-height: 1.5;
                   font-weight: bold;
 
                   @include mq('pc-edit') {
-                    font-size: 0.45rem;
+                    font-size: 0.55rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1463,50 +1465,9 @@
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
                   }
-                }
 
-                &8 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
+                  @include mq('sp2-edit') {
                     font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &10 {
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
                   }
                 }
               }

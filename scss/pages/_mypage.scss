@@ -1,8 +1,8 @@
 body {
   @include mq("pc-mypage") {
-    // margin-top: 200px;
     overflow: hidden;
     height: 100vh;
+    
   }
 
   @media screen and (min-width: 901px) and (max-width: 1499px) {
@@ -10,38 +10,17 @@ body {
     height: 100vh;
   }
 
-  // @include mq("tab-mypage") {
-  //   margin-top: 153px;
-  // }
-
-  // @include mq("sp-mypage") {
-  //   // margin: 182px 10px 34px 10px;
-  //   margin-top: 155px;
-  // }
 }
 
 .mypage {
+  width: 100%;
   max-width: 600px;
   text-align: center;
-  margin: 80px auto 0;
+  margin: 62px auto 0;
   padding: 0 15px;
+  
 
-  // @include mq("pc-mypage") {
-  //   // margin-top: 200px;
-  //   overflow: hidden;
-  //   height: 100vh;
-  // }
 
-  // @include mq("tab-mypage") {
-  //   // margin-top: 153px;
-  //   overflow: hidden;
-  //   height: 100vh;
-  // }
-
-  // @include mq("sp-mypage") {
-  //   // margin: 182px 10px 34px 10px;
-  //   margin-top: 155px;
-  // }
 
   &_title {
     img {
@@ -84,11 +63,11 @@ body {
         }
 
         &_box {
-          // width: 220px;
-          // height: 300px;
+          width: 168px;
+          height: 235px;
 
           img {
-            width: 240px;
+ 
 
             @include mq("tab-mypage") {
               width: 220px;
@@ -142,11 +121,11 @@ body {
         }
 
         &_box {
-          // width: 220px;
-          // height: 300px;
+          width: 168px;
+          height: 235px;
 
           img {
-            width: 240px;
+          
 
             @include mq("tab-mypage") {
               width: 220px;
