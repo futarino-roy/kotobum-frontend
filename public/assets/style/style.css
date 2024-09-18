@@ -342,88 +342,85 @@ input:checked + label::after {
   opacity: 0.5;
 }
 
-@media screen and (min-width: 1300px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
+.mypage-body {
+  /* モーダルと背景の指定 */
+  /* モーダルの擬似要素の指定 */
+  /* クラスが追加された時の指定 */
+  /* モーダル内側の指定 */
+}
+@media screen and (max-width: 900px) {
+  .mypage-body {
+    overflow: auto;
   }
 }
-@media screen and (min-width: 901px) and (max-width: 1499px) {
-  body {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
-
-.mypage {
-  width: 100%;
+.mypage-body .mypage {
   max-width: 600px;
+  position: absolute;
+  top: calc(50% + 40.5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin: 62px auto 0;
-  padding: 0 15px;
 }
-@media screen and (min-width: 1300px) {
-  .mypage {
-    margin-top: 170px;
+@media screen and (max-width: 900px) {
+  .mypage-body .mypage {
+    position: static;
+    transform: none;
+    margin: 51px auto 67px;
+    padding: 0 15px;
   }
 }
-@media screen and (min-width: 901px) and (max-width: 1499px) {
-  .mypage {
-    margin-top: 170px;
-  }
-}
-.mypage_title img {
+.mypage-body .mypage_title img {
   width: 62px;
   height: 44px;
 }
-.mypage_title h2 {
+.mypage-body .mypage_title h2 {
   font-size: 1.375rem;
   margin: 18px 0 50px;
 }
-.mypage_flex {
+.mypage-body .mypage_flex {
   display: flex;
   justify-content: center;
   gap: 85px;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex {
+  .mypage-body .mypage_flex {
     display: inline-block;
   }
 }
 @media screen and (max-width: 480px) {
-  .mypage_flex {
+  .mypage-body .mypage_flex {
     display: inline-block;
   }
 }
-.mypage_flex_left {
+.mypage-body .mypage_flex_left {
   display: flex;
   align-items: center;
   gap: 24px;
   text-align: left;
 }
-.mypage_flex_left_title h2 {
+.mypage-body .mypage_flex_left_title h2 {
   margin-bottom: 9px;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex_left_title h2 {
+  .mypage-body .mypage_flex_left_title h2 {
     margin-bottom: 15px;
   }
 }
-.mypage_flex_left_title_box {
+.mypage-body .mypage_flex_left_title_box {
   width: 168px;
   height: 235px;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex_left_title_box img {
+  .mypage-body .mypage_flex_left_title_box img {
     width: 220px;
   }
 }
 @media screen and (max-width: 480px) {
-  .mypage_flex_left_title_box img {
+  .mypage-body .mypage_flex_left_title_box img {
     width: 200px;
   }
 }
-.mypage_flex_left_menu {
+.mypage-body .mypage_flex_left_menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -431,50 +428,50 @@ input:checked + label::after {
   margin-top: 24px;
 }
 @media screen and (max-width: 480px) {
-  .mypage_flex_left_menu {
+  .mypage-body .mypage_flex_left_menu {
     margin-top: 47px;
   }
 }
-.mypage_flex_left_menu_icon {
+.mypage-body .mypage_flex_left_menu_icon {
   margin-bottom: 5px;
 }
-.mypage_flex_left_menu_icon img {
+.mypage-body .mypage_flex_left_menu_icon img {
   width: 27px;
 }
-.mypage_flex_right {
+.mypage-body .mypage_flex_right {
   display: flex;
   align-items: center;
   gap: 24px;
   text-align: left;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex_right {
+  .mypage-body .mypage_flex_right {
     margin-top: 36px;
   }
 }
-.mypage_flex_right_title h2 {
+.mypage-body .mypage_flex_right_title h2 {
   margin-bottom: 9px;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex_right_title h2 {
+  .mypage-body .mypage_flex_right_title h2 {
     margin-bottom: 15px;
   }
 }
-.mypage_flex_right_title_box {
+.mypage-body .mypage_flex_right_title_box {
   width: 168px;
   height: 235px;
 }
 @media screen and (max-width: 900px) {
-  .mypage_flex_right_title_box img {
+  .mypage-body .mypage_flex_right_title_box img {
     width: 220px;
   }
 }
 @media screen and (max-width: 480px) {
-  .mypage_flex_right_title_box img {
+  .mypage-body .mypage_flex_right_title_box img {
     width: 200px;
   }
 }
-.mypage_flex_right_menu {
+.mypage-body .mypage_flex_right_menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -482,19 +479,17 @@ input:checked + label::after {
   margin-top: 24px;
 }
 @media screen and (max-width: 480px) {
-  .mypage_flex_right_menu {
+  .mypage-body .mypage_flex_right_menu {
     margin-top: 47px;
   }
 }
-.mypage_flex_right_menu_icon {
+.mypage-body .mypage_flex_right_menu_icon {
   margin-bottom: 5px;
 }
-.mypage_flex_right_menu_icon img {
+.mypage-body .mypage_flex_right_menu_icon img {
   width: 27px;
 }
-
-/* モーダルと背景の指定 */
-.modal {
+.mypage-body .modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -510,24 +505,18 @@ input:checked + label::after {
   visibility: hidden;
   transition: 0.3s;
 }
-
-/* モーダルの擬似要素の指定 */
-.modal:before {
+.mypage-body .modal:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
   height: 100%;
   margin-left: -0.2em;
 }
-
-/* クラスが追加された時の指定 */
-.modal.is-active {
+.mypage-body .modal.is-active {
   opacity: 1;
   visibility: visible;
 }
-
-/* モーダル内側の指定 */
-.modal-container {
+.mypage-body .modal-container {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -538,8 +527,7 @@ input:checked + label::after {
   background-color: #fdfcf6;
   border-radius: 10px;
 }
-
-.modal-content {
+.mypage-body .modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -548,32 +536,32 @@ input:checked + label::after {
   margin: 30px;
   max-width: 90%;
 }
-.modal-content__check {
+.mypage-body .modal-content__check {
   font-size: 20px;
 }
-.modal-content__text {
+.mypage-body .modal-content__text {
   font-size: 16px;
 }
-.modal-content__button-sp {
+.mypage-body .modal-content__button-sp {
   display: none;
 }
 @media screen and (min-width: 1300px) {
-  .modal-content .modal-content__button-pc {
+  .mypage-body .modal-content .modal-content__button-pc {
     display: block;
   }
-  .modal-content .modal-content__button-sp {
+  .mypage-body .modal-content .modal-content__button-sp {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  .modal-content .modal-content__button-pc {
+  .mypage-body .modal-content .modal-content__button-pc {
     display: none;
   }
-  .modal-content .modal-content__button-sp {
+  .mypage-body .modal-content .modal-content__button-sp {
     display: block;
   }
 }
-.modal-content a {
+.mypage-body .modal-content a {
   text-decoration: none;
   color: black;
 }

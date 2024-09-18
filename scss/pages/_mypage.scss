@@ -1,28 +1,23 @@
-body {
-  @include mq('pc-mypage') {
-    overflow: hidden;
-    height: 100vh;
+.mypage-body{
+  @include mq('tab-mypage') {
+    overflow: auto;
   }
-
-  @media screen and (min-width: 901px) and (max-width: 1499px) {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
 
 .mypage {
-  width: 100%;
   max-width: 600px;
+  position: absolute;
+  top: calc(50% + 40.5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin: 62px auto 0;
-  padding: 0 15px;
-
-  @include mq('pc-mypage') {
-    margin-top: 170px;
+  
+  @include mq('tab-mypage') {
+    position: static;
+    transform: none;
+    margin: 51px auto 67px;
+    padding: 0 15px;
   }
-  @media screen and (min-width: 901px) and (max-width: 1499px) {
-    margin-top: 170px;
-  }
+  
 
   &_title {
     img {
@@ -247,6 +242,7 @@ body {
     text-decoration: none;
     color: black;
   }
+}
 }
 
 /* モーダル内側の指定 */
