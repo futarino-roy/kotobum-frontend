@@ -2435,17 +2435,53 @@ input:checked + label::after {
 }
 
 .swiper-button-prev {
-  left: 0;
-  top: 170px;
+  left: 43%;
+  top: 25%;
+  --swiper-navigation-size: 75px;
 }
 @media screen and (max-width: 900px) {
   .swiper-button-prev {
     top: var(--swiper-navigation-top-offset, 50%);
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .swiper-button-prev {
+    left: 42%;
+    top: 30%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .swiper-button-prev {
+    left: 42%;
+    top: 15%;
   }
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 43%;
+  top: 25%;
+  --swiper-navigation-size: 75px;
+}
+@media screen and (max-width: 900px) {
+  .swiper-button-next {
+    top: var(--swiper-navigation-top-offset, 50%);
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .swiper-button-next {
+    right: 42%;
+    top: 30%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .swiper-button-next {
+    right: 42%;
+    top: 15%;
+  }
 }
 
 .swiper-button-prev:after,

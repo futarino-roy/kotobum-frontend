@@ -716,7 +716,7 @@
           // justify-content: center;
           // align-items: center;
 
-          &-hidden{
+          &-hidden {
             visibility: hidden;
 
             @include mq('tab-edit') {
@@ -2209,13 +2209,12 @@
   }
 }
 
-.page-number{
+.page-number {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
   color: #000000;
-  
 }
 
 // .swiper-button-prev,
@@ -2224,16 +2223,46 @@
 // }
 
 .swiper-button-prev {
-  left: 0;
-  top: 170px;
+  // left: 0;
+  // top: 170px;
 
-  @include mq('tab') {
+  left: 43%;
+  top: 25%;
+  --swiper-navigation-size: 75px;
+
+  @include mq('tab-edit') {
     top: var(--swiper-navigation-top-offset, 50%);
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+  }
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    left: 42%;
+    top: 30%;
+  }
+  @include mq('pc2-edit') {
+    left: 42%;
+    top: 15%;
   }
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 43%;
+  top: 25%;
+  --swiper-navigation-size: 75px;
+
+  @include mq('tab-edit') {
+    top: var(--swiper-navigation-top-offset, 50%);
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+  }
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    right: 42%;
+    top: 30%;
+  }
+  @include mq('pc2-edit') {
+    right: 42%;
+    top: 15%;
+  }
 }
 
 .swiper-button-prev:after,
