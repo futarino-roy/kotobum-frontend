@@ -74,6 +74,7 @@ img {
   background-image: url(/images/Button_pc_middle_wh.png);
   width: 80%;
   height: auto;
+  margin-right: 40px;
   font-size: 1.4vw;
   height: 100%;
   color: #252525;
@@ -355,6 +356,16 @@ input:checked + label::after {
   text-align: center;
   margin: 62px auto 0;
   padding: 0 15px;
+}
+@media screen and (min-width: 1300px) {
+  .mypage {
+    margin-top: 170px;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1499px) {
+  .mypage {
+    margin-top: 170px;
+  }
 }
 .mypage_title img {
   width: 62px;
@@ -2240,6 +2251,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
   margin: 0;
   margin-top: 5%;
+  color: #fef8f6;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
   font-size: 0.6rem;
@@ -2403,6 +2415,12 @@ input:checked + label::after {
 
 .swiper-button-prev {
   left: 0;
+  top: 170px;
+}
+@media screen and (max-width: 900px) {
+  .swiper-button-prev {
+    top: var(--swiper-navigation-top-offset, 50%);
+  }
 }
 
 .swiper-button-next {

@@ -1,15 +1,13 @@
 body {
-  @include mq("pc-mypage") {
+  @include mq('pc-mypage') {
     overflow: hidden;
     height: 100vh;
-    
   }
 
   @media screen and (min-width: 901px) and (max-width: 1499px) {
     overflow: hidden;
     height: 100vh;
   }
-
 }
 
 .mypage {
@@ -18,9 +16,13 @@ body {
   text-align: center;
   margin: 62px auto 0;
   padding: 0 15px;
-  
 
-
+  @include mq('pc-mypage') {
+    margin-top: 170px;
+  }
+  @media screen and (min-width: 901px) and (max-width: 1499px) {
+    margin-top: 170px;
+  }
 
   &_title {
     img {
@@ -39,11 +41,11 @@ body {
     justify-content: center;
     gap: 85px;
 
-    @include mq("tab-mypage") {
+    @include mq('tab-mypage') {
       display: inline-block;
     }
 
-    @include mq("sp-mypage") {
+    @include mq('sp-mypage') {
       display: inline-block;
     }
 
@@ -57,7 +59,7 @@ body {
         h2 {
           margin-bottom: 9px;
 
-          @include mq("tab-mypage") {
+          @include mq('tab-mypage') {
             margin-bottom: 15px;
           }
         }
@@ -67,13 +69,11 @@ body {
           height: 235px;
 
           img {
- 
-
-            @include mq("tab-mypage") {
+            @include mq('tab-mypage') {
               width: 220px;
             }
 
-            @include mq("sp-mypage") {
+            @include mq('sp-mypage') {
               width: 200px;
             }
           }
@@ -87,7 +87,7 @@ body {
         align-items: center;
         margin-top: 24px;
 
-        @include mq("sp-mypage") {
+        @include mq('sp-mypage') {
           margin-top: 47px;
         }
 
@@ -107,7 +107,7 @@ body {
       gap: 24px;
       text-align: left;
 
-      @include mq("tab-mypage") {
+      @include mq('tab-mypage') {
         margin-top: 36px;
       }
 
@@ -115,7 +115,7 @@ body {
         h2 {
           margin-bottom: 9px;
 
-          @include mq("tab-mypage") {
+          @include mq('tab-mypage') {
             margin-bottom: 15px;
           }
         }
@@ -125,13 +125,11 @@ body {
           height: 235px;
 
           img {
-          
-
-            @include mq("tab-mypage") {
+            @include mq('tab-mypage') {
               width: 220px;
             }
 
-            @include mq("sp-mypage") {
+            @include mq('sp-mypage') {
               width: 200px;
             }
           }
@@ -145,7 +143,7 @@ body {
         align-items: center;
         margin-top: 24px;
 
-        @include mq("sp-mypage") {
+        @include mq('sp-mypage') {
           margin-top: 47px;
         }
 
@@ -183,7 +181,7 @@ body {
 
 /* モーダルの擬似要素の指定 */
 .modal:before {
-  content: "";
+  content: '';
   display: inline-block;
   vertical-align: middle;
   height: 100%;
@@ -229,7 +227,7 @@ body {
   &__button-sp {
     display: none;
   }
-  @include mq("pc-mypage") {
+  @include mq('pc-mypage') {
     .modal-content__button-pc {
       display: block;
     }
@@ -237,7 +235,7 @@ body {
       display: none;
     }
   }
-  @include mq("sp-mypage") {
+  @include mq('sp-mypage') {
     .modal-content__button-pc {
       display: none;
     }
