@@ -18,37 +18,13 @@
 //     }
 // });
 
-
 const swiper = new Swiper(".swiper", {
-    pagination: {
-        el: ".swiper-pagination",
-        type: "custom",
-        renderCustom: function (swiper, current, total) {
-            // 画面幅に応じて、ページ数表記を調整する
-            const slidesPerView = swiper.params.slidesPerView;
-            const slidesPerGroup = swiper.params.slidesPerGroup;
-            const isMobile = window.innerWidth <= 900;
-
-            // モバイルとデスクトップで異なる表示をする
-            if (isMobile) {
-                // モバイルビューの場合
-                const totalSlides = Math.ceil(swiper.slides.length / slidesPerGroup);
-                return `${current} / ${totalSlides}`;
-            } else {
-                // デスクトップビューの場合
-                const startSlide = ((current - 1) * slidesPerGroup) + 1;
-                const endSlide = Math.min(current * slidesPerGroup, swiper.slides.length);
-                return `${startSlide}-${endSlide} / ${total * slidesPerGroup}`;
-            }
-        }
-    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
     },
     slidesPerView: 1,
-    slidesPerGroup: 1, 
-    loop: true,
+    slidesPerGroup: 1,
     breakpoints: {
         900: {
             slidesPerView: 2,
@@ -56,10 +32,6 @@ const swiper = new Swiper(".swiper", {
         }
     }
 });
-
-
-
-
 
 
 

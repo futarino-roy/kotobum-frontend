@@ -716,6 +716,14 @@
           // justify-content: center;
           // align-items: center;
 
+          &-hidden{
+            visibility: hidden;
+
+            @include mq('tab-edit') {
+              display: none;
+            }
+          }
+
           &_box {
             max-width: 500px;
             position: relative;
@@ -2201,7 +2209,13 @@
   }
 }
 
-.swiper-pagination {
+.page-number{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  color: #000000;
+  
 }
 
 // .swiper-button-prev,

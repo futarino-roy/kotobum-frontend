@@ -74,11 +74,16 @@ img {
   background-image: url(/images/Button_pc_middle_wh.png);
   width: 80%;
   height: auto;
-  margin-right: 40px;
   font-size: 1.4vw;
   height: 100%;
   color: #252525;
   padding: 2% 0 5%;
+}
+@media screen and (max-width: 900px) {
+  .btn-middle_wh-edit {
+    font-size: 5vw;
+    padding: 1% 0 5%;
+  }
 }
 .btn-middle_bl {
   background-image: url(/images/Button_pc_middle_bl.png);
@@ -1127,6 +1132,14 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+}
+.edit .content .swiper-wrapper .swiper-slide-hidden {
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide-hidden {
+    display: none;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
@@ -2413,6 +2426,14 @@ input:checked + label::after {
   }
 }
 
+.page-number {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  color: #000000;
+}
+
 .swiper-button-prev {
   left: 0;
   top: 170px;
@@ -3105,6 +3126,14 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+}
+.editB .content .swiper-wrapper .swiper-slide-hidden {
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .editB .content .swiper-wrapper .swiper-slide-hidden {
+    display: none;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
@@ -4430,6 +4459,14 @@ input:checked + label::after {
   width: auto;
   height: 100%;
 }
+.preview .content .swiper-wrapper .swiper-slide-hidden {
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide-hidden {
+    display: none;
+  }
+}
 .preview .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
@@ -5712,6 +5749,14 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+}
+.previewB .content .swiper-wrapper .swiper-slide-hidden {
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .previewB .content .swiper-wrapper .swiper-slide-hidden {
+    display: none;
+  }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;

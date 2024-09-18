@@ -671,6 +671,14 @@
           // justify-content: center;
           // align-items: center;
 
+          &-hidden{
+            visibility: hidden;
+
+            @include mq('tab-edit') {
+              display: none;
+            }
+          }
+
           &_box {
             max-width: 500px;
             position: relative;
