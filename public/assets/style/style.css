@@ -22,6 +22,7 @@ body {
   margin: 0;
   background-color: #FDFCF6;
   height: 100%;
+  overflow: hidden;
 }
 
 html {
@@ -78,6 +79,7 @@ img {
   height: 100%;
   color: #252525;
   padding: 2% 0 5%;
+  margin-right: 28px;
 }
 @media screen and (max-width: 900px) {
   .btn-middle_wh-edit {

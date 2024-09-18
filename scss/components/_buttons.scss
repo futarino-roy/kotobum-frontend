@@ -36,6 +36,7 @@
       height: 100%;
       color: #252525;
       padding: 2% 0 5%;
+      margin-right: 28px;
 
       @include mq('tab') {
         font-size: 5vw;
