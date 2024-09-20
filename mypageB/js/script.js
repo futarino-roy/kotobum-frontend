@@ -80,3 +80,133 @@ modals.forEach((modal) => {
     });
   }
 });
+
+//----------- モーダル内の校了ボタンを押した後のモーダル 表紙用 -------------------
+const modalF = document.querySelector('.js-modal1');
+const modalS = document.querySelector('.js-modal1_2');
+
+// 校了ボタンの取得
+const changeButtons = document.querySelectorAll('.modal-change_l');
+
+changeButtons.forEach((changeButton) => {
+  changeButton.addEventListener('click', function () {
+    // 最初のモーダルを非表示
+    modalF.classList.remove('is-active');
+    // 次のモーダルを表示
+    modalS.classList.add('is-active');
+  });
+});
+
+// -------------校了後のマイページのボタン無効化に関するJS　表紙用----------------
+
+// A, C ボタンのセレクタ
+const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
+const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
+
+// モーダルを取得
+const modal = document.querySelector('#modal1_2');
+
+// モーダル内の「マイページへ」ボタンを取得
+const modalButton_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
+modalButton_ls.forEach((modalButton_l) => {
+  modalButton_l.addEventListener('click', function () {
+    buttonA_l.disabled = true;
+    buttonC_l.disabled = true;
+
+    buttonA_l.style.cursor = 'not-allowed';
+    buttonC_l.style.cursor = 'not-allowed';
+
+    // モーダルを閉じる
+    modalS.classList.remove('is-active');
+  });
+});
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更
+const button_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
+
+// 変更対象(「編集ボタン」と「校了ボタン」)の要素を取得
+//「 A, C ボタンのセレクタ」で以下を取得しているため使いまわします。
+// const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
+// const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
+
+// ボタンがクリックされたときにクラスを切り替える
+button_ls.forEach((button_l) => {
+  button_l.addEventListener('click', function () {
+    if (buttonC_l.classList.contains('btn-small_bl')) {
+      buttonC_l.classList.remove('btn-small_bl');
+      buttonC_l.classList.add('btn-small_wh');
+    } else {
+      buttonC_l.classList.remove('btn-small_wh');
+      buttonC_l.classList.add('btn-small_bl');
+    }
+    buttonC_l.style.opacity = '0.6';
+    buttonA_l.style.opacity = '0.6';
+  });
+});
+
+//----------- モーダル内の校了ボタンを押した後のモーダル 中身用 -------------------
+const modalF_r = document.querySelector('.js-modal2');
+const modalS_r = document.querySelector('.js-modal2_2');
+
+// 校了ボタンの取得
+const changeButton_rs = document.querySelectorAll('.modal-change_r');
+
+changeButton_rs.forEach((changeButton_r) => {
+  changeButton_r.addEventListener('click', function () {
+    // 最初のモーダルを非表示
+    modalF_r.classList.remove('is-active');
+    // 次のモーダルを表示
+    modalS_r.classList.add('is-active');
+  });
+});
+
+// -------------校了後のマイページのボタン無効化に関するJS　中身用----------------
+
+// A, C ボタンのセレクタ
+const buttonA_r = document.querySelector('.buttonA_r'); //編集ボタン
+const buttonC_r = document.querySelector('.buttonC_r'); //校了ボタン
+
+// モーダルを取得
+const modal_r = document.querySelector('#modal2_2');
+
+// モーダル内の「マイページへ」ボタンを取得
+const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
+modalButton_rs.forEach((modalButton_r) => {
+  modalButton_r.addEventListener('click', function () {
+    buttonA_r.disabled = true;
+    buttonC_r.disabled = true;
+
+    buttonA_r.style.cursor = 'not-allowed';
+    buttonC_r.style.cursor = 'not-allowed';
+
+    // モーダルを閉じる
+    modalS_r.classList.remove('is-active');
+  });
+});
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更
+const button_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
+
+// 変更対象(「編集ボタン」と「校了ボタン」)の要素を取得
+//「 A, C ボタンのセレクタ」で以下を取得しているため使いまわします。
+// const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
+// const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
+
+// ボタンがクリックされたときにクラスを切り替える
+button_rs.forEach((button_r) => {
+  button_r.addEventListener('click', function () {
+    if (buttonC_r.classList.contains('btn-small_bl')) {
+      buttonC_r.classList.remove('btn-small_bl');
+      buttonC_r.classList.add('btn-small_wh');
+    } else {
+      buttonC_r.classList.remove('btn-small_wh');
+      buttonC_r.classList.add('btn-small_bl');
+    }
+    buttonC_r.style.opacity = '0.6';
+    buttonA_r.style.opacity = '0.6';
+  });
+});

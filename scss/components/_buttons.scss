@@ -28,7 +28,7 @@
       padding: 13px 0 25px;
     }
 
-    &_wh-edit{
+    &_wh-edit {
       background-image: url(/images/Button_pc_middle_wh.png);
       width: 80%;
       height: auto;
@@ -81,6 +81,11 @@
       font-size: 1.125rem;
       @include mq('tab') {
         background-image: url(../../../images/Button_sp_small_bl.png);
+      }
+
+      &-edit {
+        width: 125px;
+        height: 40px;
       }
 
       &-mypc {
