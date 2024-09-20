@@ -82,10 +82,6 @@
               position: relative;
               display: inline-block;
 
-              .form {
-                margin-bottom: 10px;
-              }
-
               #fileButton {
                 // background-color: #4CAF50; /* ボタンの背景色 */
                 // color: white; /* テキストの色 */
@@ -113,7 +109,7 @@
               display: flex;
               flex-wrap: wrap;
               align-items: center;
-              margin: 0 0 20px auto;
+              margin: 0 auto 20px auto;
               // gap: 35px;
               gap: 14px;
 

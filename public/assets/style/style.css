@@ -80,6 +80,7 @@ img {
   color: #252525;
   padding: 2% 0 5%;
   margin-right: 28px;
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 900px) {
   .btn-middle_wh-edit {
@@ -660,9 +661,6 @@ input:checked + label::after {
   position: relative;
   display: inline-block;
 }
-.edit_drawer_container_item_upload #uploadZone_wrapper .form {
-  margin-bottom: 10px;
-}
 .edit_drawer_container_item_upload .imageList-container {
   height: 100vh;
   overflow: auto;
@@ -678,7 +676,7 @@ input:checked + label::after {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0 0 20px auto;
+  margin: 0 auto 20px auto;
   gap: 14px;
 }
 .edit_drawer_container_item_upload .imageList-container #imgPreviewField img {
@@ -4342,6 +4340,12 @@ input:checked + label::after {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.7vw;
   }
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea {
+  border: 2px dashed #ccc;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea.no-border {
+  border: none;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
   min-width: 60%;

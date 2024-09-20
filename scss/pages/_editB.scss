@@ -1965,6 +1965,11 @@
               }
 
               #textArea {
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
+                }
+
                 &13-1 {
                   min-width: 60%;
                   font-size: 1.2rem;

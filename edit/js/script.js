@@ -298,7 +298,7 @@ function addTouchListenerToDropAreas() {
 
   document.addEventListener('touchstart', function (e) {
     const allDropAreas = document.querySelectorAll('.empty.with-buttons');
-    if (!e.target.closest('.empty.with-buttons') && !drawer.contains(e.target)) {
+    if (!e.target.closest('.empty.with-buttons') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
       allDropAreas.forEach((dropArea) => {
         dropArea.classList.add('hide-buttons');
         dropArea.style.border = 'none'; // ボーダーを消す
