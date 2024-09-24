@@ -937,7 +937,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
   }
 
   // サーバからアルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://develop-back.kotobum.com/api/user', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -1032,7 +1032,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
           body.append('imageDBData', JSON.stringify(imageDBData)); // ImageDBのデータ
 
           // サーバへデータを送信
-          return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+          return fetch(`https://develop-back.kotobum.com/api/albums/${user_id}/body`, {
             method: 'POST',
             headers: {
               Authorization: `Bearer ${token}`,
