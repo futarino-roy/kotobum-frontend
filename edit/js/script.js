@@ -897,7 +897,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 document.getElementById('sendButton').addEventListener('click', function () {
   // 認証トークンの取得
   const token = localStorage.getItem('token');
@@ -975,11 +974,17 @@ document.getElementById('sendButton').addEventListener('click', function () {
 
           for (let sheet of document.styleSheets) {
             try {
-              if (sheet.href) {
+              // 同一オリジンのスタイルシートのみ処理
+              if (sheet.href && sheet.href.startsWith(window.location.origin)) {
                 cssUrls.push(sheet.href);
                 cssPromises.push(
                   fetch(sheet.href)
-                    .then((response) => response.text())
+                    .then((response) => {
+                      if (!response.ok) {
+                        throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
+                      }
+                      return response.text();
+                    })
                     .then((text) => {
                       cssContent += text;
                     })
@@ -987,7 +992,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
                       console.warn('スタイルシートの取得エラー:', e);
                     })
                 );
-              } else {
+              } else if (!sheet.href) {
+                // インラインスタイルの取得
                 for (let rule of sheet.cssRules) {
                   cssContent += rule.cssText;
                 }
@@ -997,6 +1003,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
             }
           }
 
+          // すべてのCSSが取得できたらhtmlContent、cssContent、cssUrlsを返す
           return Promise.all(cssPromises).then(() => ({
             htmlContent,
             cssContent,
@@ -1004,7 +1011,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
           }));
         });
     })
-    .then(({ htmlContent, cssContent, cssUrls }) => {
+    .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
       console.log('取得したHTMLコンテンツ:', htmlContent);
       console.log('取得したCSSコンテンツ:', cssContent);
       console.log('取得したCSS URL:', cssUrls);
@@ -1032,7 +1039,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
           body.append('imageDBData', JSON.stringify(imageDBData)); // ImageDBのデータ
 
           // サーバへデータを送信
-          return fetch(`https://develop-back.kotobum.com/api/albums/${user_id}/body`, {
+          return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
             method: 'POST',
             headers: {
               Authorization: `Bearer ${token}`,
@@ -1055,3 +1062,4 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('エラー:', error.message);
     });
 });
+
