@@ -949,7 +949,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
-    .then((users) => {
+    .then((albums) => {
       console.log('取得したユーザーデータ:', users);
 
       const userId = albums.user_id; // ユーザーIDを取得
