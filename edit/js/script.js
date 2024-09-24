@@ -952,7 +952,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
     .then((userData) => {
       console.log('取得したユーザーデータ:', userData);
 
-      const userId = userData.userId; // ユーザーIDを取得
+      const userId = userData.user_id; // ユーザーIDを取得
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
         return;
