@@ -1253,44 +1253,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1320,44 +1282,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -1389,44 +1313,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1456,44 +1342,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -1525,44 +1373,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1592,44 +1402,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -1661,44 +1433,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1728,44 +1462,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -1797,44 +1493,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1865,44 +1523,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -1932,44 +1552,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -2002,44 +1584,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1.square {
   width: 57%;
   height: 40%;
@@ -2067,44 +1611,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 .delete-btn.show {
-  display: flex;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2.square {
   width: 57%;
   height: 40%;
@@ -2131,44 +1637,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .crop-btn.show {
-  display: flex;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn:hover {
-  opacity: 1;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 .delete-btn.show {
-  display: flex;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3.square {
   width: 57%;
@@ -2656,17 +2124,17 @@ input:checked + label::after {
   background-color: #45a049;
 }
 
-/* 削除ボタンのスタイル */
+/* 削除ボタンのスタイル*/
 .delete-button {
   position: absolute;
-  top: 5px;
-  right: 0px;
+  top: 3%;
+  right: -5%;
   background: url(/edit/images/delete.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 26%;
-  height: 26%;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
@@ -2674,35 +2142,82 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .delete-button {
     width: 20%;
-    height: 26%;
+    height: 20%;
+    top: 2px;
+    right: -6px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .delete-button {
+    right: -6%;
   }
 }
 
-/* トリミングボタンのスタイル */
+/* トリミングボタンのスタイル*/
 .crop-button {
   position: absolute;
-  top: 5px;
-  right: 23px;
+  top: 3%;
+  right: 9%;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 26%;
-  height: 26%;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
 }
 @media screen and (min-width: 1500px) {
   .crop-button {
-    width: 23%;
-    right: 23%;
+    right: 14px;
   }
 }
 @media screen and (max-width: 1200px) {
   .crop-button {
-    right: 15%;
+    right: 7%;
+    top: 2px;
   }
+}
+
+.crop-btn {
+  position: absolute;
+  top: 3px;
+  right: 8%;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.crop-btn:hover {
+  opacity: 1;
+}
+.crop-btn.show {
+  display: flex;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 3px;
+  right: -5%;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.delete-btn:hover {
+  opacity: 1;
+}
+.delete-btn.show {
+  display: flex;
 }
 
 /* ボタンを非表示にするためのクラス */

@@ -895,6 +895,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
+
+
 document.getElementById('sendButton').addEventListener('click', function () {
   // 認証トークンの取得
   const token = localStorage.getItem('token');

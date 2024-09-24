@@ -6,6 +6,7 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
+  initialSlide: 23,
   breakpoints: {
     900: {
       slidesPerView: 2,

@@ -813,52 +813,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -896,52 +850,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -981,52 +889,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -1064,52 +926,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1149,52 +965,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -1232,52 +1002,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1317,52 +1041,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -1400,52 +1078,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1485,52 +1117,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -1569,52 +1155,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 &.active {
                   border-color: #00000089;
@@ -1652,52 +1192,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1738,52 +1232,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 // &.active {
                 //   border-color: #00000089;
@@ -1822,52 +1270,6 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
                 // 枠サイズ変更関連---
                 // &.active {
                 //   border-color: #00000089;
@@ -1905,52 +1307,6 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -2436,49 +1792,102 @@
   background-color: #45a049;
 }
 
-/* 削除ボタンのスタイル */
+// ドロップ後ボタン　タッチ用（スマホ）-----------
+/* 削除ボタンのスタイル*/
 .delete-button {
   position: absolute;
-  top: 5px;
-  right: 0px;
+  top: 3%;
+  right: -5%;
   background: url(/edit/images/delete.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 26%;
-  height: 26%;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
 
   @include mq('pc-edit') {
     width: 20%;
-    height: 26%;
+    height: 20%;
+    top: 2px;
+    right: -6px;
+  }
+  @include mq('tab-edit') {
+    right: -6%;
   }
 }
 
-/* トリミングボタンのスタイル */
+/* トリミングボタンのスタイル*/
 .crop-button {
   position: absolute;
-  top: 5px;
-  right: 23px;
+  top: 3%;
+  right: 9%;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 26%;
-  height: 26%;
+  width: 20%;
+  height: 20%;
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
   @include mq('pc2-edit') {
-    width: 23%;
-    right: 23%;
+    // width: 23%;
+    right: 14px;
   }
   @include mq('pc-edit') {
-    right: 15%;
+    right: 7%;
+    top: 2px;
   }
 }
+
+// ドロップ後ボタン　ドラッグ＆ドロップ用（PC用）-----------
+.crop-btn {
+  position: absolute;
+  top: 3px;
+  right: 8%;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.show {
+    display: flex;
+  }
+}
+
+.delete-btn {
+  position: absolute;
+  top: 3px;
+  right: -5%;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.show {
+    display: flex;
+  }
+}
+// ----------------------------------
 
 /* ボタンを非表示にするためのクラス */
 .hide-buttons .delete-button,
