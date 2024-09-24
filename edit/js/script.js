@@ -935,7 +935,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
     });
   }
 
-  // サーバからアルバムIDを取得
+  // サーバからユーザーIDを取得
   fetch('https://develop-back.kotobum.com/api/user', {
     method: 'GET',
     headers: {
@@ -949,12 +949,12 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
-    .then((albumData) => {
-      console.log('取得したアルバムデータ:', albumData);
+    .then((userData) => {
+      console.log('取得したユーザーデータ:', userData);
 
-      const albumId = albumData.albumId;
-      if (!albumId) {
-        console.error('アルバムIDを取得できませんでした。');
+      const userId = userData.userId; // ユーザーIDを取得
+      if (!userId) {
+        console.error('ユーザーIDを取得できませんでした。');
         return;
       }
 
@@ -1039,7 +1039,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
           body.append('imageDBData', JSON.stringify(imageDBData)); // ImageDBのデータ
 
           // サーバへデータを送信
-          return fetch(`https://develop-back.kotobum.com/api/albums/${user_id}/body`, {
+          return fetch(`https://develop-back.kotobum.com/api/albums/${userId}/body`, { // albumId ではなく userId を使用
             method: 'POST',
             headers: {
               Authorization: `Bearer ${token}`,
@@ -1056,7 +1056,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       return response.json();
     })
     .then((data) => {
-      console.log('Success:', data);
+      console.log('成功:', data);
     })
     .catch((error) => {
       console.error('エラー:', error.message);
