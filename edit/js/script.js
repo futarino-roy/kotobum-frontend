@@ -949,10 +949,10 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
-    .then((user) => {
-      console.log('取得したユーザーデータ:', user);
+    .then((users) => {
+      console.log('取得したユーザーデータ:', users);
 
-      const userId = user.id; // ユーザーIDを取得
+      const userId = users.id; // ユーザーIDを取得
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
         return;
