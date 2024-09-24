@@ -949,10 +949,10 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
-    .then((userData) => {
-      console.log('取得したユーザーデータ:', userData);
+    .then((user) => {
+      console.log('取得したユーザーデータ:', user);
 
-      const userId = userData.user_id; // ユーザーIDを取得
+      const userId = user.id; // ユーザーIDを取得
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
         return;
@@ -1039,7 +1039,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
           body.append('imageDBData', JSON.stringify(imageDBData)); // ImageDBのデータ
 
           // サーバへデータを送信
-          return fetch(`https://develop-back.kotobum.com/api/albums/${userId}/body`, { // albumId ではなく userId を使用
+          return fetch(`https://develop-back.kotobum.com/api/albums/${Id}/body`, { // albumId ではなく userId を使用
             method: 'POST',
             headers: {
               Authorization: `Bearer ${token}`,
