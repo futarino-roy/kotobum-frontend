@@ -965,7 +965,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
         })
         .then((album) => {
           console.log('取得したアルバムデータ:', album);
-          const albumId = album[0]?.album_id; // 最初のアルバムIDを取得
+          const albumId = album.albumId; // アルバムIDを取得
           if (!albumId) {
             console.error('アルバムIDを取得できませんでした。');
             return;
