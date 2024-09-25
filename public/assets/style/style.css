@@ -2183,12 +2183,12 @@ input:checked + label::after {
 .crop-btn {
   position: absolute;
   top: 3px;
-  right: 8%;
+  right: 13%;
   background: url(/edit/images/crop.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 20%;
+  width: 15%;
   height: 20%;
   cursor: pointer;
   opacity: 0.8;
@@ -2203,12 +2203,12 @@ input:checked + label::after {
 .delete-btn {
   position: absolute;
   top: 3px;
-  right: -5%;
+  right: 0%;
   background: url(/edit/images/delete.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 20%;
+  width: 15%;
   height: 20%;
   cursor: pointer;
   opacity: 0.8;
@@ -2884,50 +2884,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 26%;
-  height: 26%;
-  cursor: pointer;
-  opacity: 0.8;
-}
-@media screen and (max-width: 330px) {
-  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn {
-    width: 21%;
-    height: 21%;
-  }
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 26%;
-  height: 26%;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -2957,44 +2913,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -3026,44 +2944,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -3093,44 +2973,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -3162,44 +3004,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -3229,44 +3033,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -3298,44 +3064,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -3365,44 +3093,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -3434,44 +3124,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -3501,44 +3153,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -3570,44 +3184,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -3638,44 +3214,6 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 .delete-btn.show {
-  display: flex;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1.square {
   width: 57%;
   height: 40%;
@@ -3702,44 +3240,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2.square {
   width: 57%;
@@ -3768,44 +3268,6 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .crop-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .crop-btn.show {
-  display: flex;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .delete-btn:hover {
-  opacity: 1;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 .delete-btn.show {
-  display: flex;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3.square {
   width: 57%;
