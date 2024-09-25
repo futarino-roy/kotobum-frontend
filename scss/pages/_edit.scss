@@ -1650,17 +1650,17 @@
   // top: 170px;
 
   left: 43%;
-  top: 19vh;
+  top: 15vh;
   --swiper-navigation-size: 75px;
 
   @include mq('tab-edit') {
     top: var(--swiper-navigation-top-offset, 50%);
-    left: var(--swiper-navigation-sides-offset, 20px);
+    left: var(--swiper-navigation-sides-offset, 10px);
     right: auto;
   }
   @media screen and (min-width: 901px) and (max-width: 1200px) {
     left: 42%;
-    top: 23vh;
+    top: 20vh;
   }
   @include mq('pc2-edit') {
     left: 42%;

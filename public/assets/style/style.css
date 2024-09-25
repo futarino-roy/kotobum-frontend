@@ -1995,20 +1995,20 @@ input:checked + label::after {
 
 .swiper-button-prev {
   left: 43%;
-  top: 19vh;
+  top: 15vh;
   --swiper-navigation-size: 75px;
 }
 @media screen and (max-width: 900px) {
   .swiper-button-prev {
     top: var(--swiper-navigation-top-offset, 50%);
-    left: var(--swiper-navigation-sides-offset, 20px);
+    left: var(--swiper-navigation-sides-offset, 10px);
     right: auto;
   }
 }
 @media screen and (min-width: 901px) and (max-width: 1200px) {
   .swiper-button-prev {
     left: 42%;
-    top: 23vh;
+    top: 20vh;
   }
 }
 @media screen and (min-width: 1500px) {
