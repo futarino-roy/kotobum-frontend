@@ -942,9 +942,16 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
+<<<<<<< HEAD
     .then((userData) => {
       console.log('取得したユーザーデータ:', userData);
       const userId = userData.user_id; // ユーザーIDを取得
+=======
+    .then((albums) => {
+      console.log('取得したユーザーデータ:', albums);
+
+      const userId = albums.user_id; // ユーザーIDを取得
+>>>>>>> 8a337085176f1dc418bb55eecddac207f4160c46
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
         return;
@@ -1056,6 +1063,47 @@ document.getElementById('sendButton').addEventListener('click', function () {
             });
         });
     })
+<<<<<<< HEAD
+=======
+    .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
+      console.log('取得したHTMLコンテンツ:', htmlContent);
+      console.log('取得したCSSコンテンツ:', cssContent);
+      console.log('取得したCSS URL:', cssUrls);
+
+      // ローカルストレージのデータを収集
+      let localStorageData = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        localStorageData[key] = localStorage.getItem(key);
+      }
+
+      // IndexedDBのデータを取得
+      return Promise.all([getAllDataFromIndexedDB('NewImageDatabase1', 'images'), getAllDataFromIndexedDB('ImageDB', 'images')]).then(
+        ([newImageDatabase1Data, imageDBData]) => {
+          console.log('NewImageDatabase1のデータ:', newImageDatabase1Data);
+          console.log('ImageDBのデータ:', imageDBData);
+
+          // FormDataの作成
+          const body = new FormData();
+          body.append('htmlContent', htmlContent);
+          body.append('cssContent', cssContent);
+          body.append('cssUrls', JSON.stringify(cssUrls));
+          body.append('localStorageData', JSON.stringify(localStorageData)); // ローカルストレージのデータ
+          body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data)); // NewImageDatabase1のデータ
+          body.append('imageDBData', JSON.stringify(imageDBData)); // ImageDBのデータ
+
+          // サーバへデータを送信
+          return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, { //  userId を使用
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            body: body,
+          });
+        }
+      );
+    })
+>>>>>>> 8a337085176f1dc418bb55eecddac207f4160c46
     .then((response) => {
       if (!response.ok) {
         throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
