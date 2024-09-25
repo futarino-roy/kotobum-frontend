@@ -942,8 +942,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
-    .then((userData) => {
-      console.log('取得したユーザーデータ:', userData);
+    .then((user) => {
+      console.log('取得したユーザーデータ:', user);
       const userId = user.id; // ユーザーIDを取得
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
