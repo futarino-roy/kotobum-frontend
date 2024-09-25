@@ -633,7 +633,11 @@
       }
 
       @include mq('tab-edit') {
-        margin: 0 10%;
+        margin: 0 21.5%;
+      }
+
+      @include mq('sp-edit') {
+        margin: 0 22%;
       }
     }
 
@@ -1529,6 +1533,74 @@
               }
             }
           }
+        }
+      }
+    }
+    .swiper-button-prev {
+      margin-left: 0;
+      transition: margin 0.3s ease;
+  
+      @include mq('pc2-edit') {
+        // margin: 140px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      @include mq('pc3-edit') {
+        // margin: 200px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      @include mq('tab-edit') {
+        // margin: 85px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      &.open {
+        // margin-left: 405px; /* サイドバーが開いているときのマージン */
+        margin-left: 18.5%;
+  
+        @include mq('sp-edit') {
+          top: var(--swiper-navigation-top-offset, 50%);
+          left: var(--swiper-navigation-sides-offset, -5%);
+          right: auto;
+        }
+        @include mq('tab-edit') {
+          margin-left: 14%;
+          margin-top: -25vh;
+        }
+      }
+    }
+    .swiper-button-next {
+      margin-left: 0;
+      transition: margin 0.3s ease;
+  
+      @include mq('pc2-edit') {
+        // margin: 140px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      @include mq('pc3-edit') {
+        // margin: 200px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      @include mq('tab-edit') {
+        // margin: 85px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+  
+      &.open {
+        // margin-left: 405px; /* サイドバーが開いているときのマージン */
+        margin-right: -14%;
+  
+        @include mq('sp-edit') {
+          top: var(--swiper-navigation-top-offset, 50%);
+          right: var(--swiper-navigation-sides-offset, -5%);
+          left: auto;
+        }
+        @include mq('tab-edit') {
+          margin-right: 14%;
+          margin-top: -25vh;
         }
       }
     }

@@ -54,10 +54,14 @@ const toggleDrawer = () => {
   const drawer = document.getElementById('drawer');
   const content = document.getElementById('content');
   const sidebar = document.getElementById('sidebar');
+  const swbtnpre = document.getElementById('swbtnpre');
+  const swbtnnext = document.getElementById('swbtnnext');
 
   drawer.classList.toggle('open');
   sidebar.classList.toggle('open');
   content.classList.toggle('open');
+  swbtnpre.classList.toggle('open');
+  swbtnnext.classList.toggle('open');
 
   if (!drawer.classList.contains('open')) {
     currentContentId = null;
