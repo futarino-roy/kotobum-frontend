@@ -944,13 +944,13 @@ document.getElementById('sendButton').addEventListener('click', function () {
     })
     .then((userData) => {
       console.log('取得したユーザーデータ:', userData);
-      const userId = userData.user_id; // ユーザーIDを取得
+      const userId = user.id; // ユーザーIDを取得
       if (!userId) {
         console.error('ユーザーIDを取得できませんでした。');
         return;
       }
       // アルバムIDを取得
-      return fetch(`https://develop-back.kotobum.com/api/albums?user_id=${userId}`, {
+      return fetch('https://develop-back.kotobum.com/api/user/album', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -963,9 +963,9 @@ document.getElementById('sendButton').addEventListener('click', function () {
           }
           return response.json();
         })
-        .then((albums) => {
-          console.log('取得したアルバムデータ:', albums);
-          const albumId = albums[0]?.album_id; // 最初のアルバムIDを取得
+        .then((album) => {
+          console.log('取得したアルバムデータ:', album);
+          const albumId = album[0]?.album_id; // 最初のアルバムIDを取得
           if (!albumId) {
             console.error('アルバムIDを取得できませんでした。');
             return;
