@@ -944,12 +944,17 @@ document.getElementById('sendButton').addEventListener('click', function () {
     }
     return response.json();
   })
+
   .then((userData) => {
-    const userId = userData.user_id; 
+    console.log('取得したユーザーデータ:', userData); // レスポンスを確認
+    const userId = userData.id; // user_idを取得
+
     if (!userId) {
       console.error('ユーザーIDを取得できませんでした。');
       return;
     }
+
+
 
     // HTMLファイルを取得
     return fetch('../preview/index.html')
