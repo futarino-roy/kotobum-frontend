@@ -14,14 +14,7 @@ const swiper = new Swiper('.swiper', {
       initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
     },
   },
-});
-document.querySelectorAll('.text-empty').forEach((textarea) => {
-  textarea.addEventListener('focus', () => {
-    swiper.allowTouchMove = false;
-  });
-  textarea.addEventListener('blur', () => {
-    swiper.allowTouchMove = true;
-  });
+  touchStartPreventDefault: false,
 });
 
 // メインのスライドからプレビュー
