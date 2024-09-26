@@ -14,7 +14,6 @@ const swiper = new Swiper('.swiper', {
       initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
     },
   },
-  touchStartPreventDefault: false,
 });
 
 // メインのスライドからプレビュー

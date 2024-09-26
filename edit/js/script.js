@@ -25,12 +25,21 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
+  initialSlide: 23,
   breakpoints: {
     900: {
       slidesPerView: 2,
       slidesPerGroup: 2,
     },
   },
+});
+document.querySelectorAll('textarea').forEach((textarea) => {
+  textarea.addEventListener('focus', () => {
+    swiper.allowTouchMove = false;
+  });
+  textarea.addEventListener('blur', () => {
+    swiper.allowTouchMove = true;
+  });
 });
 
 // メインのスライドからプレビュー
