@@ -780,22 +780,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
-  const textAreas = document.querySelectorAll('.textArea');
-
+  const textEmptys = document.querySelectorAll('.text-empty');
   function updateBorders() {
-    textAreas.forEach((textArea) => {
-      if (textArea.value.trim() === '') {
-        textArea.classList.remove('no-border');
+    textEmptys.forEach((textEmpty) => {
+      if (textEmpty.value.trim() === '') {
+        textEmpty.classList.remove('no-border');
       } else {
-        textArea.classList.add('no-border');
+        textEmpty.classList.add('no-border');
       }
     });
   }
-
-  textAreas.forEach((textArea) => {
-    textArea.addEventListener('input', updateBorders);
+  textEmptys.forEach((textEmpty) => {
+    textEmpty.addEventListener('input', updateBorders);
   });
-
   updateBorders();
 });
 

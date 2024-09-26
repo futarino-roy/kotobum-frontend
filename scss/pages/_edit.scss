@@ -705,7 +705,7 @@
           display: flex;
           justify-content: center;
           text-align: center;
-          color: #FFFFFF;
+          color: #ffffff;
           width: auto;
           height: 100%;
           // background-color: #F7F7F7;
@@ -1353,12 +1353,13 @@
                 }
               }
 
-              #textArea {
+              .text-empty {
                 border: 2px dashed #ccc;
                 &.no-border {
                   border: none;
                 }
-
+              }
+              #textArea {
                 &1-1 {
                   margin: 0;
                   font-size: 1.2rem;
@@ -1646,8 +1647,6 @@
   bottom: 0;
   color: #000000;
 }
-
-
 
 .swiper-button-prev {
   // left: 0;

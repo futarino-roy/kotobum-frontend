@@ -115,12 +115,33 @@ modalButton_ls.forEach((modalButton_l) => {
     buttonA_l.disabled = true;
     buttonC_l.disabled = true;
 
-    buttonA_l.style.cursor = 'not-allowed';
+    buttonA_l.style.cursor = 'not-allowed'; // cursorのデザインを変更
     buttonC_l.style.cursor = 'not-allowed';
 
-    // モーダルを閉じる
-    modalS.classList.remove('is-active');
+    fetch(' ', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const koryoButton = document.getElementById('koryoButton');
+
+        if (data.isKoryoDone) {
+          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
+        } else {
+          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
+        }
+      })
+      .catch((error) => {
+        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
+      });
   });
+
+  // モーダルを閉じる
+  modalS.classList.remove('is-active');
 });
 
 // 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更

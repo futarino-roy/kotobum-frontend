@@ -675,7 +675,7 @@
           display: flex;
           justify-content: center;
           text-align: center;
-          color: #FFFFFF;
+          color: #ffffff;
           width: auto;
           height: 100%;
           // background-color: #F7F7F7;
@@ -1323,6 +1323,12 @@
                 }
               }
 
+              .text-empty {
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
+                }
+              }
               #textArea {
                 border: 2px dashed #ccc;
                 &.no-border {
@@ -1450,7 +1456,7 @@
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
-                  color: #FFFFFF;
+                  color: #ffffff;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1548,26 +1554,26 @@
     .swiper-button-prev {
       margin-left: 0;
       transition: margin 0.3s ease;
-  
+
       @include mq('pc2-edit') {
         // margin: 140px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       @include mq('pc3-edit') {
         // margin: 200px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       @include mq('tab-edit') {
         // margin: 85px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       &.open {
         // margin-left: 405px; /* サイドバーが開いているときのマージン */
         margin-left: 18.5%;
-  
+
         @include mq('sp-edit') {
           top: var(--swiper-navigation-top-offset, 50%);
           left: var(--swiper-navigation-sides-offset, -5%);
@@ -1582,26 +1588,26 @@
     .swiper-button-next {
       margin-left: 0;
       transition: margin 0.3s ease;
-  
+
       @include mq('pc2-edit') {
         // margin: 140px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       @include mq('pc3-edit') {
         // margin: 200px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       @include mq('tab-edit') {
         // margin: 85px 0 0 0;
         transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       }
-  
+
       &.open {
         // margin-left: 405px; /* サイドバーが開いているときのマージン */
         margin-right: -14%;
-  
+
         @include mq('sp-edit') {
           top: var(--swiper-navigation-top-offset, 50%);
           right: var(--swiper-navigation-sides-offset, -5%);

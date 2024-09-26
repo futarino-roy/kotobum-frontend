@@ -747,7 +747,6 @@ function saveTextToLocalStorage() {
     localStorage.setItem(id, textArea.value);
   });
 }
-
 // テキストエリアの内容をローカルストレージから読み込む関数
 function loadTextFromLocalStorage() {
   document.querySelectorAll('.text-empty').forEach((textArea) => {
@@ -755,20 +754,17 @@ function loadTextFromLocalStorage() {
     textArea.value = localStorage.getItem(id) || '';
   });
 }
-
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
   textarea.style.height = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
 }
-
 // テキストエリアの幅を調整する関数
 function adjustTextareaWidth(textarea) {
   textarea.style.width = 'auto';
   const scrollWidth = textarea.scrollWidth;
   textarea.style.width = `${scrollWidth}px`;
 }
-
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
   textarea.addEventListener('input', function () {
@@ -776,44 +772,36 @@ function enforceNoMaxLength(textarea) {
     adjustTextareaWidth(this);
     saveTextToLocalStorage();
   });
-
   adjustHeight(textarea);
   adjustTextareaWidth(textarea);
 }
-
 // ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
   loadTextFromLocalStorage();
-
   // テキストエリアごとに必要な処理を実行
   document.querySelectorAll('.text-empty').forEach((textarea) => {
     enforceNoMaxLength(textarea);
   });
-
   // ロード後に高さ調整を行う
   setTimeout(() => {
     document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
   }, 100);
 });
-
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
-  const textAreas = document.querySelectorAll('.textArea');
-
+  const textEmptys = document.querySelectorAll('.text-empty');
   function updateBorders() {
-    textAreas.forEach((textArea) => {
-      if (textArea.value.trim() === '') {
-        textArea.classList.remove('no-border');
+    textEmptys.forEach((textEmpty) => {
+      if (textEmpty.value.trim() === '') {
+        textEmpty.classList.remove('no-border');
       } else {
-        textArea.classList.add('no-border');
+        textEmpty.classList.add('no-border');
       }
     });
   }
-
-  textAreas.forEach((textArea) => {
-    textArea.addEventListener('input', updateBorders);
+  textEmptys.forEach((textEmpty) => {
+    textEmpty.addEventListener('input', updateBorders);
   });
-
   updateBorders();
 });
 
@@ -938,93 +926,90 @@ document.getElementById('sendButton').addEventListener('click', function () {
       'Content-Type': 'application/json',
     },
   })
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-    }
-    return response.json();
-  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
 
-  .then((userData) => {
-    console.log('取得したユーザーデータ:', userData); // レスポンスを確認
-    const userId = userData.id; // user_idを取得
+    .then((userData) => {
+      console.log('取得したユーザーデータ:', userData); // レスポンスを確認
+      const userId = userData.id; // user_idを取得
 
-    if (!userId) {
-      console.error('ユーザーIDを取得できませんでした。');
-      return;
-    }
+      if (!userId) {
+        console.error('ユーザーIDを取得できませんでした。');
+        return;
+      }
 
+      // HTMLファイルを取得
+      return fetch('../preview/index.html')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
+          }
+          return response.text();
+        })
+        .then((htmlContent) => {
+          let cssContent = '';
+          let cssUrls = [];
+          const cssPromises = [];
 
-
-    // HTMLファイルを取得
-    return fetch('../preview/index.html')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
-        }
-        return response.text();
-      })
-      .then((htmlContent) => {
-        let cssContent = '';
-        let cssUrls = [];
-        const cssPromises = [];
-
-        // CSSスタイルシートを取得
-        for (let sheet of document.styleSheets) {
-          try {
-            if (sheet.href && sheet.href.startsWith(window.location.origin)) {
-              cssUrls.push(sheet.href);
-              cssPromises.push(
-                fetch(sheet.href)
-                  .then((response) => {
-                    if (!response.ok) {
-                      throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
-                    }
-                    return response.text();
-                  })
-                  .then((text) => {
-                    cssContent += text;
-                  })
-                  .catch((e) => {
-                    console.warn('スタイルシートの取得エラー:', e);
-                  })
-              );
-            } else if (!sheet.href) {
-              if (sheet.cssRules) {
-                for (let rule of sheet.cssRules) {
-                  cssContent += rule.cssText;
+          // CSSスタイルシートを取得
+          for (let sheet of document.styleSheets) {
+            try {
+              if (sheet.href && sheet.href.startsWith(window.location.origin)) {
+                cssUrls.push(sheet.href);
+                cssPromises.push(
+                  fetch(sheet.href)
+                    .then((response) => {
+                      if (!response.ok) {
+                        throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
+                      }
+                      return response.text();
+                    })
+                    .then((text) => {
+                      cssContent += text;
+                    })
+                    .catch((e) => {
+                      console.warn('スタイルシートの取得エラー:', e);
+                    })
+                );
+              } else if (!sheet.href) {
+                if (sheet.cssRules) {
+                  for (let rule of sheet.cssRules) {
+                    cssContent += rule.cssText;
+                  }
                 }
               }
+            } catch (e) {
+              console.warn('スタイルシートの取得エラー:', e);
             }
-          } catch (e) {
-            console.warn('スタイルシートの取得エラー:', e);
           }
-        }
 
-        return Promise.all(cssPromises).then(() => ({
-          htmlContent,
-          cssContent,
-          cssUrls,
-        }));
-      })
-      .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
-        let localStorageData = {};
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          localStorageData[key] = localStorage.getItem(key);
-        }
+          return Promise.all(cssPromises).then(() => ({
+            htmlContent,
+            cssContent,
+            cssUrls,
+          }));
+        })
+        .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
+          let localStorageData = {};
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            localStorageData[key] = localStorage.getItem(key);
+          }
 
-        return Promise.all([
-          getAllDataFromIndexedDB('NewImageDatabase1', 'images').catch(err => {
-            console.error('NewImageDatabase1のデータ取得中にエラー:', err);
-            return [];
-          }),
-          getAllDataFromIndexedDB('ImageDB', 'images').catch(err => {
-            console.error('ImageDBのデータ取得中にエラー:', err);
-            return [];
-          })
-        ]).then(
-          ([newImageDatabase1Data, imageDBData]) => {
+          return Promise.all([
+            getAllDataFromIndexedDB('NewImageDatabase1', 'images').catch((err) => {
+              console.error('NewImageDatabase1のデータ取得中にエラー:', err);
+              return [];
+            }),
+            getAllDataFromIndexedDB('ImageDB', 'images').catch((err) => {
+              console.error('ImageDBのデータ取得中にエラー:', err);
+              return [];
+            }),
+          ]).then(([newImageDatabase1Data, imageDBData]) => {
             const body = new FormData();
             body.append('htmlContent', htmlContent);
             body.append('cssContent', cssContent);
@@ -1041,21 +1026,19 @@ document.getElementById('sendButton').addEventListener('click', function () {
               },
               body: body,
             });
-          }
-        );
-      });
-  })
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    console.log('成功:', data);
-  })
-  .catch((error) => {
-    console.error('エラー:', error);
-
-  });
+          });
+        });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('成功:', data);
+    })
+    .catch((error) => {
+      console.error('エラー:', error);
+    });
 });
