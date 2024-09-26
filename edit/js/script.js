@@ -1056,7 +1056,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
             body.append('imageDBData', JSON.stringify(imageDBData));
 
             // ユーザーIDを使ってデータを送信
-            return fetch(`https://develop-back.kotobum.com/api/user/${userId}/data`, {
+            return fetch(`https://develop-back.kotobum.com/api/user/${albumId}/data`, {
               method: 'POST',
               headers: {
                 Authorization: `Bearer ${token}`,
