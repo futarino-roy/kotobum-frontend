@@ -1654,7 +1654,7 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   resize: none;
   width: 60% !important;
   max-width: 60%;
@@ -1696,6 +1696,7 @@ input:checked + label::after {
   line-height: 1.2;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
@@ -1721,6 +1722,7 @@ input:checked + label::after {
   margin: 0;
   margin: 1% 0 5%;
   font-size: 0.45rem;
+  text-align: center;
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
@@ -1750,6 +1752,7 @@ input:checked + label::after {
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
@@ -1776,6 +1779,7 @@ input:checked + label::after {
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
@@ -1805,6 +1809,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
@@ -1832,6 +1837,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
@@ -1857,6 +1863,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
@@ -1883,6 +1890,7 @@ input:checked + label::after {
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
@@ -3256,7 +3264,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   resize: none;
   max-width: 60%;
   height: 20%;
@@ -3295,6 +3303,7 @@ input:checked + label::after {
   font-size: 1.2rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
@@ -3322,6 +3331,7 @@ input:checked + label::after {
   font-size: 0.45rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
@@ -3355,6 +3365,7 @@ input:checked + label::after {
   margin-bottom: 5%;
   font-size: 0.6rem;
   line-height: 1.5;
+  text-align: center;
   font-weight: bold;
   writing-mode: vertical-rl;
 }
@@ -3415,6 +3426,8 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
@@ -3444,6 +3457,7 @@ input:checked + label::after {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18-1 {
@@ -3473,6 +3487,7 @@ input:checked + label::after {
   line-height: 1.5;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.537254902);
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18-2 {

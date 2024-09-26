@@ -1298,7 +1298,7 @@
 
               textarea {
                 overflow: hidden;
-                text-align: center;
+                text-align: left;
                 resize: none;
                 max-width: 60%;
                 height: 20%;
@@ -1334,6 +1334,7 @@
                   font-size: 1.2rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.9rem;
@@ -1358,6 +1359,7 @@
                   font-size: 0.45rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.33rem;
@@ -1390,6 +1392,7 @@
                   margin-bottom: 5%;
                   font-size: 0.6rem;
                   line-height: 1.5;
+                  text-align: center;
                   font-weight: bold;
                   writing-mode: vertical-rl;
 
@@ -1446,6 +1449,8 @@
                   font-size: 0.6rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
+                  color: #FFFFFF;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1472,6 +1477,7 @@
                   font-size: 0.6rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1498,7 +1504,7 @@
                   line-height: 1.5;
                   font-weight: bold;
                   color: #00000089;
-
+                  text-align: center;
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
                   }
