@@ -173,86 +173,86 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   }
 // }
 
-function makeDraggable(img) {
-  let isDragging = false;
-  let startX, startY, initialX, initialY;
+// function makeDraggable(img) {
+//   let isDragging = false;
+//   let startX, startY, initialX, initialY;
 
-  function onMouseDown(e) {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    initialX = parseFloat(img.style.left) || 0;
-    initialY = parseFloat(img.style.top) || 0;
-    img.style.cursor = 'grabbing';
-  }
+//   function onMouseDown(e) {
+//     isDragging = true;
+//     startX = e.clientX;
+//     startY = e.clientY;
+//     initialX = parseFloat(img.style.left) || 0;
+//     initialY = parseFloat(img.style.top) || 0;
+//     img.style.cursor = 'grabbing';
+//   }
 
-  function onMouseMove(e) {
-    if (isDragging) {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
-      img.style.left = initialX + dx + 'px';
-      img.style.top = initialY + dy + 'px';
-    }
-  }
+//   function onMouseMove(e) {
+//     if (isDragging) {
+//       const dx = e.clientX - startX;
+//       const dy = e.clientY - startY;
+//       img.style.left = initialX + dx + 'px';
+//       img.style.top = initialY + dy + 'px';
+//     }
+//   }
 
-  function onMouseUp() {
-    isDragging = false;
-    img.style.cursor = 'grab';
-  }
+//   function onMouseUp() {
+//     isDragging = false;
+//     img.style.cursor = 'grab';
+//   }
 
-  function onTouchStart(e) {
-    if (e.touches.length === 1) {
-      isDragging = true;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      initialX = parseFloat(img.style.left) || 0;
-      initialY = parseFloat(img.style.top) || 0;
-    }
-  }
+//   function onTouchStart(e) {
+//     if (e.touches.length === 1) {
+//       isDragging = true;
+//       startX = e.touches[0].clientX;
+//       startY = e.touches[0].clientY;
+//       initialX = parseFloat(img.style.left) || 0;
+//       initialY = parseFloat(img.style.top) || 0;
+//     }
+//   }
 
-  function onTouchMove(e) {
-    if (isDragging && e.touches.length === 1) {
-      const dx = e.touches[0].clientX - startX;
-      const dy = e.touches[0].clientY - startY;
-      img.style.left = initialX + dx + 'px';
-      img.style.top = initialY + dy + 'px';
-    }
-  }
+//   function onTouchMove(e) {
+//     if (isDragging && e.touches.length === 1) {
+//       const dx = e.touches[0].clientX - startX;
+//       const dy = e.touches[0].clientY - startY;
+//       img.style.left = initialX + dx + 'px';
+//       img.style.top = initialY + dy + 'px';
+//     }
+//   }
 
-  function onTouchEnd() {
-    isDragging = false;
-  }
+//   function onTouchEnd() {
+//     isDragging = false;
+//   }
 
-  img.addEventListener('mousedown', onMouseDown);
-  img.addEventListener('mousemove', onMouseMove);
-  img.addEventListener('mouseup', onMouseUp);
-  img.addEventListener('mouseleave', onMouseUp);
+//   img.addEventListener('mousedown', onMouseDown);
+//   img.addEventListener('mousemove', onMouseMove);
+//   img.addEventListener('mouseup', onMouseUp);
+//   img.addEventListener('mouseleave', onMouseUp);
 
-  img.addEventListener('touchstart', onTouchStart);
-  img.addEventListener('touchmove', onTouchMove);
-  img.addEventListener('touchend', onTouchEnd);
-}
+//   img.addEventListener('touchstart', onTouchStart);
+//   img.addEventListener('touchmove', onTouchMove);
+//   img.addEventListener('touchend', onTouchEnd);
+// }
 
-function makeTouchable(img) {
-  img.addEventListener('click', function () {
-    const allImgs = document.querySelectorAll('#imgPreviewField img');
-    allImgs.forEach((image) => {
-      image.classList.remove('selected');
-    });
-    img.classList.add('selected');
-    selectedImage = img;
-  });
+// function makeTouchable(img) {
+//   img.addEventListener('click', function () {
+//     const allImgs = document.querySelectorAll('#imgPreviewField img');
+//     allImgs.forEach((image) => {
+//       image.classList.remove('selected');
+//     });
+//     img.classList.add('selected');
+//     selectedImage = img;
+//   });
 
-  img.addEventListener('touchstart', function (e) {
-    e.preventDefault();
-    const allImgs = document.querySelectorAll('#imgPreviewField img');
-    allImgs.forEach((image) => {
-      image.classList.remove('selected');
-    });
-    img.classList.add('selected');
-    selectedImage = img;
-  });
-}
+//   img.addEventListener('touchstart', function (e) {
+//     e.preventDefault();
+//     const allImgs = document.querySelectorAll('#imgPreviewField img');
+//     allImgs.forEach((image) => {
+//       image.classList.remove('selected');
+//     });
+//     img.classList.add('selected');
+//     selectedImage = img;
+//   });
+// }
 
 function addTouchListenerToDropAreas() {
   const dropAreas = document.querySelectorAll('.empty');
