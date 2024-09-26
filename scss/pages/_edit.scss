@@ -637,92 +637,90 @@
   }
 
   .content {
-    // margin-top: 130px;
-    // margin-top: 100px;
-    // margin-left: 77px; /* 初期マージン */
     transition: margin-left 0.3s ease;
-
     @include mq('pc2-edit') {
       // margin: 140px 0 0 0;
       transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
-
     @include mq('pc3-edit') {
       // margin: 200px 0 0 0;
       transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
-
     @include mq('tab-edit') {
       // margin: 85px 0 0 0;
-      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
-
     &.open {
       // margin-left: 405px; /* サイドバーが開いているときのマージン */
       margin-left: 32.5%;
-
       @include mq('pc-edit') {
         margin-left: 33.5%;
       }
-
       @include mq('pc4-edit') {
         margin-left: 31.5%;
       }
-
       @include mq('tab-edit') {
-        margin: 0 21.5%;
+        margin: 0;
+        width: 60%;
+        position: absolute;
+        top: calc(30% + 40.5px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
-
-      @include mq('sp-edit') {
-        margin: 0 22%;
-      }
+      // @include mq('sp2-edit'){
+      //     margin: 90px 20% 0 ;
+      //     }
+      //     @include mq('sp3-edit'){
+      //         margin: 90px 10% 0 ;
+      //         }
+      //     @include mq('tab-edit'){
+      //         margin-left: 36%;
+      //         }
     }
-
     .swiper {
       width: 600px;
       height: 100%;
-
       // min-width: 600px;
-
       @include mq('pc2-edit') {
         width: 900px;
       }
-
       @include mq('pc-edit') {
         width: 450px;
       }
-
       @include mq('tab-edit') {
         display: block;
         width: 80%;
         min-width: auto;
       }
-
       &-wrapper {
         .swiper-slide {
           display: flex;
           justify-content: center;
           text-align: center;
-
-          color: #ffffff;
+          color: #FFFFFF;
           width: auto;
           height: 100%;
-          // background-color: #f7f7f7;
+          // background-color: #F7F7F7;
           // display: flex;
           // gap: 5px;
           // justify-content: center;
           // align-items: center;
-
           &-hidden {
             visibility: hidden;
-
             @include mq('tab-edit') {
               display: none;
             }
           }
-
           &_box {
-            max-width: 500px;
+            // max-width: 500px;
             position: relative;
             clip-path: inset(20px 21px 26px 21px);
             @include mq('pc2-edit') {
@@ -732,23 +730,21 @@
               clip-path: inset(16px 16px 21px 17px);
             }
             @include mq('tab-edit') {
-              width: 70%;
-              margin: 50px 0 0;
+              width: 90%;
               clip-path: inset(5% 7% 6% 7%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(5% 7% 6% 7%);
             }
-            @include mq('sp2-edit') {
-              width: 70%;
-              clip-path: inset(5% 7% 7% 7%);
-            }
-            @include mq('sp3-edit') {
-              // height: 660px;
-              width: 50%;
-              clip-path: inset(5% 7% 8% 7%);
-            }
+            // @include mq('sp2-edit') {
+            //   width: 70%;
+            //   clip-path: inset(5% 7% 7% 7%);
+            // }
+            // @include mq('sp3-edit') {
+            //   // height: 660px;
+            //   width: 50%;
+            //   clip-path: inset(5% 7% 8% 7%);
+            // }
 
             .input-drop {
               position: absolute;
@@ -1349,7 +1345,7 @@
                 }
 
                 @include mq('tab-edit') {
-                  font-size: 1.2vw;
+                  font-size: 1.6vw;
                 }
 
                 @include mq('sp-edit') {
@@ -1379,7 +1375,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 3.5vw;
+                    font-size: 4.5vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1404,7 +1400,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.3vw;
+                    font-size: 1.7vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1433,11 +1429,11 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 2.5vw;
+                    font-size: 2.6vw;
                   }
                 }
 
@@ -1456,7 +1452,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1482,11 +1478,11 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 1.5vw;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 2.5vw;
+                    font-size: 1.7vw;
                   }
                 }
 
@@ -1506,7 +1502,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1528,7 +1524,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.2vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1551,7 +1547,7 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
@@ -1594,8 +1590,8 @@
         right: auto;
       }
       @include mq('tab-edit') {
-        margin-left: 14%;
-        margin-top: -25vh;
+        margin-left: -14%;
+        margin-top: -5vh;
       }
     }
   }
@@ -1628,8 +1624,8 @@
         left: auto;
       }
       @include mq('tab-edit') {
-        margin-right: 14%;
-        margin-top: -25vh;
+        // margin-right: 14%;
+        margin-top: -5vh;
       }
     }
   }
