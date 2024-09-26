@@ -740,70 +740,72 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
 // テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
-function saveTextToLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    localStorage.setItem(id, textArea.value);
-  });
-}
-// テキストエリアの内容をローカルストレージから読み込む関数
-function loadTextFromLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    textArea.value = localStorage.getItem(id) || '';
-  });
-}
-// テキストエリアの高さを調整する関数
-function adjustHeight(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-}
-// テキストエリアの幅を調整する関数
-function adjustTextareaWidth(textarea) {
-  textarea.style.width = 'auto';
-  const scrollWidth = textarea.scrollWidth;
-  textarea.style.width = `${scrollWidth}px`;
-}
-// 最大文字数の制限を外し、イベントリスナーを追加する関数
-function enforceNoMaxLength(textarea) {
-  textarea.addEventListener('input', function () {
-    adjustHeight(this);
-    adjustTextareaWidth(this);
-    saveTextToLocalStorage();
-  });
-  adjustHeight(textarea);
-  adjustTextareaWidth(textarea);
-}
-// ドキュメント読み込み時の処理
-document.addEventListener('DOMContentLoaded', function () {
-  loadTextFromLocalStorage();
-  // テキストエリアごとに必要な処理を実行
-  document.querySelectorAll('.text-empty').forEach((textarea) => {
-    enforceNoMaxLength(textarea);
-  });
-  // ロード後に高さ調整を行う
-  setTimeout(() => {
-    document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
-  }, 100);
-});
-// テキストエリア枠の削除
-document.addEventListener('DOMContentLoaded', function () {
-  const textEmptys = document.querySelectorAll('.text-empty');
-  function updateBorders() {
-    textEmptys.forEach((textEmpty) => {
-      if (textEmpty.value.trim() === '') {
-        textEmpty.classList.remove('no-border');
-      } else {
-        textEmpty.classList.add('no-border');
-      }
-    });
-  }
-  textEmptys.forEach((textEmpty) => {
-    textEmpty.addEventListener('input', updateBorders);
-  });
-  updateBorders();
-});
+// function saveTextToLocalStorage() {
+//   document.querySelectorAll('.text-empty').forEach((textArea) => {
+//     const id = textArea.id;
+//     localStorage.setItem(id, textArea.value);
+//   });
+// }
+// // テキストエリアの内容をローカルストレージから読み込む関数
+// function loadTextFromLocalStorage() {
+//   document.querySelectorAll('.text-empty').forEach((textArea) => {
+//     const id = textArea.id;
+//     textArea.value = localStorage.getItem(id) || '';
+//   });
+// }
+// // テキストエリアの高さを調整する関数
+// function adjustHeight(textarea) {
+//   textarea.style.height = 'auto';
+//   textarea.style.height = `${textarea.scrollHeight}px`;
+// }
+// // テキストエリアの幅を調整する関数
+// function adjustTextareaWidth(textarea) {
+//   textarea.style.width = 'auto';
+//   const scrollWidth = textarea.scrollWidth;
+//   textarea.style.width = `${scrollWidth}px`;
+// }
+// // 最大文字数の制限を外し、イベントリスナーを追加する関数
+// function enforceNoMaxLength(textarea) {
+//   textarea.addEventListener('input', function () {
+//     adjustHeight(this);
+//     adjustTextareaWidth(this);
+//     saveTextToLocalStorage();
+//   });
+//   adjustHeight(textarea);
+//   adjustTextareaWidth(textarea);
+// }
+// // ドキュメント読み込み時の処理
+// document.addEventListener('DOMContentLoaded', function () {
+//   loadTextFromLocalStorage();
+//   // テキストエリアごとに必要な処理を実行
+//   document.querySelectorAll('.text-empty').forEach((textarea) => {
+//     enforceNoMaxLength(textarea);
+//   });
+//   // ロード後に高さ調整を行う
+//   setTimeout(() => {
+//     document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
+//   }, 100);
+// });
+// // テキストエリア枠の削除
+// document.addEventListener('DOMContentLoaded', function () {
+//   const textEmptys = document.querySelectorAll('.text-empty');
+//   function updateBorders() {
+//     textEmptys.forEach((textEmpty) => {
+//       if (textEmpty.value.trim() === '') {
+//         textEmpty.classList.remove('no-border');
+//       } else {
+//         textEmpty.classList.add('no-border');
+//       }
+//     });
+//   }
+//   textEmptys.forEach((textEmpty) => {
+//     textEmpty.addEventListener('input', updateBorders);
+//   });
+//   updateBorders();
+// });
 
 // 枠変更 12-~3変更できない版 ローカルストレージに保存
 document.addEventListener('DOMContentLoaded', () => {
