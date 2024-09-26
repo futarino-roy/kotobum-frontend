@@ -484,10 +484,10 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   };
 // }
 
-function openCroppieModal(dropArea) {
-  // Croppieモーダルの表示処理
-  console.log('Croppie modal open for drop area:', dropArea);
-}
+// function openCroppieModal(dropArea) {
+//   // Croppieモーダルの表示処理
+//   console.log('Croppie modal open for drop area:', dropArea);
+// }
 
 // 画像のドラッグ＆ドロップ indexedDBに保存
 function handleDragOver(event) {

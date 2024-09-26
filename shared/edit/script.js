@@ -383,3 +383,8 @@ function deleteImageFromNewIndexedDB(id) {
     console.error('Error deleting image:', event.target.errorCode);
   };
 }
+
+function openCroppieModal(dropArea) {
+  // Croppieモーダルの表示処理
+  console.log('Croppie modal open for drop area:', dropArea);
+}
