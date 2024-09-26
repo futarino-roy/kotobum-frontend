@@ -30,15 +30,6 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-// テキストエリアの要素を取得 1
-const bugFixes = document.querySelectorAll('.swiper textarea');
-bugFixes.forEach((textarea) => {
-  textarea.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ
-    }
-  });
-});
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
