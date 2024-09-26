@@ -489,141 +489,141 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   console.log('Croppie modal open for drop area:', dropArea);
 // }
 
-// 画像のドラッグ＆ドロップ indexedDBに保存
-function handleDragOver(event) {
-  event.preventDefault();
-  this.style.backgroundColor = '#d0f0c0';
-}
+// // 画像のドラッグ＆ドロップ indexedDBに保存
+// function handleDragOver(event) {
+//   event.preventDefault();
+//   this.style.backgroundColor = '#d0f0c0';
+// }
 
-// ドラッグが離れたときの処理
-function handleDragLeave(event) {
-  this.style.backgroundColor = 'transparent';
-}
+// // ドラッグが離れたときの処理
+// function handleDragLeave(event) {
+//   this.style.backgroundColor = 'transparent';
+// }
 
-// IndexedDBへの接続
-let myimageDB2;
-const request = indexedDB.open('ImageDB', 1);
+// // IndexedDBへの接続
+// let myimageDB2;
+// const request = indexedDB.open('ImageDB', 1);
 
-request.onupgradeneeded = function (event) {
-  myimageDB2 = event.target.result;
-  if (!myimageDB2.objectStoreNames.contains('images')) {
-    myimageDB2.createObjectStore('images', { keyPath: 'id' });
-  }
-};
+// request.onupgradeneeded = function (event) {
+//   myimageDB2 = event.target.result;
+//   if (!myimageDB2.objectStoreNames.contains('images')) {
+//     myimageDB2.createObjectStore('images', { keyPath: 'id' });
+//   }
+// };
 
-request.onsuccess = function (event) {
-  myimageDB2 = event.target.result;
+// request.onsuccess = function (event) {
+//   myimageDB2 = event.target.result;
 
-  // IndexedDB接続が成功した場合にのみ画像をロード
-  if (myimageDB2) {
-    loadAllImages();
-  } else {
-    console.error('IndexedDBへの接続が失敗しました。');
-  }
-};
+//   // IndexedDB接続が成功した場合にのみ画像をロード
+//   if (myimageDB2) {
+//     loadAllImages();
+//   } else {
+//     console.error('IndexedDBへの接続が失敗しました。');
+//   }
+// };
 
-request.onerror = function (event) {
-  console.error('IndexedDBに接続できませんでした:', event.target.error);
-};
+// request.onerror = function (event) {
+//   console.error('IndexedDBに接続できませんでした:', event.target.error);
+// };
 
-// 画像をIndexedDBに保存
-function saveImageToIndexedDB(imageData, containerId) {
-  const transaction = myimageDB2.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.put({ id: containerId, data: imageData });
+// // 画像をIndexedDBに保存
+// function saveImageToIndexedDB(imageData, containerId) {
+//   const transaction = myimageDB2.transaction(['images'], 'readwrite');
+//   const store = transaction.objectStore('images');
+//   const request = store.put({ id: containerId, data: imageData });
 
-  request.onsuccess = function () {
-    console.log('画像がIndexedDBに保存されました:', containerId);
-  };
+//   request.onsuccess = function () {
+//     console.log('画像がIndexedDBに保存されました:', containerId);
+//   };
 
-  request.onerror = function (event) {
-    console.error('画像の保存に失敗しました:', event.target.error);
-  };
-}
+//   request.onerror = function (event) {
+//     console.error('画像の保存に失敗しました:', event.target.error);
+//   };
+// }
 
-// IndexedDBから画像を取得
-function loadImageFromIndexedDB(containerId, callback) {
-  const transaction = myimageDB2.transaction(['images'], 'readonly');
-  const store = transaction.objectStore('images');
-  const request = store.get(containerId);
+// // IndexedDBから画像を取得
+// function loadImageFromIndexedDB(containerId, callback) {
+//   const transaction = myimageDB2.transaction(['images'], 'readonly');
+//   const store = transaction.objectStore('images');
+//   const request = store.get(containerId);
 
-  request.onsuccess = function (event) {
-    callback(event.target.result ? event.target.result.data : null);
-  };
+//   request.onsuccess = function (event) {
+//     callback(event.target.result ? event.target.result.data : null);
+//   };
 
-  request.onerror = function (event) {
-    console.error('画像の取得に失敗しました:', event.target.error);
-    callback(null);
-  };
-}
+//   request.onerror = function (event) {
+//     console.error('画像の取得に失敗しました:', event.target.error);
+//     callback(null);
+//   };
+// }
 
-// IndexedDBから画像を削除
-function clearImageFromIndexedDB(containerId) {
-  const transaction = myimageDB2.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.delete(containerId);
+// // IndexedDBから画像を削除
+// function clearImageFromIndexedDB(containerId) {
+//   const transaction = myimageDB2.transaction(['images'], 'readwrite');
+//   const store = transaction.objectStore('images');
+//   const request = store.delete(containerId);
 
-  request.onsuccess = function () {
-    console.log('画像がIndexedDBから削除されました:', containerId);
-  };
+//   request.onsuccess = function () {
+//     console.log('画像がIndexedDBから削除されました:', containerId);
+//   };
 
-  request.onerror = function (event) {
-    console.error('画像の削除に失敗しました:', event.target.error);
-  };
-}
+//   request.onerror = function (event) {
+//     console.error('画像の削除に失敗しました:', event.target.error);
+//   };
+// }
 
-// 全ての画像をロード
-function loadAllImages() {
-  const emptyElements = document.querySelectorAll('.empty');
-  emptyElements.forEach(function (dropArea) {
-    loadImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        dropArea.innerHTML = '';
-        let img = new Image();
-        img.src = imageData;
-        img.classList.add('draggable-image');
-        img.onclick = function () {
-          showButtons(this.parentNode);
-        };
-        dropArea.appendChild(img);
-        addButtons(dropArea);
+// // 全ての画像をロード
+// function loadAllImages() {
+//   const emptyElements = document.querySelectorAll('.empty');
+//   emptyElements.forEach(function (dropArea) {
+//     loadImageFromIndexedDB(dropArea.id, function (imageData) {
+//       if (imageData) {
+//         dropArea.innerHTML = '';
+//         let img = new Image();
+//         img.src = imageData;
+//         img.classList.add('draggable-image');
+//         img.onclick = function () {
+//           showButtons(this.parentNode);
+//         };
+//         dropArea.appendChild(img);
+//         addButtons(dropArea);
 
-        // 画像が挿入されたら枠線をなくす処理追加
-        dropArea.style.border = 'none';
-      }
-    });
-  });
-}
+//         // 画像が挿入されたら枠線をなくす処理追加
+//         dropArea.style.border = 'none';
+//       }
+//     });
+//   });
+// }
 
-// ドロップ時の処理
-function handleDrop(event) {
-  event.preventDefault();
-  this.style.backgroundColor = 'transparent';
+// // ドロップ時の処理
+// function handleDrop(event) {
+//   event.preventDefault();
+//   this.style.backgroundColor = 'transparent';
 
-  const files = event.dataTransfer.files;
-  if (files.length > 0) {
-    let file = files[0];
-    let fileReader = new FileReader();
-    fileReader.onload = function (e) {
-      this.innerHTML = '';
-      let img = new Image();
-      img.src = e.target.result;
-      img.classList.add('draggable-image');
-      img.onclick = function () {
-        showButtons(this.parentNode);
-      };
-      this.appendChild(img);
-      addButtons(this);
+//   const files = event.dataTransfer.files;
+//   if (files.length > 0) {
+//     let file = files[0];
+//     let fileReader = new FileReader();
+//     fileReader.onload = function (e) {
+//       this.innerHTML = '';
+//       let img = new Image();
+//       img.src = e.target.result;
+//       img.classList.add('draggable-image');
+//       img.onclick = function () {
+//         showButtons(this.parentNode);
+//       };
+//       this.appendChild(img);
+//       addButtons(this);
 
-      // 画像が挿入されたら枠線をなくす処理追加
-      this.style.border = 'none';
+//       // 画像が挿入されたら枠線をなくす処理追加
+//       this.style.border = 'none';
 
-      // IndexedDBに画像データを保存
-      saveImageToIndexedDB(e.target.result, this.id);
-    }.bind(this);
-    fileReader.readAsDataURL(file);
-  }
-}
+//       // IndexedDBに画像データを保存
+//       saveImageToIndexedDB(e.target.result, this.id);
+//     }.bind(this);
+//     fileReader.readAsDataURL(file);
+//   }
+// }
 
 // タッチエンド時の処理
 function handleTouchDrop(event) {
