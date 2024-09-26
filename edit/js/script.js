@@ -33,6 +33,51 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+
+
+
+
+// テキストエリアの取得
+const textarea = document.querySelector('textarea');
+
+// フォーカス時にスワイプを無効化
+textarea.addEventListener('focus', () => {
+    swiper.disable();
+});
+
+// フォーカスが外れたらスワイプを有効化
+textarea.addEventListener('blur', () => {
+    swiper.enable();
+});
+
+// キーボードの完了ボタンでの動作を制御
+textarea.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // スワイプを無効化
+        // 他の処理を追加（例：テキストを送信）
+        console.log('テキスト送信処理'); // デバッグ用
+    }
+});
+
+// ウィンドウサイズ変更時の処理
+window.addEventListener('resize', () => {
+    // ビューの調整
+    if (window.innerHeight < 500) { // 一般的なスマホの高さの基準
+        document.querySelector('.swiper-container').style.height = 'calc(100vh - 300px)'; // 高さ調整
+    } else {
+        document.querySelector('.swiper-container').style.height = '100vh'; // 元に戻す
+    }
+});
+
+// 初期表示時にサイズ調整を呼び出す
+window.dispatchEvent(new Event('resize'));
+
+
+
+
+
+
+
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
   // プレビューボタンにクリックイベントリスナーを追加
@@ -740,72 +785,70 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-
 // テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
-// function saveTextToLocalStorage() {
-//   document.querySelectorAll('.text-empty').forEach((textArea) => {
-//     const id = textArea.id;
-//     localStorage.setItem(id, textArea.value);
-//   });
-// }
-// // テキストエリアの内容をローカルストレージから読み込む関数
-// function loadTextFromLocalStorage() {
-//   document.querySelectorAll('.text-empty').forEach((textArea) => {
-//     const id = textArea.id;
-//     textArea.value = localStorage.getItem(id) || '';
-//   });
-// }
-// // テキストエリアの高さを調整する関数
-// function adjustHeight(textarea) {
-//   textarea.style.height = 'auto';
-//   textarea.style.height = `${textarea.scrollHeight}px`;
-// }
-// // テキストエリアの幅を調整する関数
-// function adjustTextareaWidth(textarea) {
-//   textarea.style.width = 'auto';
-//   const scrollWidth = textarea.scrollWidth;
-//   textarea.style.width = `${scrollWidth}px`;
-// }
-// // 最大文字数の制限を外し、イベントリスナーを追加する関数
-// function enforceNoMaxLength(textarea) {
-//   textarea.addEventListener('input', function () {
-//     adjustHeight(this);
-//     adjustTextareaWidth(this);
-//     saveTextToLocalStorage();
-//   });
-//   adjustHeight(textarea);
-//   adjustTextareaWidth(textarea);
-// }
-// // ドキュメント読み込み時の処理
-// document.addEventListener('DOMContentLoaded', function () {
-//   loadTextFromLocalStorage();
-//   // テキストエリアごとに必要な処理を実行
-//   document.querySelectorAll('.text-empty').forEach((textarea) => {
-//     enforceNoMaxLength(textarea);
-//   });
-//   // ロード後に高さ調整を行う
-//   setTimeout(() => {
-//     document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
-//   }, 100);
-// });
-// // テキストエリア枠の削除
-// document.addEventListener('DOMContentLoaded', function () {
-//   const textEmptys = document.querySelectorAll('.text-empty');
-//   function updateBorders() {
-//     textEmptys.forEach((textEmpty) => {
-//       if (textEmpty.value.trim() === '') {
-//         textEmpty.classList.remove('no-border');
-//       } else {
-//         textEmpty.classList.add('no-border');
-//       }
-//     });
-//   }
-//   textEmptys.forEach((textEmpty) => {
-//     textEmpty.addEventListener('input', updateBorders);
-//   });
-//   updateBorders();
-// });
+function saveTextToLocalStorage() {
+  document.querySelectorAll('.text-empty').forEach((textArea) => {
+    const id = textArea.id;
+    localStorage.setItem(id, textArea.value);
+  });
+}
+// テキストエリアの内容をローカルストレージから読み込む関数
+function loadTextFromLocalStorage() {
+  document.querySelectorAll('.text-empty').forEach((textArea) => {
+    const id = textArea.id;
+    textArea.value = localStorage.getItem(id) || '';
+  });
+}
+// テキストエリアの高さを調整する関数
+function adjustHeight(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+}
+// テキストエリアの幅を調整する関数
+function adjustTextareaWidth(textarea) {
+  textarea.style.width = 'auto';
+  const scrollWidth = textarea.scrollWidth;
+  textarea.style.width = `${scrollWidth}px`;
+}
+// 最大文字数の制限を外し、イベントリスナーを追加する関数
+function enforceNoMaxLength(textarea) {
+  textarea.addEventListener('input', function () {
+    adjustHeight(this);
+    adjustTextareaWidth(this);
+    saveTextToLocalStorage();
+  });
+  adjustHeight(textarea);
+  adjustTextareaWidth(textarea);
+}
+// ドキュメント読み込み時の処理
+document.addEventListener('DOMContentLoaded', function () {
+  loadTextFromLocalStorage();
+  // テキストエリアごとに必要な処理を実行
+  document.querySelectorAll('.text-empty').forEach((textarea) => {
+    enforceNoMaxLength(textarea);
+  });
+  // ロード後に高さ調整を行う
+  setTimeout(() => {
+    document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
+  }, 100);
+});
+// テキストエリア枠の削除
+document.addEventListener('DOMContentLoaded', function () {
+  const textEmptys = document.querySelectorAll('.text-empty');
+  function updateBorders() {
+    textEmptys.forEach((textEmpty) => {
+      if (textEmpty.value.trim() === '') {
+        textEmpty.classList.remove('no-border');
+      } else {
+        textEmpty.classList.add('no-border');
+      }
+    });
+  }
+  textEmptys.forEach((textEmpty) => {
+    textEmpty.addEventListener('input', updateBorders);
+  });
+  updateBorders();
+});
 
 // 枠変更 12-~3変更できない版 ローカルストレージに保存
 document.addEventListener('DOMContentLoaded', () => {
