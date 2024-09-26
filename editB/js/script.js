@@ -6,13 +6,22 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
-  initialSlide: 23,
+  initialSlide: 23, // 初期スライド
   breakpoints: {
     900: {
       slidesPerView: 2,
       slidesPerGroup: 2,
+      initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
     },
   },
+});
+document.querySelectorAll('textarea').forEach((textarea) => {
+  textarea.addEventListener('focus', () => {
+    swiper.allowTouchMove = false;
+  });
+  textarea.addEventListener('blur', () => {
+    swiper.allowTouchMove = true;
+  });
 });
 
 // メインのスライドからプレビュー
@@ -46,131 +55,131 @@ document.getElementById('frontButton').addEventListener('click', function () {
   document.getElementById('backInput').click();
 });
 
-//  ドロワー
-let currentContentId = null;
-let activeButton = null;
+// //  ドロワー
+// let currentContentId = null;
+// let activeButton = null;
 
-const toggleDrawer = () => {
-  const drawer = document.getElementById('drawer');
-  const content = document.getElementById('content');
-  const sidebar = document.getElementById('sidebar');
-  const swbtnpre = document.getElementById('swbtnpre');
-  const swbtnnext = document.getElementById('swbtnnext');
+// const toggleDrawer = () => {
+//   const drawer = document.getElementById('drawer');
+//   const content = document.getElementById('content');
+//   const sidebar = document.getElementById('sidebar');
+//   const swbtnpre = document.getElementById('swbtnpre');
+//   const swbtnnext = document.getElementById('swbtnnext');
 
-  drawer.classList.toggle('open');
-  sidebar.classList.toggle('open');
-  content.classList.toggle('open');
-  swbtnpre.classList.toggle('open');
-  swbtnnext.classList.toggle('open');
+//   drawer.classList.toggle('open');
+//   sidebar.classList.toggle('open');
+//   content.classList.toggle('open');
+//   swbtnpre.classList.toggle('open');
+//   swbtnnext.classList.toggle('open');
 
-  if (!drawer.classList.contains('open')) {
-    currentContentId = null;
+//   if (!drawer.classList.contains('open')) {
+//     currentContentId = null;
 
-    if (activeButton) {
-      activeButton.classList.remove('active');
-      activeButton = null;
-    }
-  }
-};
+//     if (activeButton) {
+//       activeButton.classList.remove('active');
+//       activeButton = null;
+//     }
+//   }
+// };
 
-const showDrawerContent = (contentId) => {
-  const drawerContent = document.getElementById('drawer-content');
-  const contentElement = document.getElementById(contentId);
+// const showDrawerContent = (contentId) => {
+//   const drawerContent = document.getElementById('drawer-content');
+//   const contentElement = document.getElementById(contentId);
 
-  const clickedButton = document.querySelector(`[date-content-id="${contentId}"]`);
+//   const clickedButton = document.querySelector(`[date-content-id="${contentId}"]`);
 
-  if (!contentElement) {
-    console.error(`Content element with ID '${contentId}' not found.`);
-    return;
-  }
+//   if (!contentElement) {
+//     console.error(`Content element with ID '${contentId}' not found.`);
+//     return;
+//   }
 
-  if (contentId === currentContentId && drawer.classList.contains('open')) {
-    toggleDrawer();
-    return;
-  }
+//   if (contentId === currentContentId && drawer.classList.contains('open')) {
+//     toggleDrawer();
+//     return;
+//   }
 
-  // 全てのコンテンツを非表示にする
-  const allContentItems = document.querySelectorAll('.edit_drawer_container_item');
-  allContentItems.forEach((item) => {
-    item.style.display = 'none';
-  });
+//   // 全てのコンテンツを非表示にする
+//   const allContentItems = document.querySelectorAll('.edit_drawer_container_item');
+//   allContentItems.forEach((item) => {
+//     item.style.display = 'none';
+//   });
 
-  // 選択されたコンテンツを表示する
-  contentElement.style.display = 'block';
+//   // 選択されたコンテンツを表示する
+//   contentElement.style.display = 'block';
 
-  // ボタンのスタイルを更新 new
-  if (activeButton) {
-    activeButton.classList.remove('active'); // 以前のボタンからactiveクラスを削除
-  }
-  if (clickedButton) {
-    clickedButton.classList.add('active'); // クリックされたボタンにactiveクラスを追加
-    activeButton = clickedButton; // 現在のアクティブボタンを更新
-  }
+//   // ボタンのスタイルを更新 new
+//   if (activeButton) {
+//     activeButton.classList.remove('active'); // 以前のボタンからactiveクラスを削除
+//   }
+//   if (clickedButton) {
+//     clickedButton.classList.add('active'); // クリックされたボタンにactiveクラスを追加
+//     activeButton = clickedButton; // 現在のアクティブボタンを更新
+//   }
 
-  currentContentId = contentId;
+//   currentContentId = contentId;
 
-  if (!drawer.classList.contains('open')) {
-    toggleDrawer(); // ドロワーが閉じている場合は開く
-  }
-};
+//   if (!drawer.classList.contains('open')) {
+//     toggleDrawer(); // ドロワーが閉じている場合は開く
+//   }
+// };
 
-// 画像のアップロードと挿入
-let myImageDB1;
-let selectedImage = null;
+// // 画像のアップロードと挿入
+// let myImageDB1;
+// let selectedImage = null;
 
-// 新しいIndexedDBの初期化
-function initNewIndexedDB() {
-  const request = indexedDB.open('NewImageDatabase1', 1);
+// // 新しいIndexedDBの初期化
+// function initNewIndexedDB() {
+//   const request = indexedDB.open('NewImageDatabase1', 1);
 
-  request.onupgradeneeded = function (event) {
-    myImageDB1 = event.target.result;
-    if (!myImageDB1.objectStoreNames.contains('images')) {
-      myImageDB1.createObjectStore('images', { keyPath: 'id' });
-    }
-  };
+//   request.onupgradeneeded = function (event) {
+//     myImageDB1 = event.target.result;
+//     if (!myImageDB1.objectStoreNames.contains('images')) {
+//       myImageDB1.createObjectStore('images', { keyPath: 'id' });
+//     }
+//   };
 
-  request.onsuccess = function (event) {
-    myImageDB1 = event.target.result;
-    console.log('New IndexedDB initialized.');
-    restoreDropAreas();
-  };
+//   request.onsuccess = function (event) {
+//     myImageDB1 = event.target.result;
+//     console.log('New IndexedDB initialized.');
+//     restoreDropAreas();
+//   };
 
-  request.onerror = function (event) {
-    console.error('Error initializing IndexedDB:', event.target.errorCode);
-  };
-}
+//   request.onerror = function (event) {
+//     console.error('Error initializing IndexedDB:', event.target.errorCode);
+//   };
+// }
 
-initNewIndexedDB();
+// initNewIndexedDB();
 
-document.addEventListener('DOMContentLoaded', function () {
-  addTouchListenerToDropAreas();
-  document.getElementById('saveButton').addEventListener('click', function () {
-    // サーバに画像を送信する処理は削除済み
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//   addTouchListenerToDropAreas();
+//   document.getElementById('saveButton').addEventListener('click', function () {
+//     // サーバに画像を送信する処理は削除済み
+//   });
+// });
 
-function loadImage(input) {
-  const imgPreviewField = document.getElementById('imgPreviewField');
-  if (input.files) {
-    const files = Array.from(input.files);
-    files.forEach((file) => {
-      const reader = new FileReader();
+// function loadImage(input) {
+//   const imgPreviewField = document.getElementById('imgPreviewField');
+//   if (input.files) {
+//     const files = Array.from(input.files);
+//     files.forEach((file) => {
+//       const reader = new FileReader();
 
-      reader.onload = function (e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.style.left = '0px';
-        img.style.top = '0px';
+//       reader.onload = function (e) {
+//         const img = document.createElement('img');
+//         img.src = e.target.result;
+//         img.style.left = '0px';
+//         img.style.top = '0px';
 
-        imgPreviewField.appendChild(img);
-        makeDraggable(img);
-        makeTouchable(img);
-      };
+//         imgPreviewField.appendChild(img);
+//         makeDraggable(img);
+//         makeTouchable(img);
+//       };
 
-      reader.readAsDataURL(file);
-    });
-  }
-}
+//       reader.readAsDataURL(file);
+//     });
+//   }
+// }
 
 function makeDraggable(img) {
   let isDragging = false;
