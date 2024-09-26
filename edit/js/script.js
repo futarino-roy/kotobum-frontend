@@ -25,6 +25,7 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
+  initialSlide: 23, // 最後のスライドのインデックス（例: 24スライドの場合）
   breakpoints: {
     900: {
       slidesPerView: 2,
@@ -32,7 +33,6 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-
 
 
 

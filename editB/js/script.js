@@ -1,4 +1,21 @@
 // スライド
+// const swiper = new Swiper('.swiper', {
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   slidesPerView: 1,
+//   slidesPerGroup: 1,
+//   initialSlide: 23, // 初期スライド
+//   breakpoints: {
+//     900: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
+//     },
+//   },
+// });
+
 const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
@@ -6,12 +23,10 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
-  initialSlide: 23, // 初期スライド
   breakpoints: {
     900: {
       slidesPerView: 2,
       slidesPerGroup: 2,
-      initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
     },
   },
 });
