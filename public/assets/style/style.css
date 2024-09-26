@@ -1676,7 +1676,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.6vw;
+    font-size: 1.55vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1693,7 +1693,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
   margin: 0;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: bold;
   color: #fef8f6;
 }
@@ -1709,12 +1709,12 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
-    font-size: 4.5vw;
+    font-size: 5.5vw;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
-    font-size: 5vw;
+    font-size: 7vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
@@ -1742,7 +1742,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
-    font-size: 1.9vw;
+    font-size: 1.55vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2 {
@@ -1818,12 +1818,12 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
-    font-size: 1.5vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
-    font-size: 1.7vw;
+    font-size: 2.5vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
@@ -2702,7 +2702,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content {
-    transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+    transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .editB .content.open {
@@ -2720,12 +2726,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content.open {
-    margin: 0 21.5%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .editB .content.open {
-    margin: 0 22%;
+    margin: 0;
+    width: 60%;
+    position: absolute;
+    top: calc(30% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .editB .content .swiper {
@@ -2753,7 +2760,7 @@ input:checked + label::after {
   display: flex;
   justify-content: center;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
   width: auto;
   height: 100%;
 }
@@ -2766,7 +2773,6 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box {
-  max-width: 500px;
   position: relative;
   -webkit-clip-path: inset(20px 21px 26px 21px);
           clip-path: inset(20px 21px 26px 21px);
@@ -2785,8 +2791,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
-    margin: 50px 0 0;
+    width: 90%;
     -webkit-clip-path: inset(5% 7% 6% 7%);
             clip-path: inset(5% 7% 6% 7%);
   }
@@ -2794,22 +2799,6 @@ input:checked + label::after {
 @media screen and (max-width: 480px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
-  }
-}
-@media screen and (max-width: 380px) {
-  .editB .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
-  }
-}
-@media screen and (max-width: 330px) {
-  .editB .content .swiper-wrapper .swiper-slide_box {
-    width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -3287,7 +3276,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.2vw;
+    font-size: 1.6vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3319,7 +3308,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3346,7 +3335,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 1.3vw;
+    font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3381,7 +3370,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3412,12 +3401,12 @@ input:checked + label::after {
 }
 @media screen and (max-width: 480px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19 {
-    font-size: 1.7vw;
+    font-size: 1.5vw;
   }
 }
 @media screen and (max-width: 380px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19 {
-    font-size: 1.2vw;
+    font-size: 1.7vw;
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
@@ -3439,7 +3428,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3468,7 +3457,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18-1 {
-    font-size: 1.8vw;
+    font-size: 2.2vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3497,7 +3486,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18-2 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {

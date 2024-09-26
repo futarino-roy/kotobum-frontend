@@ -1345,7 +1345,7 @@
                 }
 
                 @include mq('tab-edit') {
-                  font-size: 1.6vw;
+                  font-size: 1.55vw;
                 }
 
                 @include mq('sp-edit') {
@@ -1362,7 +1362,7 @@
                 &1-1 {
                   margin: 0;
                   font-size: 1.2rem;
-                  line-height: 1.5;
+                  line-height: 1.2;
                   font-weight: bold;
                   color: #fef8f6;
 
@@ -1375,11 +1375,11 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 4.5vw;
+                    font-size: 5.5vw;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 5vw;
+                    font-size: 7vw;
                   }
                 }
 
@@ -1404,7 +1404,7 @@
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 1.9vw;
+                    font-size: 1.55vw;
                   }
                 }
 
@@ -1478,11 +1478,11 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.5vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 1.7vw;
+                    font-size: 2.5vw;
                   }
                 }
 
