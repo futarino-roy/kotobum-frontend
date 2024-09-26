@@ -15,7 +15,7 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-document.querySelectorAll('textarea').forEach((textarea) => {
+document.querySelectorAll('.text-empty').forEach((textarea) => {
   textarea.addEventListener('focus', () => {
     swiper.allowTouchMove = false;
   });
