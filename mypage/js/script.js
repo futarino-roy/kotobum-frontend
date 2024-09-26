@@ -118,12 +118,35 @@ modalButton_ls.forEach((modalButton_l) => {
     buttonA_l.style.cursor = 'not-allowed'; // cursorのデザインを変更
     buttonC_l.style.cursor = 'not-allowed';
 
+    //バックエンドとのAPI連携（校了後にボタンを押せなくする）
     fetch(' ', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', //送信するデータがJSON形式であることを示す
       },
       body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const koryoButton = document.getElementById('koryoButton');
+
+        if (data.isKoryoDone) {
+          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
+        } else {
+          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
+        }
+      })
+      .catch((error) => {
+        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
+      });
+  });
+
+  window.addEventListener('load', function () {
+    fetch(' ', {
+      // method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then((response) => response.json())
       .then((data) => {
