@@ -1,4 +1,21 @@
 // // スライド
+// const swiper = new Swiper('.swiper', {
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   slidesPerView: 1,
+//   slidesPerGroup: 1,
+//   initialSlide: 23, // 最後のスライドのインデックス（例: 24スライドの場合）
+//   breakpoints: {
+//     900: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//     },
+//   },
+// });
+
+// Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
@@ -6,7 +23,7 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
-  initialSlide: 23, // 最後のスライドのインデックス（例: 24スライドの場合）
+  initialSlide: 23, // 最後のスライドのインデックス
   breakpoints: {
     900: {
       slidesPerView: 2,
@@ -14,6 +31,28 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
+
+// テキストエリアを取得
+const textareas = document.querySelectorAll('textarea');
+
+// テキストエリアにフォーカスがある間、スライド移動を無効にする
+textareas.forEach(textarea => {
+  textarea.addEventListener('focus', function() {
+    swiper.allowTouchMove = false; // スライド移動を無効
+  });
+
+  textarea.addEventListener('blur', function() {
+    swiper.allowTouchMove = true; // スライド移動を有効
+  });
+
+  textarea.addEventListener('keydown', function(event) {
+    // Enterキーが押された場合
+    if (event.key === 'Enter') {
+      event.preventDefault(); // デフォルトの動作を防ぐ
+    }
+  });
+});
+
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
