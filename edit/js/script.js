@@ -33,30 +33,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-
-
-
-// ソフトウェアキーボード起動中に一時的に入力フォームを画面最上部に移動し、すぐ元の位置に戻す
-// はじめに対象の入力フォームの要素を取得する
-const form = document.getElementById('textArea3');
-
-// Vueで実装した入力フォーム要素に設定している表示/非表示のフラグを非表示にする
-this.status = 非表示時の値
-
-// bottomプロパティを削除し、topプロパティを付与して一瞬画面上部に移動
-form[0].style.removeProperty("bottom");
-form[0].style.top = "0";
-form[0].style.opacity = "0";
-
-// その後すぐ表示/非表示のフラグを表示に変更して、表示時限定で適用されるcssを反映する
-// これにより上記のcssが無効となる
-this.status = 表示時の値
-
-// 入力フォームにフォーカスする
-focus();
-
-
-
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
   // プレビューボタンにクリックイベントリスナーを追加
