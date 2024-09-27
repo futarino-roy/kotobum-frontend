@@ -38,61 +38,44 @@ const swiper = new Swiper('.swiper', {
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
 
-// スライドの外側をクリックしたときの処理
-document.addEventListener('click', function(event) {
-  const isOutsideClick = !event.target.closest('.swiper'); // スライダー外のクリックかチェック
+// スライド移動を無効にする関数
+function disableSwiper() {
+  swiper.allowTouchMove = false; // スライド移動を無効にする
+}
 
-  if (isOutsideClick) {
-    textareas.forEach(textarea => {
-      if (document.activeElement === textarea) {
-        textarea.blur(); // テキストエリアのフォーカスを外す
-        swiper.allowTouchMove = true; // スライド移動を有効にする
-      }
-    });
+// スライド移動を有効にする関数
+function enableSwiper() {
+  swiper.allowTouchMove = true; // スライド移動を有効にする
+}
+
+// 矢印ボタンのクリックイベントを設定
+const nextButton = document.querySelector('.swiper-button-next');
+const prevButton = document.querySelector('.swiper-button-prev');
+
+nextButton.addEventListener('click', function(event) {
+  // テキストエリアがフォーカスされている場合はスライド移動を無効にする
+  if (document.activeElement.tagName === 'TEXTAREA') {
+    event.preventDefault(); // スライド移動を無効にする
+  }
+});
+
+prevButton.addEventListener('click', function(event) {
+  // テキストエリアがフォーカスされている場合はスライド移動を無効にする
+  if (document.activeElement.tagName === 'TEXTAREA') {
+    event.preventDefault(); // スライド移動を無効にする
   }
 });
 
 // テキストエリアにフォーカスがある間、スライド移動を無効にする
 textareas.forEach(textarea => {
-  textarea.addEventListener('focus', function() {
-    swiper.allowTouchMove = false; // スライド移動を無効にする
-  });
+  textarea.addEventListener('focus', disableSwiper); // フォーカス時にスライド移動を無効にする
 
-  textarea.addEventListener('blur', function() {
-    swiper.allowTouchMove = true; // スライド移動を有効にする
-  });
+  textarea.addEventListener('blur', enableSwiper); // フォーカスが外れたときにスライド移動を有効にする
 
   textarea.addEventListener('input', function() {
-    if (textarea.value.length > 0) {
-      swiper.allowTouchMove = false; // 入力中はスライド移動を無効にする
-    }
+    // 入力中もスライド移動を無効にする
+    disableSwiper();
   });
-
-  // touchstartイベントを追加
-  textarea.addEventListener('touchstart', function(event) {
-    event.stopPropagation(); // イベントのバブリングを防ぐ
-  });
-
-  textarea.addEventListener('keydown', function(event) {
-    // Enterキーが押された場合
-    if (event.key === 'Enter') {
-      event.preventDefault(); // デフォルトの動作を防ぐ
-    }
-  });
-});
-
-// スライド外でクリックした場合の処理
-document.addEventListener('touchstart', function(event) {
-  const isOutsideClick = !event.target.closest('.swiper');
-
-  if (isOutsideClick) {
-    textareas.forEach(textarea => {
-      if (document.activeElement === textarea) {
-        textarea.blur(); // テキストエリアのフォーカスを外す
-        swiper.allowTouchMove = true; // スライド移動を有効にする
-      }
-    });
-  }
 });
 
 
