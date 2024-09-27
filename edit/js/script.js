@@ -36,39 +36,24 @@ const swiper = new Swiper('.swiper', {
 
 
 
-// テキストエリアを取得
-const textareas = document.querySelectorAll('textarea');
+// ソフトウェアキーボード起動中に一時的に入力フォームを画面最上部に移動し、すぐ元の位置に戻す
+// はじめに対象の入力フォームの要素を取得する
+const form = document.getElementById('textArea3');
 
-// スライド移動を無効にする関数
-function disableSwiper() {
-  swiper.allowTouchMove = false; // スライド移動を無効にする
-}
+// Vueで実装した入力フォーム要素に設定している表示/非表示のフラグを非表示にする
+this.status = 非表示時の値
 
-// スライド移動を有効にする関数
-function enableSwiper() {
-  swiper.allowTouchMove = true; // スライド移動を有効にする
-}
+// bottomプロパティを削除し、topプロパティを付与して一瞬画面上部に移動
+form[0].style.removeProperty("bottom");
+form[0].style.top = "0";
+form[0].style.opacity = "0";
 
-// スライドの外側をクリックした際の処理
-document.addEventListener('click', function(event) {
-  // テキストエリアがフォーカスされている場合、スライド移動を無効にする
-  if (document.activeElement.tagName === 'TEXTAREA') {
-    event.preventDefault(); // デフォルトのスライド移動を無効にする
-    event.stopPropagation(); // イベントのバブリングを停止する
-  }
-});
+// その後すぐ表示/非表示のフラグを表示に変更して、表示時限定で適用されるcssを反映する
+// これにより上記のcssが無効となる
+this.status = 表示時の値
 
-// テキストエリアにフォーカスがある間、スライド移動を無効にする
-textareas.forEach(textarea => {
-  textarea.addEventListener('focus', disableSwiper); // フォーカス時にスライド移動を無効にする
-
-  textarea.addEventListener('blur', enableSwiper); // フォーカスが外れたときにスライド移動を有効にする
-
-  textarea.addEventListener('input', function() {
-    // 入力中もスライド移動を無効にする
-    disableSwiper();
-  });
-});
+// 入力フォームにフォーカスする
+focus();
 
 
 

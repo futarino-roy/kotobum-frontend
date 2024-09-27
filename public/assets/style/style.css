@@ -1100,6 +1100,12 @@ input:checked + label::after {
 @media screen and (max-width: 900px) {
   .edit .content {
     transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .edit .content.open {
@@ -1120,6 +1126,10 @@ input:checked + label::after {
     margin: 0;
     width: 60%;
     position: absolute;
+    top: calc(30% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .edit .content .swiper {
