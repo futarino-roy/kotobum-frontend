@@ -80,31 +80,31 @@ textareas.forEach(textarea => {
   });
 });
 
-// メインのスライドからプレビュー
-document.addEventListener('DOMContentLoaded', function () {
-  // プレビューボタンにクリックイベントリスナーを追加
-  document.querySelector('.btn-preview').addEventListener('click', function () {
-    // 現在のスライドインデックスを取得
-    const currentSlideIndex = swiper.realIndex;
+// // メインのスライドからプレビュー
+// document.addEventListener('DOMContentLoaded', function () {
+//   // プレビューボタンにクリックイベントリスナーを追加
+//   document.querySelector('.btn-preview').addEventListener('click', function () {
+//     // 現在のスライドインデックスを取得
+//     const currentSlideIndex = swiper.realIndex;
 
-    // プレビューページのURLを動的に設定
-    const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
+//     // プレビューページのURLを動的に設定
+//     const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
 
-    // プレビューページに遷移
-    window.location.href = previewUrl;
-  });
-});
+//     // プレビューページに遷移
+//     window.location.href = previewUrl;
+//   });
+// });
 
-// プレビューのスライドからメイン
-document.addEventListener('DOMContentLoaded', function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const slideNumber = urlParams.get('slide');
+// // プレビューのスライドからメイン
+// document.addEventListener('DOMContentLoaded', function () {
+//   const urlParams = new URLSearchParams(window.location.search);
+//   const slideNumber = urlParams.get('slide');
 
-  if (slideNumber) {
-    swiper.slideTo(slideNumber - 1, 0); // スライド番号に対応するインデックスに移動
-    console.log(`Returning to slide ${slideNumber} in the main page`);
-  }
-});
+//   if (slideNumber) {
+//     swiper.slideTo(slideNumber - 1, 0); // スライド番号に対応するインデックスに移動
+//     console.log(`Returning to slide ${slideNumber} in the main page`);
+//   }
+// });
 
 // inputボタンのデザイン
 document.getElementById('frontButton').addEventListener('click', function () {
