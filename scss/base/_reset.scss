@@ -24,6 +24,12 @@ body{
   // 一応
   height: 100%;
   overflow: hidden;
+
+  @include mq('tab') {
+    overflow-y: scroll; /* 縦スクロールを有効にする */
+    -webkit-overflow-scrolling: touch; /* iOSやAndroidでのスムーズスクロール */
+  
+  }
 }
 
 html{
