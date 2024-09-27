@@ -233,6 +233,10 @@ header img {
   }
 }
 
+.signup-body {
+  overflow: hidden;
+}
+
 .signup {
   height: 100vh;
   display: flex;
@@ -306,6 +310,10 @@ header img {
 
 input:checked + label::after {
   opacity: 1;
+}
+
+.login-body {
+  overflow: hidden;
 }
 
 .login {
@@ -3529,6 +3537,7 @@ input:checked + label::after {
 
 .preview-body {
   background: #d5dadc;
+  overflow: hidden;
 }
 
 .preview {
@@ -4820,6 +4829,7 @@ input:checked + label::after {
 
 .preview-body {
   background: #d5dadc;
+  overflow: hidden;
 }
 
 .previewB {
@@ -7286,6 +7296,7 @@ input:checked + label::after {
 
 .cover-preview-body {
   background: #d5dadc;
+  overflow: hidden;
 }
 
 .cover-preview {
@@ -7615,6 +7626,7 @@ input:checked + label::after {
 
 .coverB-preview-body {
   background: #d5dadc;
+  overflow: hidden;
 }
 
 .coverB-preview {
