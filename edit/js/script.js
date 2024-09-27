@@ -32,23 +32,33 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
 
 // テキストエリアにフォーカスがある間、スライド移動を無効にする
 textareas.forEach(textarea => {
   textarea.addEventListener('focus', function() {
-    swiper.allowTouchMove = false; // スライド移動を無効
+    swiper.allowTouchMove = false; // スライド移動を無効にする
   });
 
   textarea.addEventListener('blur', function() {
-    swiper.allowTouchMove = true; // スライド移動を有効
+    swiper.allowTouchMove = true; // スライド移動を有効にする
   });
 
   textarea.addEventListener('keydown', function(event) {
     // Enterキーが押された場合
     if (event.key === 'Enter') {
       event.preventDefault(); // デフォルトの動作を防ぐ
+    }
+  });
+
+  // 決定ボタンが押されたときの処理
+  textarea.addEventListener('keypress', function(event) {
+    // 特定のボタン（例: "決定"ボタン）のキーコードを確認（Enterキーの場合は除外）
+    if (event.key === 'Enter' && !textarea.value.trim()) {
+      event.preventDefault(); // 確定していない場合のデフォルト動作を防ぐ
+      return; // ここで処理を終了
     }
   });
 });

@@ -23,6 +23,7 @@ body {
   margin: 0;
   background-color: #FDFCF6;
   height: 100%;
+  overflow: hidden;
 }
 
 html {
