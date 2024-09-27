@@ -616,283 +616,280 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   }
 // }
 
-// タッチエンド時の処理
-function handleTouchDrop(event) {
-  event.preventDefault();
-  const touch = event.changedTouches[0];
-  const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
+// // タッチエンド時の処理
+// function handleTouchDrop(event) {
+//   event.preventDefault();
+//   const touch = event.changedTouches[0];
+//   const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
 
-  if (dropArea && dropArea.classList.contains('empty')) {
-    const files = event.dataTransfer.files;
-    if (files.length > 0) {
-      let file = files[0];
-      let fileReader = new FileReader();
-      fileReader.onload = function (e) {
-        dropArea.innerHTML = '';
-        let img = new Image();
-        img.src = e.target.result;
-        dropArea.appendChild(img);
-        addButtons(dropArea);
+//   if (dropArea && dropArea.classList.contains('empty')) {
+//     const files = event.dataTransfer.files;
+//     if (files.length > 0) {
+//       let file = files[0];
+//       let fileReader = new FileReader();
+//       fileReader.onload = function (e) {
+//         dropArea.innerHTML = '';
+//         let img = new Image();
+//         img.src = e.target.result;
+//         dropArea.appendChild(img);
+//         addButtons(dropArea);
 
-        // 画像が挿入されたら枠線をなくす処理追加
-        dropArea.style.border = 'none';
+//         // 画像が挿入されたら枠線をなくす処理追加
+//         dropArea.style.border = 'none';
 
-        // IndexedDBに画像データを保存
-        saveImageToIndexedDB(e.target.result, dropArea.id);
-      };
-      fileReader.readAsDataURL(file);
-    }
-  }
-}
+//         // IndexedDBに画像データを保存
+//         saveImageToIndexedDB(e.target.result, dropArea.id);
+//       };
+//       fileReader.readAsDataURL(file);
+//     }
+//   }
+// }
 
-// 削除ボタンとトリミングボタンの追加
-function addButtons(container) {
-  if (!container.querySelector('.delete-btn')) {
-    let deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete-btn');
-    deleteButton.textContent = '';
-    deleteButton.onclick = function () {
-      container.innerHTML = '';
-      container.classList.remove('selected');
-      container.style.backgroundColor = 'transparent';
-      hideButtons();
+// // 削除ボタンとトリミングボタンの追加
+// function addButtons(container) {
+//   if (!container.querySelector('.delete-btn')) {
+//     let deleteButton = document.createElement('button');
+//     deleteButton.classList.add('delete-btn');
+//     deleteButton.textContent = '';
+//     deleteButton.onclick = function () {
+//       container.innerHTML = '';
+//       container.classList.remove('selected');
+//       container.style.backgroundColor = 'transparent';
+//       hideButtons();
 
-      // IndexedDBから画像データを削除
-      clearImageFromIndexedDB(container.id);
+//       // IndexedDBから画像データを削除
+//       clearImageFromIndexedDB(container.id);
 
-      // 画像が削除されたら枠線を復元の処理追加
-      container.style.border = '2px dashed #ccc';
-    };
-    container.appendChild(deleteButton);
-  }
+//       // 画像が削除されたら枠線を復元の処理追加
+//       container.style.border = '2px dashed #ccc';
+//     };
+//     container.appendChild(deleteButton);
+//   }
 
-  if (!container.querySelector('.crop-btn')) {
-    let cropButton = document.createElement('button');
-    cropButton.classList.add('crop-btn');
-    cropButton.textContent = '';
-    cropButton.onclick = function (event) {
-      event.stopPropagation();
-      openCroppieModal(container);
-    };
-    container.appendChild(cropButton);
-  }
-}
+//   if (!container.querySelector('.crop-btn')) {
+//     let cropButton = document.createElement('button');
+//     cropButton.classList.add('crop-btn');
+//     cropButton.textContent = '';
+//     cropButton.onclick = function (event) {
+//       event.stopPropagation();
+//       openCroppieModal(container);
+//     };
+//     container.appendChild(cropButton);
+//   }
+// }
 
-// ボタンを表示
-function showButtons(container) {
-  container.querySelectorAll('.delete-btn, .crop-btn').forEach((button) => (button.style.display = 'flex'));
+// // ボタンを表示
+// function showButtons(container) {
+//   container.querySelectorAll('.delete-btn, .crop-btn').forEach((button) => (button.style.display = 'flex'));
 
-  // 枠線を追加（選択されたとき）
-  container.style.border = '2px dashed #ccc';
-}
+//   // 枠線を追加（選択されたとき）
+//   container.style.border = '2px dashed #ccc';
+// }
 
-// ボタンを非表示
-function hideButtons() {
-  document.querySelectorAll('.delete-btn, .crop-btn').forEach((button) => (button.style.display = 'none'));
+// // ボタンを非表示
+// function hideButtons() {
+//   document.querySelectorAll('.delete-btn, .crop-btn').forEach((button) => (button.style.display = 'none'));
 
-  // 選択されていない全ての画像コンテナの枠線をデフォルトに戻す
-  document.querySelectorAll('.empty').forEach(function (container) {
-    if (!container.querySelector('img')) {
-      container.style.border = '2px dashed #ccc'; // デフォルトの枠線
-    } else {
-      container.style.border = 'none'; // 枠線なし
-    }
-  });
-}
+//   // 選択されていない全ての画像コンテナの枠線をデフォルトに戻す
+//   document.querySelectorAll('.empty').forEach(function (container) {
+//     if (!container.querySelector('img')) {
+//       container.style.border = '2px dashed #ccc'; // デフォルトの枠線
+//     } else {
+//       container.style.border = 'none'; // 枠線なし
+//     }
+//   });
+// }
 
-// トリミングモーダル処理
-let croppieInstance;
+// // トリミングモーダル処理
+// let croppieInstance;
 
-function openCroppieModal(container) {
-  const croppieModal = document.getElementById('croppieModal');
-  const croppieContainer = document.getElementById('croppie-container');
-  croppieModal.style.display = 'block';
+// function openCroppieModal(container) {
+//   const croppieModal = document.getElementById('croppieModal');
+//   const croppieContainer = document.getElementById('croppie-container');
+//   croppieModal.style.display = 'block';
 
-  // Croppieの設定
-  if (croppieInstance) {
-    croppieInstance.destroy();
-  }
+//   // Croppieの設定
+//   if (croppieInstance) {
+//     croppieInstance.destroy();
+//   }
 
-  croppieInstance = new Croppie(croppieContainer, {
-    viewport: { width: 200, height: 200 },
-    boundary: { width: 300, height: 300 },
-    showZoomer: true,
-    enableResize: false,
-  });
+//   croppieInstance = new Croppie(croppieContainer, {
+//     viewport: { width: 200, height: 200 },
+//     boundary: { width: 300, height: 300 },
+//     showZoomer: true,
+//     enableResize: false,
+//   });
 
-  const img = container.querySelector('img');
-  croppieInstance.bind({
-    url: img.src,
-  });
+//   const img = container.querySelector('img');
+//   croppieInstance.bind({
+//     url: img.src,
+//   });
 
-  // トリミングボタン
-  document.getElementById('crop-button').onclick = function () {
-    croppieInstance
-      .result({
-        type: 'canvas',
-        size: 'original',
-        format: 'png',
-        quality: 1,
-      })
-      .then(function (croppedImageData) {
-        container.querySelector('img').src = croppedImageData;
-        saveImageToIndexedDB(croppedImageData, container.id);
-        croppieModal.style.display = 'none';
-      });
-  };
-}
+//   // トリミングボタン
+//   document.getElementById('crop-button').onclick = function () {
+//     croppieInstance
+//       .result({
+//         type: 'canvas',
+//         size: 'original',
+//         format: 'png',
+//         quality: 1,
+//       })
+//       .then(function (croppedImageData) {
+//         container.querySelector('img').src = croppedImageData;
+//         saveImageToIndexedDB(croppedImageData, container.id);
+//         croppieModal.style.display = 'none';
+//       });
+//   };
+// }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const dropAreas = document.querySelectorAll('.empty');
-  dropAreas.forEach(function (dropArea) {
-    dropArea.ondragover = handleDragOver;
-    dropArea.ondragleave = handleDragLeave;
-    dropArea.ondrop = handleDrop;
-    dropArea.ontouchend = handleTouchDrop;
-  });
+// document.addEventListener('DOMContentLoaded', function () {
+//   const dropAreas = document.querySelectorAll('.empty');
+//   dropAreas.forEach(function (dropArea) {
+//     dropArea.ondragover = handleDragOver;
+//     dropArea.ondragleave = handleDragLeave;
+//     dropArea.ondrop = handleDrop;
+//     dropArea.ontouchend = handleTouchDrop;
+//   });
 
-  // キャンセルボタンのクリックイベントを追加
-  document.getElementById('cancel-button').onclick = function () {
-    document.getElementById('croppieModal').style.display = 'none';
-  };
+//   // キャンセルボタンのクリックイベントを追加
+//   document.getElementById('cancel-button').onclick = function () {
+//     document.getElementById('croppieModal').style.display = 'none';
+//   };
 
-  // ボタンを非表示にするクリックイベントの設定
-  document.addEventListener('click', function (event) {
-    const isImage = event.target.closest('.draggable-image');
-    const isDrawer = event.target.closest('#drawer');
-    const issideBtn = event.target.closest('#sideBtn');
+//   // ボタンを非表示にするクリックイベントの設定
+//   document.addEventListener('click', function (event) {
+//     const isImage = event.target.closest('.draggable-image');
+//     const isDrawer = event.target.closest('#drawer');
+//     const issideBtn = event.target.closest('#sideBtn');
 
-    if (!isImage && !isDrawer && !issideBtn) {
-      hideButtons();
-    }
-  });
-});
+//     if (!isImage && !isDrawer && !issideBtn) {
+//       hideButtons();
+//     }
+//   });
+// });
 
-// テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
-function saveTextToLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    localStorage.setItem(id, textArea.value);
-  });
-}
+// // テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
+// function saveTextToLocalStorage() {
+//   document.querySelectorAll('.text-empty').forEach((textArea) => {
+//     const id = textArea.id;
+//     localStorage.setItem(id, textArea.value);
+//   });
+// }
 
-// テキストエリアの内容をローカルストレージから読み込む関数
-function loadTextFromLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    textArea.value = localStorage.getItem(id) || '';
-  });
-}
+// // テキストエリアの内容をローカルストレージから読み込む関数
+// function loadTextFromLocalStorage() {
+//   document.querySelectorAll('.text-empty').forEach((textArea) => {
+//     const id = textArea.id;
+//     textArea.value = localStorage.getItem(id) || '';
+//   });
+// }
 
-// テキストエリアの高さを調整する関数
-function adjustHeight(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-}
+// // テキストエリアの高さを調整する関数
+// function adjustHeight(textarea) {
+//   textarea.style.height = 'auto';
+//   textarea.style.height = `${textarea.scrollHeight}px`;
+// }
 
-// テキストエリアの幅を調整する関数
-function adjustTextareaWidth(textarea) {
-  textarea.style.width = 'auto';
-  const scrollWidth = textarea.scrollWidth;
-  textarea.style.width = `${scrollWidth}px`;
-}
+// // テキストエリアの幅を調整する関数
+// function adjustTextareaWidth(textarea) {
+//   textarea.style.width = 'auto';
+//   const scrollWidth = textarea.scrollWidth;
+//   textarea.style.width = `${scrollWidth}px`;
+// }
 
-// 最大文字数の制限を外し、イベントリスナーを追加する関数
-function enforceNoMaxLength(textarea) {
-  textarea.addEventListener('input', function () {
-    adjustHeight(this);
-    adjustTextareaWidth(this);
-    saveTextToLocalStorage();
-  });
+// // 最大文字数の制限を外し、イベントリスナーを追加する関数
+// function enforceNoMaxLength(textarea) {
+//   textarea.addEventListener('input', function () {
+//     adjustHeight(this);
+//     adjustTextareaWidth(this);
+//     saveTextToLocalStorage();
+//   });
+//   adjustHeight(textarea);
+//   adjustTextareaWidth(textarea);
+// }
 
-  adjustHeight(textarea);
-  adjustTextareaWidth(textarea);
-}
+// // ドキュメント読み込み時の処理
+// document.addEventListener('DOMContentLoaded', function () {
+//   loadTextFromLocalStorage();
+//   // テキストエリアごとに必要な処理を実行
+//   document.querySelectorAll('.text-empty').forEach((textarea) => {
+//     enforceNoMaxLength(textarea);
+//   });
+//   // ロード後に高さ調整を行う
+//   setTimeout(() => {
+//     document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
+//   }, 100);
+// });
 
-// ドキュメント読み込み時の処理
-document.addEventListener('DOMContentLoaded', function () {
-  loadTextFromLocalStorage();
+// // テキストエリア枠の削除
+// document.addEventListener('DOMContentLoaded', function () {
+//   const textEmptys = document.querySelectorAll('.text-empty');
+//   function updateBorders() {
+//     textEmptys.forEach((textEmpty) => {
+//       if (textEmpty.value.trim() === '') {
+//         textEmpty.classList.remove('no-border');
+//       } else {
+//         textEmpty.classList.add('no-border');
+//       }
+//     });
+//   }
+//   textEmptys.forEach((textEmpty) => {
+//     textEmpty.addEventListener('input', updateBorders);
+//   });
+//   updateBorders();
+// });
 
-  // テキストエリアごとに必要な処理を実行
-  document.querySelectorAll('.text-empty').forEach((textarea) => {
-    enforceNoMaxLength(textarea);
-  });
+// // 枠変更 24-1~3変更できない版
+// document.addEventListener('DOMContentLoaded', () => {
+//   const dropAreas = [];
+//   const resizeButtons = document.querySelectorAll('.resizeButton');
+//   let activeDropArea = null;
 
-  // ロード後に高さ調整を行う
-  setTimeout(() => {
-    document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
-  }, 100);
-});
+//   // ドロップエリアをすべて取得し、配列に追加
+//   document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
+//     dropAreas.push(dropArea);
+//     dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
+//   });
 
-// テキストエリア枠の削除
-document.addEventListener('DOMContentLoaded', function () {
-  const textEmptys = document.querySelectorAll('.text-empty');
-  function updateBorders() {
-    textEmptys.forEach((textEmpty) => {
-      if (textEmpty.value.trim() === '') {
-        textEmpty.classList.remove('no-border');
-      } else {
-        textEmpty.classList.add('no-border');
-      }
-    });
-  }
-  textEmptys.forEach((textEmpty) => {
-    textEmpty.addEventListener('input', updateBorders);
-  });
-  updateBorders();
-});
+//   // ドロップエリアがクリックまたはタッチされたときの処理
+//   const handleDropAreaInteraction = (dropArea) => {
+//     dropAreas.forEach((area) => area.classList.remove('active'));
+//     dropArea.classList.add('active');
+//     activeDropArea = dropArea;
+//   };
 
-// 枠変更 24-1~3変更できない版
-document.addEventListener('DOMContentLoaded', () => {
-  const dropAreas = [];
-  const resizeButtons = document.querySelectorAll('.resizeButton');
-  let activeDropArea = null;
+//   // サイズ変更ボタンがクリックまたはタッチされたときの処理
+//   const handleResizeButtonInteraction = (button) => {
+//     if (activeDropArea) {
+//       // サイズ変更を禁止するドロップエリアのリスト
+//       const restrictedDropAreas = ['dropArea24-1', 'dropArea24-2', 'dropArea24-3'];
 
-  // ドロップエリアをすべて取得し、配列に追加
-  document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
-    dropAreas.push(dropArea);
-    dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
-  });
+//       // サイズ変更を禁止するドロップエリアでない場合のみ処理
+//       if (!restrictedDropAreas.includes(activeDropArea.id)) {
+//         // サイズをすべてリセット
+//         activeDropArea.classList.remove('square', 'rectangle', 'mini');
+//         // ボタンの data-size 属性に基づいてサイズを変更
+//         const size = button.getAttribute('data-size');
+//         activeDropArea.classList.add(size);
 
-  // ドロップエリアがクリックまたはタッチされたときの処理
-  const handleDropAreaInteraction = (dropArea) => {
-    dropAreas.forEach((area) => area.classList.remove('active'));
-    dropArea.classList.add('active');
-    activeDropArea = dropArea;
-  };
+//         // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+//         localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+//       }
+//     }
+//   };
 
-  // サイズ変更ボタンがクリックまたはタッチされたときの処理
-  const handleResizeButtonInteraction = (button) => {
-    if (activeDropArea) {
-      // サイズ変更を禁止するドロップエリアのリスト
-      const restrictedDropAreas = ['dropArea24-1', 'dropArea24-2', 'dropArea24-3'];
+//   resizeButtons.forEach((button) => {
+//     button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
+//   });
 
-      // サイズ変更を禁止するドロップエリアでない場合のみ処理
-      if (!restrictedDropAreas.includes(activeDropArea.id)) {
-        // サイズをすべてリセット
-        activeDropArea.classList.remove('square', 'rectangle', 'mini');
-        // ボタンの data-size 属性に基づいてサイズを変更
-        const size = button.getAttribute('data-size');
-        activeDropArea.classList.add(size);
-
-        // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-        localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-      }
-    }
-  };
-
-  resizeButtons.forEach((button) => {
-    button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
-  });
-
-  // ページロード時にローカルストレージからサイズを復元
-  dropAreas.forEach((dropArea) => {
-    const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-    if (savedSize) {
-      dropArea.classList.add(savedSize);
-    }
-  });
-});
+//   // ページロード時にローカルストレージからサイズを復元
+//   dropAreas.forEach((dropArea) => {
+//     const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
+//     if (savedSize) {
+//       dropArea.classList.add(savedSize);
+//     }
+//   });
+// });
 
 // 色変更
 function changeColor(color) {
