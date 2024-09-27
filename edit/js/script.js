@@ -1057,7 +1057,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
 
             // ユーザーIDを使ってデータを送信
             return fetch(
-              //`https://develop-back.kotobum.com/api/user/${albumId}/data`,
+              `https://develop-back.kotobum.com/api/albums/${albumId}/body`,
               {
                 method: 'POST',
                 headers: {
