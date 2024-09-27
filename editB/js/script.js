@@ -16,6 +16,7 @@
 //   },
 // });
 
+// Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
@@ -29,6 +30,35 @@ const swiper = new Swiper('.swiper', {
       slidesPerGroup: 2,
     },
   },
+});
+// テキストエリアの要素を取得
+const bugFixes = document.querySelectorAll('.swiper textarea');
+bugFixes.forEach((textarea) => {
+  // フォーカスが当たったときの処理
+  textarea.addEventListener('focus', () => {
+    swiper.allowTouchMove = false; // スワイプ無効
+  });
+  // フォーカスが外れたときの処理
+  textarea.addEventListener('blur', () => {
+    swiper.allowTouchMove = true; // スワイプ有効
+  });
+  // Enterキーが押されたときの処理
+  textarea.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
+    }
+  });
+  // 完了ボタン押下時の処理
+  textarea.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      textarea.blur(); // テキストエリアのフォーカスを外す
+      // ここに必要なら、Swiperの現在のスライドを確認するロジックを追加
+    }
+  });
+  // ここでは、blurイベントを使ってフォーカスを外したときの処理も行います
+  textarea.addEventListener('blur', () => {
+    swiper.allowTouchMove = true; // スワイプ有効
+  });
 });
 
 // メインのスライドからプレビュー
