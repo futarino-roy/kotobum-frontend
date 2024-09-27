@@ -35,6 +35,7 @@ const swiper = new Swiper('.swiper', {
 
 
 
+
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
 
@@ -48,21 +49,12 @@ function enableSwiper() {
   swiper.allowTouchMove = true; // スライド移動を有効にする
 }
 
-// 矢印ボタンのクリックイベントを設定
-const nextButton = document.querySelector('.swiper-button-next');
-const prevButton = document.querySelector('.swiper-button-prev');
-
-nextButton.addEventListener('click', function(event) {
-  // テキストエリアがフォーカスされている場合はスライド移動を無効にする
+// スライドの外側をクリックした際の処理
+document.addEventListener('click', function(event) {
+  // テキストエリアがフォーカスされている場合、スライド移動を無効にする
   if (document.activeElement.tagName === 'TEXTAREA') {
-    event.preventDefault(); // スライド移動を無効にする
-  }
-});
-
-prevButton.addEventListener('click', function(event) {
-  // テキストエリアがフォーカスされている場合はスライド移動を無効にする
-  if (document.activeElement.tagName === 'TEXTAREA') {
-    event.preventDefault(); // スライド移動を無効にする
+    event.preventDefault(); // デフォルトのスライド移動を無効にする
+    event.stopPropagation(); // イベントのバブリングを停止する
   }
 });
 
