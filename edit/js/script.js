@@ -33,8 +33,23 @@ const swiper = new Swiper('.swiper', {
 });
 
 
+
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
+
+// スライドの外側をクリックしたときの処理
+document.addEventListener('click', function(event) {
+  const isOutsideClick = !event.target.closest('.swiper'); // スライダー外のクリックかチェック
+
+  if (isOutsideClick) {
+    textareas.forEach(textarea => {
+      if (document.activeElement === textarea) {
+        textarea.blur(); // テキストエリアのフォーカスを外す
+        swiper.allowTouchMove = true; // スライド移動を有効にする
+      }
+    });
+  }
+});
 
 // テキストエリアにフォーカスがある間、スライド移動を無効にする
 textareas.forEach(textarea => {
@@ -52,17 +67,7 @@ textareas.forEach(textarea => {
       event.preventDefault(); // デフォルトの動作を防ぐ
     }
   });
-
-  // 決定ボタンが押されたときの処理
-  textarea.addEventListener('keypress', function(event) {
-    // 特定のボタン（例: "決定"ボタン）のキーコードを確認（Enterキーの場合は除外）
-    if (event.key === 'Enter' && !textarea.value.trim()) {
-      event.preventDefault(); // 確定していない場合のデフォルト動作を防ぐ
-      return; // ここで処理を終了
-    }
-  });
 });
-
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
