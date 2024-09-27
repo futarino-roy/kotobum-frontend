@@ -34,11 +34,9 @@ const swiper = new Swiper('.swiper', {
 
 
 
+
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
-
-// フラグを作成
-let isInputFocused = false;
 
 // スライドの外側をクリックしたときの処理
 document.addEventListener('click', function(event) {
@@ -57,12 +55,10 @@ document.addEventListener('click', function(event) {
 // テキストエリアにフォーカスがある間、スライド移動を無効にする
 textareas.forEach(textarea => {
   textarea.addEventListener('focus', function() {
-    isInputFocused = true; // フォーカス状態
     swiper.allowTouchMove = false; // スライド移動を無効にする
   });
 
   textarea.addEventListener('blur', function() {
-    isInputFocused = false; // フォーカスが外れた状態
     swiper.allowTouchMove = true; // スライド移動を有効にする
   });
 
@@ -70,6 +66,11 @@ textareas.forEach(textarea => {
     if (textarea.value.length > 0) {
       swiper.allowTouchMove = false; // 入力中はスライド移動を無効にする
     }
+  });
+
+  // touchstartイベントを追加
+  textarea.addEventListener('touchstart', function(event) {
+    event.stopPropagation(); // イベントのバブリングを防ぐ
   });
 
   textarea.addEventListener('keydown', function(event) {
@@ -80,31 +81,47 @@ textareas.forEach(textarea => {
   });
 });
 
-// // メインのスライドからプレビュー
-// document.addEventListener('DOMContentLoaded', function () {
-//   // プレビューボタンにクリックイベントリスナーを追加
-//   document.querySelector('.btn-preview').addEventListener('click', function () {
-//     // 現在のスライドインデックスを取得
-//     const currentSlideIndex = swiper.realIndex;
+// スライド外でクリックした場合の処理
+document.addEventListener('touchstart', function(event) {
+  const isOutsideClick = !event.target.closest('.swiper');
 
-//     // プレビューページのURLを動的に設定
-//     const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
+  if (isOutsideClick) {
+    textareas.forEach(textarea => {
+      if (document.activeElement === textarea) {
+        textarea.blur(); // テキストエリアのフォーカスを外す
+        swiper.allowTouchMove = true; // スライド移動を有効にする
+      }
+    });
+  }
+});
 
-//     // プレビューページに遷移
-//     window.location.href = previewUrl;
-//   });
-// });
 
-// // プレビューのスライドからメイン
-// document.addEventListener('DOMContentLoaded', function () {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   const slideNumber = urlParams.get('slide');
 
-//   if (slideNumber) {
-//     swiper.slideTo(slideNumber - 1, 0); // スライド番号に対応するインデックスに移動
-//     console.log(`Returning to slide ${slideNumber} in the main page`);
-//   }
-// });
+// メインのスライドからプレビュー
+document.addEventListener('DOMContentLoaded', function () {
+  // プレビューボタンにクリックイベントリスナーを追加
+  document.querySelector('.btn-preview').addEventListener('click', function () {
+    // 現在のスライドインデックスを取得
+    const currentSlideIndex = swiper.realIndex;
+
+    // プレビューページのURLを動的に設定
+    const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
+
+    // プレビューページに遷移
+    window.location.href = previewUrl;
+  });
+});
+
+// プレビューのスライドからメイン
+document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const slideNumber = urlParams.get('slide');
+
+  if (slideNumber) {
+    swiper.slideTo(slideNumber - 1, 0); // スライド番号に対応するインデックスに移動
+    console.log(`Returning to slide ${slideNumber} in the main page`);
+  }
+});
 
 // inputボタンのデザイン
 document.getElementById('frontButton').addEventListener('click', function () {
