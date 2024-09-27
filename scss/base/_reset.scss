@@ -23,13 +23,11 @@ body{
   background-color: #FDFCF6;
   // 一応
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 
-  // @include mq('tab') {
-  //   overflow-y: scroll; /* 縦スクロールを有効にする */
-  //   -webkit-overflow-scrolling: touch; /* iOSやAndroidでのスムーズスクロール */
   
-  // }
+  overflow-y: scroll; /* 縦スクロールを有効にする */
+  -webkit-overflow-scrolling: touch; /* iOSやAndroidでのスムーズスクロール */
 }
 
 html{
