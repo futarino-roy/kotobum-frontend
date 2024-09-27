@@ -168,7 +168,7 @@
             height: calc(100vh - 200px);
 
             @include mq('tab-edit') {
-              height: calc(100vh - 500px);
+              height: calc(100vh - 780px);
             }
 
             &_vari {

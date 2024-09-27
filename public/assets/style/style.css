@@ -108,6 +108,54 @@ img {
     background-image: url(../../../images/Button_sp_small_wh.png);
   }
 }
+.btn-small_wh-edit {
+  width: 125px;
+  height: 40px;
+}
+@media screen and (max-width: 900px) {
+  .btn-small_wh-mypc {
+    display: none;
+  }
+}
+.btn-small_wh-mytab {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .btn-small_wh-mytab {
+    display: block;
+    background-image: url(/images/Button_sp_large_wh.png);
+    width: 326px;
+    height: 53px;
+  }
+}
+@media screen and (max-width: 900px) and (max-width: 480px) {
+  .btn-small_wh-mytab {
+    width: 207px;
+    height: 38px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .btn-small_wh-edpc {
+    display: none;
+  }
+}
+.btn-small_wh-edtab {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .btn-small_wh-edtab {
+    display: block;
+    background-image: url(/images/Button_sp_large_wh.png);
+    width: 326px;
+    height: 53px;
+  }
+}
+@media screen and (max-width: 900px) and (max-width: 480px) {
+  .btn-small_wh-edtab {
+    width: 207px;
+    height: 38px;
+  }
+}
 .btn-small_gr {
   background-image: url(/images/Button_pc_small_gr.png);
   color: #000000;
@@ -126,59 +174,6 @@ img {
   width: 156px;
   height: 46px;
   font-size: 1.125rem;
-}
-@media screen and (max-width: 900px) {
-  .btn-small_bl {
-    background-image: url(../../../images/Button_sp_small_bl.png);
-  }
-}
-.btn-small_bl-edit {
-  width: 125px;
-  height: 40px;
-}
-@media screen and (max-width: 900px) {
-  .btn-small_bl-mypc {
-    display: none;
-  }
-}
-.btn-small_bl-mytab {
-  display: none;
-}
-@media screen and (max-width: 900px) {
-  .btn-small_bl-mytab {
-    display: block;
-    background-image: url(/images/Button_sp_large_bl.png);
-    width: 326px;
-    height: 53px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 480px) {
-  .btn-small_bl-mytab {
-    width: 207px;
-    height: 38px;
-  }
-}
-@media screen and (max-width: 900px) {
-  .btn-small_bl-edpc {
-    display: none;
-  }
-}
-.btn-small_bl-edtab {
-  display: none;
-}
-@media screen and (max-width: 900px) {
-  .btn-small_bl-edtab {
-    display: block;
-    background-image: url(/images/Button_sp_large_bl.png);
-    width: 326px;
-    height: 53px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 480px) {
-  .btn-small_bl-edtab {
-    width: 207px;
-    height: 38px;
-  }
 }
 
 header {
@@ -719,7 +714,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit_drawer_container_item_color .color-container {
-    height: calc(100vh - 500px);
+    height: calc(100vh - 780px);
   }
 }
 .edit_drawer_container_item_color .color-container_vari {
