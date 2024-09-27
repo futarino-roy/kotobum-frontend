@@ -750,49 +750,37 @@ document.addEventListener('DOMContentLoaded', function () {
   updateBorders();
 });
 
-// 枠変更 12-~3変更できない版 ローカルストレージに保存----------------------
+// 枠変更
 document.addEventListener('DOMContentLoaded', () => {
   const dropAreas = [];
   const resizeButtons = document.querySelectorAll('.resizeButton');
   let activeDropArea = null;
-
   // ドロップエリアをすべて取得し、配列に追加
   document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
     dropAreas.push(dropArea);
     dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
   });
-
   // ドロップエリアがクリックまたはタッチされたときの処理
   const handleDropAreaInteraction = (dropArea) => {
     dropAreas.forEach((area) => area.classList.remove('active'));
     dropArea.classList.add('active');
     activeDropArea = dropArea;
   };
-
   // サイズ変更ボタンがクリックまたはタッチされたときの処理
   const handleResizeButtonInteraction = (button) => {
     if (activeDropArea) {
-      // サイズ変更を禁止するドロップエリアのリスト
-      // const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
-
-      // サイズ変更を禁止するドロップエリアでない場合のみ処理
-      if (!restrictedDropAreas.includes(activeDropArea.id)) {
-        // サイズをすべてリセット
-        activeDropArea.classList.remove('square', 'rectangle', 'mini');
-        // ボタンの data-size 属性に基づいてサイズを変更
-        const size = button.getAttribute('data-size');
-        activeDropArea.classList.add(size);
-
-        // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-        localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-      }
+      // サイズをすべてリセット
+      activeDropArea.classList.remove('square', 'rectangle', 'mini');
+      // ボタンの data-size 属性に基づいてサイズを変更
+      const size = button.getAttribute('data-size');
+      activeDropArea.classList.add(size);
+      // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+      localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
     }
   };
-
   resizeButtons.forEach((button) => {
     button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
   });
-
   // ページロード時にローカルストレージからサイズを復元
   dropAreas.forEach((dropArea) => {
     const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);

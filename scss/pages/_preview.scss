@@ -14,14 +14,11 @@
     display: block;
   }
 
-
   .content {
-
     .swiper {
       // width: 600px;
       width: 700px;
       height: 100%;
-
 
       @include mq('pc2-edit') {
         // width: 900px;
@@ -48,7 +45,7 @@
           width: auto;
           height: 100%;
 
-          &-hidden{
+          &-hidden {
             visibility: hidden;
 
             @include mq('tab-edit') {
@@ -1102,20 +1099,20 @@
                 //   border-color: #00000089;
                 // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1185,20 +1182,20 @@
                 //   border-color: #00000089;
                 // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1268,20 +1265,20 @@
                 //   border-color: #00000089;
                 // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1395,7 +1392,10 @@
                   margin-top: 5%;
                 }
 
-                &2, &4, &8, &10 {
+                &2,
+                &4,
+                &8,
+                &10 {
                   font-size: 0.7rem;
                   line-height: 1.5;
                   font-weight: bold;
@@ -1487,15 +1487,14 @@
     }
   }
 
-  .button-grid{
+  .button-grid {
     display: none;
 
     @include mq('tab') {
-      display: block;    
+      display: block;
       display: grid;
       place-items: center;
       height: 15vh;
     }
   }
-
 }

@@ -42,7 +42,7 @@
           width: auto;
           height: 100%;
 
-          &-hidden{
+          &-hidden {
             visibility: hidden;
 
             @include mq('tab-edit') {
@@ -498,24 +498,24 @@
                 border: none;
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -535,24 +535,24 @@
                 border: none;
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -572,24 +572,24 @@
                 border: none;
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -757,7 +757,6 @@
                   @include mq('sp2-edit') {
                     font-size: 1.2vw;
                   }
-
                 }
 
                 &16,
@@ -845,7 +844,6 @@
                     font-size: 2.5vw;
                   }
 
-
                   @include mq('sp2-edit') {
                     font-size: 1.8vw;
                   }
@@ -878,7 +876,6 @@
                     font-size: 1.7vw;
                   }
 
-
                   @include mq('sp2-edit') {
                     font-size: 1.2vw;
                   }
@@ -907,7 +904,6 @@
                     font-size: 1.7vw;
                   }
 
-
                   @include mq('sp2-edit') {
                     font-size: 1.2vw;
                   }
@@ -920,15 +916,14 @@
     }
   }
 
-  .button-grid{
+  .button-grid {
     display: none;
 
     @include mq('tab') {
-      display: block;    
+      display: block;
       display: grid;
       place-items: center;
       height: 15vh;
     }
   }
-
 }
