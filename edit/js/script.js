@@ -37,6 +37,9 @@ const swiper = new Swiper('.swiper', {
 // テキストエリアを取得
 const textareas = document.querySelectorAll('textarea');
 
+// フラグを作成
+let isInputFocused = false;
+
 // スライドの外側をクリックしたときの処理
 document.addEventListener('click', function(event) {
   const isOutsideClick = !event.target.closest('.swiper'); // スライダー外のクリックかチェック
@@ -54,11 +57,19 @@ document.addEventListener('click', function(event) {
 // テキストエリアにフォーカスがある間、スライド移動を無効にする
 textareas.forEach(textarea => {
   textarea.addEventListener('focus', function() {
+    isInputFocused = true; // フォーカス状態
     swiper.allowTouchMove = false; // スライド移動を無効にする
   });
 
   textarea.addEventListener('blur', function() {
+    isInputFocused = false; // フォーカスが外れた状態
     swiper.allowTouchMove = true; // スライド移動を有効にする
+  });
+
+  textarea.addEventListener('input', function() {
+    if (textarea.value.length > 0) {
+      swiper.allowTouchMove = false; // 入力中はスライド移動を無効にする
+    }
   });
 
   textarea.addEventListener('keydown', function(event) {
