@@ -969,7 +969,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .edit_drawer_container_item_frame .frame-container {
-    height: calc(100vh - 500px);
+    height: calc(100vh - 750px);
+  }
+}
+@media screen and (max-height: 1000px) {
+  .edit_drawer_container_item_frame .frame-container {
+    height: auto; /* 高さを自動で調整 */
+    max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
   }
 }
 .edit_drawer_container_item_frame .frame-container_vari {
