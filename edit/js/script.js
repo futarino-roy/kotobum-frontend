@@ -891,6 +891,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
     return;
   }
 
+  let albumId; // albumId をここでグローバルスコープで宣言
+
   function getAllDataFromIndexedDB(dbName, storeName) {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(dbName);
@@ -927,19 +929,15 @@ document.getElementById('sendButton').addEventListener('click', function () {
     },
   })
     .then((response) => {
-      // レスポンスのチェック
       if (!response.ok) {
-        const errorMessage = `ユーザー情報の取得に失敗しました: ${response.status} - ${response.statusText}`;
-        console.error(errorMessage);
-        throw new Error(errorMessage);
+        throw new Error(`ユーザー情報の取得に失敗しました: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
     .then((albums) => {
-      console.log('取得したユーザーデータ:', albums);
-      const albumId = albums.albumId;
+      console.log('取得したユーザーデータ:', albums); // レスポンスを確認
+      albumId = albums.albumId; // albumId をここで設定
 
-      // albumIdの存在を確認
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
         return;
@@ -950,11 +948,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
       return fetch('../preview/index.html');
     })
     .then((response) => {
-      // HTMLファイルのレスポンスチェック
       if (!response.ok) {
-        const errorMessage = `HTMLページの取得に失敗しました: ${response.status} - ${response.statusText}`;
-        console.error(errorMessage);
-        throw new Error(errorMessage);
+        throw new Error(`HTMLページの取得に失敗しました: ${response.status} - ${response.statusText}`);
       }
       return response.text();
     })
@@ -972,9 +967,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
               fetch(sheet.href)
                 .then((response) => {
                   if (!response.ok) {
-                    const errorMessage = `CSSファイルの取得に失敗しました: ${response.status} - ${response.statusText}`;
-                    console.error(errorMessage);
-                    throw new Error(errorMessage);
+                    throw new Error(`CSSファイルの取得に失敗しました: ${response.status} - ${response.statusText}`);
                   }
                   return response.text();
                 })
@@ -1039,11 +1032,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
       });
     })
     .then((response) => {
-      // POSTリクエストのレスポンスチェック
       if (!response.ok) {
-        const errorMessage = `データ送信に失敗しました: ${response.status} - ${response.statusText}`;
-        console.error(errorMessage);
-        throw new Error(errorMessage);
+        throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
@@ -1055,4 +1045,5 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
+
 
