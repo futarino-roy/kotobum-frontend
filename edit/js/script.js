@@ -935,7 +935,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
 
     .then((albums) => {
       console.log('取得したユーザーデータ:', albums); // レスポンスを確認
-      const albumId = albums.albumsId
+      const albumId = albums.albumId
 
 
       if (!albumId) {
