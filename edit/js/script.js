@@ -919,7 +919,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
   }
 
   // ユーザー情報を取得
-  fetch('https://develop-back.kotobum.com/api/user', {
+  fetch('https://develop-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -935,9 +935,9 @@ document.getElementById('sendButton').addEventListener('click', function () {
 
     .then((userData) => {
       console.log('取得したユーザーデータ:', userData); // レスポンスを確認
-      const userId = userData.Id; // user_idを取得
+      const albumId = userData.id; // user_idを取得
 
-      if (!userId) {
+      if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
