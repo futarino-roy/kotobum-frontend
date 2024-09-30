@@ -937,7 +937,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.log('取得したユーザーデータ:', users); // レスポンスを確認
       const albumId = users.id; // user_idを取得
 
-      if (!albumId) {
+      if (albumId == null) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
