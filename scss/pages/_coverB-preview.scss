@@ -10,24 +10,35 @@
   align-items: center;
   height: 90vh;
 
-  @include mq("tab-edit") {
+  @include mq('tab-edit') {
     display: block;
   }
 
   .content {
+    @include mq('tab-edit') {
+      // margin: 85px 0 0 0;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
     .swiper {
       width: 600px;
       height: 100%;
 
-      @include mq("pc2-edit") {
+      @include mq('pc2-edit') {
         width: 900px;
       }
 
-      @include mq("pc-edit") {
+      @include mq('pc-edit') {
         width: 450px;
       }
 
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         display: block;
         width: 80%;
         min-width: auto;
@@ -189,19 +200,19 @@
                 pointer-events: none;
                 cursor: not-allowed;
 
-                @include mq("pc-edit") {
+                @include mq('pc-edit') {
                   font-size: 0.3rem;
                 }
 
-                @include mq("pc2-edit") {
+                @include mq('pc2-edit') {
                   font-size: 0.6rem;
                 }
 
-                @include mq("tab-edit") {
+                @include mq('tab-edit') {
                   font-size: 1.2vw;
                 }
 
-                @include mq("sp-edit") {
+                @include mq('sp-edit') {
                   font-size: 1.7vw;
                 }
               }
@@ -219,16 +230,16 @@
                   font-weight: bold;
                   font-size: 1rem;
                   color: #ffffff !important;
-                  @include mq("pc-edit") {
+                  @include mq('pc-edit') {
                     font-size: 0.8rem;
                   }
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 1.5rem;
                   }
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3vw;
                   }
-                  @include mq("sp2-edit") {
+                  @include mq('sp2-edit') {
                     font-size: 2vw;
                   }
                 }
@@ -245,22 +256,22 @@
                   font-weight: bold;
                   color: #fef8f6;
 
-                  @include mq("pc-edit") {
+                  @include mq('pc-edit') {
                     font-size: 0.3rem;
                   }
 
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 0.6rem;
                   }
 
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 1.2vw;
                   }
 
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 1.7vw;
                   }
-                  @include mq("sp2-edit") {
+                  @include mq('sp2-edit') {
                     font-size: 0.8vw;
                   }
                 }
@@ -274,19 +285,19 @@
                   font-weight: bold;
                   font-size: 1.1rem;
 
-                  @include mq("pc-edit") {
+                  @include mq('pc-edit') {
                     font-size: 0.9rem;
                   }
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 1.7rem;
                   }
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3.3vw;
                   }
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 4.8vw;
                   }
-                  @include mq("sp2-edit") {
+                  @include mq('sp2-edit') {
                     font-size: 2.7vw;
                   }
 
@@ -326,15 +337,14 @@
     }
   }
 
-  .button-grid{
+  .button-grid {
     display: none;
 
     @include mq('tab') {
-      display: block;    
+      display: block;
       display: grid;
       place-items: center;
       height: 15vh;
     }
   }
-
 }

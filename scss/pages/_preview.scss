@@ -15,6 +15,17 @@
   }
 
   .content {
+    @include mq('tab-edit') {
+      // margin: 85px 0 0 0;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
     .swiper {
       // width: 600px;
       width: 700px;

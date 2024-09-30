@@ -3547,6 +3547,17 @@ input:checked + label::after {
     display: block;
   }
 }
+@media screen and (max-width: 900px) {
+  .preview .content {
+    transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
 .preview .content .swiper {
   width: 700px;
   height: 100%;
@@ -4801,6 +4812,17 @@ input:checked + label::after {
 @media screen and (max-width: 900px) {
   .previewB {
     display: block;
+  }
+}
+@media screen and (max-width: 900px) {
+  .previewB .content {
+    transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .previewB .content .swiper {
@@ -7225,6 +7247,17 @@ input:checked + label::after {
     display: block;
   }
 }
+@media screen and (max-width: 900px) {
+  .cover-preview .content {
+    transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
 .cover-preview .content .swiper {
   width: 600px;
   height: 100%;
@@ -7553,6 +7586,17 @@ input:checked + label::after {
 @media screen and (max-width: 900px) {
   .coverB-preview {
     display: block;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB-preview .content {
+    transition: none;
+    width: 100%;
+    position: absolute;
+    top: calc(45% + 40.5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 .coverB-preview .content .swiper {
