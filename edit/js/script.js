@@ -927,117 +927,123 @@ document.getElementById('sendButton').addEventListener('click', function () {
     },
   })
     .then((response) => {
+      // レスポンスのチェック
       if (!response.ok) {
-        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        const errorMessage = `ユーザー情報の取得に失敗しました: ${response.status} - ${response.statusText}`;
+        console.error(errorMessage);
+        throw new Error(errorMessage);
       }
       return response.json();
     })
-
     .then((albums) => {
-      console.log('取得したユーザーデータ:', albums); // レスポンスを確認
-      const albumId = albums.albumId
+      console.log('取得したユーザーデータ:', albums);
+      const albumId = albums.albumId;
 
-
+      // albumIdの存在を確認
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
-      // アルバムIDを使った追加処理をここに記述
       console.log('取得したアルバムID:', albumId);
-    })
-    .catch((error) => {
-      console.error('エラー:', error.message); // エラーをコンソールに出力
 
       // HTMLファイルを取得
-      return fetch('../preview/index.html')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
-          }
-          return response.text();
-        })
-        .then((htmlContent) => {
-          let cssContent = '';
-          let cssUrls = [];
-          const cssPromises = [];
-
-          // CSSスタイルシートを取得
-          for (let sheet of document.styleSheets) {
-            try {
-              if (sheet.href && sheet.href.startsWith(window.location.origin)) {
-                cssUrls.push(sheet.href);
-                cssPromises.push(
-                  fetch(sheet.href)
-                    .then((response) => {
-                      if (!response.ok) {
-                        throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
-                      }
-                      return response.text();
-                    })
-                    .then((text) => {
-                      cssContent += text;
-                    })
-                    .catch((e) => {
-                      console.warn('スタイルシートの取得エラー:', e);
-                    })
-                );
-              } else if (!sheet.href) {
-                if (sheet.cssRules) {
-                  for (let rule of sheet.cssRules) {
-                    cssContent += rule.cssText;
-                  }
-                }
-              }
-            } catch (e) {
-              console.warn('スタイルシートの取得エラー:', e);
-            }
-          }
-
-          return Promise.all(cssPromises).then(() => ({
-            htmlContent,
-            cssContent,
-            cssUrls,
-          }));
-        })
-        .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
-          let localStorageData = {};
-          for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            localStorageData[key] = localStorage.getItem(key);
-          }
-
-          return Promise.all([
-            getAllDataFromIndexedDB('NewImageDatabase1', 'images').catch((err) => {
-              console.error('NewImageDatabase1のデータ取得中にエラー:', err);
-              return [];
-            }),
-            getAllDataFromIndexedDB('ImageDB', 'images').catch((err) => {
-              console.error('ImageDBのデータ取得中にエラー:', err);
-              return [];
-            }),
-          ]).then(([newImageDatabase1Data, imageDBData]) => {
-            const body = new FormData();
-            body.append('htmlContent', htmlContent);
-            body.append('cssContent', cssContent);
-            body.append('cssUrls', JSON.stringify(cssUrls));
-            body.append('localStorageData', JSON.stringify(localStorageData));
-            body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
-            body.append('imageDBData', JSON.stringify(imageDBData));
-
-            // ユーザーIDを使ってデータを送信
-            return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-              method: 'POST',
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              body: body,
-            });
-          });
-        });
+      return fetch('../preview/index.html');
     })
     .then((response) => {
+      // HTMLファイルのレスポンスチェック
       if (!response.ok) {
-        throw new Error(`サーバ送信エラー: ${response.status} - ${response.statusText}`);
+        const errorMessage = `HTMLページの取得に失敗しました: ${response.status} - ${response.statusText}`;
+        console.error(errorMessage);
+        throw new Error(errorMessage);
+      }
+      return response.text();
+    })
+    .then((htmlContent) => {
+      let cssContent = '';
+      let cssUrls = [];
+      const cssPromises = [];
+
+      // CSSスタイルシートを取得
+      for (let sheet of document.styleSheets) {
+        try {
+          if (sheet.href && sheet.href.startsWith(window.location.origin)) {
+            cssUrls.push(sheet.href);
+            cssPromises.push(
+              fetch(sheet.href)
+                .then((response) => {
+                  if (!response.ok) {
+                    const errorMessage = `CSSファイルの取得に失敗しました: ${response.status} - ${response.statusText}`;
+                    console.error(errorMessage);
+                    throw new Error(errorMessage);
+                  }
+                  return response.text();
+                })
+                .then((text) => {
+                  cssContent += text;
+                })
+                .catch((e) => {
+                  console.warn('スタイルシートの取得中にエラーが発生しました:', e);
+                })
+            );
+          } else if (!sheet.href) {
+            if (sheet.cssRules) {
+              for (let rule of sheet.cssRules) {
+                cssContent += rule.cssText;
+              }
+            }
+          }
+        } catch (e) {
+          console.warn('スタイルシートの取得中にエラーが発生しました:', e);
+        }
+      }
+
+      return Promise.all(cssPromises).then(() => ({
+        htmlContent,
+        cssContent,
+        cssUrls,
+      }));
+    })
+    .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
+      let localStorageData = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        localStorageData[key] = localStorage.getItem(key);
+      }
+
+      return Promise.all([
+        getAllDataFromIndexedDB('NewImageDatabase1', 'images').catch((err) => {
+          console.error('NewImageDatabase1のデータ取得中にエラーが発生しました:', err);
+          return [];
+        }),
+        getAllDataFromIndexedDB('ImageDB', 'images').catch((err) => {
+          console.error('ImageDBのデータ取得中にエラーが発生しました:', err);
+          return [];
+        }),
+      ]).then(([newImageDatabase1Data, imageDBData]) => {
+        const body = new FormData();
+        body.append('htmlContent', htmlContent);
+        body.append('cssContent', cssContent);
+        body.append('cssUrls', JSON.stringify(cssUrls));
+        body.append('localStorageData', JSON.stringify(localStorageData));
+        body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
+        body.append('imageDBData', JSON.stringify(imageDBData));
+
+        // ユーザーIDを使ってデータを送信
+        return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: body,
+        });
+      });
+    })
+    .then((response) => {
+      // POSTリクエストのレスポンスチェック
+      if (!response.ok) {
+        const errorMessage = `データ送信に失敗しました: ${response.status} - ${response.statusText}`;
+        console.error(errorMessage);
+        throw new Error(errorMessage);
       }
       return response.json();
     })
@@ -1045,6 +1051,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.log('成功:', data);
     })
     .catch((error) => {
-      console.error('エラー:', error);
+      console.error('エラーが発生しました:', error.message); // エラーをコンソールに出力
+      console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
+
