@@ -891,8 +891,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
     return;
   }
 
-  let albumId; // albumId をここでグローバルスコープで宣言
-
   function getAllDataFromIndexedDB(dbName, storeName) {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(dbName);
@@ -930,18 +928,20 @@ document.getElementById('sendButton').addEventListener('click', function () {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`ユーザー情報の取得に失敗しました: ${response.status} - ${response.statusText}`);
+        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
     .then((albums) => {
       console.log('取得したユーザーデータ:', albums); // レスポンスを確認
-      albumId = albums.albumId; // albumId をここで設定
+      const albumId = albums.albumId;
 
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
+
+      // アルバムIDを使った追加処理をここに記述
       console.log('取得したアルバムID:', albumId);
 
       // HTMLファイルを取得
@@ -949,7 +949,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
     })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTMLページの取得に失敗しました: ${response.status} - ${response.statusText}`);
+        throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
       }
       return response.text();
     })
@@ -967,7 +967,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
               fetch(sheet.href)
                 .then((response) => {
                   if (!response.ok) {
-                    throw new Error(`CSSファイルの取得に失敗しました: ${response.status} - ${response.statusText}`);
+                    throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
                   }
                   return response.text();
                 })
@@ -975,7 +975,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
                   cssContent += text;
                 })
                 .catch((e) => {
-                  console.warn('スタイルシートの取得中にエラーが発生しました:', e);
+                  console.warn('スタイルシートの取得エラー:', e);
                 })
             );
           } else if (!sheet.href) {
@@ -986,7 +986,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
             }
           }
         } catch (e) {
-          console.warn('スタイルシートの取得中にエラーが発生しました:', e);
+          console.warn('スタイルシートの取得エラー:', e);
         }
       }
 
@@ -1021,6 +1021,16 @@ document.getElementById('sendButton').addEventListener('click', function () {
         body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
         body.append('imageDBData', JSON.stringify(imageDBData));
 
+        // 送信するデータをコンソールに出力
+        console.log('送信するデータ:', {
+          htmlContent,
+          cssContent,
+          cssUrls,
+          localStorageData,
+          newImageDatabase1Data,
+          imageDBData,
+        });
+
         // ユーザーIDを使ってデータを送信
         return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
           method: 'POST',
@@ -1045,5 +1055,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
+
 
 
