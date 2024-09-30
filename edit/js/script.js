@@ -891,6 +891,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
     return;
   }
 
+  let albumId; // albumIdをここで宣言
+
   function getAllDataFromIndexedDB(dbName, storeName) {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(dbName);
@@ -934,7 +936,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
     })
     .then((albums) => {
       console.log('取得したユーザーデータ:', albums); // レスポンスを確認
-      const albumId = albums.albumId;
+      albumId = albums.albumId; // albumIdをここに設定
 
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
@@ -1055,6 +1057,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
+
 
 
 
