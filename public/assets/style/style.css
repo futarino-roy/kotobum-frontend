@@ -712,6 +712,12 @@ input:checked + label::after {
     height: calc(100vh - 780px);
   }
 }
+@media screen and (max-height: 1000px) {
+  .edit_drawer_container_item_color .color-container {
+    height: auto; /* 高さを自動で調整 */
+    max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+  }
+}
 .edit_drawer_container_item_color .color-container_vari {
   display: flex;
   flex-wrap: wrap;
