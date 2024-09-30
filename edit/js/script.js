@@ -933,8 +933,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
       return response.json();
     })
 
-    .then((users) => {
-      console.log('取得したユーザーデータ:', users); // レスポンスを確認
+    .then((albums) => {
+      console.log('取得したユーザーデータ:', albums); // レスポンスを確認
       const albumId = albums.user_id
 
 
