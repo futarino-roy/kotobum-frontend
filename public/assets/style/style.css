@@ -43,6 +43,10 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   width: 326px;
   height: 53px;
@@ -262,9 +266,6 @@ header img {
   box-sizing: border-box;
   display: flex;
 }
-.signup .form_box input::-moz-placeholder {
-  opacity: 0.5;
-}
 .signup .form_box input::placeholder {
   opacity: 0.5;
 }
@@ -341,9 +342,6 @@ input:checked + label::after {
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
-}
-.login .form_box input::-moz-placeholder {
-  opacity: 0.5;
 }
 .login .form_box input::placeholder {
   opacity: 0.5;
@@ -712,7 +710,7 @@ input:checked + label::after {
     height: calc(100vh - 780px);
   }
 }
-@media screen and (max-height: 1000px) {
+@media (max-height: 1000px) and (max-width: 900px) {
   .edit_drawer_container_item_color .color-container {
     height: auto; /* 高さを自動で調整 */
     max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
@@ -1182,26 +1180,22 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box {
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
     width: 90%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -1277,8 +1271,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
@@ -1307,8 +1300,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
@@ -1337,8 +1329,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
@@ -1367,8 +1358,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
@@ -1397,8 +1387,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
@@ -1427,8 +1416,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
@@ -1457,8 +1445,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
@@ -1487,8 +1474,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
@@ -1517,8 +1503,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
@@ -1547,8 +1532,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
@@ -1577,8 +1561,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
@@ -1593,8 +1576,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
@@ -1608,8 +1590,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
@@ -1623,8 +1604,7 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -2757,26 +2737,22 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box {
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box {
     width: 90%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -2851,8 +2827,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
@@ -2881,8 +2856,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
@@ -2911,8 +2885,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
@@ -2941,8 +2914,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
@@ -2971,8 +2943,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
@@ -3001,8 +2972,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
@@ -3031,8 +3001,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
@@ -3061,8 +3030,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
@@ -3091,8 +3059,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
@@ -3121,8 +3088,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
@@ -3151,8 +3117,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
@@ -3166,8 +3131,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 {
@@ -3181,8 +3145,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 {
@@ -3197,8 +3160,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -3605,48 +3567,41 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(21px 24px 26px 21px);
-          clip-path: inset(21px 24px 26px 21px);
+  clip-path: inset(21px 24px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(32px 34px 35px 30px);
-            clip-path: inset(32px 34px 35px 30px);
+    clip-path: inset(32px 34px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(18px 19px 21px 17px);
-            clip-path: inset(18px 19px 21px 17px);
+    clip-path: inset(18px 19px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -3754,8 +3709,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
@@ -3821,8 +3775,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
@@ -3888,8 +3841,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
@@ -3955,8 +3907,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
@@ -4022,8 +3973,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
@@ -4089,8 +4039,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
@@ -4156,8 +4105,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
@@ -4223,8 +4171,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
@@ -4290,8 +4237,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
@@ -4357,8 +4303,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
@@ -4424,8 +4369,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
@@ -4477,8 +4421,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
@@ -4529,8 +4472,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
@@ -4581,8 +4523,7 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -4797,7 +4738,6 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .preview .button-grid {
-    display: block;
     display: grid;
     place-items: center;
     height: 15vh;
@@ -4872,48 +4812,41 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box {
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(21px 24px 26px 21px);
-          clip-path: inset(21px 24px 26px 21px);
+  clip-path: inset(21px 24px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(32px 34px 35px 30px);
-            clip-path: inset(32px 34px 35px 30px);
+    clip-path: inset(32px 34px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(18px 19px 21px 17px);
-            clip-path: inset(18px 19px 21px 17px);
+    clip-path: inset(18px 19px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .previewB .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -4979,8 +4912,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
   position: relative;
@@ -5004,8 +4936,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
   position: relative;
@@ -5029,8 +4960,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
   position: relative;
@@ -5054,8 +4984,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
   position: relative;
@@ -5079,8 +5008,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
   position: relative;
@@ -5104,8 +5032,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
   position: relative;
@@ -5129,8 +5056,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
   position: relative;
@@ -5154,8 +5080,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
   position: relative;
@@ -5179,8 +5104,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
   position: relative;
@@ -5204,8 +5128,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
   position: relative;
@@ -5229,8 +5152,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
   position: relative;
@@ -5254,8 +5176,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
   position: relative;
@@ -5267,8 +5188,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 {
@@ -5281,8 +5201,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 {
@@ -5295,8 +5214,7 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -6207,48 +6125,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -6293,8 +6204,7 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -6991,48 +6901,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -7097,8 +7000,7 @@ input:checked + label::after {
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -7298,48 +7200,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -7423,8 +7318,7 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -7571,7 +7465,6 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .cover-preview .button-grid {
-    display: block;
     display: grid;
     place-items: center;
     height: 15vh;
@@ -7639,48 +7532,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(20px 21px 26px 21px);
-          clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(20px 21px 26px 21px);
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(31px 31px 35px 30px);
-            clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(31px 31px 35px 30px);
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(16px 16px 21px 17px);
-            clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(16px 16px 21px 17px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(5% 7% 6% 7%);
-            clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(5% 7% 6% 7%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    -webkit-clip-path: inset(5% 7% 7% 7%);
-            clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(5% 7% 7% 7%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    -webkit-clip-path: inset(5% 7% 8% 7%);
-            clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(5% 7% 8% 7%);
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -7758,8 +7644,7 @@ input:checked + label::after {
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {

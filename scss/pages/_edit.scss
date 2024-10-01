@@ -170,7 +170,7 @@
             @include mq('tab-edit') {
               height: calc(100vh - 780px);
             }
-            @media screen and (max-height: 1000px) {
+            @media (max-height: 1000px) and (max-width: 900px){
               height: auto; /* 高さを自動で調整 */
               max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
             }

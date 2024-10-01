@@ -323,7 +323,7 @@
     display: none;
 
     @include mq('tab') {
-      display: block;
+      // display: block;
       display: grid;
       place-items: center;
       height: 15vh;
