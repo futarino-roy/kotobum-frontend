@@ -1,6 +1,115 @@
 .preview-body {
   background: #d5dadc;
   overflow: hidden;
+
+    /* モーダルと背景の指定 */
+    .modal {
+      z-index: 99;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 50%);
+      padding: 40px 20px;
+      overflow: auto;
+      box-sizing: border-box;
+      transform: translate(-50%, -50%);
+  
+      // モーダルを非表示にする
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+  
+    /* モーダルの擬似要素の指定 */
+    .modal:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      margin-left: -0.2em;
+    }
+  
+    /* クラスが追加された時の指定 */
+    .modal.is-active {
+      opacity: 1;
+      visibility: visible;
+      // display: block;
+    }
+  
+    /* モーダル内側の指定 */
+    .modal-container {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 451px;
+      max-height: 313px;
+      width: 80%;
+      height: auto;
+      background-color: #fdfcf6;
+      border-radius: 10px;
+    }
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px;
+      max-width: 90%;
+      // max-height: 90vh;
+      // overflow-y: auto;
+  
+      &__check {
+        font-size: 20px;
+      }
+      &__text {
+        font-size: 16px;
+      }
+  
+      &__button-sp {
+        display: none;
+      }
+      @include mq('pc-mypage') {
+        .modal-content__button-pc {
+          display: block;
+        }
+        .modal-content__button-sp {
+          display: none;
+        }
+      }
+      @include mq('sp-mypage') {
+        .modal-content__button-pc {
+          display: none;
+        }
+        .modal-content__button-sp {
+          display: block;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  
+  
+  .modal-container_S {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px;
+    max-height: 281px;
+    width: 80%;
+    height: auto;
+    background-color: #fdfcf6;
+    border-radius: 10px;
+  }
+}
+.checkafter {
+  width: auto;
+  height: auto;
 }
 
 .preview {

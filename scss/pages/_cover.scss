@@ -749,6 +749,12 @@
                   font-size: 1.7vw;
                 }
               }
+              .text-empty {
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
+                }
+              }
 
               #textArea {
                 &A-1 {

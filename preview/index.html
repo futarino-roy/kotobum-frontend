@@ -15,7 +15,41 @@
     <header class="preview-header">
       <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mypc" >マイページへ</button></a>
       <button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button>
-      <button class="btn btn-small_bl btn-small_bl-kou">校了</button>
+      <button class="btn btn-small_bl btn-small_bl-kou js-modal-open">校了</button>
+
+       <!-- モーダル本体 -->
+    <div class="modal js-modal1" id="modal1">
+      <div class="modal-container">
+        <!-- モーダル内部のコンテンツ -->
+        <div class="modal-content">
+          <p class="modal-content__check">校了しますか？</p>
+          <p class="modal-content__textl">校了すると追加の原稿修正は<br />できなくなります</p>
+
+          <button class="btn btn-middle_bl modal-content__button modal-content__button-pc modal-change_l">校了する</button>
+          <button class="btn btn-small_bl modal-content__button modal-content__button-sp modal-change_l">校了</button>
+
+          <button class="btn btn-middle_wh modal-content__button modal-content__button-pc js-modal-close">
+            <a href=""> 戻る </a>
+          </button>
+          <button class="btn btn-small_wh modal-content__button modal-content__button-sp js-modal-close">
+            <a href=""> 戻る </a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- モーダル本体 次のモーダル -->
+    <div class="modal js-modal1_2" id="modal1_2">
+      <div class="modal-container_S">
+        <div class="modal-content">
+          <img class="checkafter" src="/mypage/images/checkafter.png" alt="" />
+          <p class="modal-checkafter">校了ありがとうございました</p>
+          <a href="/mypage/index.html"><button class="btn btn-middle_bl modal-checkafter__mypage_l modal-content__button-pc">マイページへ</button></a>
+          <a href="/mypage/index.html"><button class="btn btn-small_bl modal-checkafter__mypage_l modal-content__button-sp">マイページへ</button></a>
+        </div>
+      </div>
+    </div>
+
     </header>
 
     <div class="preview">

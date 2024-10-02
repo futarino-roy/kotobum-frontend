@@ -582,6 +582,7 @@ function handleDrop(event) {
       this.appendChild(img);
       addButtons(this); // 削除ボタンとトリミングボタンを追加
 
+
       // IndexedDBに画像データを保存
       saveImageToIndexedDB(e.target.result, this.id);
     }.bind(this);
@@ -782,6 +783,23 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelectorAll(".text-empty")
       .forEach((textarea) => adjustHeight(textarea));
   }, 100);
+});
+// テキストエリア枠の削除
+document.addEventListener('DOMContentLoaded', function () {
+  const textEmptys = document.querySelectorAll('.text-empty');
+  function updateBorders() {
+    textEmptys.forEach((textEmpty) => {
+      if (textEmpty.value.trim() === '') {
+        textEmpty.classList.remove('no-border');
+      } else {
+        textEmpty.classList.add('no-border');
+      }
+    });
+  }
+  textEmptys.forEach((textEmpty) => {
+    textEmpty.addEventListener('input', updateBorders);
+  });
+  updateBorders();
 });
 
 // 枠変更 12-~3変更できない版 ローカルストレージに保存
