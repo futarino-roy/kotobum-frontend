@@ -970,7 +970,7 @@ input:checked + label::after {
     height: calc(100vh - 750px);
   }
 }
-@media screen and (max-height: 1000px) {
+@media (max-height: 1000px) and (max-width: 900px) {
   .edit_drawer_container_item_frame .frame-container {
     height: auto; /* 高さを自動で調整 */
     max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
@@ -2532,6 +2532,17 @@ input:checked + label::after {
 .editB_drawer_container_item_frame .frame-container {
   overflow: auto;
   height: calc(100vh - 200px);
+}
+@media screen and (max-width: 900px) {
+  .editB_drawer_container_item_frame .frame-container {
+    height: calc(100vh - 750px);
+  }
+}
+@media (max-height: 1000px) and (max-width: 900px) {
+  .editB_drawer_container_item_frame .frame-container {
+    height: auto; /* 高さを自動で調整 */
+    max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+  }
 }
 .editB_drawer_container_item_frame .frame-container_vari {
   display: flex;
@@ -6132,6 +6143,17 @@ input:checked + label::after {
   overflow: auto;
   height: calc(100vh - 200px);
 }
+@media screen and (max-width: 900px) {
+  .cover_drawer_container_item_frame .frame-container {
+    height: calc(100vh - 750px);
+  }
+}
+@media (max-height: 1000px) and (max-width: 900px) {
+  .cover_drawer_container_item_frame .frame-container {
+    height: auto; /* 高さを自動で調整 */
+    max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+  }
+}
 .cover_drawer_container_item_frame .frame-container_vari {
   display: flex;
   flex-wrap: wrap;
@@ -6318,35 +6340,35 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(35.5px 39px 37px 1.5px);
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(54.5px 59px 52px 2px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(27px 29px 28px 2px);
   }
 }
 @media screen and (max-width: 900px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 330px) {
@@ -6914,6 +6936,17 @@ input:checked + label::after {
   overflow: auto;
   height: calc(100vh - 200px);
 }
+@media screen and (max-width: 900px) {
+  .coverB_drawer_container_item_frame .frame-container {
+    height: calc(100vh - 750px);
+  }
+}
+@media (max-height: 1000px) and (max-width: 900px) {
+  .coverB_drawer_container_item_frame .frame-container {
+    height: auto; /* 高さを自動で調整 */
+    max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+  }
+}
 .coverB_drawer_container_item_frame .frame-container_vari {
   display: flex;
   flex-wrap: wrap;
@@ -7100,41 +7133,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(36.5px 2px 41px 34px);
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(53.5px 3px 59px 50px);
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(28px 1px 32px 25px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(8.5% 1% 9% 11%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -7399,35 +7432,35 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(35.5px 39px 37px 1.5px);
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(54.5px 59px 52px 2px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(27px 29px 28px 2px);
   }
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(9% 13% 9% 0%);
   }
 }
 @media screen and (max-width: 330px) {
@@ -7731,41 +7764,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(20px 21px 26px 21px);
+  clip-path: inset(36.5px 2px 41px 34px);
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 31px 35px 30px);
+    clip-path: inset(53.5px 3px 59px 50px);
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(16px 16px 21px 17px);
+    clip-path: inset(28px 1px 32px 25px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(8.5% 1% 9% 11%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(5% 7% 6% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(5% 7% 7% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(8.5% 1% 9.5% 11%);
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop {

@@ -57,30 +57,32 @@
             width: 50%;
             max-width: 500px;
             position: relative;
-            clip-path: inset(20px 21px 26px 21px);
+            clip-path: inset(36.5px 2px 41px 34px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 31px 35px 30px);
+              // clip-path: inset(31px 31px 35px 30px);
+              clip-path: inset(53.5px 3px 59px 50px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(16px 16px 21px 17px);
+              // clip-path: inset(16px 16px 21px 17px);
+              clip-path: inset(28px 1px 32px 25px);
             }
             @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(5% 7% 6% 7%);
+              clip-path: inset(8.5% 1% 9% 11%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(5% 7% 6% 7%);
+              clip-path: inset(8.5% 1% 9.5% 11%);
             }
             @include mq('sp2-edit') {
               width: 70%;
-              clip-path: inset(5% 7% 7% 7%);
+              clip-path: inset(8.5% 1% 9.5% 11%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
               width: 50%;
-              clip-path: inset(5% 7% 8% 7%);
+              clip-path: inset(8.5% 1% 9.5% 11%);
             }
 
             .input-drop {
