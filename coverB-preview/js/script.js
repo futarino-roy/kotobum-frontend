@@ -228,3 +228,141 @@ function applySavedColor() {
 document.addEventListener('DOMContentLoaded', function () {
   applySavedColor();
 });
+
+//----------------- モーダルに関するJavaScript---------------------
+
+//要素を取得
+const openButton = document.querySelector('.js-modal-open');
+const modal = document.getElementById("modal1");
+
+//「開くボタン」をクリックしてモーダルを開く
+
+openButton.addEventListener('click', function () {
+  console.log(`開かれたモーダル: ${modal.id}`); // コンソールに開かれたモーダルのIDを表示
+  modal.classList.add('is-active'); // モーダルを表示
+});
+
+// モーダルの外側がクリックされたときにモーダルを閉じる
+modal.addEventListener('click', function (event) {
+  if (event.target === modal) { // event.targetを使ってモーダルの外側かどうかをチェック
+    modal.classList.remove('is-active'); // モーダルを閉じる
+  }
+});
+
+// モーダル内の閉じるボタンがクリックされたときにモーダルを閉じる
+const closeButton = modal.querySelector('.js-modal-close');
+if (closeButton) {
+  closeButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    modal.classList.remove('is-active');
+  });
+}
+
+//----------- モーダル内の校了ボタンを押した後のモーダル -------------------
+const modalF = document.querySelector('.js-modal1');
+const modalS = document.querySelector('.js-modal1_2');
+
+// 校了ボタンの取得
+const changeButtons = document.querySelectorAll('.modal-change_l');
+
+changeButtons.forEach((changeButton) => {
+  changeButton.addEventListener('click', function () {
+    // 最初のモーダルを非表示
+    modalF.classList.remove('is-active');
+    // 次のモーダルを表示
+    modalS.classList.add('is-active');
+  });
+});
+
+// -------------校了後のマイページのボタン無効化に関するJS　表紙用----------------
+
+// A, C ボタンのセレクタ
+const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
+const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
+
+// モーダルを取得
+// const modal = document.querySelector('#modal1_2');
+
+// モーダル内の「マイページへ」ボタンを取得
+const modalButton_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
+modalButton_ls.forEach((modalButton_l) => {
+  modalButton_l.addEventListener('click', function () {
+    buttonA_l.disabled = true;
+    buttonC_l.disabled = true;
+
+    buttonA_l.style.cursor = 'not-allowed'; // cursorのデザインを変更
+    buttonC_l.style.cursor = 'not-allowed';
+
+    //バックエンドとのAPI連携（校了後にボタンを押せなくする）
+    fetch(' ', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', //送信するデータがJSON形式であることを示す
+      },
+      body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const koryoButton = document.getElementById('koryoButton');
+
+        if (data.isKoryoDone) {
+          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
+        } else {
+          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
+        }
+      })
+      .catch((error) => {
+        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
+      });
+  });
+
+  window.addEventListener('load', function () {
+    fetch(' ', {
+      // method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const koryoButton = document.getElementById('koryoButton');
+
+        if (data.isKoryoDone) {
+          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
+        } else {
+          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
+        }
+      })
+      .catch((error) => {
+        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
+      });
+  });
+
+  // モーダルを閉じる
+  modalS.classList.remove('is-active');
+});
+
+// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更
+const button_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
+
+// 変更対象(「編集ボタン」と「校了ボタン」)の要素を取得
+//「 A, C ボタンのセレクタ」で以下を取得しているため使いまわします。
+// const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
+// const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
+
+// ボタンがクリックされたときにクラスを切り替える
+button_ls.forEach((button_l) => {
+  button_l.addEventListener('click', function () {
+    if (buttonC_l.classList.contains('btn-small_bl')) {
+      buttonC_l.classList.remove('btn-small_bl');
+      buttonC_l.classList.add('btn-small_wh');
+    } else {
+      buttonC_l.classList.remove('btn-small_wh');
+      buttonC_l.classList.add('btn-small_bl');
+    }
+    buttonC_l.style.opacity = '0.6';
+    buttonA_l.style.opacity = '0.6';
+  });
+});

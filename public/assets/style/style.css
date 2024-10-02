@@ -7374,6 +7374,102 @@ input:checked + label::after {
 .cover-preview-body {
   background: #d5dadc;
   overflow: hidden;
+  /* モーダルと背景の指定 */
+  /* モーダルの擬似要素の指定 */
+  /* クラスが追加された時の指定 */
+  /* モーダル内側の指定 */
+}
+.cover-preview-body .modal {
+  z-index: 99;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.cover-preview-body .modal:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: -0.2em;
+}
+.cover-preview-body .modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.cover-preview-body .modal-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 451px;
+  max-height: 313px;
+  width: 80%;
+  height: auto;
+  background-color: #fdfcf6;
+  border-radius: 10px;
+}
+.cover-preview-body .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+  max-width: 90%;
+}
+.cover-preview-body .modal-content__check {
+  font-size: 20px;
+}
+.cover-preview-body .modal-content__text {
+  font-size: 16px;
+}
+.cover-preview-body .modal-content__button-sp {
+  display: none;
+}
+@media screen and (min-width: 1300px) {
+  .cover-preview-body .modal-content .modal-content__button-pc {
+    display: block;
+  }
+  .cover-preview-body .modal-content .modal-content__button-sp {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview-body .modal-content .modal-content__button-pc {
+    display: none;
+  }
+  .cover-preview-body .modal-content .modal-content__button-sp {
+    display: block;
+  }
+}
+.cover-preview-body .modal-content a {
+  text-decoration: none;
+  color: black;
+}
+.cover-preview-body .modal-container_S {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 360px;
+  max-height: 281px;
+  width: 80%;
+  height: auto;
+  background-color: #fdfcf6;
+  border-radius: 10px;
+}
+.cover-preview-body .modal-container_S.checkafter {
+  width: auto;
+  height: auto;
 }
 
 .cover-preview {
@@ -7706,6 +7802,102 @@ input:checked + label::after {
 .coverB-preview-body {
   background: #d5dadc;
   overflow: hidden;
+  /* モーダルと背景の指定 */
+  /* モーダルの擬似要素の指定 */
+  /* クラスが追加された時の指定 */
+  /* モーダル内側の指定 */
+}
+.coverB-preview-body .modal {
+  z-index: 99;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.coverB-preview-body .modal:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: -0.2em;
+}
+.coverB-preview-body .modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.coverB-preview-body .modal-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 451px;
+  max-height: 313px;
+  width: 80%;
+  height: auto;
+  background-color: #fdfcf6;
+  border-radius: 10px;
+}
+.coverB-preview-body .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+  max-width: 90%;
+}
+.coverB-preview-body .modal-content__check {
+  font-size: 20px;
+}
+.coverB-preview-body .modal-content__text {
+  font-size: 16px;
+}
+.coverB-preview-body .modal-content__button-sp {
+  display: none;
+}
+@media screen and (min-width: 1300px) {
+  .coverB-preview-body .modal-content .modal-content__button-pc {
+    display: block;
+  }
+  .coverB-preview-body .modal-content .modal-content__button-sp {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview-body .modal-content .modal-content__button-pc {
+    display: none;
+  }
+  .coverB-preview-body .modal-content .modal-content__button-sp {
+    display: block;
+  }
+}
+.coverB-preview-body .modal-content a {
+  text-decoration: none;
+  color: black;
+}
+.coverB-preview-body .modal-container_S {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 360px;
+  max-height: 281px;
+  width: 80%;
+  height: auto;
+  background-color: #fdfcf6;
+  border-radius: 10px;
+}
+.coverB-preview-body .modal-container_S.checkafter {
+  width: auto;
+  height: auto;
 }
 
 .coverB-preview {
