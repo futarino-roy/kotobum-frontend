@@ -1040,30 +1040,52 @@ document.getElementById("sendButton").addEventListener("click", function () {
         getAllDataFromIndexedDB("NewImageDatabase1", "images"),
         getAllDataFromIndexedDB("ImageDB", "images"),
       ]).then(([newImageDatabase1Data, imageDBData]) => {
+
+        // // データの存在確認
+        // if (!newImageDatabase1Data || !Array.isArray(newImageDatabase1Data)) {
+        //   console.warn("NewImageDatabase1のデータが空です。");
+        //   newImageDatabase1Data = []; // 空の配列を代入
+        // }
+
+        // if (!imageDBData || !Array.isArray(imageDBData)) {
+        //   console.warn("ImageDBのデータが空です。");
+        //   imageDBData = []; // 空の配列を代入
+        // }
+
         console.log("NewImageDatabase1のデータ:", newImageDatabase1Data);
         console.log("ImageDBのデータ:", imageDBData);
 
         // FormDataの作成
-        const body = new FormData();
-        body.append("htmlContent", htmlContent);
-        body.append("cssContent", cssContent);
-        body.append("cssUrls", JSON.stringify(cssUrls));
-        body.append("localStorageData", JSON.stringify(localStorageData)); // ローカルストレージのデータ
-        body.append(
-          "newImageDatabase1Data",
-          JSON.stringify(newImageDatabase1Data)
-        ); // NewImageDatabase1のデータ
-        body.append("imageDBData", JSON.stringify(imageDBData)); // ImageDBのデータ
+        const cover = new FormData();
+        cover.append("htmlContent", htmlContent);
+        cover.append("cssContent", cssContent);
+        cover.append("cssUrls", JSON.stringify(cssUrls));
+        cover.append("localStorageData", JSON.stringify(localStorageData)); // ローカルストレージのデータ
+
+        // データが存在する場合のみ追加
+        if (newImageDatabase1Data.length > 0) {
+          cover.append("newImageDatabase1Data", JSON.stringify(newImageDatabase1Data)); // NewImageDatabase1のデータ
+        }
+
+        if (imageDBData.length > 0) {
+          cover.append("imageDBData", JSON.stringify(imageDBData)); // ImageDBのデータ
+        }
+
+        // cover.append(
+        //   "newImageDatabase1Data",
+        //   JSON.stringify(newImageDatabase1Data)
+        // ); // NewImageDatabase1のデータ
+        // cover.append("imageDBData", JSON.stringify(imageDBData)); // ImageDBのデータ
 
         // サーバへデータを送信
         return fetch(
-          `https://develop-back.kotobum.com/api/albums/${albumId}/body`,
+          `https://develop-back.kotobum.com/api/albums/${albumId}/cover`,
           {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            body: body,
+            body: cover,
           }
         );
       });

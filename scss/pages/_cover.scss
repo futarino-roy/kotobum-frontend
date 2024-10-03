@@ -673,7 +673,7 @@
               width: 82%;
               height: 84%;
               opacity: 0.8;
-              display: flex;
+              display: flex !important;
               flex-direction: column;
               align-items: center;
               justify-content: end;
@@ -711,8 +711,8 @@
               #dropAreaA {
                 position: absolute;
                 top: 40%;
-                left: 6%;
-                width: 87%;
+                left: 4.5%;
+                width: 90%;
                 height: 55%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
@@ -766,7 +766,7 @@
                   margin: 0;
                   position: absolute;
                   width: 13.5% !important;
-                  height: 5% !important;
+                  height: 4.5% !important;
                   top: 14.5%;
                   left: 77%;
                   line-height: 0.9;
