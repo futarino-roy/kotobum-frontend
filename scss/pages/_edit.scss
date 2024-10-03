@@ -809,6 +809,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -837,6 +838,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -847,6 +849,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -875,6 +878,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -885,6 +889,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -913,6 +918,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -923,6 +929,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -951,6 +958,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -961,6 +969,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -989,6 +998,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -999,6 +1009,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1027,6 +1038,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1037,6 +1049,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1065,6 +1078,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1075,6 +1089,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1103,6 +1118,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1113,6 +1129,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1141,6 +1158,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1151,6 +1169,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1179,6 +1198,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1189,6 +1209,7 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1217,6 +1238,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1422,11 +1444,9 @@
                   }
                 }
 
-                // &1-3 {
-                //   margin: 0;
-                //   margin-top: 5%;
-                //   color: #c9c9c9;
-                // }
+                &1-3 {
+                  text-align: center;
+                }
 
                 &2 {
                   font-size: 0.6rem;
