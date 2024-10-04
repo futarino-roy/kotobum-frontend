@@ -544,8 +544,13 @@ input:checked + label::after {
 .mypage-body .modal-content__check {
   font-size: 20px;
 }
-.mypage-body .modal-content__text {
-  font-size: 16px;
+.mypage-body .modal-content__textl {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .mypage-body .modal-content__textl {
+    font-size: 1rem;
+  }
 }
 .mypage-body .modal-content__button-sp {
   display: none;
@@ -1216,14 +1221,10 @@ input:checked + label::after {
   justify-content: center;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
-  position: relative;
-  width: 43%;
-  height: 20%;
   background-image: url(/edit/images/cloud.png);
   background-size: contain;
   background-repeat: no-repeat;
   margin-bottom: 5%;
-  margin-right: 22%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1668,6 +1669,7 @@ input:checked + label::after {
   border: none;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  font-family: "League Spartan", sans-serif;
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.2;
@@ -1696,6 +1698,7 @@ input:checked + label::after {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  font-family: "League Spartan", sans-serif;
   margin: 0;
   margin: 1% 0 5%;
   font-size: 0.45rem;
@@ -3639,8 +3642,13 @@ input:checked + label::after {
 .preview-body .modal-content__check {
   font-size: 20px;
 }
-.preview-body .modal-content__text {
-  font-size: 16px;
+.preview-body .modal-content__textl {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .preview-body .modal-content__textl {
+    font-size: 1rem;
+  }
 }
 .preview-body .modal-content__button-sp {
   display: none;
@@ -4981,8 +4989,13 @@ input:checked + label::after {
 .preview-body .modal-content__check {
   font-size: 20px;
 }
-.preview-body .modal-content__text {
-  font-size: 16px;
+.preview-body .modal-content__textl {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .preview-body .modal-content__textl {
+    font-size: 1rem;
+  }
 }
 .preview-body .modal-content__button-sp {
   display: none;
@@ -7500,8 +7513,13 @@ input:checked + label::after {
 .cover-preview-body .modal-content__check {
   font-size: 20px;
 }
-.cover-preview-body .modal-content__text {
-  font-size: 16px;
+.cover-preview-body .modal-content__textl {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .cover-preview-body .modal-content__textl {
+    font-size: 1rem;
+  }
 }
 .cover-preview-body .modal-content__button-sp {
   display: none;
@@ -7928,8 +7946,13 @@ input:checked + label::after {
 .coverB-preview-body .modal-content__check {
   font-size: 20px;
 }
-.coverB-preview-body .modal-content__text {
-  font-size: 16px;
+.coverB-preview-body .modal-content__textl {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview-body .modal-content__textl {
+    font-size: 1rem;
+  }
 }
 .coverB-preview-body .modal-content__button-sp {
   display: none;

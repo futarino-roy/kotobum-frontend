@@ -883,6 +883,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// ---------------- API連携に関して ---------------------
+
 document.getElementById('sendButton').addEventListener('click', function () {
   const token = localStorage.getItem('token');
 

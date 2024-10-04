@@ -215,8 +215,11 @@
     &__check {
       font-size: 20px;
     }
-    &__text {
-      font-size: 16px;
+    &__textl {
+      font-size: 1.25rem;
+      @include mq('sp') {
+        font-size: 1rem;
+      }
     }
 
     &__button-sp {

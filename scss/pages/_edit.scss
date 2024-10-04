@@ -770,14 +770,14 @@
               justify-content: center;
 
               .background-textArea6-1 {
-                position: relative;
-                width: 43%;
-                height: 20%;
+                // position: relative;
+                // width: 43%;
+                // height: 20%;
                 background-image: url(/edit/images/cloud.png);
                 background-size: contain;
                 background-repeat: no-repeat;
                 margin-bottom: 5%;
-                margin-right: 22%;
+                // margin-right: 22%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1394,6 +1394,7 @@
               }
               #textArea {
                 &1-1 {
+                  font-family: 'League Spartan', sans-serif;
                   margin: 0;
                   font-size: 1.2rem;
                   line-height: 1.2;
@@ -1419,6 +1420,7 @@
                 }
 
                 &1-2 {
+                  font-family: 'League Spartan', sans-serif;
                   margin: 0;
                   margin: 1% 0 5%;
                   font-size: 0.45rem;
