@@ -1754,7 +1754,31 @@ input:checked + label::after {
     font-size: 2.6vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  max-height: 300px;
+  font-size: 5.5px;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+    font-size: 1.4vw;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
@@ -1762,29 +1786,28 @@ input:checked + label::after {
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4 {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 2.5vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
   margin: 0;
   position: absolute;
-  width: 63%;
   color: #fef8f6;
   font-size: 0.6rem;
   line-height: 1.5;

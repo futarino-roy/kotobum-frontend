@@ -923,6 +923,8 @@ document.getElementById("sendButton").addEventListener("click", function () {
     return;
   }
 
+  let albumId; // albumIdをここで宣言
+
   // IndexedDBのデータを取得する関数
   function getAllDataFromIndexedDB(dbName, storeName) {
     return new Promise((resolve, reject) => {
@@ -1080,6 +1082,7 @@ document.getElementById("sendButton").addEventListener("click", function () {
         // サーバへデータを送信
         return fetch(
           `https://develop-back.kotobum.com/api/albums/${albumId}/cover`,
+          // api/user/albumにしないといけないかも？
           {
             method: "POST",
             headers: {
