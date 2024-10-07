@@ -752,7 +752,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
+// テキストエリアの内容をローカルストレージに保存
 function saveTextToLocalStorage() {
   document.querySelectorAll(".text-empty").forEach((textArea) => {
     const id = textArea.id;
@@ -792,6 +792,54 @@ function enforceNoMaxLength(textarea) {
   adjustHeight(textarea);
   adjustTextareaWidth(textarea);
 }
+
+// テキストエリアの文字数に応じて自動的に広がるように
+const textAreas = document.getElementsByClassName('text-height');
+
+Array.from(textAreas).forEach(textArea => {
+  textArea.addEventListener('input', function () {
+    this.style.height = 'auto'; // 高さをリセット
+    this.style.height = `${this.scrollHeight + 10}px`; // 内容に応じて高さを再設定
+  });
+
+  // 初回ロード時に高さを調整
+  window.addEventListener('load', function () {
+    textArea.style.height = 'auto';
+    textArea.style.height = `${textArea.scrollHeight}px`;
+  });
+});
+console.log(this.scrollHeight);
+
+// テキスト量が増えてもテキストエリアの枠内に収まるようにフォントサイズ変更
+const textArea = document.getElementsByClassName('text-size');
+const maxFontSize = 24; // 最大フォントサイズ
+const minFontSize = 12; // 最小フォントサイズ
+const padding = 10; // テキストエリアの内側のパディング
+
+// テキストの量に応じてフォントサイズを調整する関数
+function adjustFontSize() {
+  let fontSize = maxFontSize;
+  textArea.style.fontSize = `${fontSize}px`;
+
+  while (textArea.scrollHeight > textArea.clientHeight - padding && fontSize > minFontSize) {
+    fontSize -= 1; // フォントサイズを少しずつ小さくする
+    textArea.style.fontSize = `${fontSize}px`;
+  }
+}
+
+// テキストエリアに文字が入力されたときにフォントサイズを調整
+textArea.addEventListener('input', function () {
+  this.style.height = 'auto'; // 高さをリセット
+  this.style.height = `${this.scrollHeight}px`; // 内容に応じて高さを再設定
+  adjustFontSize(); // フォントサイズを調整
+});
+
+// 初回ロード時にフォントサイズと高さを調整（テキストがすでに入力されている場合）
+window.addEventListener('load', function () {
+  textArea.style.height = 'auto';
+  textArea.style.height = `${textArea.scrollHeight}px`;
+  adjustFontSize();
+});
 
 // ドキュメント読み込み時の処理
 document.addEventListener("DOMContentLoaded", function () {
