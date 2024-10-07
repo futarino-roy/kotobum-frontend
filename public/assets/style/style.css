@@ -6409,6 +6409,7 @@ input:checked + label::after {
     display: block;
     width: 80%;
     min-width: auto;
+    margin-left: 16%;
   }
 }
 .cover .content .swiper-wrapper .swiper-slide {
@@ -6423,41 +6424,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(35.5px 39px 37px 1.5px);
+  clip-path: inset(47px 48px 52px 1.5px);
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(54.5px 59px 52px 2px);
+    clip-path: inset(71.5px 71px 77px 3px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(27px 29px 28px 2px);
+    clip-path: inset(36px 36px 41px 2px);
   }
 }
 @media screen and (max-width: 900px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 11.5% 0.5%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 12% 0.5%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 12.5% 0.5%);
   }
 }
 @media screen and (max-width: 330px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(11% 16% 14% 0.5%);
   }
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -6493,8 +6494,8 @@ input:checked + label::after {
   position: absolute;
   top: 40%;
   left: 4.5%;
-  width: 90%;
-  height: 55%;
+  width: 87%;
+  height: 52%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -6548,11 +6549,11 @@ input:checked + label::after {
   position: absolute;
   width: 13.5% !important;
   height: 4.5% !important;
-  top: 14.5%;
-  left: 77%;
+  top: 16.5%;
+  left: 75%;
   line-height: 0.9;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
@@ -6572,7 +6573,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
-    font-size: 2vw;
+    font-size: 3vw;
   }
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
@@ -6580,8 +6581,8 @@ input:checked + label::after {
   position: absolute;
   width: 16% !important;
   height: 3% !important;
-  top: 20%;
-  left: 76%;
+  top: 21%;
+  left: 73%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -6644,6 +6645,45 @@ input:checked + label::after {
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 2.7vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  height: 16% !important;
+  bottom: 6%;
+  left: -5.5%;
+  font-weight: bold;
+  font-size: 0.5rem;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+    font-size: 1.4vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
+    font-size: 1.5vw;
   }
 }
 
@@ -7616,41 +7656,41 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(35.5px 39px 37px 1.5px);
+  clip-path: inset(47px 48px 52px 1.5px);
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(54.5px 59px 52px 2px);
+    clip-path: inset(71.5px 71px 77px 3px);
   }
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(27px 29px 28px 2px);
+    clip-path: inset(36px 36px 41px 2p);
   }
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 11.5% 0.5%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 12% 0.5%);
   }
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(9% 13% 9% 0%);
+    clip-path: inset(11% 16% 12.5% 0.5%);
   }
 }
 @media screen and (max-width: 330px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(5% 7% 8% 7%);
+    clip-path: inset(11% 16% 14% 0.5%);
   }
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -7687,7 +7727,7 @@ input:checked + label::after {
   top: 40%;
   left: 6%;
   width: 87%;
-  height: 55%;
+  height: 52%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -7778,16 +7818,16 @@ input:checked + label::after {
   position: absolute;
   width: 13.5% !important;
   height: 5% !important;
-  top: 14.5%;
-  left: 77%;
+  top: 16.5%;
+  left: 75%;
   line-height: 0.9;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 0.9rem;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -7802,7 +7842,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
-    font-size: 2vw;
+    font-size: 3vw;
   }
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
@@ -7810,8 +7850,8 @@ input:checked + label::after {
   position: absolute;
   width: 16% !important;
   height: 3% !important;
-  top: 20%;
-  left: 76%;
+  top: 21%;
+  left: 73%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -7874,6 +7914,45 @@ input:checked + label::after {
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
     font-size: 2.7vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  height: 16% !important;
+  bottom: 6%;
+  left: -5.5%;
+  font-weight: bold;
+  font-size: 0.5rem;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+    font-size: 1.4vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+    font-size: 1.5vw;
   }
 }
 .cover-preview .button-grid {

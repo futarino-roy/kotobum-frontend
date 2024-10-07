@@ -622,6 +622,7 @@
         display: block;
         width: 80%;
         min-width: auto;
+        margin-left: 16%;
       }
 
       &-wrapper {
@@ -632,38 +633,42 @@
           color: #ffffff;
           width: auto;
           height: 100%;
+          // margin: 8%;
 
           &_box {
             width: 50%;
             max-width: 500px;
             position: relative;
             // clip-path: inset(20px 21px 26px 21px);
-            clip-path: inset(35.5px 39px 37px 1.5px);
+            // clip-path: inset(35.5px 39px 37px 1.5px);
+
+            clip-path: inset(47px 48px 52px 1.5px);
             @include mq('pc2-edit') {
               // clip-path: inset(31px 31px 35px 30px);
-              clip-path: inset(54.5px 59px 52px 2px);
+              clip-path: inset(71.5px 71px 77px 3px);
             }
             @include mq('pc-edit') {
               // clip-path: inset(16px 16px 21px 17px);
-              clip-path: inset(27px 29px 28px 2px);
+              // clip-path: inset(27px 29px 28px 2px);
+              clip-path: inset(36px 36px 41px 2px);
             }
             @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(9% 13% 9% 0%);
+              clip-path: inset(11% 16% 11.5% 0.5%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(9% 13% 9% 0%);
+              clip-path: inset(11% 16% 12% 0.5%);
             }
             @include mq('sp2-edit') {
               width: 70%;
-              clip-path: inset(9% 13% 9% 0%);
+              clip-path: inset(11% 16% 12.5% 0.5%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
               width: 50%;
-              clip-path: inset(5% 7% 8% 7%);
+              clip-path: inset(11% 16% 14% 0.5%);
             }
 
             .input-drop {
@@ -712,8 +717,11 @@
                 position: absolute;
                 top: 40%;
                 left: 4.5%;
-                width: 90%;
-                height: 55%;
+                // width: 90%;
+                // height: 55%;
+                width: 87%;
+                height: 52%;
+
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
@@ -767,11 +775,14 @@
                   position: absolute;
                   width: 13.5% !important;
                   height: 4.5% !important;
-                  top: 14.5%;
-                  left: 77%;
+                  // top: 14.5%;
+                  // left: 77%;
+                  top: 16.5%;
+                  left: 75%;
+
                   line-height: 0.9;
                   font-weight: bold;
-                  font-size: 1rem;
+                  font-size: 0.9rem;
                   color: #ffffff;
 
                   @include mq('pc-edit') {
@@ -787,7 +798,7 @@
                   }
 
                   @include mq('sp2-edit') {
-                    font-size: 2vw;
+                    font-size: 3vw;
                   }
                 }
 
@@ -796,8 +807,10 @@
                   position: absolute;
                   width: 16% !important;
                   height: 3% !important;
-                  top: 20%;
-                  left: 76%;
+                  // top: 20%;
+                  // left: 76%;
+                  top: 21%;
+                  left: 73%;
                   line-height: 1.5;
                   font-weight: bold;
                   font-size: 0.4rem;
@@ -848,6 +861,42 @@
 
                   @include mq('sp2-edit') {
                     font-size: 2.7vw;
+                  }
+                }
+                &A-4 {
+                  margin: 0;
+                  position: absolute;
+                  width: 5% !important;
+                  height: 16% !important;
+                  bottom: 6%;
+                  left: -5.5%;
+                  font-weight: bold;
+                  font-size: 0.5rem;
+
+                  // テキストの向きを変更
+                  writing-mode: vertical-rl; /* 縦書き (右から左) */
+                  text-orientation: mixed; /* テキストの方向を調整 */
+                  transform: rotate(180deg); /* テキストを180度回転 */
+                  display: inline-block;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.3rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.7rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.4vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2vw;
+                  }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.5vw;
                   }
                 }
               }
