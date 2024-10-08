@@ -1042,8 +1042,8 @@ document.getElementById('sendButton').addEventListener('click', function () {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          // body: body,
-          body: JSON.stringify(data),
+          body: body,
+          // body: JSON.stringify(data),
         });
       });
     })
