@@ -75,7 +75,7 @@ let selectedImage = null;
 
 // 新しいIndexedDBの初期化
 function initNewIndexedDB() {
-  const request = indexedDB.open('NewImageDatabase1', 1);
+  const request = indexedDB.open('NewImageDatabase1', 2);
 
   request.onupgradeneeded = function (event) {
     myImageDB1 = event.target.result;
@@ -94,8 +94,6 @@ function initNewIndexedDB() {
     console.error('Error initializing IndexedDB:', event.target.errorCode);
   };
 }
-
-initNewIndexedDB();
 
 document.addEventListener('DOMContentLoaded', function () {
   addTouchListenerToDropAreas();
@@ -328,6 +326,8 @@ function getImageFromNewIndexedDB(id, callback) {
     console.error('Error retrieving image:', event.target.errorCode);
   };
 }
+
+initNewIndexedDB();
 
 function restoreDropAreas() {
   const dropAreas = document.querySelectorAll('.empty');
