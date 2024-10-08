@@ -1038,6 +1038,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
         // ユーザーIDを使ってデータを送信
         return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
           method: 'POST',
+          'Content-Type': 'application/json', // 追加：JSONを送信することを明示する
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -1057,6 +1058,9 @@ document.getElementById('sendButton').addEventListener('click', function () {
     })
     .catch((error) => {
       console.error('エラーが発生しました:', error.message); // エラーをコンソールに出力
+      if (error.response) {
+        console.error('レスポンスデータ:', error.response.data);
+      }
       console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
