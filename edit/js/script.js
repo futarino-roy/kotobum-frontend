@@ -1018,12 +1018,12 @@ document.getElementById('sendButton').addEventListener('click', function () {
         }),
       ]).then(([newImageDatabase1Data, imageDBData]) => {
         const body = new FormData();
-        body.append('htmlContent', htmlContent);
-        body.append('cssContent', cssContent);
-        body.append('cssUrls', JSON.stringify(cssUrls));
-        body.append('localStorageData', JSON.stringify(localStorageData));
-        body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
-        body.append('imageDBData', JSON.stringify(imageDBData));
+        body.htmlContent('htmlContent', htmlContent);
+        body.cssContent('cssContent', cssContent);
+        body.cssUrls('cssUrls', JSON.stringify(cssUrls));
+        body.localStorageData('localStorageData', JSON.stringify(localStorageData));
+        body.newImageDatabase1Data('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
+        body.imageDBData('imageDBData', JSON.stringify(imageDBData));
 
         // 送信するデータをコンソールに出力
         console.log('送信するデータ:', {
