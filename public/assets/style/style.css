@@ -6653,10 +6653,11 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 6%;
+  bottom: 8%;
   left: -5.5%;
   font-weight: bold;
   font-size: 0.5rem;
+  text-align: start;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
   text-orientation: mixed; /* テキストの方向を調整 */
   transform: rotate(180deg); /* テキストを180度回転 */

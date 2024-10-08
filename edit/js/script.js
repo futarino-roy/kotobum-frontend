@@ -1064,7 +1064,3 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('スタックトレース:', error.stack); // スタックトレースを表示
     });
 });
-
-
-
-
