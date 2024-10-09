@@ -42,12 +42,12 @@ bugFixes.forEach((textarea) => {
   textarea.addEventListener('blur', () => {
     swiper.allowTouchMove = true; // スワイプ有効
   });
-  // Enterキーが押されたときの処理
-  textarea.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
-    }
-  });
+  // // Enterキーが押されたときの処理
+  // textarea.addEventListener('keydown', (event) => {
+  //   if (event.key === 'Enter') {
+  //     event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
+  //   }
+  // });
   // 完了ボタン押下時の処理
   textarea.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {

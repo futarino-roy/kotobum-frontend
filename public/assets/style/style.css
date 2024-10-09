@@ -6542,12 +6542,21 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
   border: none;
 }
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
+  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  resize: none; /* ユーザーがサイズを変更できないようにする */
+  white-space: nowrap; /* 改行をさせない設定 */
+}
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
-  width: 13.5% !important;
+  width: 13.5%;
+  height: 4.5%;
+  max-width: 35px;
   top: 16.5%;
   left: 74%;
+  text-align: left;
   line-height: 0.9;
   font-weight: bold;
   font-size: 0.9rem;
@@ -6577,7 +6586,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   top: 21%;
-  left: 66.5%;
+  left: 67%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -6656,7 +6665,7 @@ input:checked + label::after {
   bottom: 8%;
   left: -5.5%;
   font-weight: bold;
-  font-size: 0.5rem;
+  font-size: 0.5rem !important;
   text-align: start;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
   text-orientation: mixed; /* テキストの方向を調整 */
@@ -6671,27 +6680,27 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 0.3rem;
+    font-size: 0.3rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
   }
 }
 @media screen and (max-width: 900px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 1.4vw;
+    font-size: 1.4vw !important;
   }
 }
 @media screen and (max-width: 480px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 2vw;
+    font-size: 2vw !important;
   }
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
   }
 }
 
@@ -7821,13 +7830,21 @@ input:checked + label::after {
     font-size: 1.7vw;
   }
 }
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
+  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  resize: none; /* ユーザーがサイズを変更できないようにする */
+  white-space: nowrap; /* 改行をさせない設定 */
+}
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
   margin: 0;
   position: absolute;
-  width: 13.5% !important;
-  height: 5% !important;
+  width: 13.5%;
+  height: 4.5%;
+  max-width: 35px;
   top: 16.5%;
-  left: 75%;
+  left: 74%;
+  text-align: left;
   line-height: 0.9;
   font-weight: bold;
   font-size: 0.9rem;
@@ -7856,13 +7873,19 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
   margin: 0;
   position: absolute;
-  width: 16% !important;
+  width: 18% !important;
   height: 3% !important;
   top: 21%;
   left: 73%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
@@ -7898,6 +7921,7 @@ input:checked + label::after {
   left: 5%;
   font-weight: bold;
   font-size: 1.1rem;
+  text-align: left;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
@@ -7928,15 +7952,21 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  height: 16% !important;
-  bottom: 6%;
+  bottom: 8%;
   left: -5.5%;
   font-weight: bold;
-  font-size: 0.5rem;
+  font-size: 0.5rem !important;
+  text-align: start;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
   text-orientation: mixed; /* テキストの方向を調整 */
   transform: rotate(180deg); /* テキストを180度回転 */
   display: inline-block;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {

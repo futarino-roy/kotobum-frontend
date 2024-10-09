@@ -769,16 +769,25 @@
                 }
               }
 
+              .text-size {
+                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                resize: none; /* ユーザーがサイズを変更できないようにする */
+                white-space: nowrap; /* 改行をさせない設定 */
+              }
+
               #textArea {
                 &A-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5% !important;
-                  // height: 3.5% !important;
+                  width: 13.5%;
+                  height: 4.5%;
+                  max-width: 35px;
                   // top: 14.5%;
                   // left: 77%;
                   top: 16.5%;
                   left: 74%;
+                  text-align: left;
 
                   line-height: 0.9;
                   font-weight: bold;
@@ -810,7 +819,7 @@
                   // top: 20%;
                   // left: 76%;
                   top: 21%;
-                  left: 66.5%;
+                  left: 67%;
                   line-height: 1.5;
                   font-weight: bold;
                   font-size: 0.4rem;
@@ -879,7 +888,7 @@
                   bottom: 8%;
                   left: -5.5%;
                   font-weight: bold;
-                  font-size: 0.5rem;
+                  font-size: 0.5rem !important;
                   text-align: start;
 
                   // テキストの向きを変更
@@ -896,23 +905,23 @@
                   word-break: normal; /* 単語の途中での改行を無効にする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.3rem;
+                    font-size: 0.3rem !important;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.7rem;
+                    font-size: 0.7rem !important;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.4vw;
+                    font-size: 1.4vw !important;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 2vw;
+                    font-size: 2vw !important;
                   }
 
                   @include mq('sp2-edit') {
-                    font-size: 1.5vw;
+                    font-size: 1.5vw !important;
                   }
                 }
               }
