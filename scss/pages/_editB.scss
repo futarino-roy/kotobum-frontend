@@ -736,19 +736,19 @@
               align-items: center;
               justify-content: center;
 
-              .background-textArea18-1 {
-                position: relative;
-                width: 43%;
-                height: 20%;
-                background-image: url(/edit/images/cloud.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                // margin-bottom: 5%;
-                // margin-right: 22%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              }
+              // .background-textArea18-1 {
+              //   position: relative;
+              //   width: 43%;
+              //   height: 20%;
+              //   background-image: url(/edit/images/cloud.png);
+              //   background-size: contain;
+              //   background-repeat: no-repeat;
+              //   // margin-bottom: 5%;
+              //   // margin-right: 22%;
+              //   display: flex;
+              //   align-items: center;
+              //   justify-content: center;
+              // }
 
               .flex24 {
                 width: 60%;
@@ -1414,8 +1414,8 @@
                 }
 
                 &13-3 {
-                  min-height: 15%;
-                  max-height: 15%;
+                  min-height: 20%;
+                  max-height: 20%;
                   margin-top: 5%;
                   writing-mode: vertical-rl;
                 }
@@ -1423,8 +1423,8 @@
                 &14,
                 &18,
                 &22 {
-                  max-height: 20%;
-                  min-height: 20%;
+                  max-height: 35%;
+                  min-height: 35%;
                   margin-bottom: 5%;
                   font-size: 0.6rem;
                   line-height: 1.5;
@@ -1451,7 +1451,8 @@
 
                 &15,
                 &17,
-                &19 {
+                &19,
+                &21 {
                   max-height: 70%;
                   min-height: 70%;
                   writing-mode: vertical-rl;
@@ -1478,7 +1479,8 @@
                   }
                 }
 
-                &16,
+                &16-1,
+                &16-2,
                 &20 {
                   min-width: 60%;
                   margin-bottom: 5%;
@@ -1487,6 +1489,7 @@
                   font-weight: bold;
                   text-align: center;
                   color: #ffffff;
+                  margin-top: 10%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1558,11 +1561,35 @@
                 //   }
                 // }
 
-                &21-1,
-                &21-2,
-                &23-1,
+                // &21,
+                // &21-2,
+                &23-1 {
+                  min-width: 60%;
+                  margin-bottom: 5%;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-top: 10%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.3vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
                 &23-2 {
-                  min-height: 30%;
+                  min-height: 50%;
                   max-height: 30%;
                   margin-bottom: 2.5%;
                   margin-top: 2.5%;
