@@ -331,21 +331,30 @@
                 }
               }
 
+              .text-size {
+                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                resize: none; /* ユーザーがサイズを変更できないようにする */
+                white-space: nowrap; /* 改行をさせない設定 */
+              }
+
               //　テキストエリア　ここを変える！
               #previewTextArea {
                 &B-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5% !important;
-                  height: 5% !important;
+                  width: 13.5%;
+                  height: 5%;
                   max-width: 35px;
                   top: 14.5%;
                   right: 77.5%;
                   text-align: center;
+
                   line-height: 0.9;
                   font-weight: bold;
                   font-size: 1rem;
                   color: #ffffff !important;
+
                   @include mq('pc-edit') {
                     font-size: 0.8rem;
                   }
@@ -362,7 +371,7 @@
                 &B-2 {
                   position: absolute;
                   top: 20%;
-                  left: 7.5%;
+                  left: 2.5%;
                   // height: 3% !important;
                   // width: 16% !important;
 
@@ -407,7 +416,7 @@
                   right: 5%;
                   font-weight: bold;
                   font-size: 1.1rem;
-                  text-align: left;
+                  text-align: right;
 
                   @include mq('pc-edit') {
                     font-size: 0.9rem;
@@ -431,7 +440,7 @@
                   width: 5% !important;
                   // height: auto;
                   bottom: 3%;
-                  right: -5.5%;
+                  right: -4%;
                   font-weight: bold;
                   font-size: 0.5rem !important;
                   text-align: start;
