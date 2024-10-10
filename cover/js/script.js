@@ -872,10 +872,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // テキストエリアに入力があったときにline-heightを調整
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
-      // 高さを自動調整
-      this.style.height = 'auto'; // 高さをリセット
-      this.style.height = `${this.scrollHeight}px`; // 内容に応じて高さを再設定
+      this.style.height = ''; // 高さの自動調整を無効化
       adjustLineHeight(this); // line-heightを調整
+    });
+
+    // エンターキーを押したときにline-heightを更新
+    textArea.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        // エンターキーが押されたときにline-heightを更新
+        adjustLineHeight(this);
+      }
     });
   });
 

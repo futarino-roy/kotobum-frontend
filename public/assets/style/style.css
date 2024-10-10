@@ -6405,10 +6405,10 @@ input:checked + label::after {
   width: 82%;
   height: 84%;
   opacity: 0.8;
-  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  white-space: nowrap;
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
   width: 60%;
@@ -6452,6 +6452,7 @@ input:checked + label::after {
   font-size: 0.4rem;
   line-height: 1.9;
   background-color: transparent;
+  white-space: nowrap;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -6493,7 +6494,8 @@ input:checked + label::after {
   max-width: 35px;
   top: 16.5%;
   left: 74%;
-  text-align: left;
+  text-align: center;
+  white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
   font-weight: bold;
   font-size: 0.9rem;
@@ -7343,13 +7345,27 @@ input:checked + label::after {
     font-size: 1.7vw;
   }
 }
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
+  border: 2px dashed #ccc;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
+  border: none;
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
+  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  resize: none; /* ユーザーがサイズを変更できないようにする */
+  white-space: nowrap; /* 改行をさせない設定 */
+}
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
   margin: 0;
   position: absolute;
   width: 13.5% !important;
   height: 5% !important;
+  max-width: 35px;
   top: 14.5%;
   right: 77%;
+  text-align: center;
   line-height: 0.9;
   font-weight: bold;
   font-size: 1rem;
@@ -7379,13 +7395,16 @@ input:checked + label::after {
   position: absolute;
   top: 20%;
   left: 7.5%;
-  height: 3% !important;
-  width: 16% !important;
   margin: 0;
   font-size: 0.4rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #fef8f6;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
@@ -7421,6 +7440,7 @@ input:checked + label::after {
   right: 5%;
   font-weight: bold;
   font-size: 1.1rem;
+  text-align: left;
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
@@ -7445,6 +7465,51 @@ input:checked + label::after {
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
     font-size: 2.7vw;
+  }
+}
+.coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  bottom: 3%;
+  right: -5.5%;
+  font-weight: bold;
+  font-size: 0.5rem !important;
+  text-align: start;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+    font-size: 0.3rem !important;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+    font-size: 0.7rem !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+    font-size: 1.4vw !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
+    font-size: 1.5vw !important;
   }
 }
 
@@ -7781,7 +7846,7 @@ input:checked + label::after {
   max-width: 35px;
   top: 16.5%;
   left: 74%;
-  text-align: left;
+  text-align: center;
   line-height: 0.9;
   font-weight: bold;
   font-size: 0.9rem;

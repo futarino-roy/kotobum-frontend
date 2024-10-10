@@ -262,8 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
       // 高さを自動調整
-      this.style.height = 'auto'; // 高さをリセット
-      this.style.height = `${this.scrollHeight}px`; // 内容に応じて高さを再設定
+      this.style.height = '';
       adjustLineHeight(this); // line-heightを調整
     });
   });

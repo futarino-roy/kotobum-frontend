@@ -678,10 +678,11 @@
               width: 82%;
               height: 84%;
               opacity: 0.8;
-              display: flex !important;
+              // display: flex !important;
               flex-direction: column;
               align-items: center;
               justify-content: end;
+              white-space: nowrap;
               // position: absolute;
               // width: 80%;
               // // background: aliceblue;
@@ -745,6 +746,7 @@
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
+                white-space: nowrap;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
@@ -787,7 +789,8 @@
                   // left: 77%;
                   top: 16.5%;
                   left: 74%;
-                  text-align: left;
+                  text-align: center;
+                  white-space: nowrap; /* 改行をさせない設定 */
 
                   line-height: 0.9;
                   font-weight: bold;
