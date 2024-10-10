@@ -799,6 +799,87 @@ document.addEventListener('DOMContentLoaded', function () {
   updateBorders();
 });
 
+//-------------------------追加-----------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const textAreas = document.querySelectorAll('.text-size');
+
+  function adjustLineHeight(textArea) {
+    // テキストエリアの高さを取得
+    const textAreaHeight = textArea.clientHeight;
+
+    // フォントサイズを取得 (必要に応じて固定)
+    const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
+
+    // line-height をテキストエリアの高さに応じて計算
+    const lineHeight = textAreaHeight / fontSize;
+
+    // line-height を設定
+    textArea.style.lineHeight = lineHeight;
+  }
+
+  function adjustLineHeightForAll() {
+    textAreas.forEach(textArea => {
+      adjustLineHeight(textArea); // 各テキストエリアのline-heightを調整
+    });
+  }
+
+  // 初期ロード時にline-heightを設定
+  window.addEventListener('load', adjustLineHeightForAll);
+
+  // テキストエリアに入力があったときにline-heightを調整
+  textAreas.forEach(textArea => {
+    textArea.addEventListener('input', function () {
+      this.style.height = ''; // 高さの自動調整を無効化
+      adjustLineHeight(this); // line-heightを調整
+    });
+
+    // エンターキーを押したときにline-heightを更新
+    textArea.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        // エンターキーが押されたときにline-heightを更新
+        adjustLineHeight(this);
+      }
+    });
+  });
+
+  // ウィンドウサイズがリサイズされた場合にline-heightを再設定
+  window.addEventListener('resize', adjustLineHeightForAll);
+
+  // 1remが何pxかを計算する関数
+  function remToPx(rem) {
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  }
+
+  textAreas.forEach(textArea => {
+    // フォントサイズの最大と最小を rem で指定
+    const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
+    const minFontSizeRem = 0.5; // 0.75rem (最小フォントサイズ)
+
+    // テキスト量に応じてフォントサイズを調整
+    function adjustFontSize() {
+      let fontSizeRem = maxFontSizeRem;
+      textArea.style.fontSize = `${fontSizeRem}rem`;
+
+      // 最大幅以内に収まるようにフォントサイズを調整
+      while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
+        fontSizeRem -= 0.05; // フォントサイズをremで小さくする
+        textArea.style.fontSize = `${fontSizeRem}rem`;
+      }
+    }
+
+    // テキスト入力時のイベント
+    textArea.addEventListener('input', function () {
+      adjustFontSize();
+    });
+
+    // 初期状態でテキストがある場合の処理
+    if (textArea.value.trim() !== '') {
+      adjustFontSize();
+    }
+  });
+});
+//------------------------ここまで----------------------------
+
 // 枠変更 12-~3変更できない版 ローカルストレージに保存
 document.addEventListener("DOMContentLoaded", () => {
   const dropAreas = [];
