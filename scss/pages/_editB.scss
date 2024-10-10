@@ -743,8 +743,8 @@
                 background-image: url(/edit/images/cloud.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                margin-bottom: 5%;
-                margin-right: 22%;
+                // margin-bottom: 5%;
+                // margin-right: 22%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1330,7 +1330,7 @@
                 text-align: left;
                 resize: none;
                 max-width: 60%;
-                height: 20%;
+                // height: 20%;
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
@@ -1421,6 +1421,7 @@
                 }
 
                 &14,
+                &18,
                 &22 {
                   max-height: 20%;
                   min-height: 20%;
@@ -1504,58 +1505,58 @@
                   }
                 }
 
-                &18-1 {
-                  margin: 0;
-                  position: absolute;
-                  width: 63%;
-                  color: #fef8f6;
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  text-align: center;
+                // &18-1 {
+                // margin: 0;
+                // position: absolute;
+                // width: 63%;
+                // color: #fef8f6;
+                // font-size: 0.6rem;
+                // line-height: 1.5;
+                // font-weight: bold;
+                // text-align: center;
 
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
+                // @include mq('pc-edit') {
+                //   font-size: 0.45rem;
+                // }
 
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
+                // @include mq('pc2-edit') {
+                //   font-size: 0.9rem;
+                // }
 
-                  @include mq('tab-edit') {
-                    font-size: 2.2vw;
-                  }
+                // @include mq('tab-edit') {
+                //   font-size: 2.2vw;
+                // }
 
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
+                // @include mq('sp-edit') {
+                //   font-size: 2.5vw;
+                // }
+                // }
 
-                &18-2 {
-                  min-width: 60%;
-                  margin: 5% 0 15%;
-                  color: #fef8f6;
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #00000089;
-                  text-align: center;
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
+                // &18-2 {
+                //   min-width: 60%;
+                //   margin: 5% 0 15%;
+                //   color: #fef8f6;
+                //   font-size: 0.6rem;
+                //   line-height: 1.5;
+                //   font-weight: bold;
+                //   color: #00000089;
+                //   text-align: center;
+                //   @include mq('pc-edit') {
+                //     font-size: 0.45rem;
+                //   }
 
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
+                //   @include mq('pc2-edit') {
+                //     font-size: 0.9rem;
+                //   }
 
-                  @include mq('tab-edit') {
-                    font-size: 2.3vw;
-                  }
+                //   @include mq('tab-edit') {
+                //     font-size: 2.3vw;
+                //   }
 
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
+                //   @include mq('sp-edit') {
+                //     font-size: 2.5vw;
+                //   }
+                // }
 
                 &21-1,
                 &21-2,

@@ -1038,7 +1038,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
         // ユーザーIDを使ってデータを送信
         return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
           method: 'POST',
-          'Content-Type': 'application/json', // 追加：JSONを送信することを明示する
           headers: {
             Authorization: `Bearer ${token}`,
           },
