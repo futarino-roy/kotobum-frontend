@@ -770,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleResizeButtonInteraction = (button) => {
     if (activeDropArea) {
       // サイズをすべてリセット
-      activeDropArea.classList.remove('square', 'rectangle', 'mini');
+      activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
       // ボタンの data-size 属性に基づいてサイズを変更
       const size = button.getAttribute('data-size');
       activeDropArea.classList.add(size);

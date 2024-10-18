@@ -733,7 +733,7 @@
           &_box {
             // max-width: 500px;
             position: relative;
-            clip-path: inset(20px 21px 26px 21px);
+            clip-path: inset(23px 24px 40px 24px);
             @include mq('pc2-edit') {
               clip-path: inset(31px 31px 35px 30px);
             }
@@ -742,7 +742,7 @@
             }
             @include mq('tab-edit') {
               width: 90%;
-              clip-path: inset(5% 7% 6% 7%);
+              clip-path: inset(6% 8% 7% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;
@@ -756,6 +756,9 @@
             //   width: 50%;
             //   clip-path: inset(5% 7% 8% 7%);
             // }
+            &-last {
+              clip-path: inset(33px 31px 40px 31px);
+            }
 
             .input-drop-last {
               top: 10% !important;
@@ -763,6 +766,9 @@
               flex-direction: column;
               align-items: center;
               justify-content: flex-start !important;
+              width: 80%;
+              height: 100%;
+              left: 10%;
             }
             .input-drop {
               position: absolute;
@@ -828,7 +834,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -868,7 +879,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -908,7 +924,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -948,7 +969,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -988,7 +1014,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1028,7 +1059,12 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1068,7 +1104,11 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1108,7 +1148,11 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1148,7 +1192,11 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1188,7 +1236,11 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1228,7 +1280,11 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -1402,7 +1458,7 @@
               .text-diagonal {
                 transform: rotate(-8deg);
                 margin-left: -46%;
-                margin-bottom: 3%;
+                margin-bottom: 0%;
                 width: 34% !important;
                 text-align: center;
                 font-size: 0.6rem;
@@ -1514,9 +1570,10 @@
                 &7,
                 &9 {
                   margin-top: 30px;
-                  font-size: 5.5px;
+                  font-size: 5.3px;
                   @include mq('pc-edit') {
-                    font-size: 0.45rem;
+                    font-size: 0.28rem;
+                    max-height: 65%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1658,9 +1715,11 @@
                   }
                 }
                 &11-1 {
+                  font-family: 'League Spartan', sans-serif;
                   min-width: 60%;
                   margin-bottom: 5%;
-                  font-size: 0.6rem;
+                  margin-top: -7%;
+                  font-size: 0.7rem;
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
@@ -1747,7 +1806,8 @@
                   line-height: 1.5;
                   font-weight: bold;
                   color: #fef8f6;
-                  font-size: 14px;
+                  font-size: 8px;
+                  margin-top: 9%;
                 }
               }
             }
@@ -1756,6 +1816,7 @@
       }
     }
   }
+
   .swiper-button-prev {
     margin-left: 0;
     transition: margin 0.3s ease;

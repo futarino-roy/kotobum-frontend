@@ -833,7 +833,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // サイズ変更を禁止するドロップエリアでない場合のみ処理
       if (!restrictedDropAreas.includes(activeDropArea.id)) {
         // サイズをすべてリセット
-        activeDropArea.classList.remove('square', 'rectangle', 'mini');
+        activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
         // ボタンの data-size 属性に基づいてサイズを変更
         const size = button.getAttribute('data-size');
         activeDropArea.classList.add(size);
