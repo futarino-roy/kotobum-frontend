@@ -723,6 +723,14 @@
             //   clip-path: inset(5% 7% 8% 7%);
             // }
 
+            .input-drop-last {
+              top: 17% !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start !important;
+            }
+
             .input-drop {
               position: absolute;
               width: 88%;
@@ -755,6 +763,7 @@
                 height: 40%;
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 gap: 5%;
 
                 .drop24 {
@@ -1463,7 +1472,7 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.6rem;
+                    font-size: 0.53rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1594,13 +1603,53 @@
                   margin-bottom: 2.5%;
                   margin-top: 2.5%;
                   writing-mode: vertical-rl;
+                  font-size: 0.35rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.26rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.53rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.3vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.5vw;
+                  }
                 }
 
                 &24-1,
                 &24-2 {
-                  min-height: 100%;
+                  min-height: 80%;
                   max-height: 100%;
                   writing-mode: vertical-rl;
+                  font-size: 0.3rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.2rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.35rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.1vw;
+                  }
+                }
+                &24-3 {
+                  text-align: center;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+                  font-size: 14px;
+                  margin-top: 10%;
                 }
               }
             }

@@ -757,32 +757,24 @@
             //   clip-path: inset(5% 7% 8% 7%);
             // }
 
+            .input-drop-last {
+              top: 10% !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start !important;
+            }
             .input-drop {
               position: absolute;
               width: 88%;
               height: 90%;
-              top: 50px;
+              top: 16px;
               opacity: 0.8;
               left: 6%;
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              @include mq('pc-edit') {
-                top: 38px;
-              }
-
-              @include mq('pc2-edit') {
-                top: 80px;
-              }
-
-              @include mq('tab-edit') {
-                top: 13%;
-              }
-
-              @include mq('sp-edit') {
-                top: 13%;
-              }
 
               .background-textArea6-1 {
                 // position: relative;
@@ -1407,6 +1399,32 @@
                   border: none;
                 }
               }
+              .text-diagonal {
+                transform: rotate(-8deg);
+                margin-left: -46%;
+                margin-bottom: 3%;
+                width: 34% !important;
+                text-align: center;
+                font-size: 0.6rem;
+                font-weight: bold;
+                line-height: 1.2;
+                color: #fef8f6;
+                @include mq('pc-edit') {
+                  margin-bottom: -3%;
+                }
+
+                @include mq('pc2-edit') {
+                  margin-bottom: 5%;
+                }
+
+                @include mq('tab-edit') {
+                  margin-bottom: 8%;
+                }
+
+                @include mq('sp-edit') {
+                  margin-bottom: 3%;
+                }
+              }
               #textArea {
                 &1-1 {
                   font-family: 'League Spartan', sans-serif;
@@ -1489,14 +1507,20 @@
                   }
                 }
                 &3 {
-                  max-height: 300px;
+                  max-height: 420px;
+                }
+                &3,
+                &5,
+                &7,
+                &9 {
+                  margin-top: 30px;
                   font-size: 5.5px;
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.9rem;
+                    font-size: 0.47rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1505,6 +1529,7 @@
 
                   @include mq('sp-edit') {
                     font-size: 1.4vw;
+                    margin-top: 25px;
                   }
                 }
 
@@ -1639,7 +1664,7 @@
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
-                  margin-top: 10%;
+                  // margin-top: 10%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1662,6 +1687,60 @@
                   max-height: 30%;
                   margin-bottom: 2.5%;
                   margin-top: 2.5%;
+                  font-size: 0.27rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.2rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.47rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.2vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
+                  }
+                }
+                &12-1 {
+                  @include mq('pc-edit') {
+                    font-size: 0.6rem;
+                    // margin-bottom: 3%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.5vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 3vw;
+                  }
+                }
+                &12-2,
+                &12-3 {
+                  max-height: 300px;
+                  font-size: 0.3rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.2rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.35rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.1vw;
+                  }
                 }
                 &12-4 {
                   text-align: center;
