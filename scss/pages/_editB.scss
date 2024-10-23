@@ -700,12 +700,12 @@
             // max-width: 500px;
             position: relative;
             // clip-path: inset(20px 21px 26px 21px);
-            clip-path: inset(25px 25px 45px 25px);
+            clip-path: inset(25px 25px 38px 25px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 31px 35px 30px);
+              clip-path: inset(31px 31px 53px 30px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(16px 16px 21px 17px);
+              clip-path: inset(16px 16px 28px 17px);
             }
             @include mq('tab-edit') {
               width: 90%;
@@ -723,6 +723,36 @@
             //   width: 50%;
             //   clip-path: inset(5% 7% 8% 7%);
             // }
+
+            &-8 {
+              clip-path: inset(29px 24px 40px 24px);
+              @include mq('pc2-edit') {
+                clip-path: inset(44px 37px 57px 37px);
+              }
+              @include mq('pc-edit') {
+                clip-path: inset(22px 18px 31px 18px);
+              }
+              @include mq('tab-edit') {
+                width: 90%;
+                clip-path: inset(7% 8.5% 9.5% 8.5%);
+              }
+            }
+            &-last {
+              clip-path: inset(33px 31px 44px 31px);
+              @include mq('pc2-edit') {
+                clip-path: inset(38px 37px 64px 39px);
+              }
+              @include mq('pc-edit') {
+                clip-path: inset(19px 20px 36px 18px);
+              }
+              @include mq('tab-edit') {
+                width: 90%;
+                clip-path: inset(6% 9% 7% 9%);
+              }
+              @include mq('sp-edit') {
+                width: 100%;
+              }
+            }
 
             .input-drop-last {
               top: 12% !important;
@@ -1708,7 +1738,28 @@
                   color: #fef8f6;
                   font-size: 8px;
                   margin-top: 9%;
-                  max-height: 15px;
+                  height: 5% !important;
+                  width: 50% !important;
+                  // max-height: 15px;
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                    line-height: 0.7;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    line-height: 2.5;
+                  }
+
+                  @include mq('tab-edit') {
+                    line-height: 0.7;
+                    font-size: 3vw;
+                    margin-top: 16%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
                 }
               }
             }
