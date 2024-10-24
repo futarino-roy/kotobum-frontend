@@ -787,25 +787,21 @@
             // }
 
             .input-drop-last {
-              top: 10% !important;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+              top: 9.5% !important;
               justify-content: flex-start !important;
-              width: 80%;
-              height: 100%;
-              left: 10%;
+
               @include mq('pc-edit') {
                 top: 9.5% !important;
               }
             }
             .input-drop {
               position: absolute;
-              width: 88%;
-              height: 90%;
+              width: 100%;
+              height: 100%;
+              max-height: 82%;
               top: 16px;
               opacity: 1;
-              left: 6%;
+              left: 1%;
               display: flex;
               flex-direction: column;
               align-items: center;
@@ -826,18 +822,18 @@
               }
 
               .flex-area12-2 {
-                width: 60%;
+                width: 63%;
                 height: 20%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 5%;
-                margin: 3% 0 3%;
+                margin: 2.5% 0 2.5%;
               }
 
               .flex-area12-3 {
-                width: 60%;
-                height: 23%;
+                width: 63%;
+                height: 20%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1337,8 +1333,8 @@
               #dropArea12-1 {
                 margin-top: 0%;
                 position: relative;
-                width: 60%;
-                height: 25%;
+                width: 63%;
+                height: 37%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
@@ -1375,7 +1371,7 @@
 
               #dropArea12-2 {
                 position: relative;
-                width: 60%;
+                width: 55%;
                 height: 100%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
@@ -1413,7 +1409,7 @@
 
               #dropArea12-3 {
                 position: relative;
-                width: 60%;
+                width: 55%;
                 height: 100%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
@@ -1456,7 +1452,7 @@
                 width: 60% !important;
                 max-width: 60%;
                 height: 20%;
-                margin: 5% 0 5%;
+                margin: 5% 0 4%;
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
@@ -1486,8 +1482,8 @@
               }
               .text-diagonal {
                 transform: rotate(-8deg);
-                margin-left: -46%;
-                margin-bottom: 2.3%;
+                margin-left: -43%;
+                margin-bottom: 0.5%;
                 width: 34% !important;
                 text-align: center;
                 font-size: 0.6rem;
@@ -1499,7 +1495,7 @@
                 }
 
                 @include mq('pc2-edit') {
-                  margin-bottom: 5%;
+                  margin-bottom: 3%;
                 }
 
                 @include mq('tab-edit') {
@@ -1842,7 +1838,9 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.35rem;
+                    font-size: 0.9rem;
+                    line-height: 0.9;
+                    height: 15px !important;
                   }
 
                   @include mq('tab-edit') {
