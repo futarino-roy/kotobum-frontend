@@ -15,6 +15,37 @@
 //   },
 // });
 
+// モーダル要素の取得
+const modal = document.getElementById('customModal');
+const saveBtn = document.getElementById('saveBtn');
+const discardBtn = document.getElementById('discardBtn');
+
+// ダミーの状態を履歴に追加
+history.pushState(null, document.title, window.location.href);
+
+// ユーザーが「戻る」ボタンを押した際に popstate イベントを発火
+window.addEventListener('popstate', (event) => {
+  // モーダルを表示
+  modal.classList.add('show');
+  // 履歴にもう一度ダミーの状態を追加
+  history.pushState(null, document.title, window.location.href);
+});
+
+// 「保存する」ボタンがクリックされたときの処理
+saveBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+  alert('内容が保存されました');
+  // 実際に戻る操作を実行
+  window.history.go(-2);  // 戻るボタンが押される前のページに遷移
+});
+
+// 「保存せずに戻る」ボタンがクリックされたときの処理
+discardBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+  // 実際に戻る操作を実行
+  window.history.go(-2);  // 戻るボタンが押される前のページに遷移
+});
+
 // Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
@@ -1033,6 +1064,13 @@ document.getElementById('sendButton').addEventListener('click', function () {
           newImageDatabase1Data,
           imageDBData,
         });
+
+        // データのサイズをコンソールに表示
+        console.log(`HTML Content Size: ${(new Blob([htmlContent]).size / 1024).toFixed(2)} KB`);
+        console.log(`CSS Content Size: ${(new Blob([cssContent]).size / 1024).toFixed(2)} KB`);
+        console.log(`LocalStorage Data Size: ${(new Blob([JSON.stringify(localStorageData)]).size / 1024).toFixed(2)} KB`);
+        console.log(`newImageDatabase1Data Size: ${(new Blob([JSON.stringify(newImageDatabase1Data)]).size / 1024).toFixed(2)} KB`);
+        console.log(`imageDBData Size: ${(new Blob([JSON.stringify(imageDBData)]).size / 1024).toFixed(2)} KB`);
 
         // ユーザーIDを使ってデータを送信
         return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
