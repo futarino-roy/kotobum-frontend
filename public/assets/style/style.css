@@ -1264,17 +1264,27 @@ input:checked + label::after {
   top: 4% !important;
   justify-content: flex-start !important;
 }
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+    top: 5% !important;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 87%;
+  max-height: 87.5%;
   top: 10px;
   opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
+    max-height: 86%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
   background-image: url(/edit/images/cloud.png);
@@ -1284,6 +1294,14 @@ input:checked + label::after {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 82%;
+  width: 100%;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
   width: 63%;
@@ -2113,6 +2131,9 @@ input:checked + label::after {
     font-size: 1.4vw;
   }
 }
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
+  background-color: coral;
+}
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
     font-size: 0.6rem;
@@ -2158,36 +2179,26 @@ input:checked + label::after {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
+  position: absolute;
   text-align: center;
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
-  font-size: 10px;
-  margin-top: 0.5%;
-}
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-    font-size: 0.2rem;
-  }
+  font-size: 12px;
+  margin-top: 116.5%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     line-height: 0.9;
-    height: 15px !important;
-    margin-top: 3.5%;
+    margin-top: 118.5%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
     line-height: 0.7;
-    font-size: 2vw;
-    margin-top: 6%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-    font-size: 2.5vw;
+    font-size: 3vw;
+    margin-top: 117%;
   }
 }
 .edit .swiper-button-prev {
