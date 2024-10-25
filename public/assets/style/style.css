@@ -1261,7 +1261,7 @@ input:checked + label::after {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-  top: 30px !important;
+  top: 4% !important;
   justify-content: flex-start !important;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
@@ -1290,13 +1290,13 @@ input:checked + label::after {
   height: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 5%;
-  margin: 2.5% 0 2.5%;
+  gap: 7.6%;
+  margin: 2.5% 0 2.5% 0;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-droparea12 {
-  width: 45%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;

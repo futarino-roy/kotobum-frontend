@@ -1050,10 +1050,10 @@ document.getElementById('sendButton').addEventListener('click', function () {
         const body = new FormData();
         body.append('htmlContent', htmlContent);
         body.append('cssContent', cssContent);
-        body.append('cssUrls', JSON.stringify(cssUrls));
-        body.append('localStorageData', JSON.stringify(localStorageData));
-        body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
-        body.append('imageDBData', JSON.stringify(imageDBData));
+        // body.append('cssUrls', JSON.stringify(cssUrls));
+        // body.append('localStorageData', JSON.stringify(localStorageData));
+        // body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
+        // body.append('imageDBData', JSON.stringify(imageDBData));
 
         // localStorageData.forEach(url => body.append('localStorageData[]', url));
         // newImageDatabase1Data.forEach(url => body.append('newImageDatabase1Data[]', url));
