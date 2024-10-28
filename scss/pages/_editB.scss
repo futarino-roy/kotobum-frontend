@@ -1436,6 +1436,14 @@
                 }
               }
 
+              .vertical-textarea {
+                writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
+                text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
+              }
+              .horizontal-text {
+                text-orientation: sideways; /* 横並びで表示するスタイル */
+              }
+
               .text-empty {
                 border: 2px dashed #ccc;
                 &.no-border {
@@ -1504,6 +1512,7 @@
                   max-height: 20%;
                   margin-top: 5%;
                   writing-mode: vertical-rl;
+                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
                 }
 
                 &14,

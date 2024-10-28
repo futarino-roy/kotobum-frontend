@@ -921,6 +921,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// テキストの数字を横並びにする
+// ページが読み込まれたときにイベントリスナーを追加
+document.addEventListener("DOMContentLoaded", function () {
+  const textarea = document.getElementById("textArea13-3");
+  textarea.addEventListener("input", adjustTextOrientation);
+});
+
+function adjustTextOrientation() {
+  const textarea = document.getElementById("textArea13-3");
+  const displayText = document.getElementById("displayText");
+  const content = textarea.value;
+
+  // 数字を含むテキストを検索し、2文字と3文字以上の場合で異なる表示を設定
+  displayText.innerHTML = content.replace(/\d+/g, (match) => {
+    if (match.length === 2) {
+      // 2文字の半角数字を横向きにする
+      return `<span class="horizontal-text">${match}</span>`;
+    } else {
+      // 3文字以上の半角数字は縦向きのまま表示
+      return `<span>${match}</span>`;
+    }
+  });
+}
+
 // function previewSlides() {
 //     // スライド1の内容を取得
 //     const text1 = document.getElementById('textArea').value;
