@@ -1235,16 +1235,11 @@ document.getElementById('sendButton').addEventListener('click', function () {
     .then((data) => {
       console.log('成功:', data);
 
-      // 成功メッセージをページに表示する関数
-      function displayLog(message) {
-        const logDiv = document.getElementsByClassName('log'); // ログを表示する要素を取得
-        const newLogItem = document.createElement('div');
-        newLogItem.textContent = message; // メッセージをテキストとして追加
-        logDiv.appendChild(newLogItem); // ログ要素に追加
-      }
+      // 成功メッセージを表示
+      const messageDiv = document.getElementById('message');
+      messageDiv.textContent = "保存に成功しました！"; // メッセージをセット
+      messageDiv.style.display = "block"; // 表示する
 
-      // 成功メッセージをページ上に表示
-      displayLog(`成功: ${JSON.stringify(data)}`);
     })
     .catch((error) => {
       console.error('エラーが発生しました:', error.message);
