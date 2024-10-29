@@ -1172,21 +1172,18 @@ document.getElementById('sendButton').addEventListener('click', function () {
         }
       };
 
-      const body = JSON.stringify({
-        textData,
-        imageData,
-        colors: {
-          backgroundColor,
-          textColor,
-        }
+      // FormDataに追加して送信
+      const body = new FormData();
+      Object.entries(dataToSend).forEach(([key, value]) => {
+        body.append(key, JSON.stringify(value));
       });
 
-      // fetchのオプションを変更
+      console.log('送信するデータ:', dataToSend);
+
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',  // JSON形式で送信するためのヘッダー
         },
         body: body,
       });
