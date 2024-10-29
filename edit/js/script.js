@@ -1234,12 +1234,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
     })
     .then((data) => {
       console.log('成功:', data);
-
-      // 成功メッセージを表示
-      const messageDiv = document.getElementById('message');
-      messageDiv.textContent = "保存に成功しました！"; // メッセージをセット
-      messageDiv.style.display = "block"; // 表示する
-
     })
     .catch((error) => {
       console.error('エラーが発生しました:', error.message);
