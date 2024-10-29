@@ -2210,3 +2210,13 @@
 .hide-buttons .crop-button {
   display: none; /* 非表示 */
 }
+
+.log {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  margin: 10px 0;
+}
