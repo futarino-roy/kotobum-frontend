@@ -1148,7 +1148,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       const textAreas = document.querySelectorAll('.text-empty');
       const textData = Array.from(textAreas).map(textarea => ({
         id: textarea.id,
-        text: textarea.value,
+        text: textarea.value || '',
       }));
 
       const dropAreas = document.querySelectorAll('.empty');
@@ -1162,6 +1162,13 @@ document.getElementById('sendButton').addEventListener('click', function () {
 
       const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-color').style.color || '#000000';
+
+      // 空データがないかチェック
+      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+        console.error('送信するデータがありません。');
+        return; // データがない場合は送信を中止
+      }
+
 
       const dataToSend = {
         textData,
