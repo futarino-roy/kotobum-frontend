@@ -3170,12 +3170,13 @@ input:checked + label::after {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start !important;
+  max-height: 76.5% !important;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 78.5%;
+  max-height: 85.5%;
   top: 16px;
   opacity: 1;
   left: 1%;
@@ -3185,20 +3186,30 @@ input:checked + label::after {
   justify-content: center;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
-  width: 63%;
-  height: 40%;
+  width: 100%;
+  height: 82%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .flex-area24 {
+  width: 63%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 10%;
+  gap: 7.6%;
+  margin: 2.5% 0 2.5% 0;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .drop24 {
-  width: 45%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  align-items: flex-end;
   gap: 5%;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13 {
@@ -3664,6 +3675,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .horizontal-text {
   text-orientation: sideways; /* 横並びで表示するスタイル */
+  display: inline-block; /* 縦書きの流れの中で横書きを保持 */
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
   border: 2px dashed #ccc;
@@ -3920,39 +3932,40 @@ input:checked + label::after {
     font-size: 2.5vw;
   }
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-3 {
-  min-height: 55%;
-  max-height: 55%;
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+  height: 90% !important;
+  width: 55% !important;
   writing-mode: vertical-rl;
   font-size: 0.3rem;
 }
 @media screen and (max-width: 1200px) {
-  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
     font-size: 0.2rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
     font-size: 0.35rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
     font-size: 1vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
     font-size: 1.1vw;
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+  position: absolute;
   text-align: center;
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
   font-size: 8px;
-  margin-top: 1%;
+  margin-top: 105%;
   height: 5% !important;
   width: 50% !important;
 }

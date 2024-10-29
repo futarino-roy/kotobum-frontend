@@ -760,13 +760,14 @@
               flex-direction: column;
               align-items: center;
               justify-content: flex-start !important;
+              max-height: 76.5% !important;
             }
 
             .input-drop {
               position: absolute;
               width: 100%;
               height: 100%;
-              max-height: 78.5%;
+              max-height: 85.5%;
               top: 16px;
               opacity: 1;
               left: 1%;
@@ -790,20 +791,31 @@
               // }
 
               .flex24 {
-                width: 63%;
-                height: 40%;
+                width: 100%;
+                height: 82%;
                 display: flex;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
-                gap: 10%;
+                flex-direction: column;
+                // gap: 10%;
+                .flex-area24 {
+                  width: 63%;
+                  height: 60%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 7.6%;
+                  margin: 2.5% 0 2.5% 0;
+                }
 
                 .drop24 {
-                  width: 45%;
+                  width: 50%;
                   height: 100%;
                   display: flex;
                   flex-direction: column;
-                  align-items: flex-start;
                   justify-content: center;
+                  align-items: flex-end;
                   gap: 5%;
                 }
               }
@@ -1442,6 +1454,7 @@
               }
               .horizontal-text {
                 text-orientation: sideways; /* 横並びで表示するスタイル */
+                display: inline-block; /* 縦書きの流れの中で横書きを保持 */
               }
 
               .text-empty {
@@ -1735,10 +1748,9 @@
                     font-size: 2.5vw;
                   }
                 }
-                &24-2,
-                &24-3 {
-                  min-height: 55%;
-                  max-height: 55%;
+                &24-2 {
+                  height: 90% !important;
+                  width: 55% !important;
                   writing-mode: vertical-rl;
                   font-size: 0.3rem;
                   @include mq('pc-edit') {
@@ -1758,12 +1770,13 @@
                   }
                 }
                 &24-4 {
+                  position: absolute;
                   text-align: center;
                   line-height: 1.5;
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 8px;
-                  margin-top: 1%;
+                  margin-top: 105%;
                   height: 5% !important;
                   width: 50% !important;
                   // max-height: 15px;

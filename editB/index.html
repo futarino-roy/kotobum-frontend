@@ -204,15 +204,15 @@
                 <div class="input-drop input-drop-last">
                   <textarea id="textArea24-1" rows="1" maxlength="100" class="text-empty text-colorB"></textarea>
                   <div class="flex24">
-                    <div class="drop24">
-                      <div id="dropArea24-1" class="empty"></div>
-                      <div id="dropArea24-2" class="empty"></div>
+                    <div class="flex-area24">
+                      <div class="drop24">
+                        <div id="dropArea24-1" class="empty"></div>
+                        <div id="dropArea24-2" class="empty"></div>
+                      </div>
+                      <textarea id="textArea24-2" rows="1" maxlength="300" class="text-empty"></textarea>
                     </div>
-                    <textarea id="textArea24-2" rows="1" maxlength="100" class="text-empty"></textarea>
-                    <textarea id="textArea24-3" rows="1" maxlength="100" class="text-empty"></textarea>
+                    <div id="dropArea24-3" class="empty"></div>
                   </div>
-                  <div class="flex-area24-2"></div>
-                  <div id="dropArea24-3" class="empty"></div>
                   <textarea id="textArea24-4" rows="1" maxlength="100" class="text-empty"></textarea>
                 </div>
               </div>
@@ -337,7 +337,14 @@
                   <textarea id="textArea13-1" rows="1" maxlength="16" class="text-empty text-colorB"></textarea>
                   <textarea id="textArea13-2" rows="1" maxlength="44" class="text-empty text-colorB"></textarea>
                   <div id="dropArea13" class="empty"></div>
-                  <textarea id="textArea13-3" rows="1" maxlength="104" class="text-empty vertical-textarea"></textarea>
+                  <textarea
+                    id="textArea13-3"
+                    rows="1"
+                    maxlength="104"
+                    class="text-empty vertical-textarea"
+                    contenteditable="true"
+                    oninput="adjustTextOrientation(this)"
+                  ></textarea>
                 </div>
               </div>
               <div class="page-number">1/12</div>

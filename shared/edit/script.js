@@ -70,30 +70,7 @@ const showDrawerContent = (contentId) => {
 };
 
 // 画像のアップロードと挿入-----------------------------------------------
-let myImageDB1;
 let selectedImage = null;
-
-// 新しいIndexedDBの初期化
-function initNewIndexedDB() {
-  const request = indexedDB.open('NewImageDatabase1', 2);
-
-  request.onupgradeneeded = function (event) {
-    myImageDB1 = event.target.result;
-    if (!myImageDB1.objectStoreNames.contains('images')) {
-      myImageDB1.createObjectStore('images', { keyPath: 'id' });
-    }
-  };
-
-  request.onsuccess = function (event) {
-    myImageDB1 = event.target.result;
-    console.log('New IndexedDB initialized.');
-    restoreDropAreas();
-  };
-
-  request.onerror = function (event) {
-    console.error('Error initializing IndexedDB:', event.target.errorCode);
-  };
-}
 
 document.addEventListener('DOMContentLoaded', function () {
   addTouchListenerToDropAreas();
@@ -208,8 +185,8 @@ function makeTouchable(img) {
 
 function addTouchListenerToDropAreas() {
   const dropAreas = document.querySelectorAll('.empty');
-  const drawer = document.getElementById('drawer'); // 特定要素を取得
-  const sideBtn = document.getElementById('sideBtn'); // 特定要素を取得
+  const drawer = document.getElementById('drawer');
+  const sideBtn = document.getElementById('sideBtn');
 
   dropAreas.forEach((dropArea) => {
     dropArea.addEventListener('touchstart', function (e) {
@@ -217,16 +194,14 @@ function addTouchListenerToDropAreas() {
       if (selectedImage) {
         insertImageToDropArea(this);
       } else {
-        // 画像以外と特定要素以外のタッチの場合はボタンとボーダーを非表示
         if (!e.target.closest('.empty') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
           document.querySelectorAll('.empty.with-buttons').forEach((area) => {
             area.classList.add('hide-buttons');
-            area.style.border = 'none'; // ボーダーを消す
+            area.style.border = 'none';
           });
         }
-        // タッチされたドロップエリアのボタンを表示する
         this.classList.remove('hide-buttons');
-        this.style.border = ''; // ボーダーを元に戻す
+        this.style.border = '';
       }
     });
   });
@@ -236,7 +211,7 @@ function addTouchListenerToDropAreas() {
     if (!e.target.closest('.empty.with-buttons') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
       allDropAreas.forEach((dropArea) => {
         dropArea.classList.add('hide-buttons');
-        dropArea.style.border = 'none'; // ボーダーを消す
+        dropArea.style.border = 'none';
       });
     }
   });
@@ -260,7 +235,6 @@ function insertImageToDropArea(dropArea) {
   deleteButton.addEventListener('touchstart', function (e) {
     e.stopPropagation();
     dropArea.innerHTML = '';
-    deleteImageFromNewIndexedDB(dropArea.id);
   });
 
   const cropButton = document.createElement('button');
@@ -278,114 +252,10 @@ function insertImageToDropArea(dropArea) {
   selectedImage.classList.remove('selected');
   selectedImage = null;
 
-  saveImageToNewIndexedDB(dropArea.id, newImage.src);
-
-  // ボタンを表示するためのクラスを削除
   dropArea.classList.remove('hide-buttons');
 }
 
-function saveImageToNewIndexedDB(id, imageData) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  store.put({ id: id, data: imageData });
-
-  transaction.oncomplete = function () {
-    console.log('Image saved to new IndexedDB.');
-  };
-
-  transaction.onerror = function (event) {
-    console.error('Error saving image:', event.target.errorCode);
-  };
-}
-
-function getImageFromNewIndexedDB(id, callback) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images']);
-  const store = transaction.objectStore('images');
-  const request = store.get(id);
-
-  request.onsuccess = function (event) {
-    const result = event.target.result;
-    if (result) {
-      callback(result.data);
-    } else {
-      console.log('No image found with ID:', id);
-    }
-  };
-
-  request.onerror = function (event) {
-    console.error('Error retrieving image:', event.target.errorCode);
-  };
-}
-
-initNewIndexedDB();
-
-function restoreDropAreas() {
-  const dropAreas = document.querySelectorAll('.empty');
-  dropAreas.forEach((dropArea) => {
-    getImageFromNewIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        const newImage = document.createElement('img');
-        newImage.src = imageData;
-        newImage.style.width = '100%';
-        newImage.style.height = '100%';
-
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('delete-button');
-        deleteButton.addEventListener('touchstart', function (e) {
-          e.stopPropagation();
-          dropArea.innerHTML = '';
-          deleteImageFromNewIndexedDB(dropArea.id);
-        });
-
-        const cropButton = document.createElement('button');
-        cropButton.classList.add('crop-button');
-        cropButton.addEventListener('touchstart', function (e) {
-          e.stopPropagation();
-          openCroppieModal(dropArea);
-        });
-
-        dropArea.innerHTML = '';
-        dropArea.appendChild(newImage);
-        dropArea.appendChild(deleteButton);
-        dropArea.appendChild(cropButton);
-        dropArea.classList.add('with-buttons');
-        dropArea.classList.remove('hide-buttons'); // Restore visibility
-      }
-    });
-  });
-}
-
-function deleteImageFromNewIndexedDB(id) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.delete(id);
-
-  request.onsuccess = function () {
-    console.log('Image deleted from new IndexedDB:', id);
-  };
-
-  request.onerror = function (event) {
-    console.error('Error deleting image:', event.target.errorCode);
-  };
-}
-
 function openCroppieModal(dropArea) {
-  // Croppieモーダルの表示処理
   console.log('Croppie modal open for drop area:', dropArea);
 }
 
@@ -398,101 +268,6 @@ function handleDragOver(event) {
 // ドラッグが離れたときの処理
 function handleDragLeave(event) {
   this.style.backgroundColor = 'transparent';
-}
-
-// IndexedDBへの接続
-let myimageDB2;
-const request = indexedDB.open('ImageDB', 1);
-
-request.onupgradeneeded = function (event) {
-  myimageDB2 = event.target.result;
-  if (!myimageDB2.objectStoreNames.contains('images')) {
-    myimageDB2.createObjectStore('images', { keyPath: 'id' });
-  }
-};
-
-request.onsuccess = function (event) {
-  myimageDB2 = event.target.result;
-
-  // IndexedDB接続が成功した場合にのみ画像をロード
-  if (myimageDB2) {
-    loadAllImages();
-  } else {
-    console.error('IndexedDBへの接続が失敗しました。');
-  }
-};
-
-request.onerror = function (event) {
-  console.error('IndexedDBに接続できませんでした:', event.target.error);
-};
-
-// 画像をIndexedDBに保存
-function saveImageToIndexedDB(imageData, containerId) {
-  const transaction = myimageDB2.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.put({ id: containerId, data: imageData });
-
-  request.onsuccess = function () {
-    console.log('画像がIndexedDBに保存されました:', containerId);
-  };
-
-  request.onerror = function (event) {
-    console.error('画像の保存に失敗しました:', event.target.error);
-  };
-}
-
-// IndexedDBから画像を取得
-function loadImageFromIndexedDB(containerId, callback) {
-  const transaction = myimageDB2.transaction(['images'], 'readonly');
-  const store = transaction.objectStore('images');
-  const request = store.get(containerId);
-
-  request.onsuccess = function (event) {
-    callback(event.target.result ? event.target.result.data : null);
-  };
-
-  request.onerror = function (event) {
-    console.error('画像の取得に失敗しました:', event.target.error);
-    callback(null);
-  };
-}
-
-// IndexedDBから画像を削除
-function clearImageFromIndexedDB(containerId) {
-  const transaction = myimageDB2.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.delete(containerId);
-
-  request.onsuccess = function () {
-    console.log('画像がIndexedDBから削除されました:', containerId);
-  };
-
-  request.onerror = function (event) {
-    console.error('画像の削除に失敗しました:', event.target.error);
-  };
-}
-
-// 全ての画像をロード
-function loadAllImages() {
-  const emptyElements = document.querySelectorAll('.empty');
-  emptyElements.forEach(function (dropArea) {
-    loadImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        dropArea.innerHTML = '';
-        let img = new Image();
-        img.src = imageData;
-        img.classList.add('draggable-image');
-        img.onclick = function () {
-          showButtons(this.parentNode);
-        };
-        dropArea.appendChild(img);
-        addButtons(dropArea);
-
-        // 画像が挿入されたら枠線をなくす処理追加
-        dropArea.style.border = 'none';
-      }
-    });
-  });
 }
 
 // ドロップ時の処理
@@ -517,9 +292,6 @@ function handleDrop(event) {
 
       // 画像が挿入されたら枠線をなくす処理追加
       this.style.border = 'none';
-
-      // IndexedDBに画像データを保存
-      saveImageToIndexedDB(e.target.result, this.id);
     }.bind(this);
     fileReader.readAsDataURL(file);
   }
@@ -545,9 +317,6 @@ function handleTouchDrop(event) {
 
         // 画像が挿入されたら枠線をなくす処理追加
         dropArea.style.border = 'none';
-
-        // IndexedDBに画像データを保存
-        saveImageToIndexedDB(e.target.result, dropArea.id);
       };
       fileReader.readAsDataURL(file);
     }
@@ -565,9 +334,6 @@ function addButtons(container) {
       container.classList.remove('selected');
       container.style.backgroundColor = 'transparent';
       hideButtons();
-
-      // IndexedDBから画像データを削除
-      clearImageFromIndexedDB(container.id);
 
       // 画像が削除されたら枠線を復元の処理追加
       container.style.border = '2px dashed #ccc';
@@ -645,7 +411,6 @@ function openCroppieModal(container) {
       })
       .then(function (croppedImageData) {
         container.querySelector('img').src = croppedImageData;
-        saveImageToIndexedDB(croppedImageData, container.id);
         croppieModal.style.display = 'none';
       });
   };
@@ -677,21 +442,36 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存-----
-function saveTextToLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    localStorage.setItem(id, textArea.value);
+// 枠変更
+document.addEventListener('DOMContentLoaded', () => {
+  const dropAreas = [];
+  const resizeButtons = document.querySelectorAll('.resizeButton');
+  let activeDropArea = null;
+  // ドロップエリアをすべて取得し、配列に追加
+  document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
+    dropAreas.push(dropArea);
+    dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
   });
-}
-
-// テキストエリアの内容をローカルストレージから読み込む関数
-function loadTextFromLocalStorage() {
-  document.querySelectorAll('.text-empty').forEach((textArea) => {
-    const id = textArea.id;
-    textArea.value = localStorage.getItem(id) || '';
+  // ドロップエリアがクリックまたはタッチされたときの処理
+  const handleDropAreaInteraction = (dropArea) => {
+    dropAreas.forEach((area) => area.classList.remove('active'));
+    dropArea.classList.add('active');
+    activeDropArea = dropArea;
+  };
+  // サイズ変更ボタンがクリックまたはタッチされたときの処理
+  const handleResizeButtonInteraction = (button) => {
+    if (activeDropArea) {
+      // サイズをすべてリセット
+      activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
+      // ボタンの data-size 属性に基づいてサイズを変更
+      const size = button.getAttribute('data-size');
+      activeDropArea.classList.add(size);
+    }
+  };
+  resizeButtons.forEach((button) => {
+    button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
   });
-}
+});
 
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
@@ -699,28 +479,16 @@ function adjustHeight(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`;
 }
 
-// テキストエリアの幅を調整する関数
-function adjustTextareaWidth(textarea) {
-  textarea.style.width = 'auto';
-  const scrollWidth = textarea.scrollWidth;
-  textarea.style.width = `${scrollWidth}px`;
-}
-
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
   textarea.addEventListener('input', function () {
     adjustHeight(this);
-    adjustTextareaWidth(this);
-    saveTextToLocalStorage();
   });
   adjustHeight(textarea);
-  adjustTextareaWidth(textarea);
 }
 
 // ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
-  loadTextFromLocalStorage();
-
   // テキストエリアごとに必要な処理を実行
   document.querySelectorAll('.text-empty').forEach((textarea) => {
     enforceNoMaxLength(textarea);
@@ -748,44 +516,4 @@ document.addEventListener('DOMContentLoaded', function () {
     textEmpty.addEventListener('input', updateBorders);
   });
   updateBorders();
-});
-
-// 枠変更
-document.addEventListener('DOMContentLoaded', () => {
-  const dropAreas = [];
-  const resizeButtons = document.querySelectorAll('.resizeButton');
-  let activeDropArea = null;
-  // ドロップエリアをすべて取得し、配列に追加
-  document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
-    dropAreas.push(dropArea);
-    dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
-  });
-  // ドロップエリアがクリックまたはタッチされたときの処理
-  const handleDropAreaInteraction = (dropArea) => {
-    dropAreas.forEach((area) => area.classList.remove('active'));
-    dropArea.classList.add('active');
-    activeDropArea = dropArea;
-  };
-  // サイズ変更ボタンがクリックまたはタッチされたときの処理
-  const handleResizeButtonInteraction = (button) => {
-    if (activeDropArea) {
-      // サイズをすべてリセット
-      activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
-      // ボタンの data-size 属性に基づいてサイズを変更
-      const size = button.getAttribute('data-size');
-      activeDropArea.classList.add(size);
-      // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-      localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-    }
-  };
-  resizeButtons.forEach((button) => {
-    button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
-  });
-  // ページロード時にローカルストレージからサイズを復元
-  dropAreas.forEach((dropArea) => {
-    const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-    if (savedSize) {
-      dropArea.classList.add(savedSize);
-    }
-  });
 });
