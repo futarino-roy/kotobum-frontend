@@ -1136,6 +1136,38 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       return response.json();
     })
+
+    .then((data) => {
+      // サーバーから取得したデータを使ってページに適用
+      const { textData, imageData, colors } = data; // サーバーから取得したデータ構造に応じて変更
+
+      // テキストデータを適用
+      textData.forEach(item => {
+        const textarea = document.getElementById(item.id);
+        if (textarea) {
+          textarea.value = item.text || ''; // テキストを設定
+        }
+      });
+
+      // 画像データを適用
+      imageData.forEach(item => {
+        const dropArea = document.getElementById(item.id);
+        if (dropArea) {
+          const imgElement = dropArea.querySelector('img');
+          if (imgElement) {
+            imgElement.src = item.image || ''; // 画像を設定
+          }
+        }
+      });
+
+      // 色情報を適用
+      const backgroundColor = colors.backgroundColor || '#ffffff';
+      const textColor = colors.textColor || '#000000';
+
+      document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor; // 背景色を設定
+      document.querySelector('.text-color').style.color = textColor; // テキスト色を設定
+    })
+
     .then((albums) => {
       albumId = albums.albumId;
 
@@ -1168,7 +1200,6 @@ document.getElementById('sendButton').addEventListener('click', function () {
         console.error('送信するデータがありません。');
         return; // データがない場合は送信を中止
       }
-
 
       const dataToSend = {
         textData,
