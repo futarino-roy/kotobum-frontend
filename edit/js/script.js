@@ -1212,3 +1212,64 @@ document.getElementById('sendButton').addEventListener('click', function () {
       console.error('スタックトレース:', error.stack);
     });
 });
+
+// ----------編集ページにアクセスした際に、情報を取得し、ページに適用するためのコード-------------
+document.addEventListener('DOMContentLoaded', function () {
+  const token = localStorage.getItem('token');  // ローカルストレージからトークンを取得
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  // 編集ページで必要なデータを取得するためのリクエスト
+  fetch('https://develop-back.kotobum.com/api/user/album/data', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('取得したデータ:', data);  // データの内容を確認
+
+      // テキストデータを表示
+      if (data.textData && Array.isArray(data.textData)) {
+        data.textData.forEach(item => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+          }
+        });
+      }
+
+      // 画像データを表示
+      if (data.imageData && Array.isArray(data.imageData)) {
+        data.imageData.forEach(item => {
+          const dropArea = document.getElementById(item.id);
+          if (dropArea && item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;  // サーバーから取得した画像URL
+            img.alt = 'Image';
+            dropArea.appendChild(img);
+          }
+        });
+      }
+
+      // 背景色とテキスト色を設定
+      if (data.colors) {
+        const { backgroundColor, textColor } = data.colors;
+        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-color').style.color = textColor || '#000000';
+      }
+    })
+    .catch(error => {
+      console.error('エラーが発生しました:', error.message);
+    });
+});
