@@ -1251,10 +1251,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // アルバムデータ取得リクエスト
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-        method: 'POST',
+        method: 'GET',
         headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
         }
       });
     })
