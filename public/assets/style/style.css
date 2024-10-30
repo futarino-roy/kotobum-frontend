@@ -2088,7 +2088,7 @@ input:checked + label::after {
   font-family: "League Spartan", sans-serif;
   min-width: 60%;
   margin-bottom: 5%;
-  margin-top: -7%;
+  margin-top: 5%;
   font-size: 0.7rem;
   line-height: 1.5;
   font-weight: bold;
@@ -3175,12 +3175,11 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-  top: 12% !important;
+  top: 6% !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start !important;
-  max-height: 76.5% !important;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
@@ -3189,7 +3188,6 @@ input:checked + label::after {
   max-height: 85.5%;
   top: 16px;
   opacity: 1;
-  left: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3197,11 +3195,31 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
   width: 100%;
-  height: 82%;
+  height: 78%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media screen and (min-width: 1500px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
+    height: 80%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
+    height: 77%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
+    height: 83%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
+    height: 81%;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .flex-area24 {
   width: 63%;
@@ -3610,7 +3628,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
   position: relative;
   width: 100%;
-  min-height: 52%;
+  min-height: 45%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -3624,7 +3642,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 {
   position: relative;
   width: 100%;
-  min-height: 52%;
+  min-height: 45%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -3638,8 +3656,7 @@ input:checked + label::after {
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 {
   position: relative;
   width: 63%;
-  height: 37%;
-  margin: 4% 0 4% 0;
+  height: 42%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -3858,7 +3875,7 @@ input:checked + label::after {
   font-family: "League Spartan", sans-serif;
   min-width: 60%;
   margin-bottom: 5%;
-  margin-top: -7% !important;
+  margin-top: 5% !important;
   font-size: 0.7rem;
   line-height: 1.5;
   font-weight: bold;
@@ -3915,7 +3932,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
   font-family: "League Spartan", sans-serif;
-  margin-bottom: 6%;
+  margin-top: 6%;
   text-align: center;
   font-weight: bold;
   min-width: 60%;
@@ -3943,7 +3960,7 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
-  height: 90% !important;
+  height: 95% !important;
   width: 55% !important;
   writing-mode: vertical-rl;
   font-size: 0.3rem;
@@ -3974,10 +3991,10 @@ input:checked + label::after {
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
-  font-size: 8px;
-  margin-top: 105%;
-  height: 5% !important;
-  width: 50% !important;
+  font-size: 12px;
+  margin-top: 113%;
+  height: 3% !important;
+  width: 63% !important;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
@@ -3987,15 +4004,16 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 0.9;
+    margin-top: 114.5%;
   }
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     line-height: 0.7;
     font-size: 3vw;
-    margin-top: 16%;
+    margin-top: 114%;
   }
 }
 @media screen and (max-width: 480px) {
