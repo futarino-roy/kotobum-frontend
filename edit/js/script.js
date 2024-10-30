@@ -1395,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
@@ -1406,6 +1406,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
 
       // アルバムデータ取得リクエスト
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
@@ -1418,12 +1419,18 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
     .then(data => {
       console.log('取得したデータ:', data);
+
+      // データの存在チェック
+      if (!data || Object.keys(data).length === 0) {
+        console.warn('取得したデータが空です。');
+        return;
+      }
 
       // テキストデータを表示
       if (data.textData && Array.isArray(data.textData)) {
@@ -1431,8 +1438,12 @@ document.addEventListener('DOMContentLoaded', function () {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }
         });
+      } else {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
       // 画像データを表示
@@ -1444,8 +1455,12 @@ document.addEventListener('DOMContentLoaded', function () {
             img.src = item.image;
             img.alt = 'Image';
             dropArea.appendChild(img);
+          } else {
+            console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
           }
         });
+      } else {
+        console.warn('画像データが存在しないか、配列ではありません。');
       }
 
       // 背景色とテキスト色を設定
@@ -1453,6 +1468,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const { backgroundColor, textColor } = data.colors;
         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
         document.querySelector('.text-color').style.color = textColor || '#000000';
+      } else {
+        console.warn('色データが存在しません。');
       }
     })
     .catch(error => {
