@@ -1112,170 +1112,11 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
-// document.getElementById('sendButton').addEventListener('click', function () {
-//   const token = localStorage.getItem('token');
-
-//   if (!token) {
-//     console.error('認証トークンが見つかりません。ログインしてください。');
-//     return;
-//   }
-
-//   let albumId;
-
-//   // ユーザー情報を取得
-//   fetch('https://develop-back.kotobum.com/api/user/album', {
-//     method: 'GET',
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-//       }
-//       return response.json();
-//     })
-
-//     .then((albums) => {
-//       albumId = albums.albumId;
-
-//       if (!albumId) {
-//         console.error('アルバムIDを取得できませんでした。');
-//         return;
-//       }
-
-//       // テキストエリアと画像データの収集
-//       const textAreas = document.querySelectorAll('.text-empty');
-//       const textData = Array.from(textAreas).map(textarea => ({
-//         id: textarea.id,
-//         text: textarea.value || '',
-//       }));
-
-//       const dropAreas = document.querySelectorAll('.empty');
-//       const imageData = Array.from(dropAreas).map(dropArea => {
-//         const img = dropArea.querySelector('img');
-//         return {
-//           id: dropArea.id,
-//           image: img ? img.src : null,
-//         };
-//       });
-
-//       const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
-//       const textColor = document.querySelector('.text-color').style.color || '#000000';
-
-//       // 空データがないかチェック
-//       if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
-//         console.error('送信するデータがありません。');
-//         return; // データがない場合は送信を中止
-//       }
-
-//       const dataToSend = {
-//         textData,
-//         imageData,
-//         colors: {
-//           backgroundColor,
-//           textColor,
-//         }
-//       };
-
-//       // FormDataに追加して送信
-//       const body = new FormData();
-//       Object.entries(dataToSend).forEach(([key, value]) => {
-//         body.append(key, JSON.stringify(value));
-//       });
-
-//       console.log('送信するデータ:', dataToSend);
-
-//       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-//         method: 'POST',
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//         body: body,
-//       });
-//     })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
-//       }
-//       return response.json();
-//     })
-//     .then((data) => {
-//       console.log('成功:', data);
-//     })
-//     .catch((error) => {
-//       console.error('エラーが発生しました:', error.message);
-//       if (error.response) {
-//         console.error('レスポンスデータ:', error.response.data);
-//       }
-//       console.error('スタックトレース:', error.stack);
-//     });
-// });
-
-// // ----------編集ページにアクセスした際に、情報を取得し、ページに適用するためのコード-------------
-// document.addEventListener('DOMContentLoaded', function () {
-//   const token = localStorage.getItem('token');  // ローカルストレージからトークンを取得
-
-//   if (!token) {
-//     console.error('認証トークンが見つかりません。ログインしてください。');
-//     return;
-//   }
-
-//   // 編集ページで必要なデータを取得するためのリクエスト
-//   fetch('https://develop-back.kotobum.com/api/user/album/data', {
-//     method: 'GET',
-//     headers: {
-//       'Authorization': `Bearer ${token}`,
-//       'Content-Type': 'application/json'
-//     }
-//   })
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-//       }
-//       return response.json();
-//     })
-//     .then(data => {
-//       console.log('取得したデータ:', data);  // データの内容を確認
-
-//       // テキストデータを表示
-//       if (data.textData && Array.isArray(data.textData)) {
-//         data.textData.forEach(item => {
-//           const textArea = document.getElementById(item.id);
-//           if (textArea) {
-//             textArea.value = item.text;
-//           }
-//         });
-//       }
-
-//       // 画像データを表示
-//       if (data.imageData && Array.isArray(data.imageData)) {
-//         data.imageData.forEach(item => {
-//           const dropArea = document.getElementById(item.id);
-//           if (dropArea && item.image) {
-//             const img = document.createElement('img');
-//             img.src = item.image;  // サーバーから取得した画像URL
-//             img.alt = 'Image';
-//             dropArea.appendChild(img);
-//           }
-//         });
-//       }
-
-//       // 背景色とテキスト色を設定
-//       if (data.colors) {
-//         const { backgroundColor, textColor } = data.colors;
-//         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-//         document.querySelector('.text-color').style.color = textColor || '#000000';
-//       }
-//     })
-//     .catch(error => {
-//       console.error('エラーが発生しました:', error.message);
-//     });
-// });
-
 // 保存ボタン押下時の処理
-document.getElementById('sendButton').addEventListener('click', function () {
+document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
+document.getElementById('saveBtn').addEventListener('click', handleSaveOrSend);
+
+function handleSaveOrSend() {
   const token = localStorage.getItem('token');
 
   if (!token) {
@@ -1372,7 +1213,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
       }
       console.error('スタックトレース:', error.stack);
     });
-});
+};
 
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
