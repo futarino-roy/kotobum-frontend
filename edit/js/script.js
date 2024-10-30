@@ -1409,7 +1409,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // アルバムデータ取得リクエスト
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body/show`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
