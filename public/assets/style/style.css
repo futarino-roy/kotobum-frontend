@@ -3777,8 +3777,29 @@ input:checked + label::after {
   min-height: 20%;
   max-height: 20%;
   margin-top: 5%;
+  font-size: 0.3rem;
   writing-mode: vertical-rl;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
+    font-size: 0.25rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
+    font-size: 1.4vw;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
   max-height: 35%;
@@ -3789,6 +3810,7 @@ input:checked + label::after {
   text-align: center;
   font-weight: bold;
   writing-mode: vertical-rl;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
@@ -3815,6 +3837,7 @@ input:checked + label::after {
   min-height: 70%;
   writing-mode: vertical-rl;
   font-size: 0.4rem;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
@@ -3828,12 +3851,12 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-    font-size: 1.18vw;
+    font-size: 1.28vw;
   }
 }
 @media screen and (max-width: 480px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-    font-size: 1.5vw;
+    font-size: 1.45vw;
   }
 }
 @media screen and (max-width: 380px) {
@@ -3850,6 +3873,7 @@ input:checked + label::after {
   text-align: center;
   color: #ffffff;
   margin-top: 10%;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
@@ -3881,6 +3905,7 @@ input:checked + label::after {
   font-weight: bold;
   text-align: center;
   margin-top: 10%;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
@@ -3909,6 +3934,7 @@ input:checked + label::after {
   margin-top: 2.5%;
   writing-mode: vertical-rl;
   font-size: 0.35rem;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
@@ -3922,7 +3948,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
-    font-size: 1.3vw;
+    font-size: 1.35vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3938,6 +3964,7 @@ input:checked + label::after {
   min-width: 60%;
   font-size: 0.7rem;
   line-height: 1;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
@@ -3960,10 +3987,14 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
-  height: 95% !important;
+  height: 65% !important;
   width: 55% !important;
   writing-mode: vertical-rl;
   font-size: 0.3rem;
+  display: flex;
+  align-items: center; /* 縦方向の中央揃え */
+  justify-content: center; /* 横方向の中央揃え */
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
@@ -3995,6 +4026,7 @@ input:checked + label::after {
   margin-top: 113%;
   height: 3% !important;
   width: 63% !important;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {

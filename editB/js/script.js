@@ -921,22 +921,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// テキストの数字を横並びにする
-function adjustTextOrientation(element) {
-  const regex = /\d+/g; // 半角数字の連続した部分を見つける正規表現
-  let content = element.innerHTML;
 
-  // 半角数字の連続部分を調べて、2文字か3文字以上かでスタイルを変更
-  element.innerHTML = content.replace(regex, (match) => {
-    if (match.length === 2) {
-      // 2文字の半角数字を横並びにする
-      return `<span class="horizontal-text">${match}</span>`;
-    } else {
-      // 3文字以上の半角数字は縦並びのまま
-      return match;
-    }
-  });
-}
 
 // function previewSlides() {
 //     // スライド1の内容を取得

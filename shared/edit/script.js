@@ -479,12 +479,20 @@ function adjustHeight(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`;
 }
 
+// テキストエリアの幅を調整する関数
+function adjustWidth(textarea) {
+  textarea.style.width = 'auto';
+  textarea.style.width = `${textarea.scrollWidth}px`;
+}
+
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
   textarea.addEventListener('input', function () {
     adjustHeight(this);
+    adjustWidth(this);
   });
   adjustHeight(textarea);
+  adjustWidth(textarea);
 }
 
 // ドキュメント読み込み時の処理
@@ -494,9 +502,12 @@ document.addEventListener('DOMContentLoaded', function () {
     enforceNoMaxLength(textarea);
   });
 
-  // ロード後に高さ調整を行う
+  // ロード後に高さと幅の調整を行う
   setTimeout(() => {
-    document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
+    document.querySelectorAll('.text-empty').forEach((textarea) => {
+      adjustHeight(textarea);
+      adjustWidth(textarea);
+    });
   }, 100);
 });
 

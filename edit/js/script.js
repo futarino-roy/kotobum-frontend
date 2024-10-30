@@ -1255,7 +1255,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
 
       // アルバムデータ取得リクエスト
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body/show`, {
+      return fetch(`https://develop-back.kotobum.com/api/albums/{albumid}/showBody`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`
