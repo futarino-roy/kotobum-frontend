@@ -1408,7 +1408,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // アルバムデータ取得リクエスト
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body/show`, {
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
