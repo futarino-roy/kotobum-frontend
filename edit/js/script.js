@@ -1121,6 +1121,7 @@ function handleSaveOrSend() {
 
   if (!token) {
     console.error('認証トークンが見つかりません。ログインしてください。');
+    alert('認証トークンが見つかりません。ログインしてください。');
     return;
   }
 
@@ -1169,6 +1170,7 @@ function handleSaveOrSend() {
 
       if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
+        alert('送信するデータがありません。');
         return;
       }
 
@@ -1205,6 +1207,8 @@ function handleSaveOrSend() {
     })
     .then(data => {
       console.log('成功:', data);
+      alert('データが正常に保存されました。');
+
     })
     .catch(error => {
       console.error('エラーが発生しました:', error.message);
@@ -1212,6 +1216,7 @@ function handleSaveOrSend() {
         console.error('レスポンスデータ:', error.response.data);
       }
       console.error('スタックトレース:', error.stack);
+      alert('エラーが発生しました。再度お試しください。');
     });
 };
 
