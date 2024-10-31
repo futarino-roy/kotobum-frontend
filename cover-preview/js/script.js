@@ -186,8 +186,8 @@ function adjustTextareaHeight(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
 }
 function adjustTextareaWidth(textarea) {
-  textarea.style.width = "auto"; // 高さをリセット
-  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて高さを調整
+  textarea.style.width = "auto"; // 幅をリセット
+  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて幅を調整
 }
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
@@ -198,9 +198,6 @@ function loadTextForPreview() {
   );
 
   textAreas.forEach((textArea) => {
-    const index = textArea.id.replace("previewTextArea", ""); // IDからインデックスを取得
-    textArea.value = localStorage.getItem(`textArea${index}`) || "";
-
     // テキストエリアの高さを調整
     adjustTextareaHeight(textArea);
     adjustTextareaWidth(textArea);
@@ -231,7 +228,6 @@ function enforceNoMaxLength(textarea) {
   textarea.addEventListener("input", function () {
     adjustHeight(this);
     adjustTextareaWidth(this);
-    saveTextToLocalStorage();
   });
 
   adjustHeight(textarea);
@@ -328,6 +324,112 @@ function applySavedColor() {
 document.addEventListener("DOMContentLoaded", function () {
   applySavedColor();
 });
+
+//--------------------------API連携------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  let albumId;
+
+  // アルバムIDを取得
+  fetch('https://develop-back.kotobum.com/api/user/album', {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(albums => {
+      albumId = albums.albumId;
+
+      if (!albumId) {
+        console.error('アルバムIDを取得できませんでした。');
+        return;
+      }
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
+
+      // アルバムデータ取得リクエスト
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showCover`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('取得したデータ:', data);
+
+      // テキストデータを反映
+      const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      if (textData && Array.isArray(textData)) {
+        textData.forEach(item => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+            adjustTextareaSize(textArea);
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+          }
+        });
+      } else {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      }
+
+      // 画像データを反映
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      if (imageData && Array.isArray(imageData)) {
+        imageData.forEach(item => {
+          const dropArea = document.getElementById(item.id);
+          if (dropArea && item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = 'Image';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            dropArea.appendChild(img);
+          } else {
+            console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
+          }
+        });
+      } else {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      }
+
+      // 色データを反映
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+      if (colors) {
+        const { backgroundColor, textColor } = colors;
+        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-color').style.color = textColor || '#000000';
+        console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
+      } else {
+        console.warn('色データが存在しません。');
+      }
+    })
+    .catch(error => {
+      console.error('データ取得エラー:', error);
+    });
+});
+
+
 
 //----------------- モーダルに関するJavaScript---------------------
 
