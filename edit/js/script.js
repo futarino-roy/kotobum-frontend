@@ -1277,14 +1277,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const colors = typeof data.colors === 'string' ? JSON.parse(data.colors) : data.colors;
 
       // データの存在チェック
-      if (!data || Object.keys(data).length === 0) {
-        console.warn('取得したデータが空です。');
-        return;
-      }
-
-      // テキストデータを表示
-      if (data.textData && Array.isArray(data.textData)) {
-        data.textData.forEach(item => {
+      if (!textData || !Array.isArray(textData)) {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      } else {
+        // テキストデータを表示
+        textData.forEach(item => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
@@ -1292,13 +1289,13 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
-      // 画像データを表示
-      if (data.imageData && Array.isArray(data.imageData)) {
-        data.imageData.forEach(item => {
+      if (!imageData || !Array.isArray(imageData)) {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      } else {
+        // 画像データを表示
+        imageData.forEach(item => {
           const dropArea = document.getElementById(item.id);
           if (dropArea && item.image) {
             const img = document.createElement('img');
@@ -1309,20 +1306,15 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('画像データが存在しないか、配列ではありません。');
       }
 
       // 背景色とテキスト色を設定
-      if (data.colors) {
-        const { backgroundColor, textColor } = data.colors;
+      if (colors) {
+        const { backgroundColor, textColor } = colors;
         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
         document.querySelector('.text-color').style.color = textColor || '#000000';
       } else {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => {
-      console.error('エラーが発生しました:', error.message);
-    });
 });
