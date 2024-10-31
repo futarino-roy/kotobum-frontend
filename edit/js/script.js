@@ -1271,7 +1271,6 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       console.log('取得したデータ:', data);
 
-      // 必要に応じてJSON文字列をパースする
       // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
