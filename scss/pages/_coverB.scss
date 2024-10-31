@@ -641,7 +641,7 @@
             clip-path: inset(36.5px 2px 41px 34px);
             @include mq('pc2-edit') {
               // clip-path: inset(31px 31px 35px 30px);
-              clip-path: inset(53.5px 3px 59px 50px);
+              clip-path: inset(70px 4px 75px 71px);
             }
             @include mq('pc-edit') {
               // clip-path: inset(16px 16px 21px 17px);
@@ -791,8 +791,8 @@
                   width: 13.5% !important;
                   height: 5% !important;
                   max-width: 35px;
-                  top: 14.5%;
-                  right: 79.5%;
+                  top: 17%;
+                  right: 75.5%;
                   text-align: center;
                   line-height: 0.9;
                   font-weight: bold;
@@ -813,8 +813,8 @@
                 }
                 &B-2 {
                   position: absolute;
-                  top: 20%;
-                  left: 2.5%;
+                  top: 21.5%;
+                  left: 7%;
                   // height: 3% !important;
                   // width: 16% !important;
 
@@ -855,7 +855,7 @@
                   position: absolute;
                   width: 40% !important;
                   height: 10% !important;
-                  top: 3%;
+                  top: 4%;
                   right: 5%;
                   font-weight: bold;
                   font-size: 1.1rem;
@@ -882,7 +882,7 @@
                   position: absolute;
                   width: 5% !important;
                   // height: auto;
-                  bottom: 3%;
+                  bottom: 4%;
                   right: -4%;
                   font-weight: bold;
                   font-size: 0.5rem !important;

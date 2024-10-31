@@ -4331,12 +4331,40 @@ input:checked + label::after {
     clip-path: inset(5% 7% 8% 7%);
   }
 }
+.preview .content .swiper-wrapper .swiper-slide_box-8 {
+  clip-path: inset(29px 24px 40px 24px);
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box-8 {
+    clip-path: inset(44px 37px 57px 37px);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box-8 {
+    clip-path: inset(22px 18px 31px 18px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box-8 {
+    width: 90%;
+    clip-path: inset(7% 8.5% 9.5% 8%);
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+  top: 6% !important;
+  justify-content: flex-start !important;
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+    top: 5% !important;
+  }
+}
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 88%;
   height: 90%;
   top: 16px;
-  opacity: 0.8;
+  opacity: 1;
   left: 6%;
   display: flex;
   flex-direction: column;
@@ -4356,21 +4384,31 @@ input:checked + label::after {
   align-items: center;
   justify-content: center;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
-  width: 60%;
-  height: 20%;
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 5%;
-  margin: 5% 0 5%;
+  height: 82%;
+  width: 100%;
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-3 {
-  width: 60%;
-  height: 20%;
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
+  width: 73%;
+  height: 60%;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  gap: 7.6%;
+  margin: 2.5% 0 2.5% 0;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-droparea12 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   gap: 5%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
@@ -4379,6 +4417,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn {
   position: absolute;
@@ -4391,7 +4430,7 @@ input:checked + label::after {
   width: 28px;
   height: 28px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 1;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn:hover {
   opacity: 1;
@@ -4445,6 +4484,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn {
   position: absolute;
@@ -4511,6 +4551,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn {
   position: absolute;
@@ -4577,6 +4618,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn {
   position: absolute;
@@ -4643,6 +4685,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn {
   position: absolute;
@@ -4709,6 +4752,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn {
   position: absolute;
@@ -4775,6 +4819,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn {
   position: absolute;
@@ -4841,6 +4886,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn {
   position: absolute;
@@ -4907,6 +4953,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn {
   position: absolute;
@@ -4973,6 +5020,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn {
   position: absolute;
@@ -5039,6 +5087,7 @@ input:checked + label::after {
   height: 25%;
   font-size: 1rem;
   border: none;
+  border-radius: 10%;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn {
   position: absolute;
@@ -5102,8 +5151,8 @@ input:checked + label::after {
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
   margin-top: 0%;
   position: relative;
-  width: 60%;
-  height: 25%;
+  width: 73%;
+  height: 35%;
   font-size: 1rem;
   border: none;
 }
@@ -5255,7 +5304,7 @@ input:checked + label::after {
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   resize: none;
   width: 60% !important;
   max-width: 60%;
@@ -5294,31 +5343,64 @@ input:checked + label::after {
     font-size: 1.2vw;
   }
 }
-.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-  margin: 0;
-  font-size: 1.4rem;
-  line-height: 1.5;
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+  transform: rotate(-8deg);
+  margin-left: -54%;
+  margin-bottom: 0.3%;
+  width: 34% !important;
+  text-align: center;
+  font-size: 0.6rem;
   font-weight: bold;
+  line-height: 1.2;
   color: #fef8f6;
 }
 @media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+    margin-bottom: 2%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+    margin-bottom: 3%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+    margin-bottom: 7%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+    margin-bottom: 3%;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #fef8f6;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 3.5vw;
+    font-size: 5.5vw;
   }
 }
 @media screen and (max-width: 480px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-1 {
-    font-size: 5vw;
+    font-size: 7vw;
   }
 }
 @media screen and (max-width: 380px) {
@@ -5327,31 +5409,33 @@ input:checked + label::after {
   }
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
+  font-family: "League Spartan", sans-serif;
   margin: 0;
   margin: 1% 0 5%;
-  font-size: 0.52rem;
+  font-size: 0.45rem;
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 0.4rem;
+    font-size: 0.33rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 1.3vw;
+    font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 480px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-2 {
-    font-size: 1.9vw;
+    font-size: 1.55vw;
   }
 }
 @media screen and (max-width: 380px) {
@@ -5360,33 +5444,33 @@ input:checked + label::after {
   }
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea1-3 {
-  margin: 0;
-  margin-top: 5%;
+  text-align: center;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
   color: #fef8f6;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 0.56rem;
+    font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea2, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
-    font-size: 2.5vw;
+    font-size: 2.6vw;
   }
 }
 @media screen and (max-width: 380px) {
@@ -5394,18 +5478,73 @@ input:checked + label::after {
     font-size: 1.8vw;
   }
 }
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3 {
+  max-height: 420px;
+  text-align: left;
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea5, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea7, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea9 {
+  margin-top: 30px;
+  font-size: 5.2px;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea5, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea7, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea9 {
+    font-size: 0.246rem;
+    max-height: 65%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea5, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea7, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea9 {
+    font-size: 0.49rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea5, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea7, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea9 {
+    font-size: 1.26vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea3, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea5, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea7, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea9 {
+    font-size: 1.4vw;
+    margin-top: 25px;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-2 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-2 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-2 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-2 {
+    font-size: 2.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea4-2 {
+    font-size: 2.5vw;
+  }
+}
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
   margin: 0;
-  position: absolute;
-  width: 63%;
-  color: #fef8f6;
   font-size: 0.65rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 0.55rem;
+    font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -5415,7 +5554,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-1 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -5434,20 +5573,21 @@ input:checked + label::after {
   font-size: 0.7rem;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 0.55rem;
+    font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
-    font-size: 1.8vw;
+    font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -5458,6 +5598,194 @@ input:checked + label::after {
 @media screen and (max-width: 380px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea6-2 {
     font-size: 1.8vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: center;
+  color: #fef8f6;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 2.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea8 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 2.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea10 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-1 {
+  font-family: "League Spartan", sans-serif;
+  min-width: 60%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-1 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-1 {
+    font-size: 2.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-1 {
+    font-size: 2.5vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-2 {
+  min-height: 50%;
+  max-height: 30%;
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
+  font-size: 0.33rem;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-2 {
+    font-size: 0.49rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-2 {
+    font-size: 0.245rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-2 {
+    font-size: 1.27vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea11-2 {
+    font-size: 1.4vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-1 {
+  background-color: coral;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-1 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-1 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-1 {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-1 {
+    font-size: 3vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-2 {
+  height: 90% !important;
+  font-size: 0.25rem;
+  padding-top: 4%;
+  text-align: left;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-2 {
+    font-size: 0.19rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-2 {
+    font-size: 0.38rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-2 {
+    font-size: 0.955vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-2 {
+    font-size: 1.1vw;
+  }
+}
+.preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-3 {
+  position: absolute;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+  font-size: 12px;
+  margin-top: 131.5%;
+}
+@media screen and (max-width: 1200px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-3 {
+    margin-top: 130.5%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-3 {
+    font-size: 1.2rem;
+    line-height: 0.9;
+    margin-top: 132.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea12-3 {
+    line-height: 0.7;
+    font-size: 3vw;
+    margin-top: 133%;
   }
 }
 .preview .button-grid {
@@ -7096,7 +7424,7 @@ input:checked + label::after {
   width: 13.5%;
   height: 4.5%;
   max-width: 35px;
-  top: 16.5%;
+  top: 16.3%;
   left: 77%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
@@ -7820,7 +8148,7 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(53.5px 3px 59px 50px);
+    clip-path: inset(70px 4px 75px 71px);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -7967,8 +8295,8 @@ input:checked + label::after {
   width: 13.5% !important;
   height: 5% !important;
   max-width: 35px;
-  top: 14.5%;
-  right: 79.5%;
+  top: 17%;
+  right: 75.5%;
   text-align: center;
   line-height: 0.9;
   font-weight: bold;
@@ -7997,8 +8325,8 @@ input:checked + label::after {
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
   position: absolute;
-  top: 20%;
-  left: 2.5%;
+  top: 21.5%;
+  left: 7%;
   margin: 0;
   font-size: 0.4rem;
   line-height: 1.5;
@@ -8040,7 +8368,7 @@ input:checked + label::after {
   position: absolute;
   width: 40% !important;
   height: 10% !important;
-  top: 3%;
+  top: 4%;
   right: 5%;
   font-weight: bold;
   font-size: 1.1rem;
@@ -8075,7 +8403,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 3%;
+  bottom: 4%;
   right: -4%;
   font-weight: bold;
   font-size: 0.5rem !important;
@@ -8448,8 +8776,8 @@ input:checked + label::after {
   width: 13.5%;
   height: 4.5%;
   max-width: 35px;
-  top: 16.5%;
-  left: 74%;
+  top: 16.3%;
+  left: 76.7%;
   text-align: center;
   line-height: 0.9;
   font-weight: bold;
@@ -8581,7 +8909,7 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
   }
 }
 @media screen and (max-width: 900px) {

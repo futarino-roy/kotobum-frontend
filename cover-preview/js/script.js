@@ -185,6 +185,10 @@ function adjustTextareaHeight(textarea) {
   textarea.style.height = "auto"; // 高さをリセット
   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
 }
+function adjustTextareaWidth(textarea) {
+  textarea.style.width = "auto"; // 高さをリセット
+  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて高さを調整
+}
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
@@ -199,6 +203,7 @@ function loadTextForPreview() {
 
     // テキストエリアの高さを調整
     adjustTextareaHeight(textArea);
+    adjustTextareaWidth(textArea);
   });
 }
 
