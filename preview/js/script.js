@@ -319,13 +319,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // 色データを反映
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
+        const formattedBackgroundColor = formatColor(backgroundColor || '#ffffff');
+        const formattedTextColor = formatColor(textColor || '#000000');
+
+        document.querySelector('.uniqueColor').style.backgroundColor = formattedBackgroundColor;
+        document.querySelector('.text-color').style.color = formattedTextColor;
+
+        console.log(`背景色: ${formattedBackgroundColor}, テキスト色: ${formattedTextColor}`);
       } else {
         console.warn('色データが存在しません。');
       }
+
     })
     .catch(error => {
       console.error('データ取得エラー:', error);
