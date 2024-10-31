@@ -318,16 +318,42 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('画像データが存在しないか、配列ではありません。');
       }
 
+      // RGB形式からHEX形式に変換する関数
+      function rgbToHex(r, g, b) {
+        return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
+      }
+
+      // ショートHEX形式 (#RGB) をフルHEX形式 (#RRGGBB) に変換する関数
+      function expandShortHex(shortHex) {
+        return `#${shortHex[1]}${shortHex[1]}${shortHex[2]}${shortHex[2]}${shortHex[3]}${shortHex[3]}`;
+      }
+
+      // 色データをHEX形式に変換する関数
+      function formatColor(color) {
+        if (/^rgb\(/.test(color)) {
+          let match = color.match(/\d+/g);
+          return match ? rgbToHex(Number(match[0]), Number(match[1]), Number(match[2])) : color;
+        } else if (/^#[0-9A-Fa-f]{3}$/.test(color)) {
+          return expandShortHex(color);
+        }
+        return color; // 既にHEX形式ならそのまま返す
+      }
+
       // 色データを反映
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
-        console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
+        const formattedBackgroundColor = formatColor(backgroundColor || '#ffffff');
+        const formattedTextColor = formatColor(textColor || '#000000');
+
+        document.querySelector('.uniqueColor').style.backgroundColor = formattedBackgroundColor;
+        document.querySelector('.text-color').style.color = formattedTextColor;
+
+        console.log(`背景色: ${formattedBackgroundColor}, テキスト色: ${formattedTextColor}`);
       } else {
         console.warn('色データが存在しません。');
       }
+
     })
     .catch(error => {
       console.error('データ取得エラー:', error);
