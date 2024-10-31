@@ -8797,7 +8797,7 @@ input:checked + label::after {
   resize: none; /* ユーザーがサイズを変更できないようにする */
   white-space: nowrap; /* 改行をさせない設定 */
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
   width: 13.5%;
@@ -8812,26 +8812,26 @@ input:checked + label::after {
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 3vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-1 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 3vw;
   }
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
   margin: 0;
   position: absolute;
   width: 18% !important;
@@ -8849,31 +8849,31 @@ input:checked + label::after {
   word-break: normal; /* 単語の途中での改行を無効にする */
 }
 @media screen and (max-width: 1200px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.3rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 1.2vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-2 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.8vw;
   }
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
   margin: 0;
   position: absolute;
   width: 40% !important;
@@ -8885,31 +8885,31 @@ input:checked + label::after {
   text-align: left;
 }
 @media screen and (max-width: 1200px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 3.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 4.8vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-3 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 2.7vw;
   }
 }
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
   margin: 0;
   position: absolute;
   width: 5% !important;
@@ -8930,27 +8930,27 @@ input:checked + label::after {
   word-break: normal; /* 単語の途中での改行を無効にする */
 }
 @media screen and (max-width: 1200px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
     font-size: 0.3rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
     font-size: 0.7rem !important;
   }
 }
 @media screen and (max-width: 900px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
     font-size: 1.4vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
     font-size: 2vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaA-4 {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
     font-size: 1.5vw;
   }
 }
