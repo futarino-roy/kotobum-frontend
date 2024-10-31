@@ -207,15 +207,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// サーバーから画像データを取得して表示
-function loadAllImages() {
+// アルバムのボディデータをサーバーから取得し表示する
+function loadAlbumBody(albumId) {
   const token = localStorage.getItem('token');
   if (!token) {
     console.error('認証トークンが見つかりません。ログインしてください。');
     return;
   }
 
-  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
+  fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showBody`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -223,20 +223,50 @@ function loadAllImages() {
     }
   })
     .then(response => response.json())
-    .then(imageData => {
-      const emptyElements = document.querySelectorAll('.empty');
-      emptyElements.forEach((dropArea) => {
-        const imageInfo = imageData.find(item => item.id === dropArea.id);
-        if (imageInfo && imageInfo.image) {
-          const img = new Image();
-          img.src = imageInfo.image;
-          img.classList.add('draggable-image');
-          dropArea.innerHTML = ''; // 既存の内容をクリア
-          dropArea.appendChild(img); // 画像をドロップエリアに追加
-        }
-      });
+    .then(albumData => {
+      if (albumData && albumData.images && albumData.texts && albumData.colors) {
+        displayImages(albumData.images);
+        displayTexts(albumData.texts);
+        applyColors(albumData.colors);
+      }
     })
-    .catch(error => console.error('画像のロードに失敗しました:', error));
+    .catch(error => console.error('アルバムデータのロードに失敗しました:', error));
+}
+
+// 画像データをプレビューに表示
+function displayImages(images) {
+  const emptyElements = document.querySelectorAll('.empty');
+  emptyElements.forEach((dropArea) => {
+    const imageInfo = images.find(item => item.id === dropArea.id);
+    if (imageInfo && imageInfo.image) {
+      const img = new Image();
+      img.src = imageInfo.image;
+      img.classList.add('draggable-image');
+      dropArea.innerHTML = ''; // 既存の内容をクリア
+      dropArea.appendChild(img); // 画像をドロップエリアに追加
+    }
+  });
+}
+
+// テキストデータをプレビューに表示
+function displayTexts(texts) {
+  const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+  textAreas.forEach((textArea) => {
+    const textInfo = texts.find(item => item.id === textArea.id);
+    if (textInfo) {
+      textArea.value = textInfo.text;
+      adjustTextareaSize(textArea);
+    }
+  });
+}
+
+// 色データを適用
+function applyColors(colors) {
+  if (colors) {
+    const { backgroundColor, textColor } = colors;
+    document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+    document.querySelector('.text-color').style.color = textColor || '#000000';
+  }
 }
 
 // テキストエリアの高さと幅を自動調整する関数
@@ -247,67 +277,12 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
-// サーバーからテキストデータを取得してプレビューに表示
-function loadTextForPreview() {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    console.error('認証トークンが見つかりません。ログインしてください。');
-    return;
-  }
-
-  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    }
-  })
-    .then(response => response.json())
-    .then(textData => {
-      const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
-      textAreas.forEach((textArea) => {
-        const textInfo = textData.find(item => item.id === textArea.id);
-        if (textInfo) {
-          textArea.value = textInfo.text;
-          adjustTextareaSize(textArea);
-        }
-      });
-    })
-    .catch(error => console.error('テキストのロードに失敗しました:', error));
-}
-
-// サーバーから色データを取得して適用
-function applySavedColor() {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    console.error('認証トークンが見つかりません。ログインしてください。');
-    return;
-  }
-
-  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    }
-  })
-    .then(response => response.json())
-    .then(colors => {
-      if (colors) {
-        const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
-      }
-    })
-    .catch(error => console.error('色の適用に失敗しました:', error));
-}
-
 // ドキュメントが読み込まれたときの初期処理
 document.addEventListener('DOMContentLoaded', function () {
-  loadAllImages();       // サーバーから画像をロード
-  loadTextForPreview();   // サーバーからテキストをロード
-  applySavedColor();      // サーバーから色データを適用
+  const albumId = 'your_album_id'; // 必要なアルバムIDに置き換える
+  loadAlbumBody(albumId); // サーバーからアルバムデータをロード
 });
+
 
 
 //----------------- モーダルに関するJavaScript---------------------

@@ -1606,8 +1606,32 @@
                   text-align: center;
                 }
 
+                &4-1,
+                &4-2 {
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+                  text-align: center;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.3vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
+
                 &2,
-                &4,
                 &8,
                 &10 {
                   font-size: 0.6rem;
