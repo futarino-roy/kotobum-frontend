@@ -32,66 +32,21 @@ document.getElementById("editBack").addEventListener("click", function () {
 });
 
 // 画像の挿入 indexedDB
-let myImageDB1;
+// let myImageDB1; // この行を削除しました
 
 // IndexedDBの初期化
 function initIndexedDBForPreview() {
-  const request = indexedDB.open("NewImageDatabase1", 1);
-
-  request.onsuccess = function (event) {
-    myImageDB1 = event.target.result;
-    console.log("IndexedDB connected for preview.");
-    restoreDropAreasInPreview(); // プレビューページのドロップエリアに画像を復元
-  };
-
-  request.onerror = function (event) {
-    console.error("Error connecting to IndexedDB:", event.target.errorCode);
-  };
+  // ここでの処理は削除されました
+  console.error("Image saving functionality has been removed.");
 }
 
 // ドロップエリアに画像を復元する
 function restoreDropAreasInPreview() {
   const dropAreas = document.querySelectorAll(".empty"); // すべてのドロップエリアを取得
   dropAreas.forEach((dropArea) => {
-    // 各ドロップエリアのIDを使ってIndexedDBから画像を取得
-    getImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        // 画像要素を作成して表示
-        const img = document.createElement("img");
-        img.src = imageData;
-        img.style.width = "100%";
-        img.style.height = "100%";
-
-        dropArea.innerHTML = ""; // 既存の内容をクリア
-        dropArea.appendChild(img); // 画像をドロップエリアに追加
-      }
-    });
+    // 画像を復元する処理は削除されました
+    console.log("Restoration of images from IndexedDB has been removed.");
   });
-}
-
-// IndexedDBから画像を取得する
-function getImageFromIndexedDB(id, callback) {
-  if (!myImageDB1) {
-    console.error("Database not initialized.");
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(["images"]);
-  const store = transaction.objectStore("images");
-  const request = store.get(id);
-
-  request.onsuccess = function (event) {
-    const result = event.target.result;
-    if (result) {
-      callback(result.data); // 保存された画像データをコールバック関数で返す
-    } else {
-      console.log("No image found with ID:", id);
-    }
-  };
-
-  request.onerror = function (event) {
-    console.error("Error retrieving image:", event.target.errorCode);
-  };
 }
 
 // ページが読み込まれたときにIndexedDBを初期化
@@ -100,56 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 画像のドラッグ indexedDB
-let myimageDB2;
-const request = indexedDB.open("ImageDB", 1);
+// let myimageDB2; // この行を削除しました
+// const request = indexedDB.open("ImageDB", 1); // この行を削除しました
 
-request.onupgradeneeded = function (event) {
-  myimageDB2 = event.target.result;
-  if (!myimageDB2.objectStoreNames.contains("images")) {
-    myimageDB2.createObjectStore("images", { keyPath: "id" });
-  }
-};
-
-request.onsuccess = function (event) {
-  myimageDB2 = event.target.result;
-  loadAllImages(); // ページロード時にすべての画像をロード
-};
-
-request.onerror = function (event) {
-  console.error("IndexedDBに接続できませんでした:", event.target.error);
-};
-
-// IndexedDBから画像を取得
-function loadImageFromIndexedDB(containerId, callback) {
-  const transaction = myimageDB2.transaction(["images"], "readonly");
-  const store = transaction.objectStore("images");
-  const request = store.get(containerId);
-
-  request.onsuccess = function (event) {
-    callback(event.target.result ? event.target.result.data : null);
-  };
-
-  request.onerror = function (event) {
-    console.error("画像の取得に失敗しました:", event.target.error);
-    callback(null);
-  };
-}
+// 画像を取得する処理は削除されました
 
 // すべての画像をロードする
 function loadAllImages() {
   const emptyElements = document.querySelectorAll(".empty");
   emptyElements.forEach(function (dropArea) {
-    loadImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        dropArea.innerHTML = ""; // 既存の内容をクリア
-        let img = new Image();
-        img.src = imageData; // 画像データURLを設定
-        img.classList.add("draggable-image");
-        dropArea.appendChild(img);
-      }
-    });
+    // 画像をロードする処理は削除されました
+    console.log("Loading images from IndexedDB has been removed.");
   });
 }
+
+// ドキュメントが読み込まれた後の処理
+document.addEventListener("DOMContentLoaded", function () {
+  loadAllImages(); // ページがロードされたときにすべての画像を表示
+
+  // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
+});
 
 // ドキュメントが読み込まれた後の処理
 document.addEventListener("DOMContentLoaded", function () {
@@ -168,11 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dropAreas.forEach((dropAreaContainer) => {
       // IDからサイズの情報を取得
       const dropAreaId = dropAreaContainer.id;
-      const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+      // localStorageからサイズの情報を取得する処理を削除
+      // const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
 
-      if (dropAreaSize) {
-        dropAreaContainer.classList.add(dropAreaSize);
-      }
+      // dropAreaSizeが存在するかをチェックする処理を削除
+      // if (dropAreaSize) {
+      //   dropAreaContainer.classList.add(dropAreaSize);
+      // }
     });
   }
 
@@ -185,6 +112,7 @@ function adjustTextareaHeight(textarea) {
   textarea.style.height = "auto"; // 高さをリセット
   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
 }
+
 function adjustTextareaWidth(textarea) {
   textarea.style.width = "auto"; // 幅をリセット
   textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて幅を調整
@@ -198,7 +126,7 @@ function loadTextForPreview() {
   );
 
   textAreas.forEach((textArea) => {
-    // テキストエリアの高さを調整
+    // テキストエリアの高さと幅を調整
     adjustTextareaHeight(textArea);
     adjustTextareaWidth(textArea);
   });
@@ -233,6 +161,7 @@ function enforceNoMaxLength(textarea) {
   adjustHeight(textarea);
   adjustTextareaWidth(textarea);
 }
+
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
@@ -428,8 +357,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('データ取得エラー:', error);
     });
 });
-
-
 
 //----------------- モーダルに関するJavaScript---------------------
 
