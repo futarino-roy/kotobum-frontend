@@ -215,7 +215,7 @@ function loadAllImages() {
     return;
   }
 
-  fetch('https://develop-back.kotobum.com/api/user/images', {
+  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -255,7 +255,7 @@ function loadTextForPreview() {
     return;
   }
 
-  fetch('https://develop-back.kotobum.com/api/user/texts', {
+  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -284,7 +284,7 @@ function applySavedColor() {
     return;
   }
 
-  fetch('https://develop-back.kotobum.com/api/user/colors', {
+  fetch('https://develop-back.kotobum.com/api/albums/${albumId}/showBody', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
