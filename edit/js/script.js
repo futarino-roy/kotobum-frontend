@@ -1271,6 +1271,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       console.log('取得したデータ:', data);
 
+      // 必要に応じてJSON文字列をパースする
+      const textData = typeof data.textData === 'string' ? JSON.parse(data.textData) : data.textData;
+      const imageData = typeof data.imageData === 'string' ? JSON.parse(data.imageData) : data.imageData;
+      const colors = typeof data.colors === 'string' ? JSON.parse(data.colors) : data.colors;
+
       // データの存在チェック
       if (!data || Object.keys(data).length === 0) {
         console.warn('取得したデータが空です。');
