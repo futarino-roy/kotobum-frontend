@@ -3232,7 +3232,7 @@ input:checked + label::after {
   margin: 2.5% 0 2.5% 0;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .drop24 {
-  width: 50%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -3836,17 +3836,17 @@ input:checked + label::after {
   max-height: 70%;
   min-height: 70%;
   writing-mode: vertical-rl;
-  font-size: 0.4rem;
+  font-size: 0.35rem;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-    font-size: 0.3rem;
+    font-size: 0.26rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-    font-size: 0.53rem;
+    font-size: 0.52rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -3933,17 +3933,17 @@ input:checked + label::after {
   margin-bottom: 2.5%;
   margin-top: 2.5%;
   writing-mode: vertical-rl;
-  font-size: 0.35rem;
+  font-size: 0.37rem;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
-    font-size: 0.26rem;
+    font-size: 0.28rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
-    font-size: 0.53rem;
+    font-size: 0.54rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -3988,9 +3988,9 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
   height: 65% !important;
-  width: 55% !important;
+  width: 30% !important;
   writing-mode: vertical-rl;
-  font-size: 0.3rem;
+  font-size: 0.26rem;
   display: flex;
   align-items: center; /* 縦方向の中央揃え */
   justify-content: center; /* 横方向の中央揃え */
@@ -3998,12 +3998,12 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
-    font-size: 0.2rem;
+    font-size: 0.19rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
-    font-size: 0.35rem;
+    font-size: 0.39rem;
   }
 }
 @media screen and (max-width: 900px) {

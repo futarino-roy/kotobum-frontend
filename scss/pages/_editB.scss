@@ -823,7 +823,7 @@
                 }
 
                 .drop24 {
-                  width: 50%;
+                  width: 45%;
                   height: 100%;
                   display: flex;
                   flex-direction: column;
@@ -1594,15 +1594,15 @@
                   max-height: 70%;
                   min-height: 70%;
                   writing-mode: vertical-rl;
-                  font-size: 0.4rem;
+                  font-size: 0.35rem;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.3rem;
+                    font-size: 0.26rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.53rem;
+                    font-size: 0.52rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1737,15 +1737,15 @@
                   margin-bottom: 2.5%;
                   margin-top: 2.5%;
                   writing-mode: vertical-rl;
-                  font-size: 0.35rem;
+                  font-size: 0.37rem;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.26rem;
+                    font-size: 0.28rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.53rem;
+                    font-size: 0.54rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1787,20 +1787,20 @@
                 }
                 &24-2 {
                   height: 65% !important;
-                  width: 55% !important;
+                  width: 30% !important;
                   writing-mode: vertical-rl;
-                  font-size: 0.3rem;
+                  font-size: 0.26rem;
                   display: flex;
                   align-items: center; /* 縦方向の中央揃え */
                   justify-content: center; /* 横方向の中央揃え */
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.2rem;
+                    font-size: 0.19rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.35rem;
+                    font-size: 0.39rem;
                   }
 
                   @include mq('tab-edit') {
