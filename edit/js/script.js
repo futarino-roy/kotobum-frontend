@@ -1272,9 +1272,15 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('取得したデータ:', data);
 
       // 必要に応じてJSON文字列をパースする
-      const textData = typeof data.textData === 'string' ? JSON.parse(data.textData) : data.textData;
-      const imageData = typeof data.imageData === 'string' ? JSON.parse(data.imageData) : data.imageData;
-      const colors = typeof data.colors === 'string' ? JSON.parse(data.colors) : data.colors;
+      // 必要に応じてJSON文字列をパースして配列に変換
+      const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+
+      console.log(textData); // テキストデータの配列
+      console.log(imageData); // 画像データの配列
+      console.log(colors);    // 色情報のオブジェクト
+
 
       // データの存在チェック
       if (!textData || !Array.isArray(textData)) {
