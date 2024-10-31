@@ -107,15 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
   applyBorders();
 });
 
-// テキスト 柔軟版
-function adjustTextareaHeight(textarea) {
-  textarea.style.height = "auto"; // 高さをリセット
-  textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
-}
+function adjustTextareaSize(textarea) {
+  // 高さをリセットしてから内容に応じて高さを調整
+  textarea.style.height = "auto";
+  textarea.style.height = `${textarea.scrollHeight}px`;
 
-function adjustTextareaWidth(textarea) {
-  textarea.style.width = "auto"; // 幅をリセット
-  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて幅を調整
+  // 幅をリセットしてから内容に応じて幅を調整
+  textarea.style.width = "auto";
+  textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
