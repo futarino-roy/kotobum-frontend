@@ -112,33 +112,9 @@ const showDrawerContent = (contentId) => {
 };
 
 // 画像のアップロードと挿入
-let myImageDB1;
 let selectedImage = null;
 
-// 新しいIndexedDBの初期化
-function initNewIndexedDB() {
-  const request = indexedDB.open('NewImageDatabase1', 1);
-
-  request.onupgradeneeded = function (event) {
-    myImageDB1 = event.target.result;
-    if (!myImageDB1.objectStoreNames.contains('images')) {
-      myImageDB1.createObjectStore('images', { keyPath: 'id' });
-    }
-  };
-
-  request.onsuccess = function (event) {
-    myImageDB1 = event.target.result;
-    console.log('New IndexedDB initialized.');
-    restoreDropAreas();
-  };
-
-  request.onerror = function (event) {
-    console.error('Error initializing IndexedDB:', event.target.errorCode);
-  };
-}
-
-initNewIndexedDB();
-
+// ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function () {
   addTouchListenerToDropAreas();
   document.getElementById('saveButton').addEventListener('click', function () {
@@ -266,7 +242,14 @@ function addTouchListenerToDropAreas() {
       if (selectedImage) {
         console.log('Selected image:', selectedImage);
         insertImageToDropArea(this);
+      } else {
+        // 画像以外のクリックの場合はボタンを非表示
+        document.querySelectorAll('.empty.with-buttons').forEach(area => {
+          area.classList.add('hide-buttons');
+        });
       }
+      // クリックされたドロップエリアのボタンを表示する
+      this.classList.remove('hide-buttons');
     });
   });
 }
@@ -289,7 +272,6 @@ function insertImageToDropArea(dropArea) {
   deleteButton.addEventListener('click', function (e) {
     e.stopPropagation();
     dropArea.innerHTML = '';
-    deleteImageFromNewIndexedDB(dropArea.id);
   });
 
   const cropButton = document.createElement('button');
@@ -306,11 +288,6 @@ function insertImageToDropArea(dropArea) {
 
   selectedImage.classList.remove('selected');
   selectedImage = null;
-
-  saveImageToNewIndexedDB(dropArea.id, newImage.src);
-
-  // ボタンを表示するためのクラスを削除
-  dropArea.classList.remove('hide-buttons');
 }
 
 // ドキュメント内でクリックしたときの処理
@@ -323,140 +300,11 @@ document.addEventListener('click', function (e) {
   }
 });
 
-// ドロップエリア内でクリックしたときはボタンが表示されるように設定
-function addTouchListenerToDropAreas() {
-  const dropAreas = document.querySelectorAll('.empty');
-  dropAreas.forEach(dropArea => {
-    dropArea.addEventListener('touchstart', function (e) {
-      e.preventDefault();
-      if (selectedImage) {
-        console.log('Selected image:', selectedImage);
-        insertImageToDropArea(this);
-      }
-    });
-
-    dropArea.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (selectedImage) {
-        console.log('Selected image:', selectedImage);
-        insertImageToDropArea(this);
-      } else {
-        // 画像以外のクリックの場合はボタンを非表示
-        document.querySelectorAll('.empty.with-buttons').forEach(area => {
-          area.classList.add('hide-buttons');
-        });
-      }
-      // クリックされたドロップエリアのボタンを表示する
-      this.classList.remove('hide-buttons');
-    });
-  });
-}
-
-function saveImageToNewIndexedDB(id, imageData) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  store.put({ id: id, data: imageData });
-
-  transaction.oncomplete = function () {
-    console.log('Image saved to new IndexedDB.');
-  };
-
-  transaction.onerror = function (event) {
-    console.error('Error saving image:', event.target.errorCode);
-  };
-}
-
-function getImageFromNewIndexedDB(id, callback) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images']);
-  const store = transaction.objectStore('images');
-  const request = store.get(id);
-
-  request.onsuccess = function (event) {
-    const result = event.target.result;
-    if (result) {
-      callback(result.data);
-    } else {
-      console.log('No image found with ID:', id);
-    }
-  };
-
-  request.onerror = function (event) {
-    console.error('Error retrieving image:', event.target.errorCode);
-  };
-}
-
-function restoreDropAreas() {
-  const dropAreas = document.querySelectorAll('.empty');
-  dropAreas.forEach(dropArea => {
-    getImageFromNewIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        const newImage = document.createElement('img');
-        newImage.src = imageData;
-        newImage.style.width = '100%';
-        newImage.style.height = '100%';
-
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('delete-button');
-        deleteButton.addEventListener('click', function (e) {
-          e.stopPropagation();
-          dropArea.innerHTML = '';
-          deleteImageFromNewIndexedDB(dropArea.id);
-        });
-
-        const cropButton = document.createElement('button');
-        cropButton.classList.add('crop-button');
-        cropButton.addEventListener('click', function (e) {
-          e.stopPropagation();
-          openCroppieModal(dropArea);
-        });
-
-        dropArea.innerHTML = '';
-        dropArea.appendChild(newImage);
-        dropArea.appendChild(deleteButton);
-        dropArea.appendChild(cropButton);
-        dropArea.classList.add('with-buttons');
-        dropArea.classList.remove('hide-buttons'); // Restore visibility
-      }
-    });
-  });
-}
-
-function deleteImageFromNewIndexedDB(id) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
-
-  const transaction = myImageDB1.transaction(['images'], 'readwrite');
-  const store = transaction.objectStore('images');
-  const request = store.delete(id);
-
-  request.onsuccess = function () {
-    console.log('Image deleted from new IndexedDB:', id);
-  };
-
-  request.onerror = function (event) {
-    console.error('Error deleting image:', event.target.errorCode);
-  };
-}
-
 function openCroppieModal(dropArea) {
   // Croppieモーダルの表示処理
   console.log('Croppie modal open for drop area:', dropArea);
 }
 
-
-// // 画像のドラッグ＆ドロップ indexedDBに保存
 // ドラッグオーバー時の処理
 function handleDragOver(event) {
   event.preventDefault();
@@ -468,97 +316,8 @@ function handleDragLeave(event) {
   this.style.backgroundColor = "transparent"; // ドラッグが離れたときの背景色リセット
 }
 
-// IndexedDBへの接続
-let myimageDB2;
-const request = indexedDB.open("ImageDB", 1);
-
-request.onupgradeneeded = function (event) {
-  myimageDB2 = event.target.result;
-  if (!myimageDB2.objectStoreNames.contains("images")) {
-    myimageDB2.createObjectStore("images", { keyPath: "id" });
-  }
-};
-
-request.onsuccess = function (event) {
-  myimageDB2 = event.target.result;
-
-  // IndexedDB接続が成功した場合にのみ画像をロードする
-  if (myimageDB2) {
-    loadAllImages();
-  } else {
-    console.error("IndexedDBへの接続が失敗しました。");
-  }
-};
-
-request.onerror = function (event) {
-  console.error("IndexedDBに接続できませんでした:", event.target.error);
-};
-
-// 画像をIndexedDBに保存
-function saveImageToIndexedDB(imageData, containerId) {
-  const transaction = myimageDB2.transaction(["images"], "readwrite");
-  const store = transaction.objectStore("images");
-  const request = store.put({ id: containerId, data: imageData });
-
-  request.onsuccess = function () {
-    console.log("画像がIndexedDBに保存されました:", containerId);
-  };
-
-  request.onerror = function (event) {
-    console.error("画像の保存に失敗しました:", event.target.error);
-  };
-}
-
-// IndexedDBから画像を取得
-function loadImageFromIndexedDB(containerId, callback) {
-  const transaction = myimageDB2.transaction(["images"], "readonly");
-  const store = transaction.objectStore("images");
-  const request = store.get(containerId);
-
-  request.onsuccess = function (event) {
-    callback(event.target.result ? event.target.result.data : null);
-  };
-
-  request.onerror = function (event) {
-    console.error("画像の取得に失敗しました:", event.target.error);
-    callback(null);
-  };
-}
-
-// IndexedDBから画像を削除
-function clearImageFromIndexedDB(containerId) {
-  const transaction = myimageDB2.transaction(["images"], "readwrite");
-  const store = transaction.objectStore("images");
-  const request = store.delete(containerId);
-
-  request.onsuccess = function () {
-    console.log("画像がIndexedDBから削除されました:", containerId);
-  };
-
-  request.onerror = function (event) {
-    console.error("画像の削除に失敗しました:", event.target.error);
-  };
-}
-
-// すべての画像をロードする
-function loadAllImages() {
-  const emptyElements = document.querySelectorAll(".empty");
-  emptyElements.forEach(function (dropArea) {
-    loadImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        dropArea.innerHTML = ""; // 既存の内容をクリア
-        let img = new Image();
-        img.src = imageData; // 画像データURLを設定
-        img.classList.add("draggable-image");
-        img.onclick = function () {
-          showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
-        };
-        dropArea.appendChild(img);
-        addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
-      }
-    });
-  });
-}
+// 画像をロードする（IndexedDBを削除したため空の関数に）
+function loadAllImages() { }
 
 // ドロップ時の処理
 function handleDrop(event) {
@@ -579,9 +338,6 @@ function handleDrop(event) {
       };
       this.appendChild(img);
       addButtons(this); // 削除ボタンとトリミングボタンを追加
-
-      // IndexedDBに画像データを保存
-      saveImageToIndexedDB(e.target.result, this.id);
     }.bind(this);
     fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
   }
@@ -604,9 +360,6 @@ function handleTouchDrop(event) {
         img.src = e.target.result; // 画像データURLを設定
         dropArea.appendChild(img);
         addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
-
-        // IndexedDBに画像データを保存
-        saveImageToIndexedDB(e.target.result, dropArea.id);
       };
       fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
     }
@@ -615,7 +368,6 @@ function handleTouchDrop(event) {
 
 // 削除ボタンとトリミングボタンの追加
 function addButtons(container) {
-  // 削除ボタンが既に存在するか確認
   if (!container.querySelector(".delete-btn")) {
     let deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-btn");
@@ -625,14 +377,10 @@ function addButtons(container) {
       container.classList.remove("selected"); // 選択状態を解除
       container.style.backgroundColor = "transparent"; // 背景色をリセット
       hideButtons(); // ボタンを非表示にする
-
-      // IndexedDBから画像データを削除
-      clearImageFromIndexedDB(container.id);
     };
     container.appendChild(deleteButton);
   }
 
-  // トリミングボタンが既に存在するか確認
   if (!container.querySelector(".crop-btn")) {
     let cropButton = document.createElement("button");
     cropButton.classList.add("crop-btn");
@@ -660,16 +408,15 @@ function hideButtons() {
 }
 
 // トリミングモーダル処理
-let croppieInstance; // Croppie インスタンスを保持
+let croppieInstance;
 
 function openCroppieModal(container) {
   const croppieModal = document.getElementById("croppieModal");
   const croppieContainer = document.getElementById("croppie-container");
   croppieModal.style.display = "block";
 
-  // Croppieの設定
   if (croppieInstance) {
-    croppieInstance.destroy(); // 既存のインスタンスを破棄
+    croppieInstance.destroy();
   }
 
   croppieInstance = new Croppie(croppieContainer, {
@@ -684,7 +431,6 @@ function openCroppieModal(container) {
     url: img.src,
   });
 
-  // トリミングボタンのイベント
   document.getElementById("crop-button").onclick = function () {
     croppieInstance
       .result({
@@ -695,8 +441,7 @@ function openCroppieModal(container) {
       })
       .then(function (croppedImageData) {
         container.querySelector("img").src = croppedImageData;
-        saveImageToIndexedDB(croppedImageData, container.id); // トリミング後の画像を保存
-        croppieModal.style.display = "none"; // モーダルを閉じる
+        croppieModal.style.display = "none";
       });
   };
 }
@@ -711,32 +456,21 @@ document.addEventListener("DOMContentLoaded", function () {
     dropArea.ontouchend = handleTouchDrop;
   });
 
-  // キャンセルボタンのクリックイベントを追加
   document.getElementById("cancel-button").onclick = function () {
-    document.getElementById("croppieModal").style.display = "none"; // モーダルを閉じる
+    document.getElementById("croppieModal").style.display = "none";
   };
 
-  // ボタンを非表示にするクリックイベントの設定
   document.addEventListener("click", function (event) {
     if (!event.target.closest(".delete-btn, .crop-btn, .draggable-image")) {
-      hideButtons(); // 画像外のクリックでボタンを非表示
+      hideButtons();
     }
   });
 });
 
-// テキストエリアの内容の保存と高さと幅を自動調整 ローカルストレージに保存
-function saveTextToLocalStorage() {
+// テキストエリアの内容の保存と高さと幅を自動調整
+function saveText() {
   document.querySelectorAll(".text-empty").forEach((textArea) => {
     const id = textArea.id;
-    localStorage.setItem(id, textArea.value);
-  });
-}
-
-// テキストエリアの内容をローカルストレージから読み込む関数
-function loadTextFromLocalStorage() {
-  document.querySelectorAll(".text-empty").forEach((textArea) => {
-    const id = textArea.id;
-    textArea.value = localStorage.getItem(id) || "";
   });
 }
 
@@ -758,7 +492,6 @@ function enforceNoMaxLength(textarea) {
   textarea.addEventListener("input", function () {
     adjustHeight(this);
     adjustTextareaWidth(this);
-    saveTextToLocalStorage();
   });
 
   adjustHeight(textarea);
@@ -767,8 +500,6 @@ function enforceNoMaxLength(textarea) {
 
 // ドキュメント読み込み時の処理
 document.addEventListener("DOMContentLoaded", function () {
-  loadTextFromLocalStorage();
-
   // テキストエリアごとに必要な処理を実行
   document.querySelectorAll(".text-empty").forEach((textarea) => {
     enforceNoMaxLength(textarea);
@@ -781,6 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .forEach((textarea) => adjustHeight(textarea));
   }, 100);
 });
+
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
   const textEmptys = document.querySelectorAll('.text-empty');
@@ -804,75 +536,57 @@ document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
   function adjustLineHeight(textArea) {
-    // テキストエリアの高さを取得
     const textAreaHeight = textArea.clientHeight;
-
-    // フォントサイズを取得 (必要に応じて固定)
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-
-    // line-height をテキストエリアの高さに応じて計算
     const lineHeight = textAreaHeight / fontSize;
-
-    // line-height を設定
     textArea.style.lineHeight = lineHeight;
   }
 
   function adjustLineHeightForAll() {
     textAreas.forEach(textArea => {
-      adjustLineHeight(textArea); // 各テキストエリアのline-heightを調整
+      adjustLineHeight(textArea);
     });
   }
 
-  // 初期ロード時にline-heightを設定
   window.addEventListener('load', adjustLineHeightForAll);
 
-  // テキストエリアに入力があったときにline-heightを調整
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
-      this.style.height = ''; // 高さの自動調整を無効化
-      adjustLineHeight(this); // line-heightを調整
+      this.style.height = '';
+      adjustLineHeight(this);
     });
 
-    // エンターキーを押したときにline-heightを更新
     textArea.addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
-        // エンターキーが押されたときにline-heightを更新
         adjustLineHeight(this);
       }
     });
   });
 
-  // ウィンドウサイズがリサイズされた場合にline-heightを再設定
   window.addEventListener('resize', adjustLineHeightForAll);
 
-  // 1remが何pxかを計算する関数
   function remToPx(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
   textAreas.forEach(textArea => {
-    // フォントサイズの最大と最小を rem で指定
-    const maxFontSizeRem = 0.9; // 最大フォントサイズ
-    const minFontSizeRem = 0.5; // 最小フォントサイズ
+    const maxFontSizeRem = 0.9;
+    const minFontSizeRem = 0.5;
 
-    // テキスト量に応じてフォントサイズを調整
     function adjustFontSize() {
       let fontSizeRem = maxFontSizeRem;
       textArea.style.fontSize = `${fontSizeRem}rem`;
 
-      // 最大幅以内に収まるようにフォントサイズを調整
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.05; // フォントサイズをremで小さくする
+        fontSizeRem -= 0.05;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }
 
-    // テキスト入力時のイベント
     textArea.addEventListener('input', function () {
       adjustFontSize();
     });
 
-    // 初期状態でテキストがある場合の処理
     if (textArea.value.trim() !== '') {
       adjustFontSize();
     }
@@ -880,13 +594,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //------------------------ここまで----------------------------
 
-// 枠変更 12-~3変更できない版 ローカルストレージに保存
+// 枠変更 12-~3変更できない版
 document.addEventListener("DOMContentLoaded", () => {
   const dropAreas = [];
   const resizeButtons = document.querySelectorAll(".resizeButton");
   let activeDropArea = null;
 
-  // ドロップエリアをすべて取得し、配列に追加
   document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
     dropAreas.push(dropArea);
     dropArea.addEventListener("pointerdown", () =>
@@ -894,33 +607,24 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // ドロップエリアがクリックまたはタッチされたときの処理
   const handleDropAreaInteraction = (dropArea) => {
     dropAreas.forEach((area) => area.classList.remove("active"));
     dropArea.classList.add("active");
     activeDropArea = dropArea;
   };
 
-  // サイズ変更ボタンがクリックまたはタッチされたときの処理
   const handleResizeButtonInteraction = (button) => {
     if (activeDropArea) {
-      // サイズ変更を禁止するドロップエリアのリスト
       const restrictedDropAreas = [
         "dropArea12-1",
         "dropArea12-2",
         "dropArea12-3",
       ];
 
-      // サイズ変更を禁止するドロップエリアでない場合のみ処理
       if (!restrictedDropAreas.includes(activeDropArea.id)) {
-        // サイズをすべてリセット
         activeDropArea.classList.remove("square", "rectangle", "mini");
-        // ボタンの data-size 属性に基づいてサイズを変更
         const size = button.getAttribute("data-size");
         activeDropArea.classList.add(size);
-
-        // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-        localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
       }
     }
   };
@@ -930,216 +634,230 @@ document.addEventListener("DOMContentLoaded", () => {
       handleResizeButtonInteraction(button)
     );
   });
-
-  // ページロード時にローカルストレージからサイズを復元
-  dropAreas.forEach((dropArea) => {
-    const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-    if (savedSize) {
-      dropArea.classList.add(savedSize);
-    }
-  });
 });
 
-// 背景色とテキストの色の変更 ローカルストレージに保存
-// 色変更
+// 背景色とテキストの色の変更
 function changeColor(color) {
-  // 背景色を変更する
-  // ユニークカラーBって名前が付いた範囲の色が全部変わる
   let elements = document.getElementsByClassName("uniqueColorB");
   for (let i = 0; i < elements.length; i++) {
     elements[i].style.backgroundColor = color;
   }
 
-  // テキスト色を変更する
-  // テキストカラーBって名前が付いたテキストの色が変わる
   let textElements = document.getElementsByClassName("text-colorB");
   for (let i = 0; i < textElements.length; i++) {
     textElements[i].style.color = color;
   }
-
-  // 色をローカルストレージに保存する
-  localStorage.setItem("backgroundColorB", color);
 }
 
-// ページ読み込み時にローカルストレージから色を取得して適用する
-document.addEventListener("DOMContentLoaded", function () {
-  const savedColor = localStorage.getItem("backgroundColorB");
-  if (savedColor) {
-    // セーブカラーで好きな色に変えられる
-    changeColor(savedColor);
-  }
-});
+// --------------------------------API連携-------------------------------------------
+// 保存ボタン押下時の処理
+document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
+document.getElementById('saveBtn').addEventListener('click', handleSaveOrSend);
 
+function handleSaveOrSend() {
+  const token = localStorage.getItem('token');
 
-
-
-document.getElementById("sendButton").addEventListener("click", function () {
-  // 認証トークンの取得
-  const token = localStorage.getItem("token");
-
-  // トークンのチェック
   if (!token) {
-    console.error("認証トークンが見つかりません。ログインしてください。");
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    alert('認証トークンが見つかりません。ログインしてください。');
     return;
   }
 
-  // IndexedDBのデータを取得する関数
-  function getAllDataFromIndexedDB(dbName, storeName) {
-    return new Promise((resolve, reject) => {
-      const request = indexedDB.open(dbName);
+  let albumId;
 
-      request.onerror = function (event) {
-        console.error("IndexedDBにアクセスできません。", event);
-        reject("IndexedDBにアクセスできません。");
-      };
-
-      request.onsuccess = function (event) {
-        const db = event.target.result;
-        const transaction = db.transaction(storeName, "readonly");
-        const objectStore = transaction.objectStore(storeName);
-        const allDataRequest = objectStore.getAll();
-
-        allDataRequest.onsuccess = function (event) {
-          resolve(event.target.result);
-        };
-
-        allDataRequest.onerror = function (event) {
-          console.error("データの取得に失敗しました。", event);
-          reject("データの取得に失敗しました。");
-        };
-      };
-    });
-  }
-
-  // サーバからアルバムIDを取得
-  fetch("https://develop-back.kotobum.com/api/user/album", {
-    method: "GET",
+  // アルバムIDを取得
+  fetch('https://develop-back.kotobum.com/api/user/album', {
+    method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   })
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
-        throw new Error(
-          `HTTPエラー: ${response.status} - ${response.statusText}`
-        );
+        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then((albumData) => {
-      console.log("取得したアルバムデータ:", albumData);
+    .then(albums => {
+      albumId = albums.albumId;
 
-      const albumId = albumData.albumId;
       if (!albumId) {
-        console.error("アルバムIDを取得できませんでした。");
+        console.error('アルバムIDを取得できませんでした。');
         return;
       }
 
-      // 別ページのHTMLを取得
-      return fetch("../preview/index.html")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              `別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`
-            );
-          }
-          return response.text();
-        })
-        .then((htmlContent) => {
-          // CSSの取得
-          let cssContent = "";
-          let cssUrls = [];
-          const cssPromises = [];
+      // テキストエリアと画像データの収集
+      const textAreas = document.querySelectorAll('.text-empty');
+      const textData = Array.from(textAreas).map(textarea => ({
+        id: textarea.id,
+        text: textarea.value || '',
+      }));
 
-          for (let sheet of document.styleSheets) {
-            try {
-              if (sheet.href) {
-                cssUrls.push(sheet.href);
-                cssPromises.push(
-                  fetch(sheet.href)
-                    .then((response) => response.text())
-                    .then((text) => {
-                      cssContent += text;
-                    })
-                    .catch((e) => {
-                      console.warn("スタイルシートの取得エラー:", e);
-                    })
-                );
-              } else {
-                for (let rule of sheet.cssRules) {
-                  cssContent += rule.cssText;
-                }
-              }
-            } catch (e) {
-              console.warn("スタイルシートの取得エラー:", e);
-            }
-          }
+      const dropAreas = document.querySelectorAll('.empty');
+      const imageData = Array.from(dropAreas).map(dropArea => {
+        const img = dropArea.querySelector('img');
+        return {
+          id: dropArea.id,
+          image: img ? img.src : null,
+        };
+      });
 
-          return Promise.all(cssPromises).then(() => ({
-            htmlContent,
-            cssContent,
-            cssUrls,
-          }));
-        });
-    })
-    .then(({ htmlContent, cssContent, cssUrls }) => {
-      console.log("取得したHTMLコンテンツ:", htmlContent);
-      console.log("取得したCSSコンテンツ:", cssContent);
-      console.log("取得したCSS URL:", cssUrls);
+      const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-color').style.color || '#000000';
 
-      // ローカルストレージのデータを収集
-      let localStorageData = {};
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        localStorageData[key] = localStorage.getItem(key);
+      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+        console.error('送信するデータがありません。');
+        alert('送信するデータがありません。');
+        return;
       }
 
-      // IndexedDBのデータを取得
-      return Promise.all([
-        getAllDataFromIndexedDB("NewImageDatabase1", "images"),
-        getAllDataFromIndexedDB("ImageDB", "images"),
-      ]).then(([newImageDatabase1Data, imageDBData]) => {
-        console.log("NewImageDatabase1のデータ:", newImageDatabase1Data);
-        console.log("ImageDBのデータ:", imageDBData);
+      const dataToSend = {
+        textData,
+        imageData,
+        colors: {
+          backgroundColor,
+          textColor,
+        }
+      };
 
-        // FormDataの作成
-        const body = new FormData();
-        body.append("htmlContent", htmlContent);
-        body.append("cssContent", cssContent);
-        body.append("cssUrls", JSON.stringify(cssUrls));
-        body.append("localStorageData", JSON.stringify(localStorageData)); // ローカルストレージのデータ
-        body.append(
-          "newImageDatabase1Data",
-          JSON.stringify(newImageDatabase1Data)
-        ); // NewImageDatabase1のデータ
-        body.append("imageDBData", JSON.stringify(imageDBData)); // ImageDBのデータ
+      // FormDataに追加して送信
+      const body = new FormData();
+      Object.entries(dataToSend).forEach(([key, value]) => {
+        body.append(key, JSON.stringify(value));
+      });
 
-        // サーバへデータを送信
-        return fetch(
-          `https://develop-back.kotobum.com/api/albums/${albumId}/body`,
-          {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            body: body,
-          }
-        );
+      console.log('送信するデータ:', dataToSend);
+
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/cover`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: body,
       });
     })
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
-        throw new Error(
-          `サーバ送信エラー: ${response.status} - ${response.statusText}`
-        );
+        throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then((data) => {
-      console.log("Success:", data);
+    .then(data => {
+      console.log('成功:', data);
+      alert('データが正常に保存されました。');
+
     })
-    .catch((error) => {
-      console.error("エラー:", error.message);
+    .catch(error => {
+      console.error('エラーが発生しました:', error.message);
+      if (error.response) {
+        console.error('レスポンスデータ:', error.response.data);
+      }
+      console.error('スタックトレース:', error.stack);
+      alert('エラーが発生しました。再度お試しください。');
     });
+};
+
+// ページ読み込み時のアルバムデータ取得処理
+document.addEventListener('DOMContentLoaded', function () {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  let albumId;
+
+  // アルバムIDを取得
+  fetch('https://develop-back.kotobum.com/api/user/album', {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(albums => {
+      albumId = albums.albumId;
+
+      if (!albumId) {
+        console.error('アルバムIDを取得できませんでした。');
+        return;
+      }
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
+
+      // アルバムデータ取得リクエスト
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showCover`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('取得したデータ:', data);
+
+      // 必要に応じてJSON文字列をパースして配列に変換
+      const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+
+      console.log(textData); // テキストデータの配列
+      console.log(imageData); // 画像データの配列
+      console.log(colors);    // 色情報のオブジェクト
+
+
+      // データの存在チェック
+      if (!textData || !Array.isArray(textData)) {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      } else {
+        // テキストデータを表示
+        textData.forEach(item => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+          }
+        });
+      }
+
+      if (!imageData || !Array.isArray(imageData)) {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      } else {
+        // 画像データを表示
+        imageData.forEach(item => {
+          const dropArea = document.getElementById(item.id);
+          if (dropArea && item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = 'Image';
+            dropArea.appendChild(img);
+          } else {
+            console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
+          }
+        });
+      }
+
+      // 背景色とテキスト色を設定
+      if (colors) {
+        const { backgroundColor, textColor } = colors;
+        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-color').style.color = textColor || '#000000';
+      } else {
+        console.warn('色データが存在しません。');
+      }
+    })
 });
