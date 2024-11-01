@@ -19,14 +19,14 @@ saveBtn.addEventListener('click', () => {
   modal.classList.remove('show');
   alert('内容が保存されました');
   // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';   // 戻るボタンが押される前のページに遷移
+  window.location.href = '/mypageB/index.html';   // 戻るボタンが押される前のページに遷移
 });
 
 // 「保存せずに戻る」ボタンがクリックされたときの処理
 discardBtn.addEventListener('click', () => {
   modal.classList.remove('show');
   // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';  // 戻るボタンが押される前のページに遷移
+  window.location.href = '/mypageB/index.html';  // 戻るボタンが押される前のページに遷移
 });
 
 modal.addEventListener('click', (event) => {

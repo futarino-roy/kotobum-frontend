@@ -8256,8 +8256,10 @@ input:checked + label::after {
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  width: 90%;
-  height: 60%;
+  width: 85%;
+  height: 53%;
+  top: 42%;
+  left: 10.5%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -8464,7 +8466,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 4%;
+  bottom: 4.5%;
   right: -4%;
   font-weight: bold;
   font-size: 0.5rem !important;
@@ -9433,7 +9435,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 3%;
+  bottom: 4.5%;
   right: -5%;
   font-weight: bold;
   font-size: 0.5rem !important;

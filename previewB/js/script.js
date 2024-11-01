@@ -231,22 +231,22 @@ function adjustTextareaWidth(textarea) {
 
 // 色変更
 // プレビューページで色を適用する関数
-function applySavedColor() {
-  const savedColor = localStorage.getItem('backgroundColorB');
-  if (savedColor) {
-    // 背景色を適用
-    let elements = document.getElementsByClassName('uniqueColorB');
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].style.backgroundColor = savedColor;
-    }
+// function applySavedColor() {
+//   const savedColor = localStorage.getItem('backgroundColorB');
+//   if (savedColor) {
+//     // 背景色を適用
+//     let elements = document.getElementsByClassName('uniqueColorB');
+//     for (let i = 0; i < elements.length; i++) {
+//       elements[i].style.backgroundColor = savedColor;
+//     }
 
-    // テキスト色を適用
-    let textElements = document.getElementsByClassName('text-colorB');
-    for (let i = 0; i < textElements.length; i++) {
-      textElements[i].style.color = savedColor;
-    }
-  }
-}
+//     // テキスト色を適用
+//     let textElements = document.getElementsByClassName('text-colorB');
+//     for (let i = 0; i < textElements.length; i++) {
+//       textElements[i].style.color = savedColor;
+//     }
+//   }
+// }
 
 // // ドキュメントが読み込まれたときに色を適用
 // document.addEventListener('DOMContentLoaded', function () {
