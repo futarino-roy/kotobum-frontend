@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 色データを反映
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+      console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
