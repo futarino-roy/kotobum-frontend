@@ -975,10 +975,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // 背景色とテキスト色を設定
+      console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
+
+        // `.uniqueColor` クラスを持つすべての要素に背景色を設定
+        document.querySelectorAll('.uniqueColor').forEach(element => {
+          element.style.backgroundColor = backgroundColor || '#ffffff';
+        });
+
+        // `.text-color` クラスを持つすべての要素にテキスト色を設定
+        document.querySelectorAll('.text-color').forEach(element => {
+          element.style.color = textColor || '#000000';
+        });
+
+        console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
       } else {
         console.warn('色データが存在しません。');
       }
