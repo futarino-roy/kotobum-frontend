@@ -323,8 +323,8 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
+        document.querySelectorAll('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelectorAll('.text-color').style.color = textColor || '#000000';
         console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
       } else {
         console.warn('色データが存在しません。');
