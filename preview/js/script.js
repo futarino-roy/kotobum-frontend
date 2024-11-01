@@ -282,54 +282,55 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       console.log('取得したデータ:', data);
 
-      // テキストデータを反映
+      // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
-      if (textData && Array.isArray(textData)) {
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+
+      console.log(textData); // テキストデータの配列
+      console.log(imageData); // 画像データの配列
+      console.log(colors);    // 色情報のオブジェクト
+
+
+      // データの存在チェック
+      if (!textData || !Array.isArray(textData)) {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      } else {
+        // テキストデータを表示
         textData.forEach(item => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
-            adjustTextareaSize(textArea);
           } else {
             console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
-      // 画像データを反映
-      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
-      if (imageData && Array.isArray(imageData)) {
+      if (!imageData || !Array.isArray(imageData)) {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      } else {
+        // 画像データを表示
         imageData.forEach(item => {
           const dropArea = document.getElementById(item.id);
           if (dropArea && item.image) {
             const img = document.createElement('img');
             img.src = item.image;
             img.alt = 'Image';
-            img.style.width = '100%';
-            img.style.height = '100%';
             dropArea.appendChild(img);
           } else {
             console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('画像データが存在しないか、配列ではありません。');
       }
 
-      // 色データを反映
-      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+      // 背景色とテキスト色を設定
       if (colors) {
         const { backgroundColor, textColor } = colors;
         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
         document.querySelector('.text-color').style.color = textColor || '#000000';
-        console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
       } else {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => {
-      console.error('データ取得エラー:', error);
-    });
 });
