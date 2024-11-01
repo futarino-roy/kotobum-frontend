@@ -1289,13 +1289,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // 背景色とテキスト色を設定
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColorB').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-colorB').style.color = textColor || '#000000';
+        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-color').style.color = textColor || '#000000';
       } else {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => {
-      console.error('アルバムデータ取得中にエラーが発生しました:', error.message);
-    });
 });
