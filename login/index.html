@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ログイン</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/assets/style/style.css">
-
-</head>
-<body class="login-body">
-
-  <div class="login">
-    <div class="form">
-        <img class="login_img" src="/login/images/login.png" alt="">
-        <h2 class=form_title>ログイン</h2>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/assets/style/style.css" />
+  </head>
+  <body class="login-body">
+    <div class="login">
+      <div class="form">
+        <img class="login_img" src="/login/images/login.png" alt="" />
+        <h2 class="form_title">ログイン</h2>
 
         <form id="login-form">
+          <div class="form_box">
+            <p>ID</p>
+            <p class="login_id">
+              <input type="text" name="login_id" placeholder="入力してください" required />
+            </p>
+          </div>
 
-        <div class="form_box">
-          <p>ID</p>
-          <p class="email">
-            <input type="email" name="email" placeholder="入力してください" required>
-          </p>
-        </div>
-
-        <div class="form_box">
-          <p>Pass</p>
-          <p class="pass">
-            <input type="password" name="password" placeholder="入力してください" required>
-          </p>
-        </div>
-          <button type="submit" class="btn btn-large" >マイページへ</button>
-
+          <div class="form_box">
+            <p>Pass</p>
+            <p class="pass">
+              <input type="password" name="password" placeholder="入力してください" required />
+            </p>
+          </div>
+          <button type="submit" class="btn btn-large">マイページへ</button>
         </form>
       </div>
-
     </div>
     <script src="../login/js/login.js"></script>
-</body>
+  </body>
 </html>
