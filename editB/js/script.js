@@ -1295,4 +1295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('色データが存在しません。');
       }
     })
+    .catch(error => {
+      console.error('アルバムデータ取得中にエラーが発生しました:', error.message);
+    });
 });
