@@ -202,6 +202,15 @@
               clip-path: inset(5% 7% 8% 7%);
             }
 
+            .input-drop-last {
+              top: 6% !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start !important;
+              // max-height: 84% !important;
+            }
+
             .input-drop {
               position: absolute;
               width: 88%;
@@ -759,7 +768,7 @@
                 }
               }
 
-              #previewTextArea {
+              #textArea {
                 &13-1 {
                   width: 60% !important;
                   font-size: 1.4rem;
@@ -823,6 +832,7 @@
                 }
 
                 &14,
+                &18,
                 &22 {
                   max-height: 20%;
                   min-height: 20%;
@@ -855,7 +865,8 @@
 
                 &15,
                 &17,
-                &19 {
+                &19,
+                &21 {
                   max-height: 70%;
                   min-height: 70%;
                   writing-mode: vertical-rl;
@@ -882,7 +893,8 @@
                   }
                 }
 
-                &16,
+                &16-1,
+                &16-2,
                 &20 {
                   min-width: 60%;
                   margin-bottom: 5%;
@@ -911,71 +923,70 @@
                   }
                 }
 
-                &18-1 {
-                  margin: 0;
-                  position: absolute;
-                  width: 63%;
-                  color: #fef8f6;
-                  font-size: 0.65rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #000000;
+                // &18-1 {
+                //   margin: 0;
+                //   position: absolute;
+                //   width: 63%;
+                //   color: #fef8f6;
+                //   font-size: 0.65rem;
+                //   line-height: 1.5;
+                //   font-weight: bold;
+                //   color: #000000;
 
-                  @include mq('pc-edit') {
-                    font-size: 0.55rem;
-                  }
+                //   @include mq('pc-edit') {
+                //     font-size: 0.55rem;
+                //   }
 
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
+                //   @include mq('pc2-edit') {
+                //     font-size: 0.9rem;
+                //   }
 
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
+                //   @include mq('tab-edit') {
+                //     font-size: 1.8vw;
+                //   }
 
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
+                //   @include mq('sp-edit') {
+                //     font-size: 2.5vw;
+                //   }
 
-                  @include mq('sp2-edit') {
-                    font-size: 1.8vw;
-                  }
-                }
+                //   @include mq('sp2-edit') {
+                //     font-size: 1.8vw;
+                //   }
+                // }
 
-                &18-2 {
-                  min-width: 60%;
-                  margin: 5% 0 15%;
-                  color: #fef8f6;
-                  font-size: 0.7rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #00000089;
+                // &18-2 {
+                //   min-width: 60%;
+                //   margin: 5% 0 15%;
+                //   color: #fef8f6;
+                //   font-size: 0.7rem;
+                //   line-height: 1.5;
+                //   font-weight: bold;
+                //   color: #00000089;
 
-                  @include mq('pc-edit') {
-                    font-size: 0.55rem;
-                  }
+                //   @include mq('pc-edit') {
+                //     font-size: 0.55rem;
+                //   }
 
-                  @include mq('pc2-edit') {
-                    font-size: 1rem;
-                  }
+                //   @include mq('pc2-edit') {
+                //     font-size: 1rem;
+                //   }
 
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
+                //   @include mq('tab-edit') {
+                //     font-size: 1.8vw;
+                //   }
 
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
+                //   @include mq('sp-edit') {
+                //     font-size: 2.5vw;
+                //   }
 
-                  @include mq('sp2-edit') {
-                    font-size: 1.8vw;
-                  }
-                }
+                //   @include mq('sp2-edit') {
+                //     font-size: 1.8vw;
+                //   }
+                // }
 
-                &21-1,
-                &21-2,
-                &23-1,
-                &23-2 {
+                // &21-1,
+                // &21-2,
+                &23-1 {
                   min-height: 30%;
                   max-height: 30%;
                   margin-bottom: 2.5%;
@@ -1003,9 +1014,33 @@
                     font-size: 1.2vw;
                   }
                 }
+                &23-2 {
+                  min-height: 50%;
+                  max-height: 30%;
+                  margin-bottom: 2.5%;
+                  margin-top: 2.5%;
+                  writing-mode: vertical-rl;
+                  font-size: 0.37rem;
+                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
-                &24-1,
-                &24-2 {
+                  @include mq('pc-edit') {
+                    font-size: 0.28rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.54rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.35vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.5vw;
+                  }
+                }
+
+                &24-1 {
                   min-height: 100%;
                   max-height: 100%;
                   writing-mode: vertical-rl;
@@ -1029,6 +1064,66 @@
 
                   @include mq('sp2-edit') {
                     font-size: 1.2vw;
+                  }
+                }
+                &24-2 {
+                  height: 65% !important;
+                  width: 30% !important;
+                  writing-mode: vertical-rl;
+                  font-size: 0.26rem;
+                  display: flex;
+                  align-items: center; /* 縦方向の中央揃え */
+                  justify-content: center; /* 横方向の中央揃え */
+                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+
+                  @include mq('pc-edit') {
+                    font-size: 0.19rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.39rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.1vw;
+                  }
+                }
+                &24-4 {
+                  position: absolute;
+                  text-align: center;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+                  font-size: 12px;
+                  margin-top: 113%;
+                  height: 3% !important;
+                  width: 63% !important;
+                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // max-height: 15px;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                    line-height: 0.7;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 1.2rem;
+                    line-height: 0.9;
+                    margin-top: 114.5%;
+                  }
+
+                  @include mq('tab-edit') {
+                    line-height: 0.7;
+                    font-size: 3vw;
+                    margin-top: 114%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
                   }
                 }
               }

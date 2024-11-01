@@ -6032,6 +6032,13 @@ input:checked + label::after {
     clip-path: inset(5% 7% 8% 7%);
   }
 }
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+  top: 6% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start !important;
+}
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 88%;
@@ -6439,38 +6446,38 @@ input:checked + label::after {
     font-size: 1.2vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
   width: 60% !important;
   font-size: 1.4rem;
   line-height: 1.5;
   font-weight: bold;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
     font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
     font-size: 3.5vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
     font-size: 5vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-1 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
     font-size: 3.5vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
   min-width: 60%;
   margin: 1% 0 5%;
   font-size: 0.52rem;
@@ -6478,37 +6485,37 @@ input:checked + label::after {
   font-weight: bold;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 0.4rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 0.75rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 1.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 1.9vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 1.3vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea13-3 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
   min-height: 15%;
   max-height: 15%;
   margin-top: 5%;
   writing-mode: vertical-rl;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
   max-height: 20%;
   min-height: 20%;
   margin-bottom: 5%;
@@ -6518,62 +6525,62 @@ input:checked + label::after {
   writing-mode: vertical-rl;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 0.55rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 1.8vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 2.5vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea22 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 2vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
   max-height: 70%;
   min-height: 70%;
   writing-mode: vertical-rl;
   font-size: 0.46rem;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
     font-size: 0.369rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
     font-size: 0.66rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
     font-size: 1.18vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
     font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea19 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
     font-size: 1.2vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
   min-width: 60%;
   margin-bottom: 5%;
   font-size: 0.7rem;
@@ -6581,100 +6588,31 @@ input:checked + label::after {
   font-weight: bold;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 0.56rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 1.8vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 2.5vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea16, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea20 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 1.8vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-  margin: 0;
-  position: absolute;
-  width: 63%;
-  color: #fef8f6;
-  font-size: 0.65rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #000000;
-}
-@media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-    font-size: 0.55rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-    font-size: 2.5vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-1 {
-    font-size: 1.8vw;
-  }
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-  min-width: 60%;
-  margin: 5% 0 15%;
-  color: #fef8f6;
-  font-size: 0.7rem;
-  line-height: 1.5;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.537254902);
-}
-@media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-    font-size: 0.55rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-    font-size: 2.5vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea18-2 {
-    font-size: 1.8vw;
-  }
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
   min-height: 30%;
   max-height: 30%;
   margin-bottom: 2.5%;
@@ -6683,59 +6621,155 @@ input:checked + label::after {
   font-size: 0.48rem;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
     font-size: 0.38rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
     font-size: 0.68rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
     font-size: 1.2vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
     font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea21-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea23-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
     font-size: 1.2vw;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
+  min-height: 50%;
+  max-height: 30%;
+  margin-bottom: 2.5%;
+  margin-top: 2.5%;
+  writing-mode: vertical-rl;
+  font-size: 0.37rem;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+}
+@media screen and (max-width: 1200px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
+    font-size: 0.28rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
+    font-size: 0.54rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
+    font-size: 1.35vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
+    font-size: 1.5vw;
+  }
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
   min-height: 100%;
   max-height: 100%;
   writing-mode: vertical-rl;
   font-size: 0.46rem;
 }
 @media screen and (max-width: 1200px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
     font-size: 0.37rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
     font-size: 0.66rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
     font-size: 1.2vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
     font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextArea24-2 {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
     font-size: 1.2vw;
+  }
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+  height: 65% !important;
+  width: 30% !important;
+  writing-mode: vertical-rl;
+  font-size: 0.26rem;
+  display: flex;
+  align-items: center; /* 縦方向の中央揃え */
+  justify-content: center; /* 横方向の中央揃え */
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+}
+@media screen and (max-width: 1200px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+    font-size: 0.19rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+    font-size: 0.39rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+    font-size: 1vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
+    font-size: 1.1vw;
+  }
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+  position: absolute;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #fef8f6;
+  font-size: 12px;
+  margin-top: 113%;
+  height: 3% !important;
+  width: 63% !important;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+}
+@media screen and (max-width: 1200px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+    font-size: 0.5rem;
+    line-height: 0.7;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+    font-size: 1.2rem;
+    line-height: 0.9;
+    margin-top: 114.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+    line-height: 0.7;
+    font-size: 3vw;
+    margin-top: 114%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
+    font-size: 2.5vw;
   }
 }
 .previewB .button-grid {
