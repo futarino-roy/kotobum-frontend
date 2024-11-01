@@ -15,45 +15,6 @@
 //     },
 //   },
 // });
-
-// モーダル要素の取得
-const modal = document.getElementById('customModal');
-const saveBtn = document.getElementById('saveBtn');
-const discardBtn = document.getElementById('discardBtn');
-
-// ダミーの状態を履歴に追加
-history.pushState(null, document.title, window.location.href);
-
-// ユーザーが「戻る」ボタンを押した際に popstate イベントを発火
-window.addEventListener('popstate', (event) => {
-  // モーダルを表示
-  modal.classList.add('show');
-  // 履歴にもう一度ダミーの状態を追加
-  history.pushState(null, document.title, window.location.href);
-});
-
-// 「保存する」ボタンがクリックされたときの処理
-saveBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-  alert('内容が保存されました');
-  // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';   // 戻るボタンが押される前のページに遷移
-});
-
-// 「保存せずに戻る」ボタンがクリックされたときの処理
-discardBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-  // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';  // 戻るボタンが押される前のページに遷移
-});
-
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) { // モーダルの外側がクリックされた場合
-    modal.classList.remove('show'); // モーダルを閉じる
-  }
-});
-
-
 // Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
