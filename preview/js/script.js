@@ -210,22 +210,22 @@ document.getElementById('editBack').addEventListener('click', function () {
 
 // 色変更
 // プレビューページで色を適用する関数
-function applySavedColor() {
-  const savedColor = localStorage.getItem('backgroundColorA');
-  if (savedColor) {
-    // 背景色を適用
-    let elements = document.getElementsByClassName('uniqueColor');
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].style.backgroundColor = savedColor;
-    }
+// function applySavedColor() {
+//   const savedColor = localStorage.getItem('backgroundColorA');
+//   if (savedColor) {
+//     // 背景色を適用
+//     let elements = document.getElementsByClassName('uniqueColor');
+//     for (let i = 0; i < elements.length; i++) {
+//       elements[i].style.backgroundColor = savedColor;
+//     }
 
-    // テキスト色を適用
-    let textElements = document.getElementsByClassName('text-color');
-    for (let i = 0; i < textElements.length; i++) {
-      textElements[i].style.color = savedColor;
-    }
-  }
-}
+//     // テキスト色を適用
+//     let textElements = document.getElementsByClassName('text-color');
+//     for (let i = 0; i < textElements.length; i++) {
+//       textElements[i].style.color = savedColor;
+//     }
+//   }
+// }
 
 // // ドキュメントが読み込まれたときに色を適用
 // document.addEventListener('DOMContentLoaded', function () {
