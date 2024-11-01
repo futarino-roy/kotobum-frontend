@@ -63,24 +63,24 @@
 
 
 // 選択アリ
-document.getElementById('login-form').addEventListener('submit', function(event) {
+document.getElementById('login-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const email = document.querySelector('input[name="email"]').value.trim();
+    const login_id = document.querySelector('input[name="login_id"]').value.trim();
     const password = document.querySelector('input[name="password"]').value;
 
     // バリデーション
-    if (!email || !password) {
+    if (!login_id || !password) {
         showError('すべてのフィールドを入力してください。');
         return;
     }
 
     // メールアドレスの形式を確認
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        showError('無効なメールアドレスです。');
-        return;
-    }
+    // const login_idPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!login_idPattern.test(login_id)) {
+    //     showError('無効なメールアドレスです。');
+    //     return;
+    // }
 
     // サーバーにリクエストを送信
     fetch('https://develop-back.kotobum.com/api/login', {
@@ -88,42 +88,42 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 
-            email: email,
+        body: JSON.stringify({
+            login_id: login_id,
             password: password
         })
     })
-    .then(response => {
-        if (!response.ok) {
-            return response.json().then(data => {
-                throw new Error(data.message || 'サーバーエラーが発生しました。');
-            });
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('成功:', data);
-        localStorage.setItem('token', data.token); // トークンを保存
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(data => {
+                    throw new Error(data.message || 'サーバーエラーが発生しました。');
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('成功:', data);
+            localStorage.setItem('token', data.token); // トークンを保存
 
-        // サーバーから取得した情報
-        const template = data.template; // サーバーから「template」情報を取得
+            // サーバーから取得した情報
+            const template = data.template; // サーバーから「template」情報を取得
 
-        // テンプレート情報をコンソールに出力
-        console.log('取得したテンプレート情報:', template);
+            // テンプレート情報をコンソールに出力
+            console.log('取得したテンプレート情報:', template);
 
-        // 選択されたtemplateに基づいてリダイレクト
-        if (template === 'A') {
-            window.location.href = '../mypage';
-        } else if (template === 'B') {
-            window.location.href = '../mypageB';
-        } else {
-            window.location.href = '/mypageB'; // template情報が無い場合のデフォルト
-        }
-    })
-    .catch(error => {
-        console.error('失敗:', error);
-        showError('ログインに失敗しました。エラーの詳細: ' + error.message);
-    });
+            // 選択されたtemplateに基づいてリダイレクト
+            if (template === 'A') {
+                window.location.href = '../mypage';
+            } else if (template === 'B') {
+                window.location.href = '../mypageB';
+            } else {
+                window.location.href = '/mypageB'; // template情報が無い場合のデフォルト
+            }
+        })
+        .catch(error => {
+            console.error('失敗:', error);
+            showError('ログインに失敗しました。エラーの詳細: ' + error.message);
+        });
 });
 
 // エラーメッセージを表示する関数

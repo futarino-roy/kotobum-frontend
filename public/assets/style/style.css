@@ -9318,6 +9318,7 @@ input:checked + label::after {
   white-space: nowrap; /* 改行をさせない設定 */
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-1 {
+  background-color: coral;
   margin: 0;
   position: absolute;
   width: 13.5%;
@@ -9352,6 +9353,7 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-2 {
+  background-color: aquamarine;
   position: absolute;
   top: 20%;
   left: 2.5%;
@@ -9392,6 +9394,7 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-3 {
+  background-color: burlywood;
   margin: 0;
   position: absolute;
   width: 40% !important;
@@ -9428,6 +9431,7 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #previewTextAreaB-4 {
+  background-color: grey;
   margin: 0;
   position: absolute;
   width: 5% !important;
