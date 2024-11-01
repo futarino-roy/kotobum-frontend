@@ -5415,7 +5415,6 @@ input:checked + label::after {
   font-size: 0.45rem;
   line-height: 1.5;
   font-weight: bold;
-  color: #fef8f6;
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
