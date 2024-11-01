@@ -41,7 +41,7 @@ function initIndexedDBForPreview() {
   request.onsuccess = function (event) {
     myImageDB1 = event.target.result;
     console.log('IndexedDB connected for preview.');
-    restoreDropAreasInPreview(); // プレビューページのドロップエリアに画像を復元
+    // restoreDropAreasInPreview(); // プレビューページのドロップエリアに画像を復元する処理を削除
   };
 
   request.onerror = function (event) {
@@ -51,47 +51,47 @@ function initIndexedDBForPreview() {
 
 // ドロップエリアに画像を復元する
 function restoreDropAreasInPreview() {
-  const dropAreas = document.querySelectorAll('.empty'); // すべてのドロップエリアを取得
-  dropAreas.forEach((dropArea) => {
-    // 各ドロップエリアのIDを使ってIndexedDBから画像を取得
-    getImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        // 画像要素を作成して表示
-        const img = document.createElement('img');
-        img.src = imageData;
-        img.style.width = '100%';
-        img.style.height = '100%';
+  // const dropAreas = document.querySelectorAll('.empty'); // すべてのドロップエリアを取得する処理を削除
+  // dropAreas.forEach((dropArea) => {
+  //   // 各ドロップエリアのIDを使ってIndexedDBから画像を取得
+  //   getImageFromIndexedDB(dropArea.id, function (imageData) {
+  //     if (imageData) {
+  //       // 画像要素を作成して表示
+  //       const img = document.createElement('img');
+  //       img.src = imageData;
+  //       img.style.width = '100%';
+  //       img.style.height = '100%';
 
-        dropArea.innerHTML = ''; // 既存の内容をクリア
-        dropArea.appendChild(img); // 画像をドロップエリアに追加
-      }
-    });
-  });
+  //       dropArea.innerHTML = ''; // 既存の内容をクリア
+  //       dropArea.appendChild(img); // 画像をドロップエリアに追加
+  //     }
+  //   });
+  // });
 }
 
 // IndexedDBから画像を取得する
 function getImageFromIndexedDB(id, callback) {
-  if (!myImageDB1) {
-    console.error('Database not initialized.');
-    return;
-  }
+  // if (!myImageDB1) {
+  //   console.error('Database not initialized.');
+  //   return;
+  // }
 
-  const transaction = myImageDB1.transaction(['images']);
-  const store = transaction.objectStore('images');
-  const request = store.get(id);
+  // const transaction = myImageDB1.transaction(['images']);
+  // const store = transaction.objectStore('images');
+  // const request = store.get(id);
 
-  request.onsuccess = function (event) {
-    const result = event.target.result;
-    if (result) {
-      callback(result.data); // 保存された画像データをコールバック関数で返す
-    } else {
-      console.log('No image found with ID:', id);
-    }
-  };
+  // request.onsuccess = function (event) {
+  //   const result = event.target.result;
+  //   if (result) {
+  //     callback(result.data); // 保存された画像データをコールバック関数で返す
+  //   } else {
+  //     console.log('No image found with ID:', id);
+  //   }
+  // };
 
-  request.onerror = function (event) {
-    console.error('Error retrieving image:', event.target.errorCode);
-  };
+  // request.onerror = function (event) {
+  //   console.error('Error retrieving image:', event.target.errorCode);
+  // };
 }
 
 // ページが読み込まれたときにIndexedDBを初期化
@@ -112,7 +112,7 @@ request.onupgradeneeded = function (event) {
 
 request.onsuccess = function (event) {
   myimageDB2 = event.target.result;
-  loadAllImages(); // ページロード時にすべての画像をロード
+  // loadAllImages(); // ページロード時にすべての画像をロードする処理を削除
 };
 
 request.onerror = function (event) {
@@ -121,42 +121,43 @@ request.onerror = function (event) {
 
 // IndexedDBから画像を取得
 function loadImageFromIndexedDB(containerId, callback) {
-  const transaction = myimageDB2.transaction(['images'], 'readonly');
-  const store = transaction.objectStore('images');
-  const request = store.get(containerId);
+  // const transaction = myimageDB2.transaction(['images'], 'readonly');
+  // const store = transaction.objectStore('images');
+  // const request = store.get(containerId);
 
-  request.onsuccess = function (event) {
-    callback(event.target.result ? event.target.result.data : null);
-  };
+  // request.onsuccess = function (event) {
+  //   callback(event.target.result ? event.target.result.data : null);
+  // };
 
-  request.onerror = function (event) {
-    console.error('画像の取得に失敗しました:', event.target.error);
-    callback(null);
-  };
+  // request.onerror = function (event) {
+  //   console.error('画像の取得に失敗しました:', event.target.error);
+  //   callback(null);
+  // };
 }
 
 // すべての画像をロードする
 function loadAllImages() {
-  const emptyElements = document.querySelectorAll('.empty');
-  emptyElements.forEach(function (dropArea) {
-    loadImageFromIndexedDB(dropArea.id, function (imageData) {
-      if (imageData) {
-        dropArea.innerHTML = ''; // 既存の内容をクリア
-        let img = new Image();
-        img.src = imageData; // 画像データURLを設定
-        img.classList.add('draggable-image');
-        dropArea.appendChild(img);
-      }
-    });
-  });
+  // const emptyElements = document.querySelectorAll('.empty');
+  // emptyElements.forEach(function (dropArea) {
+  //   loadImageFromIndexedDB(dropArea.id, function (imageData) {
+  //     if (imageData) {
+  //       dropArea.innerHTML = ''; // 既存の内容をクリア
+  //       let img = new Image();
+  //       img.src = imageData; // 画像データURLを設定
+  //       img.classList.add('draggable-image');
+  //       dropArea.appendChild(img);
+  //     }
+  //   });
+  // });
 }
 
 // ドキュメントが読み込まれた後の処理
 document.addEventListener('DOMContentLoaded', function () {
-  loadAllImages(); // ページがロードされたときにすべての画像を表示
+  // loadAllImages(); // ページがロードされたときにすべての画像を表示する処理を削除
 
   // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
 });
+
 
 // 枠 柔軟版
 document.addEventListener('DOMContentLoaded', function () {
@@ -168,11 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
     dropAreas.forEach((dropAreaContainer) => {
       // IDからサイズの情報を取得
       const dropAreaId = dropAreaContainer.id;
-      const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+      // ここでローカルストレージからサイズ情報を取得する処理を削除しました。
+      // const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
+      // もし必要であれば、他の方法でサイズを管理してください。
 
-      if (dropAreaSize) {
-        dropAreaContainer.classList.add(dropAreaSize);
-      }
+      // サイズの適用処理は必要に応じて追加してください
     });
   }
 
@@ -186,15 +187,14 @@ function adjustTextareaHeight(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
 }
 
-// プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
+// プレビューページでテキストエリアに表示する関数
 function loadTextForPreview() {
   // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
   const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
 
   textAreas.forEach((textArea) => {
-    const index = textArea.id.replace('previewTextArea', ''); // IDからインデックスを取得
-    textArea.value = localStorage.getItem(`textArea${index}`) || '';
-
+    // IDからインデックスを取得
+    textArea.value = ''; // ローカルストレージからの取得処理を削除
     // テキストエリアの高さを調整
     adjustTextareaHeight(textArea);
   });
@@ -301,7 +301,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
-  const savedColor = localStorage.getItem('backgroundColorB');
+  const savedColor = ''; // ローカルストレージからの取得処理を削除
+  // もし色が必要な場合は、色を直接指定してください。
   if (savedColor) {
     // 背景色を適用
     let elements = document.getElementsByClassName('uniqueColorB');
@@ -321,6 +322,112 @@ function applySavedColor() {
 document.addEventListener('DOMContentLoaded', function () {
   applySavedColor();
 });
+
+
+//--------------------------API連携------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  let albumId;
+
+  // アルバムIDを取得
+  fetch('https://develop-back.kotobum.com/api/user/album', {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(albums => {
+      albumId = albums.albumId;
+
+      if (!albumId) {
+        console.error('アルバムIDを取得できませんでした。');
+        return;
+      }
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
+
+      // アルバムデータ取得リクエスト
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showCover`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('取得したデータ:', data);
+
+      // テキストデータを反映
+      const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      if (textData && Array.isArray(textData)) {
+        textData.forEach(item => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+            adjustTextareaSize(textArea);
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+          }
+        });
+      } else {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      }
+
+      // 画像データを反映
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      if (imageData && Array.isArray(imageData)) {
+        imageData.forEach(item => {
+          const dropArea = document.getElementById(item.id);
+          if (dropArea && item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = 'Image';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            dropArea.appendChild(img);
+          } else {
+            console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
+          }
+        });
+      } else {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      }
+
+      // 色データを反映
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+      if (colors) {
+        const { backgroundColor, textColor } = colors;
+        document.querySelector('.uniqueColorB').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-colorB').style.color = textColor || '#000000';
+        console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
+      } else {
+        console.warn('色データが存在しません。');
+      }
+    })
+    .catch(error => {
+      console.error('データ取得エラー:', error);
+    });
+});
+
 
 //----------------- モーダルに関するJavaScript---------------------
 
