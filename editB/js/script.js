@@ -1204,6 +1204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let albumId;
 
+  // アルバムIDを取得
   fetch('https://develop-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
@@ -1212,20 +1213,21 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   })
     .then(response => {
-      console.log("アルバムID取得レスポンス:", response);
       if (!response.ok) {
         throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
     .then(albums => {
-      console.log("アルバムID取得成功:", albums);
       albumId = albums.albumId;
 
       if (!albumId) {
-        throw new Error('アルバムIDを取得できませんでした。');
+        console.error('アルバムIDを取得できませんでした。');
+        return;
       }
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
 
+      // アルバムデータ取得リクエスト
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showBody`, {
         method: 'GET',
         headers: {
@@ -1234,14 +1236,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     })
     .then(response => {
-      console.log("アルバムデータ取得レスポンス:", response);
       if (!response.ok) {
         throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
     .then(data => {
-      console.log("取得したアルバムデータ:", data);
+      console.log('取得したデータ:', data);
 
       // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
@@ -1288,11 +1289,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // 背景色とテキスト色を設定
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
+        document.querySelector('.uniqueColorB').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-colorB').style.color = textColor || '#000000';
       } else {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => console.error("データ取得エラー:", error));
 });
