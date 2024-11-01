@@ -1138,8 +1138,8 @@ function handleSaveOrSend() {
         };
       });
 
-      const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-color').style.color || '#000000';
+      const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-colorB').style.color || '#000000';
 
       if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
@@ -1289,8 +1289,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // 背景色とテキスト色を設定
       if (colors) {
         const { backgroundColor, textColor } = colors;
-        document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
-        document.querySelector('.text-color').style.color = textColor || '#000000';
+        document.querySelector('.uniqueColorB').style.backgroundColor = backgroundColor || '#ffffff';
+        document.querySelector('.text-colorB').style.color = textColor || '#000000';
       } else {
         console.warn('色データが存在しません。');
       }
