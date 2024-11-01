@@ -369,22 +369,20 @@ function handleDrop(event) {
     let file = files[0];
     let fileReader = new FileReader();
     fileReader.onload = function (e) {
-      this.innerHTML = ""; // 既存の内容をクリア
+      this.innerHTML = '';
       let img = new Image();
-      img.src = e.target.result; // 画像データURLを設定
-      img.classList.add("draggable-image"); // 画像にクラスを追加
+      img.src = e.target.result;
+      img.classList.add('draggable-image');
       img.onclick = function () {
-        showButtons(this.parentNode); // 画像がクリックされたときにボタンを表示
+        showButtons(this.parentNode);
       };
       this.appendChild(img);
-      addButtons(this); // 削除ボタンとトリミングボタンを追加
+      addButtons(this);
 
       // 画像が挿入されたら枠線をなくす処理追加
       this.style.border = 'none';
-
-      // ここでIndexedDBへの保存処理を削除しました
     }.bind(this);
-    fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
+    fileReader.readAsDataURL(file);
   }
 }
 
@@ -394,24 +392,22 @@ function handleTouchDrop(event) {
   const touch = event.changedTouches[0];
   const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
 
-  if (dropArea && dropArea.classList.contains("empty")) {
+  if (dropArea && dropArea.classList.contains('empty')) {
     const files = event.dataTransfer.files;
     if (files.length > 0) {
       let file = files[0];
       let fileReader = new FileReader();
       fileReader.onload = function (e) {
-        dropArea.innerHTML = ""; // 既存の内容をクリア
+        dropArea.innerHTML = '';
         let img = new Image();
-        img.src = e.target.result; // 画像データURLを設定
+        img.src = e.target.result;
         dropArea.appendChild(img);
-        addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+        addButtons(dropArea);
 
         // 画像が挿入されたら枠線をなくす処理追加
         dropArea.style.border = 'none';
-
-        // ここでIndexedDBへの保存処理を削除しました
       };
-      fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
+      fileReader.readAsDataURL(file);
     }
   }
 }
