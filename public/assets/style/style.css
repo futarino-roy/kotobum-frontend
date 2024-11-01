@@ -9212,8 +9212,10 @@ input:checked + label::after {
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  width: 90%;
-  height: 60%;
+  width: 85%;
+  height: 53%;
+  top: 42%;
+  left: 10.5%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -9318,7 +9320,6 @@ input:checked + label::after {
   white-space: nowrap; /* 改行をさせない設定 */
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
-  background-color: coral;
   margin: 0;
   position: absolute;
   width: 13.5%;
@@ -9353,7 +9354,6 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
-  background-color: aquamarine;
   position: absolute;
   top: 22%;
   left: 6.5%;
@@ -9394,7 +9394,6 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
-  background-color: burlywood;
   margin: 0;
   position: absolute;
   width: 40% !important;
@@ -9431,7 +9430,6 @@ input:checked + label::after {
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-4 {
-  background-color: grey;
   margin: 0;
   position: absolute;
   width: 5% !important;
