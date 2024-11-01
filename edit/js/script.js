@@ -1314,6 +1314,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // 背景色とテキスト色を設定
+      console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
         document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';

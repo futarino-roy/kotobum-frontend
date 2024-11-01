@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // 色データを反映
-      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+      const colors = typeof data.colors === 'string' ? JSON.parse(data.colors) : data.colors;
       console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
