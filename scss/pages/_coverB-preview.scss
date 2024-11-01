@@ -169,19 +169,19 @@
             width: 50%;
             max-width: 500px;
             position: relative;
-            clip-path: inset(36.5px 2px 41px 34px);
+            clip-path: inset(45.5px 2px 51px 45px);
             @include mq('pc2-edit') {
               // clip-path: inset(31px 31px 35px 30px);
-              clip-path: inset(53.5px 3px 59px 50px);
+              clip-path: inset(68.5px 4px 74px 68px);
             }
             @include mq('pc-edit') {
               // clip-path: inset(16px 16px 21px 17px);
-              clip-path: inset(28px 1px 32px 25px);
+              clip-path: inset(34.5px 1px 39px 35px);
             }
             @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(8.5% 1% 9% 11%);
+              clip-path: inset(10.5% 1% 11.5% 15%);
             }
             @include mq('sp-edit') {
               width: 100%;
@@ -347,8 +347,8 @@
                   width: 13.5%;
                   height: 5%;
                   max-width: 35px;
-                  top: 14.5%;
-                  right: 79.5%;
+                  top: 16.5%;
+                  right: 75.5%;
                   text-align: center;
 
                   line-height: 0.9;
@@ -372,8 +372,8 @@
                 &B-2 {
                   background-color: aquamarine;
                   position: absolute;
-                  top: 20%;
-                  left: 2.5%;
+                  top: 22%;
+                  left: 6.5%;
                   // height: 3% !important;
                   // width: 16% !important;
 
@@ -416,7 +416,7 @@
                   width: 40% !important;
                   height: 10% !important;
                   top: 3%;
-                  right: 5%;
+                  right: 3%;
                   font-weight: bold;
                   font-size: 1.1rem;
                   text-align: right;
@@ -444,7 +444,7 @@
                   width: 5% !important;
                   // height: auto;
                   bottom: 3%;
-                  right: -4%;
+                  right: -5%;
                   font-weight: bold;
                   font-size: 0.5rem !important;
                   text-align: start;
