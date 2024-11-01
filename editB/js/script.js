@@ -1138,8 +1138,8 @@ function handleSaveOrSend() {
         };
       });
 
-      const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-colorB').style.color || '#000000';
+      const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-color').style.color || '#000000';
 
       if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
