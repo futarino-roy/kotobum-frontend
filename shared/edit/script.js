@@ -485,7 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //   textarea.style.width = `${textarea.scrollWidth}px`;
 // }
 
-// テキストエリアのサイズ調整
 function adjustTextareaSize(textarea) {
   textarea.style.height = 'auto';
   textarea.style.width = 'auto';
@@ -493,28 +492,30 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
-// テキストエリア枠線の更新
-function updateBorders(textarea) {
-  if (textarea.value.trim() === '') {
-    textarea.classList.remove('no-border'); // テキストが空の場合は枠線を表示
-  } else {
-    textarea.classList.add('no-border'); // テキストが入力されている場合は枠線を非表示
-  }
-}
-
-// ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
+  // テキストエリアのサイズとボーダーの調整
   const textAreas = document.querySelectorAll('.text-empty');
 
   textAreas.forEach((textarea) => {
-    // 初回ロード時にテキストエリアのサイズと枠線を調整
+    // サイズを調整
     adjustTextareaSize(textarea);
-    updateBorders(textarea);
 
-    // 入力時にサイズと枠線を再調整
+    // ボーダー設定
+    if (textarea.value.trim() === '') {
+      textarea.classList.remove('no-border');
+    } else {
+      textarea.classList.add('no-border');
+    }
+
+    // 入力時にサイズ調整とボーダー変更
     textarea.addEventListener('input', function () {
       adjustTextareaSize(textarea);
-      updateBorders(textarea);
+
+      if (textarea.value.trim() === '') {
+        textarea.classList.remove('no-border');
+      } else {
+        textarea.classList.add('no-border');
+      }
     });
   });
 });
