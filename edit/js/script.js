@@ -15,8 +15,8 @@
 //   },
 // });
 
-let initialData = {};
-let isSaved = true;
+let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
+let isSaved = true; // データが保存済みかどうかを示すフラグ
 
 // ページ読み込み時にデータを保存(初期データ)
 document.addEventListener('DOMContentLoaded', function () {

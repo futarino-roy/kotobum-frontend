@@ -15,6 +15,56 @@
 //     },
 //   },
 // });
+
+let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
+let isSaved = true; // データが保存済みかどうかを示すフラグ
+
+// ページ読み込み時にデータを保存(初期データ)
+document.addEventListener('DOMContentLoaded', function () {
+  const textAreas = document.querySelectorAll('textarea');
+  textAreas.forEach(textarea => {
+    initialData[textarea.id] = textarea.value;
+    console.log('データを保存しました')
+  });
+});
+
+// テキストエリアに変更があれば未保存のフラグを設定
+document.querySelectorAll('textarea').forEach(textarea => {
+  textarea.addEventListener('input', () => {
+    isSaved = checkSave();
+  });
+});
+
+// 初期データと比較して変更されているか確認する関数
+function checkSave() {
+  const textAreas = document.querySelectorAll('textarea');
+  return Array.from(textAreas).every(textarea => {
+    return textarea.value === initialData[textarea.id];
+  });
+}
+
+// 保存ボタンをクリック時に保存状態を更新
+const saveBtn = document.getElementById('sendButton');
+if (saveBtn) {
+  saveBtn.addEventListener('click', function () {
+    isSaved = true;
+    const textAreas = document.querySelectorAll('textarea');
+    textAreas.forEach(textarea => {
+      initialData[textarea.id] = textarea.value;
+    });
+    console.log("保存内容が保存されました");
+  });
+} else {
+  console.warn('Save button with ID "saveButton" not found.');
+}
+
+// ページを離れるときに保存されていない場合は警告を表示
+window.addEventListener('beforeunload', function (event) {
+  if (!isSaved) {
+    event.returnValue = '内容が保存されていません＞＜'; // ブラウザがデフォルトの警告メッセージを表示
+  }
+});
+
 // Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
