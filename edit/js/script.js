@@ -15,42 +15,91 @@
 //   },
 // });
 
-// モーダル要素の取得
-const modal = document.getElementById('customModal');
+let initialData = {};
+let isSaved = true;
+
+// ページ読み込み時にデータを保存(初期データ)
+document.addEventListener('DOMContentLoaded', function () {
+  const textAreas = document.querySelectorAll('textarea');
+  textAreas.forEach(textarea => {
+    initialData[textarea.id] = textarea.value;
+  });
+});
+
+// テキストエリアに変更があれば未保存のフラグを設定
+document.querySelectorAll('textarea').forEach(textarea => {
+  textarea.addEventListener('input', () => {
+    isSaved = checkSave();
+  });
+});
+
+// 初期データと比較して変更されているか確認する関数
+function checkSave() {
+  const textAreas = document.querySelectorAll('textarea');
+  return Array.from(textAreas).every(textarea => {
+    return textarea.value === initialData[textarea.id];
+  });
+}
+
+// 保存ボタンをクリック時に保存状態を更新
 const saveBtn = document.getElementById('saveBtn');
-const discardBtn = document.getElementById('discardBtn');
+if (saveBtn) {
+  saveBtn.addEventListener('click', function () {
+    isSaved = true;
+    const textAreas = document.querySelectorAll('textarea');
+    textAreas.forEach(textarea => {
+      initialData[textarea.id] = textaera.value;
+    });
+    console.log("保存内容が保存されました");
+  });
+} else {
+  console.warn('Save button with ID "saveButton" not found.');
+}
 
-// ダミーの状態を履歴に追加
-history.pushState(null, document.title, window.location.href);
-
-// ユーザーが「戻る」ボタンを押した際に popstate イベントを発火
-window.addEventListener('popstate', (event) => {
-  // モーダルを表示
-  modal.classList.add('show');
-  // 履歴にもう一度ダミーの状態を追加
-  history.pushState(null, document.title, window.location.href);
-});
-
-// 「保存する」ボタンがクリックされたときの処理
-saveBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-  alert('内容が保存されました');
-  // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';   // 戻るボタンが押される前のページに遷移
-});
-
-// 「保存せずに戻る」ボタンがクリックされたときの処理
-discardBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-  // 実際に戻る操作を実行
-  window.location.href = '/mypage/index.html';  // 戻るボタンが押される前のページに遷移
-});
-
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) { // モーダルの外側がクリックされた場合
-    modal.classList.remove('show'); // モーダルを閉じる
+// ページを離れるときに保存されていない場合は警告を表示
+window.addEventListener('beforeunload', function () {
+  if (!isSaved) {
+    this.preventDefault();
+    this.alert('内容が保存されていません＞＜')
   }
 });
+
+
+// // モーダル要素の取得
+// const modal = document.getElementById('customModal');
+// const discardBtn = document.getElementById('discardBtn');
+
+// // ダミーの状態を履歴に追加
+// history.pushState(null, document.title, window.location.href);
+
+// // ユーザーが「戻る」ボタンを押した際に popstate イベントを発火
+// window.addEventListener('popstate', (event) => {
+//   // モーダルを表示
+//   modal.classList.add('show');
+//   // 履歴にもう一度ダミーの状態を追加
+//   history.pushState(null, document.title, window.location.href);
+// });
+
+// // 「保存する」ボタンがクリックされたときの処理
+// saveBtn.addEventListener('click', () => {
+//   modal.classList.remove('show');
+//   alert('内容が保存されました');
+//   // 実際に戻る操作を実行
+//   window.location.href = '/mypage/index.html';   // 戻るボタンが押される前のページに遷移
+// });
+
+// // 「保存せずに戻る」ボタンがクリックされたときの処理
+// discardBtn.addEventListener('click', () => {
+//   modal.classList.remove('show');
+//   // 実際に戻る操作を実行
+//   window.location.href = '/mypage/index.html';  // 戻るボタンが押される前のページに遷移
+// });
+
+// modal.addEventListener('click', (event) => {
+//   if (event.target === modal) { // モーダルの外側がクリックされた場合
+//     modal.classList.remove('show'); // モーダルを閉じる
+//   }
+// });
 
 // Swiperの初期化
 const swiper = new Swiper('.swiper', {
