@@ -49,7 +49,7 @@ if (saveBtn) {
     isSaved = true;
     const textAreas = document.querySelectorAll('textarea');
     textAreas.forEach(textarea => {
-      initialData[textarea.id] = textaera.value;
+      initialData[textarea.id] = textarea.value;
     });
     console.log("保存内容が保存されました");
   });
