@@ -299,6 +299,7 @@ const modal = document.getElementById("modal1");
 openButton.addEventListener('click', function () {
   console.log(`開かれたモーダル: ${modal.id}`); // コンソールに開かれたモーダルのIDを表示
   modal.classList.add('is-active'); // モーダルを表示
+  console.log(`開かれたモーダル: ${modal.id}`); // コンソールに開かれたモーダルのIDを表示
 });
 
 // モーダルの外側がクリックされたときにモーダルを閉じる

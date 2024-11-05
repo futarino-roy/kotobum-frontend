@@ -4164,6 +4164,7 @@ input:checked + label::after {
 .preview-body .modal.is-active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 .preview-body .modal-container {
   position: relative;
@@ -5877,6 +5878,7 @@ input:checked + label::after {
 .preview-body .modal.is-active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 .preview-body .modal-container {
   position: relative;
@@ -8559,6 +8561,7 @@ input:checked + label::after {
 .cover-preview-body .modal.is-active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 .cover-preview-body .modal-container {
   position: relative;
@@ -9052,6 +9055,7 @@ input:checked + label::after {
 .coverB-preview-body .modal.is-active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 .coverB-preview-body .modal-container {
   position: relative;
