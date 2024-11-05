@@ -4375,7 +4375,6 @@ input:checked + label::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
   position: relative;
@@ -4424,6 +4423,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 .crop-btn {
   position: absolute;
@@ -4491,6 +4491,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 .crop-btn {
   position: absolute;
@@ -4558,6 +4559,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 .crop-btn {
   position: absolute;
@@ -4625,6 +4627,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 .crop-btn {
   position: absolute;
@@ -4692,6 +4695,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 .crop-btn {
   position: absolute;
@@ -4759,6 +4763,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 .crop-btn {
   position: absolute;
@@ -4826,6 +4831,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 .crop-btn {
   position: absolute;
@@ -4893,6 +4899,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 .crop-btn {
   position: absolute;
@@ -4960,6 +4967,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 .crop-btn {
   position: absolute;
@@ -5027,6 +5035,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 .crop-btn {
   position: absolute;
@@ -5094,6 +5103,7 @@ input:checked + label::after {
   font-size: 1rem;
   border: none;
   border-radius: 10%;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 .crop-btn {
   position: absolute;
