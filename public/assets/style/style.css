@@ -520,6 +520,7 @@ input:checked + label::after {
 .mypage-body .modal.is-active {
   opacity: 1;
   visibility: visible;
+  display: block;
 }
 .mypage-body .modal-container {
   position: relative;
@@ -1300,7 +1301,8 @@ input:checked + label::after {
   background-image: url(/edit/images/cloud.png);
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: 5%;
+  margin-top: 6%;
+  margin-bottom: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1946,6 +1948,9 @@ input:checked + label::after {
     font-size: 1.4vw;
     margin-top: 25px;
   }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+  margin-top: 15%;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
   font-size: 0.6rem;
@@ -4370,6 +4375,7 @@ input:checked + label::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .preview .content .swiper-wrapper .swiper-slide_box .input-drop .background-textArea6-1 {
   position: relative;

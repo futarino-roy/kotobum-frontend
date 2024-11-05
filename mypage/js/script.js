@@ -118,17 +118,21 @@ modalButton_ls.forEach((modalButton_l) => {
     buttonA_l.style.cursor = 'not-allowed'; // cursorのデザインを変更
     buttonC_l.style.cursor = 'not-allowed';
 
+    // アルバムID取得
     //バックエンドとのAPI連携（校了後にボタンを押せなくする）
-    fetch(' ', {
+    fetch('https://develop-back.kotobum.com/api/albums/${albumId}/cover/send', {
       method: 'POST',
       headers: {
+        //この辺の処理送信もいらないかも
         'Content-Type': 'application/json', //送信するデータがJSON形式であることを示す
+        Authorization: `Bearer ${token}` //これはトークンで識別のために使うからいる
       },
       body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
     })
       .then((response) => response.json())
       .then((data) => {
         const koryoButton = document.getElementById('koryoButton');
+        //　データは返ってこなくて、メッセージが返ってくるので、このこーどはいらないかも
 
         if (data.isKoryoDone) {
           koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
@@ -143,7 +147,7 @@ modalButton_ls.forEach((modalButton_l) => {
 
   window.addEventListener('load', function () {
     fetch(' ', {
-      // method: 'GET',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -151,6 +155,7 @@ modalButton_ls.forEach((modalButton_l) => {
       .then((response) => response.json())
       .then((data) => {
         const koryoButton = document.getElementById('koryoButton');
+        // アルバムIDをもとにアルバムのデータを受け取って、そのデータで校了済みか判断
 
         if (data.isKoryoDone) {
           koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
@@ -217,6 +222,7 @@ const modal_r = document.querySelector('#modal2_2');
 
 // モーダル内の「マイページへ」ボタンを取得
 const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
+
 
 // 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
 modalButton_rs.forEach((modalButton_r) => {

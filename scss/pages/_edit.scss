@@ -855,7 +855,8 @@
                 background-image: url(/edit/images/cloud.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                margin-bottom: 5%;
+                margin-top: 6%;
+                margin-bottom: 10%;
                 // margin-right: 22%;
                 display: flex;
                 align-items: center;
@@ -1665,6 +1666,10 @@
                     font-size: 1.4vw;
                     margin-top: 25px;
                   }
+                }
+
+                &4-1 {
+                  margin-top: 15%;
                 }
 
                 &4-1,
