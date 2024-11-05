@@ -58,10 +58,9 @@ if (saveBtn) {
 }
 
 // ページを離れるときに保存されていない場合は警告を表示
-window.addEventListener('beforeunload', function () {
+window.addEventListener('beforeunload', function (event) {
   if (!isSaved) {
-    this.preventDefault();
-    this.alert('内容が保存されていません＞＜')
+    event.returnValue = '内容が保存されていません＞＜'; // ブラウザがデフォルトの警告メッセージを表示
   }
 });
 
