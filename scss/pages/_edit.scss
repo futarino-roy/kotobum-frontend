@@ -131,7 +131,18 @@
             height: calc(100vh - 200px);
 
             @include mq('tab-edit') {
-              height: calc(100vh - 500px);
+              @media (max-height: 1000px) {
+                height: calc(100vh - 730px);
+              }
+              @media (max-height: 900px) {
+                height: calc(100vh - 675px);
+              }
+              @media (max-height: 800px) {
+                height: calc(100vh - 610px);
+              }
+              @media (max-height: 700px) {
+                height: calc(100vh - 530px);
+              }
             }
 
             #imgPreviewField {
