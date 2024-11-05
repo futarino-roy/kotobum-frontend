@@ -1624,6 +1624,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   text-align: center;
+                  margin-top: -2%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;

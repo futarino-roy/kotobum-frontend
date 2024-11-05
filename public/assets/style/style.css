@@ -5467,6 +5467,7 @@ input:checked + label::after {
   font-weight: bold;
   color: #fef8f6;
   text-align: center;
+  margin-top: -2%;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1, .preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
