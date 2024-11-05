@@ -1290,6 +1290,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
     .then(response => {
       if (!response.ok) {
+        alert("ログインしてください。");
         throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
