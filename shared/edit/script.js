@@ -491,50 +491,31 @@ function adjustTextareaSize(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
+
 document.addEventListener('DOMContentLoaded', function () {
-  adjustTextareaSize(textArea);
-});
+  // テキストエリアのサイズとボーダーの調整
+  const textAreas = document.querySelectorAll('.text-empty');
 
-// 最大文字数の制限を外し、イベントリスナーを追加する関数
-function enforceNoMaxLength(textarea) {
-  textarea.addEventListener('input', function () {
-    adjustHeight(this);
-    adjustWidth(this);
-  });
-  adjustHeight(textarea);
-  adjustWidth(textarea);
-}
+  textAreas.forEach((textarea) => {
+    // サイズを調整
+    adjustTextareaSize(textarea);
 
-// ドキュメント読み込み時の処理
-document.addEventListener('DOMContentLoaded', function () {
-  // テキストエリアごとに必要な処理を実行
-  document.querySelectorAll('.text-empty').forEach((textarea) => {
-    enforceNoMaxLength(textarea);
-  });
+    // ボーダー設定
+    if (textarea.value.trim() === '') {
+      textarea.classList.remove('no-border');
+    } else {
+      textarea.classList.add('no-border');
+    }
 
-  // ロード後に高さと幅の調整を行う
-  setTimeout(() => {
-    document.querySelectorAll('.text-empty').forEach((textarea) => {
-      adjustHeight(textarea);
-      adjustWidth(textarea);
-    });
-  }, 100);
-});
+    // 入力時にサイズ調整とボーダー変更
+    textarea.addEventListener('input', function () {
+      adjustTextareaSize(textarea);
 
-// テキストエリア枠の削除
-document.addEventListener('DOMContentLoaded', function () {
-  const textEmptys = document.querySelectorAll('.text-empty');
-  function updateBorders() {
-    textEmptys.forEach((textEmpty) => {
-      if (textEmpty.value.trim() === '') {
-        textEmpty.classList.remove('no-border');
+      if (textarea.value.trim() === '') {
+        textarea.classList.remove('no-border');
       } else {
-        textEmpty.classList.add('no-border');
+        textarea.classList.add('no-border');
       }
     });
-  }
-  textEmptys.forEach((textEmpty) => {
-    textEmpty.addEventListener('input', updateBorders);
   });
-  updateBorders();
 });
