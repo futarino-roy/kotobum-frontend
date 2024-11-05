@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('textarea');
   textAreas.forEach(textarea => {
     initialData[textarea.id] = textarea.value;
+    console.log('データを保存しました')
   });
 });
 
