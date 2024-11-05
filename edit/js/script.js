@@ -43,7 +43,7 @@ function checkSave() {
 }
 
 // 保存ボタンをクリック時に保存状態を更新
-const saveBtn = document.getElementById('saveBtn');
+const saveBtn = document.getElementById('sendButton');
 if (saveBtn) {
   saveBtn.addEventListener('click', function () {
     isSaved = true;
