@@ -276,6 +276,9 @@ function adjustTextareaSize(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
+document.addEventListener('DOMContentLoaded', function () {
+  adjustTextareaSize(textArea);
+});
 
 // ドキュメントが読み込まれたときの初期処理
 document.addEventListener('DOMContentLoaded', function () {
