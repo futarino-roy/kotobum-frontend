@@ -68,11 +68,11 @@ document.getElementById('signup-form').addEventListener('submit', function (even
     }
 
     // メールアドレスの形式を確認
-    const login_idPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!login_idPattern.test(login_id)) {
-        alert('無効なメールアドレスです。');
-        return;
-    }
+    // const login_idPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!login_idPattern.test(login_id)) {
+    //     alert('無効なメールアドレスです。');
+    //     return;
+    // }
 
     // サーバーにリクエストを送信
     fetch('https://develop-back.kotobum.com/api/register', {
