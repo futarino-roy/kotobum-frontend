@@ -473,17 +473,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// テキストエリアの高さを調整する関数
-function adjustHeight(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-}
+// // テキストエリアの高さを調整する関数
+// function adjustHeight(textarea) {
+//   textarea.style.height = 'auto';
+//   textarea.style.height = `${textarea.scrollHeight}px`;
+// }
 
-// テキストエリアの幅を調整する関数
-function adjustWidth(textarea) {
+// // テキストエリアの幅を調整する関数
+// function adjustWidth(textarea) {
+//   textarea.style.width = 'auto';
+//   textarea.style.width = `${textarea.scrollWidth}px`;
+// }
+
+function adjustTextareaSize(textarea) {
+  textarea.style.height = 'auto';
   textarea.style.width = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
+document.addEventListener('DOMContentLoaded', function () {
+  adjustTextareaSize(textArea);
+});
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
