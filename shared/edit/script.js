@@ -597,27 +597,26 @@ if (mypageBtn) {
   });
 }
 
-//保存確認のモーダルの処理
-const modalsaveBtn = document.getElementById('modal-saveBtn');
-const cancelBtn = document.getElementById('cancelBtn');
+// //保存確認のモーダルの処理
+// const modalsaveBtn = document.getElementById('modal-saveBtn');
+// const cancelBtn = document.getElementById('cancelBtn');
 
-//　保存してマイページ　が押されたとき
-modalsaveBtn.addEventListener('click', function () {
-  handleSaveOrSend(); //保存処理の関数を呼び出す
-  console.log('保存しました。')
-  closesaveModal(); // モーダルを閉じる関数
-});
-// 保存せずマイページ　が押されたとき
-cancelBtn.addEventListener('click', function () {
-  closesaveModal();
-});
+// //　保存してマイページ　が押されたとき
+// modalsaveBtn.addEventListener('click', function () {
+//   console.log('保存しました。')
+//   closesaveModal(); // モーダルを閉じる関数
+// });
+// // 保存せずマイページ　が押されたとき
+// cancelBtn.addEventListener('click', function () {
+//   closesaveModal();
+// });
 
-function showaveModal() {
-  document.getElementById('saveModal').style.display = 'flex';
-}
-function closesaveModal() {
-  document.getElementById('saveModal').style.display = 'none';
-}
+// function showaveModal() {
+//   document.getElementById('saveModal').style.display = 'flex';
+// }
+// function closesaveModal() {
+//   document.getElementById('saveModal').style.display = 'none';
+// }
 
 // ボタン押されたら
 // モーダル表示のクラスを付与
