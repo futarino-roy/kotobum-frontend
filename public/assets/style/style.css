@@ -8241,7 +8241,7 @@ input:checked + label::after {
   width: 50%;
   max-width: 500px;
   position: relative;
-  clip-path: inset(36.5px 2px 41px 34px);
+  clip-path: inset(46.5px 3px 51.5px 46px);
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
@@ -8250,32 +8250,32 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(28px 1px 32px 25px);
+    clip-path: inset(34px 2px 39px 34px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
     margin: 50px 0 0;
-    clip-path: inset(8.5% 1% 9% 11%);
+    clip-path: inset(10.5% 1% 11.5% 15.5%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.5% 0.5% 11.5% 15.5%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.5% 0.5% 12% 15.5%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.3% 1% 13% 15%);
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop {
