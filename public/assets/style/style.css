@@ -6480,6 +6480,7 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
+  font-family: "League Spartan", sans-serif;
   width: 60% !important;
   font-size: 1.4rem;
   line-height: 1.5;
@@ -6511,6 +6512,7 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
+  font-family: "League Spartan", sans-serif;
   min-width: 60%;
   margin: 1% 0 5%;
   font-size: 0.52rem;
@@ -6646,6 +6648,7 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
+  font-family: "League Spartan", sans-serif;
   min-height: 30%;
   max-height: 30%;
   margin-bottom: 2.5%;
