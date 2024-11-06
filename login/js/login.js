@@ -97,7 +97,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
             if (!response.ok) {
                 // サーバーからのエラーレスポンスを取得
                 return response.json().then(data => {
-                    const errorMessage = data.message || 'サーバーエラーが発生しました。';
+                    const errorMessage = data.message || 'ログインIDまたはパスワードが正しくありません。';
                     if (errorMessage === 'Invalid login ID or password') {
                         // ログインIDまたはパスワードが異なる場合のメッセージ
                         throw new Error('ログインIDまたはパスワードが正しくありません。');
