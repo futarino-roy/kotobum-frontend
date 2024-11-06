@@ -485,15 +485,15 @@ function adjustWidth(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
-function adjustTextareaSize(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.width = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-  textarea.style.width = `${textarea.scrollWidth}px`;
-}
-document.addEventListener('DOMContentLoaded', function () {
-  adjustTextareaSize(textArea);
-});
+// function adjustTextareaSize(textarea) {
+//   textarea.style.height = 'auto';
+//   textarea.style.width = 'auto';
+//   textarea.style.height = `${textarea.scrollHeight}px`;
+//   textarea.style.width = `${textarea.scrollWidth}px`;
+// }
+// document.addEventListener('DOMContentLoaded', function () {
+//   adjustTextareaSize(textArea);
+// });
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
