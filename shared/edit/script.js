@@ -473,36 +473,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// テキストエリアの高さを調整する関数
-function adjustHeight(textarea) {
+// テキストエリアのサイズを調整する関数
+function adjustTextareaSize(textarea) {
   textarea.style.height = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-}
-
-// テキストエリアの幅を調整する関数
-function adjustWidth(textarea) {
   textarea.style.width = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
-
-// function adjustTextareaSize(textarea) {
-//   textarea.style.height = 'auto';
-//   textarea.style.width = 'auto';
-//   textarea.style.height = `${textarea.scrollHeight}px`;
-//   textarea.style.width = `${textarea.scrollWidth}px`;
-// }
-// document.addEventListener('DOMContentLoaded', function () {
-//   adjustTextareaSize(textArea);
-// });
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
   textarea.addEventListener('input', function () {
-    adjustHeight(this);
-    adjustWidth(this);
+    adjustTextareaSize(this);
   });
-  adjustHeight(textarea);
-  adjustWidth(textarea);
+  // 初期表示時にもサイズ調整を実行
+  adjustTextareaSize(textarea);
 }
 
 // ドキュメント読み込み時の処理
@@ -511,15 +496,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.text-empty').forEach((textarea) => {
     enforceNoMaxLength(textarea);
   });
-
-  // ロード後に高さと幅の調整を行う
-  setTimeout(() => {
-    document.querySelectorAll('.text-empty').forEach((textarea) => {
-      adjustHeight(textarea);
-      adjustWidth(textarea);
-    });
-  }, 100);
 });
+
 
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
