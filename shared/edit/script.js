@@ -583,40 +583,12 @@ if (saveBtn) {
   console.warn('Save button with ID "saveButton" not found.');
 }
 
-// マイページボタンを押されたとき保存されていなかったらモーダル表示
-// const mypageBtn = document.getElementById('mypageButton');
-// if (mypageBtn) {
-//   mypageBtn.addEventListener('click', function (event) {
-//     if (!isSaved) {
-//       event.preventDefault();
-//     } else {
-//       // 保存されているときはマイページへ
-//       window.location.href = '/mypage/index.html';
-//     }
-//   });
-// }
-
-// //保存確認のモーダルの処理
-// const modalsaveBtn = document.getElementById('modal-saveBtn');
-// const cancelBtn = document.getElementById('cancelBtn');
-
-// //　保存してマイページ　が押されたとき
-// modalsaveBtn.addEventListener('click', function () {
-//   console.log('保存しました。')
-//   closesaveModal(); // モーダルを閉じる関数
-// });
-// // 保存せずマイページ　が押されたとき
-// cancelBtn.addEventListener('click', function () {
-//   closesaveModal();
-// });
-
-// function showaveModal() {
-//   document.getElementById('saveModal').style.display = 'flex';
-// }
-// function closesaveModal() {
-//   document.getElementById('saveModal').style.display = 'none';
-// }
-
+// ページを離れるときに保存されていない場合は警告を表示
+window.addEventListener('beforeunload', function (event) {
+  if (!isSaved) {
+    event.returnValue = '内容が保存されていません＞＜'; // ブラウザがデフォルトの警告メッセージを表示
+  }
+});
 // ボタン押されたら
 // モーダル表示のクラスを付与
 // 保存してないけど保存しますか？
