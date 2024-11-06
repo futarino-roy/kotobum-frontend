@@ -498,7 +498,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
   const textEmptys = document.querySelectorAll('.text-empty');
@@ -567,9 +566,3 @@ window.addEventListener('beforeunload', function (event) {
     event.returnValue = '内容が保存されていません＞＜'; // ブラウザがデフォルトの警告メッセージを表示
   }
 });
-// ボタン押されたら
-// モーダル表示のクラスを付与
-// 保存してないけど保存しますか？
-// 保存してマイページへ
-// 保存せずマイページへ
-// 

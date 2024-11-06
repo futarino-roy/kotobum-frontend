@@ -185,16 +185,16 @@
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(8.5% 1% 9.5% 11%);
+              clip-path: inset(10.5% 0.8% 11.5% 15.3%);
             }
             @include mq('sp2-edit') {
               width: 70%;
-              clip-path: inset(8.5% 1% 9.5% 11%);
+              clip-path: inset(10.5% 0.8% 11.5% 15.3%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
               width: 50%;
-              clip-path: inset(8.5% 1% 9.5% 11%);
+              clip-path: inset(10.5% 0.8% 11.5% 15.3%);
             }
 
             .input-drop {

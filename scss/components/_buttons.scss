@@ -70,11 +70,11 @@
         height: 40px;
       }
 
-      &-mypc {
-        @include mq('tab') {
-          display: none;
-        }
-      }
+      // &-mypc {
+      //   @include mq('tab') {
+      //     display: none;
+      //   }
+      // }
 
       &-mytab {
         display: none;
@@ -133,7 +133,6 @@
       width: 156px;
       height: 46px;
       font-size: 1.125rem;
-
     }
   }
 }

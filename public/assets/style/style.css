@@ -116,11 +116,6 @@ a {
   width: 125px;
   height: 40px;
 }
-@media screen and (max-width: 900px) {
-  .btn-small_wh-mypc {
-    display: none;
-  }
-}
 .btn-small_wh-mytab {
   display: none;
 }
@@ -9223,19 +9218,19 @@ input:checked + label::after {
 @media screen and (max-width: 480px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.5% 0.8% 11.5% 15.3%);
   }
 }
 @media screen and (max-width: 380px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 70%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.5% 0.8% 11.5% 15.3%);
   }
 }
 @media screen and (max-width: 330px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
     width: 50%;
-    clip-path: inset(8.5% 1% 9.5% 11%);
+    clip-path: inset(10.5% 0.8% 11.5% 15.3%);
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
