@@ -584,18 +584,17 @@ if (saveBtn) {
 }
 
 // マイページボタンを押されたとき保存されていなかったらモーダル表示
-const mypageBtn = document.getElementById('mypageButton');
-if (mypageBtn) {
-  mypageBtn.addEventListener('click', function (event) {
-    if (!isSaved) {
-      // event.preventDefault();
-      showaveModal();
-    } else {
-      // 保存されているときはマイページへ
-      window.location.href = '/mypage/index.html';
-    }
-  });
-}
+// const mypageBtn = document.getElementById('mypageButton');
+// if (mypageBtn) {
+//   mypageBtn.addEventListener('click', function (event) {
+//     if (!isSaved) {
+//       event.preventDefault();
+//     } else {
+//       // 保存されているときはマイページへ
+//       window.location.href = '/mypage/index.html';
+//     }
+//   });
+// }
 
 // //保存確認のモーダルの処理
 // const modalsaveBtn = document.getElementById('modal-saveBtn');
