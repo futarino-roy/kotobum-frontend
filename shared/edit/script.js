@@ -588,7 +588,7 @@ const mypageBtn = document.getElementById('mypageButton');
 if (mypageBtn) {
   mypageBtn.addEventListener('click', function (event) {
     if (!isSaved) {
-      event.preventDefault();
+      // event.preventDefault();
       showaveModal();
     } else {
       // 保存されているときはマイページへ
