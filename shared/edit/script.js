@@ -538,3 +538,90 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   updateBorders();
 });
+
+//マイページへボタンを押されたとき
+// 保存状態を取得
+let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
+let isSaved = true; // データが保存済みかどうかを示すフラグ
+
+// ページ読み込み時にデータを保存(初期データ)
+document.addEventListener('DOMContentLoaded', function () {
+  const textAreas = document.querySelectorAll('textarea');
+  textAreas.forEach(textarea => {
+    initialData[textarea.id] = textarea.value;
+    console.log('データを保存しました')
+  });
+});
+
+// テキストエリアに変更があれば未保存のフラグを設定
+document.querySelectorAll('textarea').forEach(textarea => {
+  textarea.addEventListener('input', () => {
+    isSaved = checkSave();
+  });
+});
+
+// 初期データと比較して変更されているか確認する関数
+function checkSave() {
+  const textAreas = document.querySelectorAll('textarea');
+  return Array.from(textAreas).every(textarea => {
+    return textarea.value === initialData[textarea.id];
+  });
+}
+
+// 保存ボタンをクリック時に保存状態を更新
+const saveBtn = document.getElementById('sendButton');
+if (saveBtn) {
+  saveBtn.addEventListener('click', function () {
+    isSaved = true;
+    const textAreas = document.querySelectorAll('textarea');
+    textAreas.forEach(textarea => {
+      initialData[textarea.id] = textarea.value;
+    });
+    console.log("保存内容が保存されました");
+  });
+} else {
+  console.warn('Save button with ID "saveButton" not found.');
+}
+
+// マイページボタンを押されたとき保存されていなかったらモーダル表示
+const mypageBtn = document.getElementById('mypageButton');
+if (mypageBtn) {
+  mypageBtn.addEventListener('click', function (event) {
+    if (!isSaved) {
+      event.preventDefault();
+      showaveModal();
+    } else {
+      // 保存されているときはマイページへ
+      window.location.href = '/mypage/index.html';
+    }
+  });
+}
+
+//保存確認のモーダルの処理
+const modalsaveBtn = document.getElementById('modal-saveBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+
+//　保存してマイページ　が押されたとき
+modalsaveBtn.addEventListener('click', function () {
+  handleSaveOrSend(); //保存処理の関数を呼び出す
+  console.log('保存しました。')
+  closesaveModal(); // モーダルを閉じる関数
+});
+// 保存せずマイページ　が押されたとき
+cancelBtn.addEventListener('click', function () {
+  closesaveModal();
+});
+
+function showaveModal() {
+  document.getElementById('saveModal').style.display = 'flex';
+}
+function closesaveModal() {
+  document.getElementById('saveModal').style.display = 'none';
+}
+
+// ボタン押されたら
+// モーダル表示のクラスを付与
+// 保存してないけど保存しますか？
+// 保存してマイページへ
+// 保存せずマイページへ
+// 
