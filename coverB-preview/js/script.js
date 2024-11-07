@@ -125,7 +125,7 @@ function loadTextForPreview() {
     // IDからインデックスを取得
     textArea.value = ''; // ローカルストレージからの取得処理を削除
     // テキストエリアの高さを調整
-    adjustTextareaHeight(textArea);
+    adjustTextareaSize();
   });
 }
 
