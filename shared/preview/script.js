@@ -269,20 +269,15 @@ function applyColors(colors) {
   }
 }
 
-// テキストエリアのサイズを調整する関数
+// テキストエリアの高さと幅を自動調整する関数
 function adjustTextareaSize(textarea) {
   textarea.style.height = 'auto';
   textarea.style.width = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
-
-// ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
-  // テキストエリアごとに必要な処理を実行
-  document.querySelectorAll('.text-empty').forEach((textarea) => {
-    enforceNoMaxLength(textarea);
-  });
+  adjustTextareaSize(textArea);
 });
 
 // ドキュメントが読み込まれたときの初期処理
