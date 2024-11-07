@@ -782,7 +782,7 @@ input:checked + label::after {
   cursor: pointer;
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-1 {
-  background-color: #e6cd00;
+  background-color: rgb(230, 205, 0);
 }
 .edit_drawer_container_item_color .color-container_vari .btn-color-2 {
   background-color: #e6c300;
