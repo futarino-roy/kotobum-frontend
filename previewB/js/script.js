@@ -209,25 +209,55 @@ document.getElementById('editBack').addEventListener('click', function () {
 //   loadTextForPreview();
 // });
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('textarea').forEach((textarea) => {
-    // ページロード時にテキストエリアの幅を調整
-    adjustTextareaWidth(textarea);
+function adjustTextareaSize(textarea) {
+  // 高さをリセットしてから内容に応じて高さを調整
+  textarea.style.height = "auto";
+  textarea.style.height = `${textarea.scrollHeight}px`;
 
-    // 入力時にテキストエリアの幅を調整
-    textarea.addEventListener('input', function () {
-      adjustTextareaWidth(this);
-    });
+  // 幅をリセットしてから内容に応じて幅を調整
+  textarea.style.width = "auto";
+  textarea.style.width = `${textarea.scrollWidth}px`;
+}
+
+// プレビューページでテキストエリアに表示する関数
+function loadTextForPreview() {
+  // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
+  const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+
+  textAreas.forEach((textArea) => {
+    // IDからインデックスを取得
+    textArea.value = ''; // ローカルストレージからの取得処理を削除
+    // テキストエリアの高さを調整
+    adjustTextareaSize();
   });
+}
+
+// ドキュメントが読み込まれたときにテキストを表示
+document.addEventListener('DOMContentLoaded', function () {
+  loadTextForPreview();
 });
 
-function adjustTextareaWidth(textarea) {
-  // 一時的に横幅を自動調整して、内容に合わせて適切な幅を取得
-  textarea.style.width = 'auto';
-  // スクロール幅を取得し、その幅に基づいてテキストエリアの幅を調整
-  const scrollWidth = textarea.scrollWidth;
-  textarea.style.width = scrollWidth + 'px';
-}
+// --------------------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', function () {
+//   document.querySelectorAll('textarea').forEach((textarea) => {
+//     // ページロード時にテキストエリアの幅を調整
+//     adjustTextareaWidth(textarea);
+
+//     // 入力時にテキストエリアの幅を調整
+//     textarea.addEventListener('input', function () {
+//       adjustTextareaWidth(this);
+//     });
+//   });
+// });
+
+// function adjustTextareaWidth(textarea) {
+//   // 一時的に横幅を自動調整して、内容に合わせて適切な幅を取得
+//   textarea.style.width = 'auto';
+//   // スクロール幅を取得し、その幅に基づいてテキストエリアの幅を調整
+//   const scrollWidth = textarea.scrollWidth;
+//   textarea.style.width = scrollWidth + 'px';
+// }
+// ----------------------------------------------------------------------
 
 // 色変更
 // プレビューページで色を適用する関数
