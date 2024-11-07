@@ -269,15 +269,29 @@ function applyColors(colors) {
   }
 }
 
-// テキストエリアの高さと幅を自動調整する関数
+// テキストエリアのサイズを調整する関数
 function adjustTextareaSize(textarea) {
   textarea.style.height = 'auto';
   textarea.style.width = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
+
+// 最大文字数の制限を外し、イベントリスナーを追加する関数
+function enforceNoMaxLength(textarea) {
+  textarea.addEventListener('input', function () {
+    adjustTextareaSize(this);
+  });
+  // 初期表示時にもサイズ調整を実行
+  adjustTextareaSize(textarea);
+}
+
+// ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
-  adjustTextareaSize(textArea);
+  // テキストエリアごとに必要な処理を実行
+  document.querySelectorAll('.text-empty').forEach((textarea) => {
+    enforceNoMaxLength(textarea);
+  });
 });
 
 // ドキュメントが読み込まれたときの初期処理
