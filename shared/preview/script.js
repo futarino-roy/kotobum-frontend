@@ -277,15 +277,6 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
-// 最大文字数の制限を外し、イベントリスナーを追加する関数
-function enforceNoMaxLength(textarea) {
-  textarea.addEventListener('input', function () {
-    adjustTextareaSize(this);
-  });
-  // 初期表示時にもサイズ調整を実行
-  adjustTextareaSize(textarea);
-}
-
 // ドキュメント読み込み時の処理
 document.addEventListener('DOMContentLoaded', function () {
   // テキストエリアごとに必要な処理を実行
