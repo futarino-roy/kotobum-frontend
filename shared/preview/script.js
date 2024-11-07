@@ -278,6 +278,7 @@ function adjustTextareaSize(textarea) {
 }
 document.addEventListener('DOMContentLoaded', function () {
   adjustTextareaSize(textarea);
+  console.log('テキストエリアを調整');
 });
 
 // ドキュメントが読み込まれたときの初期処理
