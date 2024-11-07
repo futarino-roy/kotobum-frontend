@@ -269,9 +269,7 @@ function applyColors(colors) {
   }
 }
 
-// テキストエリアの高さと幅を自動調整する関数
 function adjustTextareaSize(textarea) {
-  // `textarea`が`undefined`の場合のチェック
   if (!textarea) return;
 
   textarea.style.height = 'auto';
@@ -281,20 +279,15 @@ function adjustTextareaSize(textarea) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // idが"textArea"で始まる要素をすべて取得
-  const textAreas = document.querySelectorAll('[id^="textArea"]');
+  // `.text-empty`クラスがついたすべてのテキストエリアを取得
+  const textAreas = document.querySelectorAll('.text-empty');
 
-  // 取得したテキストエリアが存在するか確認
-  if (textAreas.length === 0) {
-    console.warn('No elements with id starting with "textArea" were found.');
-    return;
-  }
-
+  // 取得した各テキストエリアのサイズを調整
   textAreas.forEach((textArea) => {
     adjustTextareaSize(textArea);
-    textArea.addEventListener('input', () => adjustTextareaSize(textArea));
   });
 });
+
 
 
 // ドキュメントが読み込まれたときの初期処理
