@@ -277,7 +277,7 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 document.addEventListener('DOMContentLoaded', function () {
-  const textarea = document.querySelectorAll('[id^="textArea"]');
+  // const textarea = document.querySelectorAll('[id^="textArea"]');
   adjustTextareaSize(textarea);
   console.log('テキストエリアを調整');
 });
