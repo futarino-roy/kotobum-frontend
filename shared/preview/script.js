@@ -277,7 +277,7 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 document.addEventListener('DOMContentLoaded', function () {
-  adjustTextareaSize(textArea);
+  adjustTextareaSize(textarea);
 });
 
 // ドキュメントが読み込まれたときの初期処理
