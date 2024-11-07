@@ -209,33 +209,33 @@ document.getElementById('editBack').addEventListener('click', function () {
 //   loadTextForPreview();
 // });
 
-function adjustTextareaSize(textarea) {
-  // 高さをリセットしてから内容に応じて高さを調整
-  textarea.style.height = "auto";
-  textarea.style.height = `${textarea.scrollHeight}px`;
+// function adjustTextareaSize(textarea) {
+//   // 高さをリセットしてから内容に応じて高さを調整
+//   textarea.style.height = "auto";
+//   textarea.style.height = `${textarea.scrollHeight}px`;
 
-  // 幅をリセットしてから内容に応じて幅を調整
-  textarea.style.width = "auto";
-  textarea.style.width = `${textarea.scrollWidth}px`;
-}
+//   // 幅をリセットしてから内容に応じて幅を調整
+//   textarea.style.width = "auto";
+//   textarea.style.width = `${textarea.scrollWidth}px`;
+// }
 
-// プレビューページでテキストエリアに表示する関数
-function loadTextForPreview() {
-  // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
-  const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+// // プレビューページでテキストエリアに表示する関数
+// function loadTextForPreview() {
+//   // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
+//   const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
 
-  textAreas.forEach((textArea) => {
-    // IDからインデックスを取得
-    textArea.value = ''; // ローカルストレージからの取得処理を削除
-    // テキストエリアの高さを調整
-    adjustTextareaSize();
-  });
-}
+//   textAreas.forEach((textArea) => {
+//     // IDからインデックスを取得
+//     textArea.value = ''; // ローカルストレージからの取得処理を削除
+//     // テキストエリアの高さを調整
+//     adjustTextareaSize();
+//   });
+// }
 
-// ドキュメントが読み込まれたときにテキストを表示
-document.addEventListener('DOMContentLoaded', function () {
-  loadTextForPreview();
-});
+// // ドキュメントが読み込まれたときにテキストを表示
+// document.addEventListener('DOMContentLoaded', function () {
+//   loadTextForPreview();
+// });
 
 // --------------------------------------------------------------------
 // document.addEventListener('DOMContentLoaded', function () {
