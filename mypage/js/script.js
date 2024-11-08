@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
       //編集ボタンのリンク先をフォーマットに応じて設定
       const editBtn = document.getElementById('editBtn');
       if (editBtn) {
-        if (format === '1') {
+        if (format === 1) {
           editBtn.href = '/edit/index.html';
-        } else if (format === '2') {
+        } else if (format === 2) {
           editBtn.href = '/edit2/index.html';
         } else {
           console.warn('不明なフォーマット情報：', format);
