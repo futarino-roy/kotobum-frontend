@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token'); // トークンを取得
+  const format = localStorage.getItem('format'); // フォーマット情報を取得
   console.log('取得したトークン:', token); // トークンをコンソールに表示
 
   if (!token) {
@@ -30,6 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
         headerParagraph.textContent = `${username} 様`; // 名前を表示
       } else {
         console.error('HTML 内に <header> <p> が見つかりません。');
+      }
+
+      //編集ボタンのリンク先をフォーマットに応じて設定
+      const editBtn = document.getElementById('editBtn');
+      if (editBtn) {
+        if (format === '1') {
+          editBtn.href = '/edit/index.html';
+        } else if (format === '2') {
+          editBtn.href = '/edit2/index.html';
+        } else {
+          console.warm('不明なフォーマット情報：', format);
+        }
+      } else {
+        console.error('編集ボタンが見つかりません。');
       }
     })
     .catch((error) => {
