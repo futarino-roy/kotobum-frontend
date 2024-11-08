@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const editBtn = document.getElementById('editBtn');
       if (editBtn) {
         if (format === 1) {
-          editBtn.href = '../edit';
+          window.location.href = '../edit';
         } else if (format === 2) {
-          editBtn.href = '../edit2';
+          window.location.href = '../edit2';
         } else {
           console.warn('不明なフォーマット情報：', format);
         }
