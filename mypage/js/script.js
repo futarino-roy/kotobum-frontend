@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (format === '2') {
           editBtn.href = '/edit2/index.html';
         } else {
-          console.warm('不明なフォーマット情報：', format);
+          console.warn('不明なフォーマット情報：', format);
         }
       } else {
         console.error('編集ボタンが見つかりません。');
