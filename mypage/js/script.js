@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token'); // トークンを取得
-  const format = localStorage.getItem('format'); // フォーマット情報を取得
   console.log('取得したトークン:', token); // トークンをコンソールに表示
-  console.log('取得したフォーマット情報：', format);
 
   if (!token) {
     console.error('トークンが見つかりません。サインインしてください。');
