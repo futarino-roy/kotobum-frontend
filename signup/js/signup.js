@@ -63,7 +63,7 @@ document.getElementById('signup-form').addEventListener('submit', function (even
     const format = document.querySelector('select[name="format"]').value;
 
     // 簡単なバリデーション
-    if (!name || !login_id || !password || !template || format) {
+    if (!name || !login_id || !password || !template || !format) {
         alert('すべてのフィールドを入力してください。');
         return;
     }
