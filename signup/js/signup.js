@@ -60,7 +60,7 @@ document.getElementById('signup-form').addEventListener('submit', function (even
     const login_id = document.querySelector('input[name="login_id"]').value.trim();
     const password = document.querySelector('input[name="password"]').value;
     const template = document.querySelector('input[name="template"]:checked').value; // AまたはBを取得
-    const format = document.querySelector('select[name="format"]:checked').value;
+    const format = document.querySelector('select[name="format"]').value;
 
     // 簡単なバリデーション
     if (!name || !login_id || !password || !template || format) {
