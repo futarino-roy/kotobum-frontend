@@ -38,13 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
       //編集ボタンのリンク先をフォーマットに応じて設定
       const editBtn = document.getElementById('editBtn');
       if (editBtn) {
-        if (format === 1) {
-          window.location.href = '../edit';
-        } else if (format === 2) {
-          window.location.href = '../edit2';
-        } else {
-          console.warn('不明なフォーマット情報：', format);
-        }
+        editBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../edit';
+          } else if (format === 2) {
+            window.location.href = '../edit2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
       } else {
         console.error('編集ボタンが見つかりません。');
       }
