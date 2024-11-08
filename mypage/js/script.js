@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return response.json();
     })
     .then((data) => {
+      const format = data.format;
       const username = data.name; // サーバーから取得した名前
+      console.log('フォーマット情報：', format);
       const headerParagraph = document.querySelector('header p');
       if (headerParagraph) {
         headerParagraph.textContent = `${username} 様`; // 名前を表示

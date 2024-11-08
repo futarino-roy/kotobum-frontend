@@ -112,10 +112,6 @@ document.getElementById('login-form').addEventListener('submit', function (event
             console.log('成功:', data);
             localStorage.setItem('token', data.token); // トークンを保存
             localStorage.setItem('template', data.template); // トークンを保存
-            localStorage.setItem('format', data.format); // トークンを保存
-
-            const format = data.format;
-            console.log('フォーマット情報：', format)
 
             // サーバーから取得した情報
             const template = data.template; // サーバーから「template」情報を取得
