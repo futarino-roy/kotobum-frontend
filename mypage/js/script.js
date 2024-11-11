@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('HTML 内に <header> <p> が見つかりません。');
       }
 
-      //編集ボタンのリンク先をフォーマットに応じて設定
+      //中身編集ボタンのリンク先をフォーマットに応じて設定
       const editBtn = document.getElementById('editBtn');
       if (editBtn) {
         editBtn.addEventListener('click', (event) => {
@@ -52,6 +52,90 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         console.error('編集ボタンが見つかりません。');
       }
+
+      //中身プレビューボタン
+      const previewBtn = document.getElementById('previewBtn');
+      if (previewBtn) {
+        previewBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../preview';
+          } else if (format === 2) {
+            window.location.href = '../preview2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+
+      //表紙編集ボタン
+      const coverBtn = document.getElementById('coverBtn');
+      if (coverBtn) {
+        coverBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../cover';
+          } else if (format === 2) {
+            window.location.href = '../cover2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+
+      //表紙プレビューボタン
+      const coverpreviewBtn = document.getElementById('cover-reviewBtn');
+      if (coverpreviewBtn) {
+        coverpreviewBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../cover-preview';
+          } else if (format === 2) {
+            window.location.href = '../cover-preview2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+
+      //いずれこっちのコードにしたい
+      //       // ボタンの設定関数を定義
+      // function setupButton(buttonId, path1, path2) {
+      //   const button = document.getElementById(buttonId);
+      //   if (button) {
+      //       button.addEventListener('click', (event) => {
+      //           event.preventDefault();
+
+      //           // format の値に応じたリンク先を設定
+      //           if (format === 1) {
+      //               window.location.href = path1;
+      //           } else if (format === 2) {
+      //               window.location.href = path2;
+      //           } else {
+      //               console.warn(`不明なフォーマット情報： ${format}`);
+      //           }
+      //       });
+      //   } else {
+      //       console.error(`ボタンが見つかりません：${buttonId}`);
+      //   }
+      // }
+
+      // // 各ボタンに対して関数を呼び出して設定
+      // setupButton('editBtn', '../edit', '../edit2');
+      // setupButton('previewBtn', '../preview', '../preview2');
+      // setupButton('coverBtn', '../cover', '../cover2');
+      // setupButton('cover-reviewBtn', '../cover-preview', '../cover-preview2');
+
+
     })
     .catch((error) => {
       console.error('失敗:', error);

@@ -768,12 +768,12 @@
           }
           &_box {
             position: relative;
-            clip-path: inset(23px 24px 40px 24px);
+            clip-path: inset(24px 24px 30px 24px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 37px 57px 37px);
+              clip-path: inset(31px 33px 41px 33px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(16px 16px 30px 17px);
+              clip-path: inset(17px 16px 23px 17px);
             }
             @include mq('tab-edit') {
               width: 90%;
@@ -786,7 +786,7 @@
               position: absolute;
               width: 100%;
               height: 100%;
-              top: 10px;
+              top: 24px;
               opacity: 1;
               display: flex;
               flex-direction: column;
@@ -800,6 +800,16 @@
               }
               @include mq('tab-edit') {
                 max-height: 87%;
+              }
+
+              p {
+                position: absolute;
+                bottom: 4%;
+                font-size: 0.3rem;
+              }
+              .bottom-text {
+                color: #f8f8f8;
+                bottom: -1%;
               }
 
               #dropArea1_t2 {
@@ -846,25 +856,78 @@
               }
 
               #dropArea2_t2 {
+                width: 78%;
+                height: 97%;
+                top: 10px;
+                position: absolute;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              .flex4_t2 {
+                display: flex;
                 width: 100%;
                 height: 100%;
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
+                flex-direction: column;
+                align-items: center;
+
+                #dropArea4-1_t2,
+                #dropArea4-2_t2,
+                #dropArea4-3_t2 {
+                  width: 54.5%;
+                  height: 27.5%;
+                  margin-bottom: 3.5%;
+                  position: relative;
+                  top: 5%;
+                  left: 7%;
+                  // 枠サイズ変更関連---
+                  &.active {
+                    border-color: #00000089;
+                  }
+
+                  &.square {
+                    width: 45%;
+                    height: 32%;
+                  }
+
+                  &.rectangle34 {
+                    width: 45%;
+                    height: 40%;
+                  }
+
+                  &.rectangle43 {
+                    width: 45%;
+                    height: 25%;
+                  }
+
+                  &.mini {
+                    width: 45%;
+                    height: 20%;
+                  }
+
+                  // --------------------------
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                  }
                 }
               }
 
-              #dropArea4-1,
-              #dropArea4-2,
-              #dropArea4-3 {
+              #dropArea6_t2 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                width: 46%;
+                height: 49%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                top: 4px;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -901,57 +964,16 @@
                 }
               }
 
-              #dropArea6 {
+              #dropArea8-1_t2,
+              #dropArea8-2_t2 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                width: 46%;
+                height: 25.5%;
+                top: 4.5%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #00000089;
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle34 {
-                  width: 45%;
-                  height: 40%;
-                }
-
-                &.rectangle43 {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
-
-              #dropArea8-1,
-              #dropArea8-2 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
+                margin-bottom: 5%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -987,10 +1009,11 @@
                 }
               }
 
-              #dropArea10 {
+              #dropArea10_t2 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: 1%;
+                width: 43%;
+                height: 46%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
@@ -1018,45 +1041,6 @@
                   width: 45%;
                   height: 20%;
                 }
-
-                // --------------------------
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
-
-              #dropArea12 {
-                margin-top: 0%;
-                position: relative;
-                width: 63%;
-                height: 42%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-
-                // 枠サイズ変更関連---
-                // &.active {
-                //   border-color: #00000089;
-                // }
-
-                // &.square {
-                //   width: 57%;
-                //   height: 40%;
-                // }
-
-                // &.rectangle {
-                //   width: 62%;
-                //   height: 30%;
-                // }
-
-                // &.mini {
-                //   width: 52%;
-                //   height: 20%;
-                // }
 
                 // --------------------------
 
@@ -1133,12 +1117,16 @@
                 &1-2_t2 {
                   font-family: 'League Spartan', sans-serif;
                   margin: 0;
-                  margin: 1% 0 5%;
+                  margin: 3% 0 3%;
                   font-size: 0.45rem;
                   text-align: center;
-                  line-height: 1.5;
+                  line-height: 2.5;
                   font-weight: bold;
                   color: #fef8f6;
+                  width: 30% !important;
+
+                  background-color: palegoldenrod;
+                  border-radius: 9999px;
 
                   @include mq('pc-edit') {
                     font-size: 0.33rem;
@@ -1156,11 +1144,17 @@
                     font-size: 1.55vw;
                   }
                 }
-
                 &1-3_t2 {
+                  width: 45% !important;
                   text-align: center;
                 }
 
+                &4_t2 {
+                  transform: rotate(90deg);
+                  position: absolute;
+                  top: 25%;
+                  left: -12%;
+                }
                 &3,
                 &5,
                 &7,
@@ -1186,36 +1180,103 @@
                   }
                 }
 
-                &8 {
+                &8_t2 {
+                  position: absolute;
+                  top: 10%;
                 }
 
-                &10 {
+                &10-1_t2 {
+                  position: absolute;
+                  top: 12%;
                 }
-
-                &12-1 {
-                  background-color: coral;
-                  @include mq('pc-edit') {
-                    font-size: 0.6rem;
-                    // margin-bottom: 3%;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 2.5vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 3vw;
-                  }
+                &10-2_t2 {
+                  position: absolute;
+                  bottom: 12%;
                 }
-                &12-2 {
-                  // background-color: coral;
-                  height: 90% !important;
+              }
+            }
+            #textArea12-1_t2 {
+              transform: rotate(270deg);
+              position: relative;
+              top: 7%;
+              right: 38.2%;
+              text-align: center;
+              color: #f8f8f8;
+              font-weight: bold;
+              font-size: 0.7rem;
+              line-height: 1;
+
+              @include mq('pc-edit') {
+                font-size: 0.6rem;
+                // margin-bottom: 3%;
+              }
+
+              @include mq('pc2-edit') {
+                font-size: 0.9rem;
+              }
+
+              @include mq('tab-edit') {
+                font-size: 2.5vw;
+              }
+
+              @include mq('sp-edit') {
+                font-size: 3vw;
+              }
+            }
+            .flex12-1 {
+              display: flex;
+              flex-direction: column;
+              width: 77%;
+              height: 100%;
+              justify-content: center;
+              align-items: center;
+              left: 14.5%;
+              position: absolute;
+              top: -4%;
+
+              #dropArea12_t2 {
+                margin-top: 0%;
+                position: relative;
+                width: 60%;
+                height: 34%;
+                font-size: 1rem;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+
+                // 枠サイズ変更関連---
+                // &.active {
+                //   border-color: #00000089;
+                // }
+
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
+
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
+
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+
+              #textArea {
+                &12-2_t2 {
                   font-size: 0.25rem;
-                  padding-top: 4%;
+                  margin-top: 10%;
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
                   }
@@ -1232,14 +1293,14 @@
                     font-size: 1.1vw;
                   }
                 }
-                &12-3 {
-                  position: absolute;
-                  text-align: center;
-                  line-height: 1.5;
+                &12-3_t2 {
+                  // font-family: 'League Spartan', sans-serif;
                   font-weight: bold;
-                  color: #fef8f6;
+                  position: relative;
                   font-size: 12px;
-                  margin-top: 113.5%;
+                  bottom: -15%;
+                  text-align: center;
+
                   @include mq('pc-edit') {
                     margin-top: 113.5%;
                   }
