@@ -25,11 +25,83 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then((data) => {
       const username = data.name; // サーバーから取得した名前
+      const format = data.format;
+      console.log('フォーマット情報：', format);
       const headerParagraph = document.querySelector('header p');
       if (headerParagraph) {
         headerParagraph.textContent = `${username} 様`; // 名前を表示
       } else {
         console.error('HTML 内に <header> <p> が見つかりません。');
+      }
+      //中身編集ボタンのリンク先をフォーマットに応じて設定
+      const editBtn = document.getElementById('editBtnB');
+      if (editBtn) {
+        editBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../edit';
+          } else if (format === 2) {
+            window.location.href = '../edit2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+      //中身プレビューボタン
+      const previewBtn = document.getElementById('previewBtnB');
+      if (previewBtn) {
+        previewBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../preview';
+          } else if (format === 2) {
+            window.location.href = '../preview2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+
+      //表紙編集ボタン
+      const coverBtn = document.getElementById('coverBtnB');
+      if (coverBtn) {
+        coverBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../cover';
+          } else if (format === 2) {
+            window.location.href = '../cover2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
+      }
+
+      //表紙プレビューボタン
+      const coverpreviewBtn = document.getElementById('cover-previewBtnB');
+      if (coverpreviewBtn) {
+        coverpreviewBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          if (format === 1) {
+            window.location.href = '../cover-preview';
+          } else if (format === 2) {
+            window.location.href = '../cover-preview2';
+          } else {
+            console.warn('不明なフォーマット情報：', format);
+          }
+        });
+      } else {
+        console.error('編集ボタンが見つかりません。');
       }
     })
     .catch((error) => {

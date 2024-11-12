@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       //表紙プレビューボタン
-      const coverpreviewBtn = document.getElementById('cover-reviewBtn');
+      const coverpreviewBtn = document.getElementById('cover-previewBtn');
       if (coverpreviewBtn) {
         coverpreviewBtn.addEventListener('click', (event) => {
           event.preventDefault();
