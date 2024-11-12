@@ -793,6 +793,13 @@
               align-items: center;
               justify-content: center;
 
+              .page1_text {
+                width: 30%;
+                height: 5%;
+                border-radius: 9999px;
+                margin: 2% 0 2% 0;
+              }
+
               p {
                 position: absolute;
                 bottom: 4%;
@@ -1107,16 +1114,15 @@
 
                 &1-2_t2 {
                   font-family: 'League Spartan', sans-serif;
-                  margin: 0;
-                  margin: 3% 0 3%;
+                  margin: -3% 0 0 0;
                   font-size: 0.45rem;
                   text-align: center;
                   line-height: 2.5;
                   font-weight: bold;
                   color: #fef8f6;
-                  width: 30% !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
 
-                  background-color: palegoldenrod;
                   border-radius: 9999px;
 
                   @include mq('pc-edit') {
@@ -1135,6 +1141,7 @@
                     font-size: 1.55vw;
                   }
                 }
+
                 &1-3_t2 {
                   width: 45% !important;
                 }
