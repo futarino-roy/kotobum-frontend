@@ -6,6 +6,7 @@ const swiper = new Swiper('.swiper', {
     },
     slidesPerView: 1,
     slidesPerGroup: 1,
+    initialSlide: 23, // 最後のスライドのインデックス
     breakpoints: {
         900: {
             slidesPerView: 2,
@@ -13,10 +14,9 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
-
 // プレビューからメイン
 document.getElementById('editBack').addEventListener('click', function () {
     const currentSlideIndex = swiper.realIndex; // 現在のスライドインデックスを取得
-    const mainPageUrl = `../edit/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
+    const mainPageUrl = `../editB/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
     window.location.href = mainPageUrl; // メインページに遷移
 });

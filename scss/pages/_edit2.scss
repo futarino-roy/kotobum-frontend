@@ -792,15 +792,6 @@
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              @include mq('pc2-edit') {
-                max-height: 85%;
-              }
-              @include mq('pc-edit') {
-                max-height: 82.5%;
-              }
-              @include mq('tab-edit') {
-                max-height: 87%;
-              }
 
               p {
                 position: absolute;
@@ -857,9 +848,9 @@
 
               #dropArea2_t2 {
                 width: 78%;
-                height: 97%;
-                top: 10px;
-                position: absolute;
+                height: 96%;
+                top: 1%;
+                position: relative;
                 img {
                   width: 100%;
                   height: 100%;
@@ -1146,14 +1137,19 @@
                 }
                 &1-3_t2 {
                   width: 45% !important;
-                  text-align: center;
                 }
 
                 &4_t2 {
+                  font-family: 'League Spartan', sans-serif;
+                  color: #f8f8f8;
                   transform: rotate(90deg);
                   position: absolute;
-                  top: 25%;
+                  top: 23%;
                   left: -12%;
+                  font-size: 1.6rem;
+                  line-height: 1.2;
+                  height: 8% !important;
+                  font-weight: bold;
                 }
                 &3,
                 &5,
@@ -1183,15 +1179,29 @@
                 &8_t2 {
                   position: absolute;
                   top: 10%;
+                  text-align: center;
+                  color: #f8f8f8;
+                  font-size: 1rem;
+                  line-height: 1;
                 }
 
                 &10-1_t2 {
                   position: absolute;
                   top: 12%;
+                  color: #f8f8f8;
+                  text-align: center;
+                  font-family: 'League Spartan', sans-serif;
+                  font-size: 1rem;
+                  line-height: 1;
+                  font-weight: bold;
                 }
                 &10-2_t2 {
                   position: absolute;
                   bottom: 12%;
+                  text-align: center;
+                  font-size: 0.7rem;
+                  line-height: 1;
+                  font-weight: bold;
                 }
               }
             }
@@ -1235,35 +1245,13 @@
               top: -4%;
 
               #dropArea12_t2 {
-                margin-top: 0%;
-                position: relative;
+                position: absolute;
+                top: 17%;
                 width: 60%;
                 height: 34%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // 枠サイズ変更関連---
-                // &.active {
-                //   border-color: #00000089;
-                // }
-
-                // &.square {
-                //   width: 57%;
-                //   height: 40%;
-                // }
-
-                // &.rectangle {
-                //   width: 62%;
-                //   height: 30%;
-                // }
-
-                // &.mini {
-                //   width: 52%;
-                //   height: 20%;
-                // }
-
-                // --------------------------
 
                 img {
                   width: 100%;
@@ -1276,7 +1264,7 @@
               #textArea {
                 &12-2_t2 {
                   font-size: 0.25rem;
-                  margin-top: 10%;
+                  margin-top: 50%;
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
                   }
@@ -1296,9 +1284,9 @@
                 &12-3_t2 {
                   // font-family: 'League Spartan', sans-serif;
                   font-weight: bold;
-                  position: relative;
+                  position: absolute;
                   font-size: 12px;
-                  bottom: -15%;
+                  bottom: 0;
                   text-align: center;
 
                   @include mq('pc-edit') {

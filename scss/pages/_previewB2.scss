@@ -112,19 +112,26 @@
   width: auto;
   height: auto;
 }
-.preview {
+
+.previewB {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 90vh; // ヘッダーを考慮して要素が真ん中になるように
+
   @include mq('tab-edit') {
     display: block;
   }
   .content {
+    transition: margin-left 0.3s ease;
+    @include mq('pc2-edit') {
+      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+    }
+    @include mq('pc3-edit') {
+      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+    }
     @include mq('tab-edit') {
-      // margin: 85px 0 0 0;
-      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
       transition: none;
       width: 100%;
       position: absolute;
@@ -133,9 +140,26 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
-
+    &.open {
+      margin-left: 32.5%;
+      @include mq('pc-edit') {
+        margin-left: 33.5%;
+      }
+      @include mq('pc4-edit') {
+        margin-left: 31.5%;
+      }
+      @include mq('tab-edit') {
+        margin: 0;
+        width: 60%;
+        position: absolute;
+        top: calc(30% + 40.5px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
     .swiper {
-      width: 700px;
+      width: 600px;
       height: 100%;
       @include mq('pc2-edit') {
         width: 900px;
@@ -180,7 +204,7 @@
             }
             .input-drop {
               position: absolute;
-              width: 87%;
+              width: 86%;
               height: 100%;
               top: 0px;
               opacity: 1;
@@ -188,15 +212,6 @@
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              //   @include mq('pc2-edit') {
-              //     max-height: 85%;
-              //   }
-              //   @include mq('pc-edit') {
-              //     max-height: 82.5%;
-              //   }
-              //   @include mq('tab-edit') {
-              //     max-height: 87%;
-              //   }
 
               p {
                 position: absolute;
@@ -252,9 +267,11 @@
               }
 
               #dropArea2_t2 {
-                width: 89%;
+                width: 90%;
                 height: 83%;
                 position: relative;
+                top: -0.5%;
+                left: 1%;
                 img {
                   width: 100%;
                   height: 100%;
@@ -263,22 +280,22 @@
                 }
               }
 
-              .flex4_t2 {
+              .flexB4_t2 {
                 display: flex;
                 width: 100%;
                 height: 100%;
                 flex-direction: column;
                 align-items: center;
 
-                #dropArea4-1_t2,
-                #dropArea4-2_t2,
-                #dropArea4-3_t2 {
+                #dropAreaB4-1_t2,
+                #dropAreaB4-2_t2,
+                #dropAreaB4-3_t2 {
                   width: 63.5%;
                   height: 24.8%;
                   margin-bottom: 3.5%;
                   position: relative;
                   top: 10%;
-                  left: 8%;
+                  right: 6%;
                   // 枠サイズ変更関連---
                   &.active {
                     border-color: #00000089;
@@ -317,12 +334,13 @@
 
               #dropArea6_t2 {
                 position: relative;
-                width: 54%;
+                width: 54.5%;
                 height: 43%;
                 font-size: 1rem;
                 border: none;
                 cursor: pointer;
-                top: -3px;
+                top: -0.5%;
+                left: 1%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -364,11 +382,12 @@
                 position: relative;
                 width: 55%;
                 height: 23%;
-                top: 2%;
+                top: -2.5%;
                 font-size: 1rem;
                 border: none;
                 cursor: pointer;
                 margin-bottom: 5%;
+                left: 1%;
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -407,7 +426,8 @@
               #dropArea10_t2 {
                 position: relative;
                 top: -1%;
-                width: 52%;
+                left: 1%;
+                width: 53%;
                 height: 40%;
                 font-size: 1rem;
                 border: none;
@@ -543,13 +563,13 @@
                   width: 45% !important;
                 }
 
-                &4_t2 {
+                &B4_t2 {
                   font-family: 'League Spartan', sans-serif;
                   color: #f8f8f8;
                   transform: rotate(90deg);
                   position: absolute;
-                  top: 23%;
-                  left: -12%;
+                  top: 25%;
+                  right: -12% !important;
                   font-size: 1.6rem;
                   line-height: 1.2;
                   height: 8% !important;
@@ -579,41 +599,13 @@
                     margin-top: 25px;
                   }
                 }
-
-                &8_t2 {
-                  position: absolute;
-                  top: 10%;
-                  text-align: center;
-                  color: #f8f8f8;
-                  font-size: 1rem;
-                  line-height: 1;
-                }
-
-                &10-1_t2 {
-                  position: absolute;
-                  top: 12%;
-                  color: #f8f8f8;
-                  text-align: center;
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 1rem;
-                  line-height: 1;
-                  font-weight: bold;
-                }
-                &10-2_t2 {
-                  position: absolute;
-                  bottom: 12%;
-                  text-align: center;
-                  font-size: 0.7rem;
-                  line-height: 1;
-                  font-weight: bold;
-                }
               }
             }
-            #textArea12-1_t2 {
+            #textAreaB12-1_t2 {
               transform: rotate(270deg);
               position: relative;
               top: 3%;
-              right: 43.2%;
+              left: 45.7%;
               text-align: center;
               color: #f8f8f8;
               font-weight: bold;
@@ -637,24 +629,25 @@
                 font-size: 3vw;
               }
             }
-            .flex12-1 {
+            .flexB12-1 {
               display: flex;
               flex-direction: column;
               width: 88%;
               height: 87%;
               justify-content: center;
               align-items: center;
-              left: 10.5%;
+              right: 9.4%;
               position: absolute;
               top: 6%;
 
-              #dropArea12_t2 {
+              #dropAreaB12_t2 {
+                margin-top: 0%;
                 position: absolute;
                 top: 17%;
                 width: 60%;
                 height: 34%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
                 cursor: pointer;
 
                 img {
@@ -666,9 +659,10 @@
               }
 
               #textArea {
-                &12-2_t2 {
+                &B12-2_t2 {
                   font-size: 0.25rem;
                   margin-top: 50%;
+
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
                   }
@@ -685,7 +679,7 @@
                     font-size: 1.1vw;
                   }
                 }
-                &12-3_t2 {
+                &B12-3_t2 {
                   font-family: 'League Spartan', sans-serif;
                   font-weight: bold;
                   position: absolute;
@@ -703,9 +697,8 @@
 }
 
 // .empty {
-//   background-color: brown;
-//   opacity: 0.6;
+//   background-color: aquamarine;
 // }
 // textarea {
-//   background-color: cornflowerblue !important;
+//   background-color: bisque !important;
 // }
