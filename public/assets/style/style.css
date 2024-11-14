@@ -10271,7 +10271,7 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 33px 41px 33px);
+    clip-path: inset(37px 36px 41px 36px);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -10294,7 +10294,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 24px;
+  top: 6%;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -10378,6 +10378,13 @@ body {
   top: 5%;
   left: 7%;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-2_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2 {
+    margin-bottom: 4.5%;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2.active,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-2_t2.active,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2.active {
@@ -10423,6 +10430,11 @@ body {
   border: 2px dashed #ccc;
   cursor: pointer;
   top: 4px;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    top: 7px;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -10594,15 +10606,20 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
   font-family: "League Spartan", sans-serif;
-  margin: -3% 0 0 0;
+  margin: -7% 0% 0% -2%;
   font-size: 0.45rem;
   text-align: center;
-  line-height: 2.5;
+  line-height: 2.7;
   font-weight: bold;
   color: #fef8f6;
   width: 100% !important;
   max-width: 100% !important;
   border-radius: 9999px;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
+    margin: -3% 0 0 0;
+  }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
@@ -10617,6 +10634,7 @@ body {
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
     font-size: 1.7vw;
+    margin: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -10694,7 +10712,7 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box #textArea12-1_t2 {
   transform: rotate(270deg);
   position: relative;
-  top: 7%;
+  top: 4%;
   right: 38.2%;
   text-align: center;
   color: #f8f8f8;
@@ -10735,7 +10753,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #dropArea12_t2 {
   position: absolute;
-  top: 17%;
+  top: 15%;
   width: 60%;
   height: 34%;
   font-size: 1rem;
@@ -10750,7 +10768,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
   font-size: 0.25rem;
-  margin-top: 50%;
+  margin-top: 40%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
@@ -10765,6 +10783,7 @@ body {
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
     font-size: 0.955vw;
+    margin-top: 30%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -10779,23 +10798,18 @@ body {
   bottom: 0;
   text-align: center;
 }
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
-    margin-top: 113.5%;
-  }
-}
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
     font-size: 1.2rem;
     line-height: 0.9;
-    margin-top: 115.5%;
+    margin-bottom: 4%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
     line-height: 0.7;
     font-size: 3vw;
-    margin-top: 117%;
+    margin-bottom: 5%;
   }
 }
 .edit .swiper-button-prev {
@@ -12428,7 +12442,7 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 33px 41px 33px);
+    clip-path: inset(37px 36px 41px 36px);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -12451,7 +12465,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 24px;
+  top: 6%;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -12505,6 +12519,12 @@ body {
   height: 97%;
   top: 1%;
   position: relative;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
+    height: 94%;
+    top: 0;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 img {
   width: 100%;
@@ -12575,6 +12595,17 @@ body {
   cursor: pointer;
   top: 4px;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    top: 7px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    height: 49%;
+    top: 0px;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
@@ -12610,6 +12641,13 @@ body {
   border: 2px dashed #ccc;
   cursor: pointer;
   margin-bottom: 5%;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2 {
+    margin-bottom: 6%;
+    top: 5.5%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2.active,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2.active {
@@ -12650,6 +12688,12 @@ body {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
+    top: 0;
+    height: 45%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.active {
   border-color: rgba(0, 0, 0, 0.537254902);
@@ -12820,7 +12864,7 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box #textAreaB12-1_t2 {
   transform: rotate(270deg);
   position: relative;
-  top: 7%;
+  top: 4%;
   left: 38.2%;
   text-align: center;
   color: #f8f8f8;
@@ -12862,7 +12906,7 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #dropAreaB12_t2 {
   margin-top: 0%;
   position: absolute;
-  top: 17%;
+  top: 15%;
   width: 60%;
   height: 34%;
   font-size: 1rem;
@@ -12877,7 +12921,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-2_t2 {
   font-size: 0.25rem;
-  margin-top: 50%;
+  margin-top: 40%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-2_t2 {
@@ -12892,6 +12936,7 @@ body {
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-2_t2 {
     font-size: 0.955vw;
+    margin-top: 30%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -12907,23 +12952,18 @@ body {
   bottom: 0;
   text-align: center;
 }
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-3_t2 {
-    margin-top: 113.5%;
-  }
-}
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-3_t2 {
     font-size: 1.2rem;
     line-height: 0.9;
-    margin-top: 115.5%;
+    margin-bottom: 4%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flexB12-1 #textAreaB12-3_t2 {
     line-height: 0.7;
     font-size: 3vw;
-    margin-top: 117%;
+    margin-bottom: 5%;
   }
 }
 .edit .swiper-button-prev {

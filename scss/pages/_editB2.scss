@@ -770,7 +770,7 @@
             position: relative;
             clip-path: inset(24px 24px 30px 24px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 33px 41px 33px);
+              clip-path: inset(37px 36px 41px 36px);
             }
             @include mq('pc-edit') {
               clip-path: inset(17px 16px 23px 17px);
@@ -786,7 +786,7 @@
               position: absolute;
               width: 100%;
               height: 100%;
-              top: 24px;
+              top: 6%;
               opacity: 1;
               display: flex;
               flex-direction: column;
@@ -851,6 +851,10 @@
                 height: 97%;
                 top: 1%;
                 position: relative;
+                @include mq('tab-edit') {
+                  height: 94%;
+                  top: 0;
+                }
                 img {
                   width: 100%;
                   height: 100%;
@@ -919,6 +923,13 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 top: 4px;
+                @include mq('pc2-edit') {
+                  top: 7px;
+                }
+                @include mq('tab-edit') {
+                  height: 49%;
+                  top: 0px;
+                }
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -965,6 +976,10 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 margin-bottom: 5%;
+                @include mq('pc2-edit') {
+                  margin-bottom: 6%;
+                  top: 5.5%;
+                }
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1008,6 +1023,10 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                @include mq('tab-edit') {
+                  top: 0;
+                  height: 45%;
+                }
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1180,7 +1199,7 @@
             #textAreaB12-1_t2 {
               transform: rotate(270deg);
               position: relative;
-              top: 7%;
+              top: 4%;
               left: 38.2%;
               text-align: center;
               color: #f8f8f8;
@@ -1219,7 +1238,7 @@
               #dropAreaB12_t2 {
                 margin-top: 0%;
                 position: absolute;
-                top: 17%;
+                top: 15%;
                 width: 60%;
                 height: 34%;
                 font-size: 1rem;
@@ -1237,7 +1256,7 @@
               #textArea {
                 &B12-2_t2 {
                   font-size: 0.25rem;
-                  margin-top: 50%;
+                  margin-top: 40%;
 
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
@@ -1249,6 +1268,7 @@
 
                   @include mq('tab-edit') {
                     font-size: 0.955vw;
+                    margin-top: 30%;
                   }
 
                   @include mq('sp-edit') {
@@ -1263,20 +1283,20 @@
                   bottom: 0;
                   text-align: center;
 
-                  @include mq('pc-edit') {
-                    margin-top: 113.5%;
-                  }
+                  // @include mq('pc-edit') {
+                  //   margin-bottom: 15%;
+                  // }
 
                   @include mq('pc2-edit') {
                     font-size: 1.2rem;
                     line-height: 0.9;
-                    margin-top: 115.5%;
+                    margin-bottom: 4%;
                   }
 
                   @include mq('tab-edit') {
                     line-height: 0.7;
                     font-size: 3vw;
-                    margin-top: 117%;
+                    margin-bottom: 5%;
                   }
 
                   // @include mq('sp-edit') {
