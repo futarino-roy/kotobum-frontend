@@ -61,21 +61,21 @@ const swiper = new Swiper(".swiper", {
     slidesPerGroup: 1, // 常に1スライドずつ移動
 });
 
-// メインのスライドからプレビュー
-document.addEventListener("DOMContentLoaded", function () {
-    // プレビューボタンにクリックイベントリスナーを追加
-    document.querySelector(".btn-preview").addEventListener("click", function () {
-        // 現在のスライドインデックスを取得
-        const currentSlideIndex = swiper.realIndex;
+// // メインのスライドからプレビュー
+// document.addEventListener("DOMContentLoaded", function () {
+//     // プレビューボタンにクリックイベントリスナーを追加
+//     document.querySelector(".btn-preview").addEventListener("click", function () {
+//         // 現在のスライドインデックスを取得
+//         const currentSlideIndex = swiper.realIndex;
 
-        // プレビューページのURLを動的に設定
-        const previewUrl = `../cover-preview/index.html?slide=${currentSlideIndex + 1
-            }`;
+//         // プレビューページのURLを動的に設定
+//         const previewUrl = `../cover-preview/index.html?slide=${currentSlideIndex + 1
+//             }`;
 
-        // プレビューページに遷移
-        window.location.href = previewUrl;
-    });
-});
+//         // プレビューページに遷移
+//         window.location.href = previewUrl;
+//     });
+// });
 
 // プレビューのスライドからメイン
 document.addEventListener("DOMContentLoaded", function () {
