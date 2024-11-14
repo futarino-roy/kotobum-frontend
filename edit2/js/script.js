@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleResizeButtonInteraction = (button) => {
         if (activeDropArea) {
             // サイズ変更を禁止するドロップエリアのリスト
-            // const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
+            const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
 
             // サイズ変更を禁止するドロップエリアでない場合のみ処理
             if (!restrictedDropAreas.includes(activeDropArea.id)) {
