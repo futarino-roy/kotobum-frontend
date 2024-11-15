@@ -801,14 +801,41 @@
               }
 
               p {
+                font-family: 'League Spartan', sans-serif;
                 position: absolute;
                 bottom: 4%;
                 font-size: 0.3rem;
+                font-style: italic;
               }
               .bottom-text {
                 color: #f8f8f8;
                 bottom: -1%;
               }
+
+              // .textarea-line {
+              //   display: flex;
+              //   flex-direction: column;
+              //   align-items: center;
+              //   padding: 20px;
+              // }
+              // #line {
+              //   width: 2px; /* 線の太さ */
+              //   background-color: black; /* 線の色 */
+              //   height: 50px; /* 初期の線の長さ */
+              //   transition: height 0.3s; /* アニメーションで変化をスムーズに */
+              // }
+              // .textArea4_t2 {
+              //   font-family: 'League Spartan', sans-serif;
+              //   color: #f8f8f8;
+              //   transform: rotate(90deg);
+              //   position: absolute;
+              //   top: 23%;
+              //   left: -12%;
+              //   font-size: 1.6rem;
+              //   line-height: 1.2;
+              //   height: 8% !important;
+              //   font-weight: bold;
+              // }
 
               #dropArea1_t2 {
                 position: relative;
@@ -976,8 +1003,8 @@
               #dropArea8-1_t2,
               #dropArea8-2_t2 {
                 position: relative;
-                width: 46%;
-                height: 25.5%;
+                width: 47.5%;
+                height: 26.5%;
                 top: 4.5%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
@@ -985,7 +1012,21 @@
                 margin-bottom: 5%;
                 @include mq('pc2-edit') {
                   margin-bottom: 6%;
-                  top: 5.5%;
+                  top: 5%;
+                  height: 26.5%;
+                  width: 47.5%;
+                }
+                @media screen and (max-width: 1200px) {
+                  width: 47.5%;
+                  height: 27%;
+                  top: 6.5%;
+                  margin-bottom: 6%;
+                }
+                @include mq('tab-edit') {
+                  width: 47.5%;
+                  height: 26%;
+                  top: 4%;
+                  margin-bottom: 5.5%;
                 }
 
                 // 枠サイズ変更関連---
@@ -1025,14 +1066,14 @@
               #dropArea10_t2 {
                 position: relative;
                 top: 1%;
-                width: 43%;
-                height: 46%;
+                width: 44%;
+                height: 47%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 @include mq('tab-edit') {
                   top: 0;
-                  height: 45%;
+                  height: 46%;
                 }
 
                 // 枠サイズ変更関連---

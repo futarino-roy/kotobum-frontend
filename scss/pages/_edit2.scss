@@ -801,13 +801,69 @@
               }
 
               p {
+                font-family: 'League Spartan', sans-serif;
                 position: absolute;
                 bottom: 4%;
                 font-size: 0.3rem;
+                font-style: italic;
               }
               .bottom-text {
                 color: #f8f8f8;
                 bottom: -1%;
+              }
+              .textarea-line {
+                position: absolute;
+                height: 74%;
+                left: -13%;
+                top: 23%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                @include mq('pc2-edit') {
+                  top: 21%;
+                  left: -6%;
+                  height: 76%;
+                }
+                @media screen and (max-width: 1200px) {
+                  height: 75%;
+                  left: -13%;
+                  top: 25%;
+                }
+                @include mq('tab-edit') {
+                  height: 73%;
+                  left: -8%;
+                  top: 23%;
+                }
+
+                #textArea4_t2 {
+                  font-family: 'League Spartan', sans-serif;
+                  transform: rotate(90deg);
+                  height: 200px;
+                  width: auto !important;
+                  max-width: 100% !important;
+                  resize: none;
+                  overflow: hidden;
+                  font-size: 1rem;
+                  color: white;
+                  font-weight: bold;
+                  white-space: nowrap;
+                  letter-spacing: 0.5em;
+                  @include mq('pc2-edit') {
+                    font-size: 1.3rem;
+                  }
+                  @media screen and (max-width: 1200px) {
+                    font-size: 0.8rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2rem;
+                  }
+                }
+                #line {
+                  width: 2px;
+                  background-color: white;
+                  transition: height 0.3s;
+                }
               }
 
               #dropArea1_t2 {
@@ -876,15 +932,29 @@
                 #dropArea4-1_t2,
                 #dropArea4-2_t2,
                 #dropArea4-3_t2 {
-                  width: 54.5%;
-                  height: 27.5%;
-                  margin-bottom: 3.5%;
+                  width: 56%;
+                  height: 29%;
+                  margin-bottom: 3%;
                   position: relative;
                   top: 5%;
-                  left: 7%;
+                  left: 6%;
                   @include mq('pc2-edit') {
-                    margin-bottom: 4.5%;
+                    top: 5%;
+                    left: 6%;
+                    height: 29%;
                   }
+                  @include mq('tab-edit') {
+                    margin-bottom: 4%;
+                  }
+                  @media screen and (max-width: 1200px) {
+                    height: 30%;
+                    width: 56%;
+                  }
+                  @include mq('tab-edit') {
+                    height: 28%;
+                    left: 7%;
+                  }
+
                   // 枠サイズ変更関連---
                   &.active {
                     border-color: #00000089;
@@ -970,14 +1040,20 @@
 
               #dropArea8-1_t2,
               #dropArea8-2_t2 {
-                position: relative;
-                width: 46%;
-                height: 25.5%;
+                // position: relative;
+                width: 47.5%;
+                height: 26.5%;
                 top: 4.5%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 margin-bottom: 5%;
+                @include mq('pc2-edit') {
+                  margin-bottom: 6%;
+                  top: 5%;
+                  height: 26.5%;
+                  width: 47.5%;
+                }
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1016,11 +1092,15 @@
               #dropArea10_t2 {
                 position: relative;
                 top: 1%;
-                width: 43%;
-                height: 46%;
+                width: 44%;
+                height: 47%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                @include mq('tab-edit') {
+                  top: 0;
+                  height: 46%;
+                }
 
                 // 枠サイズ変更関連---
                 &.active {
@@ -1152,19 +1232,6 @@
                 &1-3_t2 {
                   width: 45% !important;
                 }
-
-                &4_t2 {
-                  font-family: 'League Spartan', sans-serif;
-                  color: #f8f8f8;
-                  transform: rotate(90deg);
-                  position: absolute;
-                  top: 23%;
-                  left: -12%;
-                  font-size: 1.6rem;
-                  line-height: 1.2;
-                  height: 8% !important;
-                  font-weight: bold;
-                }
                 &3,
                 &5,
                 &7,
@@ -1197,6 +1264,7 @@
                   color: #f8f8f8;
                   font-size: 1rem;
                   line-height: 1;
+                  font-weight: bold;
                 }
 
                 &10-1_t2 {
@@ -1208,6 +1276,9 @@
                   font-size: 1rem;
                   line-height: 1;
                   font-weight: bold;
+                  @include mq('pc2-edit') {
+                    font-size: 2rem;
+                  }
                 }
                 &10-2_t2 {
                   position: absolute;
@@ -1220,6 +1291,7 @@
               }
             }
             #textArea12-1_t2 {
+              font-family: 'League Spartan', sans-serif;
               transform: rotate(270deg);
               position: relative;
               top: 4%;
@@ -1297,12 +1369,13 @@
                   }
                 }
                 &12-3_t2 {
-                  // font-family: 'League Spartan', sans-serif;
+                  font-family: 'League Spartan', sans-serif;
                   font-weight: bold;
                   position: absolute;
                   font-size: 12px;
                   bottom: 0;
                   text-align: center;
+                  font-style: italic;
 
                   // @include mq('pc-edit') {
                   //   margin-bottom: 15%;

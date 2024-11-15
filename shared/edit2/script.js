@@ -513,6 +513,16 @@ document.addEventListener('DOMContentLoaded', function () {
     updateBorders();
 });
 
+// 4ページのテキストエリアとラインのJS
+const textarea4 = document.getElementById('textArea4_t2');
+const line = document.getElementById('line');
+
+textarea4.addEventListener("input", function () {
+    textarea4.style.width = textarea4.scrollWidth + "px";
+    line.style.height = textarea4.scrollWidth * 1.2 + "px";
+});
+
+
 //マイページへボタンを押されたとき
 // 保存状態を取得
 let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
