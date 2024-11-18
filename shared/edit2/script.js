@@ -560,8 +560,10 @@ let isSaved = true; // データが保存済みかどうかを示すフラグ
 document.addEventListener('DOMContentLoaded', function () {
     const textAreas = document.querySelectorAll('textarea');
     textAreas.forEach(textarea => {
-        initialData[textarea.id] = textarea.value;
-        console.log('データを保存しました')
+        if (textarea.id) {  // idが設定されているか確認
+            initialData[textarea.id] = textarea.value;
+        }
+        console.log('データを保存しました');
     });
 });
 
@@ -576,7 +578,10 @@ document.querySelectorAll('textarea').forEach(textarea => {
 function checkSave() {
     const textAreas = document.querySelectorAll('textarea');
     return Array.from(textAreas).every(textarea => {
-        return textarea.value === initialData[textarea.id];
+        if (textarea.id && initialData[textarea.id]) {
+            return textarea.value === initialData[textarea.id];
+        }
+        return true;
     });
 }
 
@@ -587,12 +592,14 @@ if (saveBtn) {
         isSaved = true;
         const textAreas = document.querySelectorAll('textarea');
         textAreas.forEach(textarea => {
-            initialData[textarea.id] = textarea.value;
+            if (textarea.id) {
+                initialData[textarea.id] = textarea.value;
+            }
         });
         console.log("保存内容が保存されました");
     });
 } else {
-    console.warn('Save button with ID "saveButton" not found.');
+    console.warn('Save button with ID "sendButton" not found.');
 }
 
 // ページを離れるときに保存されていない場合は警告を表示
