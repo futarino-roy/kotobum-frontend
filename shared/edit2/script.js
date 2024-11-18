@@ -513,13 +513,41 @@ document.addEventListener('DOMContentLoaded', function () {
     updateBorders();
 });
 
-// 4ページのテキストエリアとラインのJS
-const textarea4 = document.getElementById('textArea4_t2');
-const line = document.getElementById('line');
+// 棒線の高さを更新する関数
+function adjustLineHeight(textarea, line) {
+    const baseHeight = 100; // 棒線の初期の高さ
+    const textareaMinHeight = parseFloat(getComputedStyle(textarea).minHeight);
+    const extraHeight = textarea.scrollHeight - textareaMinHeight;
 
-textarea4.addEventListener("input", function () {
-    textarea4.style.width = textarea4.scrollWidth + "px";
-    line.style.height = textarea4.scrollWidth * 1.2 + "px";
+    // 棒線の高さを計算して設定
+    const newHeight = baseHeight - extraHeight;
+    line.style.height = `${Math.max(newHeight, 0)}px`; // 高さが負になるのを防ぐ
+}
+
+// テキストエリアと棒線を連動させる処理
+document.querySelectorAll('.textarea-line').forEach(container => {
+    const textarea = container.querySelector('.textaArea4_t2');
+    const line = container.querySelector('.line');
+
+    textarea.addEventListener('input', () => {
+        // テキストエリアの高さを調整
+        textarea.style.height = 'auto';
+        textarea.style.height = `${textarea.scrollHeight}px`;
+
+        // 棒線の高さを調整
+        adjustLineHeight(textarea, line);
+    });
+});
+document.querySelectorAll('textArea4_t2').forEach(textarea => {
+    textarea.addEventListener('input', function () {
+        const scrollPos = this.scrollTop; // 現在のスクロール位置を記録
+
+        // テキストエリアの高さをリセットし、内容に応じた高さを再計算
+        this.style.height = 'auto';
+        this.style.height = `${this.scrollHeight}px`;
+
+        this.scrollTop = scrollPos; // スクロール位置を元に戻す
+    });
 });
 
 

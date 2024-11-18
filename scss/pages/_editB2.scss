@@ -949,119 +949,119 @@
                 }
               }
 
-              #dropArea6_t2 {
-                position: relative;
-                width: 46%;
-                height: 49%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-                top: 4px;
-                @include mq('pc2-edit') {
-                  top: 7px;
-                }
-                @include mq('tab-edit') {
-                  height: 49%;
-                  top: 0px;
-                }
+              // #dropArea6_t2 {
+              //   position: relative;
+              //   width: 46%;
+              //   height: 49%;
+              //   font-size: 1rem;
+              //   border: 2px dashed #ccc;
+              //   cursor: pointer;
+              //   top: 4px;
+              //   @include mq('pc2-edit') {
+              //     top: 7px;
+              //   }
+              //   @include mq('tab-edit') {
+              //     height: 49%;
+              //     top: 0px;
+              //   }
 
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #00000089;
-                }
+              //   // 枠サイズ変更関連---
+              //   &.active {
+              //     border-color: #00000089;
+              //   }
 
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
+              //   &.square {
+              //     width: 45%;
+              //     height: 32%;
+              //   }
 
-                &.rectangle34 {
-                  width: 45%;
-                  height: 40%;
-                }
+              //   &.rectangle34 {
+              //     width: 45%;
+              //     height: 40%;
+              //   }
 
-                &.rectangle43 {
-                  width: 45%;
-                  height: 25%;
-                }
+              //   &.rectangle43 {
+              //     width: 45%;
+              //     height: 25%;
+              //   }
 
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
+              //   &.mini {
+              //     width: 45%;
+              //     height: 20%;
+              //   }
 
-                // --------------------------
+              //   // --------------------------
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
+              //   img {
+              //     width: 100%;
+              //     height: 100%;
+              //     object-fit: cover;
+              //     cursor: pointer;
+              //   }
+              // }
 
-              #dropArea8-1_t2,
-              #dropArea8-2_t2 {
-                position: relative;
-                width: 47.5%;
-                height: 26.5%;
-                top: 4.5%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-                margin-bottom: 5%;
-                @include mq('pc2-edit') {
-                  margin-bottom: 6%;
-                  top: 5%;
-                  height: 26.5%;
-                  width: 47.5%;
-                }
-                @media screen and (max-width: 1200px) {
-                  width: 47.5%;
-                  height: 27%;
-                  top: 6.5%;
-                  margin-bottom: 6%;
-                }
-                @include mq('tab-edit') {
-                  width: 47.5%;
-                  height: 26%;
-                  top: 4%;
-                  margin-bottom: 5.5%;
-                }
+              // #dropArea8-1_t2,
+              // #dropArea8-2_t2 {
+              //   position: relative;
+              //   width: 47.5%;
+              //   height: 26.5%;
+              //   top: 4.5%;
+              //   font-size: 1rem;
+              //   border: 2px dashed #ccc;
+              //   cursor: pointer;
+              //   margin-bottom: 5%;
+              //   @include mq('pc2-edit') {
+              //     margin-bottom: 6%;
+              //     top: 5%;
+              //     height: 26.5%;
+              //     width: 47.5%;
+              //   }
+              //   @media screen and (max-width: 1200px) {
+              //     width: 47.5%;
+              //     height: 27%;
+              //     top: 6.5%;
+              //     margin-bottom: 6%;
+              //   }
+              //   @include mq('tab-edit') {
+              //     width: 47.5%;
+              //     height: 26%;
+              //     top: 4%;
+              //     margin-bottom: 5.5%;
+              //   }
 
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #00000089;
-                }
+              //   // 枠サイズ変更関連---
+              //   &.active {
+              //     border-color: #00000089;
+              //   }
 
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
+              //   &.square {
+              //     width: 45%;
+              //     height: 32%;
+              //   }
 
-                &.rectangle34 {
-                  width: 45%;
-                  height: 40%;
-                }
-                &.rectangle43 {
-                  width: 45%;
-                  height: 25%;
-                }
+              //   &.rectangle34 {
+              //     width: 45%;
+              //     height: 40%;
+              //   }
+              //   &.rectangle43 {
+              //     width: 45%;
+              //     height: 25%;
+              //   }
 
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
+              //   &.mini {
+              //     width: 45%;
+              //     height: 20%;
+              //   }
 
-                // --------------------------
+              //   // --------------------------
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
+              //   img {
+              //     width: 100%;
+              //     height: 100%;
+              //     object-fit: cover;
+              //     cursor: pointer;
+              //   }
+              // }
 
               #dropArea10_t2 {
                 position: relative;

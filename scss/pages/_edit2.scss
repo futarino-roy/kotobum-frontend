@@ -814,16 +814,17 @@
               .textarea-line {
                 position: absolute;
                 height: 74%;
-                left: -13%;
-                top: 23%;
+                left: 13%;
+                top: 5%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
+                // gap: 5%;
                 @include mq('pc2-edit') {
-                  top: 21%;
-                  left: -6%;
-                  height: 76%;
+                  left: 13%;
+                  top: 5%;
+                  height: 91%;
                 }
                 @media screen and (max-width: 1200px) {
                   height: 75%;
@@ -837,18 +838,27 @@
                 }
 
                 #textArea4_t2 {
-                  font-family: 'League Spartan', sans-serif;
-                  transform: rotate(90deg);
+                  // font-family: 'League Spartan', sans-serif;
+                  // transform: rotate(90deg);
+                  // resize: none;
+                  // overflow: hidden;
+                  // white-space: nowrap;
+
+                  writing-mode: vertical-lr;
+                  text-orientation: sideways;
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: white;
+                  letter-spacing: 0.5em;
+
                   height: 200px;
                   width: auto !important;
                   max-width: 100% !important;
-                  resize: none;
-                  overflow: hidden;
-                  font-size: 1rem;
-                  color: white;
-                  font-weight: bold;
                   white-space: nowrap;
-                  letter-spacing: 0.5em;
+                  overflow-x: auto;
+                  overflow: hidden;
+                  resize: none;
+
                   @include mq('pc2-edit') {
                     font-size: 1.3rem;
                   }
@@ -860,9 +870,12 @@
                   }
                 }
                 #line {
+                  // position: relative;
                   width: 2px;
+                  height: 300px;
                   background-color: white;
-                  transition: height 0.3s;
+                  transition: height 0.3s ease;
+                  margin-top: 30%;
                 }
               }
 
@@ -932,16 +945,16 @@
                 #dropArea4-1_t2,
                 #dropArea4-2_t2,
                 #dropArea4-3_t2 {
-                  width: 56%;
-                  height: 29%;
+                  width: 54%;
+                  height: 28%;
                   margin-bottom: 3%;
                   position: relative;
                   top: 5%;
-                  left: 6%;
+                  left: 7%;
                   @include mq('pc2-edit') {
                     top: 5%;
-                    left: 6%;
-                    height: 29%;
+                    left: 6.5%;
+                    height: 28.3%;
                   }
                   @include mq('tab-edit') {
                     margin-bottom: 4%;
@@ -1001,6 +1014,7 @@
                 top: 4px;
                 @include mq('pc2-edit') {
                   top: 7px;
+                  height: 50%;
                 }
 
                 // 枠サイズ変更関連---
@@ -1040,7 +1054,7 @@
 
               #dropArea8-1_t2,
               #dropArea8-2_t2 {
-                // position: relative;
+                position: relative;
                 width: 47.5%;
                 height: 26.5%;
                 top: 4.5%;
@@ -1050,8 +1064,8 @@
                 margin-bottom: 5%;
                 @include mq('pc2-edit') {
                   margin-bottom: 6%;
-                  top: 5%;
-                  height: 26.5%;
+                  top: 5.3%;
+                  height: 26%;
                   width: 47.5%;
                 }
 

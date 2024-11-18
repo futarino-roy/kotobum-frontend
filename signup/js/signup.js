@@ -67,7 +67,10 @@ document.getElementById('signup-form').addEventListener('submit', function (even
         alert('すべてのフィールドを入力してください。');
         return;
     }
-
+    if (password.length <= 8) {
+        alert('パスワードは8文字以上で入力して下さい。');
+        return;
+    }
     // メールアドレスの形式を確認
     // const login_idPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // if (!login_idPattern.test(login_id)) {
