@@ -916,22 +916,22 @@
                 }
               }
 
-              #dropArea2_t2 {
-                width: 78%;
-                height: 97%;
-                top: 1%;
-                position: relative;
-                @include mq('tab-edit') {
-                  height: 94%;
-                  top: 0;
-                }
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
+              // #dropArea2_t2 {
+              //   width: 78%;
+              //   height: 97%;
+              //   top: 1%;
+              //   position: relative;
+              //   @include mq('tab-edit') {
+              //     height: 94%;
+              //     top: 0;
+              //   }
+              //   img {
+              //     width: 100%;
+              //     height: 100%;
+              //     object-fit: cover;
+              //     cursor: pointer;
+              //   }
+              // }
 
               .flexB4_t2 {
                 display: flex;
@@ -1116,52 +1116,55 @@
               //   }
               // }
 
-              #dropArea10_t2 {
-                position: relative;
-                top: 1%;
-                width: 44%;
-                height: 47%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-                @include mq('tab-edit') {
-                  top: 0;
-                  height: 46%;
-                }
+              // #dropArea10_t2 {
+              //   position: relative;
+              //   top: 1%;
+              //   width: 44%;
+              //   height: 47%;
+              //   font-size: 1rem;
+              //   border: 2px dashed #ccc;
+              //   cursor: pointer;
+              //   @include mq('pc2-edit') {
+              //     width: 45%;
+              //   }
+              //   @include mq('tab-edit') {
+              //     top: 0;
+              //     height: 46%;
+              //   }
 
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #00000089;
-                }
+              //   // 枠サイズ変更関連---
+              //   &.active {
+              //     border-color: #00000089;
+              //   }
 
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
+              //   &.square {
+              //     width: 45%;
+              //     height: 32%;
+              //   }
 
-                &.rectangle34 {
-                  width: 45%;
-                  height: 40%;
-                }
-                &.rectangle43 {
-                  width: 45%;
-                  height: 25%;
-                }
+              //   &.rectangle34 {
+              //     width: 45%;
+              //     height: 40%;
+              //   }
+              //   &.rectangle43 {
+              //     width: 45%;
+              //     height: 25%;
+              //   }
 
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
+              //   &.mini {
+              //     width: 45%;
+              //     height: 20%;
+              //   }
 
-                // --------------------------
+              //   // --------------------------
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
+              //   img {
+              //     width: 100%;
+              //     height: 100%;
+              //     object-fit: cover;
+              //     cursor: pointer;
+              //   }
+              // }
 
               textarea {
                 overflow: hidden;

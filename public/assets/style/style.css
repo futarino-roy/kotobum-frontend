@@ -10320,7 +10320,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line {
   position: absolute;
-  height: 74%;
+  height: 91%;
   left: 13%;
   top: 5%;
   display: flex;
@@ -10337,19 +10337,25 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line {
-    height: 75%;
-    left: -13%;
-    top: 25%;
+    height: 94%;
+    left: 12%;
+    top: 5%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line {
-    height: 73%;
-    left: -8%;
-    top: 23%;
+    height: 88%;
+    left: 12%;
+    top: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line {
+    height: 90%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line #textArea4_t2 {
+  font-family: "League Spartan", sans-serif;
   writing-mode: vertical-lr;
   text-orientation: sideways;
   font-size: 1rem;
@@ -10366,7 +10372,7 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line #textArea4_t2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -10377,6 +10383,11 @@ body {
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line #textArea4_t2 {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line #textArea4_t2 {
+    font-size: 0.9rem;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-line #line {
@@ -10421,9 +10432,20 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
   width: 78%;
-  height: 96%;
-  top: 1%;
+  height: 98%;
+  top: 0%;
   position: relative;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
+    top: 1%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
+    height: 100%;
+    top: 2.2%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 img {
   width: 100%;
@@ -10440,6 +10462,11 @@ body {
   gap: 2%;
 }
 @media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 {
+    gap: 3.3%;
+  }
+}
+@media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 {
     gap: 3.3%;
   }
@@ -10475,8 +10502,10 @@ body {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2,
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-2_t2,
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2 {
-    height: 28%;
-    left: 7%;
+    height: 27.7%;
+    width: 55%;
+    top: 5.7%;
+    left: 6.5%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2.active,
@@ -10518,17 +10547,34 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
   position: relative;
-  width: 46%;
-  height: 49%;
+  width: 47%;
+  height: 50%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
-  top: 4px;
+  top: 2px;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
     top: 7px;
+    height: 51%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    top: 6px;
+    height: 52%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    top: 4px;
     height: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2 {
+    top: 0;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6_t2.active {
@@ -10560,20 +10606,35 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2 {
   position: relative;
   width: 47.5%;
-  height: 26.5%;
-  top: 4.5%;
-  font-size: 1rem;
+  height: 27%;
+  top: 4%;
   border: 2px dashed #ccc;
   cursor: pointer;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2,
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2 {
     margin-bottom: 6%;
     top: 5.3%;
-    height: 26%;
-    width: 47.5%;
+    height: 26.5%;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2 {
+    top: 6%;
+    margin-bottom: 5%;
+    height: 27.5%;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-2_t2 {
+    top: 4%;
+    height: 26.5%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8-1_t2.active,
@@ -10610,11 +10671,17 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
   position: relative;
   top: 1%;
-  width: 44%;
-  height: 47%;
+  width: 45%;
+  height: 47.5%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
+    top: 2%;
+    height: 48%;
+  }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
@@ -10734,18 +10801,20 @@ body {
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
     font-size: 0.65rem;
+    margin-top: 0%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
     font-size: 1.7vw;
     margin: 0;
-    margin: -7% 0% 0% -2%;
+    margin: 0% 0% 0% -2%;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2_t2 {
     font-size: 1.55vw;
+    line-height: 2.5;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3_t2 {
@@ -10782,9 +10851,29 @@ body {
   top: 10%;
   text-align: center;
   color: #f8f8f8;
-  font-size: 1rem;
+  font-size: 0.7rem;
   line-height: 1;
   font-weight: bold;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8_t2 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8_t2 {
+    font-size: 0.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8_t2 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8_t2 {
+    font-size: 0.7rem;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-1_t2 {
   position: absolute;
@@ -10801,6 +10890,16 @@ body {
     font-size: 2rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-1_t2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-1_t2 {
+    font-size: 1.5rem;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-2_t2 {
   position: absolute;
   bottom: 12%;
@@ -10808,6 +10907,24 @@ body {
   font-size: 0.7rem;
   line-height: 1;
   font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-2_t2 {
+    font-size: 0.5rem;
+    bottom: 9%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-2_t2 {
+    bottom: 11.5%;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10-2_t2 {
+    bottom: 9.5%;
+    font-size: 0.5rem;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box #textArea12-1_t2 {
   font-family: "League Spartan", sans-serif;
@@ -10820,6 +10937,7 @@ body {
   font-weight: bold;
   font-size: 0.7rem;
   line-height: 1;
+  letter-spacing: 0.2em;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box #textArea12-1_t2 {
@@ -10833,7 +10951,9 @@ body {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box #textArea12-1_t2 {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
+    top: 0%;
+    right: 38%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -10861,6 +10981,21 @@ body {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #dropArea12_t2 {
+    top: 17%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #dropArea12_t2 {
+    top: 18%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #dropArea12_t2 {
+    top: 15%;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #dropArea12_t2 img {
   width: 100%;
   height: 100%;
@@ -10868,23 +11003,26 @@ body {
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
-  font-size: 0.25rem;
-  margin-top: 40%;
+  font-size: 0.35rem;
+  margin-top: 37%;
+  position: absolute;
+  top: 33%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
-    font-size: 0.19rem;
+    font-size: 0.26rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
-    font-size: 0.38rem;
+    font-size: 0.52rem;
+    margin-top: 36%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-2_t2 {
-    font-size: 0.955vw;
-    margin-top: 30%;
+    font-size: 1.3vw;
+    margin-top: 33%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -10901,6 +11039,11 @@ body {
   text-align: center;
   font-style: italic;
 }
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
+    font-size: 10px;
+  }
+}
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
     font-size: 1.2rem;
@@ -10910,9 +11053,9 @@ body {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .flex12-1 #textArea12-3_t2 {
-    line-height: 0.7;
-    font-size: 3vw;
-    margin-bottom: 5%;
+    line-height: 0.9;
+    font-size: 2.7vw;
+    margin-bottom: 7%;
   }
 }
 .edit .swiper-button-prev {
@@ -12698,24 +12841,6 @@ body {
   object-fit: cover;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
-  width: 78%;
-  height: 97%;
-  top: 1%;
-  position: relative;
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 {
-    height: 94%;
-    top: 0;
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2_t2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 {
   display: flex;
   width: 100%;
@@ -12795,46 +12920,6 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2 img,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2 img,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-3_t2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
-  position: relative;
-  top: 1%;
-  width: 44%;
-  height: 47%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 {
-    top: 0;
-    height: 46%;
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.active {
-  border-color: rgba(0, 0, 0, 0.537254902);
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.square {
-  width: 45%;
-  height: 32%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.rectangle34 {
-  width: 45%;
-  height: 40%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.rectangle43 {
-  width: 45%;
-  height: 25%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2.mini {
-  width: 45%;
-  height: 20%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10_t2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
