@@ -811,31 +811,67 @@
                 color: #f8f8f8;
                 bottom: -1%;
               }
+              .textarea-lineB {
+                position: absolute;
+                height: 74%;
+                right: 13%;
+                top: 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                // gap: 5%;
+                @include mq('pc2-edit') {
+                  right: 13%;
+                  top: 5%;
+                  height: 91%;
+                }
+                @media screen and (max-width: 1200px) {
+                  height: 75%;
+                  right: -13%;
+                  top: 25%;
+                }
+                @include mq('tab-edit') {
+                  height: 73%;
+                  right: -8%;
+                  top: 23%;
+                }
 
-              // .textarea-line {
-              //   display: flex;
-              //   flex-direction: column;
-              //   align-items: center;
-              //   padding: 20px;
-              // }
-              // #line {
-              //   width: 2px; /* 線の太さ */
-              //   background-color: black; /* 線の色 */
-              //   height: 50px; /* 初期の線の長さ */
-              //   transition: height 0.3s; /* アニメーションで変化をスムーズに */
-              // }
-              // .textArea4_t2 {
-              //   font-family: 'League Spartan', sans-serif;
-              //   color: #f8f8f8;
-              //   transform: rotate(90deg);
-              //   position: absolute;
-              //   top: 23%;
-              //   left: -12%;
-              //   font-size: 1.6rem;
-              //   line-height: 1.2;
-              //   height: 8% !important;
-              //   font-weight: bold;
-              // }
+                #textArea4_t2 {
+                  writing-mode: vertical-lr;
+                  text-orientation: sideways;
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: white;
+                  letter-spacing: 0.5em;
+
+                  height: 200px;
+                  width: auto !important;
+                  max-width: 100% !important;
+                  white-space: nowrap;
+                  overflow-x: auto;
+                  overflow: hidden;
+                  resize: none;
+
+                  @include mq('pc2-edit') {
+                    font-size: 1.3rem;
+                  }
+                  @media screen and (max-width: 1200px) {
+                    font-size: 0.8rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2rem;
+                  }
+                }
+                #line {
+                  // position: relative;
+                  width: 2px;
+                  height: 300px;
+                  background-color: white;
+                  transition: height 0.3s ease;
+                  margin-top: 30%;
+                }
+              }
 
               #dropArea1_t2 {
                 position: relative;
@@ -903,16 +939,33 @@
                 height: 100%;
                 flex-direction: column;
                 align-items: center;
+                gap: 2%;
+                @include mq('pc2-edit') {
+                  gap: 3.3%;
+                }
 
                 #dropAreaB4-1_t2,
                 #dropAreaB4-2_t2,
                 #dropAreaB4-3_t2 {
-                  width: 54.5%;
-                  height: 27.5%;
-                  margin-bottom: 3.5%;
+                  width: 55.5%;
+                  height: 29%;
                   position: relative;
                   top: 5%;
-                  right: 7%;
+                  right: 6.5%;
+                  @include mq('pc2-edit') {
+                    top: 5%;
+                    right: 6.5%;
+                    height: 28.5%;
+                  }
+                  @media screen and (max-width: 1200px) {
+                    height: 30%;
+                    width: 56%;
+                  }
+                  @include mq('tab-edit') {
+                    height: 28%;
+                    right: 7%;
+                  }
+
                   // 枠サイズ変更関連---
                   &.active {
                     border-color: #00000089;

@@ -551,7 +551,6 @@ document.querySelectorAll('textArea4_t2').forEach(textarea => {
 });
 
 
-//マイページへボタンを押されたとき
 // 保存状態を取得
 let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
 let isSaved = true; // データが保存済みかどうかを示すフラグ

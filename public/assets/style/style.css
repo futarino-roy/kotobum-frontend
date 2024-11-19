@@ -10437,16 +10437,22 @@ body {
   height: 100%;
   flex-direction: column;
   align-items: center;
+  gap: 2%;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 {
+    gap: 3.3%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-2_t2,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2 {
-  width: 54%;
-  height: 28%;
-  margin-bottom: 3%;
+  width: 55.5%;
+  height: 29%;
   position: relative;
   top: 5%;
-  left: 7%;
+  left: 6.5%;
+  border: 2px dashed #ccc;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2,
@@ -10454,14 +10460,7 @@ body {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2 {
     top: 5%;
     left: 6.5%;
-    height: 28.3%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-1_t2,
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-2_t2,
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex4_t2 #dropArea4-3_t2 {
-    margin-bottom: 4%;
+    height: 28.5%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -12598,6 +12597,74 @@ body {
   color: #f8f8f8;
   bottom: -1%;
 }
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB {
+  position: absolute;
+  height: 74%;
+  right: 13%;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB {
+    right: 13%;
+    top: 5%;
+    height: 91%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB {
+    height: 75%;
+    right: -13%;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB {
+    height: 73%;
+    right: -8%;
+    top: 23%;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB #textArea4_t2 {
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.5em;
+  height: 200px;
+  width: auto !important;
+  max-width: 100% !important;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow: hidden;
+  resize: none;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB #textArea4_t2 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB #textArea4_t2 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB #textArea4_t2 {
+    font-size: 2rem;
+  }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop .textarea-lineB #line {
+  width: 2px;
+  height: 300px;
+  background-color: white;
+  transition: height 0.3s ease;
+  margin-top: 30%;
+}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1_t2 {
   position: relative;
   width: 45%;
@@ -12655,16 +12722,46 @@ body {
   height: 100%;
   flex-direction: column;
   align-items: center;
+  gap: 2%;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 {
+    gap: 3.3%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-3_t2 {
-  width: 54.5%;
-  height: 27.5%;
-  margin-bottom: 3.5%;
+  width: 55.5%;
+  height: 29%;
   position: relative;
   top: 5%;
-  right: 7%;
+  right: 6.5%;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-3_t2 {
+    top: 5%;
+    right: 6.5%;
+    height: 28.5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-3_t2 {
+    height: 30%;
+    width: 56%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2,
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-3_t2 {
+    height: 28%;
+    right: 7%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-1_t2.active,
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flexB4_t2 #dropAreaB4-2_t2.active,
