@@ -1266,6 +1266,64 @@ function handleSaveOrSend() {
       console.error('スタックトレース:', error.stack);
       alert('エラーが発生しました。再度お試しください。');
     });
+
+  // レイアウト確認
+  function collectLayoutData() {
+    const data = [];
+
+    // textareaを収集
+    document.querySelectorAll("textarea").forEach((textarea) => {
+      const rect = textarea.getBoundingClientRect(); // 要素の座標
+      const styles = window.getComputedStyle(textarea); // スタイル情報
+
+      data.push({
+        type: "textarea",
+        id: textarea.id || null,
+        class: textarea.className || null,
+        rows: textarea.rows || null,
+        maxlength: textarea.maxLength || null,
+        value: textarea.value || "",
+        styles: {
+          position: styles.position,
+          top: `${rect.top}px`,
+          left: `${rect.left}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+          fontSize: styles.fontSize,
+          color: styles.color,
+          backgroundColor: styles.backgroundColor,
+          border: styles.border,
+        },
+      });
+    });
+
+    // dropAreaを収集
+    document.querySelectorAll("[id^='dropArea']").forEach((dropArea) => {
+      const rect = dropArea.getBoundingClientRect(); // 要素の座標
+      const styles = window.getComputedStyle(dropArea); // スタイル情報
+
+      data.push({
+        type: "dropArea",
+        id: dropArea.id || null,
+        class: dropArea.className || null,
+        styles: {
+          position: styles.position,
+          top: `${rect.top}px`,
+          left: `${rect.left}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+          backgroundColor: styles.backgroundColor,
+          border: styles.border,
+        },
+      });
+    });
+
+    return data;
+  }
+
+  // JSONデータ取得
+  const layoutData = collectLayoutData();
+  console.log(layoutData);
 };
 
 // ページ読み込み時のアルバムデータ取得処理
@@ -1383,3 +1441,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 });
+
+
