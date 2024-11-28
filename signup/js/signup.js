@@ -67,7 +67,7 @@ document.getElementById('signup-form').addEventListener('submit', function (even
         alert('すべてのフィールドを入力してください。');
         return;
     }
-    if (password.length <= 8) {
+    if (password.length < 8) {
         alert('パスワードは8文字以上で入力して下さい。');
         return;
     }

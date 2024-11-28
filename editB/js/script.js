@@ -941,6 +941,10 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   });
 // });
 
+
+
+document.querySelectorAll('.FlexTextarea').forEach(flexTextarea)
+
 // 色変更
 function changeColor(color) {
   // 背景色を変更する
@@ -1134,6 +1138,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //             console.error('別のHTMLページの取得エラー:', error);
 //         });
 // });
+
+
 
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);

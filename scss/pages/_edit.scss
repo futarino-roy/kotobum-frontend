@@ -831,44 +831,11 @@
             @include mq('sp-edit') {
               width: 100%;
             }
-            // @include mq('sp2-edit') {
-            //   width: 70%;
-            //   clip-path: inset(5% 7% 7% 7%);
-            // }
-            // @include mq('sp3-edit') {
-            //   // height: 660px;
-            //   width: 50%;
-            //   clip-path: inset(5% 7% 8% 7%);
-            // }
-            &-8 {
-              clip-path: inset(29px 24px 40px 24px);
-              @include mq('pc2-edit') {
-                clip-path: inset(44px 37px 57px 37px);
-              }
-              @include mq('pc-edit') {
-                clip-path: inset(22px 18px 31px 18px);
-              }
-              @include mq('tab-edit') {
-                width: 90%;
-                clip-path: inset(7% 8.5% 9.5% 8%);
-              }
+            .img8 {
+              top: -13px;
+              height: 102%;
+              position: relative;
             }
-            // &-last {
-            //   clip-path: inset(33px 31px 34px 31px);
-            //   @include mq('pc2-edit') {
-            //     clip-path: inset(31px 31px 53px 30px);
-            //   }
-            //   @include mq('pc-edit') {
-            //     clip-path: inset(16px 16px 30px 17px);
-            //   }
-            //   @include mq('tab-edit') {
-            //     width: 90%;
-            //     clip-path: inset(6% 8% 7% 8%);
-            //   }
-            //   @include mq('sp-edit') {
-            //     width: 100%;
-            //   }
-            // }
 
             .input-drop-last {
               top: 6% !important;

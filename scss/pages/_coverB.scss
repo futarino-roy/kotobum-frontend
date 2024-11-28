@@ -724,12 +724,15 @@
                 position: absolute;
                 width: 85%;
                 height: 53%;
-                top: 42%;
+                top: 40%;
                 left: 10.5%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 bottom: 10px;
+                @include mq('pc2-edit') {
+                  top: 40%;
+                }
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
@@ -835,7 +838,7 @@
                   height: 5% !important;
                   max-width: 35px;
                   top: 17%;
-                  right: 75.5%;
+                  right: 73%;
                   text-align: center;
                   line-height: 0.9;
                   font-weight: bold;
@@ -849,6 +852,7 @@
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;
+                    right: 74%;
                   }
                   @include mq('sp2-edit') {
                     font-size: 2vw;
@@ -857,7 +861,7 @@
                 &B-2 {
                   position: absolute;
                   top: 21.5%;
-                  left: 7%;
+                  left: 3%;
                   // height: 3% !important;
                   // width: 16% !important;
 
@@ -880,6 +884,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    left: 4%;
                   }
 
                   @include mq('tab-edit') {

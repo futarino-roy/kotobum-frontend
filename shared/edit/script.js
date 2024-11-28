@@ -474,29 +474,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // テキストエリアのサイズを調整する関数
+// テキストエリアのサイズを内容に合わせて調整する関数
 function adjustTextareaSize(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.width = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
-  textarea.style.width = `${textarea.scrollWidth}px`;
+  if (!textarea) return; // テキストエリアが存在しない場合は処理を中断
+
+  // 横幅を内容に応じて調整
+  if (textarea.value.trim() === "") {
+    textarea.style.width = "auto"; // 初期高さにリセット
+  } else {
+    textarea.style.width = 'auto'; // リセット
+    textarea.style.width = `${textarea.scrollWidth}px`;
+  }
+  // 高さを内容に応じて調整
+  if (textarea.value.trim() === "") {
+    textarea.style.height = "auto"; // 初期高さにリセット
+  } else {
+    textarea.style.height = "auto"; // 一旦リセット
+    textarea.style.height = `${textarea.scrollHeight}px`; // 再設定
+  }
 }
 
-// 最大文字数の制限を外し、イベントリスナーを追加する関数
-function enforceNoMaxLength(textarea) {
+// テキストエリアのイベントリスナーを設定し、サイズを動的に調整
+function setupDynamicTextarea(textarea) {
+  if (!textarea) return;
+
+  // 入力イベントに応じてサイズを調整
   textarea.addEventListener('input', function () {
     adjustTextareaSize(this);
   });
-  // 初期表示時にもサイズ調整を実行
+
+  // 初期表示時にサイズ調整
   adjustTextareaSize(textarea);
 }
 
-// ドキュメント読み込み時の処理
+// ドキュメント読み込み時にテキストエリアを初期化
 document.addEventListener('DOMContentLoaded', function () {
-  // テキストエリアごとに必要な処理を実行
+  // 指定したクラスのテキストエリアを全て取得し、初期化
   document.querySelectorAll('.text-empty').forEach((textarea) => {
-    enforceNoMaxLength(textarea);
+    setupDynamicTextarea(textarea);
   });
 });
+
 
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
