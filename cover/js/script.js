@@ -957,6 +957,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
 
@@ -964,8 +965,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(covertext); // 背表紙テキストデータの配列
       console.log(imageData); // 画像データの配列
       console.log(colors);    // 色情報のオブジェクト
-
-
 
       // データの存在チェック
       if (!textData || !Array.isArray(textData)) {
