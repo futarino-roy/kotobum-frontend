@@ -830,9 +830,7 @@ function handleSaveOrSend() {
       }));
 
       const textAreaCover = document.querySelector('.textArea_cover textarea');
-      const textDataCover = textAreaCover
-        ? { id: textAreaCover.id, text: textAreaCover.value || '' }
-        : null;
+
 
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
