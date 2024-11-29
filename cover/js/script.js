@@ -829,7 +829,7 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
-      const textDataCover = document.querySelectorAll('.textArea_cover');
+      const textDataCover = document.querySelector('.textArea_cover').style.textDataCover || '';
 
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
