@@ -742,6 +742,14 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
+      const textAreaCover = document.querySelector('.textArea-cover');
+      const covertext = textAreaCover
+        ? {
+          id: textAreaCover.id,
+          text: textAreaCover.value.trim() || '',
+        }
+        : null;
+
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
         const img = dropArea.querySelector('img');
@@ -762,6 +770,7 @@ function handleSaveOrSend() {
 
       const dataToSend = {
         textData,
+        covertext,
         imageData,
         colors: {
           backgroundColor,
@@ -860,12 +869,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
+      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
 
       console.log(textData); // テキストデータの配列
       console.log(imageData); // 画像データの配列
       console.log(colors);    // 色情報のオブジェクト
+      console.log(covertext);
 
 
       // データの存在チェック
@@ -877,6 +888,21 @@ document.addEventListener('DOMContentLoaded', function () {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+          }
+        });
+      }
+
+      //表紙テキストデータの存在チェック
+      if (!covertext || !Array.isArray(covertext)) {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      } else {
+        // 表紙テキストデータを表示
+        textData.forEach(item => {
+          const textAreaCover = document.getElementById(item.id);
+          if (textAreaCover) {
+            textAreaCover.value = item.text;
           } else {
             console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }

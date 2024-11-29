@@ -321,6 +321,21 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
+      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
+      if (covertext && Array.isArray(covertext)) {
+        covertext.forEach(item => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+            adjustTextareaSize(textArea);
+          } else {
+            console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+          }
+        });
+      } else {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      }
+
       // 画像データを反映
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       if (imageData && Array.isArray(imageData)) {

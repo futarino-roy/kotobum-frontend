@@ -829,7 +829,51 @@
                 white-space: nowrap; /* 改行をさせない設定 */
               }
 
-              //　テキストエリア　ここを変える！
+              #textArea-cover {
+                margin: 0;
+                position: absolute;
+                width: 5% !important;
+                // height: auto;
+                bottom: 4.5%;
+                right: -4%;
+                font-weight: bold;
+                font-size: 0.5rem !important;
+                text-align: start;
+
+                // テキストの向きを変更
+                writing-mode: vertical-rl; /* 縦書き (右から左) */
+                text-orientation: mixed; /* テキストの方向を調整 */
+                transform: rotate(180deg); /* テキストを180度回転 */
+                display: inline-block;
+
+                overflow: hidden; /* スクロールバーを非表示 */
+                resize: none;
+                white-space: nowrap; /* 改行を無効にする */
+                overflow-wrap: normal; /* 自動改行を無効にする */
+                word-wrap: normal; /* 単語の途中での改行を無効にする */
+                word-break: normal; /* 単語の途中での改行を無効にする */
+
+                @include mq('pc-edit') {
+                  font-size: 0.3rem !important;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.7rem !important;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.4vw !important;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 2vw !important;
+                }
+
+                @include mq('sp2-edit') {
+                  font-size: 1.5vw !important;
+                }
+              }
+
               #textArea {
                 &B-1 {
                   margin: 0;
@@ -923,50 +967,6 @@
                   }
                   @include mq('sp2-edit') {
                     font-size: 2.7vw;
-                  }
-                }
-                &B-4 {
-                  margin: 0;
-                  position: absolute;
-                  width: 5% !important;
-                  // height: auto;
-                  bottom: 4.5%;
-                  right: -4%;
-                  font-weight: bold;
-                  font-size: 0.5rem !important;
-                  text-align: start;
-
-                  // テキストの向きを変更
-                  writing-mode: vertical-rl; /* 縦書き (右から左) */
-                  text-orientation: mixed; /* テキストの方向を調整 */
-                  transform: rotate(180deg); /* テキストを180度回転 */
-                  display: inline-block;
-
-                  overflow: hidden; /* スクロールバーを非表示 */
-                  resize: none;
-                  white-space: nowrap; /* 改行を無効にする */
-                  overflow-wrap: normal; /* 自動改行を無効にする */
-                  word-wrap: normal; /* 単語の途中での改行を無効にする */
-                  word-break: normal; /* 単語の途中での改行を無効にする */
-
-                  @include mq('pc-edit') {
-                    font-size: 0.3rem !important;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.7rem !important;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.4vw !important;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2vw !important;
-                  }
-
-                  @include mq('sp2-edit') {
-                    font-size: 1.5vw !important;
                   }
                 }
               }
