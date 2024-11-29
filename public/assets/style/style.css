@@ -1290,7 +1290,7 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(31px 37px 57px 37px);
+    clip-path: inset(32px 37px 57px 37px);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -3189,13 +3189,6 @@ input:checked + label::after {
     width: 100%;
   }
 }
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-  top: 6% !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start !important;
-}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 100%;
@@ -3712,6 +3705,10 @@ input:checked + label::after {
     font-size: 1.7vw;
   }
 }
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-height {
+  field-sizing: content;
+  max-height: 30%;
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .vertical-textarea {
   writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
   text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
@@ -3793,11 +3790,12 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
-  margin-top: 5%;
+  margin-top: 4%;
   font-size: 0.3rem;
   text-align: start;
   writing-mode: vertical-rl;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
+  max-height: 15%;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
@@ -3820,6 +3818,7 @@ input:checked + label::after {
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
+  margin-bottom: 5%;
   height: auto;
   font-size: 0.6rem;
   line-height: 1.5;
@@ -4069,6 +4068,16 @@ input:checked + label::after {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     font-size: 2.5vw;
   }
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop-first {
+  top: 7%;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+  top: 6% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start !important;
 }
 .editB .content .swiper-button-prev {
   margin-left: 0;

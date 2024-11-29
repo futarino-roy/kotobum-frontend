@@ -777,15 +777,6 @@
             //   }
             // }
 
-            .input-drop-last {
-              top: 6% !important;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: flex-start !important;
-              // max-height: 84% !important;
-            }
-
             .input-drop {
               position: absolute;
               width: 100%;
@@ -798,20 +789,6 @@
               flex-direction: column;
               align-items: center;
               justify-content: center;
-
-              // .background-textArea18-1 {
-              //   position: relative;
-              //   width: 43%;
-              //   height: 20%;
-              //   background-image: url(/edit/images/cloud.png);
-              //   background-size: contain;
-              //   background-repeat: no-repeat;
-              //   // margin-bottom: 5%;
-              //   // margin-right: 22%;
-              //   display: flex;
-              //   align-items: center;
-              //   justify-content: center;
-              // }
 
               .flex24 {
                 width: 100%;
@@ -1484,7 +1461,10 @@
                   font-size: 1.7vw;
                 }
               }
-
+              .text-height {
+                field-sizing: content;
+                max-height: 30%;
+              }
               .vertical-textarea {
                 writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
                 text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
@@ -1561,11 +1541,12 @@
                 }
 
                 &13-3 {
-                  margin-top: 5%;
+                  margin-top: 4%;
                   font-size: 0.3rem;
                   text-align: start;
                   writing-mode: vertical-rl;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  max-height: 15%;
                   @include mq('pc-edit') {
                     font-size: 0.25rem;
                   }
@@ -1586,7 +1567,7 @@
                 &14,
                 &18,
                 &22 {
-                  // margin-bottom: 5%;
+                  margin-bottom: 5%;
                   height: auto;
                   font-size: 0.6rem;
                   line-height: 1.5;
@@ -1872,6 +1853,17 @@
                   }
                 }
               }
+            }
+            .input-drop-first {
+              top: 7%;
+            }
+            .input-drop-last {
+              top: 6% !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start !important;
+              // max-height: 84% !important;
             }
           }
         }

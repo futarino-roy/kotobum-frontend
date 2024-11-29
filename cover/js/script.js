@@ -829,6 +829,12 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
+      const textArea1 = document.querySelectorAll('.textArea_cover');
+      const textData1 = Array.from(textArea1).map(textarea => ({
+        id: textarea.id,
+        text: textarea.value || '',
+      }))
+
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
         const img = dropArea.querySelector('img');
@@ -841,7 +847,7 @@ function handleSaveOrSend() {
       const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-color').style.color || '#000000';
 
-      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      if (textData.every(text => text.text === '') && textData1.every(text => text.text === '') && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
@@ -849,6 +855,7 @@ function handleSaveOrSend() {
 
       const dataToSend = {
         textData,
+        textData1,
         imageData,
         colors: {
           backgroundColor,

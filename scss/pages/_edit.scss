@@ -819,7 +819,7 @@
             position: relative;
             clip-path: inset(23px 24px 40px 24px);
             @include mq('pc2-edit') {
-              clip-path: inset(31px 37px 57px 37px);
+              clip-path: inset(32px 37px 57px 37px);
             }
             @include mq('pc-edit') {
               clip-path: inset(16px 16px 30px 17px);
