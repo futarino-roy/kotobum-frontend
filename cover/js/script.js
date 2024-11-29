@@ -829,8 +829,11 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
-      const textAreaCover = document.querySelector('.textArea_cover');
-      const textDataCover = textAreaCover
+      const textAreaCover = document.querySelector('.textArea-cover');
+      const textDataCover = Array.from(textAreaCover).map(textarea => ({
+        id: textarea.id,
+        text: textarea.value || '',
+      }));
 
 
       const dropAreas = document.querySelectorAll('.empty');
