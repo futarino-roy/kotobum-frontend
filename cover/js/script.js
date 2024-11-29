@@ -830,7 +830,7 @@ function handleSaveOrSend() {
       }));
 
       const textAreaCover = document.querySelector('.textArea-cover');
-      const textDataCover = textAreaCover
+      const covertext = textAreaCover
         ? {
           id: textAreaCover.id,
           text: textAreaCover.value.trim() || '',
@@ -858,7 +858,7 @@ function handleSaveOrSend() {
 
       const dataToSend = {
         textData,
-        textDataCover,
+        covertext,
         imageData,
         colors: {
           backgroundColor,
@@ -959,10 +959,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
-      const textDataCover = Array.isArray(data.textDataCover) ? data.textDataCover : JSON.parse(data.textDataCover);
+      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
 
       console.log(textData); // テキストデータの配列
-      console.log(textDataCover); // 背表紙テキストデータの配列
+      console.log(covertext); // 背表紙テキストデータの配列
       console.log(imageData); // 画像データの配列
       console.log(colors);    // 色情報のオブジェクト
 
@@ -984,7 +984,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       //表紙テキストデータの存在チェック
-      if (!textDataCover || !Array.isArray(textDataCover)) {
+      if (!covertext || !Array.isArray(covertext)) {
         console.warn('テキストデータが存在しないか、配列ではありません。');
       } else {
         // 表紙テキストデータを表示
