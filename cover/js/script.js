@@ -829,7 +829,10 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
-      const textDataCover = document.querySelector('.textArea_cover').style.textDataCover || '';
+      const textAreaCover = document.querySelector('.textArea_cover textarea');
+      const textDataCover = textAreaCover
+        ? { id: textAreaCover.id, text: textAreaCover.value || '' }
+        : null;
 
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
@@ -843,7 +846,7 @@ function handleSaveOrSend() {
       const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-color').style.color || '#000000';
 
-      if (textData.every(text => text.text === '') && textDataCover.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      if (textData.every(text => text.text === '') && !textDataCover || textDataCover.text === '' && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
