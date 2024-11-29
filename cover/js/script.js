@@ -829,7 +829,7 @@ function handleSaveOrSend() {
         text: textarea.value || '',
       }));
 
-      const textAreaCover = document.querySelector('.textArea_cover textarea');
+      const textAreaCover = document.querySelector('.textArea_cover');
       const textDataCover = textAreaCover
 
 
