@@ -959,7 +959,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
-      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
 
       console.log(textData); // テキストデータの配列
       console.log(covertext); // 背表紙テキストデータの配列
