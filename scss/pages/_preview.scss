@@ -178,43 +178,24 @@
           &_box {
             max-width: 500px;
             position: relative;
-            clip-path: inset(21px 24px 43px 21px);
+            clip-path: inset(23px 24px 40px 24px);
             @include mq('pc2-edit') {
-              clip-path: inset(32px 34px 59px 30px);
+              clip-path: inset(32px 37px 57px 37px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(18px 19px 34px 17px);
+              clip-path: inset(16px 18px 34px 18px);
             }
             @include mq('tab-edit') {
-              width: 70%;
-              margin: 50px 0 0;
-              clip-path: inset(5% 7% 6% 7%);
+              width: 90%;
+              clip-path: inset(6% 8% 7% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(5% 7% 6% 7%);
             }
-            @include mq('sp2-edit') {
-              width: 70%;
-              clip-path: inset(5% 7% 7% 7%);
-            }
-            @include mq('sp3-edit') {
-              // height: 660px;
-              width: 50%;
-              clip-path: inset(5% 7% 8% 7%);
-            }
-            &-8 {
-              clip-path: inset(29px 24px 40px 24px);
-              @include mq('pc2-edit') {
-                clip-path: inset(44px 37px 57px 37px);
-              }
-              @include mq('pc-edit') {
-                clip-path: inset(22px 18px 31px 18px);
-              }
-              @include mq('tab-edit') {
-                width: 90%;
-                clip-path: inset(7% 8.5% 9.5% 8%);
-              }
+            .img8 {
+              top: -13px;
+              height: 102%;
+              position: relative;
             }
 
             .input-drop-last {
