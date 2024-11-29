@@ -7534,6 +7534,51 @@ input:checked + label::after {
   resize: none; /* ユーザーがサイズを変更できないようにする */
   white-space: nowrap; /* 改行をさせない設定 */
 }
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  bottom: 8%;
+  left: -5.5%;
+  font-weight: bold;
+  font-size: 0.5rem !important;
+  text-align: start;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+    font-size: 0.3rem !important;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+    font-size: 0.7rem !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+    font-size: 1.4vw !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea_cover {
+    font-size: 1.5vw !important;
+  }
+}
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
@@ -7644,51 +7689,6 @@ input:checked + label::after {
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 2.7vw;
-  }
-}
-.cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-  margin: 0;
-  position: absolute;
-  width: 5% !important;
-  bottom: 8%;
-  left: -5.5%;
-  font-weight: bold;
-  font-size: 0.5rem !important;
-  text-align: start;
-  writing-mode: vertical-rl; /* 縦書き (右から左) */
-  text-orientation: mixed; /* テキストの方向を調整 */
-  transform: rotate(180deg); /* テキストを180度回転 */
-  display: inline-block;
-  overflow: hidden; /* スクロールバーを非表示 */
-  resize: none;
-  white-space: nowrap; /* 改行を無効にする */
-  overflow-wrap: normal; /* 自動改行を無効にする */
-  word-wrap: normal; /* 単語の途中での改行を無効にする */
-  word-break: normal; /* 単語の途中での改行を無効にする */
-}
-@media screen and (max-width: 1200px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 0.3rem !important;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 0.7rem !important;
-  }
-}
-@media screen and (max-width: 900px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 1.4vw !important;
-  }
-}
-@media screen and (max-width: 480px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 2vw !important;
-  }
-}
-@media screen and (max-width: 380px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-4 {
-    font-size: 1.5vw !important;
   }
 }
 
