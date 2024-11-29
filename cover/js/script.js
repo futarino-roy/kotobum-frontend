@@ -830,6 +830,7 @@ function handleSaveOrSend() {
       }));
 
       const textAreaCover = document.querySelector('.textArea_cover textarea');
+      const textDataCover = textAreaCover
 
 
       const dropAreas = document.querySelectorAll('.empty');
