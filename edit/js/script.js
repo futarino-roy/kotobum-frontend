@@ -1207,9 +1207,12 @@ function handleSaveOrSend() {
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
         const img = dropArea.querySelector('img');
+        const { width, height } = dropArea.getBoundingClientRect();
         return {
           id: dropArea.id,
           image: img ? img.src : null,
+          width: Math.round(width),
+          height: Math.round(height),
         };
       });
 
