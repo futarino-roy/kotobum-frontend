@@ -830,10 +830,12 @@ function handleSaveOrSend() {
       }));
 
       const textAreaCover = document.querySelector('.textArea-cover');
-      const textDataCover = Array.from(textAreaCover).map(textarea => ({
-        id: textarea.id,
-        text: textarea.value || '',
-      }));
+      const textDataCover = textAreaCover
+        ? {
+          id: textAreaCover.id,
+          text: textAreaCover.value.trim() || '',
+        }
+        : null;
 
 
       const dropAreas = document.querySelectorAll('.empty');
