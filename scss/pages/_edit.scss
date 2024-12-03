@@ -817,12 +817,12 @@
           &_box {
             // max-width: 500px;
             position: relative;
-            clip-path: inset(23px 24px 40px 24px);
+            clip-path: inset(23px 24px 28px 24px);
             @include mq('pc2-edit') {
-              clip-path: inset(32px 37px 57px 37px);
+              clip-path: inset(32px 37px 37px 37px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(16px 17px 34px 17px);
+              clip-path: inset(16px 17px 20px 17px);
             }
             @include mq('tab-edit') {
               width: 90%;
@@ -830,14 +830,6 @@
             }
             @include mq('sp-edit') {
               width: 100%;
-            }
-            .img8 {
-              top: -13px;
-              height: 102%;
-              position: relative;
-              @include mq('tab-edit') {
-                top: -5px;
-              }
             }
 
             .input-drop-last {

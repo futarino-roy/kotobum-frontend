@@ -1286,16 +1286,16 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box {
   position: relative;
-  clip-path: inset(23px 24px 40px 24px);
+  clip-path: inset(23px 24px 28px 24px);
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(32px 37px 57px 37px);
+    clip-path: inset(32px 37px 37px 37px);
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(16px 17px 34px 17px);
+    clip-path: inset(16px 17px 20px 17px);
   }
 }
 @media screen and (max-width: 900px) {
@@ -1307,16 +1307,6 @@ input:checked + label::after {
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .img8 {
-  top: -13px;
-  height: 102%;
-  position: relative;
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .img8 {
-    top: -5px;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
