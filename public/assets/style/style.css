@@ -1314,14 +1314,14 @@ input:checked + label::after {
   height: 102%;
   position: relative;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-  top: 6% !important;
-  justify-content: flex-start !important;
-}
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-    top: 5% !important;
+  .edit .content .swiper-wrapper .swiper-slide_box .img8 {
+    top: -5px;
   }
+}
+.edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
+  top: 8% !important;
+  justify-content: flex-start !important;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
@@ -1361,12 +1361,24 @@ input:checked + label::after {
   justify-content: center;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 82%;
   width: 100%;
+  top: -3.5%;
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
+    top: -5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
+    top: -3.5%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
   width: 63%;
@@ -1773,13 +1785,33 @@ input:checked + label::after {
   border-radius: 10%;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
-  margin-top: 0%;
   position: relative;
   width: 63%;
   height: 42%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
+  border: 2px dashed rgb(204, 204, 204);
   cursor: pointer;
+  clip-path: polygon(51% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+    clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+  }
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+    clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+    clip-path: polygon(54% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 14%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
+    clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 img {
   width: 100%;
@@ -1854,35 +1886,14 @@ input:checked + label::after {
   border: none;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
-  transform: rotate(-8deg);
-  margin-left: -43%;
-  margin-bottom: 0.3%;
+  transform: rotate(-9.7deg);
+  margin-left: -39%;
   width: 34% !important;
   text-align: center;
   font-size: 0.6rem;
   font-weight: bold;
   line-height: 1.2;
   color: #fef8f6;
-}
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
-    margin-bottom: 2%;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
-    margin-bottom: 3%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
-    margin-bottom: 7%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
-    margin-bottom: 3%;
-  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
   font-family: "League Spartan", sans-serif;
@@ -2199,9 +2210,6 @@ input:checked + label::after {
     font-size: 1.4vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
-  background-color: coral;
-}
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
     font-size: 0.6rem;
@@ -2254,25 +2262,25 @@ input:checked + label::after {
   font-weight: bold;
   color: #fef8f6;
   font-size: 12px;
-  margin-top: 113.5%;
+  margin-top: 111.5%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-    margin-top: 113.5%;
+    margin-top: 111.5%;
   }
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
     font-size: 1.2rem;
     line-height: 0.9;
-    margin-top: 115.5%;
+    margin-top: 113%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
     line-height: 0.7;
     font-size: 3vw;
-    margin-top: 117%;
+    margin-top: 113%;
   }
 }
 .edit .swiper-button-prev {
@@ -3203,7 +3211,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
   width: 100%;
-  height: 78%;
+  height: 83%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4004,7 +4012,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
   height: 65% !important;
-  width: 30% !important;
+  width: 45% !important;
   writing-mode: vertical-rl;
   font-size: 0.26rem;
   display: flex;
@@ -4039,8 +4047,7 @@ input:checked + label::after {
   font-weight: bold;
   color: #fef8f6;
   font-size: 12px;
-  margin-top: 113%;
-  height: 3% !important;
+  margin-top: 115%;
   width: 63% !important;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
@@ -4061,7 +4068,7 @@ input:checked + label::after {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     line-height: 0.7;
     font-size: 3vw;
-    margin-top: 114%;
+    margin-top: 116%;
   }
 }
 @media screen and (max-width: 480px) {

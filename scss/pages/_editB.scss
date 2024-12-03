@@ -792,7 +792,7 @@
 
               .flex24 {
                 width: 100%;
-                height: 78%;
+                height: 83%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1794,7 +1794,7 @@
                 }
                 &24-2 {
                   height: 65% !important;
-                  width: 30% !important;
+                  width: 45% !important;
                   writing-mode: vertical-rl;
                   font-size: 0.26rem;
                   display: flex;
@@ -1825,8 +1825,8 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  margin-top: 113%;
-                  height: 3% !important;
+                  margin-top: 115%;
+
                   width: 63% !important;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   // max-height: 15px;
@@ -1845,7 +1845,7 @@
                   @include mq('tab-edit') {
                     line-height: 0.7;
                     font-size: 3vw;
-                    margin-top: 114%;
+                    margin-top: 116%;
                   }
 
                   @include mq('sp-edit') {

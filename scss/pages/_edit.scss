@@ -835,15 +835,14 @@
               top: -13px;
               height: 102%;
               position: relative;
+              @include mq('tab-edit') {
+                top: -5px;
+              }
             }
 
             .input-drop-last {
-              top: 6% !important;
+              top: 8% !important;
               justify-content: flex-start !important;
-
-              @include mq('tab-edit') {
-                top: 5% !important;
-              }
             }
             .input-drop {
               position: absolute;
@@ -883,12 +882,20 @@
               }
 
               .flex-content12 {
+                position: relative;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
                 height: 82%;
                 width: 100%;
+                top: -3.5%;
+                @include mq('pc-edit') {
+                  top: -5%;
+                }
+                @include mq('tab-edit') {
+                  top: -3.5%;
+                }
               }
 
               .flex-area12 {
@@ -1403,35 +1410,29 @@
               }
 
               #dropArea12-1 {
-                margin-top: 0%;
                 position: relative;
                 width: 63%;
                 height: 42%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                border: 2px dashed rgb(204, 204, 204);
                 cursor: pointer;
+                clip-path: polygon(51% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
 
-                // 枠サイズ変更関連---
-                // &.active {
-                //   border-color: #00000089;
-                // }
+                @include mq('pc-edit') {
+                  clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+                }
 
-                // &.square {
-                //   width: 57%;
-                //   height: 40%;
-                // }
+                @include mq('pc2-edit') {
+                  clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
+                }
 
-                // &.rectangle {
-                //   width: 62%;
-                //   height: 30%;
-                // }
+                @include mq('tab-edit') {
+                  clip-path: polygon(54% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 14%);
+                }
 
-                // &.mini {
-                //   width: 52%;
-                //   height: 20%;
-                // }
-
-                // --------------------------
+                @include mq('sp-edit') {
+                  clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+                }
 
                 img {
                   width: 100%;
@@ -1553,30 +1554,15 @@
                 }
               }
               .text-diagonal {
-                transform: rotate(-8deg);
-                margin-left: -43%;
-                margin-bottom: 0.3%;
+                transform: rotate(-9.7deg);
+                margin-left: -39%;
+                // margin-bottom: -2.7%;
                 width: 34% !important;
                 text-align: center;
                 font-size: 0.6rem;
                 font-weight: bold;
                 line-height: 1.2;
                 color: #fef8f6;
-                @include mq('pc-edit') {
-                  margin-bottom: 2%;
-                }
-
-                @include mq('pc2-edit') {
-                  margin-bottom: 3%;
-                }
-
-                @include mq('tab-edit') {
-                  margin-bottom: 7%;
-                }
-
-                @include mq('sp-edit') {
-                  margin-bottom: 3%;
-                }
               }
               #textArea {
                 &1-1 {
@@ -1863,7 +1849,6 @@
                   }
                 }
                 &12-1 {
-                  background-color: coral;
                   @include mq('pc-edit') {
                     font-size: 0.6rem;
                     // margin-bottom: 3%;
@@ -1909,21 +1894,21 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  margin-top: 113.5%;
+                  margin-top: 111.5%;
                   @include mq('pc-edit') {
-                    margin-top: 113.5%;
+                    margin-top: 111.5%;
                   }
 
                   @include mq('pc2-edit') {
                     font-size: 1.2rem;
                     line-height: 0.9;
-                    margin-top: 115.5%;
+                    margin-top: 113%;
                   }
 
                   @include mq('tab-edit') {
                     line-height: 0.7;
                     font-size: 3vw;
-                    margin-top: 117%;
+                    margin-top: 113%;
                   }
 
                   // @include mq('sp-edit') {
