@@ -550,34 +550,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // テキストエリアの内容をローカルストレージに保存する処理を削除
 
-// テキストエリアの内容をローカルストレージから読み込む関数を削除
+// // テキストエリアの内容をローカルストレージから読み込む関数を削除
 
-const defaultWidth = "13.5%"; // CSSで指定した幅
-const defaultHeight = "4.5%"; // CSSで指定した高さ
+// const defaultWidth = "13.5%"; // CSSで指定した幅
+// const defaultHeight = "4.5%"; // CSSで指定した高さ
 
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
-  if (textarea.value.trim() === '') {
-    // テキストが空の場合、デフォルトのCSSサイズに戻す
-    textarea.style.width = defaultWidth;
-    textarea.style.height = defaultHeight;
-  } else {
-    textarea.style.height = "auto";
-    textarea.style.height = `${textarea.scrollHeight}px`;
-  }
+  // if (textarea.value.trim() === '') {
+  //   // テキストが空の場合、デフォルトのCSSサイズに戻す
+  //   textarea.style.width = defaultWidth;
+  //   textarea.style.height = defaultHeight;
+  // } else {
+  textarea.style.height = "auto";
+  textarea.style.height = `${textarea.scrollHeight}px`;
+  // }
 }
 
 // テキストエリアの幅を調整する関数
 function adjustTextareaWidth(textarea) {
-  if (textarea.value.trim() === '') {
-    // テキストが空の場合、デフォルトのCSSサイズに戻す
-    textarea.style.width = defaultWidth;
-    textarea.style.height = defaultHeight;
-  } else {
-    textarea.style.width = "auto";
-    const scrollWidth = textarea.scrollWidth;
-    textarea.style.width = `${scrollWidth}px`;
-  }
+  // if (textarea.value.trim() === '') {
+  //   // テキストが空の場合、デフォルトのCSSサイズに戻す
+  //   textarea.style.width = defaultWidth;
+  //   textarea.style.height = defaultHeight;
+  // } else {
+  textarea.style.width = "auto";
+  const scrollWidth = textarea.scrollWidth;
+  textarea.style.width = `${scrollWidth}px`;
+  // }
 }
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
