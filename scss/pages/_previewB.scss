@@ -880,6 +880,7 @@
                 line-height: 1.9;
                 background-color: transparent;
                 // letter-spacing: 0.5px;
+                border: none;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
