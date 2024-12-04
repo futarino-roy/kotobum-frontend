@@ -6019,7 +6019,8 @@ input:checked + label::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0px;
+  max-height: 85.5%;
+  top: 25px;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -6078,13 +6079,22 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle34 {
+  width: 45%;
+  height: 40%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea13.rectangle43 {
   width: 45%;
   height: 25%;
 }
@@ -6096,19 +6106,30 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle34 {
+  width: 45%;
+  height: 40%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14.rectangle43 {
   width: 45%;
   height: 25%;
 }
@@ -6120,21 +6141,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea15.mini {
   width: 45%;
@@ -6144,21 +6176,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16.mini {
   width: 45%;
@@ -6168,21 +6211,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea17.mini {
   width: 45%;
@@ -6192,21 +6246,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.mini {
   width: 45%;
@@ -6216,45 +6281,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
-  position: relative;
-  width: 45%;
-  height: 25%;
-  font-size: 1rem;
-  border: none;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.square {
-  width: 45%;
-  height: 32%;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.rectangle {
-  width: 45%;
-  height: 25%;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18.mini {
-  width: 45%;
-  height: 20%;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea19.mini {
   width: 45%;
@@ -6264,21 +6316,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20.mini {
   width: 45%;
@@ -6288,21 +6351,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea21.mini {
   width: 45%;
@@ -6312,21 +6386,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22.mini {
   width: 45%;
@@ -6336,21 +6421,32 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23 {
   position: relative;
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.active {
+  border-color: rgba(0, 0, 0, 0.537254902);
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.square {
   width: 45%;
   height: 32%;
 }
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle {
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle43 {
   width: 45%;
   height: 25%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.rectangle34 {
+  width: 45%;
+  height: 40%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea23.mini {
   width: 45%;
@@ -6360,12 +6456,16 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 10%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
   position: relative;
   width: 100%;
   min-height: 45%;
-  border: none;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 img {
   width: 100%;
@@ -6378,7 +6478,8 @@ input:checked + label::after {
   width: 100%;
   min-height: 45%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 img {
   width: 100%;
@@ -6391,7 +6492,8 @@ input:checked + label::after {
   width: 63%;
   height: 42%;
   font-size: 1rem;
-  border: none;
+  border: 2px dashed #ccc;
+  cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 img {
   width: 100%;
@@ -6405,27 +6507,23 @@ input:checked + label::after {
   resize: none;
   max-width: 60%;
   height: auto;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   line-height: 1.9;
   background-color: transparent;
-  border: none;
-  outline: none;
-  pointer-events: none;
-  cursor: not-allowed;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 0.37rem;
+    font-size: 0.3rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 @media screen and (max-width: 900px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.3vw;
+    font-size: 1.6vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -6433,32 +6531,54 @@ input:checked + label::after {
     font-size: 1.7vw;
   }
 }
-@media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.2vw;
-  }
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .text-height {
+  field-sizing: content;
+  max-height: 30%;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .vertical-textarea {
+  writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
+  text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .horizontal-text {
+  text-orientation: sideways; /* 横並びで表示するスタイル */
+  display: inline-block; /* 縦書きの流れの中で横書きを保持 */
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
+  box-sizing: border-box; /* パディングとボーダーを計算に含める */
+  resize: none; /* ユーザーによるサイズ変更を禁止 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  border: 2px dashed #ccc;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
+  border: none;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea {
+  border: 2px dashed #ccc;
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea.no-border {
+  border: none;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
   font-family: "League Spartan", sans-serif;
-  width: 60% !important;
-  font-size: 1.4rem;
+  min-width: 60%;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: bold;
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 900px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
 }
 @media screen and (max-width: 480px) {
@@ -6466,43 +6586,33 @@ input:checked + label::after {
     font-size: 5vw;
   }
 }
-@media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 3.5vw;
-  }
-}
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
   font-family: "League Spartan", sans-serif;
   min-width: 60%;
   margin: 1% 0 5%;
-  font-size: 0.52rem;
+  font-size: 0.45rem;
   line-height: 1.5;
   font-weight: bold;
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 0.4rem;
+    font-size: 0.33rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 }
 @media screen and (max-width: 900px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 1.3vw;
+    font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 480px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 1.9vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 1.3vw;
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
@@ -6543,8 +6653,6 @@ input:checked + label::after {
   writing-mode: vertical-rl;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
   vertical-align: text-bottom;
-  field-sizing: content;
-  max-height: 30%;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
@@ -6572,6 +6680,7 @@ input:checked + label::after {
   writing-mode: vertical-rl;
   font-size: 0.35rem;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
+  field-sizing: content;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
@@ -6639,7 +6748,7 @@ input:checked + label::after {
   font-weight: bold;
   text-align: center;
   margin-top: 10%;
-  text-orientation: upright;
+  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
@@ -6785,6 +6894,9 @@ input:checked + label::after {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     font-size: 2.5vw;
   }
+}
+.previewB .content .swiper-wrapper .swiper-slide_box .input-drop-first {
+  top: 7%;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop-last {
   top: 6% !important;

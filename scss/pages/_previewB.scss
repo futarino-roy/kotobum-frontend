@@ -191,56 +191,40 @@
             @include mq('sp-edit') {
               width: 100%;
             }
-
-            // .input-drop-last {
-            //   top: 8% !important;
-            //   justify-content: flex-start !important;
+            // .img8B {
+            //   top: -14px;
+            //   height: 102%;
+            //   position: relative;
+            // }
+            // &-last {
+            //   clip-path: inset(33px 31px 44px 31px);
+            //   @include mq('pc2-edit') {
+            //     clip-path: inset(38px 37px 64px 39px);
+            //   }
+            //   @include mq('pc-edit') {
+            //     clip-path: inset(19px 20px 36px 18px);
+            //   }
+            //   @include mq('tab-edit') {
+            //     width: 90%;
+            //     clip-path: inset(6% 9% 7% 9%);
+            //   }
+            //   @include mq('sp-edit') {
+            //     width: 100%;
+            //   }
             // }
 
             .input-drop {
               position: absolute;
               width: 100%;
               height: 100%;
-              top: 0px;
+              max-height: 85.5%;
+              top: 25px;
               opacity: 1;
-              // left: 6%;
+              // left: 1%;
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
-
-              // .background-textArea18-1 {
-              //   position: relative;
-              //   width: 43%;
-              //   height: 20%;
-              //   background-image: url(/edit/images/cloud.png);
-              //   background-size: contain;
-              //   background-repeat: no-repeat;
-              //   margin-bottom: 5%;
-              //   margin-right: 22%;
-              //   display: flex;
-              //   align-items: center;
-              //   justify-content: center;
-              // }
-
-              // .flex-area24-1 {
-              //   width: 60%;
-              //   height: 20%;
-              //   display: flex;
-              //   justify-content: center;
-              //   align-items: center;
-              //   gap: 5%;
-              // }
-
-              // .flex-area24-2 {
-              //   width: 60%;
-              //   height: 20%;
-              //   display: flex;
-              //   justify-content: center;
-              //   align-items: center;
-              //   gap: 5%;
-              //   margin: 5% 0 5%;
-              // }
 
               .flex24 {
                 width: 100%;
@@ -249,6 +233,7 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                // gap: 10%;
                 @include mq('pc2-edit') {
                   height: 80%;
                 }
@@ -289,14 +274,25 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -306,10 +302,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -318,14 +318,25 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
                 }
@@ -335,10 +346,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -347,16 +362,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -364,10 +390,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -376,16 +406,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -393,10 +434,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -405,16 +450,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -422,10 +478,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -434,16 +494,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -451,39 +522,14 @@
                   height: 20%;
                 }
 
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-              }
-
-              #dropArea18 {
-                position: relative;
-                width: 45%;
-                height: 25%;
-                font-size: 1rem;
-                border: none;
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
+                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -492,16 +538,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -509,10 +566,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -521,16 +582,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -538,10 +610,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -550,16 +626,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -567,10 +654,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -579,16 +670,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -596,10 +698,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -608,16 +714,27 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                border-radius: 10%;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
 
                 &.square {
                   width: 45%;
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -625,10 +742,14 @@
                   height: 20%;
                 }
 
+                // --------------------------
+
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -637,7 +758,9 @@
                 // width: 60%;
                 width: 100%;
                 min-height: 45%;
-                border: none;
+                font-size: 1rem;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -675,7 +798,8 @@
                 width: 100%;
                 min-height: 45%;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -711,8 +835,10 @@
                 position: relative;
                 width: 63%;
                 height: 42%;
+                // margin: 4% 0 4% 0;
                 font-size: 1rem;
-                border: none;
+                border: 2px dashed #ccc;
+                cursor: pointer;
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -750,62 +876,77 @@
                 resize: none;
                 max-width: 60%;
                 height: auto;
-                font-size: 0.5rem;
+                font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
-                border: none;
-                outline: none;
-                pointer-events: none;
-                cursor: not-allowed;
+                // letter-spacing: 0.5px;
 
                 @include mq('pc-edit') {
-                  font-size: 0.37rem;
+                  font-size: 0.3rem;
                 }
 
                 @include mq('pc2-edit') {
-                  font-size: 0.7rem;
+                  font-size: 0.6rem;
                 }
 
                 @include mq('tab-edit') {
-                  font-size: 1.3vw;
+                  font-size: 1.6vw;
                 }
 
                 @include mq('sp-edit') {
                   font-size: 1.7vw;
                 }
-
-                @include mq('sp2-edit') {
-                  font-size: 1.2vw;
-                }
+              }
+              .text-height {
+                field-sizing: content;
+                max-height: 30%;
+              }
+              .vertical-textarea {
+                writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
+                text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
+              }
+              .horizontal-text {
+                text-orientation: sideways; /* 横並びで表示するスタイル */
+                display: inline-block; /* 縦書きの流れの中で横書きを保持 */
               }
 
+              .text-empty {
+                box-sizing: border-box; /* パディングとボーダーを計算に含める */
+                resize: none; /* ユーザーによるサイズ変更を禁止 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
+                }
+              }
               #textArea {
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
+                }
+
                 &13-1 {
                   font-family: 'League Spartan', sans-serif;
-                  width: 60% !important;
-                  font-size: 1.4rem;
+                  min-width: 60%;
+                  font-size: 1.2rem;
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
 
                   @include mq('pc-edit') {
-                    font-size: 1.1rem;
+                    font-size: 0.9rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 2rem;
+                    font-size: 1.7rem;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 3.5vw;
+                    font-size: 4.5vw;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 5vw;
-                  }
-
-                  @include mq('sp2-edit') {
-                    font-size: 3.5vw;
                   }
                 }
 
@@ -813,29 +954,25 @@
                   font-family: 'League Spartan', sans-serif;
                   min-width: 60%;
                   margin: 1% 0 5%;
-                  font-size: 0.52rem;
+                  font-size: 0.45rem;
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
 
                   @include mq('pc-edit') {
-                    font-size: 0.4rem;
+                    font-size: 0.33rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.75rem;
+                    font-size: 0.65rem;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.3vw;
+                    font-size: 1.7vw;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 1.9vw;
-                  }
-
-                  @include mq('sp2-edit') {
-                    font-size: 1.3vw;
                   }
                 }
 
@@ -875,8 +1012,6 @@
                   writing-mode: vertical-rl;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   vertical-align: text-bottom;
-                  field-sizing: content;
-                  max-height: 30%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -904,6 +1039,7 @@
                   writing-mode: vertical-rl;
                   font-size: 0.35rem;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  field-sizing: content;
 
                   @include mq('pc-edit') {
                     font-size: 0.26rem;
@@ -957,17 +1093,43 @@
                 }
 
                 // &18-1 {
-                //   margin: 0;
-                //   position: absolute;
-                //   width: 63%;
+                // margin: 0;
+                // position: absolute;
+                // width: 63%;
+                // color: #fef8f6;
+                // font-size: 0.6rem;
+                // line-height: 1.5;
+                // font-weight: bold;
+                // text-align: center;
+
+                // @include mq('pc-edit') {
+                //   font-size: 0.45rem;
+                // }
+
+                // @include mq('pc2-edit') {
+                //   font-size: 0.9rem;
+                // }
+
+                // @include mq('tab-edit') {
+                //   font-size: 2.2vw;
+                // }
+
+                // @include mq('sp-edit') {
+                //   font-size: 2.5vw;
+                // }
+                // }
+
+                // &18-2 {
+                //   min-width: 60%;
+                //   margin: 5% 0 15%;
                 //   color: #fef8f6;
-                //   font-size: 0.65rem;
+                //   font-size: 0.6rem;
                 //   line-height: 1.5;
                 //   font-weight: bold;
-                //   color: #000000;
-
+                //   color: #00000089;
+                //   text-align: center;
                 //   @include mq('pc-edit') {
-                //     font-size: 0.55rem;
+                //     font-size: 0.45rem;
                 //   }
 
                 //   @include mq('pc2-edit') {
@@ -975,49 +1137,15 @@
                 //   }
 
                 //   @include mq('tab-edit') {
-                //     font-size: 1.8vw;
+                //     font-size: 2.3vw;
                 //   }
 
                 //   @include mq('sp-edit') {
                 //     font-size: 2.5vw;
                 //   }
-
-                //   @include mq('sp2-edit') {
-                //     font-size: 1.8vw;
-                //   }
                 // }
 
-                // &18-2 {
-                //   min-width: 60%;
-                //   margin: 5% 0 15%;
-                //   color: #fef8f6;
-                //   font-size: 0.7rem;
-                //   line-height: 1.5;
-                //   font-weight: bold;
-                //   color: #00000089;
-
-                //   @include mq('pc-edit') {
-                //     font-size: 0.55rem;
-                //   }
-
-                //   @include mq('pc2-edit') {
-                //     font-size: 1rem;
-                //   }
-
-                //   @include mq('tab-edit') {
-                //     font-size: 1.8vw;
-                //   }
-
-                //   @include mq('sp-edit') {
-                //     font-size: 2.5vw;
-                //   }
-
-                //   @include mq('sp2-edit') {
-                //     font-size: 1.8vw;
-                //   }
-                // }
-
-                // &21-1,
+                // &21,
                 // &21-2,
                 &23-1 {
                   font-family: 'League Spartan', sans-serif;
@@ -1029,7 +1157,7 @@
                   font-weight: bold;
                   text-align: center;
                   margin-top: 10%;
-                  text-orientation: upright;
+                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1163,7 +1291,9 @@
                 }
               }
             }
-
+            .input-drop-first {
+              top: 7%;
+            }
             .input-drop-last {
               top: 6% !important;
               display: flex;
