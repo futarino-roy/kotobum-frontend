@@ -786,6 +786,7 @@
                   font-size: 1.4rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 1.1rem;
@@ -815,6 +816,7 @@
                   font-size: 0.52rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.4rem;
@@ -1159,9 +1161,7 @@
                 }
               }
             }
-            .input-drop-first {
-              top: 7%;
-            }
+
             .input-drop-last {
               top: 6% !important;
               display: flex;
