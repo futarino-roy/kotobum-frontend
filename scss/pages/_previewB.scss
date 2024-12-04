@@ -881,6 +881,7 @@
                 background-color: transparent;
                 // letter-spacing: 0.5px;
                 border: none;
+                field-sizing: content;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
@@ -915,17 +916,8 @@
                 box-sizing: border-box; /* パディングとボーダーを計算に含める */
                 resize: none; /* ユーザーによるサイズ変更を禁止 */
                 overflow: hidden; /* スクロールバーが表示されないようにする */
-                border: 2px dashed #ccc;
-                &.no-border {
-                  border: none;
-                }
               }
               #textArea {
-                border: 2px dashed #ccc;
-                &.no-border {
-                  border: none;
-                }
-
                 &13-1 {
                   font-family: 'League Spartan', sans-serif;
                   min-width: 60%;

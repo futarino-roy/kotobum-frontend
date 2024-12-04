@@ -6511,6 +6511,7 @@ input:checked + label::after {
   line-height: 1.9;
   background-color: transparent;
   border: none;
+  field-sizing: content;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -6548,16 +6549,6 @@ input:checked + label::after {
   box-sizing: border-box; /* パディングとボーダーを計算に含める */
   resize: none; /* ユーザーによるサイズ変更を禁止 */
   overflow: hidden; /* スクロールバーが表示されないようにする */
-  border: 2px dashed #ccc;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
-  border: none;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea {
-  border: 2px dashed #ccc;
-}
-.previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea.no-border {
-  border: none;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
   font-family: "League Spartan", sans-serif;
