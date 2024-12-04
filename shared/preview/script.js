@@ -174,7 +174,9 @@ function adjustTextareaSize(textarea) {
 document.addEventListener('DOMContentLoaded', function () {
   adjustTextareaSize(textArea);
 });
-
+window.addEventListener('load', () => {
+  adjustTextareaSize(textarea);
+});
 // // ドキュメントが読み込まれたときに色を適用
 // document.addEventListener('DOMContentLoaded', function () {
 //   applySavedColor();
