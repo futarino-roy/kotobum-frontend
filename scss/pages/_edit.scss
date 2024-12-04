@@ -1696,13 +1696,14 @@
 
                 &6-1 {
                   margin: 0;
-                  position: absolute;
+                  position: relative;
                   // width: 63%;
                   // color: #fef8f6;
                   font-size: 0.6rem;
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
+                  margin: 5% 0 4%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;

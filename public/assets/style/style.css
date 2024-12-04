@@ -2025,11 +2025,12 @@ input:checked + label::after {
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
   margin: 0;
-  position: absolute;
+  position: relative;
   font-size: 0.6rem;
   line-height: 1.5;
   font-weight: bold;
   text-align: center;
+  margin: 5% 0 4%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
