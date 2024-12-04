@@ -162,32 +162,18 @@
 //   applyBorders();
 // });
 
-// // テキストエリアの高さと幅を自動調整する関数
-// function adjustTextareaSize(textarea) {
-//   textarea.style.height = 'auto'; // 高さをリセット
-//   textarea.style.width = 'auto';  // 幅をリセット
-//   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
-//   textarea.style.width = `${textarea.scrollWidth}px`;   // 内容に応じて幅を調整
-// }
+// テキストエリアの高さと幅を自動調整する関数
+function adjustTextareaSize(textarea) {
+  textarea.style.height = 'auto'; // 高さをリセット
+  textarea.style.width = 'auto';  // 幅をリセット
+  textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
+  textarea.style.width = `${textarea.scrollWidth}px`;   // 内容に応じて幅を調整
+}
 
-// // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
-// function loadTextForPreview() {
-//   // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
-//   const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
-
-//   textAreas.forEach((textArea) => {
-//     const index = textArea.id.replace('previewTextArea', ''); // IDからインデックスを取得
-//     textArea.value = localStorage.getItem(`textArea${index}`) || '';
-
-//     // テキストエリアのサイズを調整
-//     adjustTextareaSize(textArea);
-//   });
-// }
-
-// // ドキュメントが読み込まれたときにテキストを表示
-// document.addEventListener('DOMContentLoaded', function () {
-//   loadTextForPreview();
-// });
+// ドキュメントが読み込まれたときにテキストを表示
+document.addEventListener('DOMContentLoaded', function () {
+  adjustTextareaSize(textArea);
+});
 
 // // ドキュメントが読み込まれたときに色を適用
 // document.addEventListener('DOMContentLoaded', function () {
