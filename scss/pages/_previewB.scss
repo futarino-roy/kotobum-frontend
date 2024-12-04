@@ -274,7 +274,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -318,7 +318,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -362,7 +362,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -406,7 +406,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -450,7 +450,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -494,7 +494,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -538,7 +538,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -582,7 +582,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -626,7 +626,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -670,7 +670,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -714,7 +714,7 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
                 border-radius: 10%;
 
@@ -759,7 +759,7 @@
                 width: 100%;
                 min-height: 45%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
 
                 // 枠サイズ変更関連---
@@ -798,7 +798,7 @@
                 width: 100%;
                 min-height: 45%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
 
                 // 枠サイズ変更関連---
@@ -837,7 +837,7 @@
                 height: 42%;
                 // margin: 4% 0 4% 0;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+
                 cursor: pointer;
 
                 // 枠サイズ変更関連---
@@ -1005,6 +1005,7 @@
                   writing-mode: vertical-rl;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   vertical-align: text-bottom;
+                  max-height: 30%;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;

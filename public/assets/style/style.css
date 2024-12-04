@@ -6079,7 +6079,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6114,7 +6113,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6149,7 +6147,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6184,7 +6181,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6219,7 +6215,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6254,7 +6249,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6289,7 +6283,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6324,7 +6317,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6359,7 +6351,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6394,7 +6385,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6429,7 +6419,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -6464,7 +6453,6 @@ input:checked + label::after {
   width: 100%;
   min-height: 45%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 img {
@@ -6478,7 +6466,6 @@ input:checked + label::after {
   width: 100%;
   min-height: 45%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 img {
@@ -6492,7 +6479,6 @@ input:checked + label::after {
   width: 63%;
   height: 42%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 img {
@@ -6645,6 +6631,7 @@ input:checked + label::after {
   writing-mode: vertical-rl;
   text-orientation: upright; /* 数字や半角文字を縦向きにする */
   vertical-align: text-bottom;
+  max-height: 30%;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
