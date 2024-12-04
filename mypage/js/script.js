@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../edit';
           } else if (format === 2) {
             window.location.href = '../edit2';
+          } else if (format === 3) {
+            window.location.href = '../edit3';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -63,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../preview';
           } else if (format === 2) {
             window.location.href = '../preview2';
+          } else if (format === 3) {
+            window.location.href = '../preview3';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -81,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../cover';
           } else if (format === 2) {
             window.location.href = '../cover2';
+          } else if (format === 3) {
+            window.location.href = '../cover3';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -99,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../cover-preview';
           } else if (format === 2) {
             window.location.href = '../cover-preview2';
+          } else if (format === 3) {
+            window.location.href = '../cover-preview3';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
