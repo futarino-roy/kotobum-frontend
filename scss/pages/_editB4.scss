@@ -686,7 +686,7 @@
 
       &.active {
         background: #535353;
-        border: 1px solid #252525;
+        border: 2px solid #252525;
       }
 
       img {
@@ -766,675 +766,663 @@
               display: none;
             }
           }
-          &_box3 {
+          // &_box3 {
+          //   position: relative;
+          //   clip-path: inset(19px 20px 27px 20px);
+          //   @include mq('pc2-edit') {
+          //     clip-path: inset(29px 30px 36px 30px);
+          //   }
+          //   @include mq('pc-edit') {
+          //     clip-path: inset(15px 15px 21px 15px);
+          //   }
+          //   @include mq('tab-edit') {
+          //     width: 90%;
+          //     clip-path: inset(4.5% 6.5% 6% 6.5%);
+          //   }
+          //   @include mq('sp-edit') {
+          //     width: 100%;
+          //     clip-path: inset(4.5% 6.5% 7% 6.5%);
+          //   }
+          //   .input-drop {
+          //     position: absolute;
+          //     width: 100%;
+          //     height: 100%;
+          //     top: 0;
+          //     opacity: 1;
+          //     display: flex;
+          //     flex-direction: column;
+          //     align-items: center;
+          //     justify-content: center;
+
+          //     #dropArea {
+          //       &1_t3 {
+          //         position: relative;
+          //         top: -1.5%;
+          //         width: 49%;
+          //         height: 31%;
+          //         font-size: 1rem;
+          //         border: 1px dashed #ccc;
+          //         cursor: pointer;
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &2_t3 {
+          //         width: 76%;
+          //         height: 81%;
+          //         top: -0.6%;
+          //         position: relative;
+          //         left: 0.5%;
+          //         // clip-path: polygon(0% 15.5%, 5% 15.5%, 5% 4%, 59.5% 4%, 59.5% 0, 100% 0, 100% 83%, 96% 83%, 96% 95%, 42% 95%, 42% 100%, 0 100%);
+          //         @include mq('pc2-edit') {
+          //           top: -0.5%;
+          //         }
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &4_t3 {
+          //         width: 52%;
+          //         height: 52%;
+          //         position: relative;
+          //         top: -7.5%;
+          //         border: 1px dashed #ccc;
+          //         clip-path: polygon(30% 0%, 30% 4.5%, 70% 4.5%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+          //         @include mq('pc2-edit') {
+          //           top: -7.5%;
+          //         }
+          //         @include mq('tab-edit') {
+          //           top: -7%;
+          //         }
+          //         @include mq('sp-edit') {
+          //           top: -6%;
+          //         }
+
+          //         // 枠サイズ変更関連---
+          //         &.active {
+          //           border-color: #00000089;
+          //         }
+
+          //         &.square {
+          //           width: 45%;
+          //           height: 32%;
+          //         }
+
+          //         &.rectangle34 {
+          //           width: 45%;
+          //           height: 40%;
+          //         }
+
+          //         &.rectangle43 {
+          //           width: 45%;
+          //           height: 25%;
+          //         }
+
+          //         &.mini {
+          //           width: 45%;
+          //           height: 20%;
+          //         }
+
+          //         // --------------------------
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &6_t3 {
+          //         position: absolute;
+          //         width: 46%;
+          //         height: 44%;
+          //         font-size: 1rem;
+          //         border: 1px dashed #ccc;
+          //         cursor: pointer;
+          //         top: 96px;
+          //         clip-path: polygon(27% 0%, 27% 3%, 74% 3%, 74% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+
+          //         @include mq('pc2-edit') {
+          //           top: 22.7%;
+          //         }
+          //         @include mq('pc-edit') {
+          //           top: 22.5%;
+          //           // height: 52%;
+          //         }
+          //         @include mq('tab-edit') {
+          //           top: 23%;
+          //         }
+
+          //         // 枠サイズ変更関連---
+          //         &.active {
+          //           border-color: #00000089;
+          //         }
+
+          //         &.square {
+          //           width: 45%;
+          //           height: 32%;
+          //         }
+
+          //         &.rectangle34 {
+          //           width: 45%;
+          //           height: 40%;
+          //         }
+
+          //         &.rectangle43 {
+          //           width: 45%;
+          //           height: 25%;
+          //         }
+
+          //         &.mini {
+          //           width: 45%;
+          //           height: 20%;
+          //         }
+
+          //         // --------------------------
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &8-1_t3,
+          //       &8-2_t3 {
+          //         position: relative;
+          //         width: 47.5%;
+          //         height: 27%;
+          //         top: 4%;
+          //         border: 1px dashed #ccc;
+          //         cursor: pointer;
+          //         margin-bottom: 4%;
+          //         @include mq('pc2-edit') {
+          //           margin-bottom: 6%;
+          //           top: 5.3%;
+          //           height: 26.5%;
+          //           width: 48%;
+          //         }
+          //         @include mq('pc-edit') {
+          //           top: 6%;
+          //           margin-bottom: 5%;
+          //           height: 27.5%;
+          //           width: 48%;
+          //         }
+          //         @include mq('tab-edit') {
+          //           top: 4%;
+          //           height: 26.5%;
+          //         }
+
+          //         // 枠サイズ変更関連---
+          //         &.active {
+          //           border-color: #00000089;
+          //         }
+
+          //         &.square {
+          //           width: 45%;
+          //           height: 32%;
+          //         }
+
+          //         &.rectangle34 {
+          //           width: 45%;
+          //           height: 40%;
+          //         }
+          //         &.rectangle43 {
+          //           width: 45%;
+          //           height: 25%;
+          //         }
+
+          //         &.mini {
+          //           width: 45%;
+          //           height: 20%;
+          //         }
+
+          //         // --------------------------
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &10_t3 {
+          //         position: relative;
+          //         top: -1%;
+          //         width: 60%;
+          //         height: 70%;
+          //         font-size: 1rem;
+          //         border: 1px dashed #ccc;
+          //         cursor: pointer;
+          //         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 12%, 23% 12%, 23% 3%, 0 3%);
+
+          //         // 枠サイズ変更関連---
+          //         &.active {
+          //           border-color: #00000089;
+          //         }
+
+          //         &.square {
+          //           width: 45%;
+          //           height: 32%;
+          //         }
+
+          //         &.rectangle34 {
+          //           width: 45%;
+          //           height: 40%;
+          //         }
+          //         &.rectangle43 {
+          //           width: 45%;
+          //           height: 25%;
+          //         }
+
+          //         &.mini {
+          //           width: 45%;
+          //           height: 20%;
+          //         }
+
+          //         // --------------------------
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+
+          //       &12_t3 {
+          //         position: relative;
+          //         top: 5%;
+          //         width: 58%;
+          //         height: 47%;
+          //         font-size: 1rem;
+          //         border: 1px dashed #ccc;
+          //         cursor: pointer;
+          //         @include mq('pc-edit') {
+          //           top: 2%;
+          //           height: 48%;
+          //         }
+          //         @include mq('tab-edit') {
+          //           top: 0;
+          //           height: 46%;
+          //         }
+
+          //         // 枠サイズ変更関連---
+          //         &.active {
+          //           border-color: #00000089;
+          //         }
+
+          //         &.square {
+          //           width: 45%;
+          //           height: 32%;
+          //         }
+
+          //         &.rectangle34 {
+          //           width: 45%;
+          //           height: 40%;
+          //         }
+          //         &.rectangle43 {
+          //           width: 45%;
+          //           height: 25%;
+          //         }
+
+          //         &.mini {
+          //           width: 45%;
+          //           height: 20%;
+          //         }
+
+          //         // --------------------------
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+          //       &14_t3 {
+          //         width: 87%;
+          //         height: 45%;
+          //         top: 27%;
+          //         position: absolute;
+
+          //         img {
+          //           width: 100%;
+          //           height: 100%;
+          //           object-fit: cover;
+          //           cursor: pointer;
+          //         }
+          //       }
+          //     }
+
+          //     textarea {
+          //       overflow: hidden;
+          //       text-align: left;
+          //       resize: none;
+          //       width: 60% !important;
+          //       max-width: 60%;
+          //       height: 20%;
+          //       margin: 5% 0 4%;
+          //       font-size: 0.4rem;
+          //       line-height: 1.9;
+          //       background-color: transparent;
+
+          //       @include mq('pc-edit') {
+          //         font-size: 0.3rem;
+          //       }
+
+          //       @include mq('pc2-edit') {
+          //         font-size: 0.6rem;
+          //       }
+
+          //       @include mq('tab-edit') {
+          //         font-size: 1.55vw;
+          //       }
+
+          //       @include mq('sp-edit') {
+          //         font-size: 1.7vw;
+          //       }
+          //     }
+
+          //     .text-empty {
+          //       border: 1px dashed #ccc;
+          //       &.no-border {
+          //         border: none;
+          //       }
+          //     }
+          //     #textArea {
+          //       &1-1_t3 {
+          //         position: absolute;
+          //         top: 16%;
+          //         font-family: 'League Spartan', sans-serif;
+          //         font-size: 1.2rem;
+          //         line-height: 1.2;
+          //         font-weight: bold;
+          //         color: #fef8f6;
+          //         text-align: center;
+
+          //         @include mq('pc-edit') {
+          //           font-size: 0.9rem;
+          //         }
+
+          //         @include mq('pc2-edit') {
+          //           font-size: 1.7rem;
+          //         }
+
+          //         @include mq('tab-edit') {
+          //           font-size: 5.5vw;
+          //         }
+
+          //         @include mq('sp-edit') {
+          //           font-size: 7vw;
+          //         }
+          //       }
+
+          //       &1-2_t3 {
+          //         position: absolute;
+          //         top: 23.2%;
+          //         max-width: 39%;
+          //         font-family: 'League Spartan', sans-serif;
+          //         font-size: 0.45rem;
+          //         text-align: center;
+          //         font-weight: bold;
+
+          //         @include mq('pc-edit') {
+          //           font-size: 0.33rem;
+          //         }
+
+          //         @include mq('pc2-edit') {
+          //           font-size: 0.65rem;
+          //         }
+
+          //         @include mq('tab-edit') {
+          //           font-size: 1.7vw;
+          //         }
+
+          //         @include mq('sp-edit') {
+          //           font-size: 1.55vw;
+          //           line-height: 2.5;
+          //         }
+          //       }
+
+          //       &1-3_t3 {
+          //         width: 45% !important;
+          //         position: absolute;
+          //         top: 65%;
+          //       }
+
+          //       &3-1_t3 {
+          //         font-family: 'League Spartan', sans-serif;
+          //         font-size: 0.45rem;
+          //         text-align: left;
+          //         font-weight: bold;
+          //       }
+          //       &3-2_t3 {
+          //         font-family: 'League Spartan', sans-serif;
+          //         font-size: 0.45rem;
+          //         text-align: left;
+          //         height: 47% !important;
+          //       }
+
+          //       &4_t3 {
+          //         max-width: 45%;
+          //         font-weight: bold;
+          //         color: #f8f8f8;
+          //         text-align: center;
+          //       }
+
+          //       &5_t3 {
+          //         max-width: 55%;
+          //       }
+          //       &6_t3 {
+          //         position: relative;
+          //         top: 25%;
+          //         max-width: 37%;
+          //         font-weight: bold;
+          //         text-align: center;
+          //       }
+          //       &7_t3 {
+          //         max-width: 50%;
+          //       }
+
+          //       &5,
+          //       &7,
+          //       &9 {
+          //         margin-top: 30px;
+          //         font-size: 5.2px;
+          //         @include mq('pc-edit') {
+          //           font-size: 0.246rem;
+          //           max-height: 65%;
+          //         }
+
+          //         @include mq('pc2-edit') {
+          //           font-size: 0.49rem;
+          //         }
+
+          //         @include mq('tab-edit') {
+          //           font-size: 1.26vw;
+          //         }
+
+          //         @include mq('sp-edit') {
+          //           font-size: 1.4vw;
+          //           margin-top: 25px;
+          //         }
+          //       }
+
+          //       &8_t2 {
+          //         position: absolute;
+          //         top: 10%;
+          //         text-align: center;
+          //         color: #f8f8f8;
+          //         font-size: 0.7rem;
+          //         line-height: 1;
+          //         font-weight: bold;
+          //         @include mq('pc2-edit') {
+          //           font-size: 1rem;
+          //         }
+          //         @include mq('pc-edit') {
+          //           font-size: 0.5rem;
+          //         }
+          //         @include mq('tab-edit') {
+          //           font-size: 1rem;
+          //         }
+          //         @include mq('sp-edit') {
+          //           font-size: 0.7rem;
+          //         }
+          //       }
+
+          //       &10-1_t2 {
+          //         position: absolute;
+          //         top: 12%;
+          //         color: #f8f8f8;
+          //         text-align: center;
+          //         font-family: 'League Spartan', sans-serif;
+          //         font-size: 1rem;
+          //         line-height: 1;
+          //         font-weight: bold;
+          //         @include mq('pc2-edit') {
+          //           font-size: 2rem;
+          //         }
+          //         @include mq('tab-edit') {
+          //           font-size: 2.5rem;
+          //         }
+          //         @include mq('sp-edit') {
+          //           font-size: 1.5rem;
+          //         }
+          //       }
+          //       &10-2_t2 {
+          //         position: absolute;
+          //         bottom: 12%;
+          //         text-align: center;
+          //         font-size: 0.7rem;
+          //         line-height: 1;
+          //         font-weight: bold;
+          //         @include mq('pc-edit') {
+          //           font-size: 0.5rem;
+          //           bottom: 9%;
+          //         }
+          //         @include mq('tab-edit') {
+          //           bottom: 11.5%;
+          //           font-size: 1rem;
+          //         }
+          //         @include mq('sp-edit') {
+          //           bottom: 9.5%;
+          //           font-size: 0.5rem;
+          //         }
+          //       }
+          //       &11-1_t3 {
+          //         margin: 0;
+          //         font-weight: bold;
+          //         max-width: 50%;
+          //       }
+          //       &11-2_t3 {
+          //         height: 47% !important;
+          //         margin: 5% 0 0 0;
+          //         max-width: 50%;
+          //       }
+          //       &12-1_t3 {
+          //         position: relative;
+          //         top: 7%;
+          //         text-align: center;
+          //         font-weight: bold;
+          //       }
+          //       &12-2_t3 {
+          //         position: relative;
+          //         top: 9%;
+          //         opacity: 0.6;
+          //         text-align: center;
+          //       }
+          //       &14-1_t3 {
+          //         position: absolute;
+          //         top: 8.5%;
+          //         font-size: 1rem;
+          //         font-weight: bold;
+          //         text-align: center;
+          //         @include mq('pc2-edit') {
+          //           font-size: 1.5rem;
+          //         }
+          //         @include mq('tab-edit') {
+          //           font-size: 2rem;
+          //         }
+          //       }
+          //       &14-2_t3 {
+          //         font-size: 0.6rem;
+          //         font-weight: bold;
+          //         text-align: center;
+          //         color: #fdfcf6;
+          //         margin-bottom: 0;
+          //         position: relative;
+          //         top: 26%;
+          //       }
+          //       &14-3_t3 {
+          //         font-weight: bold;
+          //         text-align: center;
+          //         color: #fdfcf6;
+          //         margin: 0;
+          //         position: relative;
+          //         top: 27%;
+          //       }
+          //       &15_t3 {
+          //         max-width: 48%;
+          //       }
+          //     }
+          //   }
+          // }
+          #dropArea10_t3B {
             position: relative;
-            clip-path: inset(19px 20px 27px 20px);
-            @include mq('pc2-edit') {
-              clip-path: inset(29px 30px 36px 30px);
+            top: -1%;
+            width: 60%;
+            height: 70%;
+            font-size: 1rem;
+            border: 1px dashed #ccc;
+            cursor: pointer;
+
+            clip-path: polygon(0 0, 100% 0, 100% 3%, 77% 3%, 77% 12%, 100% 12%, 100% 100%, 0 100%);
+
+            // 枠サイズ変更関連---
+            &.active {
+              border-color: #00000089;
             }
-            @include mq('pc-edit') {
-              clip-path: inset(15px 15px 21px 15px);
+
+            &.square {
+              width: 45%;
+              height: 32%;
             }
-            @include mq('tab-edit') {
-              width: 90%;
-              clip-path: inset(4.5% 6.5% 6% 6.5%);
+
+            &.rectangle34 {
+              width: 45%;
+              height: 40%;
             }
-            @include mq('sp-edit') {
-              width: 100%;
-              clip-path: inset(4.5% 6.5% 7% 6.5%);
+            &.rectangle43 {
+              width: 45%;
+              height: 25%;
             }
-            .input-drop {
-              position: absolute;
+
+            &.mini {
+              width: 45%;
+              height: 20%;
+            }
+
+            // --------------------------
+
+            img {
               width: 100%;
               height: 100%;
-              top: 0;
-              opacity: 1;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-
-              p {
-                font-size: 0.7rem;
-                @include mq('pc-edit') {
-                  font-size: 0.5rem;
-                }
-                @include mq('tab-edit') {
-                  font-size: 0.9rem;
-                }
-                @include mq('sp-edit') {
-                  font-size: 0.6rem;
-                }
-              }
-              .side {
-                position: absolute;
-                top: 6%;
-              }
-              .last-text_from {
-                position: absolute;
-                top: 45.5%;
-                font-weight: bold;
-              }
-
-              #dropArea {
-                &1_t3 {
-                  position: relative;
-                  top: -1.5%;
-                  width: 49%;
-                  height: 31%;
-                  font-size: 1rem;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &2_t3 {
-                  width: 76%;
-                  height: 81%;
-                  top: -0.6%;
-                  position: relative;
-                  left: 0.5%;
-                  // clip-path: polygon(0% 15.5%, 5% 15.5%, 5% 4%, 59.5% 4%, 59.5% 0, 100% 0, 100% 83%, 96% 83%, 96% 95%, 42% 95%, 42% 100%, 0 100%);
-                  @include mq('pc2-edit') {
-                    top: -0.5%;
-                  }
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &4_t3 {
-                  width: 55%;
-                  height: 58%;
-                  position: relative;
-                  top: -4.5%;
-                  border: 1px dashed #ccc;
-                  // clip-path: polygon(30% 0%, 30% 4.5%, 70% 4.5%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-                  clip-path: polygon(30% 5%, 69% 5%, 69% 0px, 100% 0px, 100% 100%, 50% 94%, 0px 100%, 0px 0px, 30% 0px);
-
-                  @include mq('pc2-edit') {
-                    top: -4.5%;
-                  }
-                  @include mq('pc-edit') {
-                    top: -5%;
-                  }
-                  @include mq('tab-edit') {
-                    top: -6%;
-                  }
-                  @include mq('sp-edit') {
-                    top: -5%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &6_t3 {
-                  position: absolute;
-                  width: 46%;
-                  height: 44%;
-                  font-size: 1rem;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-                  top: 96px;
-                  clip-path: polygon(27% 0%, 27% 3%, 74% 3%, 74% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-
-                  @include mq('pc2-edit') {
-                    top: 22.7%;
-                  }
-                  @include mq('pc-edit') {
-                    top: 22.5%;
-                    // height: 52%;
-                  }
-                  @include mq('tab-edit') {
-                    top: 23%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &8-1_t3,
-                &8-2_t3 {
-                  position: relative;
-                  width: 47.5%;
-                  height: 27%;
-                  top: 4%;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-                  margin-bottom: 4%;
-                  @include mq('pc2-edit') {
-                    margin-bottom: 6%;
-                    top: 5.3%;
-                    height: 26.5%;
-                    width: 48%;
-                  }
-                  @include mq('pc-edit') {
-                    top: 6%;
-                    margin-bottom: 5%;
-                    height: 27.5%;
-                    width: 48%;
-                  }
-                  @include mq('tab-edit') {
-                    top: 4%;
-                    height: 26.5%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &10_t3 {
-                  position: relative;
-                  top: -1%;
-                  width: 60%;
-                  height: 70%;
-                  font-size: 1rem;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-                  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 12%, 23% 12%, 23% 3%, 0 3%);
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &12_t3 {
-                  position: relative;
-                  top: 5%;
-                  width: 58%;
-                  height: 47%;
-                  font-size: 1rem;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-                  @include mq('pc-edit') {
-                    top: 2%;
-                    height: 48%;
-                  }
-                  @include mq('tab-edit') {
-                    top: 0;
-                    height: 46%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-                &14_t3 {
-                  width: 87%;
-                  height: 45%;
-                  top: 27%;
-                  position: absolute;
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-                &15_t3 {
-                  width: 55%;
-                  height: 37%;
-                  top: 10.5%;
-                  position: absolute;
-                  clip-path: polygon(100% 0, 100% 100%, 50% 88%, 0% 100%, 0 0);
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-              }
-
-              textarea {
-                overflow: hidden;
-                text-align: left;
-                resize: none;
-                width: 60% !important;
-                max-width: 60%;
-                height: 20%;
-                margin: 5% 0 4%;
-                font-size: 0.4rem;
-                line-height: 1.9;
-                background-color: transparent;
-
-                @include mq('pc-edit') {
-                  font-size: 0.3rem;
-                }
-
-                @include mq('pc2-edit') {
-                  font-size: 0.6rem;
-                }
-
-                @include mq('tab-edit') {
-                  font-size: 1.55vw;
-                }
-
-                @include mq('sp-edit') {
-                  font-size: 1.7vw;
-                }
-              }
-
-              .text-empty {
-                border: 1px dashed #ccc;
-                &.no-border {
-                  border: none;
-                }
-              }
-              #textArea {
-                &1-1_t3 {
-                  position: absolute;
-                  top: 16%;
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 1.2rem;
-                  line-height: 1.2;
-                  font-weight: bold;
-                  color: #fef8f6;
-                  text-align: center;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 1.7rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 5.5vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 7vw;
-                  }
-                }
-
-                &1-2_t3 {
-                  position: absolute;
-                  top: 23.2%;
-                  max-width: 39%;
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
-                  text-align: center;
-                  font-weight: bold;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.33rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.65rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.7vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 1.55vw;
-                    line-height: 2.5;
-                  }
-                }
-
-                &1-3_t3 {
-                  width: 45% !important;
-                  position: absolute;
-                  top: 65%;
-                }
-
-                &3-1_t3 {
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
-                  text-align: left;
-                  font-weight: bold;
-                }
-                &3-2_t3 {
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
-                  text-align: left;
-                  height: 47% !important;
-                }
-
-                &4_t3 {
-                  max-width: 45%;
-                  font-weight: bold;
-                  color: #f8f8f8;
-                  text-align: center;
-                }
-
-                &5_t3 {
-                  max-width: 55%;
-                }
-                &6_t3 {
-                  position: relative;
-                  top: 25%;
-                  max-width: 37%;
-                  font-weight: bold;
-                  text-align: center;
-                }
-                &7_t3 {
-                  max-width: 50%;
-                }
-
-                &5,
-                &7,
-                &9 {
-                  margin-top: 30px;
-                  font-size: 5.2px;
-                  @include mq('pc-edit') {
-                    font-size: 0.246rem;
-                    max-height: 65%;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.49rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.26vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 1.4vw;
-                    margin-top: 25px;
-                  }
-                }
-
-                &8_t2 {
-                  position: absolute;
-                  top: 10%;
-                  text-align: center;
-                  color: #f8f8f8;
-                  font-size: 0.7rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc2-edit') {
-                    font-size: 1rem;
-                  }
-                  @include mq('pc-edit') {
-                    font-size: 0.5rem;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 1rem;
-                  }
-                  @include mq('sp-edit') {
-                    font-size: 0.7rem;
-                  }
-                }
-
-                &10-1_t2 {
-                  position: absolute;
-                  top: 12%;
-                  color: #f8f8f8;
-                  text-align: center;
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 1rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc2-edit') {
-                    font-size: 2rem;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 2.5rem;
-                  }
-                  @include mq('sp-edit') {
-                    font-size: 1.5rem;
-                  }
-                }
-                &10-2_t2 {
-                  position: absolute;
-                  bottom: 12%;
-                  text-align: center;
-                  font-size: 0.7rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc-edit') {
-                    font-size: 0.5rem;
-                    bottom: 9%;
-                  }
-                  @include mq('tab-edit') {
-                    bottom: 11.5%;
-                    font-size: 1rem;
-                  }
-                  @include mq('sp-edit') {
-                    bottom: 9.5%;
-                    font-size: 0.5rem;
-                  }
-                }
-                &11-1_t3 {
-                  margin: 0;
-                  font-weight: bold;
-                  max-width: 50%;
-                }
-                &11-2_t3 {
-                  height: 47% !important;
-                  margin: 5% 0 0 0;
-                  max-width: 50%;
-                }
-                &12-1_t3 {
-                  position: relative;
-                  top: 7%;
-                  text-align: center;
-                  font-weight: bold;
-                }
-                &12-2_t3 {
-                  position: relative;
-                  top: 9%;
-                  opacity: 0.6;
-                  text-align: center;
-                }
-                &14-1_t3 {
-                  position: absolute;
-                  top: 8.5%;
-                  font-size: 1rem;
-                  font-weight: bold;
-                  text-align: center;
-                  @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 2rem;
-                  }
-                }
-                &14-2_t3 {
-                  font-size: 0.6rem;
-                  font-weight: bold;
-                  text-align: center;
-                  color: #fdfcf6;
-                  margin-bottom: 0;
-                  position: relative;
-                  top: 26%;
-                }
-                &14-3_t3 {
-                  font-weight: bold;
-                  text-align: center;
-                  color: #fdfcf6;
-                  margin: 0;
-                  position: relative;
-                  top: 27%;
-                }
-                &15-1_t3 {
-                  margin-top: 5%;
-                  max-width: 30%;
-                  text-align: center;
-                  font-size: 1rem;
-                  font-weight: bold;
-                  @include mq('tab-edit') {
-                    margin-top: 1%;
-                    font-size: 1.5rem;
-                  }
-                }
-                &15-2_t3 {
-                  margin-top: 3%;
-                  position: absolute;
-                  top: 53%;
-                  max-height: 30%;
-                  max-width: 57%;
-                }
-              }
+              object-fit: cover;
+              cursor: pointer;
             }
           }
         }

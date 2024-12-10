@@ -766,7 +766,7 @@
               display: none;
             }
           }
-          &_box3 {
+          &_box4 {
             position: relative;
             clip-path: inset(19px 20px 27px 20px);
             @include mq('pc2-edit') {
@@ -794,28 +794,6 @@
               align-items: center;
               justify-content: center;
 
-              p {
-                font-size: 0.7rem;
-                @include mq('pc-edit') {
-                  font-size: 0.5rem;
-                }
-                @include mq('tab-edit') {
-                  font-size: 0.9rem;
-                }
-                @include mq('sp-edit') {
-                  font-size: 0.6rem;
-                }
-              }
-              .side {
-                position: absolute;
-                top: 6%;
-              }
-              .last-text_from {
-                position: absolute;
-                top: 45.5%;
-                font-weight: bold;
-              }
-
               #dropArea {
                 &1_t3 {
                   position: relative;
@@ -825,6 +803,7 @@
                   font-size: 1rem;
                   border: 1px dashed #ccc;
                   cursor: pointer;
+                  border-radius: 10px;
 
                   img {
                     width: 100%;
@@ -835,17 +814,20 @@
                 }
 
                 &2_t3 {
-                  width: 76%;
+                  width: 78%;
                   height: 81%;
+                  border-radius: 10px;
                   top: -0.6%;
                   position: relative;
                   left: 0.5%;
+                  border-radius: 10px;
                   // clip-path: polygon(0% 15.5%, 5% 15.5%, 5% 4%, 59.5% 4%, 59.5% 0, 100% 0, 100% 83%, 96% 83%, 96% 95%, 42% 95%, 42% 100%, 0 100%);
                   @include mq('pc2-edit') {
                     top: -0.5%;
                   }
 
                   img {
+                    border-radius: 10px;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -854,55 +836,15 @@
                 }
 
                 &4_t3 {
-                  width: 55%;
-                  height: 58%;
+                  width: 59%;
+                  height: 36%;
                   position: relative;
-                  top: -4.5%;
+                  top: 1%;
                   border: 1px dashed #ccc;
-                  // clip-path: polygon(30% 0%, 30% 4.5%, 70% 4.5%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-                  clip-path: polygon(30% 5%, 69% 5%, 69% 0px, 100% 0px, 100% 100%, 50% 94%, 0px 100%, 0px 0px, 30% 0px);
-
-                  @include mq('pc2-edit') {
-                    top: -4.5%;
-                  }
-                  @include mq('pc-edit') {
-                    top: -5%;
-                  }
-                  @include mq('tab-edit') {
-                    top: -6%;
-                  }
-                  @include mq('sp-edit') {
-                    top: -5%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
+                  border-radius: 45% 62% 57% 48% / 70% 63% 47% 37%;
 
                   img {
+                    border-radius: 45% 62% 57% 48% / 70% 63% 47% 37%;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -918,6 +860,7 @@
                   border: 1px dashed #ccc;
                   cursor: pointer;
                   top: 96px;
+                  border-radius: 10px;
                   clip-path: polygon(27% 0%, 27% 3%, 74% 3%, 74% 0, 100% 0, 100% 100%, 0 100%, 0 0);
 
                   @include mq('pc2-edit') {
@@ -1028,13 +971,13 @@
 
                 &10_t3 {
                   position: relative;
-                  top: -1%;
-                  width: 60%;
-                  height: 70%;
-                  font-size: 1rem;
+                  top: -5.5%;
+                  left: -0.5%;
+                  width: 43%;
+                  height: 33.5%;
+
                   border: 1px dashed #ccc;
                   cursor: pointer;
-                  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 12%, 23% 12%, 23% 3%, 0 3%);
 
                   // 枠サイズ変更関連---
                   &.active {
@@ -1072,9 +1015,9 @@
 
                 &12_t3 {
                   position: relative;
-                  top: 5%;
+                  top: -1%;
                   width: 58%;
-                  height: 47%;
+                  height: 69%;
                   font-size: 1rem;
                   border: 1px dashed #ccc;
                   cursor: pointer;
@@ -1121,9 +1064,9 @@
                   }
                 }
                 &14_t3 {
-                  width: 87%;
-                  height: 45%;
-                  top: 27%;
+                  width: 56%;
+                  height: 60%;
+                  top: 19%;
                   position: absolute;
 
                   img {
@@ -1134,11 +1077,10 @@
                   }
                 }
                 &15_t3 {
-                  width: 55%;
-                  height: 37%;
-                  top: 10.5%;
+                  width: 86%;
+                  height: 45%;
+                  top: 26.5%;
                   position: absolute;
-                  clip-path: polygon(100% 0, 100% 100%, 50% 88%, 0% 100%, 0 0);
 
                   img {
                     width: 100%;
@@ -1214,7 +1156,7 @@
 
                 &1-2_t3 {
                   position: absolute;
-                  top: 23.2%;
+                  top: 22.7%;
                   max-width: 39%;
                   font-family: 'League Spartan', sans-serif;
                   font-size: 0.45rem;
@@ -1325,15 +1267,14 @@
                   }
                 }
 
-                &10-1_t2 {
-                  position: absolute;
-                  top: 12%;
-                  color: #f8f8f8;
+                &10_t3 {
                   text-align: center;
                   font-family: 'League Spartan', sans-serif;
-                  font-size: 1rem;
-                  line-height: 1;
+                  font-size: 0.6rem;
+                  position: absolute;
                   font-weight: bold;
+                  bottom: 25%;
+
                   @include mq('pc2-edit') {
                     font-size: 2rem;
                   }
@@ -1403,7 +1344,7 @@
                   font-size: 0.6rem;
                   font-weight: bold;
                   text-align: center;
-                  color: #fdfcf6;
+
                   margin-bottom: 0;
                   position: relative;
                   top: 26%;
@@ -1411,30 +1352,120 @@
                 &14-3_t3 {
                   font-weight: bold;
                   text-align: center;
-                  color: #fdfcf6;
+
                   margin: 0;
                   position: relative;
                   top: 27%;
                 }
                 &15-1_t3 {
-                  margin-top: 5%;
-                  max-width: 30%;
-                  text-align: center;
+                  position: absolute;
+                  top: 8.5%;
                   font-size: 1rem;
                   font-weight: bold;
-                  @include mq('tab-edit') {
-                    margin-top: 1%;
+                  text-align: center;
+                  @include mq('pc2-edit') {
                     font-size: 1.5rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2rem;
                   }
                 }
                 &15-2_t3 {
-                  margin-top: 3%;
-                  position: absolute;
-                  top: 53%;
-                  max-height: 30%;
-                  max-width: 57%;
+                  font-size: 0.6rem;
+                  font-weight: bold;
+                  text-align: center;
+                  color: #fdfcf6;
+                  margin-bottom: 0;
+                  position: relative;
+                  top: 26%;
+                }
+                &15-3_t3 {
+                  font-weight: bold;
+                  text-align: center;
+                  color: #fdfcf6;
+                  margin: 0;
+                  position: relative;
+                  top: 27%;
                 }
               }
+
+              .round {
+                position: absolute;
+                width: 21%;
+                height: 4.7%;
+                top: 19%;
+                left: 9%;
+                border-radius: 9999px;
+              }
+              .round-textimg {
+                position: absolute;
+                top: 19.5%;
+                left: 11.5%;
+                width: 15%;
+                height: 4%;
+              }
+
+              .wave-img {
+                position: absolute;
+                bottom: 13%;
+              }
+              .wave {
+                position: absolute;
+                height: 126px;
+                width: 100%;
+                // opacity: 0.6;
+                background: #ffffff;
+                bottom: 0%;
+                object-fit: cover;
+                @include mq('pc-edit') {
+                  height: 89px;
+                }
+              }
+
+              // .wave::before,
+              // .wave::after {
+              //   content: '';
+              //   display: block;
+              //   position: absolute;
+              // }
+              // .wave::before {
+              //   width: 63%;
+              //   height: 94%;
+              //   background-color: #ffffff;
+              //   left: -1.5%;
+              //   top: -47%;
+              //   border-radius: 0% 100%;
+              //   @include mq('pc2-edit') {
+              //     top: -102%;
+              //   }
+              //   @include mq('pc-edit') {
+              //     top: -49%;
+              //   }
+              // }
+              // .wave::after {
+              //   width: 70%;
+              //   height: 67%;
+              //   right: -19.5%;
+              //   top: -50%;
+              //   border-radius: 100% 74%;
+              //   background: radial-gradient(circle at 20% -37%, transparent 46%, #ffffff 0%);
+              //   @include mq('pc2-edit') {
+              //     width: 70%;
+              //     height: 67%;
+              //     right: -21.5%;
+              //     top: -91%;
+              //     border-radius: 100% 74%;
+              //     background: radial-gradient(circle at 22% -86%, transparent 46%, #ffffff 0%);
+              //   }
+              //   @include mq('pc-edit') {
+              //     width: 70%;
+              //     height: 105%;
+              //     right: -19.5%;
+              //     top: -52%;
+              //     /* border-radius: 100% 90%; */
+              //     background: radial-gradient(circle at 21% -44%, transparent 46%, #ffffff 0%);
+              //   }
+              // }
             }
           }
         }
