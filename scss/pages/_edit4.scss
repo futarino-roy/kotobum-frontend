@@ -814,20 +814,20 @@
                 }
 
                 &2_t4 {
-                  width: 78%;
+                  width: 76%;
                   height: 81%;
                   border-radius: 10px;
                   top: -0.6%;
                   position: relative;
-                  left: 0.5%;
-                  border-radius: 10px;
+
+                  border-radius: 4px;
                   // clip-path: polygon(0% 15.5%, 5% 15.5%, 5% 4%, 59.5% 4%, 59.5% 0, 100% 0, 100% 83%, 96% 83%, 96% 95%, 42% 95%, 42% 100%, 0 100%);
                   @include mq('pc2-edit') {
                     top: -0.5%;
                   }
 
                   img {
-                    border-radius: 10px;
+                    border-radius: 4px;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -839,69 +839,12 @@
                   width: 59%;
                   height: 36%;
                   position: relative;
-                  top: 1%;
+                  top: -2%;
                   border: 1px dashed #ccc;
                   border-radius: 45% 62% 57% 48% / 70% 63% 47% 37%;
 
                   img {
                     border-radius: 45% 62% 57% 48% / 70% 63% 47% 37%;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
-                }
-
-                &6_t4 {
-                  position: absolute;
-                  width: 46%;
-                  height: 44%;
-                  font-size: 1rem;
-                  border: 1px dashed #ccc;
-                  cursor: pointer;
-                  top: 96px;
-                  border-radius: 10px;
-                  clip-path: polygon(27% 0%, 27% 3%, 74% 3%, 74% 0, 100% 0, 100% 100%, 0 100%, 0 0);
-
-                  @include mq('pc2-edit') {
-                    top: 22.7%;
-                  }
-                  @include mq('pc-edit') {
-                    top: 22.5%;
-                    // height: 52%;
-                  }
-                  @include mq('tab-edit') {
-                    top: 23%;
-                  }
-
-                  // 枠サイズ変更関連---
-                  &.active {
-                    border-color: #00000089;
-                  }
-
-                  &.square {
-                    width: 45%;
-                    height: 32%;
-                  }
-
-                  &.rectangle34 {
-                    width: 45%;
-                    height: 40%;
-                  }
-
-                  &.rectangle43 {
-                    width: 45%;
-                    height: 25%;
-                  }
-
-                  &.mini {
-                    width: 45%;
-                    height: 20%;
-                  }
-
-                  // --------------------------
-
-                  img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -969,7 +912,7 @@
                   }
                 }
 
-                &10_t4 {
+                &6_t4 {
                   position: relative;
                   top: -5.5%;
                   left: -0.5%;
@@ -1063,7 +1006,7 @@
                     cursor: pointer;
                   }
                 }
-                &14_t4 {
+                &8_t4 {
                   width: 56%;
                   height: 60%;
                   top: 19%;
@@ -1076,13 +1019,28 @@
                     cursor: pointer;
                   }
                 }
-                &15_t4 {
-                  width: 86%;
+                &10_t4 {
+                  width: 91%;
                   height: 45%;
                   top: 26.5%;
                   position: absolute;
 
                   img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                  }
+                }
+                &16_t4 {
+                  width: 67%;
+                  height: 39%;
+                  top: 12.5%;
+                  position: absolute;
+                  border-radius: 42% 62% 54% 46% / 63% 59% 47% 31%;
+
+                  img {
+                    border-radius: 42% 62% 54% 46% / 63% 59% 47% 31%;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -1136,6 +1094,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   text-align: center;
+                  letter-spacing: 0.1rem;
 
                   @include mq('pc-edit') {
                     font-size: 0.9rem;
@@ -1156,10 +1115,10 @@
 
                 &1-2_t4 {
                   position: absolute;
-                  top: 22.7%;
+                  top: 22.5%;
                   max-width: 39%;
                   font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
+                  font-size: 0.55rem;
                   text-align: center;
                   font-weight: bold;
 
@@ -1168,7 +1127,7 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.65rem;
+                    font-size: 0.7rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1184,75 +1143,19 @@
                 &1-3_t4 {
                   width: 45% !important;
                   position: absolute;
-                  top: 65%;
+                  top: 63%;
                 }
 
                 &3-1_t4 {
                   font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
+                  font-size: 0.6rem;
                   text-align: left;
                   font-weight: bold;
-                }
-                &3-2_t4 {
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 0.45rem;
-                  text-align: left;
-                  height: 47% !important;
-                }
-
-                &4_t4 {
-                  max-width: 45%;
-                  font-weight: bold;
-                  color: #f8f8f8;
                   text-align: center;
-                }
-
-                &5_t4 {
-                  max-width: 55%;
-                }
-                &6_t4 {
-                  position: relative;
-                  top: 25%;
-                  max-width: 37%;
-                  font-weight: bold;
-                  text-align: center;
-                }
-                &7_t4 {
-                  max-width: 50%;
-                }
-
-                &5,
-                &7,
-                &9 {
-                  margin-top: 30px;
-                  font-size: 5.2px;
-                  @include mq('pc-edit') {
-                    font-size: 0.246rem;
-                    max-height: 65%;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.49rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.26vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 1.4vw;
-                    margin-top: 25px;
-                  }
-                }
-
-                &8_t2 {
-                  position: absolute;
-                  top: 10%;
-                  text-align: center;
-                  color: #f8f8f8;
-                  font-size: 0.7rem;
                   line-height: 1;
-                  font-weight: bold;
+                  position: absolute;
+                  top: 18%;
+                  line-height: 1.3;
                   @include mq('pc2-edit') {
                     font-size: 1rem;
                   }
@@ -1260,23 +1163,76 @@
                     font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
-                    font-size: 1rem;
                   }
                   @include mq('sp-edit') {
-                    font-size: 0.7rem;
+                  }
+                }
+                &3-2_t4 {
+                  font-family: 'League Spartan', sans-serif;
+                  font-size: 0.43rem;
+                  text-align: left;
+                  position: absolute;
+                  top: 25%;
+                  @include mq('pc2-edit') {
+                    font-size: 0.64rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.32rem;
                   }
                 }
 
-                &10_t4 {
+                &4_t4 {
+                  max-width: 54%;
+                  font-weight: bold;
+                  color: #f8f8f8;
                   text-align: center;
-                  font-family: 'League Spartan', sans-serif;
                   font-size: 0.6rem;
                   position: absolute;
+                  top: 66%;
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                  }
+                  @include mq('tab-edit') {
+                  }
+                  @include mq('sp-edit') {
+                  }
+                }
+
+                &5_t4,
+                &7_t4,
+                &9_t4 {
+                  max-width: 48%;
+                  font-size: 0.33rem;
+                  top: 3%;
+                  position: relative;
+                  @include mq('pc2-edit') {
+                    font-size: 0.5rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.25rem;
+                  }
+                  @include mq('tab-edit') {
+                  }
+                  @include mq('sp-edit') {
+                  }
+                }
+
+                &6_t4 {
+                  text-align: center;
+                  font-family: 'League Spartan', sans-serif;
+                  font-size: 0.7rem;
+                  position: absolute;
                   font-weight: bold;
-                  bottom: 25%;
+                  top: 64%;
 
                   @include mq('pc2-edit') {
-                    font-size: 2rem;
+                    font-size: 1rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
                     font-size: 2.5rem;
@@ -1285,36 +1241,7 @@
                     font-size: 1.5rem;
                   }
                 }
-                &10-2_t2 {
-                  position: absolute;
-                  bottom: 12%;
-                  text-align: center;
-                  font-size: 0.7rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc-edit') {
-                    font-size: 0.5rem;
-                    bottom: 9%;
-                  }
-                  @include mq('tab-edit') {
-                    bottom: 11.5%;
-                    font-size: 1rem;
-                  }
-                  @include mq('sp-edit') {
-                    bottom: 9.5%;
-                    font-size: 0.5rem;
-                  }
-                }
-                &11-1_t4 {
-                  margin: 0;
-                  font-weight: bold;
-                  max-width: 50%;
-                }
-                &11-2_t4 {
-                  height: 47% !important;
-                  margin: 5% 0 0 0;
-                  max-width: 50%;
-                }
+
                 &12-1_t4 {
                   position: relative;
                   top: 7%;
@@ -1327,20 +1254,7 @@
                   opacity: 0.6;
                   text-align: center;
                 }
-                &14-1_t4 {
-                  position: absolute;
-                  top: 8.5%;
-                  font-size: 1rem;
-                  font-weight: bold;
-                  text-align: center;
-                  @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 2rem;
-                  }
-                }
-                &14-2_t4 {
+                &8-1_t4 {
                   font-size: 0.6rem;
                   font-weight: bold;
                   text-align: center;
@@ -1349,44 +1263,98 @@
                   position: relative;
                   top: 26%;
                 }
-                &14-3_t4 {
+                &8-2_t4 {
                   font-weight: bold;
                   text-align: center;
 
                   margin: 0;
                   position: relative;
-                  top: 27%;
+                  top: 33%;
+                  opacity: 0.5;
                 }
-                &15-1_t4 {
+
+                &10-1_t4 {
                   position: absolute;
-                  top: 8.5%;
-                  font-size: 1rem;
+                  top: 7%;
+                  font-size: 1.4rem;
                   font-weight: bold;
                   text-align: center;
+
                   @include mq('pc2-edit') {
-                    font-size: 1.5rem;
+                    font-size: 2.1rem;
                   }
-                  @include mq('tab-edit') {
-                    font-size: 2rem;
+                  @include mq('pc-edit') {
+                    font-size: 1.1rem;
                   }
                 }
-                &15-2_t4 {
+                &10-2_t4 {
                   font-size: 0.6rem;
                   font-weight: bold;
                   text-align: center;
                   color: #fdfcf6;
                   margin-bottom: 0;
                   position: relative;
-                  top: 26%;
+                  top: 25%;
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    top: 24%;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                    top: 26.5%;
+                  }
                 }
-                &15-3_t4 {
+                &10-3_t4 {
                   font-weight: bold;
                   text-align: center;
                   color: #fdfcf6;
                   margin: 0;
                   position: relative;
-                  top: 27%;
+                  top: 25%;
                 }
+                &11_t4 {
+                  max-width: 45%;
+                  font-size: 0.31rem;
+                  @include mq('pc2-edit') {
+                    font-size: 0.46rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.23rem;
+                  }
+                }
+
+                &16-1_t4 {
+                  position: relative;
+                  top: 7%;
+                  text-align: center;
+                  font-size: 0.9rem;
+                  font-weight: bold;
+                  @include mq('pc2-edit') {
+                    font-size: 1.4rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.7rem;
+                  }
+                }
+                &16-2_t4 {
+                  position: absolute;
+                  top: 57%;
+                  max-height: 30%;
+                  font-size: 0.36rem;
+                  @include mq('pc2-edit') {
+                    font-size: 0.53rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.27rem;
+                  }
+                }
+              }
+
+              .last-text_from {
+                top: 53%;
+                position: absolute;
+                font-size: 0.5rem;
+                font-weight: bold;
               }
 
               .round {
@@ -1407,7 +1375,7 @@
 
               .wave-img {
                 position: absolute;
-                bottom: 13%;
+                bottom: 13.5%;
               }
               .wave {
                 position: absolute;

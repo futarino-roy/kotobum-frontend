@@ -557,28 +557,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
-  // if (textarea.value.trim() === '') {
-  //   // テキストが空の場合、デフォルトのCSSサイズに戻す
-  //   textarea.style.width = defaultWidth;
-  //   textarea.style.height = defaultHeight;
-  // } else {
   textarea.style.height = "auto";
   textarea.style.height = `${textarea.scrollHeight}px`;
   // }
 }
 
 // テキストエリアの幅を調整する関数
-function adjustTextareaWidth(textarea) {
-  // if (textarea.value.trim() === '') {
-  //   // テキストが空の場合、デフォルトのCSSサイズに戻す
-  //   textarea.style.width = defaultWidth;
-  //   textarea.style.height = defaultHeight;
-  // } else {
-  textarea.style.width = "auto";
-  const scrollWidth = textarea.scrollWidth;
-  textarea.style.width = `${scrollWidth}px`;
-  // }
-}
+// function adjustTextareaWidth(textarea) {
+//   textarea.style.width = "auto";
+//   const scrollWidth = textarea.scrollWidth;
+//   textarea.style.width = `${scrollWidth}px`;
+//   // }
+// }
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
@@ -588,7 +578,6 @@ function enforceNoMaxLength(textarea) {
   });
 
   adjustHeight(textarea);
-  adjustTextareaWidth(textarea);
 }
 
 // ドキュメント読み込み時の処理
@@ -673,14 +662,12 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', adjustLineHeightForAll);
 
   // 1remが何pxかを計算する関数
-  function remToPx(rem) {
-    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-  }
+
 
   textAreas.forEach(textArea => {
     // フォントサイズの最大と最小を rem で指定
     const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
-    const minFontSizeRem = 0.5; // 0.75rem (最小フォントサイズ)
+    const minFontSizeRem = 0.2; // 0.75rem (最小フォントサイズ)
 
     // テキスト量に応じてフォントサイズを調整
     function adjustFontSize() {
