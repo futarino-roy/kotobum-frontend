@@ -1038,6 +1038,8 @@
                   position: absolute;
                   border-radius: 42% 62% 54% 46% / 63% 59% 47% 31%;
 
+                  background-color: #fff;
+
                   img {
                     opacity: 1;
                     border-radius: 42% 62% 54% 46% / 63% 59% 47% 31%;
@@ -1124,7 +1126,7 @@
 
                 &1-2_t4 {
                   position: absolute;
-                  top: 22%;
+                  top: 22.2%;
                   max-width: 39%;
                   font-family: 'League Spartan', sans-serif;
                   font-size: 0.55rem;
@@ -1175,18 +1177,18 @@
                 }
                 &3-2_t4 {
                   font-family: 'League Spartan', sans-serif;
-                  font-size: 0.36rem;
+                  font-size: 0.34rem;
                   text-align: left;
                   position: absolute;
                   top: 27%;
-                  max-width: 50%;
+                  max-width: 48%;
                   max-height: 47%;
 
                   @include mq('pc2-edit') {
-                    font-size: 0.53rem;
+                    font-size: 0.51rem;
                   }
                   @include mq('pc-edit') {
-                    font-size: 0.27rem;
+                    font-size: 0.256rem;
                   }
                 }
 
