@@ -816,10 +816,9 @@
                 &2_t4 {
                   width: 77%;
                   height: 82%;
-                  border-radius: 10px;
+                  border-radius: 6px;
                   top: -0.6%;
                   position: relative;
-                  border-radius: 6px;
                   // clip-path: polygon(0% 15.5%, 5% 15.5%, 5% 4%, 59.5% 4%, 59.5% 0, 100% 0, 100% 83%, 96% 83%, 96% 95%, 42% 95%, 42% 100%, 0 100%);
                   @include mq('pc2-edit') {
                     top: -0.7%;
