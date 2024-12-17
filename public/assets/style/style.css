@@ -6982,9 +6982,9 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
   top: 40%;
-  left: 6%;
-  width: 84.8%;
-  height: 50%;
+  left: 5%;
+  width: 86.8%;
+  height: 51%;
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
@@ -7055,8 +7055,8 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 8%;
-  left: -5%;
+  bottom: 9%;
+  left: -5.1%;
   font-weight: bold;
   font-size: 0.4rem !important;
   text-align: start;
@@ -7080,6 +7080,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
     font-size: 0.7rem !important;
+    left: -5.3%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7100,10 +7101,9 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
-  width: 13.5%;
+  width: 14.5%;
   height: 4.5%;
-  max-width: 38px;
-  top: 16.2%;
+  top: 16.4%;
   left: 74%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
@@ -7119,7 +7119,8 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
-    left: 77%;
+    left: 75%;
+    top: 16.6%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7141,8 +7142,8 @@ input:checked + label::after {
   font-weight: bold;
   font-size: 0.4rem;
   display: block;
-  field-sizing: content;
   text-align: center;
+  max-width: 22%;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
@@ -7152,6 +7153,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
+    max-width: 20%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -8317,51 +8319,9 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
   top: 40%;
-  left: 6%;
-  width: 87%;
-  height: 52%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-  border: none;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn:hover {
-  opacity: 1;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn.show {
-  display: flex;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn:hover {
-  opacity: 1;
-}
-.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn.show {
-  display: flex;
+  left: 5%;
+  width: 86.8%;
+  height: 51%;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
@@ -8415,11 +8375,12 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   width: 5% !important;
-  bottom: 8%;
-  left: -5.5%;
+  bottom: 9%;
+  left: -5.1%;
   font-weight: bold;
-  font-size: 0.5rem !important;
+  font-size: 0.4rem !important;
   text-align: start;
+  field-sizing: content;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
   text-orientation: mixed; /* テキストの方向を調整 */
   transform: rotate(180deg); /* テキストを180度回転 */
@@ -8433,41 +8394,41 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.3rem;
+    font-size: 0.3rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
     font-size: 0.7rem !important;
+    left: -5.3%;
   }
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 1.4vw;
+    font-size: 1.4vw !important;
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 2vw;
+    font-size: 2vw !important;
   }
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
   }
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
-  width: 13.5%;
+  width: 14.5%;
   height: 4.5%;
-  max-width: 35px;
-  top: 16.3%;
-  left: 76.7%;
+  top: 16.4%;
+  left: 74%;
   text-align: center;
+  white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
   font-weight: bold;
-  font-size: 0.9rem;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
@@ -8478,6 +8439,8 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
+    left: 75%;
+    top: 16.6%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -8493,19 +8456,14 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
   margin: 0;
   position: absolute;
-  width: 18% !important;
-  height: 3% !important;
-  top: 21%;
-  left: 73%;
+  top: 22%;
+  left: 71%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
-  overflow: hidden; /* スクロールバーを非表示 */
-  resize: none;
-  white-space: nowrap; /* 改行を無効にする */
-  overflow-wrap: normal; /* 自動改行を無効にする */
-  word-wrap: normal; /* 単語の途中での改行を無効にする */
-  word-break: normal; /* 単語の途中での改行を無効にする */
+  display: block;
+  text-align: center;
+  max-width: 22%;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
@@ -8515,6 +8473,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
+    max-width: 20%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -8537,7 +8496,7 @@ input:checked + label::after {
   position: absolute;
   width: 40% !important;
   height: 10% !important;
-  top: 5%;
+  top: 6%;
   left: 5%;
   font-weight: bold;
   font-size: 1.1rem;

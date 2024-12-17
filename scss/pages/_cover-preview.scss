@@ -242,60 +242,9 @@
               #dropAreaA {
                 position: absolute;
                 top: 40%;
-                left: 6%;
-                // width: 87%;
-                // height: 55%;
-                width: 87%;
-                height: 52%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-                border: none;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
+                left: 5%;
+                width: 86.8%;
+                height: 51%;
 
                 img {
                   width: 100%;
@@ -348,12 +297,12 @@
                 margin: 0;
                 position: absolute;
                 width: 5% !important;
-                // height: auto;
-                bottom: 8%;
-                left: -5.5%;
+                bottom: 9%;
+                left: -5.1%;
                 font-weight: bold;
-                font-size: 0.5rem !important;
+                font-size: 0.4rem !important;
                 text-align: start;
+                field-sizing: content;
 
                 // テキストの向きを変更
                 writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -369,23 +318,24 @@
                 word-break: normal; /* 単語の途中での改行を無効にする */
 
                 @include mq('pc-edit') {
-                  font-size: 0.3rem;
+                  font-size: 0.3rem !important;
                 }
 
                 @include mq('pc2-edit') {
                   font-size: 0.7rem !important;
+                  left: -5.3%;
                 }
 
                 @include mq('tab-edit') {
-                  font-size: 1.4vw;
+                  font-size: 1.4vw !important;
                 }
 
                 @include mq('sp-edit') {
-                  font-size: 2vw;
+                  font-size: 2vw !important;
                 }
 
                 @include mq('sp2-edit') {
-                  font-size: 1.5vw;
+                  font-size: 1.5vw !important;
                 }
               }
 
@@ -393,19 +343,16 @@
                 &A-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5%;
+                  width: 14.5%;
                   height: 4.5%;
-                  max-width: 35px;
-                  // top: 14.5%;
-                  // left: 77%;
-                  // height: 3.5% !important;
-                  top: 16.3%;
-                  left: 76.7%;
+                  // max-width: 38px;
+                  top: 16.4%;
+                  left: 74%;
                   text-align: center;
+                  white-space: nowrap; /* 改行をさせない設定 */
 
                   line-height: 0.9;
                   font-weight: bold;
-                  font-size: 0.9rem;
                   color: #ffffff;
 
                   @include mq('pc-edit') {
@@ -414,6 +361,8 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
+                    left: 75%;
+                    top: 16.6%;
                   }
 
                   @include mq('tab-edit') {
@@ -428,28 +377,22 @@
                 &A-2 {
                   margin: 0;
                   position: absolute;
-                  width: 18% !important;
-                  height: 3% !important;
-                  // top: 20%;
-                  // left: 76%;
-                  top: 21%;
-                  left: 73%;
+                  top: 22%;
+                  left: 71%;
                   line-height: 1.5;
                   font-weight: bold;
                   font-size: 0.4rem;
-
-                  overflow: hidden; /* スクロールバーを非表示 */
-                  resize: none;
-                  white-space: nowrap; /* 改行を無効にする */
-                  overflow-wrap: normal; /* 自動改行を無効にする */
-                  word-wrap: normal; /* 単語の途中での改行を無効にする */
-                  word-break: normal; /* 単語の途中での改行を無効にする */
+                  display: block;
+                  // field-sizing: content;
+                  text-align: center;
+                  max-width: 22%;
 
                   @include mq('pc-edit') {
                     font-size: 0.3rem;
                   }
                   @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    max-width: 20%;
                   }
                   @include mq('tab-edit') {
                     font-size: 1.2vw;
@@ -468,7 +411,7 @@
                   position: absolute;
                   width: 40% !important;
                   height: 10% !important;
-                  top: 5%;
+                  top: 6%;
                   left: 5%;
                   font-weight: bold;
                   font-size: 1.1rem;
