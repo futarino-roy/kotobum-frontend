@@ -768,16 +768,16 @@
           }
           &_box2 {
             position: relative;
-            clip-path: inset(24px 24px 30px 24px);
+            clip-path: inset(19px 19px 28px 19px);
             @include mq('pc2-edit') {
-              clip-path: inset(37px 36px 41px 36px);
+              clip-path: inset(30px 30px 36px 30px);
             }
             @include mq('pc-edit') {
               clip-path: inset(17px 16px 23px 17px);
             }
             @include mq('tab-edit') {
               width: 90%;
-              clip-path: inset(6% 8% 7% 8%);
+              clip-path: inset(5% 7.5% 5.5% 7.5%);
             }
             @include mq('sp-edit') {
               width: 100%;
