@@ -458,6 +458,22 @@
                     cursor: pointer;
                   }
                 }
+                &16_t4B {
+                  width: 67%;
+                  height: 39%;
+                  top: 12.5%;
+                  position: absolute;
+                  border-radius: 77% 47% 49% 58% / 71% 59% 55% 49%;
+                  background-color: #ffffff;
+
+                  img {
+                    border-radius: 77% 47% 49% 58% / 71% 59% 55% 49%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                  }
+                }
               }
               .shape-model {
                 width: 67%;
@@ -816,22 +832,6 @@
                 object-fit: cover;
                 @include mq('pc-edit') {
                   height: 89px;
-                }
-                #dropArea16_t4B {
-                  width: 67%;
-                  height: 39%;
-                  top: 12.5%;
-                  position: absolute;
-                  border-radius: 77% 47% 49% 58% / 71% 59% 55% 49%;
-                  background-color: #ffffff;
-
-                  img {
-                    border-radius: 77% 47% 49% 58% / 71% 59% 55% 49%;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    cursor: pointer;
-                  }
                 }
               }
             }
