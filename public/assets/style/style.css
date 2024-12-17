@@ -18509,6 +18509,21 @@ body {
     height: 89px;
   }
 }
+.preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave #dropArea16_t4B {
+  width: 67%;
+  height: 39%;
+  top: 12.5%;
+  position: absolute;
+  border-radius: 77% 47% 49% 58%/71% 59% 55% 49%;
+  background-color: #ffffff;
+}
+.preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave #dropArea16_t4B img {
+  border-radius: 77% 47% 49% 58%/71% 59% 55% 49%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
 
 .edit-body {
   background: #d5dadc;
