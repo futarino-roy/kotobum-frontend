@@ -7101,7 +7101,7 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
-  width: 14.5%;
+  max-width: 14.5%;
   height: 4.5%;
   top: 16.4%;
   left: 74%;
@@ -7153,7 +7153,6 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
-    max-width: 20%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -8473,7 +8472,6 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
-    max-width: 20%;
   }
 }
 @media screen and (max-width: 900px) {

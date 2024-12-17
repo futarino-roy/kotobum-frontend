@@ -392,7 +392,6 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 0.6rem;
-                    max-width: 20%;
                   }
                   @include mq('tab-edit') {
                     font-size: 1.2vw;
