@@ -6,6 +6,7 @@ const swiper = new Swiper('.swiper', {
     },
     slidesPerView: 1,
     slidesPerGroup: 1,
+    initialSlide: 23, // 最後のスライドのインデックス
     breakpoints: {
         900: {
             slidesPerView: 2,
@@ -13,7 +14,35 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
-
+// テキストエリアの要素を取得
+const bugFixes = document.querySelectorAll('.swiper textarea');
+bugFixes.forEach((textarea) => {
+    // フォーカスが当たったときの処理
+    textarea.addEventListener('focus', () => {
+        swiper.allowTouchMove = false; // スワイプ無効
+    });
+    // フォーカスが外れたときの処理
+    textarea.addEventListener('blur', () => {
+        swiper.allowTouchMove = true; // スワイプ有効
+    });
+    // // Enterキーが押されたときの処理
+    // textarea.addEventListener('keydown', (event) => {
+    //   if (event.key === 'Enter') {
+    //     event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
+    //   }
+    // });
+    // 完了ボタン押下時の処理
+    textarea.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+            textarea.blur(); // テキストエリアのフォーカスを外す
+            // ここに必要なら、Swiperの現在のスライドを確認するロジックを追加
+        }
+    });
+    // ここでは、blurイベントを使ってフォーカスを外したときの処理も行います
+    textarea.addEventListener('blur', () => {
+        swiper.allowTouchMove = true; // スワイプ有効
+    });
+});
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentSlideIndex = swiper.realIndex;
 
         // プレビューページのURLを動的に設定
-        const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
+        const previewUrl = `../previewB/index.html?slide=${currentSlideIndex + 1}`;
 
         // プレビューページに遷移
         window.location.href = previewUrl;
@@ -46,81 +75,31 @@ document.getElementById('frontButton').addEventListener('click', function () {
     document.getElementById('backInput').click();
 });
 
-
-// 枠変更 12-~3変更できない版 ローカルストレージに保存
-document.addEventListener('DOMContentLoaded', () => {
-    const dropAreas = [];
-    const resizeButtons = document.querySelectorAll('.resizeButton');
-    let activeDropArea = null;
-
-    // ドロップエリアをすべて取得し、配列に追加
-    document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
-        dropAreas.push(dropArea);
-        dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
-    });
-
-    // ドロップエリアがクリックまたはタッチされたときの処理
-    const handleDropAreaInteraction = (dropArea) => {
-        dropAreas.forEach((area) => area.classList.remove('active'));
-        dropArea.classList.add('active');
-        activeDropArea = dropArea;
-    };
-
-    // サイズ変更ボタンがクリックまたはタッチされたときの処理
-    const handleResizeButtonInteraction = (button) => {
-        if (activeDropArea) {
-            // サイズ変更を禁止するドロップエリアのリスト
-            const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
-
-            // サイズ変更を禁止するドロップエリアでない場合のみ処理
-            if (!restrictedDropAreas.includes(activeDropArea.id)) {
-                // サイズをすべてリセット
-                activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
-                // ボタンの data-size 属性に基づいてサイズを変更
-                const size = button.getAttribute('data-size');
-                activeDropArea.classList.add(size);
-
-                // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-                localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-            }
-        }
-    };
-
-    resizeButtons.forEach((button) => {
-        button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
-    });
-
-    // ページロード時にローカルストレージからサイズを復元
-    dropAreas.forEach((dropArea) => {
-        const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-        if (savedSize) {
-            dropArea.classList.add(savedSize);
-        }
-    });
-});
-
-// 背景色とテキストの色の変更 ローカルストレージに保存
+// 色変更
 function changeColor(color) {
     // 背景色を変更する
-    let elements = document.getElementsByClassName('uniqueColor');
+    // ユニークカラーBって名前が付いた範囲の色が全部変わる
+    let elements = document.getElementsByClassName('uniqueColorB');
     for (let i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = color;
     }
 
     // テキスト色を変更する
-    let textElements = document.getElementsByClassName('text-color');
+    // テキストカラーBって名前が付いたテキストの色が変わる
+    let textElements = document.getElementsByClassName('text-colorB');
     for (let i = 0; i < textElements.length; i++) {
         textElements[i].style.color = color;
     }
 
     // 色をローカルストレージに保存する
-    localStorage.setItem('backgroundColorA', color);
+    localStorage.setItem('backgroundColorB', color);
 }
 
 // ページ読み込み時にローカルストレージから色を取得して適用する
 document.addEventListener('DOMContentLoaded', function () {
-    const savedColor = localStorage.getItem('backgroundColorA');
+    const savedColor = localStorage.getItem('backgroundColorB');
     if (savedColor) {
+        // セーブカラーで好きな色に変えられる
         changeColor(savedColor);
     }
 });
@@ -177,8 +156,8 @@ function handleSaveOrSend() {
                 };
             });
 
-            const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
-            const textColor = document.querySelector('.text-color').style.color || '#000000';
+            const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
+            const textColor = document.querySelector('.text-colorB').style.color || '#000000';
 
             if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
                 console.error('送信するデータがありません。');
@@ -326,18 +305,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
 
-            // 色データを反映
+            // 背景色とテキスト色を設定
             console.log('colors:', colors);
             if (colors) {
                 const { backgroundColor, textColor } = colors;
 
                 // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-                document.querySelectorAll('.uniqueColor').forEach(element => {
+                document.querySelectorAll('.uniqueColorB').forEach(element => {
                     element.style.backgroundColor = backgroundColor || '#ffffff';
                 });
 
                 // `.text-color` クラスを持つすべての要素にテキスト色を設定
-                document.querySelectorAll('.text-color').forEach(element => {
+                document.querySelectorAll('.text-colorB').forEach(element => {
                     element.style.color = textColor || '#000000';
                 });
 

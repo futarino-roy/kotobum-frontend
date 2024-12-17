@@ -112,7 +112,7 @@
   width: auto;
   height: auto;
 }
-.preview {
+.previewB {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +164,7 @@
           }
           &_box3 {
             position: relative;
-            clip-path: inset(23px 21px 30px 23px);
+            clip-path: inset(19px 20px 27px 20px);
             @include mq('pc2-edit') {
               clip-path: inset(29px 30px 36px 30px);
             }
@@ -179,6 +179,29 @@
               width: 100%;
               clip-path: inset(4.5% 6.5% 7% 6.5%);
             }
+
+            p {
+              font-size: 0.7rem;
+              @include mq('pc-edit') {
+                font-size: 0.5rem;
+              }
+              @include mq('tab-edit') {
+                font-size: 0.9rem;
+              }
+              @include mq('sp-edit') {
+                font-size: 0.6rem;
+              }
+            }
+            .side {
+              position: absolute;
+              top: 6%;
+            }
+            .last-text_from {
+              position: absolute;
+              top: 45.5%;
+              font-weight: bold;
+            }
+
             .input-drop {
               position: absolute;
               width: 100%;
@@ -225,22 +248,15 @@
 
                 &4_t3 {
                   width: 52%;
-                  height: 52%;
+                  height: 58%;
                   position: relative;
-                  top: -6.5%;
-
-                  clip-path: polygon(30% 0%, 30% 4.5%, 70% 4.5%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+                  top: -9.5%;
+                  clip-path: polygon(30% 5%, 69% 5%, 69% 0px, 100% 0px, 100% 100%, 50% 94%, 0px 100%, 0px 0px, 30% 0px);
                   @include mq('pc2-edit') {
-                    top: -7%;
-                  }
-                  @include mq('pc-edit') {
-                    top: -6%;
+                    top: -9.2%;
                   }
                   @include mq('tab-edit') {
-                    top: -7%;
-                  }
-                  @include mq('sp-edit') {
-                    top: -6%;
+                    top: -9.2%;
                   }
 
                   // 枠サイズ変更関連---
@@ -286,7 +302,7 @@
                   clip-path: polygon(27% 0%, 27% 3%, 74% 3%, 74% 0, 100% 0, 100% 100%, 0 100%, 0 0);
 
                   @include mq('pc2-edit') {
-                    top: 22.7%;
+                    top: 23%;
                   }
                   @include mq('pc-edit') {
                     top: 22.5%;
@@ -479,10 +495,24 @@
                   }
                 }
                 &14_t3 {
-                  width: 87%;
+                  width: 90%;
                   height: 45%;
                   top: 27%;
                   position: absolute;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                  }
+                }
+                &15_t3 {
+                  width: 55%;
+                  height: 37%;
+                  top: 10.5%;
+                  position: absolute;
+                  clip-path: polygon(100% 0, 100% 100%, 50% 88%, 0% 100%, 0 0);
 
                   img {
                     width: 100%;

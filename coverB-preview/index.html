@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A面の表紙のプレビューページ</title>
+    <title>B面の表紙のプレビューページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
     <link rel="stylesheet" href="../public/assets/style/style.css" />
   </head>
-  <body class="coverB-preview-body">
+  <body class="cover-preview-body">
     <header class="preview-header">
       <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <a href="/coverB/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
@@ -42,7 +42,7 @@
       <div class="modal js-modal1_2" id="modal1_2">
         <div class="modal-container_S">
           <div class="modal-content">
-            <img class="checkafter" src="/mypage/images/checkafter.png" alt="" />
+            <img class="checkafter" src="/mypageB/images/checkafter.png" alt="" />
             <p class="modal-checkafter">校了ありがとうございました</p>
             <a href="/mypageB/index.html"
               ><button class="btn btn-middle_bl modal-checkafter__mypage_l modal-content__button-pc">マイページへ</button></a
@@ -55,30 +55,31 @@
       </div>
     </header>
 
-    <div class="coverB-preview">
+    <div class="cover-preview">
       <div class="content" id="content">
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/coverB/images/coverA.png" alt="" />
+              <div class="swiper-slide_box uniqueColor">
+                <img src="/coverB/images/coverA-textnone.png" alt="" />
                 <div class="input-drop">
-                  <!-- <div id="dropAreaB" class="empty"></div> -->
+                  <textarea id="textAreaA-1" rows="1" maxlength="4" class="text-empty text-size"></textarea>
 
-                  <textarea id="textAreaB-1" rows="1" maxlength="10" class="text-empty text-size"></textarea>
-                  <textarea id="textAreaB-2" rows="1" maxlength="20" class="text-empty text-colorB"></textarea>
-                  <textarea id="textAreaB-3" rows="1" maxlength="8" class="text-empty text-colorB"></textarea>
-                  <textarea id="textArea-cover" maxlength="8" class="text-empty textArea-cover"></textarea>
-                  <div id="dropAreaB" class="empty"></div>
+                  <textarea id="textAreaA-2" rows="1" maxlength="11" class="text-empty text-color"></textarea>
+                  <textarea id="textAreaA-3" rows="1" maxlength="8" class="text-empty text-color"></textarea>
+
+                  <textarea id="textArea-cover" rows="1" maxlength="8" class="text-empty textArea-cover"></textarea>
+
+                  <div id="dropAreaA" class="empty"></div>
+                  <!-- </div> -->
                 </div>
               </div>
             </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
-
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
           <div class="button-grid">
             <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
             <a href="/coverB/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>

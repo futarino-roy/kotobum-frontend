@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B面の表紙のプレビューページ</title>
+    <title>A面の表紙のプレビューページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
     <link rel="stylesheet" href="../public/assets/style/style.css" />
   </head>
-  <body class="cover-preview-body">
+  <body class="coverB-preview-body">
     <header class="preview-header">
       <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <a href="/cover2/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
@@ -55,32 +55,33 @@
       </div>
     </header>
 
-    <div class="cover-preview">
+    <div class="coverB-preview">
       <div class="content" id="content">
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
-                <img src="/cover/images/coverA-textnone.png" alt="" />
+              <div class="swiper-slide_box uniqueColorB">
+                <img src="/cover/images/coverA.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textAreaA-1" rows="1" maxlength="4" class="text-empty text-size" readonly></textarea>
-                  <textarea id="textAreaA-2" rows="1" maxlength="11" class="text-empty text-color" readonly></textarea>
-                  <textarea id="textAreaA-3" rows="1" maxlength="8" class="text-empty text-color" readonly></textarea>
-                  <textarea id="textAreaA-4" rows="1" maxlength="8" class="text-empty" readonly></textarea>
+                  <!-- <div id="dropAreaB" class="empty"></div> -->
 
-                  <div id="dropAreaA" class="empty"></div>
-                  <!-- </div> -->
+                  <textarea id="textAreaB-1" rows="1" maxlength="10" class="text-empty text-size" readonly></textarea>
+                  <textarea id="textAreaB-2" rows="1" maxlength="20" class="text-empty text-colorB" readonly></textarea>
+                  <textarea id="textAreaB-3" rows="1" maxlength="8" class="text-empty text-colorB" readonly></textarea>
+                  <textarea id="textArea-cover" maxlength="8" class="text-empty" readonly></textarea>
+                  <div id="dropAreaB" class="empty"></div>
                 </div>
               </div>
             </div>
-
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
           <div class="button-grid">
-            <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
-            <a href="/cover/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
+            <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
+            <a href="/coverB/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
           </div>
         </div>
       </div>
@@ -88,6 +89,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/croppie/croppie.min.js"></script>
-    <script src="/cover-preview/js/script.js"></script>
+    <script src="/cover-preview2/js/script.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A面の表紙の編集ページ</title>
+    <title>B面の表紙の編集ページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -11,18 +11,16 @@
     <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
     <link rel="stylesheet" href="../public/assets/style/style.css" />
   </head>
-  <body class="coverB-body">
+  <body class="cover-body">
     <header class="edit-header">
       <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <button id="sendButton" class="btn btn-small_bl">保存する</button>
       <!-- <button class="btn-preview">プレビュー</button> -->
     </header>
 
-    <div class="coverB">
+    <div class="cover">
       <div id="drawer" class="edit_drawer">
-        <button class="close-btn" onclick="toggleDrawer()">
-          <img src="/edit/images/Vector 46.png" alt="" />
-        </button>
+        <button class="close-btn" onclick="toggleDrawer()"><img src="/edit/images/Vector 46.png" alt="" /></button>
         <div id="drawer-content" class="edit_drawer_container">
           <div id="content1" class="edit_drawer_container_item">
             <div class="edit_drawer_container_item_upload">
@@ -148,15 +146,9 @@
               <!-- 先に変えたい枠から選ぶパターン -->
               <div class="frame-container">
                 <div class="frame-container_vari">
-                  <button class="resizeButton" data-size="rectangle">
-                    <img src="/edit/images/Group 297.png" alt="" />
-                  </button>
-                  <button class="resizeButton" data-size="mini">
-                    <img src="/edit/images/Group 299.png" alt="" />
-                  </button>
-                  <button class="resizeButton" data-size="square">
-                    <img src="/edit/images/Group 296.png" alt="" />
-                  </button>
+                  <button class="resizeButton" data-size="rectangle"><img src="/edit/images/Group 297.png" alt="" /></button>
+                  <button class="resizeButton" data-size="mini"><img src="/edit/images/Group 299.png" alt="" /></button>
+                  <button class="resizeButton" data-size="square"><img src="/edit/images/Group 296.png" alt="" /></button>
                 </div>
               </div>
             </div>
@@ -182,16 +174,17 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/coverB/images/coverA.png" alt="" />
+              <div class="swiper-slide_box uniqueColor">
+                <img src="/coverB/images/coverA-textnone.png" alt="" />
                 <div class="input-drop">
-                  <!-- <div id="dropAreaB" class="empty"></div> -->
+                  <textarea id="textAreaA-1" rows="1" maxlength="10" class="text-empty text-size" placeholder="入力してください"> </textarea>
 
-                  <textarea id="textAreaB-1" rows="1" maxlength="10" class="text-empty text-size" placeholder="2024"></textarea>
-                  <textarea id="textAreaB-2" rows="1" maxlength="20" class="text-empty text-colorB" placeholder=" "></textarea>
-                  <textarea id="textAreaB-3" rows="1" maxlength="8" class="text-empty text-colorB" placeholder="KENTO"></textarea>
-                  <textarea id="textAreaB-4" maxlength="30" class="text-empty" placeholder="KOTOBUM"></textarea>
-                  <div id="dropAreaB" class="empty"></div>
+                  <textarea id="textAreaA-2" rows="1" maxlength="20" class="text-empty text-color" placeholder="入力してください"></textarea>
+                  <textarea id="textAreaA-3" rows="1" maxlength="8" class="text-empty text-color" placeholder="入力してください"></textarea>
+
+                  <textarea id="textArea-cover" maxlength="30" class="text-empty textArea-cover" placeholder="入力してください"></textarea>
+
+                  <div id="dropAreaA" class="empty"></div>
                 </div>
               </div>
             </div>
@@ -223,6 +216,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/croppie/croppie.min.js"></script>
-    <script src="/coverB/js/script.js"></script>
+    <script src="/coverB3/js/script.js"></script>
   </body>
 </html>

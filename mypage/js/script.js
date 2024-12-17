@@ -153,22 +153,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     })
-    .catch((error) => {
-      console.error('失敗:', error);
-      alert('名前の取得に失敗しました。3秒後にログインページにリダイレクトします。');
-      let countdown = 3; // カウントダウンの秒数
-      const display = document.getElementById('countdown');
+  // .catch((error) => {
+  //   console.error('失敗:', error);
+  //   alert('名前の取得に失敗しました。3秒後にログインページにリダイレクトします。');
+  //   let countdown = 3; // カウントダウンの秒数
+  //   const display = document.getElementById('countdown');
 
-      const timer = setInterval(() => {
-        display.textContent = `${countdown}秒後にログインページにリダイレクトします...`;
-        countdown--;
+  //   const timer = setInterval(() => {
+  //     display.textContent = `${countdown}秒後にログインページにリダイレクトします...`;
+  //     countdown--;
 
-        if (countdown < 0) {
-          clearInterval(timer); // タイマーを止める
-          window.location.href = "../login"; // リダイレクト
-        }
-      }, 1000); // 1秒ごとに実行
-    });
+  //     if (countdown < 0) {
+  //       clearInterval(timer); // タイマーを止める
+  //       window.location.href = "../login"; // リダイレクト
+  //     }
+  //   }, 1000); // 1秒ごとに実行
+  // });
 });
 
 //----------------- モーダルに関するJavaScript---------------------

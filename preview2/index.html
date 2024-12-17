@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <title>B面の中身のプレビューページ</title>
+    <title>A面の中身のプレビューページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
   </head>
   <body class="preview-body">
-    <header class="preview-header">
+    <header class="edit-header">
       <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <a href="/edit2/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
       <button class="btn btn-small_bl btn-small_bl-kou js-modal-open">校了</button>
@@ -32,10 +32,10 @@
             <button class="btn btn-middle_bl modal-content__button modal-content__button-pc modal-change_l">校了する</button>
             <button class="btn btn-small_bl modal-content__button modal-content__button-sp modal-change_l">校了</button>
 
-            <button class="btn btn-middle_wh modal-content__button modal-content__button-pc">
+            <button class="btn btn-middle_wh modal-content__button modal-content__button-pc js-modal-close">
               <a href="/edit2/index.html"> 編集ページへ </a>
             </button>
-            <button class="btn btn-small_wh modal-content__button modal-content__button-sp">
+            <button class="btn btn-small_wh modal-content__button modal-content__button-sp js-modal-close">
               <a href="/edit2/index.html"> 編集ページへ </a>
             </button>
           </div>
@@ -59,104 +59,69 @@
       </div>
     </header>
 
-    <div class="preview">
+    <div class="previewB">
       <div class="content" id="content">
         <!-- スライダー -->
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper-slide-hidden">
-              <div class="swiper-slide_box2 uniqueColor">
+              <div class="swiper-slide_box2 uniqueColorB">
                 <img src="/edit/images/template/p1@2x.png" alt="" />
                 <div class="input-drop"></div>
               </div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/rightspace@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea1-1_t2" rows="1" maxlength="16" class="text-empty text-color" placeholder="AKI" readonly></textarea>
-                  <div class="page1_text uniqueColor">
-                    <textarea id="textArea1-2_t2" rows="1" maxlength="20" class="text-empty" placeholder=""></textarea>
-                  </div>
-                  <div id="dropArea1_t2" class="empty"></div>
-                  <textarea id="textArea1-3_t2" rows="1" maxlength="72" class="text-empty" readonly></textarea>
-                </div>
-              </div>
-              <div class="page-number">1/12</div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
-                <div class="input-drop">
-                  <div id="dropArea2_t2" class="empty"></div>
-                </div>
-              </div>
-              <div class="page-number">2/12</div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea3_t2" rows="1" maxlength="544" class="text-empty" readonly></textarea>
-                  <p class="text-color">B-side story</p>
-                </div>
-              </div>
-              <div class="page-number">3/12</div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/picture3right2@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea4_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
-                  <div class="flex4_t2">
-                    <div id="dropArea4-1_t2" class="empty"></div>
-                    <div id="dropArea4-2_t2" class="empty"></div>
-                    <div id="dropArea4-3_t2" class="empty"></div>
+                  <textarea id="textAreaB12-1_t2" rows="1" maxlength="30" class="text-empty" readonly></textarea>
+                  <div class="flexB12-1">
+                    <div id="dropAreaB12_t2" class="empty"></div>
+                    <textarea id="textAreaB12-2_t2" rows="1" maxlength="300" class="text-empty" readonly></textarea>
+                    <textarea id="textAreaB12-3_t2" rows="1" maxlength="120" class="text-empty text-colorB" readonly></textarea>
                   </div>
                 </div>
               </div>
-              <div class="page-number">4/12</div>
+              <div class="page-number">12/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/text@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea5_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
-                  <p class="text-color">B-side story</p>
+                  <textarea id="textArea11_t2" rows="1" maxlength="30" class="text-empty text-colorB" readonly></textarea>
+                  <p class="bottom-text">A-side story</p>
                 </div>
               </div>
-              <div class="page-number">5/12</div>
+              <div class="page-number">11/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/picture1@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/harf@2x.png" alt="" />
                 <div class="input-drop">
-                  <div id="dropArea6_t2" class="empty"></div>
+                  <textarea id="textArea10-1_t2" rows="1" maxlength="32" class="text-empty" readonly></textarea>
+                  <div id="dropArea10_t2" class="empty"></div>
+                  <textarea id="textArea10-2_t2" rows="1" maxlength="32" class="text-empty text-colorB" readonly></textarea>
                 </div>
               </div>
-              <div class="page-number">6/12</div>
+              <div class="page-number">10/12</div>
             </div>
-
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea7_t2" rows="1" maxlength="560" class="text-empty" readonly></textarea>
-                  <p class="text-color">B-side story</p>
+                  <textarea id="textArea9_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
+                  <p class="text-colorB">A-side story</p>
                 </div>
               </div>
-              <div class="page-number">7/12</div>
+              <div class="page-number">9/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/picture2@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/picture2@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea id="textArea8_t2" rows="1" maxlength="32" class="text-empty" readonly></textarea>
                   <div id="dropArea8-1_t2" class="empty"></div>
@@ -167,56 +132,90 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/toppage_text@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea9_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
-                  <p class="text-color">B-side story</p>
+                  <textarea id="textArea7_t2" rows="1" maxlength="560" class="text-empty" readonly></textarea>
+                  <p class="text-colorB">A-side story</p>
                 </div>
               </div>
-              <div class="page-number">9/12</div>
+              <div class="page-number">7/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/harf@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/picture1@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea10-1_t2" rows="1" maxlength="32" class="text-empty text-color" readonly></textarea>
-                  <div id="dropArea10_t2" class="empty"></div>
-                  <textarea id="textArea10-2_t2" rows="1" maxlength="32" class="text-empty text-color" readonly></textarea>
+                  <div id="dropArea6_t2" class="empty"></div>
                 </div>
               </div>
-              <div class="page-number">10/12</div>
+              <div class="page-number">6/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/text@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea11_t2" rows="1" maxlength="30" class="text-empty text-color" readonly></textarea>
-                  <p class="bottom-text">B-side story</p>
+                  <textarea id="textArea5_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
+                  <p class="text-colorB">A-side story</p>
                 </div>
               </div>
-              <div class="page-number">11/12</div>
+              <div class="page-number">5/12</div>
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box2 uniqueColor">
-                <img src="/edit2/images/template/leftspace@2x.png" alt="" />
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/picture3left@2x.png" alt="" />
                 <div class="input-drop">
-                  <textarea id="textArea12-1_t2" rows="1" maxlength="30" class="text-empty" readonly></textarea>
-                  <div class="flex12-1">
-                    <div id="dropArea12_t2" class="empty"></div>
-                    <textarea id="textArea12-2_t2" rows="1" maxlength="300" class="text-empty" readonly></textarea>
-                    <textarea id="textArea12-3_t2" rows="1" maxlength="120" class="text-empty text-color" readonly></textarea>
+                  <textarea id="textAreaB4_t2" rows="1" maxlength="504" class="text-empty" readonly></textarea>
+                  <div class="flexB4_t2">
+                    <div id="dropAreaB4-1_t2" class="empty"></div>
+                    <div id="dropAreaB4-2_t2" class="empty"></div>
+                    <div id="dropAreaB4-3_t2" class="empty"></div>
                   </div>
                 </div>
               </div>
-              <div class="page-number">12/12</div>
+              <div class="page-number">4/12</div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
+                <div class="input-drop">
+                  <textarea id="textArea3_t2" rows="1" maxlength="544" class="text-empty" readonly></textarea>
+                  <p class="text-colorB">A-side story</p>
+                </div>
+              </div>
+              <div class="page-number">3/12</div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
+                <div class="input-drop">
+                  <div id="dropArea2_t2" class="empty"></div>
+                </div>
+              </div>
+              <div class="page-number">2/12</div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide_box2 uniqueColorB">
+                <img src="/editB2/images/template/toppage_text@2x.png" alt="" />
+                <div class="input-drop">
+                  <textarea id="textArea1-1_t2" rows="1" maxlength="16" class="text-empty text-colorB" readonly></textarea>
+                  <div class="page1_text uniqueColorB">
+                    <textarea id="textArea1-2_t2" rows="1" maxlength="20" class="text-empty" placeholder=""></textarea>
+                  </div>
+                  <div id="dropArea1_t2" class="empty"></div>
+                  <textarea id="textArea1-3_t2" rows="1" maxlength="72" class="text-empty" readonly></textarea>
+                </div>
+              </div>
+              <div class="page-number">1/12</div>
             </div>
 
             <div class="swiper-slide swiper-slide-hidden">
-              <div class="swiper-slide_box2 uniqueColor">
+              <div class="swiper-slide_box2 uniqueColorB">
                 <img src="/edit/images/template/p1@2x.png" alt="" />
                 <div class="input-drop"></div>
               </div>
@@ -229,6 +228,7 @@
             <a href="/edit2/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
           </div>
         </div>
+
         <div class="swiperbutton">
           <div class="swiper-button-prev swbtnpre" id="swbtnpre"></div>
           <div class="swiper-button-next swbtnnext" id="swbtnnext"></div>

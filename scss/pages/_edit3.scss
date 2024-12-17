@@ -1541,239 +1541,239 @@
   }
 }
 
-.page-number {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  color: #000000;
-}
+// .page-number {
+//   position: absolute;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   bottom: 0;
+//   color: #000000;
+// }
 
-.swiper-button-prev {
-  // left: 0;
-  // top: 170px;
+// .swiper-button-prev {
+//   // left: 0;
+//   // top: 170px;
 
-  left: 43%;
-  top: 15vh;
-  --swiper-navigation-size: 75px;
+//   left: 43%;
+//   top: 15vh;
+//   --swiper-navigation-size: 75px;
 
-  @include mq('tab-edit') {
-    top: var(--swiper-navigation-top-offset, 50%);
-    left: var(--swiper-navigation-sides-offset, 10px);
-    right: auto;
-  }
-  @media screen and (min-width: 901px) and (max-width: 1200px) {
-    left: 42%;
-    top: 20vh;
-  }
-  @include mq('pc2-edit') {
-    left: 42%;
-    top: 10%;
-  }
-}
+//   @include mq('tab-edit') {
+//     top: var(--swiper-navigation-top-offset, 50%);
+//     left: var(--swiper-navigation-sides-offset, 10px);
+//     right: auto;
+//   }
+//   @media screen and (min-width: 901px) and (max-width: 1200px) {
+//     left: 42%;
+//     top: 20vh;
+//   }
+//   @include mq('pc2-edit') {
+//     left: 42%;
+//     top: 10%;
+//   }
+// }
 
-.swiper-button-next {
-  right: 43%;
-  top: 15vh;
-  --swiper-navigation-size: 75px;
+// .swiper-button-next {
+//   right: 43%;
+//   top: 15vh;
+//   --swiper-navigation-size: 75px;
 
-  @include mq('tab-edit') {
-    top: var(--swiper-navigation-top-offset, 50%);
-    right: var(--swiper-navigation-sides-offset, 10px);
-    left: auto;
-  }
-  @media screen and (min-width: 901px) and (max-width: 1200px) {
-    right: 42%;
-    top: 20vh;
-  }
-  @include mq('pc2-edit') {
-    right: 42%;
-    top: 10%;
-  }
-}
+//   @include mq('tab-edit') {
+//     top: var(--swiper-navigation-top-offset, 50%);
+//     right: var(--swiper-navigation-sides-offset, 10px);
+//     left: auto;
+//   }
+//   @media screen and (min-width: 901px) and (max-width: 1200px) {
+//     right: 42%;
+//     top: 20vh;
+//   }
+//   @include mq('pc2-edit') {
+//     right: 42%;
+//     top: 10%;
+//   }
+// }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: '';
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
+// .swiper-button-prev:after,
+// .swiper-button-next:after {
+//   content: '';
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   height: 50px;
+//   width: 50px;
+//   margin: auto;
+// }
 
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
+// /* 前に戻る画像パス */
+// .swiper-button-prev:after {
+//   background-image: url(../../../editB/images/Group\ 293.png);
+// }
+// /* 次に進む画像パス */
+// .swiper-button-next:after {
+//   background-image: url(../../../editB/images/Group\ 294.png);
+// }
 
-.croppie-modal {
-  display: none;
-  border-radius: 20px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fdfcf6;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
-  z-index: 999;
+// .croppie-modal {
+//   display: none;
+//   border-radius: 20px;
+//   position: fixed;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   background-color: #fdfcf6;
+//   padding: 20px;
+//   box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+//   z-index: 999;
 
-  #croppie-container {
-    margin-bottom: 10px;
+//   #croppie-container {
+//     margin-bottom: 10px;
 
-    .cr-slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 4px;
-      background-color: #53535359;
-      border-radius: 5px;
-      margin: 0;
-      padding: 0;
-      opacity: 0.8;
-      // box-sizing: border-box;
-    }
+//     .cr-slider {
+//       -webkit-appearance: none;
+//       width: 100%;
+//       height: 4px;
+//       background-color: #53535359;
+//       border-radius: 5px;
+//       margin: 0;
+//       padding: 0;
+//       opacity: 0.8;
+//       // box-sizing: border-box;
+//     }
 
-    .cr-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 35px;
-      height: 35px;
-      background: url('/edit/images/croppie.png') no-repeat center; /* アイコン画像を指定 */
-      margin-top: -12px;
-      cursor: pointer;
-      border: none;
-      background-size: contain;
-    }
-  }
+//     .cr-slider::-webkit-slider-thumb {
+//       -webkit-appearance: none;
+//       appearance: none;
+//       width: 35px;
+//       height: 35px;
+//       background: url('/editB/images/croppie.png') no-repeat center; /* アイコン画像を指定 */
+//       margin-top: -12px;
+//       cursor: pointer;
+//       border: none;
+//       background-size: contain;
+//     }
+//   }
 
-  .btn-wrapper {
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
+//   .btn-wrapper {
+//     margin-top: 35px;
+//     display: flex;
+//     justify-content: space-between;
 
-    @include mq('tab-edit') {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-  }
-}
+//     @include mq('tab-edit') {
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       gap: 15px;
+//     }
+//   }
+// }
 
-#customButton {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
+// #customButton {
+//   background-color: #4caf50;
+//   color: white;
+//   border: none;
+//   padding: 10px 20px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   margin: 4px 2px;
+//   cursor: pointer;
+//   border-radius: 4px;
+// }
 
-#customButton:hover {
-  background-color: #45a049;
-}
+// #customButton:hover {
+//   background-color: #45a049;
+// }
 
-// ドロップ後ボタン　タッチ用（スマホ）-----------
-/* 削除ボタンのスタイル*/
-.delete-button {
-  position: absolute;
-  top: 2%;
-  right: 0%;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 12%;
-  height: 15%;
-  cursor: pointer;
-  opacity: 0.8;
-  display: flex; /* 初期状態で表示 */
-}
+// // ドロップ後ボタン　タッチ用（スマホ）-----------
+// /* 削除ボタンのスタイル*/
+// .delete-button {
+//   position: absolute;
+//   top: 2%;
+//   right: 0%;
+//   background: url(/editB/images/delete.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border: none;
+//   width: 12%;
+//   height: 15%;
+//   cursor: pointer;
+//   opacity: 0.8;
+//   display: flex; /* 初期状態で表示 */
+// }
 
-/* トリミングボタンのスタイル*/
-.crop-button {
-  position: absolute;
-  top: 2%;
-  right: 11%;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 12%;
-  height: 15%;
-  cursor: pointer;
-  opacity: 0.8;
-  display: flex; /* 初期状態で表示 */
-}
+// /* トリミングボタンのスタイル*/
+// .crop-button {
+//   position: absolute;
+//   top: 2%;
+//   right: 11%;
+//   background: url(/editB/images/crop.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border: none;
+//   width: 12%;
+//   height: 15%;
+//   cursor: pointer;
+//   opacity: 0.8;
+//   display: flex; /* 初期状態で表示 */
+// }
 
-// ドロップ後ボタン　ドラッグ＆ドロップ用（PC用）-----------
-.crop-btn {
-  position: absolute;
-  top: 2px;
-  right: 10%;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 13%;
-  height: 15%;
-  cursor: pointer;
-  opacity: 0.8;
+// // ドロップ後ボタン　ドラッグ＆ドロップ用（PC用）-----------
+// .crop-btn {
+//   position: absolute;
+//   top: 2px;
+//   right: 10%;
+//   background: url(/editB/images/crop.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border: none;
+//   width: 13%;
+//   height: 15%;
+//   cursor: pointer;
+//   opacity: 0.8;
 
-  &:hover {
-    opacity: 1;
-  }
+//   &:hover {
+//     opacity: 1;
+//   }
 
-  &.show {
-    display: flex;
-  }
-}
+//   &.show {
+//     display: flex;
+//   }
+// }
 
-.delete-btn {
-  position: absolute;
-  top: 2px;
-  right: 0%;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 12%;
-  height: 15%;
-  cursor: pointer;
-  opacity: 0.8;
+// .delete-btn {
+//   position: absolute;
+//   top: 2px;
+//   right: 0%;
+//   background: url(/editB/images/delete.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   border: none;
+//   width: 12%;
+//   height: 15%;
+//   cursor: pointer;
+//   opacity: 0.8;
 
-  &:hover {
-    opacity: 1;
-  }
+//   &:hover {
+//     opacity: 1;
+//   }
 
-  &.show {
-    display: flex;
-  }
-}
-// ----------------------------------
+//   &.show {
+//     display: flex;
+//   }
+// }
+// // ----------------------------------
 
-/* ボタンを非表示にするためのクラス */
-.hide-buttons .delete-button,
-.hide-buttons .crop-button {
-  display: none; /* 非表示 */
-}
+// /* ボタンを非表示にするためのクラス */
+// .hide-buttons .delete-button,
+// .hide-buttons .crop-button {
+//   display: none; /* 非表示 */
+// }
 
-.log {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: 10px;
-  max-height: 300px;
-  overflow-y: auto;
-  font-family: Arial, sans-serif;
-  margin: 10px 0;
-}
+// .log {
+//   background-color: #f8f8f8;
+//   border: 1px solid #ddd;
+//   padding: 10px;
+//   max-height: 300px;
+//   overflow-y: auto;
+//   font-family: Arial, sans-serif;
+//   margin: 10px 0;
+// }

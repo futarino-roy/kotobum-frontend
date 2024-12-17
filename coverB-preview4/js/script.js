@@ -1,21 +1,21 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
     pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
+        el: ".swiper-pagination",
+        type: "fraction",
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     slidesPerView: 1, // 常に1枚のスライドを表示
     slidesPerGroup: 1, // 常に1スライドずつ移動
 });
 
 // メインのスライドからプレビュー
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // URLのクエリパラメータを取得
     const urlParams = new URLSearchParams(window.location.search);
-    const slideNumber = urlParams.get('slide');
+    const slideNumber = urlParams.get("slide");
 
     // 取得したスライド番号を使って対応するスライドを表示
     if (slideNumber) {
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // プレビューからメイン
-document.getElementById('editBack').addEventListener('click', function () {
+document.getElementById("editBack").addEventListener("click", function () {
     const currentSlideIndex = swiper.realIndex; // 現在のスライドインデックスを取得
-    const mainPageUrl = `../coverB/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
+    const mainPageUrl = `../edit/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
     window.location.href = mainPageUrl; // メインページに遷移
 });
 
@@ -83,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
 });
 
-
 // 枠 柔軟版
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // 枠のサイズ変更処理
     function applyBorders() {
         // dropAreaを含む全ての要素を取得
@@ -94,11 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
         dropAreas.forEach((dropAreaContainer) => {
             // IDからサイズの情報を取得
             const dropAreaId = dropAreaContainer.id;
-            // ここでローカルストレージからサイズ情報を取得する処理を削除しました。
+            // localStorageからサイズの情報を取得する処理を削除
             // const dropAreaSize = localStorage.getItem(`dropAreaSize_${dropAreaId}`);
-            // もし必要であれば、他の方法でサイズを管理してください。
 
-            // サイズの適用処理は必要に応じて追加してください
+            // dropAreaSizeが存在するかをチェックする処理を削除
+            // if (dropAreaSize) {
+            //   dropAreaContainer.classList.add(dropAreaSize);
+            // }
         });
     }
 
@@ -116,49 +117,49 @@ function adjustTextareaSize(textarea) {
     textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
-// プレビューページでテキストエリアに表示する関数
+// プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
     // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
-    const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+    const textAreas = document.querySelectorAll(
+        'textarea[id^="previewTextArea"]'
+    );
 
     textAreas.forEach((textArea) => {
-        // IDからインデックスを取得
-        textArea.value = ''; // ローカルストレージからの取得処理を削除
-        // テキストエリアの高さを調整
-        adjustTextareaSize();
+        // テキストエリアの高さと幅を調整
+        adjustTextareaHeight(textArea);
+        adjustTextareaWidth(textArea);
     });
 }
 
 // ドキュメントが読み込まれたときにテキストを表示
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     loadTextForPreview();
 });
 
 //-------------------------------------追加----------------------------------
-// // テキストエリアの高さを調整する関数
-// function adjustHeight(textarea) {
-//   textarea.style.height = "auto";
-//   textarea.style.height = `${textarea.scrollHeight}px`;
-// }
+// テキストエリアの高さを調整する関数
+function adjustHeight(textarea) {
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+}
 
-// // テキストエリアの幅を調整する関数
-// function adjustTextareaWidth(textarea) {
-//   textarea.style.width = "auto";
-//   const scrollWidth = textarea.scrollWidth;
-//   textarea.style.width = `${scrollWidth}px`;
-// }
+// テキストエリアの幅を調整する関数
+function adjustTextareaWidth(textarea) {
+    textarea.style.width = "auto";
+    const scrollWidth = textarea.scrollWidth;
+    textarea.style.width = `${scrollWidth}px`;
+}
 
-// // 最大文字数の制限を外し、イベントリスナーを追加する関数
-// function enforceNoMaxLength(textarea) {
-//   textarea.addEventListener("input", function () {
-//     adjustHeight(this);
-//     adjustTextareaWidth(this);
-//     saveTextToLocalStorage();
-//   });
+// 最大文字数の制限を外し、イベントリスナーを追加する関数
+function enforceNoMaxLength(textarea) {
+    textarea.addEventListener("input", function () {
+        adjustHeight(this);
+        adjustTextareaWidth(this);
+    });
 
-//   adjustHeight(textarea);
-//   adjustTextareaWidth(textarea);
-// }
+    adjustHeight(textarea);
+    adjustTextareaWidth(textarea);
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const textAreas = document.querySelectorAll('.text-size');
@@ -189,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // テキストエリアに入力があったときにline-heightを調整
     textAreas.forEach(textArea => {
         textArea.addEventListener('input', function () {
+            // 高さを自動調整
             this.style.height = '';
             adjustLineHeight(this); // line-heightを調整
         });
@@ -230,17 +232,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
-    const savedColor = ''; // ローカルストレージからの取得処理を削除
-    // もし色が必要な場合は、色を直接指定してください。
+    const savedColor = localStorage.getItem("backgroundColorA");
     if (savedColor) {
         // 背景色を適用
-        let elements = document.getElementsByClassName('uniqueColorB');
+        let elements = document.getElementsByClassName("uniqueColor");
         for (let i = 0; i < elements.length; i++) {
             elements[i].style.backgroundColor = savedColor;
         }
 
         // テキスト色を適用
-        let textElements = document.getElementsByClassName('text-colorB');
+        let textElements = document.getElementsByClassName("text-color");
         for (let i = 0; i < textElements.length; i++) {
             textElements[i].style.color = savedColor;
         }
@@ -248,10 +249,9 @@ function applySavedColor() {
 }
 
 // ドキュメントが読み込まれたときに色を適用
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     applySavedColor();
 });
-
 
 //--------------------------API連携------------------------------------
 
@@ -343,20 +343,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 色データを反映
             const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
-            console.log('colors:', colors);
             if (colors) {
                 const { backgroundColor, textColor } = colors;
-
-                // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-                document.querySelectorAll('.uniqueColorB').forEach(element => {
-                    element.style.backgroundColor = backgroundColor || '#ffffff';
-                });
-
-                // `.text-color` クラスを持つすべての要素にテキスト色を設定
-                document.querySelectorAll('.text-colorB').forEach(element => {
-                    element.style.color = textColor || '#000000';
-                });
-
+                document.querySelector('.uniqueColor').style.backgroundColor = backgroundColor || '#ffffff';
+                document.querySelector('.text-color').style.color = textColor || '#000000';
                 console.log(`背景色: ${backgroundColor}, テキスト色: ${textColor}`);
             } else {
                 console.warn('色データが存在しません。');
@@ -366,7 +356,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('データ取得エラー:', error);
         });
 });
-
 
 //----------------- モーダルに関するJavaScript---------------------
 

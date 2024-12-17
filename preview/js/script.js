@@ -6,6 +6,7 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
+  initialSlide: 23, // 最後のスライドのインデックス
   breakpoints: {
     900: {
       slidesPerView: 2,
@@ -30,7 +31,7 @@ const swiper = new Swiper('.swiper', {
 // プレビューからメイン
 document.getElementById('editBack').addEventListener('click', function () {
   const currentSlideIndex = swiper.realIndex; // 現在のスライドインデックスを取得
-  const mainPageUrl = `../edit/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
+  const mainPageUrl = `../editB/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
   window.location.href = mainPageUrl; // メインページに遷移
 });
 
@@ -208,19 +209,69 @@ document.getElementById('editBack').addEventListener('click', function () {
 //   loadTextForPreview();
 // });
 
+// function adjustTextareaSize(textarea) {
+//   // 高さをリセットしてから内容に応じて高さを調整
+//   textarea.style.height = "auto";
+//   textarea.style.height = `${textarea.scrollHeight}px`;
+
+//   // 幅をリセットしてから内容に応じて幅を調整
+//   textarea.style.width = "auto";
+//   textarea.style.width = `${textarea.scrollWidth}px`;
+// }
+
+// // プレビューページでテキストエリアに表示する関数
+// function loadTextForPreview() {
+//   // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
+//   const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
+
+//   textAreas.forEach((textArea) => {
+//     // IDからインデックスを取得
+//     textArea.value = ''; // ローカルストレージからの取得処理を削除
+//     // テキストエリアの高さを調整
+//     adjustTextareaSize();
+//   });
+// }
+
+// // ドキュメントが読み込まれたときにテキストを表示
+// document.addEventListener('DOMContentLoaded', function () {
+//   loadTextForPreview();
+// });
+
+// --------------------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', function () {
+//   document.querySelectorAll('textarea').forEach((textarea) => {
+//     // ページロード時にテキストエリアの幅を調整
+//     adjustTextareaWidth(textarea);
+
+//     // 入力時にテキストエリアの幅を調整
+//     textarea.addEventListener('input', function () {
+//       adjustTextareaWidth(this);
+//     });
+//   });
+// });
+
+// function adjustTextareaWidth(textarea) {
+//   // 一時的に横幅を自動調整して、内容に合わせて適切な幅を取得
+//   textarea.style.width = 'auto';
+//   // スクロール幅を取得し、その幅に基づいてテキストエリアの幅を調整
+//   const scrollWidth = textarea.scrollWidth;
+//   textarea.style.width = scrollWidth + 'px';
+// }
+// ----------------------------------------------------------------------
+
 // 色変更
 // プレビューページで色を適用する関数
 // function applySavedColor() {
-//   const savedColor = localStorage.getItem('backgroundColorA');
+//   const savedColor = localStorage.getItem('backgroundColorB');
 //   if (savedColor) {
 //     // 背景色を適用
-//     let elements = document.getElementsByClassName('uniqueColor');
+//     let elements = document.getElementsByClassName('uniqueColorB');
 //     for (let i = 0; i < elements.length; i++) {
 //       elements[i].style.backgroundColor = savedColor;
 //     }
 
 //     // テキスト色を適用
-//     let textElements = document.getElementsByClassName('text-color');
+//     let textElements = document.getElementsByClassName('text-colorB');
 //     for (let i = 0; i < textElements.length; i++) {
 //       textElements[i].style.color = savedColor;
 //     }
@@ -232,6 +283,7 @@ document.getElementById('editBack').addEventListener('click', function () {
 //   applySavedColor();
 // });
 
+// ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
 
@@ -282,55 +334,60 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       console.log('取得したデータ:', data);
 
-      // テキストデータを反映
+      // 必要に応じてJSON文字列をパースして配列に変換
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
-      if (textData && Array.isArray(textData)) {
+      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
+      const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors);
+
+      console.log(textData); // テキストデータの配列
+      console.log(imageData); // 画像データの配列
+      console.log(colors);    // 色情報のオブジェクト
+
+
+      // データの存在チェック
+      if (!textData || !Array.isArray(textData)) {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
+      } else {
+        // テキストデータを表示
         textData.forEach(item => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
-            adjustTextareaSize(textArea);
           } else {
             console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
-      // 画像データを反映
-      const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
-      if (imageData && Array.isArray(imageData)) {
+      if (!imageData || !Array.isArray(imageData)) {
+        console.warn('画像データが存在しないか、配列ではありません。');
+      } else {
+        // 画像データを表示
         imageData.forEach(item => {
           const dropArea = document.getElementById(item.id);
           if (dropArea && item.image) {
             const img = document.createElement('img');
             img.src = item.image;
             img.alt = 'Image';
-            img.style.width = '100%';
-            img.style.height = '100%';
             dropArea.appendChild(img);
           } else {
             console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
           }
         });
-      } else {
-        console.warn('画像データが存在しないか、配列ではありません。');
       }
 
-      // 色データを反映
-      const colors = typeof data.colors === 'string' ? JSON.parse(data.colors) : data.colors;
+      // 背景色とテキスト色を設定
       console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
 
         // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-        document.querySelectorAll('.uniqueColor').forEach(element => {
+        document.querySelectorAll('.uniqueColorB').forEach(element => {
           element.style.backgroundColor = backgroundColor || '#ffffff';
         });
 
         // `.text-color` クラスを持つすべての要素にテキスト色を設定
-        document.querySelectorAll('.text-color').forEach(element => {
+        document.querySelectorAll('.text-colorB').forEach(element => {
           element.style.color = textColor || '#000000';
         });
 
@@ -340,6 +397,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
     .catch(error => {
-      console.error('データ取得エラー:', error);
+      console.error('アルバムデータ取得中にエラーが発生しました:', error.message);
     });
 });

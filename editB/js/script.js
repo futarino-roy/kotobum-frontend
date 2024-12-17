@@ -1,4 +1,4 @@
-// スライド
+// // スライド
 // const swiper = new Swiper('.swiper', {
 //   navigation: {
 //     nextEl: '.swiper-button-next',
@@ -6,12 +6,11 @@
 //   },
 //   slidesPerView: 1,
 //   slidesPerGroup: 1,
-//   initialSlide: 23, // 初期スライド
+//   initialSlide: 23, // 最後のスライドのインデックス（例: 24スライドの場合）
 //   breakpoints: {
 //     900: {
 //       slidesPerView: 2,
 //       slidesPerGroup: 2,
-//       initialSlide: Math.floor(24 / 2), // スライドを2つずつ表示する場合の調整
 //     },
 //   },
 // });
@@ -65,6 +64,43 @@
 //   }
 // });
 
+
+// // モーダル要素の取得
+// const modal = document.getElementById('customModal');
+// const discardBtn = document.getElementById('discardBtn');
+
+// // ダミーの状態を履歴に追加
+// history.pushState(null, document.title, window.location.href);
+
+// // ユーザーが「戻る」ボタンを押した際に popstate イベントを発火
+// window.addEventListener('popstate', (event) => {
+//   // モーダルを表示
+//   modal.classList.add('show');
+//   // 履歴にもう一度ダミーの状態を追加
+//   history.pushState(null, document.title, window.location.href);
+// });
+
+// // 「保存する」ボタンがクリックされたときの処理
+// saveBtn.addEventListener('click', () => {
+//   modal.classList.remove('show');
+//   alert('内容が保存されました');
+//   // 実際に戻る操作を実行
+//   window.location.href = '/mypage/index.html';   // 戻るボタンが押される前のページに遷移
+// });
+
+// // 「保存せずに戻る」ボタンがクリックされたときの処理
+// discardBtn.addEventListener('click', () => {
+//   modal.classList.remove('show');
+//   // 実際に戻る操作を実行
+//   window.location.href = '/mypage/index.html';  // 戻るボタンが押される前のページに遷移
+// });
+
+// modal.addEventListener('click', (event) => {
+//   if (event.target === modal) { // モーダルの外側がクリックされた場合
+//     modal.classList.remove('show'); // モーダルを閉じる
+//   }
+// });
+
 // Swiperの初期化
 const swiper = new Swiper('.swiper', {
   navigation: {
@@ -73,7 +109,6 @@ const swiper = new Swiper('.swiper', {
   },
   slidesPerView: 1,
   slidesPerGroup: 1,
-  initialSlide: 23, // 最後のスライドのインデックス
   breakpoints: {
     900: {
       slidesPerView: 2,
@@ -81,35 +116,7 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-// テキストエリアの要素を取得
-const bugFixes = document.querySelectorAll('.swiper textarea');
-bugFixes.forEach((textarea) => {
-  // フォーカスが当たったときの処理
-  textarea.addEventListener('focus', () => {
-    swiper.allowTouchMove = false; // スワイプ無効
-  });
-  // フォーカスが外れたときの処理
-  textarea.addEventListener('blur', () => {
-    swiper.allowTouchMove = true; // スワイプ有効
-  });
-  // // Enterキーが押されたときの処理
-  // textarea.addEventListener('keydown', (event) => {
-  //   if (event.key === 'Enter') {
-  //     event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
-  //   }
-  // });
-  // 完了ボタン押下時の処理
-  textarea.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-      textarea.blur(); // テキストエリアのフォーカスを外す
-      // ここに必要なら、Swiperの現在のスライドを確認するロジックを追加
-    }
-  });
-  // ここでは、blurイベントを使ってフォーカスを外したときの処理も行います
-  textarea.addEventListener('blur', () => {
-    swiper.allowTouchMove = true; // スワイプ有効
-  });
-});
+
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
@@ -119,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentSlideIndex = swiper.realIndex;
 
     // プレビューページのURLを動的に設定
-    const previewUrl = `../previewB/index.html?slide=${currentSlideIndex + 1}`;
+    const previewUrl = `../preview/index.html?slide=${currentSlideIndex + 1}`;
 
     // プレビューページに遷移
     window.location.href = previewUrl;
@@ -825,7 +832,6 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //     localStorage.setItem(id, textArea.value);
 //   });
 // }
-
 // // テキストエリアの内容をローカルストレージから読み込む関数
 // function loadTextFromLocalStorage() {
 //   document.querySelectorAll('.text-empty').forEach((textArea) => {
@@ -833,20 +839,17 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //     textArea.value = localStorage.getItem(id) || '';
 //   });
 // }
-
 // // テキストエリアの高さを調整する関数
 // function adjustHeight(textarea) {
 //   textarea.style.height = 'auto';
 //   textarea.style.height = `${textarea.scrollHeight}px`;
 // }
-
 // // テキストエリアの幅を調整する関数
 // function adjustTextareaWidth(textarea) {
 //   textarea.style.width = 'auto';
 //   const scrollWidth = textarea.scrollWidth;
 //   textarea.style.width = `${scrollWidth}px`;
 // }
-
 // // 最大文字数の制限を外し、イベントリスナーを追加する関数
 // function enforceNoMaxLength(textarea) {
 //   textarea.addEventListener('input', function () {
@@ -857,7 +860,6 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   adjustHeight(textarea);
 //   adjustTextareaWidth(textarea);
 // }
-
 // // ドキュメント読み込み時の処理
 // document.addEventListener('DOMContentLoaded', function () {
 //   loadTextFromLocalStorage();
@@ -870,7 +872,6 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //     document.querySelectorAll('.text-empty').forEach((textarea) => adjustHeight(textarea));
 //   }, 100);
 // });
-
 // // テキストエリア枠の削除
 // document.addEventListener('DOMContentLoaded', function () {
 //   const textEmptys = document.querySelectorAll('.text-empty');
@@ -889,253 +890,276 @@ document.getElementById('frontButton').addEventListener('click', function () {
 //   updateBorders();
 // });
 
-// // 枠変更 24-1~3変更できない版
-// document.addEventListener('DOMContentLoaded', () => {
-//   const dropAreas = [];
-//   const resizeButtons = document.querySelectorAll('.resizeButton');
-//   let activeDropArea = null;
+// 枠変更 12-~3変更できない版 ローカルストレージに保存
+document.addEventListener('DOMContentLoaded', () => {
+  const dropAreas = [];
+  const resizeButtons = document.querySelectorAll('.resizeButton');
+  let activeDropArea = null;
 
-//   // ドロップエリアをすべて取得し、配列に追加
-//   document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
-//     dropAreas.push(dropArea);
-//     dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
-//   });
+  // ドロップエリアをすべて取得し、配列に追加
+  document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
+    dropAreas.push(dropArea);
+    dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
+  });
 
-//   // ドロップエリアがクリックまたはタッチされたときの処理
-//   const handleDropAreaInteraction = (dropArea) => {
-//     dropAreas.forEach((area) => area.classList.remove('active'));
-//     dropArea.classList.add('active');
-//     activeDropArea = dropArea;
-//   };
+  // ドロップエリアがクリックまたはタッチされたときの処理
+  const handleDropAreaInteraction = (dropArea) => {
+    dropAreas.forEach((area) => area.classList.remove('active'));
+    dropArea.classList.add('active');
+    activeDropArea = dropArea;
+  };
 
-//   // サイズ変更ボタンがクリックまたはタッチされたときの処理
-//   const handleResizeButtonInteraction = (button) => {
-//     if (activeDropArea) {
-//       // サイズ変更を禁止するドロップエリアのリスト
-//       const restrictedDropAreas = ['dropArea24-1', 'dropArea24-2', 'dropArea24-3'];
+  // サイズ変更ボタンがクリックまたはタッチされたときの処理
+  const handleResizeButtonInteraction = (button) => {
+    if (activeDropArea) {
+      // サイズ変更を禁止するドロップエリアのリスト
+      // const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
 
-//       // サイズ変更を禁止するドロップエリアでない場合のみ処理
-//       if (!restrictedDropAreas.includes(activeDropArea.id)) {
-//         // サイズをすべてリセット
-//         activeDropArea.classList.remove('square', 'rectangle', 'mini');
-//         // ボタンの data-size 属性に基づいてサイズを変更
-//         const size = button.getAttribute('data-size');
-//         activeDropArea.classList.add(size);
+      // サイズ変更を禁止するドロップエリアでない場合のみ処理
+      if (!restrictedDropAreas.includes(activeDropArea.id)) {
+        // サイズをすべてリセット
+        activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
+        // ボタンの data-size 属性に基づいてサイズを変更
+        const size = button.getAttribute('data-size');
+        activeDropArea.classList.add(size);
 
-//         // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-//         localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-//       }
-//     }
-//   };
+        // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
+        localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
+      }
+    }
+  };
 
-//   resizeButtons.forEach((button) => {
-//     button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
-//   });
+  resizeButtons.forEach((button) => {
+    button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
+  });
 
-//   // ページロード時にローカルストレージからサイズを復元
-//   dropAreas.forEach((dropArea) => {
-//     const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-//     if (savedSize) {
-//       dropArea.classList.add(savedSize);
-//     }
-//   });
-// });
+  // ページロード時にローカルストレージからサイズを復元
+  dropAreas.forEach((dropArea) => {
+    const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
+    if (savedSize) {
+      dropArea.classList.add(savedSize);
+    }
+  });
+});
 
-// 色変更
+// 背景色とテキストの色の変更 ローカルストレージに保存
 function changeColor(color) {
   // 背景色を変更する
-  // ユニークカラーBって名前が付いた範囲の色が全部変わる
-  let elements = document.getElementsByClassName('uniqueColorB');
+  let elements = document.getElementsByClassName('uniqueColor');
   for (let i = 0; i < elements.length; i++) {
     elements[i].style.backgroundColor = color;
   }
 
   // テキスト色を変更する
-  // テキストカラーBって名前が付いたテキストの色が変わる
-  let textElements = document.getElementsByClassName('text-colorB');
+  let textElements = document.getElementsByClassName('text-color');
   for (let i = 0; i < textElements.length; i++) {
     textElements[i].style.color = color;
   }
 
   // 色をローカルストレージに保存する
-  localStorage.setItem('backgroundColorB', color);
+  localStorage.setItem('backgroundColorA', color);
 }
 
 // ページ読み込み時にローカルストレージから色を取得して適用する
 document.addEventListener('DOMContentLoaded', function () {
-  const savedColor = localStorage.getItem('backgroundColorB');
+  const savedColor = localStorage.getItem('backgroundColorA');
   if (savedColor) {
-    // セーブカラーで好きな色に変えられる
     changeColor(savedColor);
   }
 });
 
+// ---------------- API連携に関して ---------------------
 
-
-// function previewSlides() {
-//     // スライド1の内容を取得
-//     const text1 = document.getElementById('textArea').value;
-//     // スライド2の内容を取得
-//     const text2 = document.getElementById('textArea2').value;
-
-//     // ストレージに保存 (例: sessionStorage)
-//     sessionStorage.setItem('slide1Text', text1);
-//     sessionStorage.setItem('slide2Text', text2);
-
-//     // プレビューページに遷移 (URLを設定)
-//     window.location.href = '../preview/index.html';
-// }
-
-// 現在のページの内容を取得してサーバに送信
 // document.getElementById('sendButton').addEventListener('click', function () {
-//     // ページ全体のHTMLを取得
-//     const htmlContent = document.documentElement.outerHTML;
+//   const token = localStorage.getItem('token');
 
-//     // ページのすべてのスタイルシートを取得
-//     let cssContent = '';
-//     let cssUrls = [];
-//     const cssPromises = [];
+//   if (!token) {
+//     console.error('認証トークンが見つかりません。ログインしてください。');
+//     return;
+//   }
 
-//     // スタイルシートをループして処理
-//     for (let sheet of document.styleSheets) {
+//   let albumId; // albumIdをここで宣言
+
+//   function getAllDataFromIndexedDB(dbName, storeName) {
+//     return new Promise((resolve, reject) => {
+//       const request = indexedDB.open(dbName);
+
+//       request.onerror = function (event) {
+//         console.error('IndexedDBにアクセスできません。', event.target.error);
+//         reject('IndexedDBにアクセスできません。');
+//       };
+
+//       request.onsuccess = function (event) {
+//         const db = event.target.result;
+//         const transaction = db.transaction(storeName, 'readonly');
+//         const objectStore = transaction.objectStore(storeName);
+//         const allDataRequest = objectStore.getAll();
+
+//         allDataRequest.onsuccess = function (event) {
+//           resolve(event.target.result);
+//         };
+
+//         allDataRequest.onerror = function (event) {
+//           console.error('データの取得に失敗しました。', event);
+//           reject('データの取得に失敗しました。');
+//         };
+//       };
+//     });
+//   }
+
+//   // ユーザー情報を取得
+//   fetch('https://develop-back.kotobum.com/api/user/album', {
+//     method: 'GET',
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+//       }
+//       return response.json();
+//     })
+//     .then((albums) => {
+//       console.log('取得したユーザーデータ:', albums); // レスポンスを確認
+//       albumId = albums.albumId; // albumIdをここに設定
+
+//       if (!albumId) {
+//         console.error('アルバムIDを取得できませんでした。');
+//         return;
+//       }
+
+//       // アルバムIDを使った追加処理をここに記述
+//       console.log('取得したアルバムID:', albumId);
+
+//       // HTMLファイルを取得
+//       return fetch('../edit/index.html');
+//     })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(`別のHTMLページの取得エラー: ${response.status} - ${response.statusText}`);
+//       }
+//       return response.text();
+//     })
+//     .then((htmlContent) => {
+//       let cssContent = '';
+//       let cssUrls = [];
+//       const cssPromises = [];
+
+//       // CSSスタイルシートを取得
+//       for (let sheet of document.styleSheets) {
 //         try {
-//             if (sheet.href) {
-//                 // 外部CSSファイルのURLを取得
-//                 cssUrls.push(sheet.href);
-
-//                 // 外部CSSファイルの内容を取得するためにfetchを使用
-//                 cssPromises.push(
-//                     fetch(sheet.href)
-//                         .then(response => response.text())
-//                         .then(text => {
-//                             cssContent += text;
-//                         })
-//                         .catch(e => {
-//                             console.warn('スタイルシートの取得エラー:', e);
-//                         })
-//                 );
-//             } else {
-//                 // インラインスタイルシートの内容を取得
-//                 for (let rule of sheet.cssRules) {
-//                     cssContent += rule.cssText;
-//                 }
+//           if (sheet.href && sheet.href.startsWith(window.location.origin)) {
+//             cssUrls.push(sheet.href);
+//             cssPromises.push(
+//               fetch(sheet.href)
+//                 .then((response) => {
+//                   if (!response.ok) {
+//                     throw new Error(`CSSファイルの取得エラー: ${response.status} - ${response.statusText}`);
+//                   }
+//                   return response.text();
+//                 })
+//                 .then((text) => {
+//                   cssContent += text;
+//                 })
+//                 .catch((e) => {
+//                   console.warn('スタイルシートの取得エラー:', e);
+//                 })
+//             );
+//           } else if (!sheet.href) {
+//             if (sheet.cssRules) {
+//               for (let rule of sheet.cssRules) {
+//                 cssContent += rule.cssText;
+//               }
 //             }
+//           }
 //         } catch (e) {
-//             console.warn('スタイルシートの取得エラー:', e);
+//           console.warn('スタイルシートの取得エラー:', e);
 //         }
-//     }
+//       }
 
-//     // すべてのfetchリクエストが完了するのを待つ
-//     Promise.all(cssPromises).then(() => {
-//         // ローカルストレージのすべてのデータを取得
-//         let localStorageData = {};
-//         for (let i = 0; i < localStorage.length; i++) {
-//             const key = localStorage.key(i);
-//             localStorageData[key] = localStorage.getItem(key);
-//         }
+//       return Promise.all(cssPromises).then(() => ({
+//         htmlContent,
+//         cssContent,
+//         cssUrls,
+//       }));
+//     })
+//     .then(({ htmlContent = '', cssContent = '', cssUrls = [] } = {}) => {
+//       let localStorageData = {};
+//       for (let i = 0; i < localStorage.length; i++) {
+//         const key = localStorage.key(i);
+//         localStorageData[key] = localStorage.getItem(key);
+//       }
 
-//         // FormDataオブジェクトを作成
-//         const formData = new FormData();
-//         formData.append('htmlContent', htmlContent);  // HTMLの内容
-//         formData.append('cssContent', cssContent);    // CSSの内容
-//         formData.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
-//         formData.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
+//       return Promise.all([
+//         getAllDataFromIndexedDB('NewImageDatabase1', 'images').catch((err) => {
+//           console.error('NewImageDatabase1のデータ取得中にエラーが発生しました:', err);
+//           return [];
+//         }),
+//         getAllDataFromIndexedDB('ImageDB', 'images').catch((err) => {
+//           console.error('ImageDBのデータ取得中にエラーが発生しました:', err);
+//           return [];
+//         }),
+//       ]).then(([newImageDatabase1Data, imageDBData]) => {
+//         const body = new FormData();
+//         body.append('htmlContent', htmlContent);
+//         body.append('cssContent', cssContent);
+//         // body.append('cssUrls', JSON.stringify(cssUrls));
+//         // body.append('localStorageData', JSON.stringify(localStorageData));
+//         // body.append('newImageDatabase1Data', JSON.stringify(newImageDatabase1Data));
+//         // body.append('imageDBData', JSON.stringify(imageDBData));
 
-//         // fetch APIを使ってサーバに送信
-//         fetch('https://develop-back.kotobum.com/api/albums', {
-//             method: 'POST',
-//             body: formData
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Success:', data);
-//         })
-//         .catch((error) => {
-//             console.error('Error:', error);
+//         // localStorageData.forEach(url => body.append('localStorageData[]', url));
+//         // newImageDatabase1Data.forEach(url => body.append('newImageDatabase1Data[]', url));
+//         // imageDBData.forEach(url => body.append('imageDBData[]', url));
+//         // cssUrls.forEach(url => body.append('cssUrls[]', url));
+
+//         // 送信するデータをコンソールに出力
+//         console.log('送信するデータ:', {
+//           htmlContent,
+//           cssContent,
+//           cssUrls,
+//           localStorageData,
+//           newImageDatabase1Data,
+//           imageDBData,
 //         });
+
+//         // データのサイズをコンソールに表示
+//         console.log(`HTML Content Size: ${(new Blob([htmlContent]).size / 1024).toFixed(2)} KB`);
+//         console.log(`CSS Content Size: ${(new Blob([cssContent]).size / 1024).toFixed(2)} KB`);
+//         console.log(`LocalStorage Data Size: ${(new Blob([JSON.stringify(localStorageData)]).size / 1024).toFixed(2)} KB`);
+//         console.log(`newImageDatabase1Data Size: ${(new Blob([JSON.stringify(newImageDatabase1Data)]).size / 1024).toFixed(2)} KB`);
+//         console.log(`imageDBData Size: ${(new Blob([JSON.stringify(imageDBData)]).size / 1024).toFixed(2)} KB`);
+
+//         // ユーザーIDを使ってデータを送信
+//         return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+//           method: 'POST',
+//           headers: {
+//             Authorization: `Bearer ${token}`,
+//           },
+//           body: body,
+//           // body: JSON.stringify(data),
+//         });
+//       });
+//     })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log('成功:', data);
+//     })
+//     .catch((error) => {
+//       console.error('エラーが発生しました:', error.message); // エラーをコンソールに出力
+//       if (error.response) {
+//         console.error('レスポンスデータ:', error.response.data);
+//       }
+//       console.error('スタックトレース:', error.stack); // スタックトレースを表示
 //     });
 // });
-
-// 異なるページの内容を取得してサーバに送信
-// 異なるページの内容を取得してサーバに送信
-// document.getElementById('sendButton').addEventListener('click', function () {
-//     // 取得したい別のページのURL
-//     const otherPageUrl = '../preview/index.html';  // 例: 同一ドメイン内の別のページ
-
-//     // 別のHTMLページの内容を取得
-//     fetch(otherPageUrl)
-//         .then(response => response.text())
-//         .then(htmlContent => {
-//             // ページのすべてのスタイルシートを取得
-//             let cssContent = '';
-//             let cssUrls = [];
-//             const cssPromises = [];
-
-//             // 現在のページのスタイルシートをループして処理
-//             for (let sheet of document.styleSheets) {
-//                 try {
-//                     if (sheet.href) {
-//                         // 外部CSSファイルのURLを取得
-//                         cssUrls.push(sheet.href);
-
-//                         // 外部CSSファイルの内容を取得するためにfetchを使用
-//                         cssPromises.push(
-//                             fetch(sheet.href)
-//                                 .then(response => response.text())
-//                                 .then(text => {
-//                                     cssContent += text;
-//                                 })
-//                                 .catch(e => {
-//                                     console.warn('スタイルシートの取得エラー:', e);
-//                                 })
-//                         );
-//                     } else {
-//                         // インラインスタイルシートの内容を取得
-//                         for (let rule of sheet.cssRules) {
-//                             cssContent += rule.cssText;
-//                         }
-//                     }
-//                 } catch (e) {
-//                     console.warn('スタイルシートの取得エラー:', e);
-//                 }
-//             }
-
-//             // すべてのfetchリクエストが完了するのを待つ
-//             Promise.all(cssPromises).then(() => {
-//                 // ローカルストレージのすべてのデータを取得
-//                 let localStorageData = {};
-//                 for (let i = 0; i < localStorage.length; i++) {
-//                     const key = localStorage.key(i);
-//                     localStorageData[key] = localStorage.getItem(key);
-//                 }
-
-//                 // FormDataオブジェクトを作成してbodyに代入
-//                 const body = new FormData();
-//                 body.append('htmlContent', htmlContent);  // 別のHTMLページの内容
-//                 body.append('cssContent', cssContent);    // 現在のページのCSSの内容
-//                 body.append('cssUrls', JSON.stringify(cssUrls));  // 外部CSSファイルのURLをJSON文字列にして追加
-//                 body.append('localStorageData', JSON.stringify(localStorageData));  // ローカルストレージのデータをJSON文字列にして追加
-
-//                 // fetch APIを使ってサーバに送信
-//                 fetch('https://develop-back.kotobum.com/api/albums/{album}/body', {
-//                     method: 'POST',
-//                     body: body // bodyを指定
-//                 })
-//                 .then(response => response.json())
-//                 .then(data => {
-//                     console.log('Success:', data);
-//                 })
-//                 .catch((error) => {
-//                     console.error('Error:', error);
-//                 });
-//             });
-//         })
-//         .catch((error) => {
-//             console.error('別のHTMLページの取得エラー:', error);
-//         });
-// });
-
-
 
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
@@ -1192,8 +1216,8 @@ function handleSaveOrSend() {
         };
       });
 
-      const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-colorB').style.color || '#000000';
+      const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-color').style.color || '#000000';
 
       if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
         console.error('送信するデータがありません。');
@@ -1245,6 +1269,64 @@ function handleSaveOrSend() {
       console.error('スタックトレース:', error.stack);
       alert('エラーが発生しました。再度お試しください。');
     });
+
+  // レイアウト確認
+  function collectLayoutData() {
+    const data = [];
+
+    // textareaを収集
+    document.querySelectorAll("textarea").forEach((textarea) => {
+      const rect = textarea.getBoundingClientRect(); // 要素の座標
+      const styles = window.getComputedStyle(textarea); // スタイル情報
+
+      data.push({
+        type: "textarea",
+        id: textarea.id || null,
+        class: textarea.className || null,
+        rows: textarea.rows || null,
+        maxlength: textarea.maxLength || null,
+        value: textarea.value || "",
+        styles: {
+          position: styles.position,
+          top: `${rect.top}px`,
+          left: `${rect.left}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+          fontSize: styles.fontSize,
+          color: styles.color,
+          backgroundColor: styles.backgroundColor,
+          border: styles.border,
+        },
+      });
+    });
+
+    // dropAreaを収集
+    document.querySelectorAll("[id^='dropArea']").forEach((dropArea) => {
+      const rect = dropArea.getBoundingClientRect(); // 要素の座標
+      const styles = window.getComputedStyle(dropArea); // スタイル情報
+
+      data.push({
+        type: "dropArea",
+        id: dropArea.id || null,
+        class: dropArea.className || null,
+        styles: {
+          position: styles.position,
+          top: `${rect.top}px`,
+          left: `${rect.left}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+          backgroundColor: styles.backgroundColor,
+          border: styles.border,
+        },
+      });
+    });
+
+    return data;
+  }
+
+  // JSONデータ取得
+  const layoutData = collectLayoutData();
+  console.log(layoutData);
 };
 
 // ページ読み込み時のアルバムデータ取得処理
@@ -1341,18 +1423,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      // 背景色とテキスト色を設定
+      // 色データを反映
       console.log('colors:', colors);
       if (colors) {
         const { backgroundColor, textColor } = colors;
 
         // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-        document.querySelectorAll('.uniqueColorB').forEach(element => {
+        document.querySelectorAll('.uniqueColor').forEach(element => {
           element.style.backgroundColor = backgroundColor || '#ffffff';
         });
 
         // `.text-color` クラスを持つすべての要素にテキスト色を設定
-        document.querySelectorAll('.text-colorB').forEach(element => {
+        document.querySelectorAll('.text-color').forEach(element => {
           element.style.color = textColor || '#000000';
         });
 
@@ -1362,3 +1444,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 });
+
+
