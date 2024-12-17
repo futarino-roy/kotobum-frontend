@@ -17451,7 +17451,7 @@ body {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea6_t4 {
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -17941,7 +17941,7 @@ body {
   object-fit: cover;
 }
 .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea4_t4 {
-  width: 50%;
+  width: 59%;
   height: 36%;
   position: relative;
   top: -3%;
@@ -17970,7 +17970,7 @@ body {
   object-fit: cover;
 }
 .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea6_t4 {
-  position: absolute;
+  position: relative;
   top: -5.5%;
   left: -0.5%;
   width: 43%;
@@ -18328,7 +18328,7 @@ body {
 }
 @media screen and (max-width: 900px) {
   .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea6_t4 {
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -19477,31 +19477,18 @@ body {
     display: none;
   }
 }
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B {
-  position: relative;
-  top: -1%;
-  width: 60%;
-  height: 70%;
-  clip-path: polygon(0 0, 100% 0, 100% 3%, 77% 3%, 77% 12%, 100% 12%, 100% 100%, 0 100%);
+.previewB .content .swiper-wrapper .swiper-slide #dropArea16_t4B {
+  width: 67%;
+  height: 39%;
+  top: 12.5%;
+  position: absolute;
+  border-radius: 77% 47% 49% 58%/71% 59% 55% 49%;
+  background-color: #ffffff;
 }
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B.square {
-  width: 45%;
-  height: 32%;
-}
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B.rectangle34 {
-  width: 45%;
-  height: 40%;
-}
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B.rectangle43 {
-  width: 45%;
-  height: 25%;
-}
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B.mini {
-  width: 45%;
-  height: 20%;
-}
-.previewB .content .swiper-wrapper .swiper-slide #dropArea10_t3B img {
+.previewB .content .swiper-wrapper .swiper-slide #dropArea16_t4B img {
+  border-radius: 77% 47% 49% 58%/71% 59% 55% 49%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

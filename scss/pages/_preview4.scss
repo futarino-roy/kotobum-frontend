@@ -227,7 +227,7 @@
                 }
 
                 &4_t4 {
-                  width: 50%;
+                  width: 59%;
                   height: 36%;
                   position: relative;
                   top: -3%;
@@ -270,7 +270,7 @@
                 }
 
                 &6_t4 {
-                  position: absolute;
+                  position: relative;
                   top: -5.5%;
                   left: -0.5%;
                   width: 43%;
@@ -655,7 +655,7 @@
                     font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
-                    font-size: 2.5rem;
+                    font-size: 1rem;
                   }
                   @include mq('sp-edit') {
                     font-size: 1.5rem;
