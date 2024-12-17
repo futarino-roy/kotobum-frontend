@@ -833,12 +833,12 @@
                 margin: 0;
                 position: absolute;
                 width: 5% !important;
-                // height: auto;
-                bottom: 4.5%;
-                right: -4%;
+                bottom: 9%;
+                left: -5.1%;
                 font-weight: bold;
-                font-size: 0.5rem !important;
+                font-size: 0.4rem !important;
                 text-align: start;
+                field-sizing: content;
 
                 // テキストの向きを変更
                 writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -878,10 +878,10 @@
                 &B-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5% !important;
-                  height: 5% !important;
-                  max-width: 35px;
-                  top: 17%;
+                  max-width: 14.5% !important;
+                  height: 4.5% !important;
+                  // max-width: 35px;
+                  top: 16.4%;
                   right: 73%;
                   text-align: center;
                   line-height: 0.9;
@@ -893,6 +893,8 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
+                    right: 75%;
+                    top: 16.6%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;
@@ -903,24 +905,18 @@
                   }
                 }
                 &B-2 {
+                  margin: 0;
                   position: absolute;
-                  top: 21.5%;
+                  top: 22%;
                   left: 3%;
-                  // height: 3% !important;
-                  // width: 16% !important;
 
                   margin: 0;
                   font-size: 0.4rem;
                   line-height: 1.5;
                   font-weight: bold;
                   // color: #fef8f6;
-
-                  overflow: hidden; /* スクロールバーを非表示 */
-                  resize: none;
-                  white-space: nowrap; /* 改行を無効にする */
-                  overflow-wrap: normal; /* 自動改行を無効にする */
-                  word-wrap: normal; /* 単語の途中での改行を無効にする */
-                  word-break: normal; /* 単語の途中での改行を無効にする */
+                  text-align: center;
+                  max-width: 22%;
 
                   @include mq('pc-edit') {
                     font-size: 0.3rem;
@@ -947,7 +943,7 @@
                   position: absolute;
                   width: 40% !important;
                   height: 10% !important;
-                  top: 4%;
+                  top: 6%;
                   right: 5%;
                   font-weight: bold;
                   font-size: 1.1rem;

@@ -211,69 +211,17 @@
               justify-content: end;
 
               #dropAreaB {
-                // background-color: aqua;
                 position: absolute;
                 width: 85%;
                 height: 53%;
-                top: 42%;
+                top: 40%;
                 left: 10.5%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
                 bottom: 10px;
+                @include mq('pc2-edit') {
+                  top: 40%;
+                }
 
                 border: none;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                // &.active {
-                //   border-color: rgba(49, 163, 138, 0.534);
-                // }
 
                 &.square {
                   width: 45%;
@@ -342,16 +290,15 @@
               }
 
               #textArea-cover {
-                // background-color: grey;
                 margin: 0;
                 position: absolute;
                 width: 5% !important;
-                // height: auto;
-                bottom: 4.5%;
-                right: -5%;
+                bottom: 9%;
+                right: -5.1%;
                 font-weight: bold;
-                font-size: 0.5rem !important;
+                font-size: 0.4rem !important;
                 text-align: start;
+                field-sizing: content;
 
                 // テキストの向きを変更
                 writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -388,14 +335,13 @@
               }
               #textArea {
                 &B-1 {
-                  // background-color: coral;
                   margin: 0;
                   position: absolute;
-                  width: 13.5%;
-                  height: 5%;
-                  max-width: 35px;
-                  top: 16.5%;
-                  right: 75.5%;
+                  max-width: 14.5% !important;
+                  height: 4.5% !important;
+                  // max-width: 35px;
+                  top: 16.4%;
+                  right: 73%;
                   text-align: center;
 
                   line-height: 0.9;
@@ -408,9 +354,12 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
+                    right: 75%;
+                    top: 16.6%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;
+                    right: 74%;
                   }
                   @include mq('sp2-edit') {
                     font-size: 2vw;
@@ -418,9 +367,10 @@
                 }
                 &B-2 {
                   // background-color: aquamarine;
+                  margin: 0;
                   position: absolute;
                   top: 22%;
-                  left: 6.5%;
+                  left: 3%;
                   // height: 3% !important;
                   // width: 16% !important;
 
@@ -429,6 +379,8 @@
                   line-height: 1.5;
                   font-weight: bold;
                   // color: #fef8f6;
+                  text-align: center;
+                  max-width: 22%;
 
                   overflow: hidden; /* スクロールバーを非表示 */
                   resize: none;
@@ -443,6 +395,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    left: 4%;
                   }
 
                   @include mq('tab-edit') {
@@ -462,8 +415,8 @@
                   position: absolute;
                   width: 40% !important;
                   height: 10% !important;
-                  top: 3%;
-                  right: 3%;
+                  top: 6%;
+                  right: 5%;
                   font-weight: bold;
                   font-size: 1.1rem;
                   text-align: right;
