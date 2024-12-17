@@ -1526,6 +1526,8 @@
                   text-align: center;
                   color: #ffffff;
                   max-width: 30%;
+                  position: absolute;
+                  top: 21.8%;
 
                   @include mq('pc-edit') {
                     font-size: 0.33rem;

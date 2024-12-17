@@ -3767,6 +3767,8 @@ input:checked + label::after {
   text-align: center;
   color: #ffffff;
   max-width: 30%;
+  position: absolute;
+  top: 21.8%;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
