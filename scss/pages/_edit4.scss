@@ -1286,10 +1286,10 @@
                   text-align: center;
 
                   margin: 0;
-                  position: relative;
-                  top: 36%;
+                  position: absolute;
+                  top: 87%;
                   opacity: 0.5;
-                  font-size: 0.7rem;
+                  font-size: 0.5rem;
                 }
 
                 &10-1_t4 {
@@ -1360,7 +1360,7 @@
                   position: absolute;
                   top: 57%;
                   max-height: 30%;
-                  font-size: 0.36rem;
+                  font-size: 0.34rem;
                   @include mq('pc2-edit') {
                     font-size: 0.53rem;
                   }
@@ -1375,6 +1375,7 @@
                 position: absolute;
                 font-size: 0.5rem;
                 font-weight: bold;
+                letter-spacing: 0.06rem;
               }
 
               .round {

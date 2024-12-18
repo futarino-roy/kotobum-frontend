@@ -14286,10 +14286,12 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
   font-family: "League Spartan", sans-serif;
-  font-size: 0.43rem;
+  font-size: 0.34rem;
   text-align: left;
   position: absolute;
-  top: 25%;
+  top: 27%;
+  max-width: 48%;
+  max-height: 52%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
@@ -14322,6 +14324,18 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3 {
   max-width: 55%;
+  font-size: 0.33rem;
+  position: relative;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3 {
+    font-size: 0.5rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3 {
+    font-size: 0.25rem;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea6_t3 {
   position: relative;
@@ -17499,10 +17513,10 @@ body {
   font-weight: bold;
   text-align: center;
   margin: 0;
-  position: relative;
-  top: 36%;
+  position: absolute;
+  top: 87%;
   opacity: 0.5;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea10-1_t4 {
   position: absolute;
@@ -17586,7 +17600,7 @@ body {
   position: absolute;
   top: 57%;
   max-height: 30%;
-  font-size: 0.36rem;
+  font-size: 0.34rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea16-2_t4 {
@@ -17603,6 +17617,7 @@ body {
   position: absolute;
   font-size: 0.5rem;
   font-weight: bold;
+  letter-spacing: 0.06rem;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .round {
   position: absolute;
