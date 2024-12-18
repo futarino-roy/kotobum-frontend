@@ -1298,7 +1298,9 @@
                   }
                 }
 
-                &5_t3 {
+                &5_t3,
+                &7_t3,
+                &9_t3 {
                   max-width: 55%;
                   font-size: 0.33rem;
                   position: relative;
@@ -1314,122 +1316,53 @@
                   }
                 }
                 &6_t3 {
-                  position: relative;
-                  top: 25%;
-                  max-width: 37%;
-                  font-weight: bold;
                   text-align: center;
-                }
-                &7_t3 {
-                  max-width: 50%;
-                }
-
-                &5,
-                &7,
-                &9 {
-                  margin-top: 30px;
-                  font-size: 5.2px;
-                  @include mq('pc-edit') {
-                    font-size: 0.246rem;
-                    max-height: 65%;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.49rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.26vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 1.4vw;
-                    margin-top: 25px;
-                  }
-                }
-
-                &8_t2 {
-                  position: absolute;
-                  top: 10%;
-                  text-align: center;
-                  color: #f8f8f8;
+                  font-family: 'League Spartan', sans-serif;
                   font-size: 0.7rem;
-                  line-height: 1;
+                  position: absolute;
                   font-weight: bold;
+                  top: 66%;
+
                   @include mq('pc2-edit') {
-                    font-size: 1rem;
+                    font-size: 0.8rem;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
                     font-size: 1rem;
-                  }
-                  @include mq('sp-edit') {
-                    font-size: 0.7rem;
-                  }
-                }
-
-                &10-1_t2 {
-                  position: absolute;
-                  top: 12%;
-                  color: #f8f8f8;
-                  text-align: center;
-                  font-family: 'League Spartan', sans-serif;
-                  font-size: 1rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc2-edit') {
-                    font-size: 2rem;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 2.5rem;
                   }
                   @include mq('sp-edit') {
                     font-size: 1.5rem;
                   }
                 }
-                &10-2_t2 {
-                  position: absolute;
-                  bottom: 12%;
-                  text-align: center;
-                  font-size: 0.7rem;
-                  line-height: 1;
-                  font-weight: bold;
-                  @include mq('pc-edit') {
-                    font-size: 0.5rem;
-                    bottom: 9%;
-                  }
-                  @include mq('tab-edit') {
-                    bottom: 11.5%;
-                    font-size: 1rem;
-                  }
-                  @include mq('sp-edit') {
-                    bottom: 9.5%;
-                    font-size: 0.5rem;
-                  }
-                }
-                &11-1_t3 {
-                  margin: 0;
-                  font-weight: bold;
-                  max-width: 50%;
-                }
-                &11-2_t3 {
-                  height: 47% !important;
-                  margin: 5% 0 0 0;
-                  max-width: 50%;
-                }
+
                 &12-1_t3 {
-                  position: relative;
-                  top: 7%;
-                  text-align: center;
+                  font-size: 0.6rem;
                   font-weight: bold;
+                  text-align: center;
+
+                  margin-bottom: 0;
+                  position: relative;
+                  top: 27%;
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    top: 26%;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.4rem;
+                    top: 29%;
+                  }
                 }
                 &12-2_t3 {
-                  position: relative;
-                  top: 9%;
-                  opacity: 0.6;
+                  font-weight: bold;
                   text-align: center;
+
+                  margin: 0;
+                  position: absolute;
+                  top: 87%;
+                  opacity: 0.5;
+                  font-size: 0.6rem;
                 }
                 &14-1_t3 {
                   position: absolute;
