@@ -17516,7 +17516,7 @@ body {
   position: absolute;
   top: 87%;
   opacity: 0.5;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea10-1_t4 {
   position: absolute;
@@ -17581,7 +17581,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea16-1_t4 {
   position: relative;
-  top: 7%;
+  top: 7.5%;
   text-align: center;
   font-size: 0.9rem;
   font-weight: bold;
@@ -17615,7 +17615,7 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .last-text_from {
   top: 53%;
   position: absolute;
-  font-size: 0.5rem;
+  font-size: 0.55rem;
   font-weight: bold;
   letter-spacing: 0.06rem;
 }
