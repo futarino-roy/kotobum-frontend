@@ -1547,12 +1547,13 @@
                 }
 
                 &13-3 {
-                  margin-top: 4%;
+                  position: absolute;
+                  top: 66%;
+                  max-height: 16%;
                   font-size: 0.3rem;
                   text-align: start;
                   writing-mode: vertical-rl;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
-                  max-height: 15%;
                   @include mq('pc-edit') {
                     font-size: 0.25rem;
                   }
