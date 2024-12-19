@@ -14317,18 +14317,18 @@ body {
     font-size: 0.5rem;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3 {
+.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
   max-width: 55%;
   font-size: 0.33rem;
   position: relative;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3 {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
     font-size: 0.5rem;
   }
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3 {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
     font-size: 0.25rem;
   }
 }
