@@ -8837,6 +8837,7 @@ input:checked + label::after {
   font-size: 0.4rem;
   line-height: 1.9;
   background-color: transparent;
+  border: none;
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
