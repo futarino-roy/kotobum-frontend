@@ -14290,12 +14290,12 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
-    font-size: 0.64rem;
+    font-size: 0.51rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
-    font-size: 0.32rem;
+    font-size: 0.256rem;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea4_t3 {
@@ -14387,7 +14387,19 @@ body {
   position: absolute;
   top: 87%;
   opacity: 0.5;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea12-2_t3 {
+    font-size: 0.6rem;
+    top: 87%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea12-2_t3 {
+    font-size: 0.4rem;
+    top: 85%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-1_t3 {
   position: absolute;
@@ -14417,11 +14429,12 @@ body {
   margin-bottom: 0;
   position: relative;
   top: 25%;
+  letter-spacing: 0.05rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-2_t3 {
     font-size: 0.9rem;
-    top: 24%;
+    top: 25%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -14459,6 +14472,16 @@ body {
   font-size: 1rem;
   font-weight: bold;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-1_t3 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-1_t3 {
+    font-size: 0.7rem;
+  }
+}
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-1_t3 {
     margin-top: 1%;
@@ -14468,9 +14491,20 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
   margin-top: 3%;
   position: absolute;
-  top: 53%;
-  max-height: 30%;
+  top: 51.5%;
+  max-height: 40%;
   max-width: 57%;
+  font-size: 0.34rem;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
+    font-size: 0.53rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
+    font-size: 0.27rem;
+  }
 }
 .edit .swiper-button-prev {
   margin-left: 0;
