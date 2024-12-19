@@ -141,20 +141,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // テキストエリアの行間を調整
   function adjustLineHeight(textArea) {
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = fontSize * 1.2; // 行間をフォントサイズに応じて適切に設定
+    const lineHeight = fontSize * 1.2; // 行間をフォントサイズの1.2倍に設定
     textArea.style.lineHeight = `${lineHeight}px`;
   }
 
-  // フォントサイズを調整して枠内に収める
+  // フォントサイズを小さめに調整して枠内に収める
   function adjustFontSize(textArea) {
-    const maxFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 0.9; // 最大フォントサイズ
-    const minFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 0.2; // 最小フォントサイズ
+    const maxFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 0.7; // 最大フォントサイズをやや小さめに設定
+    const minFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 0.15; // 最小フォントサイズも小さめに設定
     let fontSize = maxFontSize;
 
     // テキストエリアの高さ・幅に収まるようにフォントサイズを調整
     textArea.style.fontSize = `${fontSize}px`;
     while ((textArea.scrollHeight > textArea.clientHeight || textArea.scrollWidth > textArea.clientWidth) && fontSize > minFontSize) {
-      fontSize -= 1; // フォントサイズを少しずつ減らす
+      fontSize -= 0.5; // フォントサイズを小刻みに減らす
       textArea.style.fontSize = `${fontSize}px`;
       adjustLineHeight(textArea); // 行間を再調整
     }
