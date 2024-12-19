@@ -138,17 +138,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
-  // テキストエリアの行間を調整（最初のロジックに戻す）
+  // テキストエリアの行間を調整
   function adjustLineHeight(textArea) {
-    const textAreaHeight = textArea.clientHeight;
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = textAreaHeight / fontSize; // テキストエリア高さに基づいて行間を計算
-    textArea.style.lineHeight = lineHeight;
+    const lineHeight = fontSize * 1.2; // 行間をフォントサイズの1.2倍に設定
+    textArea.style.lineHeight = `${lineHeight}px`;
   }
 
   // フォントサイズを小さめに調整して枠内に収める
   function adjustFontSize(textArea) {
-    const maxFontSize = 0.9; // 最大フォントサイズを小さめに設定
+    const maxFontSize = 0.9; // 最大フォントサイズをやや小さめに設定
     const minFontSize = 0.2; // 最小フォントサイズも小さめに設定
     let fontSize = maxFontSize;
 
