@@ -1066,7 +1066,7 @@
 
                 &12_t3 {
                   position: relative;
-                  top: 5%;
+                  top: 1%;
                   width: 58%;
                   height: 47%;
                   font-size: 1rem;
@@ -1344,14 +1344,14 @@
 
                   margin-bottom: 0;
                   position: relative;
-                  top: 27%;
+                  top: 2.5%;
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
-                    top: 26%;
+                    top: 2.5%;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.4rem;
-                    top: 29%;
+                    top: 3%;
                   }
                 }
                 &12-2_t3 {
@@ -1366,15 +1366,19 @@
                 }
                 &14-1_t3 {
                   position: absolute;
-                  top: 8.5%;
-                  font-size: 1rem;
+                  top: 6.6%;
+                  font-size: 1.4rem;
                   font-weight: bold;
                   text-align: center;
+                  letter-spacing: 0.1rem;
+                  max-width: 90%;
+                  width: 75% !important;
+
                   @include mq('pc2-edit') {
-                    font-size: 1.5rem;
+                    font-size: 2.1rem;
                   }
-                  @include mq('tab-edit') {
-                    font-size: 2rem;
+                  @include mq('pc-edit') {
+                    font-size: 1.1rem;
                   }
                 }
                 &14-2_t3 {
@@ -1384,7 +1388,15 @@
                   color: #fdfcf6;
                   margin-bottom: 0;
                   position: relative;
-                  top: 26%;
+                  top: 25%;
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    top: 24%;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                    top: 26.5%;
+                  }
                 }
                 &14-3_t3 {
                   font-weight: bold;
@@ -1392,7 +1404,17 @@
                   color: #fdfcf6;
                   margin: 0;
                   position: relative;
-                  top: 27%;
+                  top: 25%;
+                }
+                &15_t3 {
+                  max-width: 45%;
+                  font-size: 0.31rem;
+                  @include mq('pc2-edit') {
+                    font-size: 0.46rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.23rem;
+                  }
                 }
                 &15-1_t3 {
                   margin-top: 5%;

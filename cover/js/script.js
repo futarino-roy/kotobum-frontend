@@ -294,10 +294,12 @@ function addTouchListenerToDropAreas() {
         // 画像以外のクリックの場合はボタンを非表示
         document.querySelectorAll('.empty.with-buttons').forEach(area => {
           area.classList.add('hide-buttons');
+          area.style.border = 'none'; // ボーダーを消す
         });
       }
       // クリックされたドロップエリアのボタンを表示する
       this.classList.remove('hide-buttons');
+      this.style.border = ''; // ボーダーを元に戻す
     });
   });
 }
@@ -344,6 +346,7 @@ document.addEventListener('click', function (e) {
   if (!e.target.closest('.empty.with-buttons')) {
     allDropAreas.forEach(dropArea => {
       dropArea.classList.add('hide-buttons');
+      dropArea.style.border = 'none'; // ボーダーを消す
     });
   }
 });
@@ -386,6 +389,8 @@ function handleDrop(event) {
       };
       this.appendChild(img);
       addButtons(this); // 削除ボタンとトリミングボタンを追加
+      // 画像が挿入されたら枠線をなくす処理追加
+      this.style.border = 'none';
     }.bind(this);
     fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
   }
@@ -408,6 +413,7 @@ function handleTouchDrop(event) {
         img.src = e.target.result; // 画像データURLを設定
         dropArea.appendChild(img);
         addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+        dropArea.style.border = 'none';
       };
       fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
     }
@@ -446,6 +452,7 @@ function showButtons(container) {
   container
     .querySelectorAll(".delete-btn, .crop-btn")
     .forEach((button) => (button.style.display = "flex"));
+  container.style.border = '2px dashed #ccc';
 }
 
 // ボタンを非表示にする関数
@@ -453,6 +460,15 @@ function hideButtons() {
   document
     .querySelectorAll(".delete-btn, .crop-btn")
     .forEach((button) => (button.style.display = "none"));
+
+  // 選択されていない全ての画像コンテナの枠線をデフォルトに戻す
+  document.querySelectorAll('.empty').forEach(function (container) {
+    if (!container.querySelector('img')) {
+      container.style.border = '2px dashed #ccc'; // デフォルトの枠線
+    } else {
+      container.style.border = 'none'; // 枠線なし
+    }
+  });
 }
 
 // トリミングモーダル処理
@@ -619,7 +635,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   textAreas.forEach(textArea => {
     const maxFontSizeRem = 0.9;
-    const minFontSizeRem = 0.5;
+    const minFontSizeRem = 0.2;
 
     function adjustFontSize() {
       let fontSizeRem = maxFontSizeRem;

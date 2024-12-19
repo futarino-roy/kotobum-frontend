@@ -1285,9 +1285,17 @@
 
                   margin: 0;
                   position: absolute;
-                  top: 87%;
+                  top: 86%;
                   opacity: 0.5;
-                  font-size: 0.6rem;
+                  font-size: 0.5rem;
+                  @include mq('pc2-edit') {
+                    font-size: 0.6rem;
+                    top: 87%;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.4rem;
+                    top: 85%;
+                  }
                 }
 
                 &10-1_t4 {
