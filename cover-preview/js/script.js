@@ -138,61 +138,63 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
-  // テキストエリアの行間を調整
   function adjustLineHeight(textArea) {
+    const textAreaHeight = textArea.clientHeight;
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = fontSize * 1.2; // 行間をフォントサイズの1.2倍に設定
-    textArea.style.lineHeight = `${lineHeight}px`;
+    const lineHeight = textAreaHeight / fontSize;
+    textArea.style.lineHeight = lineHeight;
   }
 
-  // フォントサイズを小さめに調整して枠内に収める
-  function adjustFontSize(textArea) {
-    const maxFontSize = 0.9; // 最大フォントサイズをやや小さめに設定
-    const minFontSize = 0.2; // 最小フォントサイズも小さめに設定
-    let fontSize = maxFontSize;
-
-    // テキストエリアの高さ・幅に収まるようにフォントサイズを調整
-    textArea.style.fontSize = `${fontSize}px`;
-    while ((textArea.scrollHeight > textArea.clientHeight || textArea.scrollWidth > textArea.clientWidth) && fontSize > minFontSize) {
-      fontSize -= 0.5; // フォントサイズを小刻みに減らす
-      textArea.style.fontSize = `${fontSize}px`;
-      adjustLineHeight(textArea); // 行間を再調整
-    }
-  }
-
-  // 初期化: フォントサイズと行間を調整
-  function initializeTextArea(textArea) {
-    adjustFontSize(textArea);
-    adjustLineHeight(textArea);
-  }
-
-  // 初期化: すべてのテキストエリアを調整
-  function initializeAllTextAreas() {
+  function adjustLineHeightForAll() {
     textAreas.forEach(textArea => {
-      initializeTextArea(textArea);
+      adjustLineHeight(textArea);
     });
   }
 
-  // 初期ロード時に全テキストエリアを調整
-  initializeAllTextAreas();
+  window.addEventListener('load', adjustLineHeightForAll);
 
-  // 入力イベント: サイズと行間を再調整
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
-      adjustFontSize(this);
+      this.style.height = '';
+      adjustLineHeight(this);
     });
 
     textArea.addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
-        adjustFontSize(this);
+        adjustLineHeight(this);
       }
     });
   });
 
-  // ウィンドウリサイズ時に再調整
-  window.addEventListener('resize', initializeAllTextAreas);
-});
+  window.addEventListener('resize', adjustLineHeightForAll);
 
+  function remToPx(rem) {
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  }
+
+  textAreas.forEach(textArea => {
+    const maxFontSizeRem = 0.9;
+    const minFontSizeRem = 0.2;
+
+    function adjustFontSize() {
+      let fontSizeRem = maxFontSizeRem;
+      textArea.style.fontSize = `${fontSizeRem}rem`;
+
+      while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
+        fontSizeRem -= 0.05;
+        textArea.style.fontSize = `${fontSizeRem}rem`;
+      }
+    }
+
+    textArea.addEventListener('input', function () {
+      adjustFontSize();
+    });
+
+    if (textArea.value.trim() !== '') {
+      adjustFontSize();
+    }
+  });
+});
 //--------------------------------------ここまで-----------------------------------
 
 // 色変更
