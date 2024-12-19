@@ -151,11 +151,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  window.addEventListener('load', adjustLineHeightForAll);
+  function remToPx(rem) {
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  }
+
+  function adjustFontSize(textArea) {
+    const maxFontSizeRem = 0.9;
+    const minFontSizeRem = 0.2;
+
+    let fontSizeRem = maxFontSizeRem;
+    textArea.style.fontSize = `${fontSizeRem}rem`;
+
+    while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
+      fontSizeRem -= 0.05;
+      textArea.style.fontSize = `${fontSizeRem}rem`;
+    }
+  }
+
+  function initializeTextArea(textArea) {
+    adjustFontSize(textArea);
+    adjustLineHeight(textArea);
+  }
+
+  function initializeAllTextAreas() {
+    textAreas.forEach(textArea => {
+      initializeTextArea(textArea);
+    });
+  }
+
+  // Initialize on load
+  initializeAllTextAreas();
 
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
-      this.style.height = '';
+      this.style.height = ''; // Reset height to recalculate
+      adjustFontSize(this);
       adjustLineHeight(this);
     });
 
@@ -166,34 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  window.addEventListener('resize', adjustLineHeightForAll);
-
-  function remToPx(rem) {
-    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-  }
-
-  textAreas.forEach(textArea => {
-    const maxFontSizeRem = 0.9;
-    const minFontSizeRem = 0.2;
-
-    function adjustFontSize() {
-      let fontSizeRem = maxFontSizeRem;
-      textArea.style.fontSize = `${fontSizeRem}rem`;
-
-      while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.05;
-        textArea.style.fontSize = `${fontSizeRem}rem`;
-      }
-    }
-
-    textArea.addEventListener('input', function () {
-      adjustFontSize();
-    });
-
-    if (textArea.value.trim() !== '') {
-      adjustFontSize();
-    }
-  });
+  window.addEventListener('resize', initializeAllTextAreas);
 });
 //--------------------------------------ここまで-----------------------------------
 
