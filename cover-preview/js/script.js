@@ -138,55 +138,53 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
+  // テキストエリアの行間を調整
   function adjustLineHeight(textArea) {
     const textAreaHeight = textArea.clientHeight;
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = textAreaHeight / fontSize;
+    const lineHeight = textAreaHeight / fontSize; // 高さをフォントサイズで割る
     textArea.style.lineHeight = lineHeight;
   }
 
-  function adjustLineHeightForAll() {
-    textAreas.forEach(textArea => {
-      adjustLineHeight(textArea);
-    });
-  }
-
-  function remToPx(rem) {
-    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-  }
-
+  // フォントサイズを調整
   function adjustFontSize(textArea) {
-    const maxFontSizeRem = 0.8;
-    const minFontSizeRem = 0.2;
+    const maxFontSizeRem = 0.9; // 最大フォントサイズ
+    const minFontSizeRem = 0.2; // 最小フォントサイズ
 
     let fontSizeRem = maxFontSizeRem;
     textArea.style.fontSize = `${fontSizeRem}rem`;
 
-    while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-      fontSizeRem -= 0.05;
+    // フォントサイズを縮小して枠内に収める
+    while (
+      (textArea.scrollHeight > textArea.clientHeight || textArea.scrollWidth > textArea.clientWidth) &&
+      fontSizeRem > minFontSizeRem
+    ) {
+      fontSizeRem -= 0.05; // フォントサイズを減少
       textArea.style.fontSize = `${fontSizeRem}rem`;
     }
   }
 
+  // テキストエリアの初期化
   function initializeTextArea(textArea) {
-    adjustFontSize(textArea);
-    adjustLineHeight(textArea);
+    adjustFontSize(textArea); // フォントサイズ調整
+    adjustLineHeight(textArea); // 行間調整
   }
 
+  // すべてのテキストエリアを初期化
   function initializeAllTextAreas() {
     textAreas.forEach(textArea => {
       initializeTextArea(textArea);
     });
   }
 
-  // Initialize on load
+  // 初期化処理
   initializeAllTextAreas();
 
+  // 入力時の処理
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
-      this.style.height = ''; // Reset height to recalculate
-      adjustFontSize(this);
-      adjustLineHeight(this);
+      adjustFontSize(this); // フォントサイズを再調整
+      adjustLineHeight(this); // 行間を再調整
     });
 
     textArea.addEventListener('keydown', function (event) {
@@ -196,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // ウィンドウリサイズ時の処理
   window.addEventListener('resize', initializeAllTextAreas);
 });
 
