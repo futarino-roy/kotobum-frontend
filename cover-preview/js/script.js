@@ -135,91 +135,61 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //-------------------------------------追加----------------------------------
-// // テキストエリアの高さを調整する関数
-// function adjustHeight(textarea) {
-//   textarea.style.height = "auto";
-//   textarea.style.height = `${textarea.scrollHeight}px`;
-// }
-
-// // テキストエリアの幅を調整する関数
-// function adjustTextareaWidth(textarea) {
-//   textarea.style.width = "auto";
-//   const scrollWidth = textarea.scrollWidth;
-//   textarea.style.width = `${scrollWidth}px`;
-// }
-
-// // 最大文字数の制限を外し、イベントリスナーを追加する関数
-// function enforceNoMaxLength(textarea) {
-//   textarea.addEventListener("input", function () {
-//     adjustHeight(this);
-//     adjustTextareaWidth(this);
-//     saveTextToLocalStorage();
-//   });
-
-//   adjustHeight(textarea);
-//   adjustTextareaWidth(textarea);
-// }
-
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
   function adjustLineHeight(textArea) {
-    // テキストエリアの高さを取得
     const textAreaHeight = textArea.clientHeight;
-
-    // フォントサイズを取得 (必要に応じて固定)
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-
-    // line-height をテキストエリアの高さに応じて計算
     const lineHeight = textAreaHeight / fontSize;
-
-    // line-height を設定
     textArea.style.lineHeight = lineHeight;
   }
 
   function adjustLineHeightForAll() {
     textAreas.forEach(textArea => {
-      adjustLineHeight(textArea); // 各テキストエリアのline-heightを調整
+      adjustLineHeight(textArea);
     });
   }
 
-  // 初期ロード時にline-heightを設定
   window.addEventListener('load', adjustLineHeightForAll);
 
-  // テキストエリアに入力があったときにline-heightを調整
   textAreas.forEach(textArea => {
     textArea.addEventListener('input', function () {
       this.style.height = '';
-      adjustLineHeight(this); // line-heightを調整
+      adjustLineHeight(this);
+    });
+
+    textArea.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        adjustLineHeight(this);
+      }
     });
   });
 
-  // ウィンドウサイズがリサイズされた場合にline-heightを再設定
   window.addEventListener('resize', adjustLineHeightForAll);
 
-  // 1remが何pxかを計算する関数
   function remToPx(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
   textAreas.forEach(textArea => {
-    // フォントサイズの最大と最小を rem で指定
-    const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
-    const minFontSizeRem = 0.5; // 0.75rem (最小フォントサイズ)
+    const maxFontSizeRem = 0.9;
+    const minFontSizeRem = 0.2;
 
-    // テキスト量に応じてフォントサイズを調整
     function adjustFontSize() {
       let fontSizeRem = maxFontSizeRem;
       textArea.style.fontSize = `${fontSizeRem}rem`;
 
-      // 最大幅以内に収まるようにフォントサイズを調整
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.05; // フォントサイズをremで小さくする
+        fontSizeRem -= 0.05;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }
 
-    // 初期状態でテキストがある場合の処理
+    textArea.addEventListener('input', function () {
+      adjustFontSize();
+    });
+
     if (textArea.value.trim() !== '') {
       adjustFontSize();
     }

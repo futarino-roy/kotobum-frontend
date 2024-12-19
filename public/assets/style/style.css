@@ -8803,9 +8803,6 @@ input:checked + label::after {
   right: 5.5%;
   width: 86.8%;
   height: 51%;
-  border: 2px dashed #ccc;
-  font-size: 1rem;
-  cursor: pointer;
   bottom: 10px;
 }
 @media screen and (min-width: 1500px) {
@@ -8813,49 +8810,10 @@ input:checked + label::after {
     top: 40%;
   }
 }
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn:hover {
-  opacity: 1;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn.show {
-  display: flex;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn:hover {
-  opacity: 1;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn.show {
-  display: flex;
-}
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
@@ -8899,12 +8857,6 @@ input:checked + label::after {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.7vw;
   }
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
-  border: 2px dashed #ccc;
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
-  border: none;
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
   box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
