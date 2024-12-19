@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function adjustFontSize(textArea) {
-    const maxFontSizeRem = 0.9;
+    const maxFontSizeRem = 0.8;
     const minFontSizeRem = 0.2;
 
     let fontSizeRem = maxFontSizeRem;
