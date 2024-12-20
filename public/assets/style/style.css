@@ -7248,12 +7248,6 @@ input:checked + label::after {
   }
 }
 
-html,
-body {
-  touch-action: auto;
-  overscroll-behavior: contain;
-}
-
 .coverB-body {
   background: #d5dadc;
 }
