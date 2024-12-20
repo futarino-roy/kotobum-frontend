@@ -7,11 +7,17 @@ const swiper = new Swiper(".swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    zoom: true,
+    // Swiperがタッチイベントを無効化しないように設定
+    touchStartPreventDefault: false,
+    passiveListeners: true,
+    cssMode: false,
     slidesPerView: 1, // 常に1枚のスライドを表示
     slidesPerGroup: 1, // 常に1スライドずつ移動
 });
 let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
 let isSaved = true; // データが保存済みかどうかを示すフラグ
+
 
 // ページ読み込み時にデータを保存(初期データ)
 document.addEventListener('DOMContentLoaded', function () {
