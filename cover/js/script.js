@@ -491,7 +491,7 @@ function openCroppieModal(container) {
     boundary: { width: 300, height: 300 },
     showZoomer: true,
     enableResize: false,
-    enableZoom: true,
+    // enableZoom: true,
   });
 
   const img = container.querySelector("img");
