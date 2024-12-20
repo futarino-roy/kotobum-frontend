@@ -681,11 +681,9 @@
             position: relative;
             clip-path: inset(45.5px 3px 52.5px 46px);
             @include mq('pc2-edit') {
-              // clip-path: inset(31px 31px 35px 30px);
               clip-path: inset(68px 3px 76px 69px);
             }
             @include mq('pc-edit') {
-              // clip-path: inset(16px 16px 21px 17px);
               clip-path: inset(35px 1px 41px 35px);
             }
             @include mq('tab-edit') {
@@ -887,10 +885,10 @@
                 &B-1 {
                   margin: 0;
                   position: absolute;
-                  max-width: 16%;
-                  height: 4.5%;
-                  top: 16.4%;
-                  right: 73.5%;
+                  max-width: 17%;
+                  height: 4.7%;
+                  top: 16.3%;
+                  right: 73%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   font-weight: 900;
@@ -901,7 +899,7 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.7%;
+                    top: 16.5%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;

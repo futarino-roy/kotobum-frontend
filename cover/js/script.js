@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function adjustLineHeight(textArea) {
     const textAreaHeight = textArea.clientHeight;
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = textAreaHeight / fontSize;
+    const lineHeight = textAreaHeight / fontSize + 0.1;
     textArea.style.lineHeight = lineHeight;
   }
 
