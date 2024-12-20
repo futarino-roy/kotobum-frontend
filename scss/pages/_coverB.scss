@@ -1,5 +1,7 @@
 .coverB-body {
   background: #d5dadc;
+  touch-action: auto;
+  overscroll-behavior: contain;
 }
 
 .coverB {
