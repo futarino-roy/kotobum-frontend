@@ -909,16 +909,15 @@
                 &A-1 {
                   margin: 0;
                   position: absolute;
-                  max-width: 14.5%;
+                  max-width: 16%;
                   height: 4.5%;
                   // max-width: 38px;
                   top: 16.4%;
-                  left: 74%;
+                  left: 73.5%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
-
                   line-height: 0.9;
-                  font-weight: bold;
+                  font-weight: 900;
                   color: #ffffff;
 
                   @include mq('pc-edit') {
@@ -927,8 +926,6 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    left: 75%;
-                    top: 16.6%;
                   }
 
                   @include mq('tab-edit') {

@@ -642,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
       textArea.style.fontSize = `${fontSizeRem}rem`;
 
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.05;
+        fontSizeRem -= 0.01;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }
