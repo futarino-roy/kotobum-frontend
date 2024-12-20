@@ -7,7 +7,7 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  // zoom: true,
+  zoom: true,
   touchStartPreventDefault: false,
   passiveListeners: true,
   slidesPerView: 1, // 常に1枚のスライドを表示
