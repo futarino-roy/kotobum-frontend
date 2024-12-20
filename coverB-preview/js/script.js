@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
 
     // line-height をテキストエリアの高さに応じて計算
-    const lineHeight = textAreaHeight / fontSize;
+    const lineHeight = textAreaHeight / fontSize + 0.09;
 
     // line-height を設定
     textArea.style.lineHeight = lineHeight;
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
   textAreas.forEach(textArea => {
     // フォントサイズの最大と最小を rem で指定
     const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
-    const minFontSizeRem = 0.5; // 0.75rem (最小フォントサイズ)
+    const minFontSizeRem = 0.2; // 0.75rem (最小フォントサイズ)
 
     // テキスト量に応じてフォントサイズを調整
     function adjustFontSize() {
