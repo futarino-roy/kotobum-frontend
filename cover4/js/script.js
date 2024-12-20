@@ -7,13 +7,31 @@ const swiper = new Swiper(".swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    zoom: true,
+    modules: [Zoom],
+    zoom: {
+        maxRatio: 3, // 最大ズーム倍率
+        minRatio: 1, // 最小ズーム倍率
+    },
     // Swiperがタッチイベントを無効化しないように設定
     touchStartPreventDefault: false,
     passiveListeners: true,
     cssMode: false,
     slidesPerView: 1, // 常に1枚のスライドを表示
     slidesPerGroup: 1, // 常に1スライドずつ移動
+
+    allowTouchMove: true, // 初期値はtrue
+    on: {
+        init: function () {
+            const container = this.el; // Swiperの要素を取得
+            container.addEventListener('gesturestart', () => {
+                this.allowTouchMove = false; // ピンチズーム時はスワイプを無効化
+            });
+            container.addEventListener('gestureend', () => {
+                this.allowTouchMove = true; // ズーム終了後にスワイプを有効化
+            });
+        },
+    },
+
 });
 let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
 let isSaved = true; // データが保存済みかどうかを示すフラグ
