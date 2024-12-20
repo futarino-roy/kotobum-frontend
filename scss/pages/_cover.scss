@@ -2,9 +2,7 @@
   background: #d5dadc;
 }
 
-.slick_slider {
-  -ms-touch-action: auto;
-  touch-action: auto;
+.swiper_slider {
 }
 
 .cover {
@@ -680,6 +678,8 @@
           width: auto;
           height: 100%;
           // margin: 8%;
+          -ms-touch-action: auto;
+          touch-action: auto;
 
           &_box {
             width: 50%;

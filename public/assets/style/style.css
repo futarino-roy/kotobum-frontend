@@ -6349,11 +6349,6 @@ input:checked + label::after {
   background: #d5dadc;
 }
 
-.slick_slider {
-  -ms-touch-action: auto;
-  touch-action: auto;
-}
-
 .cover {
   display: flex;
   flex-direction: column;
@@ -6915,6 +6910,8 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+  -ms-touch-action: auto;
+  touch-action: auto;
 }
 .cover .content .swiper-wrapper .swiper-slide_box {
   width: 50%;
@@ -7815,6 +7812,8 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+  -ms-touch-action: auto;
+  touch-action: auto;
 }
 .coverB .content .swiper-wrapper .swiper-slide_box {
   width: 50%;

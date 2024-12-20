@@ -674,6 +674,8 @@
           color: #ffffff;
           width: auto;
           height: 100%;
+          -ms-touch-action: auto;
+          touch-action: auto;
 
           &_box {
             width: 50%;
