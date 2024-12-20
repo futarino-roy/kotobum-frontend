@@ -679,23 +679,23 @@
             width: 50%;
             max-width: 500px;
             position: relative;
-            clip-path: inset(46.5px 3px 51.5px 46px);
+            clip-path: inset(45.5px 3px 52.5px 46px);
             @include mq('pc2-edit') {
               // clip-path: inset(31px 31px 35px 30px);
-              clip-path: inset(70px 4px 75px 71px);
+              clip-path: inset(68px 3px 76px 69px);
             }
             @include mq('pc-edit') {
               // clip-path: inset(16px 16px 21px 17px);
-              clip-path: inset(35px 2px 41px 35px);
+              clip-path: inset(35px 1px 41px 35px);
             }
             @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(10.5% 1% 11.5% 15.5%);
+              clip-path: inset(10.3% 1% 12% 15%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(10.5% 0.5% 11.5% 15.5%);
+              clip-path: inset(10.3% 0.5% 12% 15%);
             }
             @include mq('sp2-edit') {
               width: 70%;

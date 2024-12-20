@@ -680,36 +680,30 @@
             width: 50%;
             max-width: 500px;
             position: relative;
-            // clip-path: inset(20px 21px 26px 21px);
-            // clip-path: inset(35.5px 39px 37px 1.5px);
-
-            clip-path: inset(47px 48px 52px 1.5px);
+            clip-path: inset(45.5px 46px 52px 2.5px);
             @include mq('pc2-edit') {
-              // clip-path: inset(31px 31px 35px 30px);
-              clip-path: inset(71.5px 71px 77px 3px);
+              clip-path: inset(68.5px 69px 76px 3px);
             }
             @include mq('pc-edit') {
-              // clip-path: inset(16px 16px 21px 17px);
-              // clip-path: inset(27px 29px 28px 2px);
-              clip-path: inset(36px 36px 41px 2px);
+              clip-path: inset(34px 35px 41px 1px);
             }
             @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
-              clip-path: inset(11% 16% 11.5% 0.5%);
+              clip-path: inset(10.5% 15.5% 12% 0.5%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              clip-path: inset(11% 16% 12% 0.5%);
+              clip-path: inset(10.5% 15.5% 12% 0.5%);
             }
             @include mq('sp2-edit') {
               width: 70%;
-              clip-path: inset(11% 16% 12.5% 0.5%);
+              clip-path: inset(10.5% 15.5% 12% 0.5%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
               width: 50%;
-              clip-path: inset(11% 16% 14% 0.5%);
+              clip-path: inset(10.5% 15.5% 12% 0.5%);
             }
 
             .input-drop {
@@ -812,7 +806,7 @@
                   height: 52%;
                 }
                 @include mq('pc-edit') {
-                  top: 39%;
+                  top: 41%;
                 }
               }
 
@@ -864,7 +858,7 @@
                 position: absolute;
                 width: 5% !important;
                 bottom: 9%;
-                left: -5.1%;
+                left: -5.3%;
                 font-weight: bold;
                 font-size: 0.4rem !important;
                 text-align: start;
