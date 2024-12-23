@@ -727,10 +727,10 @@
 
               #dropAreaB {
                 position: absolute;
-                top: 40%;
-                right: 5.5%;
+                top: 35%;
+                right: 4.5%;
                 width: 86.8%;
-                height: 51%;
+                height: 56%;
                 border: 2px dashed #ccc;
                 font-size: 1rem;
                 cursor: pointer;
@@ -791,13 +791,16 @@
                   cursor: pointer;
                 }
                 @include mq('pc2-edit') {
-                  top: 40%;
+                  top: 35%;
                   right: 4.5%;
                   width: 87%;
-                  height: 52%;
+                  height: 57%;
                 }
                 @include mq('pc-edit') {
-                  top: 39%;
+                  top: 35%;
+                }
+                @include mq('tab-edit') {
+                  height: 56%;
                 }
               }
 
@@ -812,6 +815,7 @@
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
+                font-family: 'Noto Sans JP', serif;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
@@ -848,7 +852,7 @@
                 position: absolute;
                 width: 5% !important;
                 bottom: 9%;
-                right: -5.1%;
+                right: -4.4%;
                 font-weight: bold;
                 font-size: 0.4rem !important;
                 text-align: start;
@@ -906,7 +910,7 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.5%;
+                    top: 16.2%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;
@@ -919,7 +923,7 @@
                   margin: 0;
                   position: absolute;
                   top: 22%;
-                  right: 70.5%;
+                  right: 69.3%;
                   line-height: 1.5;
                   font-weight: bold;
                   font-size: 0.4rem;
@@ -951,17 +955,17 @@
                   position: absolute;
                   max-width: 50% !important;
                   height: 10% !important;
-                  top: 6%;
+                  top: 6.2%;
                   right: 5%;
                   font-weight: bold;
-                  font-size: 1.1rem;
+                  font-size: 0.9rem;
                   text-align: right;
 
                   @include mq('pc-edit') {
-                    font-size: 0.9rem;
+                    font-size: 0.7rem;
                   }
                   @include mq('pc2-edit') {
-                    font-size: 1.7rem;
+                    font-size: 1.5rem;
                   }
                   @include mq('tab-edit') {
                     font-size: 3.3vw;

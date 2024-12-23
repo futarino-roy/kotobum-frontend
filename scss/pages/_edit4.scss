@@ -1087,6 +1087,13 @@
                   font-size: 1.7vw;
                 }
               }
+              textarea::placeholder {
+                font-size: 1rem;
+                padding: 1%;
+                @include mq('pc-edit') {
+                  font-size: 0.5rem;
+                }
+              }
 
               .text-empty {
                 border: 1px dashed #ccc;
@@ -1097,7 +1104,7 @@
               #textArea {
                 &1-1_t4 {
                   position: absolute;
-                  top: 16%;
+                  top: 15%;
                   font-family: 'League Spartan', sans-serif;
                   font-size: 1.2rem;
                   line-height: 1.2;
@@ -1144,6 +1151,12 @@
 
                   @include mq('tab-edit') {
                     font-size: 2vw;
+                    line-height: 1.5;
+                    top: 22.6%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.4vw;
                   }
                 }
 
@@ -1151,6 +1164,12 @@
                   width: 50% !important;
                   position: absolute;
                   top: 63%;
+
+                  @include mq('tab-edit') {
+                    width: 49% !important;
+                    left: 27%;
+                    font-size: 1.3vw;
+                  }
                 }
 
                 &3-1_t4 {
@@ -1169,8 +1188,10 @@
                     font-size: 0.4rem;
                   }
                   @include mq('tab-edit') {
+                    font-size: 1.9vw;
                   }
                   @include mq('sp-edit') {
+                    font-size: 2.1vw;
                   }
                 }
                 &3-2_t4 {
@@ -1186,6 +1207,12 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 0.256rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 1.25vw;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
                   }
                 }
 
@@ -1204,6 +1231,7 @@
                     font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
+                    font-size: 2.4vw;
                   }
                   @include mq('sp-edit') {
                   }
@@ -1223,6 +1251,8 @@
                     font-size: 0.25rem;
                   }
                   @include mq('tab-edit') {
+                    top: 0;
+                    font-size: 1.4vw;
                   }
                   @include mq('sp-edit') {
                   }
@@ -1243,10 +1273,9 @@
                     font-size: 0.5rem;
                   }
                   @include mq('tab-edit') {
-                    font-size: 1rem;
+                    font-size: 2.3vw;
                   }
                   @include mq('sp-edit') {
-                    font-size: 0.5rem;
                   }
                 }
 
@@ -1278,6 +1307,10 @@
                     font-size: 0.4rem;
                     top: 29%;
                   }
+                  @include mq('tab-edit') {
+                    font-size: 2.5vw;
+                    top: 27%;
+                  }
                 }
                 &8-2_t4 {
                   font-weight: bold;
@@ -1295,6 +1328,9 @@
                   @include mq('pc-edit') {
                     font-size: 0.4rem;
                     top: 85%;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 1.8vw;
                   }
                 }
 
@@ -1314,6 +1350,9 @@
                   @include mq('pc-edit') {
                     font-size: 1.1rem;
                   }
+                  @include mq('tab-edit') {
+                    font-size: 5.4vw;
+                  }
                 }
                 &10-2_t4 {
                   font-size: 0.6rem;
@@ -1323,6 +1362,7 @@
                   margin-bottom: 0;
                   position: relative;
                   top: 25%;
+                  letter-spacing: 0.05rem;
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
                     top: 24%;
@@ -1330,6 +1370,10 @@
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
                     top: 26.5%;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2vw;
+                    top: 24.5%;
                   }
                 }
                 &10-3_t4 {
@@ -1363,6 +1407,14 @@
                   @include mq('pc-edit') {
                     font-size: 0.7rem;
                   }
+                  @include mq('tab-edit') {
+                    font-size: 3.5vw;
+                    margin-top: 6%;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 3.5vw;
+                    margin-top: 8%;
+                  }
                 }
                 &16-2_t4 {
                   position: absolute;
@@ -1374,6 +1426,9 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 0.27rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 1.4vw;
                   }
                 }
               }

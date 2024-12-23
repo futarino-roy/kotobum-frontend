@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // フォントサイズを調整
   function adjustFontSize(textArea) {
-    const maxFontSizeRem = 0.9; // 最大フォントサイズ
+    const maxFontSizeRem = 0.8; // 最大フォントサイズ
     const minFontSizeRem = 0.2; // 最小フォントサイズ
 
     let fontSizeRem = maxFontSizeRem;

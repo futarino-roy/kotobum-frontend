@@ -666,7 +666,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   textAreas.forEach(textArea => {
     // フォントサイズの最大と最小を rem で指定
-    const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
+    const maxFontSizeRem = 0.75;
     const minFontSizeRem = 0.2; // 0.75rem (最小フォントサイズ)
 
     // テキスト量に応じてフォントサイズを調整

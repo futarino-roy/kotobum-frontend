@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   textAreas.forEach(textArea => {
-    const maxFontSizeRem = 0.9;
+    const maxFontSizeRem = 0.75;
     const minFontSizeRem = 0.2;
 
     function adjustFontSize() {
