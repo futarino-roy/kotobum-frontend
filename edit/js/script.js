@@ -1243,7 +1243,7 @@ function handleSaveOrSend() {
 
         // 親要素のリサイズ後のサイズを基準にして相対位置を計算
         const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
-        const relativeLeft = (textarea.offsetLeft) / initialWidth * newWidth;
+        const relativeLeft = left - newRect.left;
         const relativeWidth = (width / initialWidth) * newWidth;
         const relativeHeight = (height / initialHeight) * newHeight;
 
