@@ -606,7 +606,17 @@ document.addEventListener('DOMContentLoaded', function () {
   function adjustLineHeight(textArea) {
     const textAreaHeight = textArea.clientHeight;
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const lineHeight = textAreaHeight / fontSize + 0.09;
+    const textLength = textArea.value.length; // テキストの文字数を取得
+
+    let lineHeight;
+    if (textLength <= 4) {
+      // 4文字以内の場合
+      lineHeight = textAreaHeight / fontSize - 0.2; // 独自の調整値を適用
+    } else {
+      // 4文字以上の場合
+      lineHeight = textAreaHeight / fontSize + 0.06; // 別の調整値を適用
+    }
+
     textArea.style.lineHeight = lineHeight;
   }
 
@@ -638,27 +648,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   textAreas.forEach(textArea => {
-    const maxFontSizeRem = 0.75;
-    const minFontSizeRem = 0.2;
+    let maxFontSizeRem = 0.85;
+    let minFontSizeRem = 0.2;
 
     function adjustFontSize() {
+      // ウィンドウサイズに応じたフォントサイズの設定
+      if (window.innerWidth >= 1500) {
+        maxFontSizeRem = 0.95; // 最大フォントサイズ (1500px以上)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px以上)
+      } else if (window.innerWidth >= 1200) {
+        maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
+      } else if (window.innerWidth >= 900) {
+        maxFontSizeRem = 0.6; // 最大フォントサイズ (1500px-1200px)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
+      } else {
+        maxFontSizeRem = 0.7; // デフォルト最大フォントサイズ
+        minFontSizeRem = 0.2;  // デフォルト最小フォントサイズ
+      }
+
       let fontSizeRem = maxFontSizeRem;
       textArea.style.fontSize = `${fontSizeRem}rem`;
 
+      // テキストエリアの幅に収まるまでフォントサイズを調整
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
         fontSizeRem -= 0.01;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }
 
+    // テキストエリアの入力イベントでフォントサイズを調整
     textArea.addEventListener('input', function () {
       adjustFontSize();
     });
 
+    // 初期状態で値が入っている場合にもフォントサイズを調整
     if (textArea.value.trim() !== '') {
       adjustFontSize();
     }
+
+    // ウィンドウのリサイズ時にもフォントサイズを再調整
+    window.addEventListener('resize', adjustFontSize);
   });
+
 });
 //------------------------ここまで----------------------------
 

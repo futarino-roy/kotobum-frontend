@@ -852,9 +852,9 @@
                 position: absolute;
                 width: 5% !important;
                 bottom: 9%;
-                right: -4.4%;
+                right: -5.3%;
                 font-weight: bold;
-                font-size: 0.4rem !important;
+                font-size: 0.35rem !important;
                 text-align: start;
                 field-sizing: content;
 
@@ -872,11 +872,12 @@
                 word-break: normal; /* 単語の途中での改行を無効にする */
 
                 @include mq('pc-edit') {
-                  font-size: 0.3rem !important;
+                  font-size: 0.25rem !important;
                 }
 
                 @include mq('pc2-edit') {
-                  font-size: 0.7rem !important;
+                  font-size: 0.65rem !important;
+                  right: -4.7%;
                 }
 
                 @include mq('tab-edit') {
@@ -896,10 +897,10 @@
                 &B-1 {
                   margin: 0;
                   position: absolute;
-                  max-width: 17%;
+                  max-width: 16.5%;
                   height: 4.7%;
-                  top: 16.3%;
-                  right: 73%;
+                  top: 16.5%;
+                  right: 73.5%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   font-weight: 900;
@@ -907,10 +908,12 @@
                   color: #ffffff;
                   @include mq('pc-edit') {
                     font-size: 0.8rem;
+                    top: 16.7%;
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.2%;
+                    top: 16.5%;
+                    right: 73.2%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;
@@ -958,7 +961,7 @@
                   top: 6.2%;
                   right: 5%;
                   font-weight: bold;
-                  font-size: 0.9rem;
+                  font-size: 1rem;
                   text-align: right;
 
                   @include mq('pc-edit') {

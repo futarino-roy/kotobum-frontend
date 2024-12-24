@@ -1174,22 +1174,107 @@ function handleSaveOrSend() {
         return;
       }
 
+      // // テキストエリアと画像データの収集
+      // const textAreas = document.querySelectorAll('.text-empty');
+      // const textData = Array.from(textAreas).map(textarea => {
+      //   const { top, left } = textarea.getBoundingClientRect(); // 要素の位置を取得
+      //   return {
+      //     id: textarea.id,
+      //     text: textarea.value || '',
+      //     top: Math.round(top), // topの値を収集
+      //     left: Math.round(left) // leftの値を収集
+      //   };
+      // });
+
+      // const dropAreas = document.querySelectorAll('.empty');
+      // const imageData = Array.from(dropAreas).map(dropArea => {
+      //   const img = dropArea.querySelector('img');
+      //   const { width, height, top, left } = dropArea.getBoundingClientRect(); // 要素の位置とサイズを取得
+      //   return {
+      //     id: dropArea.id,
+      //     image: img ? img.src : null,
+      //     width: Math.round(width),
+      //     height: Math.round(height),
+      //     top: Math.round(top), // topの値を収集
+      //     left: Math.round(left) // leftの値を収集
+      //   };
+      // });
+
+
+      // const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
+      // const textColor = document.querySelector('.text-colorB').style.color || '#000000';
+
+      // if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      //   console.error('送信するデータがありません。');
+      //   alert('送信するデータがありません。');
+      //   return;
+      // }
+
+      // const dataToSend = {
+      //   textData,
+      //   imageData,
+      //   colors: {
+      //     backgroundColor,
+      //     textColor,
+      //   }
+      // };
+
+      // 親要素（class="input-drop"）を取得
+      const parentElement = document.querySelector('.input-drop');
+
+      // 親要素の初期サイズを取得
+      const initialRect = parentElement.getBoundingClientRect();
+      const initialWidth = initialRect.width;
+      const initialHeight = initialRect.height;
+
+      // 親要素のサイズを変更
+      parentElement.style.width = '150mm';
+      parentElement.style.height = '210mm';
+
+      // 親要素のリサイズ後のサイズを取得
+      const newRect = parentElement.getBoundingClientRect();
+      const newWidth = newRect.width;
+      const newHeight = newRect.height;
+
       // テキストエリアと画像データの収集
       const textAreas = document.querySelectorAll('.text-empty');
-      const textData = Array.from(textAreas).map(textarea => ({
-        id: textarea.id,
-        text: textarea.value || '',
-      }));
+      const textData = Array.from(textAreas).map(textarea => {
+        const { top, left, width, height } = textarea.getBoundingClientRect(); // 要素の位置とサイズを取得
+
+        // 親要素のリサイズ後のサイズを基準にして相対位置を計算
+        const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
+        const relativeLeft = (left - initialRect.left) / initialWidth * newWidth;
+        const relativeWidth = (width / initialWidth) * newWidth;
+        const relativeHeight = (height / initialHeight) * newHeight;
+
+        return {
+          id: textarea.id,
+          text: textarea.value || '',
+          top: Math.round(relativeTop), // 親要素リサイズ後のtopの値
+          left: Math.round(relativeLeft), // 親要素リサイズ後のleftの値
+          width: Math.round(relativeWidth), // 親要素リサイズ後のwidth
+          height: Math.round(relativeHeight) // 親要素リサイズ後のheight
+        };
+      });
 
       const dropAreas = document.querySelectorAll('.empty');
       const imageData = Array.from(dropAreas).map(dropArea => {
         const img = dropArea.querySelector('img');
-        const { width, height } = dropArea.getBoundingClientRect();
+        const { top, left, width, height } = dropArea.getBoundingClientRect(); // 要素の位置とサイズを取得
+
+        // 親要素のリサイズ後のサイズを基準にして相対位置を計算
+        const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
+        const relativeLeft = (left - initialRect.left) / initialWidth * newWidth;
+        const relativeWidth = (width / initialWidth) * newWidth;
+        const relativeHeight = (height / initialHeight) * newHeight;
+
         return {
           id: dropArea.id,
           image: img ? img.src : null,
-          width: Math.round(width),
-          height: Math.round(height),
+          top: Math.round(relativeTop), // 親要素リサイズ後のtopの値
+          left: Math.round(relativeLeft), // 親要素リサイズ後のleftの値
+          width: Math.round(relativeWidth), // 親要素リサイズ後のwidth
+          height: Math.round(relativeHeight) // 親要素リサイズ後のheight
         };
       });
 
