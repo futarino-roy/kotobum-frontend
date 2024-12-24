@@ -915,7 +915,7 @@
                   max-width: 16.5%;
                   height: 4.7%;
                   top: 16.5%;
-                  left: 73.3%;
+                  left: 72.3%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   line-height: 0.9;
@@ -929,8 +929,8 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.6%;
-                    left: 73.3%;
+                    top: 16.5%;
+                    left: 73.8%;
                   }
 
                   @include mq('tab-edit') {

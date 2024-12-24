@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const textLength = textArea.value.length; // テキストの文字数を取得
 
     let lineHeight;
-    if (textLength <= 4) {
+    if (textLength <= 6) {
       // 4文字以内の場合
       lineHeight = textAreaHeight / fontSize - 0.2; // 独自の調整値を適用
     } else {
