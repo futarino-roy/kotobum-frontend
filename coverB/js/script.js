@@ -548,27 +548,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// テキストエリアの内容をローカルストレージに保存する処理を削除
-
-// // テキストエリアの内容をローカルストレージから読み込む関数を削除
-
-// const defaultWidth = "13.5%"; // CSSで指定した幅
-// const defaultHeight = "4.5%"; // CSSで指定した高さ
+// テキストエリアの内容の保存と高さと幅を自動調整
+function saveText() {
+  document.querySelectorAll(".text-empty").forEach((textArea) => {
+    const id = textArea.id;
+  });
+}
 
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
   textarea.style.height = "auto";
   textarea.style.height = `${textarea.scrollHeight}px`;
-  // }
 }
 
 // テキストエリアの幅を調整する関数
-// function adjustTextareaWidth(textarea) {
-//   textarea.style.width = "auto";
-//   const scrollWidth = textarea.scrollWidth;
-//   textarea.style.width = `${scrollWidth}px`;
-//   // }
-// }
+function adjustTextareaWidth(textarea) {
+  textarea.style.width = "auto";
+  const scrollWidth = textarea.scrollWidth;
+  textarea.style.width = `${scrollWidth}px`;
+}
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
@@ -578,12 +576,11 @@ function enforceNoMaxLength(textarea) {
   });
 
   adjustHeight(textarea);
+  adjustTextareaWidth(textarea);
 }
 
 // ドキュメント読み込み時の処理
 document.addEventListener("DOMContentLoaded", function () {
-  // ローカルストレージからの読み込み処理を削除
-
   // テキストエリアごとに必要な処理を実行
   document.querySelectorAll(".text-empty").forEach((textarea) => {
     enforceNoMaxLength(textarea);
@@ -697,11 +694,6 @@ document.addEventListener('DOMContentLoaded', function () {
     textArea.addEventListener('input', function () {
       adjustFontSize();
     });
-
-    // 初期状態で値が入っている場合にもフォントサイズを調整
-    if (textArea.value.trim() !== '') {
-      adjustFontSize();
-    }
 
     // ウィンドウのリサイズ時にもフォントサイズを再調整
     window.addEventListener('resize', adjustFontSize);

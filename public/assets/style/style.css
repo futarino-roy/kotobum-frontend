@@ -7104,7 +7104,7 @@ input:checked + label::after {
   position: absolute;
   width: 5% !important;
   bottom: 9%;
-  left: -5.3%;
+  left: -4.5%;
   font-weight: bold;
   font-size: 0.35rem !important;
   text-align: start;
@@ -7152,7 +7152,7 @@ input:checked + label::after {
   max-width: 16.5%;
   height: 4.7%;
   top: 16.5%;
-  left: 73.5%;
+  left: 73.3%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
@@ -7168,8 +7168,8 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
-    top: 16.5%;
-    right: 73.2%;
+    top: 16.6%;
+    left: 73.3%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7186,7 +7186,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   top: 22%;
-  left: 70.5%;
+  left: 69.7%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -7239,6 +7239,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
     font-size: 1.5rem;
+    top: 5.7%;
   }
 }
 @media screen and (max-width: 900px) {

@@ -906,6 +906,7 @@
                   font-weight: 900;
                   line-height: 0.9;
                   color: #ffffff;
+
                   @include mq('pc-edit') {
                     font-size: 0.8rem;
                     top: 16.7%;
