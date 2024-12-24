@@ -1241,7 +1241,6 @@ function handleSaveOrSend() {
       const textData = Array.from(textAreas).map(textarea => {
         const { top, left, width, height } = textarea.getBoundingClientRect(); // 要素の位置とサイズを取得
         console.log("Original values:", { top, left, width, height });
-        console.log("Debug:", { left, initialLeft: initialRect.left, relativeLeft });
 
         // 親要素のリサイズ後のサイズを基準にして相対位置を計算
         const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
@@ -1249,6 +1248,7 @@ function handleSaveOrSend() {
         const relativeWidth = (width / initialWidth) * newWidth;
         const relativeHeight = (height / initialHeight) * newHeight;
         console.log("Calculated values:", { relativeTop, relativeLeft, relativeWidth, relativeHeight });
+        console.log("Debug:", { left, initialLeft: initialRect.left, relativeLeft });
 
         return {
           id: textarea.id,
