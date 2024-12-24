@@ -7169,7 +7169,7 @@ input:checked + label::after {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
     top: 16.5%;
-    left: 73.6%;
+    left: 73.4%;
   }
 }
 @media screen and (max-width: 900px) {
