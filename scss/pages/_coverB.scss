@@ -852,7 +852,7 @@
                 position: absolute;
                 width: 5% !important;
                 bottom: 9%;
-                right: -5.3%;
+                right: -5.5%;
                 font-weight: bold;
                 font-size: 0.35rem !important;
                 text-align: start;
@@ -958,14 +958,14 @@
                   position: absolute;
                   max-width: 50% !important;
                   height: 10% !important;
-                  top: 6.2%;
+                  top: 5.7%;
                   right: 5%;
                   font-weight: bold;
                   font-size: 1rem;
                   text-align: right;
 
                   @include mq('pc-edit') {
-                    font-size: 0.7rem;
+                    font-size: 0.8rem;
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;

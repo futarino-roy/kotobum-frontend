@@ -8003,7 +8003,7 @@ input:checked + label::after {
   position: absolute;
   width: 5% !important;
   bottom: 9%;
-  right: -5.3%;
+  right: -5.5%;
   font-weight: bold;
   font-size: 0.35rem !important;
   text-align: start;
@@ -8123,7 +8123,7 @@ input:checked + label::after {
   position: absolute;
   max-width: 50% !important;
   height: 10% !important;
-  top: 6.2%;
+  top: 5.7%;
   right: 5%;
   font-weight: bold;
   font-size: 1rem;
@@ -8131,7 +8131,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -17308,9 +17308,9 @@ body {
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea8_t4 {
-  width: 56%;
-  height: 60%;
-  top: 19%;
+  width: 64%;
+  height: 53%;
+  top: 21%;
   position: absolute;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea8_t4 img {
@@ -17818,7 +17818,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
   position: absolute;
-  bottom: 13.5%;
+  bottom: 1.5%;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave {
   position: absolute;

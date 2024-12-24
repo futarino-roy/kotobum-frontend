@@ -660,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function () {
         maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
         minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
       } else if (window.innerWidth >= 900) {
-        maxFontSizeRem = 0.6; // 最大フォントサイズ (1500px-1200px)
+        maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
         minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
       } else {
         maxFontSizeRem = 0.7; // デフォルト最大フォントサイズ
