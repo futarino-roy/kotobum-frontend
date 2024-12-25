@@ -275,7 +275,6 @@ function handleDrop(event) {
   console.log('Drop event fired');
   event.preventDefault();
   this.style.backgroundColor = 'transparent';
-
   const files = event.dataTransfer.files;
   if (files.length > 0) {
     let file = files[0];
