@@ -727,7 +727,7 @@
 
               #dropAreaB {
                 position: absolute;
-                top: 35%;
+                top: 35.5%;
                 right: 4.5%;
                 width: 86.8%;
                 height: 56%;
@@ -736,7 +736,11 @@
                 cursor: pointer;
                 bottom: 10px;
                 @include mq('pc2-edit') {
-                  top: 40%;
+                  top: 35%;
+                  width: 87%;
+                }
+                @include mq('pc-edit') {
+                  top: 35%;
                 }
 
                 // ドロップ後ボタン-----------
@@ -793,8 +797,8 @@
                 @include mq('pc2-edit') {
                   top: 35%;
                   right: 4.5%;
-                  width: 87%;
-                  height: 57%;
+                  width: 86.8%;
+                  height: 56.6%;
                 }
                 @include mq('pc-edit') {
                   top: 35%;
@@ -854,7 +858,7 @@
                 bottom: 9%;
                 right: -5.5%;
                 font-weight: bold;
-                font-size: 0.35rem !important;
+                font-size: 0.3rem !important;
                 text-align: start;
                 field-sizing: content;
 
@@ -872,12 +876,12 @@
                 word-break: normal; /* 単語の途中での改行を無効にする */
 
                 @include mq('pc-edit') {
-                  font-size: 0.25rem !important;
+                  font-size: 0.2rem !important;
                 }
 
                 @include mq('pc2-edit') {
-                  font-size: 0.65rem !important;
-                  right: -4.7%;
+                  font-size: 0.58rem !important;
+                  right: -5%;
                 }
 
                 @include mq('tab-edit') {
@@ -899,7 +903,7 @@
                   position: absolute;
                   max-width: 16.5%;
                   height: 4.7%;
-                  top: 16.5%;
+                  top: 16.7%;
                   right: 73.5%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */

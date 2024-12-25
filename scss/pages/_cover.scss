@@ -745,7 +745,7 @@
               #dropAreaA {
                 position: absolute;
 
-                top: 35%;
+                top: 35.5%;
                 left: 5%;
                 width: 86.8%;
                 height: 56%;
@@ -808,13 +808,9 @@
                   top: 35%;
                   left: 4.5%;
                   width: 87%;
-                  height: 57%;
                 }
                 @include mq('pc-edit') {
                   top: 35%;
-                }
-                @include mq('tab-edit') {
-                  height: 56%;
                 }
               }
 
@@ -869,7 +865,7 @@
                 bottom: 9%;
                 left: -4.5%;
                 font-weight: bold;
-                font-size: 0.35rem !important;
+                font-size: 0.3rem !important;
                 text-align: start;
                 field-sizing: content;
 
@@ -887,12 +883,12 @@
                 word-break: normal; /* 単語の途中での改行を無効にする */
 
                 @include mq('pc-edit') {
-                  font-size: 0.25rem !important;
+                  font-size: 0.2rem !important;
                 }
 
                 @include mq('pc2-edit') {
-                  font-size: 0.65rem !important;
-                  left: -5.3%;
+                  font-size: 0.58rem !important;
+                  left: -5%;
                 }
 
                 @include mq('tab-edit') {
@@ -914,7 +910,7 @@
                   position: absolute;
                   max-width: 16.5%;
                   height: 4.7%;
-                  top: 16.5%;
+                  top: 16.7%;
                   left: 72.3%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
@@ -929,7 +925,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.5%;
+                    top: 16.8%;
                     left: 73.4%;
                   }
 

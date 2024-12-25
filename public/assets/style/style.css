@@ -6985,7 +6985,7 @@ input:checked + label::after {
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
-  top: 35%;
+  top: 35.5%;
   left: 5%;
   width: 86.8%;
   height: 56%;
@@ -7042,17 +7042,11 @@ input:checked + label::after {
     top: 35%;
     left: 4.5%;
     width: 87%;
-    height: 57%;
   }
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
     top: 35%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
-    height: 56%;
   }
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -7106,7 +7100,7 @@ input:checked + label::after {
   bottom: 9%;
   left: -4.5%;
   font-weight: bold;
-  font-size: 0.35rem !important;
+  font-size: 0.3rem !important;
   text-align: start;
   field-sizing: content;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -7122,13 +7116,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.25rem !important;
+    font-size: 0.2rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.65rem !important;
-    left: -5.3%;
+    font-size: 0.58rem !important;
+    left: -5%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7151,7 +7145,7 @@ input:checked + label::after {
   position: absolute;
   max-width: 16.5%;
   height: 4.7%;
-  top: 16.5%;
+  top: 16.7%;
   left: 72.3%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
@@ -7168,7 +7162,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
-    top: 16.5%;
+    top: 16.8%;
     left: 73.4%;
   }
 }
@@ -7880,7 +7874,7 @@ input:checked + label::after {
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  top: 35%;
+  top: 35.5%;
   right: 4.5%;
   width: 86.8%;
   height: 56%;
@@ -7891,7 +7885,13 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
-    top: 40%;
+    top: 35%;
+    width: 87%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
+    top: 35%;
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn {
@@ -7942,8 +7942,8 @@ input:checked + label::after {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
     top: 35%;
     right: 4.5%;
-    width: 87%;
-    height: 57%;
+    width: 86.8%;
+    height: 56.6%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -8006,7 +8006,7 @@ input:checked + label::after {
   bottom: 9%;
   right: -5.5%;
   font-weight: bold;
-  font-size: 0.35rem !important;
+  font-size: 0.3rem !important;
   text-align: start;
   field-sizing: content;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -8022,13 +8022,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.25rem !important;
+    font-size: 0.2rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.65rem !important;
-    right: -4.7%;
+    font-size: 0.58rem !important;
+    right: -5%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -8051,7 +8051,7 @@ input:checked + label::after {
   position: absolute;
   max-width: 16.5%;
   height: 4.7%;
-  top: 16.5%;
+  top: 16.7%;
   right: 73.5%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
@@ -17230,7 +17230,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea6_t4 {
   position: relative;
-  top: -5.5%;
+  top: -0.5%;
   left: -0.5%;
   width: 43%;
   height: 33.5%;
@@ -17390,8 +17390,7 @@ body {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop textarea::placeholder {
-  font-size: 1rem;
-  padding: 1%;
+  font-size: 0.7rem;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop textarea::placeholder {
@@ -17589,7 +17588,7 @@ body {
   font-size: 0.7rem;
   position: absolute;
   font-weight: bold;
-  top: 66%;
+  top: 70%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea6_t4 {

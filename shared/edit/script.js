@@ -475,22 +475,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // テキストエリアのサイズを調整する関数
 // テキストエリアのサイズを内容に合わせて調整する関数
+document.addEventListener('DOMContentLoaded', function () {
+  // 指定したクラスのテキストエリアを全て取得し、初期化
+  document.querySelectorAll('.text-empty').forEach((textarea) => {
+    setupDynamicTextarea(textarea);
+  });
+
+  // ウィンドウリサイズ時に全テキストエリアのサイズを再調整
+  window.addEventListener('resize', function () {
+    document.querySelectorAll('.text-empty').forEach((textarea) => {
+      adjustTextareaSize(textarea); // リサイズ時にサイズ再調整
+    });
+  });
+});
+
 function adjustTextareaSize(textarea) {
   if (!textarea) return; // テキストエリアが存在しない場合は処理を中断
 
   // 横幅を内容に応じて調整
-  if (textarea.value.trim() === "") {
-    textarea.style.width = "auto"; // 初期高さにリセット
-  } else {
-    textarea.style.width = 'auto'; // リセット
-    textarea.style.width = `${textarea.scrollWidth}px`;
-  }
+  textarea.style.width = "auto"; // 初期幅にリセット
+  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に合わせた幅に調整
+
   // 高さを内容に応じて調整
   if (textarea.value.trim() === "") {
-    textarea.style.height = "auto"; // 初期高さにリセット
+    textarea.style.height = "auto"; // 空の時は高さをリセット
+    textarea.style.height = "40px"; // 初期の最小高さ（調整可能）
   } else {
     textarea.style.height = "auto"; // 一旦リセット
-    textarea.style.height = `${textarea.scrollHeight}px`; // 再設定
+    textarea.style.height = `${textarea.scrollHeight}px`; // 内容に合わせて高さを再設定
   }
 }
 
@@ -504,16 +516,9 @@ function setupDynamicTextarea(textarea) {
   });
 
   // 初期表示時にサイズ調整
-  adjustTextareaSize(textarea);
+  setTimeout(() => adjustTextareaSize(textarea), 0); // 少し遅延させて調整
 }
 
-// ドキュメント読み込み時にテキストエリアを初期化
-document.addEventListener('DOMContentLoaded', function () {
-  // 指定したクラスのテキストエリアを全て取得し、初期化
-  document.querySelectorAll('.text-empty').forEach((textarea) => {
-    setupDynamicTextarea(textarea);
-  });
-});
 
 
 // テキストエリア枠の削除
