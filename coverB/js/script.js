@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function () {
       lineHeight = textAreaHeight / fontSize - 0.2; // 独自の調整値を適用
     } else {
       // 4文字以上の場合
-      lineHeight = textAreaHeight / fontSize + 0.06; // 別の調整値を適用
+      lineHeight = textAreaHeight / fontSize + 0.25; // 別の調整値を適用
     }
 
     textArea.style.lineHeight = lineHeight;
@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   textAreas.forEach(textArea => {
     let maxFontSizeRem = 0.85;
-    let minFontSizeRem = 0.2;
+    let minFontSizeRem = 0.4;
 
     function adjustFontSize() {
       // ウィンドウサイズに応じたフォントサイズの設定
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
         minFontSizeRem = 0.2; // 最小フォントサイズ (1500px以上)
       } else if (window.innerWidth >= 1200) {
         maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
-        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
+        minFontSizeRem = 0.4; // 最小フォントサイズ (1500px-1200px)
       } else if (window.innerWidth >= 900) {
         maxFontSizeRem = 0.6; // 最大フォントサイズ (1500px-1200px)
         minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
@@ -685,7 +685,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // テキストエリアの幅に収まるまでフォントサイズを調整
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.01;
+        fontSizeRem -= 0.1;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }

@@ -904,7 +904,7 @@
                   max-width: 16.5%;
                   height: 4.7%;
                   top: 16.7%;
-                  right: 73.5%;
+                  right: 73.4%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   font-weight: 900;
@@ -917,8 +917,9 @@
                   }
                   @include mq('pc2-edit') {
                     font-size: 1.5rem;
-                    top: 16.5%;
-                    right: 73.2%;
+                    top: 16.7%;
+                    right: 73.7%;
+                    max-width: 15.5%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3vw;

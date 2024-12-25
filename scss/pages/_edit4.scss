@@ -1019,7 +1019,7 @@
                 }
                 &10_t4 {
                   width: 91%;
-                  height: 45%;
+                  height: 46%;
                   top: 26.5%;
                   position: absolute;
 
@@ -1300,7 +1300,7 @@
                   top: 27%;
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
-                    top: 26%;
+                    top: 28%;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.4rem;
@@ -1321,7 +1321,7 @@
                   opacity: 0.5;
                   font-size: 0.5rem;
                   @include mq('pc2-edit') {
-                    font-size: 0.6rem;
+                    font-size: 0.7rem;
                     top: 87%;
                   }
                   @include mq('pc-edit') {
@@ -1335,7 +1335,7 @@
 
                 &10-1_t4 {
                   position: absolute;
-                  top: 6.6%;
+                  top: 6.2%;
                   font-size: 1.4rem;
                   font-weight: bold;
                   text-align: center;
@@ -1360,11 +1360,11 @@
                   color: #fdfcf6;
                   margin-bottom: 0;
                   position: relative;
-                  top: 25%;
+                  top: 27%;
                   letter-spacing: 0.05rem;
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
-                    top: 24%;
+                    top: 26%;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
@@ -1381,7 +1381,14 @@
                   color: #fdfcf6;
                   margin: 0;
                   position: relative;
-                  top: 25%;
+                  top: 26%;
+                  font-size: 0.5rem;
+                  @include mq('pc2-edit') {
+                    font-size: 0.7rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.4rem;
+                  }
                 }
                 &11_t4 {
                   max-width: 45%;
@@ -1395,8 +1402,8 @@
                 }
 
                 &16-1_t4 {
-                  position: relative;
-                  top: 7.5%;
+                  position: absolute;
+                  top: 50%;
                   text-align: center;
                   font-size: 0.9rem;
                   font-weight: bold;
@@ -1416,9 +1423,9 @@
                   }
                 }
                 &16-2_t4 {
-                  position: absolute;
-                  top: 57.5%;
-                  max-height: 35%;
+                  position: relative;
+                  top: 22.5%;
+                  max-height: 29%;
                   font-size: 0.34rem;
                   @include mq('pc2-edit') {
                     font-size: 0.53rem;
@@ -1459,6 +1466,9 @@
               .wave-img {
                 position: absolute;
                 bottom: 1.5%;
+                @include mq('pc2-edit') {
+                  bottom: 1.5%;
+                }
               }
               .wave {
                 position: absolute;
