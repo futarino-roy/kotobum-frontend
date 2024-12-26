@@ -371,7 +371,7 @@ function handleDragLeave(event) {
 }
 
 // 画像をロードする（IndexedDBを削除したため空の関数に）
-function loadAllImages() { }
+// function loadAllImages() { }
 
 // ドロップ時の処理
 function handleDrop(event) {

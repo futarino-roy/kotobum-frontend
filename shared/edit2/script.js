@@ -269,6 +269,7 @@ function handleDragLeave(event) {
 
 // ドロップ時の処理
 function handleDrop(event) {
+    console.log('Drop event fired');
     event.preventDefault();
     this.style.backgroundColor = 'transparent';
 

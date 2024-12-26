@@ -337,8 +337,8 @@ function insertImageToDropArea(dropArea) {
   selectedImage.classList.remove('selected');
   selectedImage = null;
 
-  // ボタンを表示するためのクラスを削除
-  dropArea.classList.remove('hide-buttons');
+  // // ボタンを表示するためのクラスを削除
+  // dropArea.classList.remove('hide-buttons');
 }
 
 // ドキュメント内でクリックしたときの処理
@@ -358,8 +358,6 @@ function openCroppieModal(dropArea) {
 }
 
 
-
-// 画像のドラッグ＆ドロップ処理
 // ドラッグオーバー時の処理
 function handleDragOver(event) {
   event.preventDefault();
