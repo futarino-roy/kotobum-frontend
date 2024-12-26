@@ -1227,33 +1227,24 @@ function handleSaveOrSend() {
       const initialWidth = initialRect.width;
       const initialHeight = initialRect.height;
 
-      // 親要素のサイズを変更
-      parentElement.style.width = '156mm';
-      parentElement.style.height = '218mm';
-
-      // 親要素のリサイズ後のサイズを取得
-      const newRect = parentElement.getBoundingClientRect();
-      const newWidth = newRect.width;
-      const newHeight = newRect.height;
-
       // テキストエリアと画像データの収集
       const textAreas = document.querySelectorAll('.text-empty');
       const textData = Array.from(textAreas).map(textarea => {
         const { top, left, width, height } = textarea.getBoundingClientRect(); // 要素の位置とサイズを取得
 
-        // 親要素のリサイズ後のサイズを基準にして相対位置を計算
-        const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
-        const relativeLeft = left - newRect.left;
-        const relativeWidth = (width / initialWidth) * newWidth;
-        const relativeHeight = (height / initialHeight) * newHeight;
+        // 親要素の初期サイズを基準にして相対位置を計算
+        const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
+        const relativeLeft = left - initialRect.left;
+        const relativeWidth = (width / initialWidth) * initialWidth;
+        const relativeHeight = (height / initialHeight) * initialHeight;
 
         return {
           id: textarea.id,
           text: textarea.value || '',
-          top: Math.round(relativeTop), // 親要素リサイズ後のtopの値
-          left: Math.round(relativeLeft), // 親要素リサイズ後のleftの値
-          width: Math.round(relativeWidth), // 親要素リサイズ後のwidth
-          height: Math.round(relativeHeight) // 親要素リサイズ後のheight
+          top: Math.round(relativeTop), // 親要素初期サイズでのtopの値
+          left: Math.round(relativeLeft), // 親要素初期サイズでのleftの値
+          width: Math.round(relativeWidth), // 親要素初期サイズでのwidth
+          height: Math.round(relativeHeight) // 親要素初期サイズでのheight
         };
       });
 
@@ -1262,19 +1253,19 @@ function handleSaveOrSend() {
         const img = dropArea.querySelector('img');
         const { top, left, width, height } = dropArea.getBoundingClientRect(); // 要素の位置とサイズを取得
 
-        // 親要素のリサイズ後のサイズを基準にして相対位置を計算
-        const relativeTop = (top - initialRect.top) / initialHeight * newHeight;
-        const relativeLeft = (left - initialRect.left) / initialWidth * newWidth;
-        const relativeWidth = (width / initialWidth) * newWidth;
-        const relativeHeight = (height / initialHeight) / newHeight;
+        // 親要素の初期サイズを基準にして相対位置を計算
+        const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
+        const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
+        const relativeWidth = (width / initialWidth) * initialWidth;
+        const relativeHeight = (height / initialHeight) * initialHeight;
 
         return {
           id: dropArea.id,
           image: img ? img.src : null,
-          top: Math.round(relativeTop), // 親要素リサイズ後のtopの値
-          left: Math.round(relativeLeft), // 親要素リサイズ後のleftの値
-          width: Math.round(relativeWidth), // 親要素リサイズ後のwidth
-          height: Math.round(relativeHeight) // 親要素リサイズ後のheight
+          top: Math.round(relativeTop), // 親要素初期サイズでのtopの値
+          left: Math.round(relativeLeft), // 親要素初期サイズでのleftの値
+          width: Math.round(relativeWidth), // 親要素初期サイズでのwidth
+          height: Math.round(relativeHeight) // 親要素初期サイズでのheight
         };
       });
 
