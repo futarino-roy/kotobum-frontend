@@ -1228,8 +1228,8 @@ function handleSaveOrSend() {
       const initialHeight = initialRect.height;
 
       // 親要素のサイズを変更
-      parentElement.style.width = '150mm';
-      parentElement.style.height = '210mm';
+      parentElement.style.width = '300mm';
+      parentElement.style.height = '420mm';
 
       // 親要素のリサイズ後のサイズを取得
       const newRect = parentElement.getBoundingClientRect();
