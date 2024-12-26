@@ -290,8 +290,9 @@ function handleDrop(event) {
       this.appendChild(img);
       addButtons(this);
 
-      // 画像が挿入されたら枠線をなくす処理追加
+      // 画像が挿入されたら枠線をなくし、フォーカスを戻す
       this.style.border = 'none';
+      setTimeout(() => this.focus(), 0); // 非同期でフォーカスを戻す
     }.bind(this);
     fileReader.readAsDataURL(file);
   }
@@ -474,10 +475,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // テキストエリアのサイズを調整する関数
-// テキストエリアのサイズを内容に合わせて調整する関数
 document.addEventListener('DOMContentLoaded', function () {
   // 指定したクラスのテキストエリアを全て取得し、初期化
   document.querySelectorAll('.text-empty').forEach((textarea) => {
+
+
     setupDynamicTextarea(textarea);
   });
 
