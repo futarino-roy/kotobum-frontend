@@ -17324,8 +17324,8 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea10_t4 {
   width: 91%;
-  height: 46%;
-  top: 26.5%;
+  height: 47%;
+  top: 26.7%;
   position: absolute;
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea10_t4 img {
@@ -17701,15 +17701,15 @@ body {
   font-weight: bold;
   text-align: center;
   color: #fdfcf6;
-  margin-bottom: 0;
+  margin: 0;
   position: relative;
-  top: 27%;
+  top: 28%;
   letter-spacing: 0.05rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea10-2_t4 {
     font-size: 0.9rem;
-    top: 26%;
+    top: 28%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -17730,7 +17730,7 @@ body {
   color: #fdfcf6;
   margin: 0;
   position: relative;
-  top: 26%;
+  top: 28%;
   font-size: 0.5rem;
 }
 @media screen and (min-width: 1500px) {
@@ -17788,9 +17788,10 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea16-2_t4 {
   position: relative;
-  top: 22.5%;
+  top: 23.5%;
   max-height: 29%;
   font-size: 0.34rem;
+  left: 1.5%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea16-2_t4 {
