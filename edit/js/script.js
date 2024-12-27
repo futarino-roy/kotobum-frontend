@@ -1219,9 +1219,12 @@ function handleSaveOrSend() {
       //   }
       // };
 
-      // 親要素（class="input-drop"）を取得
       const parentElement = document.querySelector('.input-drop');
       const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
+
+      // 背景色とテキスト色の取得
+      const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
 
       // 各ページのデータを収集
       const pageData = Array.from(swiperSlides).map(slide => {
@@ -1278,18 +1281,16 @@ function handleSaveOrSend() {
           imageData
         };
       });
-      const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-colorB').style.color || '#000000';
 
-      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      // 送信データの構築
+      if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
       }
 
       const dataToSend = {
-        textData,
-        imageData,
+        pageData,
         colors: {
           backgroundColor,
           textColor,
