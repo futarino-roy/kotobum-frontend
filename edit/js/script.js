@@ -1229,27 +1229,19 @@ function handleSaveOrSend() {
       // 各ページのデータを収集
       const pageData = Array.from(swiperSlides).map(slide => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
-        const initialWidth = initialRect.width;
-        const initialHeight = initialRect.height;
 
         // スライド内のテキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
         const textData = Array.from(textAreas).map(textarea => {
           const { top, left, width, height } = textarea.getBoundingClientRect();
 
-          // スライド初期サイズを基準にして相対位置を計算
-          const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
-          const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
-          const relativeWidth = (width / initialWidth) * initialWidth;
-          const relativeHeight = (height / initialHeight) * initialHeight;
-
           return {
             id: textarea.id,
             text: textarea.value || '',
-            top: Math.round(relativeTop),
-            left: Math.round(relativeLeft),
-            width: Math.round(relativeWidth),
-            height: Math.round(relativeHeight)
+            top: Math.round(top - initialRect.top),
+            left: Math.round(left - initialRect.left),
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
@@ -1259,19 +1251,13 @@ function handleSaveOrSend() {
           const img = dropArea.querySelector('img');
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
-          // スライド初期サイズを基準にして相対位置を計算
-          const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
-          const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
-          const relativeWidth = (width / initialWidth) * initialWidth;
-          const relativeHeight = (height / initialHeight) * initialHeight;
-
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: Math.round(relativeTop),
-            left: Math.round(relativeLeft),
-            width: Math.round(relativeWidth),
-            height: Math.round(relativeHeight)
+            top: Math.round(top - initialRect.top),
+            left: Math.round(left - initialRect.left),
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
