@@ -15,34 +15,34 @@ const swiper = new Swiper('.swiper', {
     },
 });
 // // テキストエリアの要素を取得
-// const bugFixes = document.querySelectorAll('.swiper textarea');
-// bugFixes.forEach((textarea) => {
-//     // フォーカスが当たったときの処理
-//     textarea.addEventListener('focus', () => {
-//         swiper.allowTouchMove = false; // スワイプ無効
-//     });
-//     // フォーカスが外れたときの処理
-//     textarea.addEventListener('blur', () => {
-//         swiper.allowTouchMove = true; // スワイプ有効
-//     });
-//     // // Enterキーが押されたときの処理
-//     // textarea.addEventListener('keydown', (event) => {
-//     //   if (event.key === 'Enter') {
-//     //     event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
-//     //   }
-//     // });
-//     // 完了ボタン押下時の処理
-//     textarea.addEventListener('keyup', (event) => {
-//         if (event.key === 'Enter') {
-//             textarea.blur(); // テキストエリアのフォーカスを外す
-//             // ここに必要なら、Swiperの現在のスライドを確認するロジックを追加
-//         }
-//     });
-//     // ここでは、blurイベントを使ってフォーカスを外したときの処理も行います
-//     textarea.addEventListener('blur', () => {
-//         swiper.allowTouchMove = true; // スワイプ有効
-//     });
-// });
+const bugFixes = document.querySelectorAll('.swiper textarea');
+bugFixes.forEach((textarea) => {
+    // フォーカスが当たったときの処理
+    textarea.addEventListener('focus', () => {
+        swiper.allowTouchMove = false; // スワイプ無効
+    });
+    // フォーカスが外れたときの処理
+    textarea.addEventListener('blur', () => {
+        swiper.allowTouchMove = true; // スワイプ有効
+    });
+    // // Enterキーが押されたときの処理
+    // textarea.addEventListener('keydown', (event) => {
+    //   if (event.key === 'Enter') {
+    //     event.preventDefault(); // Enterキーのデフォルトの動作を防ぐ（改行）
+    //   }
+    // });
+    // 完了ボタン押下時の処理
+    textarea.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+            textarea.blur(); // テキストエリアのフォーカスを外す
+            // ここに必要なら、Swiperの現在のスライドを確認するロジックを追加
+        }
+    });
+    // ここでは、blurイベントを使ってフォーカスを外したときの処理も行います
+    textarea.addEventListener('blur', () => {
+        swiper.allowTouchMove = true; // スワイプ有効
+    });
+});
 
 // メインのスライドからプレビュー
 document.addEventListener('DOMContentLoaded', function () {
@@ -73,57 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // inputボタンのデザイン
 document.getElementById('frontButton').addEventListener('click', function () {
     document.getElementById('backInput').click();
-});
-// 枠変更 12-~3変更できない版 ローカルストレージに保存
-document.addEventListener('DOMContentLoaded', () => {
-    const dropAreas = [];
-    const resizeButtons = document.querySelectorAll('.resizeButton');
-    let activeDropArea = null;
-
-    // ドロップエリアをすべて取得し、配列に追加
-    document.querySelectorAll('[id^="dropArea"]').forEach((dropArea) => {
-        dropAreas.push(dropArea);
-        dropArea.addEventListener('pointerdown', () => handleDropAreaInteraction(dropArea));
-    });
-
-    // ドロップエリアがクリックまたはタッチされたときの処理
-    const handleDropAreaInteraction = (dropArea) => {
-        dropAreas.forEach((area) => area.classList.remove('active'));
-        dropArea.classList.add('active');
-        activeDropArea = dropArea;
-    };
-
-    // サイズ変更ボタンがクリックまたはタッチされたときの処理
-    const handleResizeButtonInteraction = (button) => {
-        if (activeDropArea) {
-            // サイズ変更を禁止するドロップエリアのリスト
-            // const restrictedDropAreas = ['dropArea12-1', 'dropArea12-2', 'dropArea12-3'];
-
-            // サイズ変更を禁止するドロップエリアでない場合のみ処理
-            if (!restrictedDropAreas.includes(activeDropArea.id)) {
-                // サイズをすべてリセット
-                activeDropArea.classList.remove('square', 'rectangle34', 'rectangle43', 'mini');
-                // ボタンの data-size 属性に基づいてサイズを変更
-                const size = button.getAttribute('data-size');
-                activeDropArea.classList.add(size);
-
-                // サイズ情報をローカルストレージに保存（ドロップエリアごとに異なるキーを使用）
-                localStorage.setItem(`dropAreaSize_${activeDropArea.id}`, size);
-            }
-        }
-    };
-
-    resizeButtons.forEach((button) => {
-        button.addEventListener('pointerdown', () => handleResizeButtonInteraction(button));
-    });
-
-    // ページロード時にローカルストレージからサイズを復元
-    dropAreas.forEach((dropArea) => {
-        const savedSize = localStorage.getItem(`dropAreaSize_${dropArea.id}`);
-        if (savedSize) {
-            dropArea.classList.add(savedSize);
-        }
-    });
 });
 
 // 色変更
