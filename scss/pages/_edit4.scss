@@ -1347,6 +1347,7 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 1.1rem;
+                    top: 5.6%;
                   }
                   @include mq('tab-edit') {
                     font-size: 5.4vw;
@@ -1367,7 +1368,7 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
-                    top: 26.5%;
+                    top: 27.9%;
                   }
                   @include mq('tab-edit') {
                     font-size: 2vw;
@@ -1386,7 +1387,8 @@
                     font-size: 0.7rem;
                   }
                   @include mq('pc-edit') {
-                    font-size: 0.4rem;
+                    font-size: 0.3rem;
+                    top: 27.7%;
                   }
                 }
                 &11_t4 {
@@ -1411,6 +1413,7 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 0.7rem;
+                    top: 50.5%;
                   }
                   @include mq('tab-edit') {
                     font-size: 3.5vw;
@@ -1431,7 +1434,8 @@
                     font-size: 0.53rem;
                   }
                   @include mq('pc-edit') {
-                    font-size: 0.27rem;
+                    font-size: 0.26rem;
+                    top: 24%;
                   }
                   @include mq('tab-edit') {
                     font-size: 1.4vw;
@@ -1445,6 +1449,9 @@
                 font-size: 0.6rem;
                 font-weight: bold;
                 letter-spacing: 0.06rem;
+                @include mq('pc-edit') {
+                  font-size: 0.5rem;
+                }
               }
 
               .round {
