@@ -1289,20 +1289,18 @@ function handleSaveOrSend() {
         return;
       }
 
+      // imageDataとtextDataを分離して送信
+      const imageDataToSend = pageData.flatMap(page => page.imageData);
+      const textDataToSend = pageData.flatMap(page => page.textData);
+
       const dataToSend = {
-        pageData,
+        imageData: imageDataToSend,
+        textData: textDataToSend,
         colors: {
           backgroundColor,
           textColor,
         }
       };
-
-      // FormDataに追加して送信
-      const body = new FormData();
-      Object.entries(dataToSend).forEach(([key, value]) => {
-        body.append(key, JSON.stringify(value));
-      });
-
       console.log('送信するデータ:', dataToSend);
 
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
