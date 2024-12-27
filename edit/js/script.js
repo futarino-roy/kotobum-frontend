@@ -1221,54 +1221,63 @@ function handleSaveOrSend() {
 
       // 親要素（class="input-drop"）を取得
       const parentElement = document.querySelector('.input-drop');
+      const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
-      // 親要素の初期サイズを取得
-      const initialRect = parentElement.getBoundingClientRect();
-      const initialWidth = initialRect.width;
-      const initialHeight = initialRect.height;
+      // 各ページのデータを収集
+      const pageData = Array.from(swiperSlides).map(slide => {
+        const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
+        const initialWidth = initialRect.width;
+        const initialHeight = initialRect.height;
 
-      // テキストエリアと画像データの収集
-      const textAreas = document.querySelectorAll('.text-empty');
-      const textData = Array.from(textAreas).map(textarea => {
-        const { top, left, width, height } = textarea.getBoundingClientRect(); // 要素の位置とサイズを取得
+        // スライド内のテキストエリアのデータ収集
+        const textAreas = slide.querySelectorAll('.text-empty');
+        const textData = Array.from(textAreas).map(textarea => {
+          const { top, left, width, height } = textarea.getBoundingClientRect();
 
-        // 親要素の初期サイズを基準にして相対位置を計算
-        const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
-        const relativeLeft = left - initialRect.left;
-        const relativeWidth = (width / initialWidth) * initialWidth;
-        const relativeHeight = (height / initialHeight) * initialHeight;
+          // スライド初期サイズを基準にして相対位置を計算
+          const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
+          const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
+          const relativeWidth = (width / initialWidth) * initialWidth;
+          const relativeHeight = (height / initialHeight) * initialHeight;
+
+          return {
+            id: textarea.id,
+            text: textarea.value || '',
+            top: Math.round(relativeTop),
+            left: Math.round(relativeLeft),
+            width: Math.round(relativeWidth),
+            height: Math.round(relativeHeight)
+          };
+        });
+
+        // スライド内の画像データ収集
+        const dropAreas = slide.querySelectorAll('.empty');
+        const imageData = Array.from(dropAreas).map(dropArea => {
+          const img = dropArea.querySelector('img');
+          const { top, left, width, height } = dropArea.getBoundingClientRect();
+
+          // スライド初期サイズを基準にして相対位置を計算
+          const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
+          const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
+          const relativeWidth = (width / initialWidth) * initialWidth;
+          const relativeHeight = (height / initialHeight) * initialHeight;
+
+          return {
+            id: dropArea.id,
+            image: img ? img.src : null,
+            top: Math.round(relativeTop),
+            left: Math.round(relativeLeft),
+            width: Math.round(relativeWidth),
+            height: Math.round(relativeHeight)
+          };
+        });
 
         return {
-          id: textarea.id,
-          text: textarea.value || '',
-          top: Math.round(relativeTop), // 親要素初期サイズでのtopの値
-          left: Math.round(relativeLeft), // 親要素初期サイズでのleftの値
-          width: Math.round(relativeWidth), // 親要素初期サイズでのwidth
-          height: Math.round(relativeHeight) // 親要素初期サイズでのheight
+          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          textData,
+          imageData
         };
       });
-
-      const dropAreas = document.querySelectorAll('.empty');
-      const imageData = Array.from(dropAreas).map(dropArea => {
-        const img = dropArea.querySelector('img');
-        const { top, left, width, height } = dropArea.getBoundingClientRect(); // 要素の位置とサイズを取得
-
-        // 親要素の初期サイズを基準にして相対位置を計算
-        const relativeTop = (top - initialRect.top) / initialHeight * initialHeight;
-        const relativeLeft = (left - initialRect.left) / initialWidth * initialWidth;
-        const relativeWidth = (width / initialWidth) * initialWidth;
-        const relativeHeight = (height / initialHeight) * initialHeight;
-
-        return {
-          id: dropArea.id,
-          image: img ? img.src : null,
-          top: Math.round(relativeTop), // 親要素初期サイズでのtopの値
-          left: Math.round(relativeLeft), // 親要素初期サイズでのleftの値
-          width: Math.round(relativeWidth), // 親要素初期サイズでのwidth
-          height: Math.round(relativeHeight) // 親要素初期サイズでのheight
-        };
-      });
-
       const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-colorB').style.color || '#000000';
 
