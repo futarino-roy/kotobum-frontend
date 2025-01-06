@@ -1256,8 +1256,8 @@ function handleSaveOrSend() {
             image: img ? img.src : null,
             top: Math.round(top - initialRect.top),
             left: Math.round(left - initialRect.left),
-            width: Math.round(width),
-            height: Math.round(height)
+            width: Math.round(width - initialRect.width),
+            height: Math.round(height - initialRect.height)
           };
         });
 
