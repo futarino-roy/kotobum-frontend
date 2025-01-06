@@ -405,20 +405,22 @@ function handleTouchDrop(event) {
   const touch = event.changedTouches[0];
   const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
 
-  if (dropArea && dropArea.classList.contains("empty")) {
+  if (dropArea && dropArea.classList.contains('empty')) {
     const files = event.dataTransfer.files;
     if (files.length > 0) {
       let file = files[0];
       let fileReader = new FileReader();
       fileReader.onload = function (e) {
-        dropArea.innerHTML = ""; // 既存の内容をクリア
+        dropArea.innerHTML = '';
         let img = new Image();
-        img.src = e.target.result; // 画像データURLを設定
+        img.src = e.target.result;
         dropArea.appendChild(img);
-        addButtons(dropArea); // 削除ボタンとトリミングボタンを追加
+        addButtons(dropArea);
+
+        // 画像が挿入されたら枠線をなくす処理追加
         dropArea.style.border = 'none';
       };
-      fileReader.readAsDataURL(file); // ドロップされたファイルをデータURLに変換
+      fileReader.readAsDataURL(file);
     }
   }
 }

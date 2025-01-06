@@ -87,6 +87,7 @@ function loadImage(input) {
       const reader = new FileReader();
 
       reader.onload = function (e) {
+        console.log('File loaded:', e.target.result); // デバッグ用に結果を表示
         const img = document.createElement('img');
         img.src = e.target.result;
         img.style.left = '0px';
