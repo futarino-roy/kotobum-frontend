@@ -1251,13 +1251,23 @@ function handleSaveOrSend() {
           const img = dropArea.querySelector('img');
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
+          let imgVisibleWidth = 0;
+          let imgVisibleHeight = 0;
+
+          if (img) {
+            // 画面に表示されている画像の幅と高さを取得
+            const imgRect = img.getBoundingClientRect();
+            imgVisibleWidth = imgRect.width; // 表示されている幅
+            imgVisibleHeight = imgRect.height; // 表示されている高さ
+          }
+
           return {
             id: dropArea.id,
             image: img ? img.src : null,
             top: Math.round(top - initialRect.top),
             left: Math.round(left - initialRect.left),
-            width: Math.round(width),
-            height: Math.round(height)
+            width: Math.round(imgVisibleWidth),
+            height: Math.round(imgVisibleHeight)
           };
         });
 
