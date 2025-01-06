@@ -1249,39 +1249,15 @@ function handleSaveOrSend() {
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map(dropArea => {
           const img = dropArea.querySelector('img');
-          const { top, left, width: areaWidth, height: areaHeight } = dropArea.getBoundingClientRect();
-
-          let visibleWidth = 0;
-          let visibleHeight = 0;
-
-          if (img) {
-            // 画像の実際のサイズ
-            const naturalWidth = img.naturalWidth;
-            const naturalHeight = img.naturalHeight;
-
-            // ドロップエリアのアスペクト比
-            const areaAspectRatio = areaWidth / areaHeight;
-            // 画像のアスペクト比
-            const imageAspectRatio = naturalWidth / naturalHeight;
-
-            if (areaAspectRatio > imageAspectRatio) {
-              // 横長のエリア：幅はエリアに合わせ、高さがトリミングされる
-              visibleWidth = areaWidth;
-              visibleHeight = areaWidth / imageAspectRatio;
-            } else {
-              // 縦長のエリア：高さはエリアに合わせ、幅がトリミングされる
-              visibleHeight = areaHeight;
-              visibleWidth = areaHeight * imageAspectRatio;
-            }
-          }
+          const { top, left, width, height } = dropArea.getBoundingClientRect();
 
           return {
             id: dropArea.id,
             image: img ? img.src : null,
             top: Math.round(top - initialRect.top),
             left: Math.round(left - initialRect.left),
-            width: Math.round(visibleWidth), // トリミング後の表示幅
-            height: Math.round(visibleHeight) // トリミング後の表示高さ
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
