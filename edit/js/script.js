@@ -1177,49 +1177,57 @@ function handleSaveOrSend() {
       const parentElement = document.querySelector('.input-drop');
       const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
-      // 背景色とテキスト色の取得
-      const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
+      const pageData = Array.from(swiperSlides).map((slide) => {
+        const initialRect = slide.getBoundingClientRect(); // スライド全体の初期サイズ
 
-      // 各ページのデータを収集
-      const pageData = Array.from(swiperSlides).map(slide => {
-        const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
-
-        // スライド内のテキストエリアのデータ収集
+        // テキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
-        const textData = Array.from(textAreas).map(textarea => {
+        const textData = Array.from(textAreas).map((textarea) => {
           const { top, left, width, height } = textarea.getBoundingClientRect();
-
           return {
             id: textarea.id,
             text: textarea.value || '',
             top: Math.round(top - initialRect.top),
             left: Math.round(left - initialRect.left),
             width: Math.round(width),
-            height: Math.round(height)
+            height: Math.round(height),
           };
         });
 
-        // スライド内の画像データ収集
+        // 画像データ収集（トリミングを考慮）
         const dropAreas = slide.querySelectorAll('.empty');
-        const imageData = Array.from(dropAreas).map(dropArea => {
+        const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img');
-          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          const dropRect = dropArea.getBoundingClientRect();
+
+          if (!img) {
+            return {
+              id: dropArea.id,
+              image: null,
+              top: Math.round(dropRect.top - initialRect.top),
+              left: Math.round(dropRect.left - initialRect.left),
+              width: Math.round(dropRect.width),
+              height: Math.round(dropRect.height),
+            };
+          }
+
+          // 画像の実際の表示範囲を計算
+          const imgRect = img.getBoundingClientRect();
 
           return {
             id: dropArea.id,
-            image: img ? img.src : null,
-            top: Math.round(top - initialRect.top),
-            left: Math.round(left - initialRect.left),
-            width: Math.round(width),
-            height: Math.round(height)
+            image: img.src,
+            top: Math.round(imgRect.top - initialRect.top),
+            left: Math.round(imgRect.left - initialRect.left),
+            width: Math.round(imgRect.width),
+            height: Math.round(imgRect.height),
           };
         });
 
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
-          imageData
+          imageData,
         };
       });
 
