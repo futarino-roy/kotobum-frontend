@@ -1177,6 +1177,10 @@ function handleSaveOrSend() {
       const parentElement = document.querySelector('.input-drop');
       const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
+      // 背景色とテキスト色の取得
+      const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
+
       const pageData = Array.from(swiperSlides).map((slide) => {
         const initialRect = slide.getBoundingClientRect(); // スライド全体の初期サイズ
 
