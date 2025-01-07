@@ -1242,8 +1242,8 @@ function handleSaveOrSend() {
             text: textarea.value || '',
             top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100 // 高さのパーセンテージ
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
@@ -1258,8 +1258,8 @@ function handleSaveOrSend() {
             image: img ? img.src : null,
             top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100 // 高さのパーセンテージ
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
