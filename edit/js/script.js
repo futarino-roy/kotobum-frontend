@@ -1198,7 +1198,7 @@ function handleSaveOrSend() {
           };
         });
 
-        // 画像データ収集（トリミングを考慮）
+        // 画像データ収集（トリミング状態を`canvas`で取得）
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img');
@@ -1215,16 +1215,39 @@ function handleSaveOrSend() {
             };
           }
 
-          // 画像の実際の表示範囲を計算
           const imgRect = img.getBoundingClientRect();
+
+          // `canvas`を作成して画像をトリミングした状態で描画
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+
+          // トリミングされたサイズを計算
+          const croppedWidth = Math.min(dropRect.width, imgRect.width);
+          const croppedHeight = Math.min(dropRect.height, imgRect.height);
+
+          canvas.width = croppedWidth;
+          canvas.height = croppedHeight;
+
+          // `canvas`に画像を描画
+          context.drawImage(
+            img,
+            dropRect.left - imgRect.left, // 画像のトリミング開始X座標
+            dropRect.top - imgRect.top,  // 画像のトリミング開始Y座標
+            croppedWidth, croppedHeight, // トリミング範囲
+            0, 0,                        // `canvas`の描画開始座標
+            croppedWidth, croppedHeight  // 描画サイズ
+          );
+
+          // `canvas`からBase64画像データを取得
+          const croppedImageBase64 = canvas.toDataURL('image/png');
 
           return {
             id: dropArea.id,
-            image: img.src,
-            top: Math.round(imgRect.top - initialRect.top),
-            left: Math.round(imgRect.left - initialRect.left),
-            width: Math.round(imgRect.width),
-            height: Math.round(imgRect.height),
+            image: croppedImageBase64, // トリミング後の画像データ
+            top: Math.round(dropRect.top - initialRect.top),
+            left: Math.round(dropRect.left - initialRect.left),
+            width: Math.round(croppedWidth),
+            height: Math.round(croppedHeight),
           };
         });
 
