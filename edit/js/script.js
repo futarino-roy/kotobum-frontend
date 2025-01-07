@@ -1240,10 +1240,10 @@ function handleSaveOrSend() {
           return {
             id: textarea.id,
             text: textarea.value || '',
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: Math.round(width),
-            height: Math.round(height)
+            topPercent: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+            leftPercent: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+            widthPercent: (width / slideWidth) * 100, // 幅のパーセンテージ
+            heightPercent: (height / slideHeight) * 100 // 高さのパーセンテージ
           };
         });
 
@@ -1256,10 +1256,10 @@ function handleSaveOrSend() {
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: Math.round(width),
-            height: Math.round(height)
+            topPercent: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+            leftPercent: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+            widthPercent: (width / slideWidth) * 100, // 幅のパーセンテージ
+            heightPercent: (height / slideHeight) * 100 // 高さのパーセンテージ
           };
         });
 
@@ -1269,6 +1269,7 @@ function handleSaveOrSend() {
           imageData
         };
       });
+
 
 
       // 送信データの構築
