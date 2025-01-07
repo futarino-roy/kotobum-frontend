@@ -1268,7 +1268,6 @@ function handleSaveOrSend() {
         };
       });
 
-
       // 送信データの構築
       if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
         console.error('送信するデータがありません。');
