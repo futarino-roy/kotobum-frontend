@@ -275,26 +275,34 @@ function handleDragLeave(event) {
 function handleDrop(event) {
   console.log('Drop event fired');
   event.preventDefault();
-  this.style.backgroundColor = 'transparent';
+  // this.style.backgroundColor = 'transparent';
+  const dropArea = event.target.closest('.empty'); // ドロップエリアを特定
+  if (!dropArea) return;
+
+  console.log('Drop event triggered');
+  console.log('Files:', event.dataTransfer.files);
+
+  dropArea.style.backgroundColor = 'transparent';
 
   const files = event.dataTransfer.files;
   if (files.length > 0) {
     let file = files[0];
     let fileReader = new FileReader();
     fileReader.onload = function (e) {
-      this.innerHTML = '';
-      let img = new Image();
+      console.log('File loaded:', e.target.result); // デバッグログ
+      dropArea.innerHTML = ''; // ドロップエリアをクリア
+      const img = new Image();
       img.src = e.target.result;
       img.classList.add('draggable-image');
       img.onclick = function () {
         showButtons(this.parentNode);
       };
-      this.appendChild(img);
+      dropArea.appendChild(img);
       addButtons(this);
 
       // 画像が挿入されたら枠線をなくす処理追加
-      this.style.border = 'none';
-    }.bind(this);
+      dropArea.style.border = 'none';
+    };
     fileReader.readAsDataURL(file);
   }
 }
@@ -324,6 +332,10 @@ function handleTouchDrop(event) {
     }
   }
 }
+
+//-------------------------------------------canvas------------------------------------------
+
+//---------------------------------------------ここまで----------------------------------------
 
 // 削除ボタンとトリミングボタンの追加
 function addButtons(container) {
