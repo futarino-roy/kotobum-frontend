@@ -1229,8 +1229,6 @@ function handleSaveOrSend() {
       // 各ページのデータを収集
       const pageData = Array.from(swiperSlides).map(slide => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
-        const slideWidth = initialRect.width;
-        const slideHeight = initialRect.height;
 
         // スライド内のテキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
@@ -1240,10 +1238,10 @@ function handleSaveOrSend() {
           return {
             id: textarea.id,
             text: textarea.value || '',
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100 // 高さのパーセンテージ
+            top: Math.round(top - initialRect.top),
+            left: Math.round(left - initialRect.left),
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
@@ -1256,10 +1254,10 @@ function handleSaveOrSend() {
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100 // 高さのパーセンテージ
+            top: Math.round(top - initialRect.top),
+            left: Math.round(left - initialRect.left),
+            width: Math.round(width),
+            height: Math.round(height)
           };
         });
 
@@ -1269,8 +1267,6 @@ function handleSaveOrSend() {
           imageData
         };
       });
-
-
 
       // 送信データの構築
       if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
