@@ -1174,51 +1174,6 @@ function handleSaveOrSend() {
         return;
       }
 
-      // // テキストエリアと画像データの収集
-      // const textAreas = document.querySelectorAll('.text-empty');
-      // const textData = Array.from(textAreas).map(textarea => {
-      //   const { top, left } = textarea.getBoundingClientRect(); // 要素の位置を取得
-      //   return {
-      //     id: textarea.id,
-      //     text: textarea.value || '',
-      //     top: Math.round(top), // topの値を収集
-      //     left: Math.round(left) // leftの値を収集
-      //   };
-      // });
-
-      // const dropAreas = document.querySelectorAll('.empty');
-      // const imageData = Array.from(dropAreas).map(dropArea => {
-      //   const img = dropArea.querySelector('img');
-      //   const { width, height, top, left } = dropArea.getBoundingClientRect(); // 要素の位置とサイズを取得
-      //   return {
-      //     id: dropArea.id,
-      //     image: img ? img.src : null,
-      //     width: Math.round(width),
-      //     height: Math.round(height),
-      //     top: Math.round(top), // topの値を収集
-      //     left: Math.round(left) // leftの値を収集
-      //   };
-      // });
-
-
-      // const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
-      // const textColor = document.querySelector('.text-colorB').style.color || '#000000';
-
-      // if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
-      //   console.error('送信するデータがありません。');
-      //   alert('送信するデータがありません。');
-      //   return;
-      // }
-
-      // const dataToSend = {
-      //   textData,
-      //   imageData,
-      //   colors: {
-      //     backgroundColor,
-      //     textColor,
-      //   }
-      // };
-
       const parentElement = document.querySelector('.input-drop');
       const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
@@ -1267,6 +1222,57 @@ function handleSaveOrSend() {
           imageData
         };
       });
+
+      // const parentElement = document.querySelector('.input-drop');
+      // const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
+
+      // // 背景色とテキスト色の取得
+      // const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+      // const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
+
+      // // 各ページのデータを収集
+      // const pageData = Array.from(swiperSlides).map(slide => {
+      //   const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
+      //   const slideWidth = initialRect.width;
+      //   const slideHeight = initialRect.height;
+
+      //   // スライド内のテキストエリアのデータ収集
+      //   const textAreas = slide.querySelectorAll('.text-empty');
+      //   const textData = Array.from(textAreas).map(textarea => {
+      //     const { top, left, width, height } = textarea.getBoundingClientRect();
+
+      //     return {
+      //       id: textarea.id,
+      //       text: textarea.value || '',
+      //       top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+      //       left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+      //       width: (width / slideWidth) * 100, // 幅のパーセンテージ
+      //       height: (height / slideHeight) * 100 // 高さのパーセンテージ
+      //     };
+      //   });
+
+      //   // スライド内の画像データ収集
+      //   const dropAreas = slide.querySelectorAll('.empty');
+      //   const imageData = Array.from(dropAreas).map(dropArea => {
+      //     const img = dropArea.querySelector('img');
+      //     const { top, left, width, height } = dropArea.getBoundingClientRect();
+
+      //     return {
+      //       id: dropArea.id,
+      //       image: img ? img.src : null,
+      //       top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+      //       left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+      //       width: (width / slideWidth) * 100, // 幅のパーセンテージ
+      //       height: (height / slideHeight) * 100 // 高さのパーセンテージ
+      //     };
+      //   });
+
+      //   return {
+      //     slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+      //     textData,
+      //     imageData
+      //   };
+      // });
 
       // 送信データの構築
       if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {

@@ -87,15 +87,15 @@ function loadImage(input) {
       const reader = new FileReader();
 
       reader.onload = function (e) {
-        console.log('File loaded:', e.target.result); // デバッグ用に結果を表示
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.style.left = '0px';
-        img.style.top = '0px';
-
-        imgPreviewField.appendChild(img);
-        makeDraggable(img);
-        makeTouchable(img);
+        try {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          imgPreviewField.appendChild(img);
+          makeDraggable(img);
+          makeTouchable(img);
+        } catch (error) {
+          console.error('Error appending image:', error);
+        }
       };
 
       reader.readAsDataURL(file);
@@ -314,11 +314,11 @@ function handleTouchDrop(event) {
         dropArea.innerHTML = '';
         let img = new Image();
         img.src = e.target.result;
-        dropArea.appendChild(img);
-        addButtons(dropArea);
-
-        // 画像が挿入されたら枠線をなくす処理追加
-        dropArea.style.border = 'none';
+        img.onload = function () {
+          dropArea.appendChild(img);
+          addButtons(dropArea);
+          dropArea.style.border = 'none'; // 画像が挿入されたら枠線をなくす
+        };
       };
       fileReader.readAsDataURL(file);
     }
