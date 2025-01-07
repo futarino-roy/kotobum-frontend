@@ -1251,16 +1251,6 @@ function handleSaveOrSend() {
           const img = dropArea.querySelector('img');
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
-          // let imgVisibleWidth = 0;
-          // let imgVisibleHeight = 0;
-
-          // if (img) {
-          //   // 画面に表示されている画像の幅と高さを取得
-          //   const imgRect = img.getBoundingClientRect();
-          //   imgVisibleWidth = imgRect.width; // 表示されている幅
-          //   imgVisibleHeight = imgRect.height; // 表示されている高さ
-          // }
-
           return {
             id: dropArea.id,
             image: img ? img.src : null,
@@ -1277,6 +1267,7 @@ function handleSaveOrSend() {
           imageData
         };
       });
+
 
       // 送信データの構築
       if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
