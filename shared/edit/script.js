@@ -312,21 +312,40 @@ function handleDrop(event) {
   const files = event.dataTransfer.files;
   if (files.length > 0) {
     let file = files[0];
+    console.log('Processing file:', file);
+
     let fileReader = new FileReader();
+    console.log('FileReader created:', fileReader);
+
     fileReader.onload = function (e) {
+      console.log('File loaded successfully');
+
       dropArea.innerHTML = ''; // 保存したdropAreaを使用
+      console.log('Drop area content cleared');
+
       let img = new Image();
+      console.log('Image element created:', img);
+
       img.src = e.target.result;
-      console.log(img.src)
+      console.log('Image source set to:', img.src);
+
       img.classList.add('draggable-image');
+      console.log('Class "draggable-image" added to image');
+
       img.onclick = function () {
+        console.log('Image clicked');
         showButtons(dropArea);
       };
+
       dropArea.appendChild(img);
+      console.log('Image added to drop area');
+
       addButtons(dropArea);
+      console.log('Buttons added to drop area');
 
       // 画像が挿入されたら枠線をなくす処理追加
       dropArea.style.border = 'none';
+      console.log('Drop area border set to "none"');
     };
     fileReader.readAsDataURL(file);
   }
