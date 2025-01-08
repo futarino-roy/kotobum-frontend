@@ -380,7 +380,12 @@ function handleDrop(event) {
       dropArea.innerHTML = ''; // ドロップエリアをクリア
       let img = new Image();
       img.src = e.target.result;
+      img.classList.add('draggable-image');
+      img.onclick = function () {
+        showButtons(dropArea);
+      };
       dropArea.appendChild(img);
+      addButtons(dropArea);
     };
 
     fileReader.readAsDataURL(file);
