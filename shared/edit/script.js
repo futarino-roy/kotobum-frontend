@@ -356,7 +356,10 @@ function handleDrop(event) {
       console.log('Drop area border set to "none"');
     };
     fileReader.readAsDataURL(file);
+  } else {
+    console.log('fileが無いです！');
   }
+
 }
 
 // ーーーーーーードロップ時の処理(変更2)ーーーーーーーーーーーーーーー
