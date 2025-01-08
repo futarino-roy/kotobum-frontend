@@ -303,96 +303,63 @@ function handleDragLeave(event) {
 // }
 
 // ーーーーーーードロップ時の処理(変更1)ーーーーーーーーーーーーーーー
-// function handleDrop(event) {
-//   console.log('Drop event fired');
-
-//   event.preventDefault();
-//   console.log('Default behavior prevented');
-
-//   this.style.backgroundColor = 'transparent';
-//   console.log('Background color set to transparent');
-
-//   const dropArea = this; // thisを保存
-//   console.log('Drop area saved:', dropArea);
-
-//   const files = event.dataTransfer.files;
-//   console.log('Files dropped:', files);
-
-//   if (files.length > 0) {
-//     let file = files[0];
-//     console.log('Processing file:', file);
-
-//     let fileReader = new FileReader();
-//     console.log('FileReader created:', fileReader);
-
-//     fileReader.onload = function (e) {
-//       console.log('File loaded successfully');
-
-//       dropArea.innerHTML = ''; // 保存したdropAreaを使用
-//       console.log('Drop area content cleared');
-
-//       let img = new Image();
-//       console.log('Image element created:', img);
-
-//       img.src = e.target.result;
-//       console.log('Image source set to:', img.src);
-
-//       img.classList.add('draggable-image');
-//       console.log('Class "draggable-image" added to image');
-
-//       img.onclick = function () {
-//         console.log('Image clicked');
-//         showButtons(dropArea);
-//       };
-
-//       dropArea.appendChild(img);
-//       console.log('Image added to drop area');
-
-//       addButtons(dropArea);
-//       console.log('Buttons added to drop area');
-
-//       // 画像が挿入されたら枠線をなくす処理追加
-//       dropArea.style.border = 'none';
-//       console.log('Drop area border set to "none"');
-//     };
-//     fileReader.readAsDataURL(file);
-//   }
-// }
-
-// ーーーーーーードロップ時の処理(変更2)ーーーーーーーーーーーーーーー
 function handleDrop(event) {
-  event.preventDefault(); // 必須: ドロップを許可
-  event.stopPropagation(); // イベントバブリングを停止
-
   console.log('Drop event fired');
 
-  const dropArea = this;
-  const files = event.dataTransfer ? event.dataTransfer.files : null;
+  event.preventDefault();
+  console.log('Default behavior prevented');
 
-  if (files && files.length > 0) {
-    console.log('Files dropped:', files);
+  this.style.backgroundColor = 'transparent';
+  console.log('Background color set to transparent');
+
+  const dropArea = this; // thisを保存
+  console.log('Drop area saved:', dropArea);
+
+  const files = event.dataTransfer.files;
+  console.log('Files dropped:', files);
+
+  if (files.length > 0) {
     let file = files[0];
+    console.log('Processing file:', file);
+
     let fileReader = new FileReader();
+    console.log('FileReader created:', fileReader);
 
     fileReader.onload = function (e) {
       console.log('File loaded successfully');
 
-      dropArea.innerHTML = ''; // ドロップエリアをクリア
+      dropArea.innerHTML = ''; // 保存したdropAreaを使用
+      console.log('Drop area content cleared');
+
       let img = new Image();
+      console.log('Image element created:', img);
+
       img.src = e.target.result;
+      console.log('Image source set to:', img.src);
+
       img.classList.add('draggable-image');
+      console.log('Class "draggable-image" added to image');
+
       img.onclick = function () {
+        console.log('Image clicked');
         showButtons(dropArea);
       };
-      dropArea.appendChild(img);
-      addButtons(dropArea);
-    };
 
+      dropArea.appendChild(img);
+      console.log('Image added to drop area');
+
+      addButtons(dropArea);
+      console.log('Buttons added to drop area');
+
+      // 画像が挿入されたら枠線をなくす処理追加
+      dropArea.style.border = 'none';
+      console.log('Drop area border set to "none"');
+    };
     fileReader.readAsDataURL(file);
-  } else {
-    console.log('No files found or dataTransfer is undefined');
   }
 }
+
+// ーーーーーーードロップ時の処理(変更2)ーーーーーーーーーーーーーーー
 
 // タッチエンド時の処理---------------------------------------------------------
 
