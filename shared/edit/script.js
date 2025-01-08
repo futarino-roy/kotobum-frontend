@@ -331,41 +331,6 @@ function handleDrop(event) {
   }
 }
 
-// // ーーーーーーードロップ時の処理(変更2)ーーーーーーーーーーーーーーー
-// function handleDrop(event) {
-//   console.log('Drop event fired');
-//   event.preventDefault();
-//   this.style.backgroundColor = 'transparent';
-
-//   const dropArea = this;
-//   const items = event.dataTransfer.items;
-//   if (items.length > 0) {
-//     for (let item of items) {
-//       if (item.kind === 'file') {
-//         const file = item.getAsFile();
-//         const fileReader = new FileReader();
-//         fileReader.onload = function (e) {
-//           dropArea.innerHTML = '';
-//           let img = new Image();
-//           img.src = e.target.result;
-//           img.classList.add('draggable-image');
-//           img.onclick = function () {
-//             showButtons(dropArea);
-//           };
-//           dropArea.appendChild(img);
-//           addButtons(dropArea);
-
-//           dropArea.style.border = 'none';
-//         };
-//         fileReader.readAsDataURL(file);
-//         break; // ファイル1つのみを処理
-//       }
-//     }
-//   }
-// }
-
-
-
 // タッチエンド時の処理---------------------------------------------------------
 
 function handleTouchDrop(event) {
