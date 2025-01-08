@@ -69,14 +69,12 @@ const showDrawerContent = (contentId) => {
   }
 };
 
-// 画像のアップロードと挿入-----------------------------------------------
+// // 画像のアップロードと挿入-----------------------------------------------
 let selectedImage = null;
 
 document.addEventListener('DOMContentLoaded', function () {
   addTouchListenerToDropAreas();
-  document.getElementById('saveButton').addEventListener('click', function () {
-    // サーバに画像を送信する処理は削除済み
-  });
+
 });
 
 function loadImage(input) {
@@ -103,6 +101,7 @@ function loadImage(input) {
   }
 }
 
+//画像をドラッグ可能にするための関数。マウスとタッチイベントで画像を移動できるようにする。
 function makeDraggable(img) {
   let isDragging = false;
   let startX, startY, initialX, initialY;
@@ -163,6 +162,7 @@ function makeDraggable(img) {
   img.addEventListener('touchend', onTouchEnd);
 }
 
+//画像をクリックまたはタッチすると、その画像を選択状態にする関数。
 function makeTouchable(img) {
   img.addEventListener('click', function () {
     const allImgs = document.querySelectorAll('#imgPreviewField img');
@@ -183,6 +183,8 @@ function makeTouchable(img) {
     selectedImage = img;
   });
 }
+
+
 
 function addTouchListenerToDropAreas() {
   const dropAreas = document.querySelectorAll('.empty');
@@ -260,45 +262,67 @@ function openCroppieModal(dropArea) {
   console.log('Croppie modal open for drop area:', dropArea);
 }
 
-// 画像のドラッグ＆ドロップ indexedDBに保存--------------------------------
+// // 画像のドラッグ＆ドロップ indexedDBに保存--------------------------------
 function handleDragOver(event) {
   event.preventDefault();
   this.style.backgroundColor = '#d0f0c0';
 }
+
 
 // ドラッグが離れたときの処理
 function handleDragLeave(event) {
   this.style.backgroundColor = 'transparent';
 }
 
-// ドロップ時の処理
+// ーーーーーーードロップ時の処理(原型)ーーーーーーーーーーーーーーー
+// function handleDrop(event) {
+//   console.log('Drop event fired');
+//   event.preventDefault();
+//   this.style.backgroundColor = 'transparent';
+
+//   const files = event.dataTransfer.files;
+//   if (files.length > 0) {
+//     let file = files[0];
+//     let fileReader = new FileReader();
+//     fileReader.onload = function (e) {
+//       this.innerHTML = '';
+//       let img = new Image();
+//       img.src = e.target.result;
+//       img.classList.add('draggable-image');
+//       img.onclick = function () {
+//         showButtons(this.parentNode);
+//       };
+//       this.appendChild(img);
+//       addButtons(this);
+
+//       // 画像が挿入されたら枠線をなくす処理追加
+//       this.style.border = 'none';
+//     }.bind(this);
+//     fileReader.readAsDataURL(file);
+//   }
+// }
+
+// ーーーーーーードロップ時の処理(変更1)ーーーーーーーーーーーーーーー
 function handleDrop(event) {
   console.log('Drop event fired');
   event.preventDefault();
-  // this.style.backgroundColor = 'transparent';
-  const dropArea = event.target.closest('.empty'); // ドロップエリアを特定
-  if (!dropArea) return;
+  this.style.backgroundColor = 'transparent';
 
-  console.log('Drop event triggered');
-  console.log('Files:', event.dataTransfer.files);
-
-  dropArea.style.backgroundColor = 'transparent';
-
+  const dropArea = this; // thisを保存
   const files = event.dataTransfer.files;
   if (files.length > 0) {
     let file = files[0];
     let fileReader = new FileReader();
     fileReader.onload = function (e) {
-      console.log('File loaded:', e.target.result); // デバッグログ
-      dropArea.innerHTML = ''; // ドロップエリアをクリア
-      const img = new Image();
+      dropArea.innerHTML = ''; // 保存したdropAreaを使用
+      let img = new Image();
       img.src = e.target.result;
       img.classList.add('draggable-image');
       img.onclick = function () {
-        showButtons(this.parentNode);
+        showButtons(dropArea);
       };
       dropArea.appendChild(img);
-      addButtons(this);
+      addButtons(dropArea);
 
       // 画像が挿入されたら枠線をなくす処理追加
       dropArea.style.border = 'none';
@@ -307,7 +331,43 @@ function handleDrop(event) {
   }
 }
 
-// タッチエンド時の処理
+// // ーーーーーーードロップ時の処理(変更2)ーーーーーーーーーーーーーーー
+// function handleDrop(event) {
+//   console.log('Drop event fired');
+//   event.preventDefault();
+//   this.style.backgroundColor = 'transparent';
+
+//   const dropArea = this;
+//   const items = event.dataTransfer.items;
+//   if (items.length > 0) {
+//     for (let item of items) {
+//       if (item.kind === 'file') {
+//         const file = item.getAsFile();
+//         const fileReader = new FileReader();
+//         fileReader.onload = function (e) {
+//           dropArea.innerHTML = '';
+//           let img = new Image();
+//           img.src = e.target.result;
+//           img.classList.add('draggable-image');
+//           img.onclick = function () {
+//             showButtons(dropArea);
+//           };
+//           dropArea.appendChild(img);
+//           addButtons(dropArea);
+
+//           dropArea.style.border = 'none';
+//         };
+//         fileReader.readAsDataURL(file);
+//         break; // ファイル1つのみを処理
+//       }
+//     }
+//   }
+// }
+
+
+
+// タッチエンド時の処理---------------------------------------------------------
+
 function handleTouchDrop(event) {
   event.preventDefault();
   const touch = event.changedTouches[0];
@@ -332,10 +392,6 @@ function handleTouchDrop(event) {
     }
   }
 }
-
-//-------------------------------------------canvas------------------------------------------
-
-//---------------------------------------------ここまで----------------------------------------
 
 // 削除ボタンとトリミングボタンの追加
 function addButtons(container) {
