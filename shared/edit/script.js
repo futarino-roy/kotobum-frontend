@@ -305,11 +305,17 @@ function handleDragLeave(event) {
 // ーーーーーーードロップ時の処理(変更1)ーーーーーーーーーーーーーーー
 function handleDrop(event) {
   console.log('Drop event fired');
-  event.preventDefault();
+  console.log('Default behavior prevented');
+
   this.style.backgroundColor = 'transparent';
+  console.log('Background color set to transparent');
 
   const dropArea = this; // thisを保存
+  console.log('Drop area saved:', dropArea);
+
   const files = event.dataTransfer.files;
+  console.log('Files dropped:', files);
+
   if (files.length > 0) {
     let file = files[0];
     console.log('Processing file:', file);
