@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// サイドバーに画像読み込み、ドラッグ・タッチ操作可能に
 function loadImage(input) {
   const imgPreviewField = document.getElementById('imgPreviewField');
   if (input.files) {
@@ -85,15 +86,14 @@ function loadImage(input) {
       const reader = new FileReader();
 
       reader.onload = function (e) {
-        try {
-          const img = document.createElement('img');
-          img.src = e.target.result;
-          imgPreviewField.appendChild(img);
-          makeDraggable(img);
-          makeTouchable(img);
-        } catch (error) {
-          console.error('Error appending image:', error);
-        }
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.left = '0px';
+        img.style.top = '0px';
+
+        imgPreviewField.appendChild(img);
+        makeDraggable(img);
+        makeTouchable(img);
       };
 
       reader.readAsDataURL(file);
@@ -317,6 +317,7 @@ function handleDrop(event) {
       dropArea.innerHTML = ''; // 保存したdropAreaを使用
       let img = new Image();
       img.src = e.target.result;
+      console.log(img.src)
       img.classList.add('draggable-image');
       img.onclick = function () {
         showButtons(dropArea);
