@@ -1213,7 +1213,7 @@ function handleSaveOrSend() {
       }
 
       // 各ページのデータを収集
-      const pagePromises = Array.from(swiperSlides).map((slide) => {
+      const pageData = Array.from(swiperSlides).map(async (slide) => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
@@ -1265,11 +1265,12 @@ function handleSaveOrSend() {
           }
         });
 
-        return Promise.all(imagePromises).then((imageData) => ({
+        const imageData = await Promise.all(imagePromises);
+        return ({
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
           imageData,
-        }));
+        });
       });
 
 
