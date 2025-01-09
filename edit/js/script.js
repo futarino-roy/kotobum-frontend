@@ -1183,37 +1183,32 @@ function handleSaveOrSend() {
 
       // トリミングされた画像を生成する関数
       function cropImage(imageSrc, cropParams) {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = imageSrc;
-          img.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = cropParams.width;
-            canvas.height = cropParams.height;
-            const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = imageSrc;
+        const canvas = document.createElement('canvas');
+        canvas.width = cropParams.width;
+        canvas.height = cropParams.height;
+        const ctx = canvas.getContext('2d');
 
-            // トリミングエリアを描画
-            ctx.drawImage(
-              img,
-              cropParams.x, // トリミング開始位置 X
-              cropParams.y, // トリミング開始位置 Y
-              cropParams.width, // トリミング幅
-              cropParams.height, // トリミング高さ
-              0, // 描画開始位置 X
-              0, // 描画開始位置 Y
-              cropParams.width, // 描画幅
-              cropParams.height // 描画高さ
-            );
+        img.onload = () => {
+          ctx.drawImage(
+            img,
+            cropParams.x, // トリミング開始位置 X
+            cropParams.y, // トリミング開始位置 Y
+            cropParams.width, // トリミング幅
+            cropParams.height, // トリミング高さ
+            0, // 描画開始位置 X
+            0, // 描画開始位置 Y
+            cropParams.width, // 描画幅
+            cropParams.height // 描画高さ
+          );
+        };
 
-            // トリミングされた画像をbase64に変換
-            resolve(canvas.toDataURL());
-          };
-          img.onerror = () => reject(new Error('画像の読み込みに失敗しました'));
-        });
+        return canvas.toDataURL(); // 同期的に処理
       }
 
       // 各ページのデータを収集
-      const pageData = Array.from(swiperSlides).map(async (slide) => {
+      const pageData = Array.from(swiperSlides).map((slide) => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
@@ -1235,42 +1230,34 @@ function handleSaveOrSend() {
 
         // スライド内の画像データ収集
         const dropAreas = slide.querySelectorAll('.empty');
-        const imagePromises = Array.from(dropAreas).map((dropArea) => {
+        const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img');
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
-          if (img) {
-            return cropImage(img.src, {
+          const croppedImage = img
+            ? cropImage(img.src, {
               x: left - initialRect.left, // トリミング開始X
               y: top - initialRect.top, // トリミング開始Y
               width: width, // トリミング幅
               height: height, // トリミング高さ
-            }).then((croppedImage) => ({
-              id: dropArea.id,
-              image: croppedImage,
-              top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-              left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-              width: (width / slideWidth) * 100, // 幅のパーセンテージ
-              height: (height / slideHeight) * 100, // 高さのパーセンテージ
-            }));
-          } else {
-            return Promise.resolve({
-              id: dropArea.id,
-              image: null,
-              top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-              left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-              width: (width / slideWidth) * 100, // 幅のパーセンテージ
-              height: (height / slideHeight) * 100, // 高さのパーセンテージ
-            });
-          }
+            })
+            : null;
+
+          return {
+            id: dropArea.id,
+            image: croppedImage, // トリミングされた画像をセット
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+            width: (width / slideWidth) * 100, // 幅のパーセンテージ
+            height: (height / slideHeight) * 100, // 高さのパーセンテージ
+          };
         });
 
-        const imageData = await Promise.all(imagePromises);
-        return ({
+        return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
           imageData,
-        });
+        };
       });
 
 
