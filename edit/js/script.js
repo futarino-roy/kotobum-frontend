@@ -1182,7 +1182,7 @@ function handleSaveOrSend() {
       const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
 
       // トリミングされた画像を生成する関数
-      function cropImage(imageSrc, cropParams) {
+      function getCroppedImageURL(imageSrc, cropParams) {
         const img = new Image();
         img.src = imageSrc;
         const canvas = document.createElement('canvas');
@@ -1204,7 +1204,7 @@ function handleSaveOrSend() {
           );
         };
 
-        return canvas.toDataURL(); // 同期的に処理
+        return canvas.toDataURL(); // この場合もbase64形式を返しますが、URLの場合はこちらに変更
       }
 
       // 各ページのデータを収集
@@ -1235,7 +1235,7 @@ function handleSaveOrSend() {
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
           const croppedImage = img
-            ? cropImage(img.src, {
+            ? getCroppedImageURL(img.src, {
               x: left - initialRect.left, // トリミング開始X
               y: top - initialRect.top, // トリミング開始Y
               width: width, // トリミング幅
