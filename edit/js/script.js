@@ -1181,15 +1181,46 @@ function handleSaveOrSend() {
       const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
 
+      // トリミングされた画像を生成する関数
+      function cropImage(imageSrc, cropParams) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = imageSrc;
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = cropParams.width;
+            canvas.height = cropParams.height;
+            const ctx = canvas.getContext('2d');
+
+            // トリミングエリアを描画
+            ctx.drawImage(
+              img,
+              cropParams.x, // トリミング開始位置 X
+              cropParams.y, // トリミング開始位置 Y
+              cropParams.width, // トリミング幅
+              cropParams.height, // トリミング高さ
+              0, // 描画開始位置 X
+              0, // 描画開始位置 Y
+              cropParams.width, // 描画幅
+              cropParams.height // 描画高さ
+            );
+
+            // トリミングされた画像をbase64に変換
+            resolve(canvas.toDataURL());
+          };
+          img.onerror = () => reject(new Error('画像の読み込みに失敗しました'));
+        });
+      }
+
       // 各ページのデータを収集
-      const pageData = Array.from(swiperSlides).map(slide => {
+      const pagePromises = Array.from(swiperSlides).map((slide) => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
 
         // スライド内のテキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
-        const textData = Array.from(textAreas).map(textarea => {
+        const textData = Array.from(textAreas).map((textarea) => {
           const { top, left, width, height } = textarea.getBoundingClientRect();
 
           return {
@@ -1198,63 +1229,47 @@ function handleSaveOrSend() {
             top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
             width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100 // 高さのパーセンテージ
+            height: (height / slideHeight) * 100, // 高さのパーセンテージ
           };
         });
 
         // スライド内の画像データ収集
         const dropAreas = slide.querySelectorAll('.empty');
-        const imageData = Array.from(dropAreas).map(dropArea => {
+        const imagePromises = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img');
           const { top, left, width, height } = dropArea.getBoundingClientRect();
 
-          // 元画像の情報を取得
-          const imgRect = img.getBoundingClientRect();
-          const scaleX = img.naturalWidth / imgRect.width;
-          const scaleY = img.naturalHeight / imgRect.height;
-
-          // トリミング位置をスケールに基づいて計算
-          const cropX = (left - imgRect.left) * scaleX;
-          const cropY = (top - imgRect.top) * scaleY;
-          const cropWidth = width * scaleX;
-          const cropHeight = height * scaleY;
-
-          // Canvasを作成してトリミング
-          const canvas = document.createElement('canvas');
-          canvas.width = cropWidth;
-          canvas.height = cropHeight;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(
-            img,
-            cropX,
-            cropY,
-            cropWidth,
-            cropHeight,
-            0,
-            0,
-            cropWidth,
-            cropHeight
-          );
-
-          // CanvasデータをBase64形式に変換
-          return canvas.toDataURL('image/png');
-
-
-          // return {
-          //   id: dropArea.id,
-          //   image: img ? img.src : null,
-          //   top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-          //   left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-          //   width: (width / slideWidth) * 100, // 幅のパーセンテージ
-          //   height: (height / slideHeight) * 100 // 高さのパーセンテージ
-          // };
+          if (img) {
+            return cropImage(img.src, {
+              x: left - initialRect.left, // トリミング開始X
+              y: top - initialRect.top, // トリミング開始Y
+              width: width, // トリミング幅
+              height: height, // トリミング高さ
+            }).then((croppedImage) => ({
+              id: dropArea.id,
+              image: croppedImage,
+              top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+              left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+              width: (width / slideWidth) * 100, // 幅のパーセンテージ
+              height: (height / slideHeight) * 100, // 高さのパーセンテージ
+            }));
+          } else {
+            return Promise.resolve({
+              id: dropArea.id,
+              image: null,
+              top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+              left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+              width: (width / slideWidth) * 100, // 幅のパーセンテージ
+              height: (height / slideHeight) * 100, // 高さのパーセンテージ
+            });
+          }
         });
 
-        return {
+        return Promise.all(imagePromises).then((imageData) => ({
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
-          imageData
-        };
+          imageData,
+        }));
       });
 
 
