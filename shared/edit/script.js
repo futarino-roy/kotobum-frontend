@@ -523,7 +523,7 @@ function openCroppieModal(container) {
 function getCroppieImg() {
   if (window.croppieInstance) {
     window.croppieInstance.result({
-      type: 'base64', // base64形式で画像データを取得
+      type: 'raw', // base64形式で画像データを取得
       format: 'png',  // PNG形式で画像を取得
       size: 'original' // オリジナルサイズで取得
     })
