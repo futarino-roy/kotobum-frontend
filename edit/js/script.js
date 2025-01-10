@@ -1181,9 +1181,6 @@ function handleSaveOrSend() {
       const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
 
-      // トリミング情報の取得
-      getCroppieResult();
-
       // 各ページのデータを収集
       const pageData = Array.from(swiperSlides).map((slide) => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
