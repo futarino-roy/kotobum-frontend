@@ -530,19 +530,13 @@ function getCroppieResult() {
       .then((rawData) => {
         console.log('rawData', rawData);
         const { points, zoom, origin } = rawData;
-        if (points && points.length >= 4) {
-          const cropInfo = {
-            x: points[0], // トリミング開始X座標
-            y: points[1], // トリミング開始Y座標
-            width: points[2] - points[0], // トリミング範囲の幅
-            height: points[3] - points[1], // トリミング範囲の高さ
-            zoom, // ズームレベル
-            origin, // 元画像のURL
-          };
-          console.log('トリミング情報', cropInfo);
-        } else {
-          console.log('Croppieのトリミングデータ', points);
-        }
+        console.log('トリミング情報:');
+        console.log('開始X座標:', points[0]);
+        console.log('開始Y座標:', points[1]);
+        console.log('終了X座標:', points[2]);
+        console.log('終了Y座標:', points[3]);
+        console.log('ズームレベル:', zoom);
+        console.log('元画像URL:', origin);
       })
       .catch(error => {
         console.error('トリミング情報を取得できません', error);
