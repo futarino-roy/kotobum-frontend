@@ -493,7 +493,7 @@ function openCroppieModal(container) {
   }
 
   window.croppieInstance = new Croppie(croppieContainer, {
-    viewport: { width: 200, height: 200 },
+    viewport: { width: 250, height: 180 },
     boundary: { width: 300, height: 300 },
     showZoomer: true,
     enableResize: false,
@@ -524,6 +524,7 @@ function getCroppieResult() {
   if (window.croppieInstance) {
     window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
       .then((rawData) => {
+        console.log('rawData', rawData);
         const { points, zoom, origin } = rawData;
         const cropInfo = {
           x: points[0], // トリミング開始X座標
