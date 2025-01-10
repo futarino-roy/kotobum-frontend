@@ -502,6 +502,10 @@ function openCroppieModal(container) {
   const img = container.querySelector('img');
   window.croppieInstance.bind({
     url: img.src,
+  }).then(() => {
+    console.log('Croppie画像のバインドに成功しました');
+  }).catch(error => {
+    console.error('Croppie画像のバインドに失敗しました:', error);
   });
 
   // トリミングボタン
