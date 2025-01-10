@@ -1180,7 +1180,7 @@ function handleSaveOrSend() {
       // 背景色とテキスト色の取得
       const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
-
+      // トリミングデータを取得
       getCroppieImg();
 
       // 各ページのデータを収集
@@ -1212,7 +1212,7 @@ function handleSaveOrSend() {
 
           return {
             id: dropArea.id,
-            image: img ? img.src : null,
+            image: img ? img.src : window.rawData,
             top: Math.round(top - initialRect.top),
             left: Math.round(left - initialRect.left),
             width: Math.round(width),

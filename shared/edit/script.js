@@ -522,19 +522,18 @@ function openCroppieModal(container) {
 
 function getCroppieImg() {
   if (window.croppieInstance) {
-    window.croppieInstance.result({ type: 'json', size: { width: 200, height: 200 } })
-      .then((rawData) => {
-        const { points, zoom, origin } = rawData;
-        console.log(rawData);
-        const cropInfo = {
-          x: points[0], // トリミング開始X座標
-          y: points[1], // トリミング開始Y座標
-          width: points[2] - points[0], // トリミング範囲の幅
-          height: points[3] - points[1], // トリミング範囲の高さ
-          zoom, // ズームレベル
-          origin, // 元画像のURL
-        };
-        console.log('トリミング情報', cropInfo);
+    window.croppieInstance.result({
+      type: 'base64', // base64形式で画像データを取得
+      format: 'png',  // PNG形式で画像を取得
+      size: 'original' // オリジナルサイズで取得
+    })
+      .then((croppedImage) => {
+        // 取得したトリミング画像をrawDataとしてwindowに格納
+        window.rawData = croppedImage; // ここで画像データをwindow.rawDataに格納
+        console.log('トリミング後の画像:', window.rawData);
+      })
+      .catch(error => {
+        console.error('エラー:', error);
       });
   } else {
     console.log('Croppieのインスタンスが見つかりません。');
