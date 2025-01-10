@@ -525,24 +525,29 @@ function openCroppieModal(container) {
 }
 
 function getCroppieResult() {
-  if (window.croppieInstance) {
-    window.croppieInstance.result({ type: 'raw', size: 'original' })
-      .then((rawData) => {
-        const { points, zoom, origin } = rawData;
-        console.log('トリミング情報:');
-        console.log('開始X座標:', points[0]);
-        console.log('開始Y座標:', points[1]);
-        console.log('終了X座標:', points[2]);
-        console.log('終了Y座標:', points[3]);
-        console.log('ズームレベル:', zoom);
-        console.log('元画像URL:', origin);
-        console.log('トリミング情報:', rawData);
-      }).catch((error) => {
-        console.error('トリミング情報取得失敗:', error);
-      });
-  } else {
-    console.error('Croppieインスタンスが存在しません。');
+  if (!croppieInstance) {
+    console.error('Croppieインスタンスがありません');
+    return;
   }
+
+  const croppieState = croppieDemo.croppie('get');
+  console.log('トリミング情報:', croppieState);
+
+  console.log('ポイント:', croppieState.points); // [x1, y1, x2, y2]
+  console.log('ズーム:', croppieState.zoom);     // 現在のズームレベル
+  console.log('ビューポート:', croppieState.viewport); // ビューポートの幅と高さ
+
+  // croppieInstance.result({ type: 'raw', size: 'original' })
+  //   .then((rawData) => {
+  //     if (rawData && rawData.points) {
+  //       console.log('トリミング情報:', rawData.points);
+  //     } else {
+  //       console.error('トリミング情報が不正です:', rawData);
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error('トリミング情報取得エラー:', error);
+  //   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
