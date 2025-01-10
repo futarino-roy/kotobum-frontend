@@ -521,19 +521,26 @@ function openCroppieModal(container) {
 }
 
 function getCroppieResult() {
-  window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
-    .then((rawData) => {
-      const { points, zoom, origin } = rawData;
-      const cropInfo = {
-        x: points[0], // トリミング開始X座標
-        y: points[1], // トリミング開始Y座標
-        width: points[2] - points[0], // トリミング範囲の幅
-        height: points[3] - points[1], // トリミング範囲の高さ
-        zoom, // ズームレベル
-        origin, // 元画像のURL
-      };
-      console.log('トリミング情報', cropInfo);
-    });
+  if (window.croppieInstance) {
+    window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
+      .then((rawData) => {
+        const { points, zoom, origin } = rawData;
+        const cropInfo = {
+          x: points[0], // トリミング開始X座標
+          y: points[1], // トリミング開始Y座標
+          width: points[2] - points[0], // トリミング範囲の幅
+          height: points[3] - points[1], // トリミング範囲の高さ
+          zoom, // ズームレベル
+          origin, // 元画像のURL
+        };
+        console.log('トリミング情報', cropInfo);
+      })
+      .catch(error => {
+        console.error('トリミング情報を取得できません', error);
+      });
+  } else {
+    console.error('Croppieインスタンスが初期化されていません');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
