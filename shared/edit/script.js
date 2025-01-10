@@ -522,7 +522,7 @@ function openCroppieModal(container) {
 
 function getCroppieResult() {
   if (window.croppieInstance) {
-    window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
+    window.croppieInstance.result({ type: 'raw', size: 'original' })
       .then((rawData) => {
         console.log('rawData', rawData);
         const { points, zoom, origin } = rawData;
