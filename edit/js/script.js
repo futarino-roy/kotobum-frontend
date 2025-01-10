@@ -1185,6 +1185,14 @@ function handleSaveOrSend() {
       // トリミングモーダル処理
       let croppieInstance;
 
+      const croppieContainer = document.getElementById('croppie-container');
+      croppieInstance = new Croppie(croppieContainer, {
+        viewport: { width: 200, height: 200 },
+        boundary: { width: 300, height: 300 },
+        showZoomer: true,
+        enableResize: false,
+      });
+
       // トリミング情報の取得
       croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } }).then((rawData) => {
         const { points, zoom, origin } = rawData;
