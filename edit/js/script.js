@@ -1185,44 +1185,6 @@ function handleSaveOrSend() {
       // トリミングモーダル処理
       let croppieInstance;
 
-      function openCroppieModal(container) {
-        const croppieModal = document.getElementById('croppieModal');
-        const croppieContainer = document.getElementById('croppie-container');
-        croppieModal.style.display = 'block';
-
-        // Croppieの設定
-        if (croppieInstance) {
-          croppieInstance.destroy();
-        }
-
-        croppieInstance = new Croppie(croppieContainer, {
-          viewport: { width: 200, height: 200 },
-          boundary: { width: 300, height: 300 },
-          showZoomer: true,
-          enableResize: false,
-        });
-
-        const img = container.querySelector('img');
-        croppieInstance.bind({
-          url: img.src,
-        });
-
-        // トリミングボタン
-        document.getElementById('crop-button').onclick = function () {
-          croppieInstance
-            .result({
-              type: 'canvas',
-              size: 'original',
-              format: 'png',
-              quality: 1,
-            })
-            .then(function (croppedImageData) {
-              container.querySelector('img').src = croppedImageData;
-              croppieModal.style.display = 'none';
-            });
-        };
-      }
-
       // トリミング情報の取得
       croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } }).then((rawData) => {
         const { points, zoom, origin } = rawData;
