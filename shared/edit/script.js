@@ -528,7 +528,6 @@ function getCroppieResult() {
   if (window.croppieInstance) {
     window.croppieInstance.result({ type: 'raw', size: 'original' })
       .then((rawData) => {
-        console.log('トリミング情報:', rawData);
         const { points, zoom, origin } = rawData;
         console.log('トリミング情報:');
         console.log('開始X座標:', points[0]);
@@ -537,6 +536,7 @@ function getCroppieResult() {
         console.log('終了Y座標:', points[3]);
         console.log('ズームレベル:', zoom);
         console.log('元画像URL:', origin);
+        console.log('トリミング情報:', rawData);
       }).catch((error) => {
         console.error('トリミング情報取得失敗:', error);
       });
