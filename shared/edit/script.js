@@ -525,6 +525,12 @@ function openCroppieModal(container) {
 }
 
 function getCroppieResult() {
+  window.croppieInstance = new Croppie(croppieContainer, {
+    viewport: { width: 250, height: 180 },
+    boundary: { width: 300, height: 300 },
+    showZoomer: true,
+    enableResize: false,
+  });
   if (!croppieInstance) {
     console.error('Croppieインスタンスがありません');
     return;
