@@ -1174,6 +1174,7 @@ function handleSaveOrSend() {
         return;
       }
 
+      const parentElement = document.querySelector('.input-drop');
       const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
       // 背景色とテキスト色の取得
