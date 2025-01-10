@@ -492,7 +492,7 @@ function openCroppieModal(container) {
     croppieInstance.destroy();
   }
 
-  croppieInstance = new Croppie(croppieContainer, {
+  window.croppieInstance = new Croppie(croppieContainer, {
     viewport: { width: 200, height: 200 },
     boundary: { width: 300, height: 300 },
     showZoomer: true,
