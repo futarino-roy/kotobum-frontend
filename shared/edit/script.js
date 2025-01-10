@@ -488,11 +488,11 @@ function openCroppieModal(container) {
   croppieModal.style.display = 'block';
 
   // Croppieの設定
-  if (window.croppieInstance) {
-    window.croppieInstance.destroy();
+  if (croppieInstance) {
+    croppieInstance.destroy();
   }
 
-  window.croppieInstance = new Croppie(croppieContainer, {
+  croppieInstance = new Croppie(croppieContainer, {
     viewport: { width: 200, height: 200 },
     boundary: { width: 300, height: 300 },
     showZoomer: true,
@@ -500,13 +500,13 @@ function openCroppieModal(container) {
   });
 
   const img = container.querySelector('img');
-  window.croppieInstance.bind({
+  croppieInstance.bind({
     url: img.src,
   });
 
   // トリミングボタン
   document.getElementById('crop-button').onclick = function () {
-    window.croppieInstance
+    croppieInstance
       .result({
         type: 'canvas',
         size: 'original',
@@ -518,6 +518,26 @@ function openCroppieModal(container) {
         croppieModal.style.display = 'none';
       });
   };
+}
+
+function getCroppieResult() {
+  if (window.croppieInstance) {
+    window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
+      .then((rawData) => {
+        const { points, zoom, origin } = rawData;
+        const cropInfo = {
+          x: points[0], // トリミング開始X座標
+          y: points[1], // トリミング開始Y座標
+          width: points[2] - points[0], // トリミング範囲の幅
+          height: points[3] - points[1], // トリミング範囲の高さ
+          zoom, // ズームレベル
+          origin, // 元画像のURL
+        };
+        console.log('トリミング情報', cropInfo);
+      });
+  } else {
+    console.log('Croppieのインスタンスが見つかりません。');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
