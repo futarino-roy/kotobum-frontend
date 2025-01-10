@@ -488,11 +488,11 @@ function openCroppieModal(container) {
   croppieModal.style.display = 'block';
 
   // Croppieの設定
-  if (croppieInstance) {
-    croppieInstance.destroy();
+  if (window.croppieInstance) {
+    window.croppieInstance.destroy();
   }
 
-  croppieInstance = new Croppie(croppieContainer, {
+  window.croppieInstance = new Croppie(croppieContainer, {
     viewport: { width: 200, height: 200 },
     boundary: { width: 300, height: 300 },
     showZoomer: true,
@@ -500,13 +500,13 @@ function openCroppieModal(container) {
   });
 
   const img = container.querySelector('img');
-  croppieInstance.bind({
+  window.croppieInstance.bind({
     url: img.src,
   });
 
   // トリミングボタン
   document.getElementById('crop-button').onclick = function () {
-    croppieInstance
+    window.croppieInstance
       .result({
         type: 'canvas',
         size: 'original',
