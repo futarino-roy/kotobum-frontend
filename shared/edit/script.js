@@ -525,6 +525,7 @@ function getCroppieImg() {
     window.croppieInstance.result({ type: 'raw', size: { width: 200, height: 200 } })
       .then((rawData) => {
         const { points, zoom, origin } = rawData;
+        console.log(rawData);
         const cropInfo = {
           x: points[0], // トリミング開始X座標
           y: points[1], // トリミング開始Y座標
