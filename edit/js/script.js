@@ -1204,27 +1204,26 @@ function handleSaveOrSend() {
           };
         });
 
-        // スライド内の画像データ収集
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img'); // 画像要素を取得
           const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
 
+          // 高さをパーセンテージで計算し、+5を追加
+          const adjustedHeight = (height / slideHeight) * 100 + 5;
+
+          // 上部座標を計算 (adjustedHeight を考慮)
+          const adjustedTop = ((top - initialRect.top) / slideHeight) * 100 - (5 / 2);
+
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: (((top - initialRect.top) / slideHeight) * 100) + 5, // パーセンテージで指定
+            top: adjustedTop, // 調整後のtop
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
             width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: ((height / slideHeight) * 100) + 5, // 高さをパーセンテージで指定
+            height: adjustedHeight, // 調整後の高さ
           };
         });
-
-        return {
-          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
-          textData,
-          imageData,
-        };
       });
 
       // 送信データの構築
