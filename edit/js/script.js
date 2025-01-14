@@ -1213,7 +1213,7 @@ function handleSaveOrSend() {
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
+            top: (((top - initialRect.top) / slideHeight) * 100) + 5, // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
             width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
             height: ((height / slideHeight) * 100) + 5, // 高さをパーセンテージで指定
