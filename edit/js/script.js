@@ -1208,16 +1208,33 @@ function handleSaveOrSend() {
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img'); // 画像要素を取得
-          const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
+          // const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
+
+          const dropAreaRect = dropArea.getBoundingClientRect();
+          const slideRect = slide.getBoundingClientRect();
+
+          const topRect = ((dropAreaRect.top - slideRect) / slideRect.height) * 100;
+          const leftRect = ((dropAreaRect.left - slideRect) / slideRect.width) * 100;
+          const widthRect = ((dropAreaRect.width - slideRect)) * 100;
+          const heightRect = ((dropAreaRect.height - slideRect)) * 100;
 
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
-            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+            top: topRect,
+            left: leftRect,
+            width: widthRect,
+            height: heightRect,
           };
+
+          // return {
+          //   id: dropArea.id,
+          //   image: img ? img.src : null,
+          //   top: ((top - initialRect.top) / slideHeight) * 100 , // パーセンテージで指定
+          //   left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+          //   width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+          //   height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+          // };
         });
 
         return {
