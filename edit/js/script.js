@@ -1207,16 +1207,16 @@ function handleSaveOrSend() {
         // スライド内の画像データ収集
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
-          const img = dropArea.querySelector('img');
-          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          const img = dropArea.querySelector('img'); // 画像要素を取得
+          const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
 
           return {
             id: dropArea.id,
-            image: img ? img.src : window.rawData,
-            top: Math.round(top - initialRect.top),
-            left: Math.round(left - initialRect.left),
-            width: Math.round(width),
-            height: Math.round(height)
+            image: img ? img.src : null,
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
         });
 

@@ -826,7 +826,7 @@
                 line-height: 1.9;
                 background-color: transparent;
                 white-space: nowrap;
-                font-family: 'Noto Sans JP', serif;
+                // font-family: 'Noto Sans JP', serif;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;

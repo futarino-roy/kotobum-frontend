@@ -793,12 +793,12 @@
               align-items: center;
               justify-content: center;
 
-              .page1_text {
-                width: 30%;
-                height: 5%;
-                border-radius: 9999px;
-                margin: 2% 0 2% 0;
-              }
+              // .page1_text {
+              //   width: 30%;
+              //   height: 5%;
+              //   border-radius: 9999px;
+              //   margin: 2% 0 2% 0;
+              // }
 
               p {
                 font-family: 'League Spartan', sans-serif;
@@ -815,7 +815,7 @@
                 position: absolute;
                 height: 74%;
                 right: 13%;
-                top: 5%;
+                top: 10%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -855,6 +855,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1.3rem;
+                    margin-top: 82%;
                   }
                   @media screen and (max-width: 1200px) {
                     font-size: 0.8rem;
@@ -869,7 +870,7 @@
                   height: 300px;
                   background-color: white;
                   transition: height 0.3s ease;
-                  margin-top: 30%;
+                  margin-bottom: 120%;
                 }
               }
 
@@ -948,14 +949,15 @@
                 #dropAreaB4-2_t2,
                 #dropAreaB4-3_t2 {
                   width: 55.5%;
-                  height: 29%;
+                  height: 25%;
                   position: relative;
-                  top: 5%;
+                  top: 10%;
+                  border: 2px dashed #ccc;
                   right: 6.5%;
                   @include mq('pc2-edit') {
-                    top: 5%;
+                    top: 10.5%;
                     right: 6.5%;
-                    height: 28.5%;
+                    height: 23.7%;
                   }
                   @media screen and (max-width: 1200px) {
                     height: 30%;
@@ -1204,7 +1206,7 @@
               #textArea {
                 &1-1_t2 {
                   font-family: 'League Spartan', sans-serif;
-                  margin: 30px 0 0 0;
+                  margin: 3% 0 3% 0;
                   font-size: 1.2rem;
                   line-height: 1.2;
                   font-weight: bold;
@@ -1231,7 +1233,7 @@
                 &1-2B_t2 {
                   font-family: 'League Spartan', sans-serif;
                   margin: 0;
-                  margin: 3% 0 3%;
+                  margin: 3% 0 3% 0;
                   font-size: 0.45rem;
                   text-align: center;
                   line-height: 2.5;
@@ -1258,6 +1260,7 @@
                 }
                 &1-3_t2 {
                   width: 45% !important;
+                  height: 18% !important;
                 }
 
                 &B4_t2 {
@@ -1341,11 +1344,15 @@
                 margin-top: 0%;
                 position: absolute;
                 top: 15%;
-                width: 60%;
+                width: 70%;
                 height: 34%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+
+                @include mq('pc2-edit') {
+                  width: 70%;
+                }
 
                 img {
                   width: 100%;

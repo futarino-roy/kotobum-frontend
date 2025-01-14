@@ -715,11 +715,11 @@ window.addEventListener('beforeunload', function (event) {
 });
 
 // visibilitychangeイベントでタブを切り替えたときにも警告を表示
-document.addEventListener('visibilitychange', function () {
-  if (document.visibilityState === 'hidden' && !isSaved) {
-    alert('未保存の内容があります。ページを離れる前に保存してください。');
-  }
-});
+// document.addEventListener('visibilitychange', function () {
+//   if (document.visibilityState === 'hidden' && !isSaved) {
+//     alert('未保存の内容があります。ページを離れる前に保存してください。');
+//   }
+// });
 
 
 // //マイページへボタンを押されたとき

@@ -791,6 +791,8 @@
               justify-content: center;
 
               .flex24 {
+                position: relative;
+                top: 2%;
                 width: 100%;
                 height: 83%;
                 display: flex;
@@ -1438,7 +1440,7 @@
                 overflow: hidden;
                 text-align: left;
                 resize: none;
-                max-width: 60%;
+                width: 60% !important;
                 height: auto;
                 font-size: 0.4rem;
                 line-height: 1.9;
@@ -1549,11 +1551,11 @@
                 &13-3 {
                   position: absolute;
                   top: 66%;
-                  max-height: 16%;
+                  // max-height: 16%;
                   font-size: 0.3rem;
-                  text-align: start;
-                  writing-mode: vertical-rl;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // text-align: start;
+                  // writing-mode: vertical-rl;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   @include mq('pc-edit') {
                     font-size: 0.25rem;
                   }
@@ -1580,9 +1582,10 @@
                   line-height: 1.5;
                   text-align: center;
                   font-weight: bold;
-                  writing-mode: vertical-rl;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // writing-mode: vertical-rl;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   vertical-align: text-bottom;
+                  font-size: 0.6rem;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1605,11 +1608,11 @@
                 &17,
                 &19,
                 &21 {
-                  max-height: 50%;
-                  min-height: 50%;
-                  writing-mode: vertical-rl;
-                  font-size: 0.35rem;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // max-height: 50%;
+                  // min-height: 50%;
+                  // writing-mode: vertical-rl;
+                  font-size: 5.2px;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.26rem;
@@ -1726,8 +1729,8 @@
                   line-height: 1.5;
                   font-weight: bold;
                   text-align: center;
-                  margin-top: 10%;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // margin-top: 10%;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1750,9 +1753,9 @@
                   max-height: 30%;
                   margin-bottom: 2.5%;
                   margin-top: 2.5%;
-                  writing-mode: vertical-rl;
-                  font-size: 0.37rem;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // writing-mode: vertical-rl;
+                  font-size: 0.33rem;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.28rem;
@@ -1800,14 +1803,14 @@
                   }
                 }
                 &24-2 {
-                  height: 65% !important;
+                  height: 75% !important;
                   width: 45% !important;
-                  writing-mode: vertical-rl;
+                  // writing-mode: vertical-rl;
                   font-size: 0.26rem;
-                  display: flex;
-                  align-items: center; /* 縦方向の中央揃え */
-                  justify-content: center; /* 横方向の中央揃え */
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // display: flex;
+                  // align-items: center; /* 縦方向の中央揃え */
+                  // justify-content: center; /* 横方向の中央揃え */
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
@@ -1832,8 +1835,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  margin-top: 115%;
-
+                  // margin-top: 111.5%;
                   width: 63% !important;
                   text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   // max-height: 15px;
@@ -1846,7 +1848,7 @@
                   @include mq('pc2-edit') {
                     font-size: 1.2rem;
                     line-height: 0.9;
-                    margin-top: 114.5%;
+                    margin-top: 116.5%;
                   }
 
                   @include mq('tab-edit') {
