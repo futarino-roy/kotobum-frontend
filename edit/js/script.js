@@ -1213,18 +1213,13 @@ function handleSaveOrSend() {
           const dropAreaRect = dropArea.getBoundingClientRect();
           const slideRect = slide.getBoundingClientRect();
 
-          const topRect = ((dropAreaRect.top - slideRect) / slideRect.height) * 100;
-          const leftRect = ((dropAreaRect.left - slideRect) / slideRect.width) * 100;
-          const widthRect = ((dropAreaRect.width - slideRect)) * 100;
-          const heightRect = ((dropAreaRect.height - slideRect)) * 100;
-
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: topRect,
-            left: leftRect,
-            width: widthRect,
-            height: heightRect,
+            top: ((dropAreaRect.top - slideRect) / slideRect.height) * 100,
+            left: ((dropAreaRect.left - slideRect) / slideRect.width) * 100,
+            width: ((dropAreaRect.width - slideRect)) * 100,
+            height: ((dropAreaRect.height - slideRect)) * 100,
           };
 
           // return {
