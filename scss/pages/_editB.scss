@@ -1646,7 +1646,7 @@
                   text-align: center;
                   color: #ffffff;
                   margin-top: 10%;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -1782,7 +1782,7 @@
                   min-width: 60%;
                   font-size: 0.7rem;
                   line-height: 1;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
@@ -1837,7 +1837,7 @@
                   font-size: 12px;
                   // margin-top: 111.5%;
                   width: 63% !important;
-                  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   // max-height: 15px;
 
                   @include mq('pc-edit') {

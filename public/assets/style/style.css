@@ -3885,7 +3885,6 @@ input:checked + label::after {
   text-align: center;
   color: #ffffff;
   margin-top: 10%;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
@@ -3972,7 +3971,6 @@ input:checked + label::after {
   min-width: 60%;
   font-size: 0.7rem;
   line-height: 1;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
@@ -4027,7 +4025,6 @@ input:checked + label::after {
   color: #fef8f6;
   font-size: 12px;
   width: 63% !important;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
@@ -6030,9 +6027,6 @@ input:checked + label::after {
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
   margin-top: 4%;
   font-size: 0.3rem;
-  text-align: start;
-  writing-mode: vertical-rl;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
   max-height: 15%;
 }
 @media screen and (max-width: 1200px) {
@@ -6062,8 +6056,6 @@ input:checked + label::after {
   line-height: 1.5;
   text-align: center;
   font-weight: bold;
-  writing-mode: vertical-rl;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
   vertical-align: text-bottom;
   max-height: 30%;
 }
@@ -6088,11 +6080,7 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-  max-height: 50%;
-  min-height: 50%;
-  writing-mode: vertical-rl;
   font-size: 0.35rem;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
   field-sizing: content;
 }
 @media screen and (max-width: 1200px) {
@@ -6129,7 +6117,6 @@ input:checked + label::after {
   text-align: center;
   color: #ffffff;
   margin-top: 10%;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2, .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
@@ -6152,7 +6139,7 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Noto Sans JP", serif;
   min-width: 60%;
   margin-bottom: 5%;
   margin-top: 5% !important;
@@ -6161,7 +6148,6 @@ input:checked + label::after {
   font-weight: bold;
   text-align: center;
   margin-top: 10%;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-1 {
@@ -6188,9 +6174,7 @@ input:checked + label::after {
   max-height: 30%;
   margin-bottom: 2.5%;
   margin-top: 2.5%;
-  writing-mode: vertical-rl;
-  font-size: 0.37rem;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
+  font-size: 0.33rem;
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
@@ -6213,14 +6197,13 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
-  font-family: "League Spartan", sans-serif;
+  font-family: "Noto Sans JP", serif;
   margin-top: 6%;
   text-align: center;
   font-weight: bold;
   min-width: 60%;
   font-size: 0.7rem;
   line-height: 1;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
@@ -6243,14 +6226,9 @@ input:checked + label::after {
   }
 }
 .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
-  height: 65% !important;
+  height: 75% !important;
   width: 45% !important;
-  writing-mode: vertical-rl;
   font-size: 0.26rem;
-  display: flex;
-  align-items: center; /* 縦方向の中央揃え */
-  justify-content: center; /* 横方向の中央揃え */
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-2 {
@@ -6279,9 +6257,7 @@ input:checked + label::after {
   font-weight: bold;
   color: #fef8f6;
   font-size: 12px;
-  margin-top: 115%;
   width: 63% !important;
-  text-orientation: upright; /* 数字や半角文字を縦向きにする */
 }
 @media screen and (max-width: 1200px) {
   .previewB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
