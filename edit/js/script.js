@@ -1204,6 +1204,7 @@ function handleSaveOrSend() {
           };
         });
 
+        // スライド内の画像データ収集
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img'); // 画像要素を取得
@@ -1224,6 +1225,13 @@ function handleSaveOrSend() {
             height: adjustedHeight, // 調整後の高さ
           };
         });
+
+
+        return {
+          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          textData,
+          imageData,
+        };
       });
 
       // 送信データの構築
