@@ -1556,6 +1556,7 @@
                   // text-align: start;
                   // writing-mode: vertical-rl;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  text-align: center;
                   @include mq('pc-edit') {
                     font-size: 0.25rem;
                   }
@@ -1756,6 +1757,7 @@
                   // writing-mode: vertical-rl;
                   font-size: 0.33rem;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.28rem;
@@ -1835,7 +1837,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  // margin-top: 111.5%;
+                  margin-top: 111.5%;
                   width: 63% !important;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   // max-height: 15px;

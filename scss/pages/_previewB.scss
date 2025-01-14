@@ -1142,7 +1142,7 @@
                 // &21,
                 // &21-2,
                 &23-1 {
-                  font-family: 'Noto Sans JP', serif;
+                  // font-family: 'Noto Sans JP', serif;
                   min-width: 60%;
                   margin-bottom: 5%;
                   margin-top: 5% !important;
@@ -1177,6 +1177,7 @@
                   // writing-mode: vertical-rl;
                   font-size: 0.33rem;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  text-align: center;
 
                   @include mq('pc-edit') {
                     font-size: 0.28rem;
@@ -1196,7 +1197,7 @@
                 }
 
                 &24-1 {
-                  font-family: 'Noto Sans JP', serif;
+                  // font-family: 'Noto Sans JP', serif;
                   margin-top: 6%;
                   text-align: center;
                   font-weight: bold;
@@ -1256,7 +1257,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  // margin-top: 115%;
+                  margin-top: 115%;
 
                   width: 63% !important;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
@@ -1270,7 +1271,7 @@
                   @include mq('pc2-edit') {
                     font-size: 1.2rem;
                     line-height: 0.9;
-                    margin-top: 114.5%;
+                    margin-top: 116.5%;
                   }
 
                   @include mq('tab-edit') {
