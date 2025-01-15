@@ -1206,8 +1206,8 @@ function handleSaveOrSend() {
 
         // スライド内の画像データ収集
 
-        const canvasWidth = 331; // 固定デザインサイズの幅
-        const canvasHeight = 457; // 固定デザインサイズの高さ
+        const canvasWidth = 452.5; // 固定デザインサイズの幅
+        const canvasHeight = 622.5; // 固定デザインサイズの高さ
 
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
