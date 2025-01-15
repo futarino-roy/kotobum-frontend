@@ -1205,6 +1205,10 @@ function handleSaveOrSend() {
         });
 
         // スライド内の画像データ収集
+
+        const canvasWidth = 900; // 固定デザインサイズの幅
+        const canvasHeight = 1245; // 固定デザインサイズの高さ
+
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const img = dropArea.querySelector('img'); // 画像要素を取得
@@ -1213,11 +1217,19 @@ function handleSaveOrSend() {
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
-            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+            top: ((top - initialRect.top) / canvasHeight) * 100, // 固定基準の高さを使用
+            left: ((left - initialRect.left) / canvasWidth) * 100, // 固定基準の幅を使用
+            width: (width / canvasWidth) * 100, // 固定基準の幅を使用
+            height: (height / canvasHeight) * 100, // 固定基準の高さを使用
           };
+          // return {
+          //   id: dropArea.id,
+          //   image: img ? img.src : null,
+          //   top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+          //   left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+          //   width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+          //   height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+          // };
         });
 
         return {
