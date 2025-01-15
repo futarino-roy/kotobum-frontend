@@ -1210,22 +1210,15 @@ function handleSaveOrSend() {
           const img = dropArea.querySelector('img'); // 画像要素を取得
           const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
 
-          // 高さをパーセンテージで計算し、+5を追加
-          const adjustedHeight = (height / slideHeight) * 100 + 5;
-
-          // 上部座標を計算 (adjustedHeight を考慮)
-          const adjustedTop = ((top - initialRect.top) / slideHeight) * 100 - (5 / 2);
-
           return {
             id: dropArea.id,
             image: img ? img.src : null,
-            top: adjustedTop, // 調整後のtop
+            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
             width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: adjustedHeight, // 調整後の高さ
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
         });
-
 
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
