@@ -3974,7 +3974,7 @@ input:checked + label::after {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     font-size: 1.2rem;
     line-height: 0.9;
-    margin-top: 116.5%;
+    top: 98%;
   }
 }
 @media screen and (max-width: 900px) {
