@@ -523,9 +523,18 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
         quality: 1,
       })
       .then(function (croppedImageData) {
+        // ドロップエリアのIDを取得
+        const dropAreaId = document.querySelector('.dropArea.selected').id;
+
         window.croppedImages.push(croppedImageData); //トリミング画像データを配列に保存
         dropArea.querySelector('img').src = croppedImageData;
         croppieModal.style.display = 'none';
+
+        // 画像データをドロップエリアごとに保存
+        if (!window.croppedImages) {
+          window.croppedImages = {};
+        }
+        window.croppedImages[dropAreaId] = croppedImageData; // ドロップエリアごとに画像を保存
       });
   };
 }

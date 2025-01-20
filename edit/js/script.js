@@ -1229,7 +1229,19 @@ function handleSaveOrSend() {
         //   };
         // });
 
-        const imageData = window.croppedImages[index] || null;
+        const dropAreas = slide.querySelectorAll('.empty');
+        const imageData = Array.from(dropAreas).map((dropArea) => {
+          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
+
+          return {
+            id: dropArea.id,
+            image: croppedImage,
+            // top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            // left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            // width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            // height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+          };
+        });
 
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
