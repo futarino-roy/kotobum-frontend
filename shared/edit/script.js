@@ -482,7 +482,7 @@ function hideButtons() {
 // トリミングモーダル処理
 let croppieInstance;
 
-function openCroppieModal(container) {
+function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
   const croppieModal = document.getElementById('croppieModal');
   const croppieContainer = document.getElementById('croppie-container');
   croppieModal.style.display = 'block';
@@ -499,7 +499,7 @@ function openCroppieModal(container) {
     enableResize: false,
   });
 
-  const img = container.querySelector('img');
+  const img = dropArea.querySelector('img');
   window.croppieInstance.bind({
     url: img.src,
   });
