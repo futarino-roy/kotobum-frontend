@@ -1231,8 +1231,7 @@ function handleSaveOrSend() {
 
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
-          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
-
+          const img = dropArea.querySelector('img'); // 画像要素を取得
           return {
             id: dropArea.id,
             image: croppedImage,
