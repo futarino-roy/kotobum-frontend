@@ -451,7 +451,7 @@ function addButtons(container) {
     cropButton.textContent = '';
     cropButton.onclick = function (event) {
       event.stopPropagation();
-      openCroppieModal(container);
+      openCroppieModal(dropArea, viewportWidth, viewportHeight);
     };
     container.appendChild(cropButton);
   }
