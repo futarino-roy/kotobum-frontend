@@ -456,6 +456,7 @@ function addButtons(container) {
     cropButton.textContent = '';
     cropButton.onclick = function (event) {
       event.stopPropagation();
+      const dropAreaId = container.id;
       const viewportSize = dropAreaSettings[dropAreaId];
       if (viewportSize) {
         openCroppieModal(container, viewportSize.width, viewportSize.height);
@@ -555,15 +556,11 @@ const dropAreaSettings = {
 };
 
 // 各ドロップエリアにクリックイベントを設定
-// document.querySelectorAll('.empty').forEach((dropArea) => {
-//   dropArea.addEventListener('click', () => {
-//     const dropAreaId = dropArea.id;
-//     const viewportSize = dropAreaSettings[dropAreaId];
-//     if (viewportSize) {
-//       openCroppieModal(dropArea, viewportSize.width, viewportSize.height);
-//     }
-//   });
-// });
+document.querySelectorAll('.empty').forEach((dropArea) => {
+  dropArea.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+});
 
 // function getCroppieImg() {
 //   if (window.croppieInstance) {
