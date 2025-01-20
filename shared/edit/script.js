@@ -523,7 +523,7 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
       })
       .then(function (croppedImageData) {
         window.croppedImages.push(croppedImageData); //トリミング画像データを配列に保存
-        container.querySelector('img').src = croppedImageData;
+        dropArea.querySelector('img').src = croppedImageData;
         croppieModal.style.display = 'none';
       });
   };
