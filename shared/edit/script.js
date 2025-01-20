@@ -493,7 +493,7 @@ function openCroppieModal(container) {
   }
 
   window.croppieInstance = new Croppie(croppieContainer, {
-    viewport: { width: 250, height: 180 },
+    viewport: { width: viewportWidth, height: viewportHeight },
     boundary: { width: 300, height: 300 },
     showZoomer: true,
     enableResize: false,
@@ -520,6 +520,42 @@ function openCroppieModal(container) {
       });
   };
 }
+
+// ドロップエリアごとに設定されたviewportサイズを定義
+const dropAreaSettings = {
+  'dropArea24-1': { width: 200, height: 200 },
+  'dropArea24-2': { width: 200, height: 200 },
+  'dropArea24-3': { width: 250, height: 180 },
+  'dropArea22': { width: 150, height: 200 },
+  'dropArea20': { width: 200, height: 250 },
+  'dropArea18': { width: 200, height: 250 },
+  'dropArea16': { width: 250, height: 250 },
+  'dropArea14': { width: 250, height: 200 },
+  'dropArea13': { width: 250, height: 250 },
+  'dropArea12': { width: 250, height: 180 },
+  'dropArea11': { width: 250, height: 180 },
+  'dropArea10': { width: 250, height: 180 },
+  'dropArea9': { width: 250, height: 180 },
+  'dropArea8': { width: 250, height: 180 },
+  'dropArea7': { width: 250, height: 180 },
+  'dropArea6': { width: 250, height: 180 },
+  'dropArea5': { width: 250, height: 180 },
+  'dropArea4': { width: 250, height: 180 },
+  'dropArea3': { width: 250, height: 180 },
+  'dropArea2': { width: 250, height: 180 },
+  'dropArea1': { width: 250, height: 180 },
+};
+
+// 各ドロップエリアにクリックイベントを設定
+document.querySelectorAll('.empty').forEach((dropArea) => {
+  dropArea.addEventListener('click', () => {
+    const dropAreaId = dropArea.id;
+    const viewportSize = dropAreaSettings[dropAreaId];
+    if (viewportSize) {
+      openCroppieModal(dropArea, viewportSize.width, viewportSize.height);
+    }
+  });
+});
 
 // function getCroppieImg() {
 //   if (window.croppieInstance) {
