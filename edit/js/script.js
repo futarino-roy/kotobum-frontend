@@ -1229,10 +1229,12 @@ function handleSaveOrSend() {
         //   };
         // });
 
+        const imageData = window.croppedImages[index] || null;
+
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
-          imageData: window.croppedImageData || null,
+          imageData,
         };
       });
 

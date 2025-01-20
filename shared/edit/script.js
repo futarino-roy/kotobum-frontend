@@ -514,6 +514,7 @@ function openCroppieModal(container) {
         quality: 1,
       })
       .then(function (croppedImageData) {
+        window.croppedImages.push(croppedImageData);
         container.querySelector('img').src = croppedImageData;
         croppieModal.style.display = 'none';
       });
