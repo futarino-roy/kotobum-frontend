@@ -427,6 +427,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //   }
 // }
 
+//グローバルで空の配列を初期化
+if (!window.croppedImages) {
+  window.croppedImages = [];
+}
+
 // 削除ボタンとトリミングボタンの追加
 function addButtons(container) {
   if (!container.querySelector('.delete-btn')) {
@@ -517,7 +522,7 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
         quality: 1,
       })
       .then(function (croppedImageData) {
-        window.croppedImages.push(croppedImageData);
+        window.croppedImages.push(croppedImageData); //トリミング画像データを配列に保存
         container.querySelector('img').src = croppedImageData;
         croppieModal.style.display = 'none';
       });
