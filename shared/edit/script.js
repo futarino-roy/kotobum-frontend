@@ -555,15 +555,15 @@ const dropAreaSettings = {
 };
 
 // 各ドロップエリアにクリックイベントを設定
-document.querySelectorAll('.empty').forEach((dropArea) => {
-  dropArea.addEventListener('click', () => {
-    const dropAreaId = dropArea.id;
-    const viewportSize = dropAreaSettings[dropAreaId];
-    if (viewportSize) {
-      openCroppieModal(dropArea, viewportSize.width, viewportSize.height);
-    }
-  });
-});
+// document.querySelectorAll('.empty').forEach((dropArea) => {
+//   dropArea.addEventListener('click', () => {
+//     const dropAreaId = dropArea.id;
+//     const viewportSize = dropAreaSettings[dropAreaId];
+//     if (viewportSize) {
+//       openCroppieModal(dropArea, viewportSize.width, viewportSize.height);
+//     }
+//   });
+// });
 
 // function getCroppieImg() {
 //   if (window.croppieInstance) {
