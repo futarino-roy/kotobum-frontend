@@ -451,7 +451,10 @@ function addButtons(container) {
     cropButton.textContent = '';
     cropButton.onclick = function (event) {
       event.stopPropagation();
-      openCroppieModal(dropArea, viewportWidth, viewportHeight);
+      const viewportSize = dropAreaSettings[dropAreaId];
+      if (viewportSize) {
+        openCroppieModal(container, viewportSize.width, viewportSize.height);
+      }
     };
     container.appendChild(cropButton);
   }
