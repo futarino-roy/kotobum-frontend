@@ -3157,6 +3157,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
     height: 77%;
+    top: 5%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -3178,6 +3179,11 @@ input:checked + label::after {
   align-items: center;
   gap: 7.6%;
   margin: 2% 0 2.5% 0;
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .flex-area24 {
+    width: 68%;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 .drop24 {
   width: 45%;
@@ -3215,6 +3221,11 @@ input:checked + label::after {
   cursor: pointer;
   border-radius: 10%;
 }
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 {
+    top: -2%;
+  }
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14 img {
   width: 100%;
   height: 100%;
@@ -3247,6 +3258,11 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 {
+    top: -13%;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea16 img {
   width: 100%;
@@ -3287,6 +3303,11 @@ input:checked + label::after {
     height: 48%;
   }
 }
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 {
+    top: -6%;
+  }
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea18 img {
   width: 100%;
   height: 100%;
@@ -3323,6 +3344,11 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
     top: 2%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 {
+    top: -2%;
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea20 img {
@@ -3382,6 +3408,11 @@ input:checked + label::after {
     top: 0;
   }
 }
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 {
+    top: -4%;
+  }
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea22 img {
   width: 100%;
   height: 100%;
@@ -3432,6 +3463,11 @@ input:checked + label::after {
   border: 2px dashed #ccc;
   cursor: pointer;
 }
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 {
+    min-height: 46%;
+  }
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-1 img {
   width: 100%;
   height: 100%;
@@ -3445,6 +3481,11 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 {
+    min-height: 46%;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-2 img {
   width: 100%;
@@ -3460,6 +3501,12 @@ input:checked + label::after {
   font-size: 1rem;
   border: 2px dashed #ccc;
   cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 {
+    min-height: 44%;
+    width: 68%;
+  }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea24-3 img {
   width: 100%;
@@ -3536,7 +3583,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-1 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3569,7 +3616,8 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
-    font-size: 0.33rem;
+    font-size: 0.38rem;
+    top: 21.6%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3596,7 +3644,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-3 {
-    font-size: 0.25rem;
+    font-size: 0.27rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3631,6 +3679,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
     font-size: 0.45rem;
+    top: -2%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3649,6 +3698,11 @@ input:checked + label::after {
     font-size: 2.5vw;
   }
 }
+@media screen and (max-width: 1200px) {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea22 {
+    top: -3%;
+  }
+}
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18 {
   margin-bottom: 5%;
   height: auto;
@@ -3664,6 +3718,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea18 {
     font-size: 0.45rem;
+    top: -7%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3699,6 +3754,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea20 {
     font-size: 0.45rem;
+    top: -2%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3725,7 +3781,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15 {
-    font-size: 0.26rem;
+    font-size: 0.23rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3756,7 +3812,8 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea17, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea19, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea21 {
-    font-size: 0.26rem;
+    font-size: 0.245rem;
+    top: 0;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3794,6 +3851,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-1 {
     font-size: 0.45rem;
+    top: -10.5%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3827,6 +3885,7 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea16-2 {
     font-size: 0.45rem;
+    top: 60%;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3881,7 +3940,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea23-2 {
-    font-size: 0.28rem;
+    font-size: 0.26rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3910,7 +3969,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
-    font-size: 0.5rem;
+    font-size: 0.47rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -3967,7 +4026,6 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     font-size: 0.5rem;
-    line-height: 0.7;
   }
 }
 @media screen and (min-width: 1500px) {

@@ -805,6 +805,7 @@
                 }
                 @include mq('pc-edit') {
                   height: 77%;
+                  top: 5%;
                 }
                 @include mq('tab-edit') {
                   height: 83%;
@@ -822,6 +823,9 @@
                   align-items: center;
                   gap: 7.6%;
                   margin: 2% 0 2.5% 0;
+                  @include mq('pc-edit') {
+                    width: 68%;
+                  }
                 }
 
                 .drop24 {
@@ -863,6 +867,9 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 border-radius: 10%;
+                @include mq('pc-edit') {
+                  top: -2%;
+                }
 
                 img {
                   width: 100%;
@@ -900,6 +907,9 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
                 border-radius: 10%;
+                @include mq('pc-edit') {
+                  top: -13%;
+                }
 
                 img {
                   width: 100%;
@@ -941,6 +951,9 @@
                   top: -1%;
                   height: 48%;
                 }
+                @include mq('pc-edit') {
+                  top: -6%;
+                }
 
                 img {
                   width: 100%;
@@ -980,6 +993,9 @@
                 border-radius: 10%;
                 @include mq('pc2-edit') {
                   top: 2%;
+                }
+                @include mq('pc-edit') {
+                  top: -2%;
                 }
 
                 img {
@@ -1047,6 +1063,9 @@
                 @include mq('pc2-edit') {
                   top: 0;
                 }
+                @include mq('pc-edit') {
+                  top: -4%;
+                }
 
                 img {
                   width: 100%;
@@ -1109,6 +1128,9 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                @include mq('pc-edit') {
+                  min-height: 46%;
+                }
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -1148,6 +1170,9 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                @include mq('pc-edit') {
+                  min-height: 46%;
+                }
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -1188,6 +1213,10 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
+                @include mq('pc-edit') {
+                  min-height: 44%;
+                  width: 68%;
+                }
 
                 // 枠サイズ変更関連---
                 // &.active {
@@ -1285,7 +1314,7 @@
                   top: 13.5%;
 
                   @include mq('pc-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1.1rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1315,7 +1344,8 @@
                   top: 21.8%;
 
                   @include mq('pc-edit') {
-                    font-size: 0.33rem;
+                    font-size: 0.38rem;
+                    top: 21.6%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1342,7 +1372,7 @@
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
                   text-align: left;
                   @include mq('pc-edit') {
-                    font-size: 0.25rem;
+                    font-size: 0.27rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1377,6 +1407,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -2%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1392,6 +1423,13 @@
                     font-size: 2.5vw;
                   }
                 }
+
+                &22 {
+                  @include mq('pc-edit') {
+                    top: -3%;
+                  }
+                }
+
                 &18 {
                   margin-bottom: 5%;
                   height: auto;
@@ -1408,6 +1446,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -7%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1441,6 +1480,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -2%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1465,7 +1505,7 @@
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.26rem;
+                    font-size: 0.23rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1494,7 +1534,8 @@
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.26rem;
+                    font-size: 0.245rem;
+                    top: 0;
                   }
 
                   @include mq('pc2-edit') {
@@ -1529,6 +1570,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -10.5%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1560,6 +1602,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: 60%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1665,7 +1708,7 @@
                   text-align: left;
 
                   @include mq('pc-edit') {
-                    font-size: 0.28rem;
+                    font-size: 0.26rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1692,7 +1735,7 @@
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
-                    font-size: 0.5rem;
+                    font-size: 0.47rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1750,7 +1793,6 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
-                    line-height: 0.7;
                   }
 
                   @include mq('pc2-edit') {
