@@ -520,25 +520,25 @@ function openCroppieModal(container) {
   };
 }
 
-function getCroppieImg() {
-  if (window.croppieInstance) {
-    window.croppieInstance.result({
-      type: 'blob', // 画像データをBlob形式で取得
-      format: 'png',
-      size: 'viewport', // 表示サイズで取得
-    })
-      .then((croppedImage) => {
-        // 取得したトリミング画像をrawDataとしてwindowに格納
-        window.rawData = croppedImage; // ここで画像データをwindow.rawDataに格納
-        console.log('トリミング後の画像:', window.rawData);
-      })
-      .catch(error => {
-        console.error('エラー:', error);
-      });
-  } else {
-    console.log('Croppieのインスタンスが見つかりません。');
-  }
-}
+// function getCroppieImg() {
+//   if (window.croppieInstance) {
+//     window.croppieInstance.result({
+//       type: 'blob', // 画像データをBlob形式で取得
+//       format: 'png',
+//       size: 'viewport', // 表示サイズで取得
+//     })
+//       .then((croppedImage) => {
+//         // 取得したトリミング画像をrawDataとしてwindowに格納
+//         window.rawData = croppedImage; // ここで画像データをwindow.rawDataに格納
+//         console.log('トリミング後の画像:', window.rawData);
+//       })
+//       .catch(error => {
+//         console.error('エラー:', error);
+//       });
+//   } else {
+//     console.log('Croppieのインスタンスが見つかりません。');
+//   }
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
   const dropAreas = document.querySelectorAll('.empty');
