@@ -525,6 +525,12 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
       .then(function (croppedImageData) {
         // ドロップエリアのIDを取得
         const dropArea = document.querySelector('.dropArea.selected'); // 選択されたドロップエリア
+        if (!dropArea) {
+          console.error('選択されたドロップエリアが見つかりません。');
+          alert('画像をトリミングするドロップエリアを選択してください。');
+          return; // 処理を中止
+        }
+
         const dropAreaId = dropArea.id;
 
         window.croppedImages.push(croppedImageData); //トリミング画像データを配列に保存
