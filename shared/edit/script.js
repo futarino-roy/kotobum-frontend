@@ -491,7 +491,7 @@ function hideButtons() {
 // トリミングモーダル処理
 let croppieInstance;
 
-function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
+function openCroppieModal(container, viewportWidth, viewportHeight) {
   const croppieModal = document.getElementById('croppieModal');
   const croppieContainer = document.getElementById('croppie-container');
   croppieModal.style.display = 'block';
@@ -508,7 +508,7 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
     enableResize: false,
   });
 
-  const img = dropArea.querySelector('img');
+  const img = container.querySelector('img');
   window.croppieInstance.bind({
     url: img.src,
   });
@@ -523,25 +523,17 @@ function openCroppieModal(dropArea, viewportWidth, viewportHeight) {
         quality: 1,
       })
       .then(function (croppedImageData) {
-        // ドロップエリアのIDを取得
-        const dropArea = document.querySelector('.dropArea.selected'); // 選択されたドロップエリア
-        if (!dropArea) {
+        if (!container) {
           console.error('選択されたドロップエリアが見つかりません。');
           alert('画像をトリミングするドロップエリアを選択してください。');
           return; // 処理を中止
         }
 
-        const dropAreaId = dropArea.id;
+        const dropAreaId = container.id;
 
-        window.croppedImages.push(croppedImageData); //トリミング画像データを配列に保存
-        dropArea.querySelector('img').src = croppedImageData;
-        croppieModal.style.display = 'none';
-
-        // 画像データをドロップエリアごとに保存
-        if (!window.croppedImages) {
-          window.croppedImages = {};
-        }
         window.croppedImages[dropAreaId] = croppedImageData; // ドロップエリアごとに画像を保存
+        container.querySelector('img').src = croppedImageData;
+        croppieModal.style.display = 'none';
       });
   };
 }
