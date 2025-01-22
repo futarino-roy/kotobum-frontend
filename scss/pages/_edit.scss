@@ -852,7 +852,7 @@
                 max-height: 85%;
               }
               @include mq('pc-edit') {
-                max-height: 82.5%;
+                // max-height: 82.5%;
               }
               @include mq('tab-edit') {
                 max-height: 87%;
@@ -886,10 +886,10 @@
                   top: 4.5%;
                 }
                 @include mq('pc-edit') {
-                  top: -5%;
+                  top: 3.5%;
                 }
                 @include mq('tab-edit') {
-                  top: -3.5%;
+                  top: 4.2%;
                 }
               }
 
@@ -903,6 +903,9 @@
                 gap: 7.6%;
                 margin: 3.5% 0 0% 0;
                 @include mq('pc2-edit') {
+                  margin: 3.5% 0 -2% 0;
+                }
+                @include mq('pc-edit') {
                   margin: 3.5% 0 -2% 0;
                 }
               }
@@ -1190,14 +1193,17 @@
                 font-size: 1rem;
                 border: 2px dashed rgb(204, 204, 204);
                 cursor: pointer;
+                top: -0.8%;
                 clip-path: polygon(51% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
 
                 @include mq('pc-edit') {
                   clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
+                  top: 0.6%;
                 }
 
                 @include mq('pc2-edit') {
                   clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
+                  top: 11.2%;
                 }
 
                 @include mq('tab-edit') {
@@ -1768,7 +1774,8 @@
                   top: 94.5%;
 
                   @include mq('pc-edit') {
-                    margin-top: 111.5%;
+                    top: 94.5%;
+                    font-size: 0.5rem;
                   }
 
                   @include mq('pc2-edit') {
@@ -1778,9 +1785,8 @@
                   }
 
                   @include mq('tab-edit') {
-                    line-height: 0.7;
-                    font-size: 3vw;
-                    margin-top: 113%;
+                    font-size: 2.5vw;
+                    top: 93.5%;
                   }
 
                   // @include mq('sp-edit') {
