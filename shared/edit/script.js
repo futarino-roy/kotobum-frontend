@@ -548,7 +548,7 @@ const dropAreaSettings = {
   'dropArea18': { width: 200, height: 250 },
   'dropArea16': { width: 250, height: 250 },
   'dropArea14': { width: 250, height: 200 },
-  'dropArea13': { width: 260, height: 250 },
+  'dropArea13': { width: 270, height: 250 },
   'dropArea12': { width: 250, height: 180 },
   'dropArea11': { width: 250, height: 180 },
   'dropArea10': { width: 250, height: 180 },
