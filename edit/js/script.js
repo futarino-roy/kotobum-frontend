@@ -1232,13 +1232,14 @@ function handleSaveOrSend() {
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
+          const { top, left, width, height } = dropArea.getBoundingClientRect();
           return {
             id: dropArea.id,
             image: croppedImage,
-            // top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
-            // left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
-            // width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            // height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
         });
 
