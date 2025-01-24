@@ -540,9 +540,9 @@ function openCroppieModal(container, viewportWidth, viewportHeight) {
 
 // ドロップエリアごとに設定されたviewportサイズを定義
 const dropAreaSettings = {
-  'dropArea24-1': { width: 220, height: 200 },
-  'dropArea24-2': { width: 220, height: 200 },
-  'dropArea24-3': { width: 280, height: 180 },
+  'dropArea24-1': { width: 250, height: 200 },
+  'dropArea24-2': { width: 250, height: 200 },
+  'dropArea24-3': { width: 300, height: 180 },
   'dropArea22': { width: 160, height: 210 },
   'dropArea20': { width: 200, height: 200 },
   'dropArea18': { width: 200, height: 220 },
