@@ -1232,10 +1232,12 @@ function handleSaveOrSend() {
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
+          const originalImage = window.originalImages[dropArea.id] || null; // 元の画像データを取得
+          const imageToSend = croppedImage || originalImage; // トリミングされていればトリミング画像、なければ元画像
           const { top, left, width, height } = dropArea.getBoundingClientRect();
           return {
             id: dropArea.id,
-            image: croppedImage,
+            image: imageToSend,
             top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
             width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
