@@ -1307,6 +1307,7 @@
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
+                field-sizing: content;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
