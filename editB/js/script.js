@@ -1291,8 +1291,8 @@ function handleSaveOrSend() {
       const textDataToSend = pageData.flatMap(page => page.textData);
 
       const dataToSend = {
-        textData,
-        imageData,
+        imageData: imageDataToSend,
+        textData: textDataToSend,
         colors: {
           backgroundColor,
           textColor,
