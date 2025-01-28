@@ -1325,7 +1325,10 @@
                   font-size: 1.7vw;
                 }
               }
-
+              .text-height {
+                field-sizing: content;
+                max-height: 65%;
+              }
               .text-empty {
                 border: 2px dashed #ccc;
                 &.no-border {
