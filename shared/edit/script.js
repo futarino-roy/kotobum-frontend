@@ -543,10 +543,10 @@ const dropAreaSettings = {
   'dropArea24-1': { width: 255, height: 230 },
   'dropArea24-2': { width: 255, height: 230 },
   'dropArea24-3': { width: 290, height: 170 },
-  'dropArea22': { width: 160, height: 210 },
-  'dropArea20': { width: 200, height: 220 },
+  'dropArea22': { width: 170, height: 210 },
+  'dropArea20': { width: 210, height: 220 },
   'dropArea18': { width: 200, height: 240 },
-  'dropArea16': { width: 230, height: 200 },
+  'dropArea16': { width: 230, height: 210 },
   'dropArea14': { width: 270, height: 210 },
   'dropArea13': { width: 270, height: 250 },
 
