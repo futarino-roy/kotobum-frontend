@@ -1291,6 +1291,7 @@
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
+                field-sizing: content;
                 // letter-spacing: 0.5px;
 
                 @include mq('pc-edit') {
