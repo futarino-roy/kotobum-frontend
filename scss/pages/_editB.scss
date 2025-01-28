@@ -1328,6 +1328,7 @@
                 resize: none; /* ユーザーによるサイズ変更を禁止 */
                 overflow: hidden; /* スクロールバーが表示されないようにする */
                 border: 2px dashed #ccc;
+                field-sizing: content;
                 &.no-border {
                   border: none;
                 }
