@@ -550,18 +550,14 @@ const dropAreaSettings = {
   'dropArea14': { width: 270, height: 210 },
   'dropArea13': { width: 270, height: 250 },
 
-  'dropArea12': { width: 250, height: 180 },
-  'dropArea11': { width: 250, height: 180 },
-  'dropArea10': { width: 250, height: 180 },
-  'dropArea9': { width: 250, height: 180 },
-  'dropArea8': { width: 250, height: 180 },
-  'dropArea7': { width: 250, height: 180 },
-  'dropArea6': { width: 250, height: 180 },
-  'dropArea5': { width: 250, height: 180 },
-  'dropArea4': { width: 250, height: 180 },
-  'dropArea3': { width: 250, height: 180 },
-  'dropArea2': { width: 250, height: 180 },
-  'dropArea1': { width: 250, height: 180 },
+  'dropArea12-3': { width: 255, height: 230 },
+  'dropArea12-2': { width: 255, height: 230 },
+  'dropArea12-1': { width: 290, height: 170 },
+  'dropArea8': { width: 200, height: 210 },
+  'dropArea6': { width: 200, height: 230 },
+  'dropArea4': { width: 220, height: 200 },
+  'dropArea2': { width: 270, height: 210 },
+  'dropArea1': { width: 270, height: 250 },
 };
 
 // 各ドロップエリアにクリックイベントを設定
