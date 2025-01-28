@@ -1643,7 +1643,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-1 {
     clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
-    top: 11.2%;
+    top: 0.5%;
   }
 }
 @media screen and (max-width: 900px) {
