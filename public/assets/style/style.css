@@ -3862,6 +3862,7 @@ input:checked + label::after {
   top: 4%;
   font-size: 4.9px;
   field-sizing: content;
+  max-width: 55%;
 }
 @media screen and (max-width: 1200px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea15 {
