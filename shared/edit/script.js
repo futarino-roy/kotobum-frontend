@@ -523,19 +523,56 @@ function openCroppieModal(container, viewportWidth, viewportHeight) {
         quality: 1,
       })
       .then(function (croppedImageData) {
+        const dropAreaId = container.id;
+        const clipPath = clipPathShapes
+
+        cropToShape(croppedImageData, clipPath).then((shapedImage) => {
+          window.croppedImages[dropAreaId] = shapedImage;
+          container.querySelector('img').src = shapedImage;
+          croppieModal.style.display = 'none';
+        });
         if (!container) {
           console.error('選択されたドロップエリアが見つかりません。');
           alert('画像をトリミングするドロップエリアを選択してください。');
           return; // 処理を中止
         }
-
-        const dropAreaId = container.id;
-
         window.croppedImages[dropAreaId] = croppedImageData; // ドロップエリアごとに画像を保存
         container.querySelector('img').src = croppedImageData;
         croppieModal.style.display = 'none';
       });
   };
+
+  function cropToShape(imageData, clipPath) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = imageData;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+
+        // clip-pathの形に切り抜く
+        const path = new Path2D(clipPath);
+        ctx.clip(path);
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        ctx.restore();
+
+        resolve(canvas.toDataURL("image/png")); // PNG形式でデータURLを取得
+      };
+    });
+  }
+
+  const clipPathShapes = {
+    "dropArea12-1": "M51% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%",
+    "dropArea12-2": "M53% 0px, 100% 0px, 100% 100%, 0px 100%, 14%",
+    "dropArea12-3": "M54% 0px, 100% 0px, 100% 100%, 0px 100%, 14%",
+  };
+
 }
 
 // ドロップエリアごとに設定されたviewportサイズを定義
