@@ -1161,6 +1161,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
+//
+
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
 

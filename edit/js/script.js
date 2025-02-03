@@ -1236,7 +1236,7 @@ function handleSaveOrSend() {
           const imgElement = dropArea.querySelector("img");
           const originalImage = imgElement ? imgElement.src : null;
 
-          const imageToSend = croppedImage[image.id] || originalImage;
+          const imageToSend = croppedImage || originalImage;
 
           const { top, left, width, height } = dropArea.getBoundingClientRect();
           return {
