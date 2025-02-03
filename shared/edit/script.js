@@ -586,10 +586,9 @@ const clipImageToPentagon = (imageSrc, points) => {
       const width = maxX - minX;
       const height = maxY - minY;
 
+      // キャンバスのサイズを五角形の範囲に設定
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-
-      // Canvasのサイズを五角形の範囲に合わせる
       canvas.width = width;
       canvas.height = height;
 
@@ -605,10 +604,11 @@ const clipImageToPentagon = (imageSrc, points) => {
       ctx.closePath();
       ctx.clip();
 
-      // 画像をキャンバスのサイズに引き伸ばして描画する
+      // 画像をキャンバスのサイズに合わせて描画
       ctx.drawImage(img, -minX, -minY, img.width, img.height);
       ctx.restore();
 
+      // 画像を正しく保存（五角形のサイズで）
       resolve(canvas.toDataURL('image/png'));
     };
   });
