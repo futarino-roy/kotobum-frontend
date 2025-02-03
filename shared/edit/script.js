@@ -583,6 +583,8 @@ const clipImageToPentagon = (imageSrc, points) => {
       canvas.width = img.width;
       canvas.height = img.height;
 
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       ctx.save();
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
@@ -591,7 +593,7 @@ const clipImageToPentagon = (imageSrc, points) => {
       }
       ctx.closePath();
       ctx.clip();
-      ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       ctx.restore();
 
       resolve(canvas.toDataURL('image/png'));
