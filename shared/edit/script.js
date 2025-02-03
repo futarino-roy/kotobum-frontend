@@ -578,22 +578,35 @@ const clipImageToPentagon = (imageSrc, points) => {
     const img = new Image();
     img.src = imageSrc;
     img.onload = () => {
+      // 五角形の最大範囲を計算
+      const minX = Math.min(...points.map(p => p.x));
+      const minY = Math.min(...points.map(p => p.y));
+      const maxX = Math.max(...points.map(p => p.x));
+      const maxY = Math.max(...points.map(p => p.y));
+      const width = maxX - minX;
+      const height = maxY - minY;
+
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-      canvas.width = img.width;
-      canvas.height = img.height;
+
+      // Canvasのサイズを五角形の範囲に合わせる
+      canvas.width = width;
+      canvas.height = height;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // 五角形の形で切り取る
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(points[0].x, points[0].y);
+      ctx.moveTo(points[0].x - minX, points[0].y - minY);
       for (let i = 1; i < points.length; i++) {
-        ctx.lineTo(points[i].x, points[i].y);
+        ctx.lineTo(points[i].x - minX, points[i].y - minY);
       }
       ctx.closePath();
       ctx.clip();
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      // 画像をキャンバスのサイズに引き伸ばして描画する
+      ctx.drawImage(img, -minX, -minY, img.width, img.height);
       ctx.restore();
 
       resolve(canvas.toDataURL('image/png'));
