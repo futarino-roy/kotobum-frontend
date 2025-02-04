@@ -1457,7 +1457,7 @@ async function captureAndShow() {
     imgElement.src = imgData;
     imgElement.alt = "キャプチャ画像";
     imgElement.style.maxWidth = "100%"; // サイズ調整
-    imgElement.style.border = "2px solid #ddd"; // 見やすくするための枠
+    imgElement.style.border = "1px solid #ddd"; // 見やすくするための枠
     document.getElementById("capture-result").appendChild(imgElement); //capture-resultというIDがついているところに表示
 
   } catch (error) {
