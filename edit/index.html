@@ -192,6 +192,7 @@
         <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
           <img src="/editB/images/color.png" alt="" />
         </button>
+        <button onclick="captureAndShow()">キャプチャして表示</button>
       </div>
 
       <div class="content" id="content">
@@ -203,6 +204,10 @@
                 <img src="/editB/images/template/p1@2x.png" alt="" />
                 <div class="input-drop"></div>
               </div>
+            </div>
+
+            <div id="capture-result">
+              <!-- ここに画像が表示される -->
             </div>
 
             <div class="swiper-slide">
@@ -373,11 +378,6 @@
                 </div>
               </div>
               <div class="page-number">1/12</div>
-            </div>
-
-            <button onclick="captureAndShow()">キャプチャして表示</button>
-            <div id="capture-result">
-              <!-- ここに画像が表示される -->
             </div>
 
             <div class="swiper-slide swiper-slide-hidden">
