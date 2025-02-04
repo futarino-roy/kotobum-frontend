@@ -1441,7 +1441,7 @@ async function captureSlidesAndSend() {
 
 // 画像化してフロント側に表示
 async function captureAndShow() {
-  const target = document.querySelector('.swiper-slide_box'); // キャプチャしたい要素
+  const target = document.querySelector('target'); // キャプチャしたい要素
 
   if (!target) {
     console.error("キャプチャ対象が見つかりません💦");
