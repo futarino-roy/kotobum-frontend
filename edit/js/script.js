@@ -1374,6 +1374,7 @@ async function captureSlidesAndSend() {
 
       // 📸 `swiper-slide_box` をキャプチャ
       const canvas = await html2canvas(slideBox, { scale: 2, useCORS: true });
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       canvas.toBlob(blob => {
         if (!blob) {
           console.error('⚠️ 画像の Blob を作成できませんでした！');
@@ -1381,8 +1382,6 @@ async function captureSlidesAndSend() {
         }
         console.log('✅ Blob 作成成功:', blob);
       }, 'image/png');
-
-      // const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
 
       // 📤 FormData に画像を追加
       body.append(`images[${i}]`, blob, `${slideId}.png`);
