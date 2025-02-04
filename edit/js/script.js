@@ -1450,44 +1450,44 @@ async function captureAndShow() {
   }
 
   // html2canvasのキャプチャtry
-  // try {
-  //   const dataURL = await htmlToImage.toPng(target);
-
-  //   const canvas = await html2canvas(target); // キャプチャする
-  //   const imgData = canvas.toDataURL("image/png"); // 画像データURLに変換
-
-  //   // 画像を表示
-  //   const imgElement = document.createElement("img");
-  //   imgElement.src = imgData;
-  //   imgElement.alt = "キャプチャ画像";
-  //   imgElement.style.maxWidth = "100%"; // サイズ調整
-  //   imgElement.style.border = "1px solid #ddd"; // 見やすくするための枠
-
-
-  //   document.getElementById("capture-result").appendChild(imgElement); //capture-resultというIDがついているところに表示
-
-  // } catch (error) {
-  //   console.error("キャプチャ中にエラーが発生しました💦", error);
-  // }
-
-  //html-to-imageのキャプチャtry
   try {
-    const dataUrl = await htmlToImage.toPng(target);
+    const dataURL = await htmlToImage.toPng(target);
+
+    const canvas = await html2canvas(target); // キャプチャする
+    const imgData = canvas.toDataURL("image/png"); // 画像データURLに変換
 
     // 画像を表示
     const imgElement = document.createElement("img");
-    imgElement.src = dataUrl;
+    imgElement.src = imgData;
     imgElement.alt = "キャプチャ画像";
-    imgElement.style.maxWidth = "100%";
-    imgElement.style.border = "1px solid #ddd";
+    imgElement.style.maxWidth = "100%"; // サイズ調整
+    imgElement.style.border = "1px solid #ddd"; // 見やすくするための枠
 
-    const resultContainer = document.getElementById("capture-result");
-    resultContainer.innerHTML = ""; // 既存の画像を削除
-    resultContainer.appendChild(imgElement); // 新しい画像を追加
+
+    document.getElementById("capture-result").appendChild(imgElement); //capture-resultというIDがついているところに表示
 
   } catch (error) {
     console.error("キャプチャ中にエラーが発生しました💦", error);
   }
+
+  //html-to-imageのキャプチャtry
+  // try {
+  //   const dataUrl = await htmlToImage.toPng(target);
+
+  //   // 画像を表示
+  //   const imgElement = document.createElement("img");
+  //   imgElement.src = dataUrl;
+  //   imgElement.alt = "キャプチャ画像";
+  //   imgElement.style.maxWidth = "100%";
+  //   imgElement.style.border = "1px solid #ddd";
+
+  //   const resultContainer = document.getElementById("capture-result");
+  //   resultContainer.innerHTML = ""; // 既存の画像を削除
+  //   resultContainer.appendChild(imgElement); // 新しい画像を追加
+
+  // } catch (error) {
+  //   console.error("キャプチャ中にエラーが発生しました💦", error);
+  // }
 }
 
 // ページ読み込み時のアルバムデータ取得処理
