@@ -195,17 +195,16 @@
         </button>
       </div>
 
-      <div id="capture-result">
-        <!-- ここに画像が表示される -->
-      </div>
-
       <div class="content" id="content">
         <!-- スライダー -->
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper-slide-hidden">
               <div class="swiper-slide_box uniqueColorB">
-                <img src="/editB/images/template/p1@2x.png" alt="" />
+                <div id="capture-result">
+                  <!-- ここに画像が表示される -->
+                </div>
+                <!-- <img src="/editB/images/template/p1@2x.png" alt="" /> -->
                 <div class="input-drop"></div>
               </div>
             </div>
@@ -367,7 +366,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div id="target" class="swiper-slide_box uniqueColorB">
+              <div class="swiper-slide_box uniqueColorB">
                 <img src="/editB/images/template3/新1-1.png" alt="" />
                 <div class="input-drop input-drop-first">
                   <textarea id="textArea13-1" rows="1" maxlength="16" class="text-empty text-colorB" placeholder="入力してください"></textarea>
@@ -417,6 +416,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- html2canvas CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- html-to-image CDN -->
+    <script src="https://unpkg.com/html-to-image"></script>
+
     <script src="https://unpkg.com/croppie/croppie.min.js"></script>
     <script src="/edit/js/script.js"></script>
     <script src="/shared/edit/script.js"></script>

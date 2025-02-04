@@ -732,7 +732,7 @@
           // justify-content: center;
           // align-items: center;
           &-hidden {
-            visibility: hidden;
+            // visibility: hidden;
             @include mq('tab-edit') {
               display: none;
             }
@@ -1388,7 +1388,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 0.8rem;
-                    top: 21.8%;
+                    top: 21.4%;
                   }
 
                   @include mq('tab-edit') {

@@ -3102,9 +3102,6 @@ input:checked + label::after {
   width: auto;
   height: 100%;
 }
-.editB .content .swiper-wrapper .swiper-slide-hidden {
-  visibility: hidden;
-}
 @media screen and (max-width: 900px) {
   .editB .content .swiper-wrapper .swiper-slide-hidden {
     display: none;
@@ -3689,7 +3686,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 0.8rem;
-    top: 21.8%;
+    top: 21.4%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -10278,7 +10275,6 @@ body {
   resize: none;
   width: 60% !important;
   max-width: 60%;
-  height: 20%;
   margin: 5% 0 4%;
   font-size: 0.4rem;
   line-height: 1.9;
@@ -12250,7 +12246,6 @@ body {
   resize: none;
   width: 60% !important;
   max-width: 60%;
-  height: 20%;
   margin: 5% 0 4%;
   font-size: 0.4rem;
   line-height: 1.9;
