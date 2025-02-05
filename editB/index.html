@@ -36,6 +36,7 @@
     <header class="edit-header">
       <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <button id="sendButton" class="btn btn-small_bl">保存する</button>
+      <button onclick="captureAndShow()">キャプチャして表示</button>
       <!-- <button class="btn-preview">プレビュー</button> -->
     </header>
 
@@ -355,7 +356,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box swiper-slide_box-last uniqueColor">
+              <div id="target" class="swiper-slide_box swiper-slide_box-last uniqueColor">
                 <img src="/editB/images/template3/新1-12@2x.png" alt="" />
                 <!-- <img src="/edit/images/example/B_12.png" alt="" /> -->
                 <div class="input-drop input-drop-last">
@@ -385,7 +386,10 @@
 
             <div class="swiper-slide swiper-slide-hidden">
               <div class="swiper-slide_box uniqueColor">
-                <img src="/editB/images/template/p1@2x.png" alt="" />
+                <div id="capture-result">
+                  <!-- ここに画像が表示される -->
+                </div>
+                <!-- <img src="/editB/images/template/p1@2x.png" alt="" /> -->
                 <div class="input-drop"></div>
               </div>
             </div>
@@ -412,6 +416,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/croppie/croppie.min.js"></script>
+    <!-- html2canvas CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- html-to-image CDN -->
+    <script src="https://unpkg.com/html-to-image"></script>
     <script src="/editB/js/script.js"></script>
     <script src="/shared/edit/script.js"></script>
   </body>

@@ -532,87 +532,12 @@ function openCroppieModal(container, viewportWidth, viewportHeight) {
         const dropAreaId = container.id;
 
         window.croppedImages[dropAreaId] = croppedImageData; // ドロップエリアごとに画像を保存
-
-        // `dropArea13-1` の場合のみ五角形に切り取る
-        if (dropAreaId === 'dropArea12-1') {
-          getClipPathPoints(container).then((clipPathPoints) => {
-            clipImageToPentagon(croppedImageData, clipPathPoints).then((clippedImage) => {
-              window.croppedImages[dropAreaId] = clippedImage;
-              container.querySelector('img').src = clippedImage;
-              croppieModal.style.display = 'none';
-            });
-          });
-        } else {
-          container.querySelector('img').src = croppedImageData;
-          croppieModal.style.display = 'none';
-        }
+        container.querySelector('img').src = croppedImageData;
+        croppieModal.style.display = 'none';
       });
   };
 }
 
-// `clip-path` の座標を取得する関数
-const getClipPathPoints = (element) => {
-  return new Promise((resolve) => {
-    const clipPath = window.getComputedStyle(element).clipPath;
-    const matches = clipPath.match(/polygon\((.*?)\)/);
-
-    if (!matches || matches.length < 2) {
-      console.error('clip-path の座標が取得できません。');
-      resolve([]);
-      return;
-    }
-
-    // 文字列を座標配列に変換
-    const points = matches[1].split(',').map((point) => {
-      const [x, y] = point.trim().split(' ').map((val) => parseFloat(val));
-      return { x, y };
-    });
-
-    resolve(points);
-  });
-};
-
-// Canvasを使って五角形に切り取る関数
-const clipImageToPentagon = (imageSrc, points) => {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.src = imageSrc;
-    img.onload = () => {
-      // 五角形の最大範囲を計算
-      const minX = Math.min(...points.map(p => p.x));
-      const minY = Math.min(...points.map(p => p.y));
-      const maxX = Math.max(...points.map(p => p.x));
-      const maxY = Math.max(...points.map(p => p.y));
-      const width = maxX - minX;
-      const height = maxY - minY;
-
-      // キャンバスのサイズを五角形の範囲に設定
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = width;
-      canvas.height = height;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // 五角形の形で切り取る
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(points[0].x - minX, points[0].y - minY);
-      for (let i = 1; i < points.length; i++) {
-        ctx.lineTo(points[i].x - minX, points[i].y - minY);
-      }
-      ctx.closePath();
-      ctx.clip();
-
-      // 画像をキャンバスのサイズに合わせて描画
-      ctx.drawImage(img, -minX, -minY, img.width, img.height);
-      ctx.restore();
-
-      // 画像を正しく保存（五角形のサイズで）
-      resolve(canvas.toDataURL('image/png'));
-    };
-  });
-};
 
 // ドロップエリアごとに設定されたviewportサイズを定義
 const dropAreaSettings = {

@@ -832,48 +832,108 @@ function handleSaveOrSend() {
         return;
       }
 
-      // テキストエリアと画像データの収集
-      const textAreas = document.querySelectorAll('.text-empty');
-      const textData = Array.from(textAreas).map(textarea => ({
-        id: textarea.id,
-        text: textarea.value || '',
-      }));
+      const parentElement = document.querySelector('.input-drop');
+      const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
-      const textAreaCover = document.querySelector('.textArea-cover');
-      const covertext = textAreaCover
-        ? {
-          id: textAreaCover.id,
-          text: textAreaCover.value.trim() || '',
-        }
-        : null;
+      // 背景色とテキスト色の取得
+      const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
+      // トリミングデータを取得
+      // getCroppieImg();
 
-      const dropAreas = document.querySelectorAll('.empty');
-      const imageData = Array.from(dropAreas).map(dropArea => {
-        const img = dropArea.querySelector('img');
+      // 各ページのデータを収集
+      const pageData = Array.from(swiperSlides).map((slide) => {
+        const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
+        const slideWidth = initialRect.width;
+        const slideHeight = initialRect.height;
+
+        // スライド内のテキストエリアのデータ収集
+        const textAreas = slide.querySelectorAll('.text-empty');
+        const textData = Array.from(textAreas).map((textarea) => {
+          const { top, left, width, height } = textarea.getBoundingClientRect();
+
+          return {
+            id: textarea.id,
+            text: textarea.value || '',
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+            width: (width / slideWidth) * 100, // 幅のパーセンテージ
+            height: (height / slideHeight) * 100, // 高さのパーセンテージ
+          };
+        });
+
+        // スライド内の画像データ収集
+        // const dropAreas = slide.querySelectorAll('.empty');
+        // const imageData = Array.from(dropAreas).map((dropArea) => {
+        //   const img = dropArea.querySelector('img'); // 画像要素を取得
+        //   const croppedImage = dropArea.dataset.croppedImage || (img ? img.src : null); //トリミング後の画像
+        //   const { top, left, width, height } = dropArea.getBoundingClientRect(); // ドロップエリアの座標情報を取得
+
+        //   // return {
+        //   //   id: dropArea.id,
+        //   //   image: img ? img.src : null,
+        //   //   top: ((top - initialRect.top) / canvasHeight) * 100, // 固定基準の高さを使用
+        //   //   left: ((left - initialRect.left) / canvasWidth) * 100, // 固定基準の幅を使用
+        //   //   width: (width / canvasWidth) * 100, // 固定基準の幅を使用
+        //   //   height: (height / canvasHeight) * 100, // 固定基準の高さを使用
+        //   // };
+        //   return {
+        //     id: dropArea.id,
+        //     image: croppedImage,
+        //     top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+        //     left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+        //     width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+        //     height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+        //   };
+        // });
+
+
+        const dropAreas = slide.querySelectorAll('.empty');
+        const imageData = Array.from(dropAreas).map((dropArea) => {
+          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
+          const imgElement = dropArea.querySelector("img");
+          const originalImage = imgElement ? imgElement.src : null;
+
+          const imageToSend = croppedImage || originalImage;
+
+          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          return {
+            id: dropArea.id,
+            image: imageToSend,
+            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+          };
+        });
+
         return {
-          id: dropArea.id,
-          image: img ? img.src : null,
+          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          textData,
+          imageData,
         };
       });
 
-      const backgroundColor = document.querySelector('.uniqueColorB').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-colorB').style.color || '#000000';
-
-      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      // 送信データの構築
+      if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
       }
 
+      // imageDataとtextDataを分離して送信
+      const imageDataToSend = pageData.flatMap(page => page.imageData);
+      const textDataToSend = pageData.flatMap(page => page.textData);
+
       const dataToSend = {
-        textData,
-        covertext,
-        imageData,
+        imageData: imageDataToSend,
+        textData: textDataToSend,
         colors: {
           backgroundColor,
           textColor,
         }
       };
+
 
       // FormDataに追加して送信
       const body = new FormData();

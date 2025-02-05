@@ -1161,7 +1161,147 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 // });
 
-//
+
+// html2canvasを使用してキャプチャ
+async function captureSlidesAndSend() {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    alert('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  let albumId;
+
+  try {
+    // 🎨 アルバムIDを取得
+    const response = await fetch('https://develop-back.kotobum.com/api/user/album', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+    }
+
+    const albums = await response.json();
+    albumId = albums.albumId;
+
+    if (!albumId) {
+      console.error('アルバムIDを取得できませんでした。');
+      return;
+    }
+
+    const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
+    const body = new FormData();
+
+    // 📝 テキストデータ & 画像データを準備
+    const pageData = [];
+
+    for (let i = 0; i < swiperSlides.length; i++) {
+      const slide = swiperSlides[i];
+      const slideId = slide.dataset.slideId || `slide_${i + 1}`;
+      const slideBox = slide.querySelector('.swiper-slide_box'); // スクショ対象
+
+      // 📸 `swiper-slide_box` をキャプチャ
+      const canvas = await html2canvas(slideBox, { scale: 2, useCORS: true });
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      canvas.toBlob(blob => {
+        if (!blob) {
+          console.error('⚠️ 画像の Blob を作成できませんでした！');
+          return;
+        }
+        console.log('✅ Blob 作成成功:', blob);
+      }, 'image/png');
+
+      // 📤 FormData に画像を追加
+      body.append(`images[${i}]`, blob, `${slideId}.png`);
+
+      // 📝 テキストエリアを取得
+      const textAreas = slide.querySelectorAll('.text-empty');
+      const textData = Array.from(textAreas).map((textarea) => ({
+        id: textarea.id,
+        text: textarea.value || '',
+      }));
+
+      // 🎨 画像データを取得
+      const dropAreas = slide.querySelectorAll('.empty');
+      const imageData = Array.from(dropAreas).map((dropArea) => {
+        const imgElement = dropArea.querySelector("img");
+        return {
+          id: dropArea.id,
+          image: imgElement ? imgElement.src : null,
+        };
+      });
+
+      // 📌 ページデータをまとめる
+      pageData.push({
+        slideId,
+        textData,
+        imageData,
+      });
+    }
+
+    // 📝 JSON 形式で `FormData` に追加
+    body.append("pageData", JSON.stringify(pageData));
+
+    console.log('送信するデータ:', body);
+
+    // 📨 サーバーに送信
+    const uploadResponse = await fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: body,
+    });
+
+    if (!uploadResponse.ok) {
+      throw new Error(`データ送信に失敗しました: ${uploadResponse.status} - ${uploadResponse.statusText}`);
+    }
+
+    const data = await uploadResponse.json();
+    console.log('成功:', data);
+    alert('データが正常に保存されました。');
+
+  } catch (error) {
+    console.error('エラーが発生しました:', error.message);
+    alert('エラーが発生しました。再度お試しください。');
+  }
+}
+
+// 画像化してフロント側に表示
+async function captureAndShow() {
+  const target = document.querySelector('#target'); // キャプチャしたい要素
+
+  if (!target) {
+    console.error("キャプチャ対象が見つかりません💦");
+    return;
+  }
+
+  //html-to-imageのキャプチャtry
+  try {
+    const dataUrl = await htmlToImage.toPng(target);
+
+    // 画像を表示
+    const imgElement = document.createElement("img");
+    imgElement.src = dataUrl;
+    imgElement.alt = "キャプチャ画像";
+    imgElement.style.maxWidth = "100%";
+    imgElement.style.border = "1px solid #ddd";
+
+    const resultContainer = document.getElementById("capture-result");
+    resultContainer.innerHTML = ""; // 既存の画像を削除
+    resultContainer.appendChild(imgElement); // 新しい画像を追加
+
+  } catch (error) {
+    console.error("キャプチャ中にエラーが発生しました💦", error);
+  }
+}
 
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
