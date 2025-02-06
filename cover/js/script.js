@@ -889,44 +889,28 @@ function handleSaveOrSend() {
 
 
         const dropAreas = document.querySelectorAll("#dropAreaB");
-
         const imageData = Array.from(dropAreas).map((dropAreaB) => {
-          if (!dropAreaB) {
-            console.error("dropAreaB が見つからないよ～😭");
-            return null;
-          }
-
-          // 🌟 ドロップエリアにある画像を取得
+          // const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
           const imgElement = dropAreaB.querySelector("img");
           const originalImage = imgElement ? imgElement.src : null;
 
-          // 🌟 クロップ後の画像があるかチェック
-          const croppedImage = window.croppedImages?.[dropAreaB.id] || null;
-
-          // 🌟 送信する画像を選択（クロップ画像があればそっちを優先）
           const imageToSend = croppedImage || originalImage;
 
-          if (!imageToSend) {
-            console.warn(`dropAreaB (${dropAreaB.id}) に画像がないよ～🐰💦`);
-          }
-
-          // 🌟 位置とサイズを取得
           const { top, left, width, height } = dropAreaB.getBoundingClientRect();
-          const initialRect = document.getElementById("target")?.getBoundingClientRect();
-          if (!initialRect) {
-            console.error("ターゲットの要素が見つからないよ～😭");
-            return null;
-          }
-
           return {
             id: dropAreaB.id,
             image: imageToSend,
-            top: (((top - initialRect.top) / initialRect.height) * 100), // パーセンテージ指定
-            left: (((left - initialRect.left) / initialRect.width) * 100), // パーセンテージ指定
-            width: (width / initialRect.width) * 100, // 幅をパーセンテージ指定
-            height: (height / initialRect.height) * 100, // 高さをパーセンテージ指定
+            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
-        })
+        });
+        return {
+          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          textData,
+          imageData,
+        };
       });
 
       // 送信データの構築
