@@ -1474,24 +1474,40 @@ async function captureAndShow() {
   try {
     const scale = 2; // 高画質にする倍率
     const options = {
-      quality: 1, // JPEGの画質を最大にする（PNGには不要）
-      width: target.clientWidth * scale, // 2倍のサイズでキャプチャ
-      height: target.clientHeight * scale,
-      style: {
-        transform: `scale(${scale})`,
-        transformOrigin: "top left",
-      },
-      useBlob: true, // Blob形式で出力（画質劣化を防ぐ）
+      quality: 1, // JPEGの画質を最大に
+      width: target.offsetWidth * scale, // 元の幅 × 倍率
+      height: target.offsetHeight * scale,
+      useBlob: true, // Blobで出力（画質劣化を防ぐ）
     };
+    // 🌸 キャプチャ時だけ拡大
+    const originalStyle = target.style.cssText; // 元のスタイルを保存
+    target.style.position = "absolute"; // 位置を固定（ズレ防止）
+    target.style.left = "0";
+    target.style.top = "0";
+    target.style.transform = `scale(${scale})`; // 2倍に拡大
+    target.style.transformOrigin = "top left"; // 左上基準で拡大
+    target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
+    target.style.height = `${target.offsetHeight}px`;
+
+    // 画像の位置を明示的に指定
+    const img = target.querySelector("img");
+    if (img) {
+      img.style.position = "absolute"; // 画像の位置を相対的に調整
+      img.style.left = "0"; // 画像を左に寄せる
+    }
 
     // 📸 画像を生成
     const blob = await htmlToImage.toBlob(target, options);
+
+    // ✨ キャプチャ後、元のスタイルに戻す
+    target.style.cssText = originalStyle;
+    target.style.width = "100%"; // これで幅が100%に調整される
 
     // 🌟 Blobを画像として表示
     const imgElement = document.createElement("img");
     imgElement.src = URL.createObjectURL(blob);
     imgElement.alt = "キャプチャ画像";
-    imgElement.style.maxWidth = "100%"; // 画面サイズにフィット
+    imgElement.style.maxWidth = "100%";
     imgElement.style.border = "1px solid #ddd"; // 見やすくする枠
 
     document.getElementById("capture-result").appendChild(imgElement);

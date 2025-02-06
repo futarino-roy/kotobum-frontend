@@ -889,16 +889,16 @@ function handleSaveOrSend() {
 
 
         const dropAreas = slide.querySelectorAll('.empty');
-        const imageData = Array.from(dropAreas).map((dropArea) => {
-          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
-          const imgElement = dropArea.querySelector("img");
+        const imageData = Array.from(dropAreas).map((dropAreaB) => {
+          const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
+          const imgElement = dropAreaB.querySelector("img");
           const originalImage = imgElement ? imgElement.src : null;
 
           const imageToSend = croppedImage || originalImage;
 
-          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          const { top, left, width, height } = dropAreaB.getBoundingClientRect();
           return {
-            id: dropArea.id,
+            id: dropAreaB.id,
             image: imageToSend,
             top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
