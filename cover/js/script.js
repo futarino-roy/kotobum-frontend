@@ -838,9 +838,15 @@ function handleSaveOrSend() {
       // 背景色とテキスト色の取得
       const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
-      const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
 
-      consol.log(covertext);
+      //背表紙のテキストエリア
+      const textAreaCover = document.querySelector('.textArea-cover');
+      const covertext = textAreaCover
+        ? {
+          id: textAreaCover.id,
+          text: textAreaCover.value.trim() || '',
+        }
+        : null;
       // トリミングデータを取得
       // getCroppieImg();
 
