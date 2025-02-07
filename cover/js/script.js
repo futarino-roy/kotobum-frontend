@@ -940,6 +940,7 @@ function handleSaveOrSend() {
         colors: {
           backgroundColor,
           textColor,
+          covertext,
         }
       };
 
