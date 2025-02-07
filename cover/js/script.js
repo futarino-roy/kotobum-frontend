@@ -937,10 +937,10 @@ function handleSaveOrSend() {
       const dataToSend = {
         imageData: imageDataToSend,
         textData: textDataToSend,
+        covertext,
         colors: {
           backgroundColor,
           textColor,
-          covertext,
         }
       };
 
