@@ -647,6 +647,18 @@ input:checked + label::after {
 }
 
 /* モーダル内側の指定 */
+.capture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  background-color: pink;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .edit-body {
   background: #d5dadc;
   height: 100%;
@@ -3152,7 +3164,7 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .flex24 {
   position: relative;
-  top: 2%;
+  top: 0%;
   width: 100%;
   height: 83%;
   display: flex;
@@ -3692,7 +3704,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea13-2 {
     font-size: 0.8rem;
-    top: 21.4%;
+    top: 21.8%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -4092,12 +4104,11 @@ input:checked + label::after {
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-1 {
   font-family: "Montserrat", serif;
-  margin-top: 4%;
+  margin-top: 3%;
   text-align: center;
   font-weight: bold;
   min-width: 60%;
   font-size: 0.7rem;
-  line-height: 1;
   field-sizing: content;
 }
 @media screen and (max-width: 1200px) {
@@ -4165,8 +4176,7 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
-    font-size: 1.2rem;
-    line-height: 0.9;
+    font-size: 0.9rem;
     top: 98%;
   }
 }

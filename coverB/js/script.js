@@ -858,13 +858,14 @@ function handleSaveOrSend() {
         return;
       }
 
-      // テキストエリアと画像データの収集
-      const textAreas = document.querySelectorAll('.text-empty');
-      const textData = Array.from(textAreas).map(textarea => ({
-        id: textarea.id,
-        text: textarea.value || '',
-      }));
+      const parentElement = document.querySelector('.input-drop');
+      const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
+      // 背景色とテキスト色の取得
+      const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+      const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
+
+      //背表紙のテキストエリア
       const textAreaCover = document.querySelector('.textArea-cover');
       const covertext = textAreaCover
         ? {
@@ -872,30 +873,70 @@ function handleSaveOrSend() {
           text: textAreaCover.value.trim() || '',
         }
         : null;
+      // トリミングデータを取得
+      // getCroppieImg();
 
+      // 各ページのデータを収集
+      const pageData = Array.from(swiperSlides).map((slide) => {
+        const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
+        const slideWidth = initialRect.width;
+        const slideHeight = initialRect.height;
 
-      const dropAreas = document.querySelectorAll('.empty');
-      const imageData = Array.from(dropAreas).map(dropArea => {
-        const img = dropArea.querySelector('img');
+        // スライド内のテキストエリアのデータ収集
+        const textAreas = slide.querySelectorAll('.text-empty');
+        const textData = Array.from(textAreas).map((textarea) => {
+          const { top, left, width, height } = textarea.getBoundingClientRect();
+
+          return {
+            id: textarea.id,
+            text: textarea.value || '',
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+            width: (width / slideWidth) * 100, // 幅のパーセンテージ
+            height: (height / slideHeight) * 100, // 高さのパーセンテージ
+          };
+        });
+        const dropAreas = document.querySelectorAll("#dropAreaB");
+        const imageData = Array.from(dropAreas).map((dropAreaB) => {
+          // const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
+          const imgElement = dropAreaB.querySelector("img");
+          const originalImage = imgElement ? imgElement.src : null;
+
+          const imageToSend = originalImage;
+
+          const { top, left, width, height } = dropAreaB.getBoundingClientRect();
+          return {
+            id: dropAreaB.id,
+            image: imageToSend,
+            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+          };
+        });
         return {
-          id: dropArea.id,
-          image: img ? img.src : null,
+          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          textData,
+          imageData,
+          covertext,
         };
       });
 
-      const backgroundColor = document.querySelector('.uniqueColor').style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-color').style.color || '#000000';
-
-      if (textData.every(text => text.text === '') && imageData.every(image => image.image === null)) {
+      // 送信データの構築
+      if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
       }
 
+      // imageDataとtextDataを分離して送信
+      const imageDataToSend = pageData.flatMap(page => page.imageData);
+      const textDataToSend = pageData.flatMap(page => page.textData);
+
       const dataToSend = {
-        textData,
+        imageData: imageDataToSend,
+        textData: textDataToSend,
         covertext,
-        imageData,
         colors: {
           backgroundColor,
           textColor,

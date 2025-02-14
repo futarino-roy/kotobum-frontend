@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+.capture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  background-color: pink;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .edit-body {
   background: #d5dadc;
   height: 100%;

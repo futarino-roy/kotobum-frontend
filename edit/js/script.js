@@ -1136,25 +1136,295 @@ document.addEventListener('DOMContentLoaded', function () {
 //         });
 // });
 
-// const captureSlideAsImage = async (slideSelector) => {
-//   const slideElement = document.querySelector(slideSelector);
-//   if (!slideElement) {
-//     console.error("指定されたスライドが見つかりません！");
+// キャプチャ（html-to-image）
+// async function captureAllSlides() {
+//   const slides = document.querySelectorAll('.swiper-slide'); // キャプチャしたい要素
+//   const message = document.querySelector(".capture"); // メッセージ用の div
+//   message.style.display = "block"; // キャプチャ開始時に表示
+
+//   if (!slides.length === 0) {
+//     console.error("キャプチャ対象が見つかりません💦");
+//     message.style.display = "none"; // エラー時にも非表示
 //     return;
 //   }
 
-//   html2canvas(slideElement, { scale: 2 }).the((canvas) => {
-//     const imageData = canvas.toDataURL("image/png");
-//     //画像をサーバーに送信
-//   });
-// };
+//   for (let i = 0; i < slides.length; i++) {
+//     const slide = slides[i]; //現在のスライドを取得
+//     try {
+//       const scale = 7; // 高画質にする倍率
+//       const options = {
+//         quality: 1, // JPEGの画質を最大に
+//         width: target.offsetWidth * scale, // 元の幅 × 倍率
+//         height: target.offsetHeight * scale,
+//         useBlob: true, // Blobで出力（画質劣化を防ぐ）
+//       };
+//       // 🌸 キャプチャ時だけ拡大
+//       const originalStyle = slide.style.cssText; // 元のスタイルを保存
+//       slide.style.position = "absolute"; // 位置を固定（ズレ防止）
+//       slide.style.left = "0";
+//       slide.style.top = "0";
+//       slide.style.transform = `scale(${scale})`; // 2倍に拡大
+//       slide.style.transformOrigin = "top left"; // 左上基準で拡大
+//       slide.style.width = `${slide.offsetWidth}px`; // 元のサイズを保持
+//       slide.style.height = `${slide.offsetHeight}px`;
 
-// //キャプチャページ指定
-// captureSlideAsImage(".swiper-slide:nth-child(11) .swiper-slide_box");
+//       // 画像の位置を明示的に指定
+//       const img = slide.querySelector("img");
+//       if (img) {
+//         img.style.position = "absolute"; // 画像の位置を相対的に調整
+//         img.style.left = "0"; // 画像を左に寄せる
+//       }
+
+//       // 📸 画像を生成
+//       const blob = await htmlToImage.toBlob(slide, options);
+
+//       // ✨ キャプチャ後、元のスタイルに戻す
+//       slide.style.cssText = originalStyle;
+//       slide.style.width = "100%"; // これで幅が100%に調整される
+
+//       // 🌟 Blobを画像として表示
+//       const imgElement = document.createElement("img");
+//       imgElement.src = URL.createObjectURL(blob);
+//       imgElement.alt = "キャプチャ画像 ${i + 1}";
+//       imgElement.style.maxWidth = "100%";
+//       imgElement.style.border = "1px solid #ddd"; // 見やすくする枠
+
+//       document.getElementById("capture-result").appendChild(imgElement);
+//     } catch (error) {
+//       console.error("スライド ${i + 1} のキャプチャ中にエラーが発生しました💦", error);
+//       message.style.display = "none"; // 非表示
+//     }
+//   }
+//   message.style.display = "none"; // 非表示
+// }
+
+// キャプチャ=>画像ダウンロード
+async function captureToPDF() {
+  const target = document.querySelector('#target'); // キャプチャしたい要素
+
+  if (!target) {
+    console.error("キャプチャ対象が見つかりません💦");
+    return;
+  }
+  try {
+    const scale = 4; // 高画質にする倍率
+    const mmToPx = 3.7795275591; // 1mm = 3.78px (96dpi)
+    const widthMM = 158, heightMM = 218; // 画像のサイズ（mm）
+    const canvasWidth = widthMM * mmToPx * scale;
+    const canvasHeight = heightMM * mmToPx * scale;
+    const options = {
+      quality: 1, // JPEGの画質を最大に
+      width: canvasWidth, // 指定サイズ
+      height: canvasHeight,
+      useBlob: true, // Blobで出力（画質劣化を防ぐ）
+    };
+
+    // 🌸 キャプチャ時だけ拡大
+    const originalStyle = target.style.cssText; // 元のスタイルを保存
+    target.style.position = "absolute"; // 位置を固定（ズレ防止）
+    target.style.left = "0";
+    target.style.top = "0";
+    target.style.transform = `scale(${scale})`; // scale倍に拡大
+    target.style.transformOrigin = "top left"; // 左上基準で拡大
+    target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
+    target.style.height = `${target.offsetHeight}px`;
+    target.style.clipPath = "none";
+
+    // 画像の位置を明示的に指定
+    const img = target.querySelector("img");
+    if (img) {
+      img.style.position = "absolute"; // 画像の位置を相対的に調整
+      img.style.left = "0"; // 画像を左に寄せる
+    }
+
+    // 📸 画像を生成
+    const blob = await htmlToImage.toBlob(target, options);
+
+    // ✨ キャプチャ後、元のスタイルに戻す
+    target.style.cssText = originalStyle;
+    target.style.width = "100%"; // これで幅が100%に調整される
+
+    // 🌟 Blobを画像としてダウンロード
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "capture.png"; // ダウンロードファイル名
+    a.click();
+    URL.revokeObjectURL(url); // メモリ解放
+  } catch (error) {
+    console.error("キャプチャ中にエラーが発生しました💦", error);
+  }
+}
+
+
+//キャプチャ=>PDF
+// async function captureToPDF() {
+//   const target = document.querySelector('#target'); // キャプチャしたい要素
+
+//   if (!target) {
+//     console.error("キャプチャ対象が見つかりません💦");
+//     return;
+//   }
+//   try {
+//     const scale = 5; // 高画質にする倍率
+//     const options = {
+//       quality: 1, // JPEGの画質を最大に
+//       width: target.offsetWidth * scale, // 元の幅 × 倍率
+//       height: target.offsetHeight * scale,
+//       useBlob: true, // Blobで出力（画質劣化を防ぐ）
+//     };
+
+//     // 🌸 キャプチャ時だけ拡大
+//     const originalStyle = target.style.cssText; // 元のスタイルを保存
+//     target.style.position = "absolute"; // 位置を固定（ズレ防止）
+//     target.style.left = "0";
+//     target.style.top = "0";
+//     target.style.transform = `scale(${scale})`; // scale倍に拡大
+//     target.style.transformOrigin = "top left"; // 左上基準で拡大
+//     target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
+//     target.style.height = `${target.offsetHeight}px`;
+//     target.style.clipPath = "none";
+
+//     // 画像の位置を明示的に指定
+//     const img = target.querySelector("img");
+//     if (img) {
+//       img.style.position = "absolute"; // 画像の位置を相対的に調整
+//       img.style.left = "0"; // 画像を左に寄せる
+//     }
+
+//     // 📸 画像を生成
+//     const blob = await htmlToImage.toBlob(target, options);
+
+//     // ✨ キャプチャ後、元のスタイルに戻す
+//     target.style.cssText = originalStyle;
+//     target.style.width = "100%"; // これで幅が100%に調整される
+
+//     // 🌟 Blobを画像として表示
+//     const imgElement = document.createElement("img");
+//     imgElement.src = URL.createObjectURL(blob);
+//     imgElement.alt = "キャプチャ画像";
+//     imgElement.style.maxWidth = "100%";
+//     imgElement.style.border = "1px solid #ddd"; // 見やすくする枠
+
+//     // キャプチャした画像をPDF化
+//     const { jsPDF } = window.jspdf;
+//     const doc = new jsPDF({
+//       orientation: "portrait", // 縦向き（横向きなら "landscape"）
+//       unit: "mm",  // 単位をmmに指定
+//       format: [158, 218]  // 幅158mm × 高さ218mm
+//     });
+
+//     const image = new Image();
+//     image.src = imgElement.src;
+//     image.onload = function () {
+//       const pageWidth = doc.internal.pageSize.width; // PDFページの幅
+//       const pageHeight = doc.internal.pageSize.height; // PDFページの高さ
+
+//       // 画像のサイズを調整してPDFに追加
+//       const imgWidth = pageWidth;
+//       const imgHeight = (image.height / image.width) * imgWidth; // アスペクト比を保つ
+
+//       // 画像をPDFに追加
+//       doc.addImage(image, 'PNG', 0, 0, imgWidth, imgHeight);
+
+//       // PDFをダウンロード
+//       doc.save('capture.pdf');
+//     };
+
+//     // 表示された画像も追加
+//     document.getElementById("capture-result").appendChild(imgElement);
+
+//   } catch (error) {
+//     console.error("キャプチャ中にエラーが発生しました💦", error);
+//   }
+// }
+
+// jsPDFで12ページPDF化
+async function captureToPDF() {
+  const targets = document.querySelectorAll('.target'); // すべてのページを取得🐰
+
+  if (targets.length === 0) {
+    console.error("キャプチャ対象のページが見つかりません💦");
+    return;
+  }
+
+  try {
+    const scale = 2; // スケールを上げる
+    const options = {
+      quality: 1,
+      width: targets[0].offsetWidth * scale,
+      height: targets[0].offsetHeight * scale,
+      useBlob: true,
+    };
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: [158, 218]
+    });
+
+    for (let i = 0; i < targets.length; i++) {
+      const target = targets[i];
+
+      // 🌸 キャプチャ前に少し待つ
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      // 🌸 キャプチャ時だけ拡大
+      const originalStyle = target.style.cssText;
+      target.style.position = "absolute";
+      target.style.left = "0";
+      target.style.top = "0";
+      target.style.transform = `scale(${scale})`;
+      target.style.transformOrigin = "top left";
+      target.style.width = `${target.offsetWidth}px`;
+      target.style.height = `${target.offsetHeight}px`;
+      target.style.clipPath = "none";
+
+      // ✅ textarea の表示を確実にする
+      const textareas = target.querySelectorAll("textarea");
+      textareas.forEach(textarea => {
+        textarea.style.display = "block";
+      });
+
+      // ✅ 画像の位置を明示的に指定
+      const img = target.querySelector("img");
+      if (img) {
+        img.style.position = "absolute";
+        img.style.left = "0";
+      }
+
+      // 📸 キャプチャ実行
+      const blob = await htmlToImage.toBlob(target, options);
+
+      // 🌟 キャプチャ後、元のスタイルに戻す
+      target.style.cssText = originalStyle;
+      target.style.width = "100%";
+
+      // 🌟 画像をダウンロード
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `page_${i + 1}.png`; // `page_1.png`, `page_2.png`...
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    console.log("すべての画像をダウンロードしました！✨");
+  } catch (error) {
+    console.error("キャプチャ中にエラーが発生しました💦", error);
+  }
+}
+
+
+
+
+
 
 
 // 保存ボタン押下時の処理
-document.getElementById('sendButton').addEventListener('click', captureSlidesAndSend);
+document.getElementById('sendButton').addEventListener('click', captureAllSlides);
+
+// document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
 
 function handleSaveOrSend() {
   const token = localStorage.getItem('token');
@@ -1328,194 +1598,8 @@ function handleSaveOrSend() {
     });
 };
 
-// html2canvasを使用してキャプチャ
-// async function captureSlidesAndSend() {
-//   const token = localStorage.getItem('token');
-
-//   if (!token) {
-//     console.error('認証トークンが見つかりません。ログインしてください。');
-//     alert('認証トークンが見つかりません。ログインしてください。');
-//     return;
-//   }
-
-//   let albumId;
-
-//   try {
-//     // 🎨 アルバムIDを取得
-//     const response = await fetch('https://develop-back.kotobum.com/api/user/album', {
-//       method: 'GET',
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//         'Content-Type': 'application/json',
-//       },
-//     });
-
-//     if (!response.ok) {
-//       throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-//     }
-
-//     const albums = await response.json();
-//     albumId = albums.albumId;
-
-//     if (!albumId) {
-//       console.error('アルバムIDを取得できませんでした。');
-//       return;
-//     }
-
-//     const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
-//     const body = new FormData();
-
-//     // 📝 テキストデータ & 画像データを準備
-//     const pageData = [];
-
-//     for (let i = 0; i < swiperSlides.length; i++) {
-//       const slide = swiperSlides[i];
-//       const slideId = slide.dataset.slideId || `slide_${i + 1}`;
-//       const slideBox = slide.querySelector('.swiper-slide_box'); // スクショ対象
-
-//       // 📸 `swiper-slide_box` をキャプチャ
-//       const canvas = await html2canvas(slideBox, { scale: 2, useCORS: true });
-//       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-//       canvas.toBlob(blob => {
-//         if (!blob) {
-//           console.error('⚠️ 画像の Blob を作成できませんでした！');
-//           return;
-//         }
-//         console.log('✅ Blob 作成成功:', blob);
-//       }, 'image/png');
-
-//       // 📤 FormData に画像を追加
-//       body.append(`images[${i}]`, blob, `${slideId}.png`);
-
-//       // 📝 テキストエリアを取得
-//       const textAreas = slide.querySelectorAll('.text-empty');
-//       const textData = Array.from(textAreas).map((textarea) => ({
-//         id: textarea.id,
-//         text: textarea.value || '',
-//       }));
-
-//       // 🎨 画像データを取得
-//       const dropAreas = slide.querySelectorAll('.empty');
-//       const imageData = Array.from(dropAreas).map((dropArea) => {
-//         const imgElement = dropArea.querySelector("img");
-//         return {
-//           id: dropArea.id,
-//           image: imgElement ? imgElement.src : null,
-//         };
-//       });
-
-//       // 📌 ページデータをまとめる
-//       pageData.push({
-//         slideId,
-//         textData,
-//         imageData,
-//       });
-//     }
-
-//     // 📝 JSON 形式で `FormData` に追加
-//     body.append("pageData", JSON.stringify(pageData));
-
-//     console.log('送信するデータ:', body);
-
-//     // 📨 サーバーに送信
-//     const uploadResponse = await fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
-//       method: 'POST',
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//       body: body,
-//     });
-
-//     if (!uploadResponse.ok) {
-//       throw new Error(`データ送信に失敗しました: ${uploadResponse.status} - ${uploadResponse.statusText}`);
-//     }
-
-//     const data = await uploadResponse.json();
-//     console.log('成功:', data);
-//     alert('データが正常に保存されました。');
-
-//   } catch (error) {
-//     console.error('エラーが発生しました:', error.message);
-//     alert('エラーが発生しました。再度お試しください。');
-//   }
-// }
 
 // 画像化してフロント側に表示
-async function captureAndShow() {
-  const target = document.querySelector('#target'); // キャプチャしたい要素
-
-  if (!target) {
-    console.error("キャプチャ対象が見つかりません💦");
-    return;
-  }
-
-  //   // html2canvasのキャプチャtry
-  //   // try {
-  //   //   const dataURL = await htmlToImage.toPng(target);
-
-  //   //   const canvas = await html2canvas(target); // キャプチャする
-  //   //   const imgData = canvas.toDataURL("image/png"); // 画像データURLに変換
-
-  //   //   // 画像を表示
-  //   //   const imgElement = document.createElement("img");
-  //   //   imgElement.src = imgData;
-  //   //   imgElement.alt = "キャプチャ画像";
-  //   //   imgElement.style.maxWidth = "100%"; // サイズ調整
-  //   //   imgElement.style.border = "1px solid #ddd"; // 見やすくするための枠
-
-
-  //   //   document.getElementById("capture-result").appendChild(imgElement); //capture-resultというIDがついているところに表示
-
-  //   // } catch (error) {
-  //   //   console.error("キャプチャ中にエラーが発生しました💦", error);
-  //   // }
-
-  //html-to-imageのキャプチャtry
-  try {
-    const scale = 2; // 高画質にする倍率
-    const options = {
-      quality: 1, // JPEGの画質を最大に
-      width: target.offsetWidth * scale, // 元の幅 × 倍率
-      height: target.offsetHeight * scale,
-      useBlob: true, // Blobで出力（画質劣化を防ぐ）
-    };
-    // 🌸 キャプチャ時だけ拡大
-    const originalStyle = target.style.cssText; // 元のスタイルを保存
-    target.style.position = "absolute"; // 位置を固定（ズレ防止）
-    target.style.left = "0";
-    target.style.top = "0";
-    target.style.transform = `scale(${scale})`; // 2倍に拡大
-    target.style.transformOrigin = "top left"; // 左上基準で拡大
-    target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
-    target.style.height = `${target.offsetHeight}px`;
-
-    // 画像の位置を明示的に指定
-    const img = target.querySelector("img");
-    if (img) {
-      img.style.position = "absolute"; // 画像の位置を相対的に調整
-      img.style.left = "0"; // 画像を左に寄せる
-    }
-
-    // 📸 画像を生成
-    const blob = await htmlToImage.toBlob(target, options);
-
-    // ✨ キャプチャ後、元のスタイルに戻す
-    target.style.cssText = originalStyle;
-    target.style.width = "100%"; // これで幅が100%に調整される
-
-    // 🌟 Blobを画像として表示
-    const imgElement = document.createElement("img");
-    imgElement.src = URL.createObjectURL(blob);
-    imgElement.alt = "キャプチャ画像";
-    imgElement.style.maxWidth = "100%";
-    imgElement.style.border = "1px solid #ddd"; // 見やすくする枠
-
-    document.getElementById("capture-result").appendChild(imgElement);
-  } catch (error) {
-    console.error("キャプチャ中にエラーが発生しました💦", error);
-  }
-}
-
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');

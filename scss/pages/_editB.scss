@@ -796,7 +796,7 @@
 
               .flex24 {
                 position: relative;
-                top: 2%;
+                top: 0%;
                 width: 100%;
                 height: 83%;
                 display: flex;
@@ -1392,7 +1392,7 @@
 
                   @include mq('pc2-edit') {
                     font-size: 0.8rem;
-                    top: 21.4%;
+                    top: 21.8%;
                   }
 
                   @include mq('tab-edit') {
@@ -1825,12 +1825,12 @@
 
                 &24-1 {
                   font-family: 'Montserrat', serif;
-                  margin-top: 4%;
+                  margin-top: 3%;
                   text-align: center;
                   font-weight: bold;
                   min-width: 60%;
                   font-size: 0.7rem;
-                  line-height: 1;
+                  // line-height: 1;
                   field-sizing: content;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
@@ -1898,8 +1898,8 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 1.2rem;
-                    line-height: 0.9;
+                    font-size: 0.9rem;
+                    // line-height: 0.9;
                     top: 98%;
                   }
 
