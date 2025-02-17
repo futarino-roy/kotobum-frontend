@@ -66,259 +66,297 @@ const showDrawerContent = (contentId) => {
     }
 };
 
-// 画像のアップロードと挿入-----------------------------------------------
-let selectedImage = null;
+//　画像の挿入（inputタグ）
+document.addEventListener("DOMContentLoaded", () => {
+    const dropAreas = document.querySelectorAll(".empty"); // .emptyクラスの要素を全て取得
+    const fileInput = document.getElementById("fileInput");
 
-document.addEventListener('DOMContentLoaded', function () {
-    addTouchListenerToDropAreas();
-    document.getElementById('saveButton').addEventListener('click', function () {
-        // サーバに画像を送信する処理は削除済み
+    dropAreas.forEach((dropArea) => {
+        // .emptyをクリックしたらfileInputをクリック
+        dropArea.addEventListener("click", () => {
+            fileInput.dataset.target = dropArea.id; // 選択したdropAreaのIDを記録
+            fileInput.click();
+        });
+    });
+
+    fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                // 選択された画像をemptyDivに挿入
+                const targetId = fileInput.dataset.target;
+                const targetDropArea = document.getElementById(targetId);
+
+                targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
+                targetDropArea.style.border = "none";
+
+                showButtons(targetDropArea);
+                addButtons(targetDropArea);
+            };
+            reader.readAsDataURL(file);
+        }
     });
 });
 
-function loadImage(input) {
-    const imgPreviewField = document.getElementById('imgPreviewField');
-    if (input.files) {
-        const files = Array.from(input.files);
-        files.forEach((file) => {
-            const reader = new FileReader();
+// // 画像のアップロードと挿入-----------------------------------------------
+// let selectedImage = null;
 
-            reader.onload = function (e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.left = '0px';
-                img.style.top = '0px';
+// document.addEventListener('DOMContentLoaded', function () {
+//     addTouchListenerToDropAreas();
+//     document.getElementById('saveButton').addEventListener('click', function () {
+//         // サーバに画像を送信する処理は削除済み
+//     });
+// });
 
-                imgPreviewField.appendChild(img);
-                makeDraggable(img);
-                makeTouchable(img);
-            };
+// function loadImage(input) {
+//     const imgPreviewField = document.getElementById('imgPreviewField');
+//     if (input.files) {
+//         const files = Array.from(input.files);
+//         files.forEach((file) => {
+//             const reader = new FileReader();
 
-            reader.readAsDataURL(file);
-        });
-    }
-}
+//             reader.onload = function (e) {
+//                 const img = document.createElement('img');
+//                 img.src = e.target.result;
+//                 img.style.left = '0px';
+//                 img.style.top = '0px';
 
-function makeDraggable(img) {
-    let isDragging = false;
-    let startX, startY, initialX, initialY;
+//                 imgPreviewField.appendChild(img);
+//                 makeDraggable(img);
+//                 makeTouchable(img);
+//             };
 
-    function onMouseDown(e) {
-        isDragging = true;
-        startX = e.clientX;
-        startY = e.clientY;
-        initialX = parseFloat(img.style.left) || 0;
-        initialY = parseFloat(img.style.top) || 0;
-        img.style.cursor = 'grabbing';
-    }
+//             reader.readAsDataURL(file);
+//         });
+//     }
+// }
 
-    function onMouseMove(e) {
-        if (isDragging) {
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-            img.style.left = initialX + dx + 'px';
-            img.style.top = initialY + dy + 'px';
-        }
-    }
+// function makeDraggable(img) {
+//     let isDragging = false;
+//     let startX, startY, initialX, initialY;
 
-    function onMouseUp() {
-        isDragging = false;
-        img.style.cursor = 'grab';
-    }
+//     function onMouseDown(e) {
+//         isDragging = true;
+//         startX = e.clientX;
+//         startY = e.clientY;
+//         initialX = parseFloat(img.style.left) || 0;
+//         initialY = parseFloat(img.style.top) || 0;
+//         img.style.cursor = 'grabbing';
+//     }
 
-    function onTouchStart(e) {
-        if (e.touches.length === 1) {
-            isDragging = true;
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            initialX = parseFloat(img.style.left) || 0;
-            initialY = parseFloat(img.style.top) || 0;
-        }
-    }
+//     function onMouseMove(e) {
+//         if (isDragging) {
+//             const dx = e.clientX - startX;
+//             const dy = e.clientY - startY;
+//             img.style.left = initialX + dx + 'px';
+//             img.style.top = initialY + dy + 'px';
+//         }
+//     }
 
-    function onTouchMove(e) {
-        if (isDragging && e.touches.length === 1) {
-            const dx = e.touches[0].clientX - startX;
-            const dy = e.touches[0].clientY - startY;
-            img.style.left = initialX + dx + 'px';
-            img.style.top = initialY + dy + 'px';
-        }
-    }
+//     function onMouseUp() {
+//         isDragging = false;
+//         img.style.cursor = 'grab';
+//     }
 
-    function onTouchEnd() {
-        isDragging = false;
-    }
+//     function onTouchStart(e) {
+//         if (e.touches.length === 1) {
+//             isDragging = true;
+//             startX = e.touches[0].clientX;
+//             startY = e.touches[0].clientY;
+//             initialX = parseFloat(img.style.left) || 0;
+//             initialY = parseFloat(img.style.top) || 0;
+//         }
+//     }
 
-    img.addEventListener('mousedown', onMouseDown);
-    img.addEventListener('mousemove', onMouseMove);
-    img.addEventListener('mouseup', onMouseUp);
-    img.addEventListener('mouseleave', onMouseUp);
+//     function onTouchMove(e) {
+//         if (isDragging && e.touches.length === 1) {
+//             const dx = e.touches[0].clientX - startX;
+//             const dy = e.touches[0].clientY - startY;
+//             img.style.left = initialX + dx + 'px';
+//             img.style.top = initialY + dy + 'px';
+//         }
+//     }
 
-    img.addEventListener('touchstart', onTouchStart);
-    img.addEventListener('touchmove', onTouchMove);
-    img.addEventListener('touchend', onTouchEnd);
-}
+//     function onTouchEnd() {
+//         isDragging = false;
+//     }
 
-function makeTouchable(img) {
-    img.addEventListener('click', function () {
-        const allImgs = document.querySelectorAll('#imgPreviewField img');
-        allImgs.forEach((image) => {
-            image.classList.remove('selected');
-        });
-        img.classList.add('selected');
-        selectedImage = img;
-    });
+//     img.addEventListener('mousedown', onMouseDown);
+//     img.addEventListener('mousemove', onMouseMove);
+//     img.addEventListener('mouseup', onMouseUp);
+//     img.addEventListener('mouseleave', onMouseUp);
 
-    img.addEventListener('touchstart', function (e) {
-        e.preventDefault();
-        const allImgs = document.querySelectorAll('#imgPreviewField img');
-        allImgs.forEach((image) => {
-            image.classList.remove('selected');
-        });
-        img.classList.add('selected');
-        selectedImage = img;
-    });
-}
+//     img.addEventListener('touchstart', onTouchStart);
+//     img.addEventListener('touchmove', onTouchMove);
+//     img.addEventListener('touchend', onTouchEnd);
+// }
 
-function addTouchListenerToDropAreas() {
-    const dropAreas = document.querySelectorAll('.empty');
-    const drawer = document.getElementById('drawer');
-    const sideBtn = document.getElementById('sideBtn');
+// function makeTouchable(img) {
+//     img.addEventListener('click', function () {
+//         const allImgs = document.querySelectorAll('#imgPreviewField img');
+//         allImgs.forEach((image) => {
+//             image.classList.remove('selected');
+//         });
+//         img.classList.add('selected');
+//         selectedImage = img;
+//     });
 
-    dropAreas.forEach((dropArea) => {
-        dropArea.addEventListener('touchstart', function (e) {
-            e.preventDefault();
-            if (selectedImage) {
-                insertImageToDropArea(this);
-            } else {
-                if (!e.target.closest('.empty') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
-                    document.querySelectorAll('.empty.with-buttons').forEach((area) => {
-                        area.classList.add('hide-buttons');
-                        area.style.border = 'none';
-                    });
-                }
-                this.classList.remove('hide-buttons');
-                this.style.border = '';
-            }
-        });
-    });
+//     img.addEventListener('touchstart', function (e) {
+//         e.preventDefault();
+//         const allImgs = document.querySelectorAll('#imgPreviewField img');
+//         allImgs.forEach((image) => {
+//             image.classList.remove('selected');
+//         });
+//         img.classList.add('selected');
+//         selectedImage = img;
+//     });
+// }
 
-    document.addEventListener('touchstart', function (e) {
-        const allDropAreas = document.querySelectorAll('.empty.with-buttons');
-        if (!e.target.closest('.empty.with-buttons') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
-            allDropAreas.forEach((dropArea) => {
-                dropArea.classList.add('hide-buttons');
-                dropArea.style.border = 'none';
-            });
-        }
-    });
-}
+// function addTouchListenerToDropAreas() {
+//     const dropAreas = document.querySelectorAll('.empty');
+//     const drawer = document.getElementById('drawer');
+//     const sideBtn = document.getElementById('sideBtn');
 
-function insertImageToDropArea(dropArea) {
-    if (!selectedImage) {
-        console.log('No image selected');
-        return;
-    }
+//     dropAreas.forEach((dropArea) => {
+//         dropArea.addEventListener('touchstart', function (e) {
+//             e.preventDefault();
+//             if (selectedImage) {
+//                 insertImageToDropArea(this);
+//             } else {
+//                 if (!e.target.closest('.empty') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
+//                     document.querySelectorAll('.empty.with-buttons').forEach((area) => {
+//                         area.classList.add('hide-buttons');
+//                         area.style.border = 'none';
+//                     });
+//                 }
+//                 this.classList.remove('hide-buttons');
+//                 this.style.border = '';
+//             }
+//         });
+//     });
 
-    dropArea.innerHTML = '';
+//     document.addEventListener('touchstart', function (e) {
+//         const allDropAreas = document.querySelectorAll('.empty.with-buttons');
+//         if (!e.target.closest('.empty.with-buttons') && !drawer.contains(e.target) && !sideBtn.contains(e.target)) {
+//             allDropAreas.forEach((dropArea) => {
+//                 dropArea.classList.add('hide-buttons');
+//                 dropArea.style.border = 'none';
+//             });
+//         }
+//     });
+// }
 
-    const newImage = document.createElement('img');
-    newImage.src = selectedImage.src;
-    newImage.style.width = '100%';
-    newImage.style.height = '100%';
+// function insertImageToDropArea(dropArea) {
+//     if (!selectedImage) {
+//         console.log('No image selected');
+//         return;
+//     }
 
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete-button');
-    deleteButton.addEventListener('touchstart', function (e) {
-        e.stopPropagation();
-        dropArea.innerHTML = '';
-    });
+//     dropArea.innerHTML = '';
 
-    const cropButton = document.createElement('button');
-    cropButton.classList.add('crop-button');
-    cropButton.addEventListener('touchstart', function (e) {
-        e.stopPropagation();
-        openCroppieModal(dropArea);
-    });
+//     const newImage = document.createElement('img');
+//     newImage.src = selectedImage.src;
+//     newImage.style.width = '100%';
+//     newImage.style.height = '100%';
 
-    dropArea.appendChild(newImage);
-    dropArea.appendChild(deleteButton);
-    dropArea.appendChild(cropButton);
-    dropArea.classList.add('with-buttons');
+//     const deleteButton = document.createElement('button');
+//     deleteButton.classList.add('delete-button');
+//     deleteButton.addEventListener('touchstart', function (e) {
+//         e.stopPropagation();
+//         dropArea.innerHTML = '';
+//     });
 
-    selectedImage.classList.remove('selected');
-    selectedImage = null;
+//     const cropButton = document.createElement('button');
+//     cropButton.classList.add('crop-button');
+//     cropButton.addEventListener('touchstart', function (e) {
+//         e.stopPropagation();
+//         openCroppieModal(dropArea);
+//     });
 
-    dropArea.classList.remove('hide-buttons');
-}
+//     dropArea.appendChild(newImage);
+//     dropArea.appendChild(deleteButton);
+//     dropArea.appendChild(cropButton);
+//     dropArea.classList.add('with-buttons');
 
-function openCroppieModal(dropArea) {
-    console.log('Croppie modal open for drop area:', dropArea);
-}
+//     selectedImage.classList.remove('selected');
+//     selectedImage = null;
 
-// 画像のドラッグ＆ドロップ indexedDBに保存--------------------------------
-function handleDragOver(event) {
-    event.preventDefault();
-    this.style.backgroundColor = '#d0f0c0';
-}
+//     dropArea.classList.remove('hide-buttons');
+// }
 
-// ドラッグが離れたときの処理
-function handleDragLeave(event) {
-    this.style.backgroundColor = 'transparent';
-}
+// function openCroppieModal(dropArea) {
+//     console.log('Croppie modal open for drop area:', dropArea);
+// }
 
-// ドロップ時の処理
-function handleDrop(event) {
-    console.log('Drop event fired');
-    event.preventDefault();
-    this.style.backgroundColor = 'transparent';
+// // 画像のドラッグ＆ドロップ indexedDBに保存--------------------------------
+// function handleDragOver(event) {
+//     event.preventDefault();
+//     this.style.backgroundColor = '#d0f0c0';
+// }
 
-    const files = event.dataTransfer.files;
-    if (files.length > 0) {
-        let file = files[0];
-        let fileReader = new FileReader();
-        fileReader.onload = function (e) {
-            this.innerHTML = '';
-            let img = new Image();
-            img.src = e.target.result;
-            img.classList.add('draggable-image');
-            img.onclick = function () {
-                showButtons(this.parentNode);
-            };
-            this.appendChild(img);
-            addButtons(this);
+// // ドラッグが離れたときの処理
+// function handleDragLeave(event) {
+//     this.style.backgroundColor = 'transparent';
+// }
 
-            // 画像が挿入されたら枠線をなくす処理追加
-            this.style.border = 'none';
-        }.bind(this);
-        fileReader.readAsDataURL(file);
-    }
-}
+// // ドロップ時の処理
+// function handleDrop(event) {
+//     console.log('Drop event fired');
+//     event.preventDefault();
+//     this.style.backgroundColor = 'transparent';
 
-// タッチエンド時の処理
-function handleTouchDrop(event) {
-    event.preventDefault();
-    const touch = event.changedTouches[0];
-    const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
+//     const files = event.dataTransfer.files;
+//     if (files.length > 0) {
+//         let file = files[0];
+//         let fileReader = new FileReader();
+//         fileReader.onload = function (e) {
+//             this.innerHTML = '';
+//             let img = new Image();
+//             img.src = e.target.result;
+//             img.classList.add('draggable-image');
+//             img.onclick = function () {
+//                 showButtons(this.parentNode);
+//             };
+//             this.appendChild(img);
+//             addButtons(this);
 
-    if (dropArea && dropArea.classList.contains('empty')) {
-        const files = event.dataTransfer.files;
-        if (files.length > 0) {
-            let file = files[0];
-            let fileReader = new FileReader();
-            fileReader.onload = function (e) {
-                dropArea.innerHTML = '';
-                let img = new Image();
-                img.src = e.target.result;
-                dropArea.appendChild(img);
-                addButtons(dropArea);
+//             // 画像が挿入されたら枠線をなくす処理追加
+//             this.style.border = 'none';
+//         }.bind(this);
+//         fileReader.readAsDataURL(file);
+//     }
+// }
 
-                // 画像が挿入されたら枠線をなくす処理追加
-                dropArea.style.border = 'none';
-            };
-            fileReader.readAsDataURL(file);
-        }
-    }
+// // タッチエンド時の処理
+// function handleTouchDrop(event) {
+//     event.preventDefault();
+//     const touch = event.changedTouches[0];
+//     const dropArea = document.elementFromPoint(touch.clientX, touch.clientY);
+
+//     if (dropArea && dropArea.classList.contains('empty')) {
+//         const files = event.dataTransfer.files;
+//         if (files.length > 0) {
+//             let file = files[0];
+//             let fileReader = new FileReader();
+//             fileReader.onload = function (e) {
+//                 dropArea.innerHTML = '';
+//                 let img = new Image();
+//                 img.src = e.target.result;
+//                 dropArea.appendChild(img);
+//                 addButtons(dropArea);
+
+//                 // 画像が挿入されたら枠線をなくす処理追加
+//                 dropArea.style.border = 'none';
+//             };
+//             fileReader.readAsDataURL(file);
+//         }
+//     }
+// }
+
+//グローバルで空の配列を初期化
+if (!window.croppedImages) {
+    window.croppedImages = [];
 }
 
 // 削除ボタンとトリミングボタンの追加

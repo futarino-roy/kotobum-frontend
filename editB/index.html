@@ -36,7 +36,7 @@
     <header class="edit-header">
       <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
       <button id="sendButton" class="btn btn-small_bl">保存する</button>
-      <button onclick="captureAndShow()">キャプチャして表示</button>
+      <button onclick="captureToPDF()">キャプチャして表示</button>
       <!-- <button class="btn-preview">プレビュー</button> -->
     </header>
 
@@ -205,7 +205,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-1.png" alt="" />
                 <div class="input-drop input-drop-first">
                   <textarea
@@ -225,7 +225,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-2@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea
@@ -242,7 +242,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-3@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea id="textArea3" rows="1" maxlength="600" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -253,7 +253,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-4@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea id="textArea4-1" rows="1" maxlength="32" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -265,7 +265,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-5@2x.png" alt="" style="aspect-ratio: 181 / 249" />
                 <div class="input-drop">
                   <textarea id="textArea5" rows="1" maxlength="600" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -276,7 +276,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-6@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea
@@ -294,7 +294,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-7@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea id="textArea7" rows="1" maxlength="600" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -305,7 +305,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box swiper-slide_box-8 uniqueColor">
+              <div class="swiper-slide_box swiper-slide_box-8 uniqueColor target">
                 <img src="/editB/images/template3/新1-8@2x.png" alt="" class="img8" />
                 <div class="input-drop">
                   <textarea id="textArea8" rows="1" maxlength="32" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -316,7 +316,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-9@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea id="textArea9" rows="1" maxlength="600" class="text-empty text-height" placeholder="入力してください"></textarea>
@@ -327,7 +327,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-10@2x.png" alt="" />
                 <div class="input-drop">
                   <textarea
@@ -344,7 +344,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColor">
+              <div class="swiper-slide_box uniqueColor target">
                 <img src="/editB/images/template3/新1-11@2x.png" alt="" />
                 <div class="input-drop">
                   <!-- <textarea id="textArea11-1" rows="1" maxlength="30" class="text-empty text-color" placeholder="入力してください"></textarea> -->
@@ -356,7 +356,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div id="target" class="swiper-slide_box swiper-slide_box-last uniqueColor">
+              <div id="target" class="swiper-slide_box swiper-slide_box-last uniqueColor target">
                 <img src="/editB/images/template3/新1-12@2x.png" alt="" />
                 <!-- <img src="/edit/images/example/B_12.png" alt="" /> -->
                 <div class="input-drop input-drop-last">
@@ -420,6 +420,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- html-to-image CDN -->
     <script src="https://unpkg.com/html-to-image"></script>
+    <!-- jsPDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script src="/editB/js/script.js"></script>
     <script src="/shared/edit/script.js"></script>
   </body>

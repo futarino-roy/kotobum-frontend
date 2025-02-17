@@ -1199,62 +1199,62 @@ document.addEventListener('DOMContentLoaded', function () {
 // }
 
 // キャプチャ=>画像ダウンロード
-async function captureToPDF() {
-  const target = document.querySelector('#target'); // キャプチャしたい要素
+// async function captureToPDF() {
+//   const target = document.querySelector('#target'); // キャプチャしたい要素
 
-  if (!target) {
-    console.error("キャプチャ対象が見つかりません💦");
-    return;
-  }
-  try {
-    const scale = 4; // 高画質にする倍率
-    const mmToPx = 3.7795275591; // 1mm = 3.78px (96dpi)
-    const widthMM = 158, heightMM = 218; // 画像のサイズ（mm）
-    const canvasWidth = widthMM * mmToPx * scale;
-    const canvasHeight = heightMM * mmToPx * scale;
-    const options = {
-      quality: 1, // JPEGの画質を最大に
-      width: canvasWidth, // 指定サイズ
-      height: canvasHeight,
-      useBlob: true, // Blobで出力（画質劣化を防ぐ）
-    };
+//   if (!target) {
+//     console.error("キャプチャ対象が見つかりません💦");
+//     return;
+//   }
+//   try {
+//     const scale = 4; // 高画質にする倍率
+//     const mmToPx = 3.7795275591; // 1mm = 3.78px (96dpi)
+//     const widthMM = 158, heightMM = 218; // 画像のサイズ（mm）
+//     const canvasWidth = widthMM * mmToPx * scale;
+//     const canvasHeight = heightMM * mmToPx * scale;
+//     const options = {
+//       quality: 1, // JPEGの画質を最大に
+//       width: canvasWidth, // 指定サイズ
+//       height: canvasHeight,
+//       useBlob: true, // Blobで出力（画質劣化を防ぐ）
+//     };
 
-    // 🌸 キャプチャ時だけ拡大
-    const originalStyle = target.style.cssText; // 元のスタイルを保存
-    target.style.position = "absolute"; // 位置を固定（ズレ防止）
-    target.style.left = "0";
-    target.style.top = "0";
-    target.style.transform = `scale(${scale})`; // scale倍に拡大
-    target.style.transformOrigin = "top left"; // 左上基準で拡大
-    target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
-    target.style.height = `${target.offsetHeight}px`;
-    target.style.clipPath = "none";
+//     // 🌸 キャプチャ時だけ拡大
+//     const originalStyle = target.style.cssText; // 元のスタイルを保存
+//     target.style.position = "absolute"; // 位置を固定（ズレ防止）
+//     target.style.left = "0";
+//     target.style.top = "0";
+//     target.style.transform = `scale(${scale})`; // scale倍に拡大
+//     target.style.transformOrigin = "top left"; // 左上基準で拡大
+//     target.style.width = `${target.offsetWidth}px`; // 元のサイズを保持
+//     target.style.height = `${target.offsetHeight}px`;
+//     target.style.clipPath = "none";
 
-    // 画像の位置を明示的に指定
-    const img = target.querySelector("img");
-    if (img) {
-      img.style.position = "absolute"; // 画像の位置を相対的に調整
-      img.style.left = "0"; // 画像を左に寄せる
-    }
+//     // 画像の位置を明示的に指定
+//     const img = target.querySelector("img");
+//     if (img) {
+//       img.style.position = "absolute"; // 画像の位置を相対的に調整
+//       img.style.left = "0"; // 画像を左に寄せる
+//     }
 
-    // 📸 画像を生成
-    const blob = await htmlToImage.toBlob(target, options);
+//     // 📸 画像を生成
+//     const blob = await htmlToImage.toBlob(target, options);
 
-    // ✨ キャプチャ後、元のスタイルに戻す
-    target.style.cssText = originalStyle;
-    target.style.width = "100%"; // これで幅が100%に調整される
+//     // ✨ キャプチャ後、元のスタイルに戻す
+//     target.style.cssText = originalStyle;
+//     target.style.width = "100%"; // これで幅が100%に調整される
 
-    // 🌟 Blobを画像としてダウンロード
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "capture.png"; // ダウンロードファイル名
-    a.click();
-    URL.revokeObjectURL(url); // メモリ解放
-  } catch (error) {
-    console.error("キャプチャ中にエラーが発生しました💦", error);
-  }
-}
+//     // 🌟 Blobを画像としてダウンロード
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement("a");
+//     a.href = url;
+//     a.download = "capture.png"; // ダウンロードファイル名
+//     a.click();
+//     URL.revokeObjectURL(url); // メモリ解放
+//   } catch (error) {
+//     console.error("キャプチャ中にエラーが発生しました💦", error);
+//   }
+// }
 
 
 //キャプチャ=>PDF
@@ -1349,7 +1349,7 @@ async function captureToPDF() {
   }
 
   try {
-    const scale = 2; // スケールを上げる
+    const scale = 4; // スケールを上げる
     const options = {
       quality: 1,
       width: targets[0].offsetWidth * scale,
@@ -1409,9 +1409,9 @@ async function captureToPDF() {
       link.click();
       document.body.removeChild(link);
     }
-    console.log("すべての画像をダウンロードしました！✨");
+    console.log("すべての画像をダウンロードしました！");
   } catch (error) {
-    console.error("キャプチャ中にエラーが発生しました💦", error);
+    console.error("キャプチャ中にエラーが発生しました", error);
   }
 }
 
@@ -1422,7 +1422,7 @@ async function captureToPDF() {
 
 
 // 保存ボタン押下時の処理
-document.getElementById('sendButton').addEventListener('click', captureAllSlides);
+document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
 
 // document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
 
