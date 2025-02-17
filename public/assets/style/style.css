@@ -2548,7 +2548,7 @@ input:checked + label::after {
 }
 img {
   max-width: 101%;
-  top: -0.4%;
+  top: -0.5%;
   position: relative;
   left: -0.4% !important;
   height: 100.9%;
