@@ -758,7 +758,8 @@ img {
               clip-path: inset(28px 30px 38px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(14px 15px 22px 15px);
+              clip-path: inset(14px 15px 14px 15px);
+              top: -4%;
             }
             @include mq('tab-edit') {
               width: 90%;
@@ -989,7 +990,7 @@ img {
                   height: 48%;
                 }
                 @include mq('pc-edit') {
-                  top: -6%;
+                  top: -4%;
                 }
                 @include mq('tab-edit') {
                   top: 0%;
@@ -1115,7 +1116,7 @@ img {
                   top: 0;
                 }
                 @include mq('pc-edit') {
-                  top: -4%;
+                  top: -1%;
                 }
                 @include mq('tab-edit') {
                   top: 0%;
@@ -1511,7 +1512,7 @@ img {
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
-                    top: -7%;
+                    top: -2%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1824,6 +1825,7 @@ img {
 
                   @include mq('pc-edit') {
                     font-size: 0.26rem;
+                    top: 0%;
                   }
 
                   @include mq('pc2-edit') {
@@ -1903,7 +1905,7 @@ img {
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 12px;
-                  top: 96.5%;
+                  top: 98.5%;
                   width: 63% !important;
                   field-sizing: content;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */

@@ -75,13 +75,6 @@ document.getElementById('login-form').addEventListener('submit', function (event
         return;
     }
 
-    // メールアドレスの形式を確認
-    // const login_idPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!login_idPattern.test(login_id)) {
-    //     showError('無効なメールアドレスです。');
-    //     return;
-    // }
-
     // サーバーにリクエストを送信
     fetch('https://develop-back.kotobum.com/api/login', {
         method: 'POST',
