@@ -1642,7 +1642,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('https://develop-back.kotobum.com/api/admin', {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`, //APIリクエストを送るための認証
         'Content-Type': 'application/json',
       },
     })

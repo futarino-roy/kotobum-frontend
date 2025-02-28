@@ -180,18 +180,18 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch((error) => {
       console.error('失敗:', error);
       alert('名前の取得に失敗しました。3秒後にログインページにリダイレクトします。');
-      let countdown = 3; // カウントダウンの秒数
-      const display = document.getElementById('countdown');
+      // let countdown = 3; // カウントダウンの秒数
+      // const display = document.getElementById('countdown');
 
-      const timer = setInterval(() => {
-        display.textContent = `${countdown}秒後にログインページにリダイレクトします...`;
-        countdown--;
+      // const timer = setInterval(() => {
+      //   display.textContent = `${countdown}秒後にログインページにリダイレクトします...`;
+      //   countdown--;
 
-        if (countdown < 0) {
-          clearInterval(timer); // タイマーを止める
-          window.location.href = "../login"; // リダイレクト
-        }
-      }, 1000); // 1秒ごとに実行
+      //   if (countdown < 0) {
+      //     clearInterval(timer); // タイマーを止める
+      //     window.location.href = "../login"; // リダイレクト
+      //   }
+      // }, 1000); // 1秒ごとに実行
     });
 });
 
@@ -416,4 +416,24 @@ button_rs.forEach((button_r) => {
     buttonC_r.style.opacity = '0.6';
     buttonA_r.style.opacity = '0.6';
   });
+});
+
+// ページ読み込み時にクエリパラメータをチェック
+window.addEventListener('DOMContentLoaded', () => {
+  // URLのクエリパラメータを取得
+  const urlParams = new URLSearchParams(window.location.search);
+  console.log(window.location.search);
+
+  // "disable" パラメータが true ならボタンを無効化
+  if (urlParams.get('disable') === 'true') {
+    const myPageButton = document.querySelector('.buttonC_r');
+
+    if (myPageButton) {
+      myPageButton.disabled = true;  // ボタンを無効化
+      myPageButton.style.cursor = 'not-allowed';  // カーソル変更
+      myPageButton.style.pointerEvents = 'none';  // クリックイベントを無効化
+    } else {
+      console.log('ボタンが見つかりませんでした');
+    }
+  }
 });
