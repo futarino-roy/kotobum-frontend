@@ -9,7 +9,7 @@
   }
 }
 
-img {
+.template_img {
   max-width: 101%;
   top: -0.5%;
   position: relative;
@@ -755,7 +755,7 @@ img {
             // clip-path: inset(20px 21px 26px 21px);
             clip-path: inset(20px 20px 28px);
             @include mq('pc2-edit') {
-              clip-path: inset(28px 30px 38px);
+              clip-path: inset(28px 30px 33px);
             }
             @include mq('pc-edit') {
               clip-path: inset(14px 15px 14px 15px);

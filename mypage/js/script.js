@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../edit3';
           } else if (format === 4) {
             window.location.href = '../edit4';
+          } else if (format === 5) {
+            window.location.href = '../edit5_solo1';
+          } else if (format === 6) {
+            window.location.href = '../edit6_solo2';
+          } else if (format === 7) {
+            window.location.href = '../edit7_solo3';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -71,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../preview3';
           } else if (format === 4) {
             window.location.href = '../preview4';
+          } else if (format === 5) {
+            window.location.href = '../preview5';
+          } else if (format === 6) {
+            window.location.href = '../preview6';
+          } else if (format === 7) {
+            window.location.href = '../preview7';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -93,6 +105,12 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../cover3';
           } else if (format === 4) {
             window.location.href = '../cover4';
+          } else if (format === 5) {
+            window.location.href = '../cover4';
+          } else if (format === 6) {
+            window.location.href = '../cover4';
+          } else if (format === 7) {
+            window.location.href = '../cover4';
           } else {
             console.warn('不明なフォーマット情報：', format);
           }
@@ -114,6 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
           } else if (format === 3) {
             window.location.href = '../cover-preview3';
           } else if (format === 4) {
+            window.location.href = '../cover-preview4';
+          } else if (format === 5) {
+            window.location.href = '../cover-preview4';
+          } else if (format === 6) {
+            window.location.href = '../cover-preview4';
+          } else if (format === 7) {
             window.location.href = '../cover-preview4';
           } else {
             console.warn('不明なフォーマット情報：', format);

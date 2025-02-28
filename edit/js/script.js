@@ -1372,6 +1372,7 @@ async function captureToPDF() {
 
       // 🌸 キャプチャ時だけ拡大
       const originalStyle = target.style.cssText;
+      target.style.border = "none";
       target.style.position = "absolute";
       target.style.left = "0";
       target.style.top = "0";
@@ -1431,7 +1432,11 @@ function handleSaveOrSend() {
 
   if (!token) {
     console.error('認証トークンが見つかりません。ログインしてください。');
-    alert('認証トークンが見つかりません。ログインしてください。');
+    alert('認証トークンが見つかりません。ログインしてください。2秒後にログインページに戻ります。');
+    screen_lock();
+    setTimeout(() => {
+      window.location.href = '../login';
+    }, 2000);
     return;
   }
 
@@ -1598,8 +1603,24 @@ function handleSaveOrSend() {
     });
 };
 
+// ログインしていないとき用のスクリーンロック
+function screen_lock() {
+  let lock_screen = document.createElement('div');
+  lock_screen.id = "screenLock";
 
-// 画像化してフロント側に表示
+  lock_screen.style.backgroundColor = '#000000';
+  lock_screen.style.height = '100%';
+  lock_screen.style.left = '0px';
+  lock_screen.style.position = 'fixed';
+  lock_screen.style.top = '0px';
+  lock_screen.style.width = '100%';
+  lock_screen.style.zIndex = '9999';
+  lock_screen.style.opacity = '10%';
+
+  let objBody = document.getElementsByTagName("body").item(0);
+  objBody.appendChild(lock_screen);
+}
+
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
@@ -1611,6 +1632,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let albumId;
 
+  // 遷移元の判断（backendが含まれるURLから来たか判断）
+  if (document.referrer.indexOf("backend") == -1) {
+    console.log("一般ユーザーです");
+  } else {
+    console.log("管理者です");
+
+    // 管理者用のAPIリクエスト
+    fetch('https://develop-back.kotobum.com/api/admin', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => response.json()) //JSONに変換
+      .then(data => {
+        console.log("管理者認証のレスポンス:", data);
+
+        // 認証成功か判断
+        if (data.authenticated) {
+          // 画像化ボタンの表示
+          showCaptureButton();
+        } else {
+          console.warn("管理者認証に失敗しました。");
+        }
+      })
+      .catch(error => console.error("管理者認証エラー", error));
+  }
+
+  // 画像化ボタンの表示関数
+  function showCaptureButton() {
+    const captureButton = document.getElementById("captureButton");
+    if (captureButton) {
+      captureButton.style.display = "block";
+    } else {
+      console.warn("画像化ボタンが見つかりません");
+    }
+  }
+
   // アルバムIDを取得
   fetch('https://develop-back.kotobum.com/api/user/album', {
     method: 'GET',
@@ -1621,7 +1681,11 @@ document.addEventListener('DOMContentLoaded', function () {
   })
     .then(response => {
       if (!response.ok) {
-        alert("ログインしてください。");
+        alert("ログインしてください。2秒後にログインページに戻ります。");
+        // screen_lock();
+        // setTimeout(() => {
+        //   window.location.href = '../login';
+        // }, 2000);
         throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();

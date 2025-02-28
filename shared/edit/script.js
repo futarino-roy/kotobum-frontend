@@ -560,6 +560,14 @@ const dropAreaSettings = {
   'dropArea4': { width: 220, height: 200 },
   'dropArea2': { width: 270, height: 210 },
   'dropArea1': { width: 270, height: 250 },
+
+  'dropArea1_t4': { width: 270, height: 250 },
+  'dropArea2_t4': { width: 270, height: 250 },
+  'dropArea4_t4': { width: 270, height: 250 },
+  'dropArea6_t4': { width: 270, height: 250 },
+  'dropArea8_t4': { width: 270, height: 250 },
+  'dropArea10_t4': { width: 270, height: 250 },
+  'dropArea12_t4': { width: 270, height: 250 },
 };
 
 // 各ドロップエリアにクリックイベントを設定
