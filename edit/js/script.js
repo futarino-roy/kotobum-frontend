@@ -1636,7 +1636,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.referrer.indexOf("backend") == -1) {
     console.log("一般ユーザーです");
     // 一般ユーザー用のアルバムIDの取得
-    fetchAlbumID();
+    fetchAlbumID(token);
   } else {
     console.log("管理者です");
 
@@ -1657,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // 画像化ボタンの表示
           showCaptureButton();
           // 管理者用のアルバムID取得
-          AdminAlbumID();
+          AdminAlbumID(token);
         } else {
           console.warn("管理者認証に失敗しました。");
         }
