@@ -23137,7 +23137,7 @@ body {
   display: flex;
 }
 
-.edit {
+.editB {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23145,11 +23145,11 @@ body {
   height: 90vh;
 }
 @media screen and (max-width: 900px) {
-  .edit {
+  .editB {
     display: block;
   }
 }
-.edit_drawer {
+.editB_drawer {
   width: 29%;
   background-color: #535353;
   color: white;
@@ -23162,11 +23162,11 @@ body {
   margin-left: 55px;
   z-index: 2;
 }
-.edit_drawer.open {
+.editB_drawer.open {
   left: 0;
 }
 @media screen and (max-width: 900px) {
-  .edit_drawer {
+  .editB_drawer {
     width: 100%;
     left: 0;
     top: 60%; /* フッターの上に配置 */
@@ -23177,11 +23177,11 @@ body {
     transform: translateY(100%); /* ドロワーの初期位置 */
     margin: 0;
   }
-  .edit_drawer.open {
+  .editB_drawer.open {
     transform: translateY(0); /* ドロワーを表示する */
   }
 }
-.edit_drawer .close-btn {
+.editB_drawer .close-btn {
   position: absolute;
   top: 21px;
   right: 6px;
@@ -23189,50 +23189,50 @@ body {
   border: none;
   cursor: pointer;
 }
-.edit_drawer .close-btn img {
+.editB_drawer .close-btn img {
   width: 45%;
 }
-.edit_drawer_container_item {
+.editB_drawer_container_item {
   display: none;
 }
-.edit_drawer_container_item_upload {
+.editB_drawer_container_item_upload {
   text-align: center;
   height: 100%;
   margin: 28px 17px 0 35px;
 }
-.edit_drawer_container_item_upload #uploadZone {
+.editB_drawer_container_item_upload #uploadZone {
   text-align: center;
 }
-.edit_drawer_container_item_upload #uploadZone_wrapper {
+.editB_drawer_container_item_upload #uploadZone_wrapper {
   position: relative;
   display: inline-block;
 }
-.edit_drawer_container_item_upload .imageList-container {
+.editB_drawer_container_item_upload .imageList-container {
   height: 100vh;
   overflow: auto;
   height: calc(100vh - 200px);
 }
 @media screen and (max-width: 900px) and (max-height: 1000px) {
-  .edit_drawer_container_item_upload .imageList-container {
+  .editB_drawer_container_item_upload .imageList-container {
     height: calc(100vh - 730px);
   }
 }
 @media screen and (max-width: 900px) and (max-height: 900px) {
-  .edit_drawer_container_item_upload .imageList-container {
+  .editB_drawer_container_item_upload .imageList-container {
     height: calc(100vh - 675px);
   }
 }
 @media screen and (max-width: 900px) and (max-height: 800px) {
-  .edit_drawer_container_item_upload .imageList-container {
+  .editB_drawer_container_item_upload .imageList-container {
     height: calc(100vh - 610px);
   }
 }
 @media screen and (max-width: 900px) and (max-height: 700px) {
-  .edit_drawer_container_item_upload .imageList-container {
+  .editB_drawer_container_item_upload .imageList-container {
     height: calc(100vh - 530px);
   }
 }
-.edit_drawer_container_item_upload .imageList-container #imgPreviewField {
+.editB_drawer_container_item_upload .imageList-container #imgPreviewField {
   max-width: 350px;
   display: flex;
   flex-wrap: wrap;
@@ -23240,53 +23240,53 @@ body {
   margin: 0 auto 20px auto;
   gap: 14px;
 }
-.edit_drawer_container_item_upload .imageList-container #imgPreviewField img {
+.editB_drawer_container_item_upload .imageList-container #imgPreviewField img {
   width: calc(50% - 10px);
   cursor: grab;
 }
-.edit_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
+.editB_drawer_container_item_upload .imageList-container #imgPreviewField img.selected {
   border: 3px solid blue;
 }
-.edit_drawer_container_item.active {
+.editB_drawer_container_item.active {
   display: block;
 }
-.edit_drawer_container_item {
+.editB_drawer_container_item {
   display: none;
 }
-.edit_drawer_container_item_color {
+.editB_drawer_container_item_color {
   text-align: center;
   height: 400px;
   margin: 28px 40px 0 35px;
 }
-.edit_drawer_container_item_color h2 {
+.editB_drawer_container_item_color h2 {
   font-size: 1.25rem;
   text-align: left;
   margin-bottom: 20px;
 }
-.edit_drawer_container_item_color .color-container {
+.editB_drawer_container_item_color .color-container {
   height: 100vh;
   overflow: auto;
   height: calc(100vh - 200px);
 }
 @media screen and (max-width: 900px) {
-  .edit_drawer_container_item_color .color-container {
+  .editB_drawer_container_item_color .color-container {
     height: calc(100vh - 780px);
   }
 }
 @media (max-height: 1000px) and (max-width: 900px) {
-  .edit_drawer_container_item_color .color-container {
+  .editB_drawer_container_item_color .color-container {
     height: auto; /* 高さを自動で調整 */
     max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
   }
 }
-.edit_drawer_container_item_color .color-container_vari {
+.editB_drawer_container_item_color .color-container_vari {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 23px auto;
   padding: 10px;
   justify-content: space-between;
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color {
+.editB_drawer_container_item_color .color-container_vari .btn-color {
   width: 28%;
   height: 37px;
   margin-bottom: 20px;
@@ -23295,268 +23295,268 @@ body {
   color: transparent;
   cursor: pointer;
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-1 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-1 {
   background-color: rgb(230, 205, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-2 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-2 {
   background-color: rgb(230, 195, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-3 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-3 {
   background-color: rgb(199, 222, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-4 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-4 {
   background-color: rgb(170, 150, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-5 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-5 {
   background-color: rgb(140, 125, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-6 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-6 {
   background-color: rgb(130, 110, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-7 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-7 {
   background-color: rgb(170, 210, 75);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-8 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-8 {
   background-color: rgb(130, 212, 30);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-9 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-9 {
   background-color: rgb(125, 170, 25);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-10 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-10 {
   background-color: rgb(100, 140, 14);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-11 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-11 {
   background-color: rgb(70, 105, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-12 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-12 {
   background-color: rgb(60, 95, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-13 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-13 {
   background-color: rgb(50, 185, 115);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-14 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-14 {
   background-color: rgb(0, 145, 65);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-15 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-15 {
   background-color: rgb(5, 135, 60);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-16 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-16 {
   background-color: rgb(0, 115, 50);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-17 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-17 {
   background-color: rgb(0, 85, 30);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-18 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-18 {
   background-color: rgb(0, 55, 20);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-19 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-19 {
   background-color: rgb(35, 190, 185);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-20 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-20 {
   background-color: rgb(0, 145, 140);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-21 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-21 {
   background-color: rgb(0, 135, 130);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-22 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-22 {
   background-color: rgb(5, 115, 110);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-23 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-23 {
   background-color: rgb(0, 90, 80);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-24 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-24 {
   background-color: rgb(0, 60, 55);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-25 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-25 {
   background-color: rgb(110, 200, 245);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-26 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-26 {
   background-color: rgb(0, 160, 220);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-27 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-27 {
   background-color: rgb(0, 140, 205);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-28 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-28 {
   background-color: rgb(0, 120, 170);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-29 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-29 {
   background-color: rgb(0, 90, 130);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-30 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-30 {
   background-color: rgb(0, 70, 100);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-31 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-31 {
   background-color: rgb(77, 145, 205);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-32 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-32 {
   background-color: rgb(0, 100, 170);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-33 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-33 {
   background-color: rgb(0, 90, 160);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-34 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-34 {
   background-color: rgb(0, 75, 135);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-35 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-35 {
   background-color: rgb(0, 50, 100);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-36 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-36 {
   background-color: rgb(0, 35, 70);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-37 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-37 {
   background-color: rgb(100, 90, 170);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-38 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-38 {
   background-color: rgb(50, 50, 140);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-39 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-39 {
   background-color: rgb(30, 30, 125);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-40 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-40 {
   background-color: rgb(15, 10, 100);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-41 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-41 {
   background-color: rgb(5, 0, 77);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-42 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-42 {
   background-color: rgb(0, 0, 45);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-43 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-43 {
   background-color: rgb(180, 100, 170);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-44 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-44 {
   background-color: rgb(135, 0, 125);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-45 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-45 {
   background-color: rgb(125, 0, 115);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-46 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-46 {
   background-color: rgb(105, 0, 95);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-47 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-47 {
   background-color: rgb(80, 0, 70);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-48 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-48 {
   background-color: rgb(50, 0, 45);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-49 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-49 {
   background-color: rgb(235, 110, 165);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-50 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-50 {
   background-color: rgb(215, 0, 120);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-51 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-51 {
   background-color: rgb(200, 0, 110);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-52 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-52 {
   background-color: rgb(165, 0, 90);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-53 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-53 {
   background-color: rgb(125, 0, 65);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-54 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-54 {
   background-color: rgb(95, 0, 50);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-55 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-55 {
   background-color: rgb(240, 110, 125);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-56 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-56 {
   background-color: rgb(215, 0, 75);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-57 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-57 {
   background-color: rgb(200, 0, 65);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-58 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-58 {
   background-color: rgb(165, 0, 55);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-59 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-59 {
   background-color: rgb(125, 0, 35);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-60 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-60 {
   background-color: rgb(95, 0, 25);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-61 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-61 {
   background-color: rgb(240, 110, 70);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-62 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-62 {
   background-color: rgb(215, 0, 15);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-63 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-63 {
   background-color: rgb(200, 0, 10);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-64 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-64 {
   background-color: rgb(165, 0, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-65 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-65 {
   background-color: rgb(125, 0, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-66 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-66 {
   background-color: rgb(80, 0, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-67 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-67 {
   background-color: rgb(255, 185, 55);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-68 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-68 {
   background-color: rgb(225, 140, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-69 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-69 {
   background-color: rgb(210, 130, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-70 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-70 {
   background-color: rgb(170, 105, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-71 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-71 {
   background-color: rgb(130, 80, 0);
 }
-.edit_drawer_container_item_color .color-container_vari .btn-color-72 {
+.editB_drawer_container_item_color .color-container_vari .btn-color-72 {
   background-color: rgb(100, 60, 0);
 }
-.edit_drawer_container_item {
+.editB_drawer_container_item {
   display: none;
 }
-.edit_drawer_container_item_frame {
+.editB_drawer_container_item_frame {
   text-align: center;
   height: 400px;
   margin: 28px 40px 0 35px;
 }
-.edit_drawer_container_item_frame h2 {
+.editB_drawer_container_item_frame h2 {
   font-size: 1.25rem;
   text-align: left;
   margin-bottom: 20px;
 }
-.edit_drawer_container_item_frame .frame-container {
+.editB_drawer_container_item_frame .frame-container {
   overflow: auto;
   height: calc(100vh - 200px);
 }
 @media screen and (max-width: 900px) {
-  .edit_drawer_container_item_frame .frame-container {
+  .editB_drawer_container_item_frame .frame-container {
     height: calc(100vh - 750px);
   }
 }
 @media (max-height: 1000px) and (max-width: 900px) {
-  .edit_drawer_container_item_frame .frame-container {
+  .editB_drawer_container_item_frame .frame-container {
     height: auto; /* 高さを自動で調整 */
     max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
   }
 }
-.edit_drawer_container_item_frame .frame-container_vari {
+.editB_drawer_container_item_frame .frame-container_vari {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 23px auto;
   padding: 10px;
 }
-.edit_drawer_container_item_frame .frame-container_vari .resizeButton {
+.editB_drawer_container_item_frame .frame-container_vari .resizeButton {
   width: 50%;
   cursor: pointer;
   padding: 0;
   border: none;
   background-color: transparent;
 }
-.edit_drawer_container_item_frame .frame-container_vari .resizeButton img {
+.editB_drawer_container_item_frame .frame-container_vari .resizeButton img {
   width: 100%;
   height: auto;
 }
-.edit .sidebar {
+.editB .sidebar {
   width: 75px;
   background-color: #252525;
   display: flex;
@@ -23571,7 +23571,7 @@ body {
   z-index: 1;
 }
 @media screen and (max-width: 900px) {
-  .edit .sidebar {
+  .editB .sidebar {
     width: 100%;
     background-color: #252525;
     display: flex;
@@ -23589,11 +23589,11 @@ body {
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .sidebar.open {
+  .editB .sidebar.open {
     transform: translateY(0);
   }
 }
-.edit .sideBtn {
+.editB .sideBtn {
   position: fixed;
   top: 45px;
   left: 0;
@@ -23603,7 +23603,7 @@ body {
   z-index: 3;
 }
 @media screen and (max-width: 900px) {
-  .edit .sideBtn {
+  .editB .sideBtn {
     position: fixed;
     top: auto;
     bottom: 0;
@@ -23617,7 +23617,7 @@ body {
     z-index: 3;
   }
 }
-.edit .sideBtn .open-btn {
+.editB .sideBtn .open-btn {
   font-size: 16px;
   background: #252525;
   border: none;
@@ -23628,7 +23628,7 @@ body {
   height: 75px;
 }
 @media screen and (max-width: 900px) {
-  .edit .sideBtn .open-btn {
+  .editB .sideBtn .open-btn {
     flex: 1; /* ボタンを均等に広げる */
     font-size: 16px;
     background: #252525;
@@ -23640,37 +23640,37 @@ body {
     height: 100%; /* 高さを100%に設定 */
   }
 }
-.edit .sideBtn .open-btn.active {
+.editB .sideBtn .open-btn.active {
   background: #535353;
   border: 2px solid #252525;
 }
-.edit .sideBtn .open-btn img {
+.editB .sideBtn .open-btn img {
   width: 35px;
   height: 36px;
   margin-top: 5px;
 }
 @media screen and (max-width: 900px) {
-  .edit .sideBtn .open-btn img {
+  .editB .sideBtn .open-btn img {
     width: 24px;
     height: 25px;
     margin-top: 5px;
   }
 }
-.edit .content {
+.editB .content {
   transition: margin-left 0.3s ease;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content {
+  .editB .content {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (min-width: 1700px) {
-  .edit .content {
+  .editB .content {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content {
+  .editB .content {
     transition: none;
     width: 100%;
     position: absolute;
@@ -23680,21 +23680,21 @@ body {
     text-align: center;
   }
 }
-.edit .content.open {
+.editB .content.open {
   margin-left: 32.5%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content.open {
+  .editB .content.open {
     margin-left: 33.5%;
   }
 }
 @media screen and (min-width: 1900px) {
-  .edit .content.open {
+  .editB .content.open {
     margin-left: 31.5%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content.open {
+  .editB .content.open {
     margin: 0;
     width: 60%;
     position: absolute;
@@ -23704,28 +23704,28 @@ body {
     text-align: center;
   }
 }
-.edit .content .swiper {
+.editB .content .swiper {
   width: 600px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper {
+  .editB .content .swiper {
     width: 900px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper {
+  .editB .content .swiper {
     width: 450px;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper {
+  .editB .content .swiper {
     display: block;
     width: 80%;
     min-width: auto;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide {
+.editB .content .swiper-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -23733,44 +23733,40 @@ body {
   width: auto;
   height: 100%;
 }
-.edit .content .swiper-wrapper .swiper-slide-hidden {
+.editB .content .swiper-wrapper .swiper-slide-hidden {
   visibility: visible !important;
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide-hidden {
+  .editB .content .swiper-wrapper .swiper-slide-hidden {
     display: none;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box {
+.editB .content .swiper-wrapper .swiper-slide_box {
   position: relative;
   clip-path: inset(23px 24px 28px 24px);
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box {
+  .editB .content .swiper-wrapper .swiper-slide_box {
     clip-path: inset(32px 37px 37px 37px);
   }
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box {
+  .editB .content .swiper-wrapper .swiper-slide_box {
     clip-path: inset(16px 17px 20px 17px);
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box {
+  .editB .content .swiper-wrapper .swiper-slide_box {
     width: 90%;
     clip-path: inset(6% 8% 7% 8%);
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box {
+  .editB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop-last {
-  top: 8% !important;
-  justify-content: flex-start !important;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -23783,70 +23779,16 @@ body {
   justify-content: center;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
     max-height: 85%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop {
     max-height: 87%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 82%;
-  width: 100%;
-  top: 5%;
-}
-@media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
-    top: 4.5%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
-    top: 3.5%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-content12 {
-    top: 4.2%;
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
-  width: 63%;
-  height: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 7.6%;
-  margin: 3.5% 0 0% 0;
-}
-@media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
-    margin: 3.5% 0 -2% 0;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12 {
-    margin: 3.5% 0 -2% 0;
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .flex-droparea12 {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 7%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 {
   position: relative;
   top: -1.5%;
   width: 50%;
@@ -23856,14 +23798,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
   position: relative;
   top: 0%;
   width: 50%;
@@ -23873,14 +23815,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 {
   position: relative;
   width: 45%;
   height: 25%;
@@ -23889,14 +23831,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea3 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 {
   position: relative;
   top: -9%;
   width: 48%;
@@ -23906,14 +23848,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea4 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 {
   position: relative;
   width: 45%;
   height: 25%;
@@ -23922,14 +23864,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea5 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
   position: relative;
   top: -3%;
   width: 50%;
@@ -23940,19 +23882,19 @@ body {
   border-radius: 10%;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 {
     top: -1%;
     height: 48%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea6 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 {
   position: relative;
   width: 45%;
   height: 25%;
@@ -23961,14 +23903,14 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea7 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
   position: relative;
   top: 0%;
   width: 50%;
@@ -23979,18 +23921,18 @@ body {
   border-radius: 10%;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 {
     top: 2%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea8 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 {
   position: relative;
   width: 45%;
   height: 25%;
@@ -23999,33 +23941,33 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.active {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.square {
   width: 45%;
   height: 32%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle34 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle34 {
   width: 45%;
   height: 40%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle43 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.rectangle43 {
   width: 45%;
   height: 25%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.mini {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9.mini {
   width: 45%;
   height: 20%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea9 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
   position: relative;
   top: -1.5%;
   width: 48%;
@@ -24036,18 +23978,18 @@ body {
   border-radius: 10%;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 {
     top: 0;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea10 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 {
   position: relative;
   width: 45%;
   height: 25%;
@@ -24056,98 +23998,83 @@ body {
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.active {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.active {
   border-color: rgba(0, 0, 0, 0.537254902);
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.square {
   width: 45%;
   height: 32%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle34 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle34 {
   width: 45%;
   height: 40%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle43 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.rectangle43 {
   width: 45%;
   height: 25%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.mini {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11.mini {
   width: 45%;
   height: 20%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea11 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
   position: relative;
-  width: 63%;
-  height: 43%;
+  width: 100%;
+  height: 100%;
   font-size: 1rem;
-  border: 2px dashed rgb(204, 204, 204);
+  border: 2px dashed #ccc;
   cursor: pointer;
-  top: -0.8%;
 }
-@media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 {
-    clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
-    top: 0.6%;
-  }
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14_t7 {
+  position: relative;
+  width: 67%;
+  height: 84%;
+  font-size: 1rem;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  clip-path: polygon(46% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 5%);
+  top: 3%;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 {
-    clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
-    top: 0.5%;
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14_t7 {
+    height: 85%;
+    top: 6%;
   }
 }
-@media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 {
-    clip-path: polygon(54% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 14%);
-  }
-}
-@media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 {
-    clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
-  }
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12_t7 img {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea14_t7 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-size: 1rem;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
   text-align: left;
   resize: none;
@@ -24159,36 +24086,36 @@ body {
   field-sizing: content;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 0.3rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 0.6rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.55vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
     font-size: 1.7vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-height {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-height {
   field-sizing: content;
   max-height: 65%;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
   border: 2px dashed #ccc;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
   border: none;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-diagonal {
   transform: rotate(-9.7deg);
   margin-left: -39%;
   width: 34% !important;
@@ -24198,7 +24125,7 @@ body {
   line-height: 1.2;
   color: #fef8f6;
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
   font-family: "League Spartan", sans-serif;
   min-width: 60%;
   font-size: 1.2rem;
@@ -24209,27 +24136,27 @@ body {
   top: 13.5%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
     font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
     font-size: 2.1rem;
     top: 13.5%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
     font-size: 5.5vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-1 {
     font-size: 7vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
   font-family: "Noto Sans JP", serif;
   min-width: 36%;
   margin: 1% 0 5%;
@@ -24243,53 +24170,53 @@ body {
   top: 21.8%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
     font-size: 0.33rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
     font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
     font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-2 {
     font-size: 1.55vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
   position: absolute;
   top: 72%;
   font-size: 0.36rem;
   text-align: left;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
     font-size: 0.25rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
     font-size: 0.55rem;
     top: 71%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
     font-size: 1.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea1-3 {
     font-size: 1.4vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
   margin-bottom: 5%;
   height: auto;
   font-size: 0.6rem;
@@ -24302,86 +24229,86 @@ body {
   line-height: 1.8;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
     font-size: 0.9rem;
     line-height: 1.8;
     top: 2%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea2, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea10 {
     font-size: 2.6vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
   position: relative;
   top: 4%;
   font-size: 4.9px;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
     font-size: 0.26rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
     font-size: 0.46rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
     font-size: 1.28vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
     font-size: 1.45vw;
   }
 }
 @media screen and (max-width: 380px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea3 {
     font-size: 1.7vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
   position: relative;
   top: 4%;
   font-size: 5px;
   max-width: 46%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
     font-size: 0.246rem;
     max-height: 65%;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
     font-size: 0.49rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
     font-size: 1.26vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea5, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea7, .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea9 {
     font-size: 1.4vw;
     margin-top: 25px;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
   position: relative;
   top: -7.5%;
   min-width: 60%;
@@ -24394,27 +24321,27 @@ body {
   margin-top: 10%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
     font-size: 1rem;
     top: -6.5%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-1 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
   position: absolute;
   top: 65%;
   min-width: 60%;
@@ -24427,26 +24354,26 @@ body {
   margin-top: 10%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea4-2 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
   margin-bottom: 5%;
   height: auto;
   font-size: 0.6rem;
@@ -24458,28 +24385,28 @@ body {
   top: -4%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
     font-size: 0.9rem;
     line-height: 1.8;
     top: -1%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-1 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
   margin: 5% 0 15%;
   color: #fef8f6;
   font-size: 0.6rem;
@@ -24488,26 +24415,26 @@ body {
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
     font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea6-2 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
   margin-bottom: 5%;
   height: auto;
   font-size: 0.6rem;
@@ -24520,28 +24447,28 @@ body {
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
     font-size: 0.9rem;
     line-height: 1.8;
     top: 4%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
     font-size: 2.2vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea8 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
   font-family: "Noto Sans JP", serif;
   min-width: 60%;
   margin-bottom: 5%;
@@ -24552,198 +24479,228 @@ body {
   text-align: center;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
     font-size: 0.45rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
     font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
     font-size: 2.3vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-1 {
     font-size: 2.5vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
   max-width: 55%;
   font-size: 0.35rem;
   text-align: left;
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
     font-size: 0.54rem;
   }
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
     font-size: 0.28rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
     font-size: 1.27vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea11-2 {
     font-size: 1.4vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
-  position: relative;
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1_t7 {
+  position: absolute;
   font-family: "Montserrat", serif;
-  top: 4.5%;
-  font-size: 0.8rem;
+  top: 12.5%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1_t7 {
     font-size: 0.6rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1_t7 {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1_t7 {
     font-size: 2.5vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-1_t7 {
     font-size: 3vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
-  height: 75% !important;
-  font-size: 0.25rem;
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2_t7 {
+  position: absolute;
+  top: 74%;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: bold;
+  color: #f8f8f8;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2_t7 {
     font-size: 0.19rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2_t7 {
     font-size: 0.41rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2_t7 {
     font-size: 0.955vw;
   }
 }
 @media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-2_t7 {
     font-size: 1.1vw;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-  font-family: "Montserrat", serif;
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14-1 {
   position: absolute;
-  text-align: center;
-  line-height: 1.5;
-  font-weight: bold;
-  color: #fef8f6;
-  font-size: 12px;
-  top: 94.5%;
+  top: 6.5%;
 }
 @media screen and (max-width: 1200px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14-1 {
     top: 94.5%;
     font-size: 0.5rem;
   }
 }
 @media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
-    font-size: 0.9rem;
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14-1 {
+    font-size: 1.2rem;
     line-height: 0.9;
-    top: 96.8%;
+    top: 9%;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #textArea12-3 {
+  .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea14-1 {
     font-size: 2.5vw;
     top: 93.5%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop-first {
+.editB .content .swiper-wrapper .swiper-slide_box .input-drop-first {
   top: 8.5%;
 }
-.edit .swiper-button-prev {
+.editB .content .swiper-wrapper .swiper-slide #dropArea12_t7 {
+  position: relative;
+  width: 45%;
+  height: 43%;
+  font-size: 1rem;
+  border: 2px dashed rgb(204, 204, 204);
+  cursor: pointer;
+  top: -0.8%;
+}
+.editB .content .swiper-wrapper .swiper-slide #dropArea12_t7 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.editB #dropArea12_t7 {
+  position: relative;
+  width: 63%;
+  height: 43%;
+  font-size: 1rem;
+  border: 2px dashed rgb(204, 204, 204);
+  cursor: pointer;
+  top: -0.8%;
+}
+.editB #dropArea12_t7 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.editB .swiper-button-prev {
   margin-left: 0;
   transition: margin 0.3s ease;
 }
 @media screen and (min-width: 1500px) {
-  .edit .swiper-button-prev {
+  .editB .swiper-button-prev {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (min-width: 1700px) {
-  .edit .swiper-button-prev {
+  .editB .swiper-button-prev {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .swiper-button-prev {
+  .editB .swiper-button-prev {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
-.edit .swiper-button-prev.open {
+.editB .swiper-button-prev.open {
   margin-left: 18.5%;
 }
 @media screen and (max-width: 480px) {
-  .edit .swiper-button-prev.open {
+  .editB .swiper-button-prev.open {
     top: var(--swiper-navigation-top-offset, 50%);
     left: var(--swiper-navigation-sides-offset, -5%);
     right: auto;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .swiper-button-prev.open {
+  .editB .swiper-button-prev.open {
     margin-left: -14%;
     margin-top: -5vh;
   }
 }
-.edit .swiper-button-next {
+.editB .swiper-button-next {
   margin-left: 0;
   transition: margin 0.3s ease;
 }
 @media screen and (min-width: 1500px) {
-  .edit .swiper-button-next {
+  .editB .swiper-button-next {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (min-width: 1700px) {
-  .edit .swiper-button-next {
+  .editB .swiper-button-next {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .swiper-button-next {
+  .editB .swiper-button-next {
     transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
   }
 }
-.edit .swiper-button-next.open {
+.editB .swiper-button-next.open {
   margin-right: -14%;
 }
 @media screen and (max-width: 480px) {
-  .edit .swiper-button-next.open {
+  .editB .swiper-button-next.open {
     top: var(--swiper-navigation-top-offset, 50%);
     right: var(--swiper-navigation-sides-offset, -5%);
     left: auto;
   }
 }
 @media screen and (max-width: 900px) {
-  .edit .swiper-button-next.open {
+  .editB .swiper-button-next.open {
     margin-top: -5vh;
   }
 }

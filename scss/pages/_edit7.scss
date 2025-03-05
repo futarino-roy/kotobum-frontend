@@ -50,7 +50,7 @@
   display: flex;
 }
 
-.edit {
+.editB {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -847,11 +847,6 @@
             @include mq('sp-edit') {
               width: 100%;
             }
-
-            .input-drop-last {
-              top: 8% !important;
-              justify-content: flex-start !important;
-            }
             .input-drop {
               position: absolute;
               width: 100%;
@@ -872,68 +867,6 @@
               }
               @include mq('tab-edit') {
                 max-height: 87%;
-              }
-
-              // .background-textArea6-1 {
-              //   // position: relative;
-              //   // width: 43%;
-              //   // height: 20%;
-              //   background-image: url(/edit/images/cloud.png);
-              //   background-size: contain;
-              //   background-repeat: no-repeat;
-              //   margin-top: 6%;
-              //   margin-bottom: 10%;
-              //   // margin-right: 22%;
-              //   display: flex;
-              //   align-items: center;
-              //   justify-content: center;
-              // }
-
-              .flex-content12 {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                height: 82%;
-                width: 100%;
-                top: 5%;
-                @include mq('pc2-edit') {
-                  top: 4.5%;
-                }
-                @include mq('pc-edit') {
-                  top: 3.5%;
-                }
-                @include mq('tab-edit') {
-                  top: 4.2%;
-                }
-              }
-
-              .flex-area12 {
-                width: 63%;
-                height: 60%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                gap: 7.6%;
-                margin: 3.5% 0 0% 0;
-                @include mq('pc2-edit') {
-                  margin: 3.5% 0 -2% 0;
-                }
-                @include mq('pc-edit') {
-                  margin: 3.5% 0 -2% 0;
-                }
-              }
-
-              .flex-droparea12 {
-                width: 50%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-end;
-                gap: 7%;
               }
 
               #dropArea1 {
@@ -1202,41 +1135,6 @@
                 }
               }
 
-              #dropArea12_t7 {
-                position: relative;
-                width: 63%;
-                height: 43%;
-                font-size: 1rem;
-                border: 2px dashed rgb(204, 204, 204);
-                cursor: pointer;
-                top: -0.8%;
-
-                @include mq('pc-edit') {
-                  clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
-                  top: 0.6%;
-                }
-
-                @include mq('pc2-edit') {
-                  clip-path: polygon(53% 0, 100% 0, 100% 100%, 0 100%, 0 14%);
-                  top: 0.5%;
-                }
-
-                @include mq('tab-edit') {
-                  clip-path: polygon(54% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 14%);
-                }
-
-                @include mq('sp-edit') {
-                  clip-path: polygon(50% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
-                }
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
-
               #dropArea12-2 {
                 position: relative;
                 width: 100%;
@@ -1283,27 +1181,27 @@
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
-                // 枠サイズ変更関連---
-                // &.active {
-                //   border-color: #00000089;
-                // }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  cursor: pointer;
+                }
+              }
+              #dropArea14_t7 {
+                position: relative;
+                width: 67%;
+                height: 84%;
+                font-size: 1rem;
+                border: 2px dashed #ccc;
+                cursor: pointer;
+                clip-path: polygon(46% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 5%);
+                top: 3%;
 
-                // &.square {
-                //   width: 57%;
-                //   height: 40%;
-                // }
-
-                // &.rectangle {
-                //   width: 62%;
-                //   height: 30%;
-                // }
-
-                // &.mini {
-                //   width: 52%;
-                //   height: 20%;
-                // }
-
-                // --------------------------
+                @include mq('pc2-edit') {
+                  height: 85%;
+                  top: 6%;
+                }
 
                 img {
                   width: 100%;
@@ -1737,12 +1635,14 @@
                     font-size: 1.4vw;
                   }
                 }
-                &12-1 {
-                  position: relative;
+                &12-1_t7 {
+                  position: absolute;
                   font-family: 'Montserrat', serif;
-                  top: 4.5%;
+                  top: 12.5%;
+                  text-align: center;
+                  font-weight: bold;
                   // letter-spacing: 0.1rem;
-                  font-size: 0.8rem;
+                  font-size: 1.5rem;
                   @include mq('pc-edit') {
                     font-size: 0.6rem;
                     // margin-bottom: 3%;
@@ -1760,11 +1660,13 @@
                     font-size: 3vw;
                   }
                 }
-                &12-2 {
-                  // background-color: coral;
-                  height: 75% !important;
-                  font-size: 0.25rem;
-                  // padding-top: 4%;
+                &12-2_t7 {
+                  position: absolute;
+                  top: 74%;
+                  font-size: 0.7rem;
+                  text-align: center;
+                  font-weight: bold;
+                  color: #f8f8f8;
 
                   @include mq('pc-edit') {
                     font-size: 0.19rem;
@@ -1782,15 +1684,9 @@
                     font-size: 1.1vw;
                   }
                 }
-                &12-3 {
-                  font-family: 'Montserrat', serif;
+                &14-1 {
                   position: absolute;
-                  text-align: center;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  color: #fef8f6;
-                  font-size: 12px;
-                  top: 94.5%;
+                  top: 6.5%;
 
                   @include mq('pc-edit') {
                     top: 94.5%;
@@ -1798,9 +1694,9 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1.2rem;
                     line-height: 0.9;
-                    top: 96.8%;
+                    top: 9%;
                   }
 
                   @include mq('tab-edit') {
@@ -1818,8 +1714,38 @@
               top: 8.5%;
             }
           }
+          #dropArea12_t7 {
+            position: relative;
+            width: 45%;
+            height: 43%;
+            font-size: 1rem;
+            border: 2px dashed rgb(204, 204, 204);
+            cursor: pointer;
+            top: -0.8%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              cursor: pointer;
+            }
+          }
         }
       }
+    }
+  }
+  #dropArea12_t7 {
+    position: relative;
+    width: 63%;
+    height: 43%;
+    font-size: 1rem;
+    border: 2px dashed rgb(204, 204, 204);
+    cursor: pointer;
+    top: -0.8%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
     }
   }
 
