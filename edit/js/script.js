@@ -1724,7 +1724,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.error("管理者用のアルバムIDを取得できませんでした。");
           return;
         }
-        // 選択したユーザーの処理が入るはず…💭
+        // 選択したユーザーの処理が入るはず…!
         albumId = albums[0].albumId; //仮に最初のアルバムを取得
 
         console.log("管理者として取得したアルバムID:", albumId);

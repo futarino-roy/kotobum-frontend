@@ -1175,14 +1175,6 @@
                   font-size: 1.7vw;
                 }
               }
-              textarea::placeholder {
-                font-size: 1rem;
-                padding: 1%;
-
-                @include mq('pc-edit') {
-                  font-size: 0.5rem;
-                }
-              }
 
               .text-empty {
                 border: 1px dashed #ccc;

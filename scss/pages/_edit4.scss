@@ -1079,6 +1079,12 @@
                 }
               }
               #textArea {
+                &1-1_t4::placeholder {
+                  @include mq('sp-edit') {
+                    font-size: 1rem;
+                    line-height: 2.5;
+                  }
+                }
                 &1-1_t4 {
                   position: absolute;
                   top: 15%;
