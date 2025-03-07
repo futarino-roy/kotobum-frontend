@@ -174,8 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // setupButton('previewBtn', '../preview', '../preview2');
       // setupButton('coverBtn', '../cover', '../cover2');
       // setupButton('cover-reviewBtn', '../cover-preview', '../cover-preview2');
-
-
     })
     .catch((error) => {
       console.error('失敗:', error);
@@ -194,6 +192,15 @@ document.addEventListener('DOMContentLoaded', function () {
       // }, 1000); // 1秒ごとに実行
     });
 });
+
+function logout() {
+  localStorage.removeItem('token');
+  // ログインページにリダイレクト
+  window.location.href = '../login'; // ログインページのURLに変更
+}
+
+// ログアウトボタンのクリックイベントに関連づけ
+document.getElementById('logoutButton').addEventListener('click', logout);
 
 //----------------- モーダルに関するJavaScript---------------------
 
@@ -282,7 +289,7 @@ modalButton_ls.forEach((modalButton_l) => {
       headers: {
         //この辺の処理送信もいらないかも
         'Content-Type': 'application/json', //送信するデータがJSON形式であることを示す
-        Authorization: `Bearer ${token}` //これはトークンで識別のために使うからいる
+        Authorization: `Bearer ${token}`, //これはトークンで識別のために使うからいる
       },
       body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
     })
@@ -380,7 +387,6 @@ const modal_r = document.querySelector('#modal2_2');
 // モーダル内の「マイページへ」ボタンを取得
 const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
 
-
 // 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
 modalButton_rs.forEach((modalButton_r) => {
   modalButton_r.addEventListener('click', function () {
@@ -429,9 +435,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const myPageButton = document.querySelector('.buttonC_r');
 
     if (myPageButton) {
-      myPageButton.disabled = true;  // ボタンを無効化
-      myPageButton.style.cursor = 'not-allowed';  // カーソル変更
-      myPageButton.style.pointerEvents = 'none';  // クリックイベントを無効化
+      myPageButton.disabled = true; // ボタンを無効化
+      myPageButton.style.cursor = 'not-allowed'; // カーソル変更
+      myPageButton.style.pointerEvents = 'none'; // クリックイベントを無効化
     } else {
       console.log('ボタンが見つかりませんでした');
     }
