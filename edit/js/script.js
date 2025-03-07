@@ -1660,11 +1660,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then((response) => {
         if (!response.ok) {
+          console.log('Authorization: Bearer', `Bearer ${token}`);
           alert('ログインしてください。2秒後にログインページに戻ります。');
-          screen_lock();
-          setTimeout(() => {
-            window.location.href = '../login';
-          }, 2000);
+          // screen_lock();
+          // setTimeout(() => {
+          //   window.location.href = '../login';
+          // }, 2000);
           throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
         }
         return response.json();
