@@ -1660,7 +1660,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then((response) => {
         if (!response.ok) {
-          console.log('Authorization: Bearer', `Bearer ${token}`);
           alert('ログインしてください。2秒後にログインページに戻ります。');
           // screen_lock();
           // setTimeout(() => {
