@@ -1650,6 +1650,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //一般ユーザー用のアルバムIDの取得
   function fetchAlbumID(token) {
+    console.log('取得したトークン:', token); // ← ここでちゃんと表示されるかチェック
     fetch('https://develop-back.kotobum.com/api/user/album', {
       method: 'GET',
       headers: {
@@ -1660,10 +1661,10 @@ document.addEventListener('DOMContentLoaded', function () {
       .then((response) => {
         if (!response.ok) {
           alert('ログインしてください。2秒後にログインページに戻ります。');
-          // screen_lock();
-          // setTimeout(() => {
-          //   window.location.href = '../login';
-          // }, 2000);
+          screen_lock();
+          setTimeout(() => {
+            window.location.href = '../login';
+          }, 2000);
           throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
         }
         return response.json();
@@ -1688,7 +1689,6 @@ document.addEventListener('DOMContentLoaded', function () {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
       },
     })
       .then((response) => {
