@@ -1613,6 +1613,7 @@ function screen_lock() {
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
+  console.log('取得したトークン:', token); // ← ここでちゃんと表示されるかチェック
   // 管理者用のアルバムID取得
   const albumId = localStorage.getItem('albumId');
 
@@ -1690,6 +1691,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     })
       .then((response) => {
+        console.log('サーバーのレスポンス:', response);
         if (!response.ok) {
           throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
         }
