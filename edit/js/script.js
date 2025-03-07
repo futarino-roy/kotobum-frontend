@@ -1612,6 +1612,7 @@ function screen_lock() {
 
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
+  localStorage.removeItem('token');
   const token = localStorage.getItem('token');
   console.log('取得したトークン:', token); // ← ここでちゃんと表示されるかチェック
   // 管理者用のアルバムID取得
