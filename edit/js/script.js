@@ -1628,6 +1628,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(`管理者モード: トークン: ${token}, アルバムID: ${albumId}`);
     // 画像化ボタンの表示
     showCaptureButton();
+    // アルバムデータ取得リクエスト用の関数
+    AlbumData(albumId, token);
     return;
   } else {
     console.log('一般ユーザーです');
