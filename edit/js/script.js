@@ -971,8 +971,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-
-
 // function previewSlides() {
 //     // スライド1の内容を取得
 //     const text1 = document.getElementById('textArea').value;
@@ -1256,7 +1254,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //   }
 // }
 
-
 //キャプチャ=>PDF
 // async function captureToPDF() {
 //   const target = document.querySelector('#target'); // キャプチャしたい要素
@@ -1344,7 +1341,7 @@ async function captureToPDF() {
   const targets = document.querySelectorAll('.target'); // すべてのページを取得🐰
 
   if (targets.length === 0) {
-    console.error("キャプチャ対象のページが見つかりません💦");
+    console.error('キャプチャ対象のページが見つかりません💦');
     return;
   }
 
@@ -1359,40 +1356,40 @@ async function captureToPDF() {
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
-      orientation: "portrait",
-      unit: "mm",
-      format: [158, 218]
+      orientation: 'portrait',
+      unit: 'mm',
+      format: [158, 218],
     });
 
     for (let i = 0; i < targets.length; i++) {
       const target = targets[i];
 
       // 🌸 キャプチャ前に少し待つ
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
       // 🌸 キャプチャ時だけ拡大
       const originalStyle = target.style.cssText;
-      target.style.border = "none";
-      target.style.position = "absolute";
-      target.style.left = "0";
-      target.style.top = "0";
+      target.style.border = 'none';
+      target.style.position = 'absolute';
+      target.style.left = '0';
+      target.style.top = '0';
       target.style.transform = `scale(${scale})`;
-      target.style.transformOrigin = "top left";
+      target.style.transformOrigin = 'top left';
       target.style.width = `${target.offsetWidth}px`;
       target.style.height = `${target.offsetHeight}px`;
-      target.style.clipPath = "none";
+      target.style.clipPath = 'none';
 
       // ✅ textarea の表示を確実にする
-      const textareas = target.querySelectorAll("textarea");
-      textareas.forEach(textarea => {
-        textarea.style.display = "block";
+      const textareas = target.querySelectorAll('textarea');
+      textareas.forEach((textarea) => {
+        textarea.style.display = 'block';
       });
 
       // ✅ 画像の位置を明示的に指定
-      const img = target.querySelector("img");
+      const img = target.querySelector('img');
       if (img) {
-        img.style.position = "absolute";
-        img.style.left = "0";
+        img.style.position = 'absolute';
+        img.style.left = '0';
       }
 
       // 📸 キャプチャ実行
@@ -1400,27 +1397,21 @@ async function captureToPDF() {
 
       // 🌟 キャプチャ後、元のスタイルに戻す
       target.style.cssText = originalStyle;
-      target.style.width = "100%";
+      target.style.width = '100%';
 
       // 🌟 画像をダウンロード
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = `page_${i + 1}.png`; // `page_1.png`, `page_2.png`...
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
-    console.log("すべての画像をダウンロードしました！");
+    console.log('すべての画像をダウンロードしました！');
   } catch (error) {
-    console.error("キャプチャ中にエラーが発生しました", error);
+    console.error('キャプチャ中にエラーが発生しました', error);
   }
 }
-
-
-
-
-
-
 
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
@@ -1450,13 +1441,13 @@ function handleSaveOrSend() {
       'Content-Type': 'application/json',
     },
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(albums => {
+    .then((albums) => {
       albumId = albums.albumId;
 
       if (!albumId) {
@@ -1519,11 +1510,10 @@ function handleSaveOrSend() {
         //   };
         // });
 
-
         const dropAreas = slide.querySelectorAll('.empty');
         const imageData = Array.from(dropAreas).map((dropArea) => {
           const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
-          const imgElement = dropArea.querySelector("img");
+          const imgElement = dropArea.querySelector('img');
           const originalImage = imgElement ? imgElement.src : null;
 
           const imageToSend = croppedImage || originalImage;
@@ -1532,7 +1522,7 @@ function handleSaveOrSend() {
           return {
             id: dropArea.id,
             image: imageToSend,
-            top: (((top - initialRect.top) / slideHeight) * 100), // パーセンテージで指定
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
             width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
             height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
@@ -1547,15 +1537,15 @@ function handleSaveOrSend() {
       });
 
       // 送信データの構築
-      if (pageData.every(page => page.textData.every(text => text.text === '') && page.imageData.every(image => image.image === null))) {
+      if (pageData.every((page) => page.textData.every((text) => text.text === '') && page.imageData.every((image) => image.image === null))) {
         console.error('送信するデータがありません。');
         alert('送信するデータがありません。');
         return;
       }
 
       // imageDataとtextDataを分離して送信
-      const imageDataToSend = pageData.flatMap(page => page.imageData);
-      const textDataToSend = pageData.flatMap(page => page.textData);
+      const imageDataToSend = pageData.flatMap((page) => page.imageData);
+      const textDataToSend = pageData.flatMap((page) => page.textData);
 
       const dataToSend = {
         imageData: imageDataToSend,
@@ -1563,7 +1553,7 @@ function handleSaveOrSend() {
         colors: {
           backgroundColor,
           textColor,
-        }
+        },
       };
 
       // FormDataに追加して送信
@@ -1582,18 +1572,17 @@ function handleSaveOrSend() {
         body: body,
       });
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       console.log('成功:', data);
       alert('データが正常に保存されました。');
-
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('エラーが発生しました:', error.message);
       if (error.response) {
         console.error('レスポンスデータ:', error.response.data);
@@ -1601,12 +1590,12 @@ function handleSaveOrSend() {
       console.error('スタックトレース:', error.stack);
       alert('エラーが発生しました。再度お試しください。');
     });
-};
+}
 
 // ログインしていないとき用のスクリーンロック
 function screen_lock() {
   let lock_screen = document.createElement('div');
-  lock_screen.id = "screenLock";
+  lock_screen.id = 'screenLock';
 
   lock_screen.style.backgroundColor = '#000000';
   lock_screen.style.height = '100%';
@@ -1617,61 +1606,42 @@ function screen_lock() {
   lock_screen.style.zIndex = '9999';
   lock_screen.style.opacity = '10%';
 
-  let objBody = document.getElementsByTagName("body").item(0);
+  let objBody = document.getElementsByTagName('body').item(0);
   objBody.appendChild(lock_screen);
 }
 
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
+  // 管理者用のアルバムID取得
+  const albumId = localStorage.getItem('albumId');
 
   if (!token) {
     console.error('認証トークンが見つかりません。ログインしてください。');
     return;
   }
 
-  let albumId;
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.has('admin');
 
-  // 遷移元の判断（backendが含まれるURLから来たか判断）
-  if (document.referrer.indexOf("backend") == -1) {
-    console.log("一般ユーザーです");
+  if (isAdmin) {
+    console.log(`管理者モード: トークン: ${token}, アルバムID: ${albumId}`);
+    // 画像化ボタンの表示
+    showCaptureButton();
+    return;
+  } else {
+    console.log('一般ユーザーです');
     // 一般ユーザー用のアルバムIDの取得
     fetchAlbumID(token);
-  } else {
-    console.log("管理者です");
-
-    // 管理者用のAPIリクエスト
-    fetch('https://develop-back.kotobum.com/api/admin', {
-      method: 'GET',
-      headers: {
-        // Authorization: `Bearer ${token}`, //APIリクエストを送るための認証
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json()) //JSONに変換
-      .then(data => {
-        console.log("管理者認証のレスポンス:", data);
-
-        // 認証成功か判断
-        if (data.authenticated) {
-          // 画像化ボタンの表示
-          showCaptureButton();
-          // 管理者用のアルバムID取得
-          AdminAlbumID(token);
-        } else {
-          console.warn("管理者認証に失敗しました。");
-        }
-      })
-      .catch(error => console.error("管理者認証エラー", error));
   }
 
   // 画像化ボタンの表示関数
   function showCaptureButton() {
-    const captureButton = document.getElementById("captureButton");
+    const captureButton = document.getElementById('captureButton');
     if (captureButton) {
-      captureButton.style.display = "block";
+      captureButton.style.display = 'block';
     } else {
-      console.warn("画像化ボタンが見つかりません");
+      console.warn('画像化ボタンが見つかりません');
     }
   }
 
@@ -1684,9 +1654,9 @@ document.addEventListener('DOMContentLoaded', function () {
         'Content-Type': 'application/json',
       },
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
-          alert("ログインしてください。2秒後にログインページに戻ります。");
+          alert('ログインしてください。2秒後にログインページに戻ります。');
           // screen_lock();
           // setTimeout(() => {
           //   window.location.href = '../login';
@@ -1695,8 +1665,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return response.json();
       })
-      .then(albums => {
-        albumId = albums.albumId;
+      .then((albums) => {
+        const albumId = albums.albumId;
 
         if (!albumId) {
           console.error('アルバムIDを取得できませんでした。');
@@ -1706,32 +1676,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // アルバムデータ取得リクエスト用の関数
         AlbumData(albumId, token);
       })
-      .catch(error => console.error("アルバムIDの取得エラー", error));
-  }
-
-  // 管理者用のアルバムIDの取得
-  function AdminAlbumID(token) {
-    fetch('https://develop-back.kotobum.com/api/admin/albums', {
-      method: 'GET',
-      headers: {
-        // Authorization: `Bearer ${token}`, //APIリクエストを送るための認証
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(albums => {
-        if (!albums || albums.length === 0) {
-          console.error("管理者用のアルバムIDを取得できませんでした。");
-          return;
-        }
-        // 選択したユーザーの処理が入るはず…!
-        albumId = albums[0].albumId; //仮に最初のアルバムを取得
-
-        console.log("管理者として取得したアルバムID:", albumId);
-        // アルバムデータ取得リクエスト用の関数
-        AlbumData(albumId, token);
-      })
-      .catch(error => console.error("アルバムIDの取得エラー", error));
+      .catch((error) => console.error('アルバムIDの取得エラー', error));
   }
 
   // アルバムデータ取得リクエスト用の関数
@@ -1739,16 +1684,16 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showBody`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         console.log('取得したデータ:', data);
 
         // 必要に応じてJSON文字列をパースして配列に変換
@@ -1758,15 +1703,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(textData); // テキストデータの配列
         console.log(imageData); // 画像データの配列
-        console.log(colors);    // 色情報のオブジェクト
-
+        console.log(colors); // 色情報のオブジェクト
 
         // データの存在チェック
         if (!textData || !Array.isArray(textData)) {
           console.warn('テキストデータが存在しないか、配列ではありません。');
         } else {
           // テキストデータを表示
-          textData.forEach(item => {
+          textData.forEach((item) => {
             const textArea = document.getElementById(item.id);
             if (textArea) {
               textArea.value = item.text;
@@ -1780,7 +1724,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.warn('画像データが存在しないか、配列ではありません。');
         } else {
           // 画像データを表示
-          imageData.forEach(item => {
+          imageData.forEach((item) => {
             const dropArea = document.getElementById(item.id);
             if (dropArea && item.image) {
               const img = document.createElement('img');
@@ -1799,12 +1743,12 @@ document.addEventListener('DOMContentLoaded', function () {
           const { backgroundColor, textColor } = colors;
 
           // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-          document.querySelectorAll('.uniqueColorB').forEach(element => {
+          document.querySelectorAll('.uniqueColorB').forEach((element) => {
             element.style.backgroundColor = backgroundColor || '#ffffff';
           });
 
           // `.text-color` クラスを持つすべての要素にテキスト色を設定
-          document.querySelectorAll('.text-colorB').forEach(element => {
+          document.querySelectorAll('.text-colorB').forEach((element) => {
             element.style.color = textColor || '#000000';
           });
 
@@ -1812,6 +1756,49 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           console.warn('色データが存在しません。');
         }
-      })
+      });
   }
 });
+
+// 管理者用のアルバムIDの取得
+// function AdminAlbumID(token) {
+//   fetch('https://develop-back.kotobum.com/api/admin/albums', {
+//     method: 'GET',
+//     headers: {
+//       // Authorization: `Bearer ${token}`, //APIリクエストを送るための認証
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((albums) => {
+//       if (!albums || albums.length === 0) {
+//         console.error('管理者用のアルバムIDを取得できませんでした。');
+//         return;
+//       }
+//       // 選択したユーザーの処理が入るはず…!
+//       albumId = albums[0].albumId; //仮に最初のアルバムを取得
+
+//       console.log('管理者として取得したアルバムID:', albumId);
+//       // アルバムデータ取得リクエスト用の関数
+//       AlbumData(albumId, token);
+//     })
+//     .catch((error) => console.error('アルバムIDの取得エラー', error));
+// }
+
+// // 遷移元の判断（adminが含まれるURLから来たか判断）
+// if (document.referrer && document.referrer.indexOf('admin') == -1) {
+//   console.log('一般ユーザーです');
+//   // 一般ユーザー用のアルバムIDの取得
+//   fetchAlbumID(token);
+// } else {
+//   if (!token || !albumId) {
+//     console.warn('管理者モードエラー：トークンまたはアルバムIDが見つかりません');
+//     return;
+//   }
+//   console.log(`管理者モード: トークン: ${token}, アルバムID: ${albumId}`);
+//   // 画像化ボタンの表示
+//   showCaptureButton();
+
+//   // アルバムデータ取得リクエスト用の関数
+//   AlbumData(albumId, token);
+// }
