@@ -1469,6 +1469,7 @@ function handleSaveOrSend() {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
+        const slideIndex = index + 1;
 
         // スライド内のテキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
@@ -1478,10 +1479,31 @@ function handleSaveOrSend() {
           return {
             id: textarea.id,
             text: textarea.value || '',
+            pageNumber: slideIndex,
             top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
             width: (width / slideWidth) * 100, // 幅のパーセンテージ
             height: (height / slideHeight) * 100, // 高さのパーセンテージ
+          };
+        });
+
+        const dropAreas = slide.querySelectorAll('.empty');
+        const imageData = Array.from(dropAreas).map((dropArea) => {
+          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
+          const imgElement = dropArea.querySelector('img');
+          const originalImage = imgElement ? imgElement.src : null;
+
+          const imageToSend = croppedImage || originalImage;
+
+          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          return {
+            id: dropArea.id,
+            image: imageToSend,
+            pageNumber: slideIndex,
+            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
+            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
         });
 
@@ -1510,27 +1532,9 @@ function handleSaveOrSend() {
         //   };
         // });
 
-        const dropAreas = slide.querySelectorAll('.empty');
-        const imageData = Array.from(dropAreas).map((dropArea) => {
-          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
-          const imgElement = dropArea.querySelector('img');
-          const originalImage = imgElement ? imgElement.src : null;
-
-          const imageToSend = croppedImage || originalImage;
-
-          const { top, left, width, height } = dropArea.getBoundingClientRect();
-          return {
-            id: dropArea.id,
-            image: imageToSend,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
-            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
-          };
-        });
-
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+          pageNumber: slideIndex,
           textData,
           imageData,
         };
