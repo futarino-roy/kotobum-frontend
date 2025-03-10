@@ -1469,7 +1469,7 @@ function handleSaveOrSend() {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
-        const slideIndex = index + 1;
+        const slideIndex = index;
 
         // スライド内のテキストエリアのデータ収集
         const textAreas = slide.querySelectorAll('.text-empty');
