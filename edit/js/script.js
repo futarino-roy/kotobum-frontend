@@ -1465,7 +1465,7 @@ function handleSaveOrSend() {
       // getCroppieImg();
 
       // 各ページのデータを収集
-      const pageData = Array.from(swiperSlides).map((slide) => {
+      const pageData = Array.from(swiperSlides).map((slide, index) => {
         const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
         const slideWidth = initialRect.width;
         const slideHeight = initialRect.height;
