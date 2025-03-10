@@ -1719,6 +1719,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const textArea = document.getElementById(item.id);
             if (textArea) {
               textArea.value = item.text;
+              textArea.style.border = 'none';
             } else {
               console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
             }
@@ -1736,6 +1737,8 @@ document.addEventListener('DOMContentLoaded', function () {
               img.src = item.image;
               img.alt = 'Image';
               dropArea.appendChild(img);
+
+              dropArea.style.border = 'none';
             } else {
               console.warn(`画像データが存在しないか、画像が見つかりません: ID ${item.id}`);
             }
