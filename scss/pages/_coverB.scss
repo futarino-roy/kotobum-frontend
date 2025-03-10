@@ -662,12 +662,12 @@
       }
 
       @include mq('pc-edit') {
-        width: 450px;
+        // width: 450px;
       }
 
       @include mq('tab-edit') {
         display: block;
-        width: 80%;
+        // width: 80%;
         min-width: auto;
       }
 
@@ -682,24 +682,33 @@
           -ms-touch-action: auto;
           touch-action: auto;
           margin-left: 10%;
+          width: 100% !important;
+
+          @include mq('tab-edit') {
+            margin-left: 23%;
+          }
+          @include mq('sp-edit') {
+          }
 
           &_box {
             width: 50%;
             // max-width: 500px;
             position: relative;
             // clip-path: inset(45.5px 3px 52.5px 46px);
-            clip-path: inset(55.5px 341px 58.5px 55px);
+            clip-path: inset(50.5px 319px 54.5px 50.5px);
             @include mq('pc2-edit') {
               // clip-path: inset(68px 3px 76px 69px);
               clip-path: inset(69px 428px 73px 69px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(35px 1px 41px 35px);
+              clip-path: inset(40px 240px 44px 40px);
             }
             @include mq('tab-edit') {
-              width: 70%;
+              // width: 70%;
+              width: 100%;
               margin: 50px 0 0;
-              clip-path: inset(10.3% 1% 12% 15%);
+              // clip-path: inset(10.3% 1% 12% 15%);
+              clip-path: inset(10.8% 48.8% 11.5% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;

@@ -2562,14 +2562,6 @@ input:checked + label::after {
 .editB-body {
   background: #d5dadc;
 }
-.template_img {
-  max-width: 101%;
-  top: -0.5%;
-  position: relative;
-  left: -0.4% !important;
-  height: 100.9%;
-}
-
 .editB {
   display: flex;
   flex-direction: column;
@@ -4227,6 +4219,7 @@ input:checked + label::after {
 @media screen and (max-width: 480px) {
   .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea24-4 {
     font-size: 2.5vw;
+    top: 97%;
   }
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop-first {
@@ -7979,15 +7972,9 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
 }
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper {
-    width: 450px;
-  }
-}
 @media screen and (max-width: 900px) {
   .coverB .content .swiper {
     display: block;
-    width: 80%;
     min-width: auto;
   }
 }
@@ -8000,12 +7987,18 @@ input:checked + label::after {
   height: 100%;
   touch-action: auto;
   margin-left: 10%;
+  width: 100% !important;
+}
+@media screen and (max-width: 900px) {
+  .coverB .content .swiper-wrapper .swiper-slide {
+    margin-left: 23%;
+  }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box {
   width: 50%;
   position: relative;
-  -webkit-clip-path: inset(55.5px 341px 58.5px 55px);
-          clip-path: inset(55.5px 341px 58.5px 55px);
+  -webkit-clip-path: inset(50.5px 319px 54.5px 50.5px);
+          clip-path: inset(50.5px 319px 54.5px 50.5px);
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
@@ -8015,16 +8008,16 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(35px 1px 41px 35px);
-            clip-path: inset(35px 1px 41px 35px);
+    -webkit-clip-path: inset(40px 240px 44px 40px);
+            clip-path: inset(40px 240px 44px 40px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
+    width: 100%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(10.3% 1% 12% 15%);
-            clip-path: inset(10.3% 1% 12% 15%);
+    -webkit-clip-path: inset(10.8% 48.8% 11.5% 8%);
+            clip-path: inset(10.8% 48.8% 11.5% 8%);
   }
 }
 @media screen and (max-width: 480px) {

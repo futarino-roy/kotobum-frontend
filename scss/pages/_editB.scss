@@ -9,13 +9,13 @@
   }
 }
 
-.template_img {
-  max-width: 101%;
-  top: -0.5%;
-  position: relative;
-  left: -0.4% !important;
-  height: 100.9%;
-}
+// .template_img {
+//   max-width: 101%;
+//   top: -0.5%;
+//   position: relative;
+//   left: -0.4% !important;
+//   height: 100.9%;
+// }
 
 .editB {
   display: flex;
@@ -1929,6 +1929,7 @@
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                    top: 97%;
                   }
                 }
               }
