@@ -1043,8 +1043,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  let albumId;
-
   // アルバムIDを取得
   fetch('https://develop-back.kotobum.com/api/user/album', {
     method: 'GET',
@@ -1061,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return response.json();
     })
     .then((albums) => {
-      albumId = albums.albumId;
+      const { albumId, partner_id } = albums;
 
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
