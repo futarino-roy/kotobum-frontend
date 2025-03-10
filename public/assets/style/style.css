@@ -1426,7 +1426,6 @@ input:checked + label::after {
   width: 50%;
   height: 39%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1444,7 +1443,6 @@ input:checked + label::after {
   width: 50%;
   height: 33%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1461,7 +1459,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1479,7 +1476,6 @@ input:checked + label::after {
   width: 48%;
   height: 37%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1496,7 +1492,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1514,7 +1509,6 @@ input:checked + label::after {
   width: 50%;
   height: 48%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1537,7 +1531,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1555,7 +1548,6 @@ input:checked + label::after {
   width: 50%;
   height: 44%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1577,7 +1569,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1614,7 +1605,6 @@ input:checked + label::after {
   width: 48%;
   height: 53%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1636,7 +1626,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -1672,7 +1661,6 @@ input:checked + label::after {
   width: 63%;
   height: 43%;
   font-size: 1rem;
-  border: 2px dashed rgb(204, 204, 204);
   cursor: pointer;
   top: -0.8%;
   -webkit-clip-path: polygon(51% 0px, 100% 0px, 100% 100%, 0px 100%, 0px 13%);
@@ -1716,7 +1704,6 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-2 img {
@@ -1731,7 +1718,6 @@ input:checked + label::after {
   width: 100%;
   height: 100%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea12-3 img {
@@ -1775,9 +1761,6 @@ input:checked + label::after {
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-height {
   field-sizing: content;
   max-height: 65%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
-  border: 2px dashed #ccc;
 }
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
   border: none;
@@ -3277,7 +3260,6 @@ input:checked + label::after {
   width: 48%;
   height: 38%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3301,7 +3283,6 @@ input:checked + label::after {
   width: 50%;
   height: 33%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3333,7 +3314,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3351,7 +3331,6 @@ input:checked + label::after {
   width: 48%;
   height: 37%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3383,7 +3362,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3401,7 +3379,6 @@ input:checked + label::after {
   width: 50%;
   height: 48%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3441,7 +3418,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3459,7 +3435,6 @@ input:checked + label::after {
   width: 50%;
   height: 44%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3496,7 +3471,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3533,7 +3507,6 @@ input:checked + label::after {
   width: 48%;
   height: 53%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3565,7 +3538,6 @@ input:checked + label::after {
   width: 45%;
   height: 25%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
   border-radius: 10%;
 }
@@ -3601,7 +3573,6 @@ input:checked + label::after {
   width: 100%;
   min-height: 47%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
@@ -3621,7 +3592,6 @@ input:checked + label::after {
   width: 100%;
   min-height: 47%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
@@ -3642,7 +3612,6 @@ input:checked + label::after {
   width: 65%;
   height: 42%;
   font-size: 1rem;
-  border: 2px dashed #ccc;
   cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
@@ -3705,14 +3674,10 @@ input:checked + label::after {
   box-sizing: border-box; /* パディングとボーダーを計算に含める */
   resize: none; /* ユーザーによるサイズ変更を禁止 */
   overflow: hidden; /* スクロールバーが表示されないようにする */
-  border: 2px dashed #ccc;
   field-sizing: content;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty.no-border {
   border: none;
-}
-.editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea {
-  border: 2px dashed #ccc;
 }
 .editB .content .swiper-wrapper .swiper-slide_box .input-drop #textArea.no-border {
   border: none;

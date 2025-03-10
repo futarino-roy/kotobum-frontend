@@ -69,21 +69,20 @@ const showDrawerContent = (contentId) => {
   }
 };
 
-
 //　画像の挿入（inputタグ）
-document.addEventListener("DOMContentLoaded", () => {
-  const dropAreas = document.querySelectorAll(".empty"); // .emptyクラスの要素を全て取得
-  const fileInput = document.getElementById("fileInput");
+document.addEventListener('DOMContentLoaded', () => {
+  const dropAreas = document.querySelectorAll('.empty'); // .emptyクラスの要素を全て取得
+  const fileInput = document.getElementById('fileInput');
 
   dropAreas.forEach((dropArea) => {
     // .emptyをクリックしたらfileInputをクリック
-    dropArea.addEventListener("click", () => {
+    dropArea.addEventListener('click', () => {
       fileInput.dataset.target = dropArea.id; // 選択したdropAreaのIDを記録
       fileInput.click();
     });
   });
 
-  fileInput.addEventListener("change", (event) => {
+  fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetDropArea = document.getElementById(targetId);
 
         targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
-        targetDropArea.style.border = "none";
+        targetDropArea.style.border = 'none';
 
         showButtons(targetDropArea);
         addButtons(targetDropArea);
@@ -102,8 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
 
 // // // 画像のアップロードと挿入-----------------------------------------------
 // let selectedImage = null;
@@ -220,8 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // }
 
-
-
 // function addTouchListenerToDropAreas() {
 //   const dropAreas = document.querySelectorAll('.empty');
 //   const drawer = document.getElementById('drawer');
@@ -303,7 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   event.preventDefault();
 //   this.style.backgroundColor = '#d0f0c0';
 // }
-
 
 // // ドラッグが離れたときの処理
 // function handleDragLeave(event) {
@@ -538,36 +532,35 @@ function openCroppieModal(container, viewportWidth, viewportHeight) {
   };
 }
 
-
 // ドロップエリアごとに設定されたviewportサイズを定義
 const dropAreaSettings = {
   'dropArea24-1': { width: 255, height: 230 },
   'dropArea24-2': { width: 255, height: 230 },
   'dropArea24-3': { width: 290, height: 170 },
-  'dropArea22': { width: 170, height: 210 },
-  'dropArea20': { width: 215, height: 220 },
-  'dropArea18': { width: 210, height: 240 },
-  'dropArea16': { width: 230, height: 210 },
-  'dropArea14': { width: 270, height: 210 },
-  'dropArea13': { width: 270, height: 250 },
+  dropArea22: { width: 170, height: 210 },
+  dropArea20: { width: 215, height: 220 },
+  dropArea18: { width: 210, height: 240 },
+  dropArea16: { width: 230, height: 210 },
+  dropArea14: { width: 270, height: 210 },
+  dropArea13: { width: 270, height: 250 },
 
   'dropArea12-3': { width: 255, height: 230 },
   'dropArea12-2': { width: 255, height: 230 },
   'dropArea12-1': { width: 290, height: 170 },
-  'dropArea10': { width: 160, height: 210 },
-  'dropArea8': { width: 200, height: 210 },
-  'dropArea6': { width: 200, height: 230 },
-  'dropArea4': { width: 220, height: 200 },
-  'dropArea2': { width: 270, height: 210 },
-  'dropArea1': { width: 270, height: 250 },
+  dropArea10: { width: 160, height: 210 },
+  dropArea8: { width: 200, height: 210 },
+  dropArea6: { width: 200, height: 230 },
+  dropArea4: { width: 220, height: 200 },
+  dropArea2: { width: 270, height: 210 },
+  dropArea1: { width: 270, height: 250 },
 
-  'dropArea1_t4': { width: 270, height: 250 },
-  'dropArea2_t4': { width: 270, height: 250 },
-  'dropArea4_t4': { width: 270, height: 250 },
-  'dropArea6_t4': { width: 270, height: 250 },
-  'dropArea8_t4': { width: 270, height: 250 },
-  'dropArea10_t4': { width: 270, height: 250 },
-  'dropArea12_t4': { width: 270, height: 250 },
+  dropArea1_t4: { width: 270, height: 250 },
+  dropArea2_t4: { width: 270, height: 250 },
+  dropArea4_t4: { width: 270, height: 250 },
+  dropArea6_t4: { width: 270, height: 250 },
+  dropArea8_t4: { width: 270, height: 250 },
+  dropArea10_t4: { width: 270, height: 250 },
+  dropArea12_t4: { width: 270, height: 250 },
 };
 
 // 各ドロップエリアにクリックイベントを設定
@@ -612,11 +605,11 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // ボタンを非表示にするクリックイベントの設定
-  document.addEventListener("click", function (event) {
+  document.addEventListener('click', function (event) {
     // ドロップエリア外をクリックした場合のみ実行
-    const clickedInsideDropArea = event.target.closest(".empty");
-    const isDrawer = event.target.closest("#drawer");
-    const isSideBtn = event.target.closest("#sideBtn");
+    const clickedInsideDropArea = event.target.closest('.empty');
+    const isDrawer = event.target.closest('#drawer');
+    const isSideBtn = event.target.closest('#sideBtn');
 
     if (!clickedInsideDropArea && !isDrawer && !isSideBtn) {
       hideButtons();
@@ -674,7 +667,7 @@ function adjustTextareaSize(textarea) {
   if (!textarea) return; // テキストエリアが存在しない場合は処理を中断
 
   // 横幅を内容に応じて調整
-  textarea.style.width = "auto"; // 初期幅にリセット
+  textarea.style.width = 'auto'; // 初期幅にリセット
   textarea.style.width = `${textarea.scrollWidth}px`; // 内容に合わせた幅に調整
 
   // // 高さを内容に応じて調整
@@ -699,8 +692,6 @@ function setupDynamicTextarea(textarea) {
   // 初期表示時にサイズ調整
   setTimeout(() => adjustTextareaSize(textarea), 0); // 少し遅延させて調整
 }
-
-
 
 // テキストエリア枠の削除
 document.addEventListener('DOMContentLoaded', function () {
@@ -728,14 +719,14 @@ let isSaved = true; // データが保存済みかどうかを示すフラグ
 // ページ読み込み時にデータを保存(初期データ)
 document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('textarea');
-  textAreas.forEach(textarea => {
+  textAreas.forEach((textarea) => {
     initialData[textarea.id] = textarea.value;
-    console.log('データを保存しました')
+    console.log('データを保存しました');
   });
 });
 
 // テキストエリアに変更があれば未保存のフラグを設定
-document.querySelectorAll('textarea').forEach(textarea => {
+document.querySelectorAll('textarea').forEach((textarea) => {
   textarea.addEventListener('input', () => {
     isSaved = checkSave();
   });
@@ -744,7 +735,7 @@ document.querySelectorAll('textarea').forEach(textarea => {
 // 初期データと比較して変更されているか確認する関数
 function checkSave() {
   const textAreas = document.querySelectorAll('textarea');
-  return Array.from(textAreas).every(textarea => {
+  return Array.from(textAreas).every((textarea) => {
     return textarea.value === initialData[textarea.id];
   });
 }
@@ -755,10 +746,10 @@ if (saveBtn) {
   saveBtn.addEventListener('click', function () {
     isSaved = true;
     const textAreas = document.querySelectorAll('textarea');
-    textAreas.forEach(textarea => {
+    textAreas.forEach((textarea) => {
       initialData[textarea.id] = textarea.value;
     });
-    console.log("保存内容が保存されました");
+    console.log('保存内容が保存されました');
   });
 } else {
   console.warn('Save button with ID "saveButton" not found.');
@@ -777,7 +768,6 @@ window.addEventListener('beforeunload', function (event) {
 //     alert('未保存の内容があります。ページを離れる前に保存してください。');
 //   }
 // });
-
 
 // //マイページへボタンを押されたとき
 // // 保存状態を取得
