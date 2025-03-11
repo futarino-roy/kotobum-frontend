@@ -1121,14 +1121,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 表紙テキストデータの表示処理
-    covertext.forEach((item) => {
-      const textAreaCover = document.getElementById(item.id);
-      if (textAreaCover) {
-        textAreaCover.value = item.text;
-      } else {
-        console.warn(`表紙テキストエリアが見つかりません: ID ${item.id}`);
-      }
-    });
+    const item = covertext;
+    const textAreaCover = document.getElementById(item.id);
+    if (textAreaCover) {
+      textAreaCover.value = item.text;
+    } else {
+      console.warn(`表紙テキストエリアが見つかりません: ID ${item.id}`);
+    }
 
     // 画像データの表示処理
     imageData.forEach((item) => {

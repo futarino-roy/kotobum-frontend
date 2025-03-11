@@ -681,9 +681,12 @@
           height: 100%;
           -ms-touch-action: auto;
           touch-action: auto;
-          margin-left: 10%;
+          margin-left: 25%;
           width: 100% !important;
 
+          @include mq('pc2-edit') {
+            margin-left: 10%;
+          }
           @include mq('tab-edit') {
             margin-left: 23%;
           }
@@ -693,14 +696,15 @@
           }
 
           &_box {
-            width: 50%;
             // max-width: 500px;
             position: relative;
             // clip-path: inset(45.5px 3px 52.5px 46px);
-            clip-path: inset(50.5px 319px 54.5px 50.5px);
+            clip-path: inset(10.5% 49% 11% 8%);
+
             @include mq('pc2-edit') {
               // clip-path: inset(68px 3px 76px 69px);
-              clip-path: inset(69px 428px 73px 69px);
+              clip-path: inset(10.5% 49% 11% 7.8%);
+              width: 50%;
             }
             @include mq('pc-edit') {
               // clip-path: inset(40px 240px 44px 40px);
@@ -719,13 +723,13 @@
               clip-path: inset(10.3% 49% 11.5% 8%);
             }
             @include mq('sp2-edit') {
-              width: 70%;
-              clip-path: inset(10.5% 0.5% 12% 15.5%);
+              // width: 70%;
+              // clip-path: inset(10.5% 0.5% 12% 15.5%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
-              width: 50%;
-              clip-path: inset(10.3% 1% 13% 15%);
+              // width: 50%;
+              // clip-path: inset(10.3% 1% 13% 15%);
             }
 
             .input-drop {
@@ -1002,8 +1006,8 @@
               position: absolute;
               left: 51%;
               top: 8%;
-              width: 42%;
-              height: 84%;
+              width: 43%;
+              height: 85%;
               opacity: 0.8;
               flex-direction: column;
               align-items: center;
