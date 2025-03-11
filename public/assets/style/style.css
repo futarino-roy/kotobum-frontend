@@ -7039,7 +7039,7 @@ input:checked + label::after {
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper {
-    width: 900px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -7050,9 +7050,7 @@ input:checked + label::after {
 @media screen and (max-width: 900px) {
   .cover .content .swiper {
     display: block;
-    width: 80%;
     min-width: auto;
-    margin-left: 16%;
   }
 }
 .cover .content .swiper-wrapper .swiper-slide {
@@ -7063,62 +7061,64 @@ input:checked + label::after {
   width: auto;
   height: 100%;
   touch-action: auto;
+  margin-left: -25%;
+  width: 100% !important;
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide {
+    margin-left: -10%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide {
+    margin-left: -23%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide {
+    width: 150% !important;
+    margin-left: -7%;
+  }
 }
 .cover .content .swiper-wrapper .swiper-slide_box {
-  width: 50%;
-  max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(45.5px 46px 52px 2.5px);
-          clip-path: inset(45.5px 46px 52px 2.5px);
+  -webkit-clip-path: inset(10.5% 8% 11% 49%);
+          clip-path: inset(10.5% 8% 11% 49%);
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(68.5px 69px 76px 3px);
-            clip-path: inset(68.5px 69px 76px 3px);
+    -webkit-clip-path: inset(10.6% 8% 11% 48.8%);
+            clip-path: inset(10.6% 8% 11% 48.8%);
+    width: 50%;
   }
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(34px 35px 41px 1px);
-            clip-path: inset(34px 35px 41px 1px);
+    -webkit-clip-path: inset(10.4% 7.9% 11.5% 49%);
+            clip-path: inset(10.4% 7.9% 11.5% 49%);
   }
 }
 @media screen and (max-width: 900px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
+    width: 100%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(10.5% 15.5% 12% 0.5%);
-            clip-path: inset(10.5% 15.5% 12% 0.5%);
+    -webkit-clip-path: inset(10.8% 8% 11.5% 48.8%);
+            clip-path: inset(10.8% 8% 11.5% 48.8%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(10.5% 15.5% 12% 0.5%);
-            clip-path: inset(10.5% 15.5% 12% 0.5%);
-  }
-}
-@media screen and (max-width: 380px) {
-  .cover .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
-    -webkit-clip-path: inset(10.5% 15.5% 12% 0.5%);
-            clip-path: inset(10.5% 15.5% 12% 0.5%);
-  }
-}
-@media screen and (max-width: 330px) {
-  .cover .content .swiper-wrapper .swiper-slide_box {
-    width: 50%;
-    -webkit-clip-path: inset(10.5% 15.5% 12% 0.5%);
-            clip-path: inset(10.5% 15.5% 12% 0.5%);
+    -webkit-clip-path: inset(10.3% 8% 11.5% 49%);
+            clip-path: inset(10.3% 8% 11.5% 49%);
   }
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  left: 5%;
+  left: 51%;
   top: 8%;
-  width: 82%;
-  height: 84%;
-  opacity: 0.8;
+  width: 42.5%;
+  height: 85%;
   flex-direction: column;
   align-items: center;
   justify-content: end;
@@ -7407,6 +7407,290 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 2.7vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair {
+  position: absolute;
+  left: 6.5%;
+  top: 8%;
+  width: 42.5%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+  position: absolute;
+  top: 35.5%;
+  right: 4.5%;
+  width: 86.8%;
+  height: 56%;
+  border: 2px dashed #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+  bottom: 10px;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn:hover {
+  opacity: 1;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn.show {
+  display: flex;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    top: 35%;
+    right: 4.5%;
+    width: 86.8%;
+    height: 56.6%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    top: 35%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    height: 56%;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  max-width: 60%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 1.7vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-empty {
+  border: 2px dashed #ccc;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-empty.no-border {
+  border: none;
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-size {
+  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  resize: none; /* ユーザーがサイズを変更できないようにする */
+  white-space: nowrap; /* 改行をさせない設定 */
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  bottom: 9%;
+  right: -5.5%;
+  font-weight: bold;
+  font-size: 0.3rem !important;
+  text-align: start;
+  field-sizing: content;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 0.2rem !important;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 0.58rem !important;
+    right: -5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 1.4vw !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 1.5vw !important;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+  margin: 0;
+  position: absolute;
+  max-width: 16.5%;
+  height: 4.7%;
+  top: 16.7%;
+  right: 73.4%;
+  text-align: center;
+  white-space: nowrap; /* 改行をさせない設定 */
+  font-weight: 900;
+  line-height: 0.9;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 0.8rem;
+    top: 16.7%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 1.5rem;
+    top: 16.7%;
+    right: 73.7%;
+    max-width: 15.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 3vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  right: 69.3%;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 0.4rem;
+  display: block;
+  text-align: center;
+  max-width: 24%;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.8vw;
+  }
+}
+.cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+  margin: 0;
+  position: absolute;
+  max-width: 50% !important;
+  height: 10% !important;
+  top: 5.7%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: right;
+}
+@media screen and (max-width: 1200px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
     font-size: 2.7vw;
   }
 }
@@ -7948,12 +8232,23 @@ input:checked + label::after {
   }
 }
 .coverB .content .swiper {
-  width: 100%;
+  width: 600px;
   height: 100%;
+}
+@media screen and (min-width: 1500px) {
+  .coverB .content .swiper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .coverB .content .swiper {
+    width: 450px;
+  }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper {
     display: block;
+    width: 80%;
     min-width: auto;
   }
 }
@@ -7965,63 +8260,60 @@ input:checked + label::after {
   width: auto;
   height: 100%;
   touch-action: auto;
-  margin-left: 25%;
-  width: 100% !important;
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide {
-    margin-left: 10%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide {
-    margin-left: 23%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB .content .swiper-wrapper .swiper-slide {
-    width: 150% !important;
-    margin-left: 7%;
-  }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box {
+  width: 50%;
+  max-width: 500px;
   position: relative;
-  -webkit-clip-path: inset(10.5% 49% 11% 8%);
-          clip-path: inset(10.5% 49% 11% 8%);
+  -webkit-clip-path: inset(45.5px 3px 52.5px 46px);
+          clip-path: inset(45.5px 3px 52.5px 46px);
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(10.5% 49% 11% 7.8%);
-            clip-path: inset(10.5% 49% 11% 7.8%);
-    width: 50%;
+    -webkit-clip-path: inset(68px 3px 76px 69px);
+            clip-path: inset(68px 3px 76px 69px);
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    -webkit-clip-path: inset(10.4% 49% 11.5% 7.9%);
-            clip-path: inset(10.4% 49% 11.5% 7.9%);
+    -webkit-clip-path: inset(35px 1px 40px 35px);
+            clip-path: inset(35px 1px 40px 35px);
   }
 }
 @media screen and (max-width: 900px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
-    width: 100%;
+    width: 70%;
     margin: 50px 0 0;
-    -webkit-clip-path: inset(10.8% 48.8% 11.5% 8%);
-            clip-path: inset(10.8% 48.8% 11.5% 8%);
+    -webkit-clip-path: inset(10.3% 1% 12% 15%);
+            clip-path: inset(10.3% 1% 12% 15%);
   }
 }
 @media screen and (max-width: 480px) {
   .coverB .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    -webkit-clip-path: inset(10.3% 49% 11.5% 8%);
-            clip-path: inset(10.3% 49% 11.5% 8%);
+    -webkit-clip-path: inset(10.3% 0.5% 12% 15%);
+            clip-path: inset(10.3% 0.5% 12% 15%);
+  }
+}
+@media screen and (max-width: 380px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 70%;
+    -webkit-clip-path: inset(10.5% 0.5% 12% 15.5%);
+            clip-path: inset(10.5% 0.5% 12% 15.5%);
+  }
+}
+@media screen and (max-width: 330px) {
+  .coverB .content .swiper-wrapper .swiper-slide_box {
+    width: 50%;
+    -webkit-clip-path: inset(10.3% 1% 13% 15%);
+            clip-path: inset(10.3% 1% 13% 15%);
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  left: 6.5%;
+  left: 13.5%;
   top: 8%;
-  width: 42.5%;
+  width: 82%;
   height: 84%;
   opacity: 0.8;
   display: flex;
@@ -8299,296 +8591,6 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
-    font-size: 2.7vw;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair {
-  position: absolute;
-  left: 51%;
-  top: 8%;
-  width: 43%;
-  height: 85%;
-  opacity: 0.8;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  white-space: nowrap;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair .flex-area12-2 {
-  width: 60%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-  margin: 5% 0 5%;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair .flex-area12-3 {
-  width: 60%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA {
-  position: absolute;
-  top: 35.5%;
-  left: 5%;
-  width: 86.8%;
-  height: 56%;
-  font-size: 1rem;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .crop-btn {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .crop-btn:hover {
-  opacity: 1;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .crop-btn.show {
-  display: flex;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .delete-btn:hover {
-  opacity: 1;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA .delete-btn.show {
-  display: flex;
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA {
-    top: 35%;
-    left: 4.5%;
-    width: 87%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaA {
-    top: 35%;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
-  overflow: hidden;
-  text-align: center;
-  resize: none;
-  max-width: 60%;
-  margin: 5% 0 5%;
-  font-size: 0.4rem;
-  line-height: 1.9;
-  background-color: transparent;
-  white-space: nowrap;
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
-    font-size: 0.3rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
-    font-size: 0.6rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
-    font-size: 1.2vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
-    font-size: 1.7vw;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-size {
-  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
-  overflow: hidden; /* スクロールバーが表示されないようにする */
-  resize: none; /* ユーザーがサイズを変更できないようにする */
-  white-space: nowrap; /* 改行をさせない設定 */
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-  margin: 0;
-  position: absolute;
-  width: 5% !important;
-  bottom: 9%;
-  left: -4.5%;
-  font-weight: bold;
-  font-size: 0.3rem !important;
-  text-align: start;
-  field-sizing: content;
-  writing-mode: vertical-rl; /* 縦書き (右から左) */
-  text-orientation: mixed; /* テキストの方向を調整 */
-  transform: rotate(180deg); /* テキストを180度回転 */
-  display: inline-block;
-  overflow: hidden; /* スクロールバーを非表示 */
-  resize: none;
-  white-space: nowrap; /* 改行を無効にする */
-  overflow-wrap: normal; /* 自動改行を無効にする */
-  word-wrap: normal; /* 単語の途中での改行を無効にする */
-  word-break: normal; /* 単語の途中での改行を無効にする */
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-    font-size: 0.2rem !important;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-    font-size: 0.58rem !important;
-    left: -5%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-    font-size: 1.4vw !important;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-    font-size: 2vw !important;
-  }
-}
-@media screen and (max-width: 380px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
-    font-size: 1.5vw !important;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-1 {
-  margin: 0;
-  position: absolute;
-  max-width: 16.5%;
-  height: 4.7%;
-  top: 16.7%;
-  left: 74.3%;
-  text-align: center;
-  white-space: nowrap; /* 改行をさせない設定 */
-  line-height: 0.9;
-  font-weight: 900;
-  color: #ffffff;
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-1 {
-    font-size: 0.8rem;
-    top: 16.7%;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-1 {
-    font-size: 1.5rem;
-    top: 16.7%;
-    left: 73.9%;
-    max-width: 15%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-1 {
-    font-size: 3vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-1 {
-    font-size: 3vw;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-  margin: 0;
-  position: absolute;
-  top: 22%;
-  left: 69.7%;
-  line-height: 1.5;
-  font-weight: bold;
-  font-size: 0.4rem;
-  display: block;
-  text-align: center;
-  max-width: 24%;
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-    font-size: 0.3rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-    font-size: 0.6rem;
-    left: 69.5%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-    font-size: 1.2vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-    font-size: 1.7vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-2 {
-    font-size: 0.8vw;
-  }
-}
-.coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
-  margin: 0;
-  position: absolute;
-  max-width: 50% !important;
-  height: 10% !important;
-  top: 6.2%;
-  left: 5%;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: left;
-}
-@media screen and (max-width: 1200px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
-    font-size: 0.7rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
-    font-size: 1.5rem;
-    top: 5.7%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
-    font-size: 3.3vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
-    font-size: 4.8vw;
-  }
-}
-@media screen and (max-width: 380px) {
-  .coverB .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaA-3 {
     font-size: 2.7vw;
   }
 }

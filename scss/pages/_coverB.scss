@@ -654,20 +654,20 @@
     }
 
     .swiper {
-      width: 100%;
+      width: 600px;
       height: 100%;
 
       @include mq('pc2-edit') {
-        // width: 900px;
+        width: 900px;
       }
 
       @include mq('pc-edit') {
-        // width: 450px;
+        width: 450px;
       }
 
       @include mq('tab-edit') {
         display: block;
-        // width: 80%;
+        width: 80%;
         min-width: auto;
       }
 
@@ -681,62 +681,42 @@
           height: 100%;
           -ms-touch-action: auto;
           touch-action: auto;
-          margin-left: 25%;
-          width: 100% !important;
-
-          @include mq('pc2-edit') {
-            margin-left: 10%;
-          }
-          @include mq('tab-edit') {
-            margin-left: 23%;
-          }
-          @include mq('sp-edit') {
-            width: 150% !important;
-            margin-left: 7%;
-          }
 
           &_box {
-            // max-width: 500px;
+            width: 50%;
+            max-width: 500px;
             position: relative;
-            // clip-path: inset(45.5px 3px 52.5px 46px);
-            clip-path: inset(10.5% 49% 11% 8%);
-
+            clip-path: inset(45.5px 3px 52.5px 46px);
             @include mq('pc2-edit') {
-              // clip-path: inset(68px 3px 76px 69px);
-              clip-path: inset(10.5% 49% 11% 7.8%);
-              width: 50%;
+              clip-path: inset(68px 3px 76px 69px);
             }
             @include mq('pc-edit') {
-              // clip-path: inset(40px 240px 44px 40px);
-              clip-path: inset(10.4% 49% 11.5% 7.9%);
+              clip-path: inset(35px 1px 40px 35px);
             }
             @include mq('tab-edit') {
-              // width: 70%;
-              width: 100%;
+              width: 70%;
               margin: 50px 0 0;
-              // clip-path: inset(10.3% 1% 12% 15%);
-              clip-path: inset(10.8% 48.8% 11.5% 8%);
+              clip-path: inset(10.3% 1% 12% 15%);
             }
             @include mq('sp-edit') {
               width: 100%;
-              // clip-path: inset(10.3% 0.5% 12% 15%);
-              clip-path: inset(10.3% 49% 11.5% 8%);
+              clip-path: inset(10.3% 0.5% 12% 15%);
             }
             @include mq('sp2-edit') {
-              // width: 70%;
-              // clip-path: inset(10.5% 0.5% 12% 15.5%);
+              width: 70%;
+              clip-path: inset(10.5% 0.5% 12% 15.5%);
             }
             @include mq('sp3-edit') {
               // height: 660px;
-              // width: 50%;
-              // clip-path: inset(10.3% 1% 13% 15%);
+              width: 50%;
+              clip-path: inset(10.3% 1% 13% 15%);
             }
 
             .input-drop {
               position: absolute;
-              left: 6.5%;
+              left: 13.5%;
               top: 8%;
-              width: 42.5%;
+              width: 82%;
               height: 84%;
               // background: rgb(178, 203, 225);
               opacity: 0.8;
@@ -996,291 +976,6 @@
                   @include mq('sp-edit') {
                     font-size: 4.8vw;
                   }
-                  @include mq('sp2-edit') {
-                    font-size: 2.7vw;
-                  }
-                }
-              }
-            }
-            .input-drop-pair {
-              position: absolute;
-              left: 51%;
-              top: 8%;
-              width: 43%;
-              height: 85%;
-              opacity: 0.8;
-              flex-direction: column;
-              align-items: center;
-              justify-content: end;
-              white-space: nowrap;
-
-              .flex-area12-2 {
-                width: 60%;
-                height: 20%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 5%;
-                margin: 5% 0 5%;
-              }
-
-              .flex-area12-3 {
-                width: 60%;
-                height: 20%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 5%;
-              }
-
-              #dropAreaA {
-                position: absolute;
-
-                top: 35.5%;
-                left: 5%;
-                width: 86.8%;
-                height: 56%;
-
-                font-size: 1rem;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-                @include mq('pc2-edit') {
-                  top: 35%;
-                  left: 4.5%;
-                  width: 87%;
-                }
-                @include mq('pc-edit') {
-                  top: 35%;
-                }
-              }
-
-              textarea {
-                overflow: hidden;
-                text-align: center;
-                resize: none;
-                // width: 60% !important;
-                max-width: 60%;
-                // height: 20%;
-                margin: 5% 0 5%;
-                font-size: 0.4rem;
-                line-height: 1.9;
-                background-color: transparent;
-                white-space: nowrap;
-                // font-family: 'Noto Sans JP', serif;
-
-                @include mq('pc-edit') {
-                  font-size: 0.3rem;
-                }
-
-                @include mq('pc2-edit') {
-                  font-size: 0.6rem;
-                }
-
-                @include mq('tab-edit') {
-                  font-size: 1.2vw;
-                }
-
-                @include mq('sp-edit') {
-                  font-size: 1.7vw;
-                }
-              }
-
-              .text-size {
-                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
-                overflow: hidden; /* スクロールバーが表示されないようにする */
-                resize: none; /* ユーザーがサイズを変更できないようにする */
-                white-space: nowrap; /* 改行をさせない設定 */
-              }
-
-              #textArea-cover {
-                margin: 0;
-                position: absolute;
-                width: 5% !important;
-                bottom: 9%;
-                left: -4.5%;
-                font-weight: bold;
-                font-size: 0.3rem !important;
-                text-align: start;
-                field-sizing: content;
-
-                // テキストの向きを変更
-                writing-mode: vertical-rl; /* 縦書き (右から左) */
-                text-orientation: mixed; /* テキストの方向を調整 */
-                transform: rotate(180deg); /* テキストを180度回転 */
-                display: inline-block;
-
-                overflow: hidden; /* スクロールバーを非表示 */
-                resize: none;
-                white-space: nowrap; /* 改行を無効にする */
-                overflow-wrap: normal; /* 自動改行を無効にする */
-                word-wrap: normal; /* 単語の途中での改行を無効にする */
-                word-break: normal; /* 単語の途中での改行を無効にする */
-
-                @include mq('pc-edit') {
-                  font-size: 0.2rem !important;
-                }
-
-                @include mq('pc2-edit') {
-                  font-size: 0.58rem !important;
-                  left: -5%;
-                }
-
-                @include mq('tab-edit') {
-                  font-size: 1.4vw !important;
-                }
-
-                @include mq('sp-edit') {
-                  font-size: 2vw !important;
-                }
-
-                @include mq('sp2-edit') {
-                  font-size: 1.5vw !important;
-                }
-              }
-
-              #textArea {
-                &A-1 {
-                  margin: 0;
-                  position: absolute;
-                  max-width: 16.5%;
-                  height: 4.7%;
-                  top: 16.7%;
-                  left: 74.3%;
-                  text-align: center;
-                  white-space: nowrap; /* 改行をさせない設定 */
-                  line-height: 0.9;
-                  font-weight: 900;
-                  color: #ffffff;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.8rem;
-                    top: 16.7%;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                    top: 16.7%;
-                    left: 73.9%;
-                    max-width: 15%;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 3vw;
-                  }
-
-                  @include mq('sp2-edit') {
-                    font-size: 3vw;
-                  }
-                }
-
-                &A-2 {
-                  margin: 0;
-                  position: absolute;
-                  top: 22%;
-                  left: 69.7%;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  font-size: 0.4rem;
-                  display: block;
-                  text-align: center;
-                  max-width: 24%;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.3rem;
-                  }
-                  @include mq('pc2-edit') {
-                    font-size: 0.6rem;
-                    left: 69.5%;
-                  }
-                  @include mq('tab-edit') {
-                    font-size: 1.2vw;
-                  }
-                  @include mq('sp-edit') {
-                    font-size: 1.7vw;
-                  }
-
-                  @include mq('sp2-edit') {
-                    font-size: 0.8vw;
-                  }
-                }
-
-                &A-3 {
-                  margin: 0;
-                  position: absolute;
-                  max-width: 50% !important;
-                  height: 10% !important;
-                  top: 6.2%;
-                  left: 5%;
-                  font-weight: bold;
-                  font-size: 1rem;
-                  text-align: left;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.7rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                    top: 5.7%;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 3.3vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 4.8vw;
-                  }
-
                   @include mq('sp2-edit') {
                     font-size: 2.7vw;
                   }
