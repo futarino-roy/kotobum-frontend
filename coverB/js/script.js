@@ -855,7 +855,6 @@ async function captureToPDF() {
       // 🌟 キャプチャ後、元のスタイルに戻す
       target.style.cssText = originalStyle;
       target.style.width = '100%';
-      target.style.height = '100%';
 
       // 🌟 画像をダウンロード
       const link = document.createElement('a');

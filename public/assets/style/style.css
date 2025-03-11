@@ -7034,7 +7034,7 @@ input:checked + label::after {
   }
 }
 .cover .content .swiper {
-  width: 600px;
+  width: 700px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
@@ -7061,12 +7061,13 @@ input:checked + label::after {
   width: auto;
   height: 100%;
   touch-action: auto;
-  margin-left: -25%;
-  width: 100% !important;
+  margin-left: 0%;
+  width: 85% !important;
 }
-@media screen and (min-width: 1500px) {
+@media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide {
-    margin-left: -10%;
+    width: 100% !important;
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7079,6 +7080,12 @@ input:checked + label::after {
     width: 150% !important;
     margin-left: -7%;
   }
+}
+.cover .content .swiper-wrapper .swiper-slide_box-pair {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
 }
 .cover .content .swiper-wrapper .swiper-slide_box {
   position: relative;
@@ -7113,6 +7120,10 @@ input:checked + label::after {
             clip-path: inset(10.3% 8% 11.5% 49%);
   }
 }
+.cover .content .swiper-wrapper .swiper-slide_box .coverimg {
+  position: relative;
+  z-index: 1;
+}
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
   left: 51%;
@@ -7123,6 +7134,7 @@ input:checked + label::after {
   align-items: center;
   justify-content: end;
   white-space: nowrap;
+  z-index: 99;
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
   width: 60%;
@@ -7143,7 +7155,7 @@ input:checked + label::after {
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
-  top: 35.5%;
+  top: 35%;
   left: 5%;
   width: 86.8%;
   height: 56%;
@@ -7200,7 +7212,7 @@ input:checked + label::after {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
     top: 35%;
     left: 4.5%;
-    width: 87%;
+    width: 87.5%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -7256,9 +7268,9 @@ input:checked + label::after {
   position: absolute;
   width: 5% !important;
   bottom: 9%;
-  left: -4.5%;
+  left: -5.3%;
   font-weight: bold;
-  font-size: 0.3rem !important;
+  font-size: 0.55rem !important;
   text-align: start;
   field-sizing: content;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -7274,13 +7286,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.2rem !important;
+    font-size: 0.4rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
     font-size: 0.58rem !important;
-    left: -5%;
+    left: -5.4%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7303,8 +7315,8 @@ input:checked + label::after {
   position: absolute;
   max-width: 16.5%;
   height: 4.7%;
-  top: 16.7%;
-  left: 72.3%;
+  top: 16.5%;
+  left: 73.5%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
@@ -7314,14 +7326,14 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 0.8rem;
-    top: 16.7%;
+    top: 16.3%;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
-    top: 16.7%;
-    left: 73.9%;
+    top: 16.5%;
+    left: 73.4%;
     max-width: 15%;
   }
 }
@@ -7338,24 +7350,24 @@ input:checked + label::after {
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
   margin: 0;
   position: absolute;
-  top: 22%;
-  left: 69.7%;
+  top: 21.5%;
+  left: 66.8%;
   line-height: 1.5;
   font-weight: bold;
-  font-size: 0.4rem;
+  font-size: 0.5rem;
   display: block;
   text-align: center;
-  max-width: 24%;
+  max-width: 30%;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
-    left: 69.5%;
+    left: 67%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -7381,12 +7393,12 @@ input:checked + label::after {
   top: 6.2%;
   left: 5%;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: left;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -7420,13 +7432,14 @@ input:checked + label::after {
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  z-index: 99;
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
   position: absolute;
   top: 35.5%;
   right: 4.5%;
-  width: 86.8%;
-  height: 56%;
+  width: 87%;
+  height: 57%;
   border: 2px dashed #ccc;
   font-size: 1rem;
   cursor: pointer;
@@ -7590,7 +7603,7 @@ input:checked + label::after {
   max-width: 16.5%;
   height: 4.7%;
   top: 16.7%;
-  right: 73.4%;
+  right: 73%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   font-weight: 900;
@@ -7625,17 +7638,17 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   top: 22%;
-  right: 69.3%;
+  right: 65.3%;
   line-height: 1.5;
   font-weight: bold;
-  font-size: 0.4rem;
+  font-size: 0.5rem;
   display: block;
   text-align: center;
-  max-width: 24%;
+  max-width: 30%;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -7666,12 +7679,12 @@ input:checked + label::after {
   top: 5.7%;
   right: 5%;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: right;
 }
 @media screen and (max-width: 1200px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1500px) {
