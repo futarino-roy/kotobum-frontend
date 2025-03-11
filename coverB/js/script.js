@@ -1037,6 +1037,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('認証トークンが見つかりません。ログインしてください。');
     return;
   }
+
   // アルバムIDを取得
   fetch('https://develop-back.kotobum.com/api/user/album', {
     method: 'GET',
@@ -1060,6 +1061,32 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
       console.log('ペアのアルバムID:', partner_id || 'ソロ');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const isAdmin = urlParams.has('admin');
+
+      if (isAdmin) {
+        console.log(`管理者モード: トークン: ${token}`);
+        // 管理者用のアルバムID
+        console.log('管理者モード: albumID:', albumId);
+        // 画像化ボタンの表示
+        showCaptureButton();
+        return;
+      } else {
+        console.log('一般ユーザーです');
+        // 一般ユーザー用のアルバムID
+        console.log('albumID:', albumId);
+      }
+
+      // 画像化ボタンの表示関数
+      function showCaptureButton() {
+        const captureButton = document.getElementById('captureButton');
+        if (captureButton) {
+          captureButton.style.display = 'block';
+        } else {
+          console.warn('画像化ボタンが見つかりません');
+        }
+      }
 
       // アルバムデータ取得処理
       const fetchAlbumData = (id) => {
