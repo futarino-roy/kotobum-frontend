@@ -1054,13 +1054,14 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then((albums) => {
       const { albumId, partner_id } = albums;
+      console.log('APIレスポンス', albums);
 
       if (!albumId) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
-      console.log('ペアのアルバムID:', partner_id);
+      console.log('ペアのアルバムID:', partner_id || 'ソロ');
 
       const urlParams = new URLSearchParams(window.location.search);
       const isAdmin = urlParams.has('admin');
