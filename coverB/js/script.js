@@ -1060,7 +1060,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
-      console.log('ペアのアルバムID:', partner_id || 'ソロ');
+      console.log('ペアのアルバムID:', partner_id);
 
       const urlParams = new URLSearchParams(window.location.search);
       const isAdmin = urlParams.has('admin');

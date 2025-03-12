@@ -17770,8 +17770,8 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 {
-    -webkit-clip-path: inset(17px 17px 17px 18px);
-            clip-path: inset(17px 17px 17px 18px);
+    -webkit-clip-path: inset(17px 17px 19px 18px);
+            clip-path: inset(17px 17px 19px 18px);
     top: -4%;
   }
 }
@@ -18075,6 +18075,12 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .text-empty.no-border {
   border: none;
 }
+.edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-1_t4::-moz-placeholder {
+  font-size: 1.2rem;
+}
+.edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-1_t4::placeholder {
+  font-size: 1.2rem;
+}
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-1_t4::-moz-placeholder {
     font-size: 1rem;
@@ -18089,21 +18095,21 @@ body {
   position: absolute;
   top: 15%;
   font-family: "League Spartan", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.2;
   font-weight: bold;
   color: #fef8f6;
   text-align: center;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-1_t4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-1_t4 {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -18128,13 +18134,14 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-2_t4 {
-    font-size: 0.33rem;
-    top: 22.4%;
+    font-size: 0.38rem;
+    top: 22.6%;
   }
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-2_t4 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    top: 22.4%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -18153,6 +18160,29 @@ body {
   width: 50% !important;
   position: absolute;
   top: 63%;
+  font-size: 0.36rem;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-3_t4 {
+    font-size: 0.53rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-3_t4 {
+    font-size: 0.265rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-3_t4 {
+    font-size: 2vw;
+    line-height: 1.5;
+    top: 22.6%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-3_t4 {
+    font-size: 2.4vw;
+  }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea1-3_t4 {
@@ -18162,23 +18192,25 @@ body {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-1_t4 {
+  position: relative;
+  top: 5.5%;
   font-family: "League Spartan", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.51rem;
   text-align: left;
   font-weight: bold;
   line-height: 1;
   margin-bottom: 4%;
   line-height: 1.3;
-  max-width: 48%;
+  max-width: 51%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-1_t4 {
-    font-size: 0.9rem;
+    font-size: 0.77rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-1_t4 {
-    font-size: 0.4rem;
+    font-size: 0.38rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -18193,20 +18225,20 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-2_t4 {
   font-family: "League Spartan", sans-serif;
-  font-size: 0.34rem;
+  font-size: 0.325rem;
   text-align: left;
-  margin-top: 0;
-  max-width: 48%;
-  max-height: 47%;
+  margin-top: 7%;
+  max-width: 51%;
+  max-height: 54%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-2_t4 {
-    font-size: 0.51rem;
+    font-size: 0.49rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-2_t4 {
-    font-size: 0.256rem;
+    font-size: 0.245rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -18235,7 +18267,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea4_t4 {
-    font-size: 0.5rem;
+    font-size: 0.45rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -18267,7 +18299,7 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea6_t4 {
   text-align: center;
   font-family: "League Spartan", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   position: absolute;
   font-weight: bold;
   top: 70%;
