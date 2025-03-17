@@ -964,6 +964,10 @@
                 // border: 2px dashed #ccc;
                 cursor: pointer;
                 border-radius: 10%;
+                @include mq('sp-edit') {
+                  height: 31%;
+                  top: 10%;
+                }
 
                 img {
                   width: 100%;
@@ -1346,7 +1350,7 @@
                 max-height: 65%;
               }
               .text-empty {
-                // border: 2px dashed #ccc;
+                border: 2px dashed #ccc;
                 &.no-border {
                   border: none;
                 }
