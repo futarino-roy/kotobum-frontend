@@ -1435,12 +1435,6 @@ input:checked + label::after {
   cursor: pointer;
   border-radius: 10%;
 }
-@media screen and (max-width: 480px) {
-  .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 {
-    height: 31%;
-    top: 10%;
-  }
-}
 .edit .content .swiper-wrapper .swiper-slide_box .input-drop #dropArea2 img {
   width: 100%;
   height: 100%;
@@ -14370,6 +14364,22 @@ body {
   position: absolute;
   top: 45.5%;
   font-weight: bold;
+  font-size: 0.5rem;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop .last-text_from {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop .last-text_from {
+    font-size: 0.35rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop .last-text_from {
+    font-size: 1.8vw;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea1_t3 {
   position: relative;
@@ -14380,10 +14390,16 @@ body {
   border: 1px dashed #ccc;
   cursor: pointer;
 }
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea1_t3 {
+    left: 0.5%;
+    top: -0.4%;
+  }
+}
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea1_t3 {
-    left: 1%;
-    top: -1.5%;
+    left: 0%;
+    top: -1%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea1_t3 img {
@@ -14413,7 +14429,7 @@ body {
   width: 55%;
   height: 58%;
   position: relative;
-  top: -9.5%;
+  top: -9.3%;
   border: 1px dashed #ccc;
   clip-path: polygon(30% 5%, 69% 5%, 69% 0px, 100% 0px, 100% 100%, 50% 94%, 0px 100%, 0px 0px, 30% 0px);
 }
@@ -14427,24 +14443,10 @@ body {
     top: -9.2%;
   }
 }
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3.active {
-  border-color: rgba(0, 0, 0, 0.537254902);
-}
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3.square {
-  width: 45%;
-  height: 32%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3.rectangle34 {
-  width: 45%;
-  height: 40%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3.rectangle43 {
-  width: 45%;
-  height: 25%;
-}
-.edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3.mini {
-  width: 45%;
-  height: 20%;
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3 {
+    top: -9.3%;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea4_t3 img {
   width: 100%;
@@ -14469,7 +14471,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #dropArea6_t3 {
-    top: 22.5%;
+    top: 22.9%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -14702,6 +14704,11 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop .text-empty.no-border {
   border: none;
 }
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-1_t3::placeholder {
+    font-size: 1.3rem;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-1_t3 {
   position: absolute;
   top: 16%;
@@ -14731,7 +14738,7 @@ body {
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-1_t3 {
-    font-size: 7vw;
+    font-size: 6vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-2_t3 {
@@ -14765,67 +14772,88 @@ body {
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-2_t3 {
-    font-size: 2.4vw;
+    font-size: 2.2vw;
+    top: 23.1%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-3_t3 {
   width: 45% !important;
   position: absolute;
   top: 65%;
+  font-size: 0.3rem;
+}
+@media screen and (min-width: 1500px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-3_t3 {
+    font-size: 0.45rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-3_t3 {
+    font-size: 0.22rem;
+  }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-3_t3 {
     width: 49% !important;
     left: 27%;
-    font-size: 1.3vw;
+    font-size: 1.25vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea1-3_t3 {
+    width: 49% !important;
+    left: 27%;
+    font-size: 1.37vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-1_t3 {
   font-family: "Noto Sans JP", serif;
-  font-size: 0.48rem;
+  position: relative;
+  top: 5.5%;
+  font-size: 0.5rem;
   text-align: left;
   font-weight: bold;
-  text-align: center;
   line-height: 1;
+  margin-bottom: 8%;
   line-height: 1.3;
-  margin-bottom: 0;
+  max-width: 51%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-1_t3 {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-1_t3 {
-    font-size: 0.4rem;
+    font-size: 0.37rem;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-1_t3 {
-    font-size: 1.9vw;
+    font-size: 1.85vw;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-1_t3 {
-    font-size: 2.1vw;
+    font-size: 2.05vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
   font-family: "Noto Sans JP", serif;
-  font-size: 0.34rem;
+  font-size: 0.325rem;
   text-align: left;
-  max-width: 50%;
-  max-height: 52%;
-  margin-top: 1%;
+  margin-top: 7%;
+  max-width: 51%;
+  max-height: 54%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
-    font-size: 0.51rem;
+    font-size: 0.49rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea3-2_t3 {
-    font-size: 0.256rem;
+    font-size: 0.245rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -14864,17 +14892,17 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
   max-width: 55%;
-  font-size: 0.33rem;
+  font-size: 0.365rem;
   position: relative;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
-    font-size: 0.5rem;
+    font-size: 0.55rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
-    font-size: 0.25rem;
+    font-size: 0.275rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -14883,10 +14911,15 @@ body {
     font-size: 1.4vw;
   }
 }
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea5_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea7_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea9_t3, .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea11_t3 {
+    font-size: 1.55vw;
+  }
+}
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea6_t3 {
   text-align: center;
   font-family: "Noto Sans JP", serif;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   position: absolute;
   font-weight: bold;
   top: 68%;
@@ -14898,7 +14931,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea6_t3 {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -14937,13 +14970,13 @@ body {
   text-align: center;
   margin: 0;
   position: absolute;
-  top: 87%;
+  top: 86%;
   opacity: 0.5;
   font-size: 0.5rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea12-2_t3 {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     top: 87%;
   }
 }
@@ -14960,8 +14993,8 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-1_t3 {
   position: absolute;
-  top: 6.2%;
-  font-size: 1.4rem;
+  top: 5.4%;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.1rem;
@@ -14970,45 +15003,48 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-1_t3 {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
+    top: 5.2%;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-1_t3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    top: 5.5%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-1_t3 {
-    font-size: 5.4vw;
+    font-size: 6.3vw;
+    top: 5.3%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-2_t3 {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: bold;
   text-align: center;
   color: #fdfcf6;
   margin-bottom: 0;
   position: relative;
-  top: 25%;
+  top: 26.5%;
   letter-spacing: 0.05rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-2_t3 {
-    font-size: 0.9rem;
-    top: 25%;
+    font-size: 0.8rem;
+    top: 26.5%;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-2_t3 {
-    font-size: 0.5rem;
+    font-size: 0.37rem;
     top: 26.5%;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-2_t3 {
     font-size: 2vw;
-    top: 24.5%;
+    top: 25.3%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea14-3_t3 {
@@ -15021,20 +15057,31 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15_t3 {
   max-width: 45%;
-  font-size: 0.31rem;
+  font-size: 0.35rem;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15_t3 {
-    font-size: 0.46rem;
+    font-size: 0.51rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15_t3 {
-    font-size: 0.23rem;
+    font-size: 0.26rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15_t3 {
+    font-size: 1.33vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15_t3 {
+    font-size: 1.45vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-1_t3 {
-  margin-top: 4%;
+  position: absolute;
+  top: 43.5%;
   max-width: 45%;
   text-align: center;
   font-size: 1rem;
@@ -15058,31 +15105,34 @@ body {
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-1_t3 {
-    font-size: 3.5vw;
+    font-size: 3.6vw;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
-  margin-top: 3%;
-  position: absolute;
-  top: 51.5%;
-  max-height: 40%;
-  max-width: 57%;
+  position: relative;
+  top: 19%;
+  max-height: 29%;
   font-size: 0.34rem;
+  left: 1.5%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
-    font-size: 0.53rem;
+    font-size: 0.5rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
-    font-size: 0.27rem;
+    font-size: 0.25rem;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
-    font-size: 1.23vw;
-    top: 53%;
+    font-size: 1.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box3 .input-drop #textArea15-2_t3 {
+    font-size: 1.45vw;
   }
 }
 .edit .swiper-button-prev {
@@ -17975,9 +18025,9 @@ body {
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea3-1_t4 {
+  font-family: "League Spartan", sans-serif;
   position: relative;
   top: 5.5%;
-  font-family: "League Spartan", sans-serif;
   font-size: 0.51rem;
   text-align: left;
   font-weight: bold;

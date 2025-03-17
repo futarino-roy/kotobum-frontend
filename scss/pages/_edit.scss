@@ -964,10 +964,6 @@
                 // border: 2px dashed #ccc;
                 cursor: pointer;
                 border-radius: 10%;
-                @include mq('sp-edit') {
-                  height: 31%;
-                  top: 10%;
-                }
 
                 img {
                   width: 100%;
