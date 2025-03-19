@@ -693,13 +693,13 @@ document.addEventListener('DOMContentLoaded', function () {
         maxFontSizeRem = 0.95; // 最大フォントサイズ (1500px以上)
         minFontSizeRem = 0.2; // 最小フォントサイズ (1500px以上)
       } else if (window.innerWidth >= 1200) {
-        maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
+        maxFontSizeRem = 0.6; // 最大フォントサイズ (1500px-1200px)
         minFontSizeRem = 0.4; // 最小フォントサイズ (1500px-1200px)
       } else if (window.innerWidth >= 900) {
-        maxFontSizeRem = 0.6; // 最大フォントサイズ (1500px-1200px)
-        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px-1200px)
+        maxFontSizeRem = 0.6; // 最大フォントサイズ (1200px-900px)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1200px-900px)
       } else {
-        maxFontSizeRem = 0.7; // デフォルト最大フォントサイズ
+        maxFontSizeRem = 0.6; // デフォルト最大フォントサイズ
         minFontSizeRem = 0.2; // デフォルト最小フォントサイズ
       }
 

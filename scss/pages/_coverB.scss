@@ -719,7 +719,7 @@
               width: 82%;
               height: 84%;
               // background: rgb(178, 203, 225);
-              opacity: 0.8;
+              opacity: 1;
               display: flex;
               flex-direction: column;
               align-items: center;
@@ -728,14 +728,35 @@
               #dropAreaB {
                 position: absolute;
                 top: 35.5%;
-                right: 4.5%;
-                width: 86.8%;
-                height: 56%;
+                right: 5%;
+                width: 88%;
+                height: 56.5%;
 
                 border: 2px dashed #ccc;
                 font-size: 1rem;
                 cursor: pointer;
                 bottom: 10px;
+                @include mq('pc2-edit') {
+                  top: 35.5%;
+                  right: 5%;
+                  width: 88%;
+                  height: 56.8%;
+                }
+                @include mq('pc-edit') {
+                  top: 35%;
+                  right: 4.7%;
+                }
+                @include mq('tab-edit') {
+                  top: 35.5%;
+                  right: 4.9%;
+                  height: 57%;
+                }
+                @include mq('sp-edit') {
+                  top: 35%;
+                  right: 4.5%;
+                  height: 56.8%;
+                  width: 88.5%;
+                }
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
@@ -788,18 +809,6 @@
                   object-fit: cover;
                   cursor: pointer;
                 }
-                @include mq('pc2-edit') {
-                  top: 35%;
-                  right: 4.5%;
-                  width: 86.8%;
-                  height: 56.6%;
-                }
-                @include mq('pc-edit') {
-                  top: 35%;
-                }
-                @include mq('tab-edit') {
-                  height: 56%;
-                }
               }
 
               textarea {
@@ -814,22 +823,6 @@
                 line-height: 1.9;
                 background-color: transparent;
                 // font-family: 'Noto Sans JP', serif;
-
-                @include mq('pc-edit') {
-                  font-size: 0.3rem;
-                }
-
-                @include mq('pc2-edit') {
-                  font-size: 0.6rem;
-                }
-
-                @include mq('tab-edit') {
-                  font-size: 1.2vw;
-                }
-
-                @include mq('sp-edit') {
-                  font-size: 1.7vw;
-                }
               }
               .text-empty {
                 border: 2px dashed #ccc;
@@ -850,7 +843,7 @@
                 position: absolute;
                 width: 5% !important;
                 bottom: 9%;
-                right: -5.5%;
+                right: -4.9%;
                 font-weight: bold;
                 font-size: 0.3rem !important;
                 text-align: start;
@@ -898,7 +891,7 @@
                   max-width: 16.5%;
                   height: 4.7%;
                   top: 16.7%;
-                  right: 73.4%;
+                  right: 73.8%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   font-weight: 900;
@@ -906,13 +899,13 @@
                   color: #ffffff;
 
                   @include mq('pc-edit') {
-                    font-size: 0.8rem;
+                    font-size: 0.7rem;
                     top: 16.7%;
                   }
                   @include mq('pc2-edit') {
-                    font-size: 1.5rem;
+                    font-size: 1.6rem;
                     top: 16.7%;
-                    right: 73.7%;
+                    right: 74.5%;
                     max-width: 15.5%;
                   }
                   @include mq('tab-edit') {
