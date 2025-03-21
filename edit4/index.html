@@ -26,6 +26,8 @@
 
 <body class="edit-body">
   <header class="edit-header">
+    <button id="captureButton" onclick="captureToPDF()" class="btn btn-small_bl btn-small_bl-edit"
+      style="display: none">キャプチャ</button>
     <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
     <button id="sendButton" class="btn btn-small_bl">保存する</button>
     <!-- <button class="btn-preview">プレビュー</button> -->
@@ -255,7 +257,10 @@
               <img class="template_img" src="/editB4/images/template2/ペア6-11@2x.png" style="aspect-ratio: 181 / 249"
                 alt="" />
               <div class="input-drop">
-
+                <textarea id="textArea11-1_t4" rows="1" maxlength="600" class="text-empty text-colorB"
+                  placeholder="入力してください"></textarea>
+                <textarea id="textArea11-2_t4" rows="1" maxlength="600" class="text-empty"
+                  placeholder="入力してください"></textarea>
               </div>
             </div>
             <div class="page-number">11/12</div>

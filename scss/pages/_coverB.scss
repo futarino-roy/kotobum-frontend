@@ -863,7 +863,7 @@
                 word-break: normal; /* 単語の途中での改行を無効にする */
 
                 @include mq('pc-edit') {
-                  font-size: 0.2rem !important;
+                  font-size: 0.35rem !important;
                 }
 
                 @include mq('pc2-edit') {

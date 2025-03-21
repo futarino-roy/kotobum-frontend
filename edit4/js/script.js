@@ -1345,7 +1345,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const isAdmin = urlParams.has('admin');
 
   if (isAdmin) {
-    console.log(`管理者モード: トークン: ${token}, アルバムID: ${albumId}`);
+    console.log(`管理者モード|トークン: ${token}, アルバムID: ${albumId}`);
     // 画像化ボタンの表示
     showCaptureButton();
     // アルバムデータ取得リクエスト用の関数
