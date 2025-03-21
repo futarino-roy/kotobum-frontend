@@ -165,9 +165,9 @@
 // テキストエリアの高さと幅を自動調整する関数
 function adjustTextareaSize(textarea) {
   textarea.style.height = 'auto'; // 高さをリセット
-  textarea.style.width = 'auto';  // 幅をリセット
+  textarea.style.width = 'auto'; // 幅をリセット
   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に応じて高さを調整
-  textarea.style.width = `${textarea.scrollWidth}px`;   // 内容に応じて幅を調整
+  textarea.style.width = `${textarea.scrollWidth}px`; // 内容に応じて幅を調整
 }
 
 // ドキュメントが読み込まれたときにテキストを表示
@@ -207,25 +207,25 @@ function loadAlbumBody(albumId) {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   })
-    .then(response => response.json())
-    .then(albumData => {
+    .then((response) => response.json())
+    .then((albumData) => {
       if (albumData && albumData.images && albumData.texts && albumData.colors) {
         displayImages(albumData.images);
         displayTexts(albumData.texts);
         applyColors(albumData.colors);
       }
     })
-    .catch(error => console.error('アルバムデータのロードに失敗しました:', error));
+    .catch((error) => console.error('アルバムデータのロードに失敗しました:', error));
 }
 
 // 画像データをプレビューに表示
 function displayImages(images) {
   const emptyElements = document.querySelectorAll('.empty');
   emptyElements.forEach((dropArea) => {
-    const imageInfo = images.find(item => item.id === dropArea.id);
+    const imageInfo = images.find((item) => item.id === dropArea.id);
     if (imageInfo && imageInfo.image) {
       const img = new Image();
       img.src = imageInfo.image;
@@ -240,10 +240,10 @@ function displayImages(images) {
 function displayTexts(texts) {
   const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
   textAreas.forEach((textArea) => {
-    const textInfo = texts.find(item => item.id === textArea.id);
+    const textInfo = texts.find((item) => item.id === textArea.id);
     if (textInfo) {
       textArea.value = textInfo.text;
-      adjustTextareaSize(textArea);
+      // adjustTextareaSize(textArea);
     }
   });
 }
@@ -272,11 +272,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 取得した各テキストエリアのサイズを調整
   textAreas.forEach((textArea) => {
-    adjustTextareaSize(textArea);
+    // adjustTextareaSize(textArea);
   });
 });
-
-
 
 // ドキュメントが読み込まれたときの初期処理
 document.addEventListener('DOMContentLoaded', function () {
@@ -284,13 +282,11 @@ document.addEventListener('DOMContentLoaded', function () {
   loadAlbumBody(albumId); // サーバーからアルバムデータをロード
 });
 
-
-
 //----------------- モーダルに関するJavaScript---------------------
 
 //要素を取得
 const openButton = document.querySelector('.js-modal-open');
-const modal = document.getElementById("modal1");
+const modal = document.getElementById('modal1');
 
 //「開くボタン」をクリックしてモーダルを開く
 
@@ -302,7 +298,8 @@ openButton.addEventListener('click', function () {
 
 // モーダルの外側がクリックされたときにモーダルを閉じる
 modal.addEventListener('click', function (event) {
-  if (event.target === modal) { // event.targetを使ってモーダルの外側かどうかをチェック
+  if (event.target === modal) {
+    // event.targetを使ってモーダルの外側かどうかをチェック
     modal.classList.remove('is-active'); // モーダルを閉じる
   }
 });
@@ -337,8 +334,8 @@ changeButtons.forEach((changeButton) => {
 // モーダル内の「マイページへ」ボタンを取得
 const modalButton_ls = document.querySelector('.modal-checkafter__mypage_l');
 
-modalButton_ls.addEventListener("click", function () {
-  window.location.href = "mypage.html?disable=true&cursor=not-allowed";
+modalButton_ls.addEventListener('click', function () {
+  window.location.href = 'mypage.html?disable=true&cursor=not-allowed';
 });
 
 //----------- モーダル内の校了ボタンを押した後のモーダル 中身用 -------------------
@@ -362,7 +359,7 @@ changeButton_rs.forEach((changeButton_r) => {
 // モーダル内の「マイページへ」ボタンを取得
 const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
 
-modalButton_ls.addEventListener("click", function () {
-  window.location.href = "mypage.html?disable=true&cursor=not-allowed";
+modalButton_ls.addEventListener('click', function () {
+  window.location.href = 'mypage.html?disable=true&cursor=not-allowed';
   console.log(window.location.search);
 });
