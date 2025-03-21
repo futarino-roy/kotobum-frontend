@@ -1432,14 +1432,14 @@ function handleSaveOrSend() {
   }
 
   // URLからユーザー種別を判別
-  const isAdmin = window.location.href.includes('/admin'); // URLに`/admin`が含まれる場合、管理者と判定
+  const isAdmin = window.location.href.includes('/?admin'); // URLに`/admin`が含まれる場合、管理者と判定
 
   let albumId;
 
   if (isAdmin) {
     // 管理者の場合：ローカルストレージからアルバムIDを取得
     albumId = localStorage.getItem('albumId');
-    console.log('アルバムID: ', albumId);
+    console.log('管理者アルバムID: ', albumId);
     if (!albumId) {
       console.error('管理者用アルバムIDがローカルストレージに保存されていません。');
       alert('管理者用アルバムIDが見つかりません。');
@@ -1470,7 +1470,7 @@ function handleSaveOrSend() {
           console.error('アルバムIDを取得できませんでした。');
           return;
         }
-
+        console.log('一般ユーザーアルバムID: ', albumId);
         // 保存処理を実行
         saveAlbumData(albumId, token);
       })
