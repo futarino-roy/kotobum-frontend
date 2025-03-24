@@ -14,9 +14,9 @@
     transform: translateY(4px);
   }
   &-large {
-    background-image: url(../../images/Button_pc_large_bl.png);
+    background-image: url(/images/Button_pc_large_bl.png);
     @include mq('tab') {
-      background-image: url(../../../images/Button_sp_large_bl.png);
+      background-image: url(/images/Button_sp_large_bl.png);
     }
   }
 
@@ -75,14 +75,14 @@
 
   &-small {
     &_wh {
-      background-image: url(../../images/Button_pc_small_wh.png);
+      background-image: url(/images/Button_pc_small_wh.png);
       color: #000000;
       width: 156px;
       height: 46px;
       font-size: 1.125rem;
 
       @include mq('tab') {
-        background-image: url(../../../images/Button_sp_small_wh.png);
+        background-image: url(/images/Button_sp_small_wh.png);
       }
 
       &-edit {
@@ -144,11 +144,11 @@
       height: 46px;
       font-size: 1.125rem;
       @include mq('tab') {
-        background-image: url(../../../images/Button_sp_small_gr.png);
+        background-image: url(/images/Button_sp_small_gr.png);
       }
     }
     &_bl {
-      background-image: url(../../images/Button_pc_small_bl.png);
+      background-image: url(/images/Button_pc_small_bl.png);
       color: #ffffff;
       width: 156px;
       height: 46px;

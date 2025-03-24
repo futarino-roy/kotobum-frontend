@@ -77,11 +77,11 @@ a {
   transform: translateY(4px);
 }
 .btn-large {
-  background-image: url(../../images/Button_pc_large_bl.png);
+  background-image: url(/images/Button_pc_large_bl.png);
 }
 @media screen and (max-width: 900px) {
   .btn-large {
-    background-image: url(../../../images/Button_sp_large_bl.png);
+    background-image: url(/images/Button_sp_large_bl.png);
   }
 }
 .btn-logout {
@@ -131,7 +131,7 @@ a {
   padding: 13px 0 25px;
 }
 .btn-small_wh {
-  background-image: url(../../images/Button_pc_small_wh.png);
+  background-image: url(/images/Button_pc_small_wh.png);
   color: #000000;
   width: 156px;
   height: 46px;
@@ -139,7 +139,7 @@ a {
 }
 @media screen and (max-width: 900px) {
   .btn-small_wh {
-    background-image: url(../../../images/Button_sp_small_wh.png);
+    background-image: url(/images/Button_sp_small_wh.png);
   }
 }
 .btn-small_wh-edit {
@@ -194,11 +194,11 @@ a {
 }
 @media screen and (max-width: 900px) {
   .btn-small_gr {
-    background-image: url(../../../images/Button_sp_small_gr.png);
+    background-image: url(/images/Button_sp_small_gr.png);
   }
 }
 .btn-small_bl {
-  background-image: url(../../images/Button_pc_small_bl.png);
+  background-image: url(/images/Button_pc_small_bl.png);
   color: #ffffff;
   width: 156px;
   height: 46px;
