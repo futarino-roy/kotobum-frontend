@@ -3,44 +3,91 @@
     overflow: auto;
   }
 
+  background-color: #fff9e5;
+
   .mypage {
-    max-width: 600px;
-    position: absolute;
-    top: calc(50% + 40.5px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    margin: 0 auto;
 
     @include mq('tab-mypage') {
       position: static;
       transform: none;
-      margin: 51px auto 67px;
-      padding: 0 15px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    @include mq('sp-mypage') {
+      padding: 0;
+    }
+
+    // マイページコンテンツ
+    &_contents {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1280px;
+      padding: 15px 20px;
+      margin: 0 auto;
+
+      @include mq('tab-mypage') {
+        padding: 15px;
+      }
+
+      @include mq('sp-mypage') {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        gap: 15px;
+      }
     }
 
     &_title {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: center; // 中央揃えに変更
+
+      @include mq('sp-mypage') {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center; // モバイルでも中央揃え
+      }
+
       img {
-        width: 62px;
-        height: 44px;
+        width: 20px;
+        height: 20px;
       }
 
       h2 {
-        font-size: 1.375rem;
-        margin: 18px 0 50px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0;
+
+        @include mq('sp-mypage') {
+          font-size: 1.2rem;
+        }
       }
     }
 
     &_flex {
       display: flex;
       justify-content: center;
-      gap: 85px;
+      gap: 30px;
+      padding: 20px 20px 30px;
+      max-width: 1280px;
+      margin: 0 auto;
 
       @include mq('tab-mypage') {
-        display: inline-block;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        gap: 30px;
       }
 
       @include mq('sp-mypage') {
-        display: inline-block;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 15px;
+        gap: 25px;
       }
 
       &_left {
@@ -153,6 +200,70 @@
     }
   }
 
+  // ステータスボタン
+  .status_contents {
+    display: flex;
+    gap: 15px;
+
+    @include mq('tab-mypage') {
+      gap: 10px;
+    }
+
+    @include mq('sp-mypage') {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: 10px;
+    }
+  }
+
+  // 作成の流れのレスポンシブ対応強化
+  .flow_contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .flow_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0a04b;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include mq('sp-mypage') {
+      font-size: 1.2rem;
+      margin-bottom: 0px;
+    }
+  }
+
+  .flow_script {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: auto;
+    max-width: 580px; // コンテンツの最大幅を制限
+
+    @include mq('sp-mypage') {
+      max-width: 90%; // スマホでの最大幅
+    }
+
+    li {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      line-height: 1.5;
+      text-align: left; // テキストは左揃え
+
+      @include mq('sp-mypage') {
+        font-size: 0.9rem;
+        margin: 12px 0;
+      }
+    }
+  }
   /* モーダルと背景の指定 */
   .modal {
     position: fixed;
@@ -246,6 +357,147 @@
       color: black;
     }
   }
+}
+
+// // レスポンシブ対応
+// .mypage_flex {
+//   display: flex;
+//   justify-content: center;
+//   gap: 15px;
+//   margin: 0 auto;
+//   max-width: 1280px;
+
+//   @media (max-width: 900px) {
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 40px;
+//   }
+// }
+
+.design-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  flex: 1;
+
+  @include mq('tab-mypage') {
+    margin-bottom: 25px;
+  }
+
+  @include mq('sp-mypage') {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+}
+
+.design-title {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.design-divider {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.design-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-contents {
+  margin-bottom: 10px;
+}
+
+.progress-section {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.progress-text {
+  font-size: 14px;
+  display: inline-block;
+}
+
+.progress-percentage {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #f0a04b;
+  border-radius: 5px;
+}
+
+.button-number {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-top: 5px;
+
+  @include mq('tab-mypage') {
+    font-size: 1rem;
+    padding: 0;
+    margin: 12px 0 5px 0;
+  }
+
+  @include mq('sp-mypage') {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 8px 0 8px 0;
+  }
+}
+
+.notice-text {
+  text-align: left;
+  font-size: 12px;
+  margin: 10px 0 20px 0;
+  line-height: 1.4;
+}
+
+.notice-text p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+.warning-text {
+  color: #ff0000;
+}
+
+.book-image {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.cover_preview {
+  width: 210px;
+  max-width: 100%;
+  box-shadow: 1px -1px 2px #d5d5d4, 1px 1px 2px #d5d5d4;
+}
+
+.main_text_preview {
+  width: 400px;
+  max-width: 100%;
 }
 
 .modal-container_S {

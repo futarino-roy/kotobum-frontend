@@ -45,3 +45,16 @@ header {
   justify-content: flex-end;
   z-index: 999;
 }
+.header-container {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
