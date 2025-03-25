@@ -26385,7 +26385,7 @@ body {
 }
 @media (max-height: 926px) {
   .swiper-button-next {
-    left: 22% !important;
+    right: 22% !important;
     top: 47vh !important;
   }
 }
