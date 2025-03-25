@@ -123,6 +123,82 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// jsPDFで12ページPDF化
+async function captureToPDF() {
+  const targets = document.querySelectorAll('.target'); // すべてのページを取得🐰
+
+  if (targets.length === 0) {
+    console.error('キャプチャ対象のページが見つかりません💦');
+    return;
+  }
+
+  try {
+    const scale = 4; // スケールを上げる
+    const options = {
+      quality: 1,
+      width: targets[0].offsetWidth * scale,
+      height: targets[0].offsetHeight * scale,
+      useBlob: true,
+    };
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: [158, 218],
+    });
+
+    for (let i = 0; i < targets.length; i++) {
+      const target = targets[i];
+
+      // 🌸 キャプチャ前に少し待つ
+      await new Promise((resolve) => setTimeout(resolve, 100));
+
+      // 🌸 キャプチャ時だけ拡大
+      const originalStyle = target.style.cssText;
+      target.style.position = 'absolute';
+      target.style.left = '0';
+      target.style.top = '0';
+      target.style.transform = `scale(${scale})`;
+      target.style.transformOrigin = 'top left';
+      target.style.width = `${target.offsetWidth}px`;
+      target.style.height = `${target.offsetHeight}px`;
+      target.style.clipPath = 'none';
+
+      // ✅ textarea の表示を確実にする
+      const textareas = target.querySelectorAll('textarea');
+      textareas.forEach((textarea) => {
+        textarea.style.display = 'block';
+      });
+
+      // ✅ 画像の位置を明示的に指定
+      const img = target.querySelector('img');
+      if (img) {
+        img.style.position = 'absolute';
+        img.style.left = '0';
+      }
+
+      // 📸 キャプチャ実行
+      const blob = await htmlToImage.toBlob(target, options);
+
+      // 🌟 キャプチャ後、元のスタイルに戻す
+      target.style.cssText = originalStyle;
+      target.style.width = '100%';
+
+      // 🌟 画像をダウンロード
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `page_${i + 1}.png`; // `page_1.png`, `page_2.png`...
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    console.log('すべての画像をダウンロードしました！');
+  } catch (error) {
+    console.error('キャプチャ中にエラーが発生しました', error);
+  }
+}
+
 // 保存ボタン押下時の処理
 document.getElementById('sendButton').addEventListener('click', handleSaveOrSend);
 
@@ -386,79 +462,3 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 });
-
-// jsPDFで12ページPDF化
-async function captureToPDF() {
-  const targets = document.querySelectorAll('.target'); // すべてのページを取得🐰
-
-  if (targets.length === 0) {
-    console.error('キャプチャ対象のページが見つかりません💦');
-    return;
-  }
-
-  try {
-    const scale = 4; // スケールを上げる
-    const options = {
-      quality: 1,
-      width: targets[0].offsetWidth * scale,
-      height: targets[0].offsetHeight * scale,
-      useBlob: true,
-    };
-
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: [158, 218],
-    });
-
-    for (let i = 0; i < targets.length; i++) {
-      const target = targets[i];
-
-      // 🌸 キャプチャ前に少し待つ
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
-      // 🌸 キャプチャ時だけ拡大
-      const originalStyle = target.style.cssText;
-      target.style.position = 'absolute';
-      target.style.left = '0';
-      target.style.top = '0';
-      target.style.transform = `scale(${scale})`;
-      target.style.transformOrigin = 'top left';
-      target.style.width = `${target.offsetWidth}px`;
-      target.style.height = `${target.offsetHeight}px`;
-      target.style.clipPath = 'none';
-
-      // ✅ textarea の表示を確実にする
-      const textareas = target.querySelectorAll('textarea');
-      textareas.forEach((textarea) => {
-        textarea.style.display = 'block';
-      });
-
-      // ✅ 画像の位置を明示的に指定
-      const img = target.querySelector('img');
-      if (img) {
-        img.style.position = 'absolute';
-        img.style.left = '0';
-      }
-
-      // 📸 キャプチャ実行
-      const blob = await htmlToImage.toBlob(target, options);
-
-      // 🌟 キャプチャ後、元のスタイルに戻す
-      target.style.cssText = originalStyle;
-      target.style.width = '100%';
-
-      // 🌟 画像をダウンロード
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = `page_${i + 1}.png`; // `page_1.png`, `page_2.png`...
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-    console.log('すべての画像をダウンロードしました！');
-  } catch (error) {
-    console.error('キャプチャ中にエラーが発生しました', error);
-  }
-}
