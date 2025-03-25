@@ -938,17 +938,17 @@ function handleSaveOrSend() {
           };
         });
 
-        const dropAreas = slide.querySelectorAll('.empty');
-        const imageData = Array.from(dropAreas).map((dropArea) => {
-          const croppedImage = window.croppedImages[dropArea.id] || null; // ドロップエリアごとの画像データを取得
-          const imgElement = dropArea.querySelector('img');
+        const dropAreas = document.querySelectorAll('#dropAreaA');
+        const imageData = Array.from(dropAreas).map((dropAreaA) => {
+          // const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
+          const imgElement = dropAreaA.querySelector('img');
           const originalImage = imgElement ? imgElement.src : null;
 
-          const imageToSend = croppedImage || originalImage;
+          const imageToSend = originalImage;
 
-          const { top, left, width, height } = dropArea.getBoundingClientRect();
+          const { top, left, width, height } = dropAreaA.getBoundingClientRect();
           return {
-            id: dropArea.id,
+            id: dropAreaA.id,
             image: imageToSend,
             top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
             left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
@@ -956,11 +956,11 @@ function handleSaveOrSend() {
             height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
           };
         });
-
         return {
           slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
           textData,
           imageData,
+          covertext,
         };
       });
 
@@ -1018,66 +1018,7 @@ function handleSaveOrSend() {
       console.error('スタックトレース:', error.stack);
       alert('エラーが発生しました。再度お試しください。');
     });
-
-  // レイアウト確認
-  function collectLayoutData() {
-    const data = [];
-
-    // textareaを収集
-    document.querySelectorAll('textarea').forEach((textarea) => {
-      const rect = textarea.getBoundingClientRect(); // 要素の座標
-      const styles = window.getComputedStyle(textarea); // スタイル情報
-
-      data.push({
-        type: 'textarea',
-        id: textarea.id || null,
-        class: textarea.className || null,
-        rows: textarea.rows || null,
-        maxlength: textarea.maxLength || null,
-        value: textarea.value || '',
-        styles: {
-          position: styles.position,
-          top: `${rect.top}px`,
-          left: `${rect.left}px`,
-          width: `${rect.width}px`,
-          height: `${rect.height}px`,
-          fontSize: styles.fontSize,
-          color: styles.color,
-          backgroundColor: styles.backgroundColor,
-          border: styles.border,
-        },
-      });
-    });
-
-    // dropAreaを収集
-    document.querySelectorAll("[id^='dropArea']").forEach((dropArea) => {
-      const rect = dropArea.getBoundingClientRect(); // 要素の座標
-      const styles = window.getComputedStyle(dropArea); // スタイル情報
-
-      data.push({
-        type: 'dropArea',
-        id: dropArea.id || null,
-        class: dropArea.className || null,
-        styles: {
-          position: styles.position,
-          top: `${rect.top}px`,
-          left: `${rect.left}px`,
-          width: `${rect.width}px`,
-          height: `${rect.height}px`,
-          backgroundColor: styles.backgroundColor,
-          border: styles.border,
-        },
-      });
-    });
-
-    return data;
-  }
-
-  // JSONデータ取得
-  const layoutData = collectLayoutData();
-  console.log(layoutData);
 }
-
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
