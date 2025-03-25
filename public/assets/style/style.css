@@ -2799,6 +2799,12 @@ input:checked + label::after {
     top: 10%;
   }
 }
+@media (max-height: 926px) {
+  .swiper-button-prev {
+    left: 22% !important;
+    top: 47vh !important;
+  }
+}
 
 .swiper-button-next {
   right: 43%;
@@ -2822,6 +2828,12 @@ input:checked + label::after {
   .swiper-button-next {
     right: 42%;
     top: 10%;
+  }
+}
+@media (max-height: 926px) {
+  .swiper-button-next {
+    right: 22% !important;
+    top: 47vh !important;
   }
 }
 
