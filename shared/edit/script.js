@@ -554,12 +554,12 @@ const dropAreaSettings = {
   dropArea2: { width: 270, height: 210 },
   dropArea1: { width: 270, height: 250 },
 
-  dropArea15_t3: { width: 270, height: 250 },
+  dropArea15_t3: { width: 250, height: 260 },
   dropArea14_t3: { width: 300, height: 250 },
-  dropArea12_t3: { width: 280, height: 240 },
-  dropArea6_t3: { width: 280, height: 240 },
-  dropArea4_t3: { width: 280, height: 240 },
-  dropArea2_t3: { width: 300, height: 250 },
+  dropArea12_t3: { width: 240, height: 280 },
+  dropArea6_t3: { width: 240, height: 280 },
+  dropArea4_t3: { width: 240, height: 280 },
+  dropArea2_t3: { width: 250, height: 300 },
   dropArea1_t3: { width: 270, height: 250 },
 
   dropArea1_t4: { width: 270, height: 250 },
