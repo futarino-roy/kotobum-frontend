@@ -1826,6 +1826,10 @@
     left: 42%;
     top: 10%;
   }
+  @media (max-height: 926px) {
+    left: 22% !important;
+    top: 47vh !important;
+  }
 }
 
 .swiper-button-next {
@@ -1845,6 +1849,10 @@
   @include mq('pc2-edit') {
     right: 42%;
     top: 10%;
+  }
+  @media (max-height: 926px) {
+    left: 22% !important;
+    top: 47vh !important;
   }
 }
 

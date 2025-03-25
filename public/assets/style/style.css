@@ -26352,6 +26352,12 @@ body {
     top: 10%;
   }
 }
+@media (max-height: 926px) {
+  .swiper-button-prev {
+    left: 22% !important;
+    top: 47vh !important;
+  }
+}
 
 .swiper-button-next {
   right: 43%;
@@ -26375,6 +26381,12 @@ body {
   .swiper-button-next {
     right: 42%;
     top: 10%;
+  }
+}
+@media (max-height: 926px) {
+  .swiper-button-next {
+    left: 22% !important;
+    top: 47vh !important;
   }
 }
 
