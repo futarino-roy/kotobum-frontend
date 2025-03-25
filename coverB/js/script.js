@@ -914,8 +914,15 @@ function handleSaveOrSend() {
       // 背景色とテキスト色の取得
       const backgroundColor = document.querySelector('.uniqueColor')?.style.backgroundColor || '#ffffff';
       const textColor = document.querySelector('.text-color')?.style.color || '#000000';
-      // トリミングデータを取得
-      // getCroppieImg();
+
+      //背表紙のテキストエリア
+      const textAreaCover = document.querySelector('.textArea-cover');
+      const covertext = textAreaCover
+        ? {
+            id: textAreaCover.id,
+            text: textAreaCover.value.trim() || '',
+          }
+        : null;
 
       // 各ページのデータを収集
       const pageData = Array.from(swiperSlides).map((slide) => {
