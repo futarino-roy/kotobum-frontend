@@ -401,23 +401,36 @@ a {
 header {
   width: 100%;
   height: 10%;
-  background: #ccc;
-  padding: 22px 68.74px 21px 59.51px;
+  background: #ffffff;
+  padding: 15px 20px;
   box-sizing: border-box;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 3px 0 rgba(110, 110, 110, 0.5);
 }
 header img {
   width: 76.95px;
   height: 38px;
 }
+header .header-container {
+  width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 @media screen and (max-width: 500px) {
   header {
-    padding: 11px 25px;
+    height: 6%;
+    padding: 5px 15px;
   }
   header img {
     width: 63px;
@@ -427,7 +440,7 @@ header img {
 
 .edit-header {
   width: 100%;
-  height: 45px;
+  height: 50px;
   background: #fdfcf6;
   padding: 22px 41px 13px 41px;
   display: flex;
@@ -443,20 +456,6 @@ header img {
   display: flex;
   justify-content: flex-end;
   z-index: 999;
-}
-
-.header-container {
-  width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-right {
-  display: flex;
-  gap: 20px;
-  align-items: center;
 }
 
 .signup-body {
