@@ -1148,23 +1148,22 @@
                 cursor: pointer;
                 @include mq('pc2-edit') {
                   margin-bottom: 6%;
-                  top: 2.9%;
-                  height: 22.5%;
+                  top: 26%;
+                  height: 22.8%;
                   width: 48%;
                 }
                 @include mq('pc-edit') {
-                  top: 6%;
+                  top: 26%;
                   margin-bottom: 5%;
                   height: 27.5%;
                   width: 48%;
                 }
                 @include mq('tab-edit') {
-                  top: 4%;
+                  top: 26.4%;
                   height: 26.5%;
                 }
                 @include mq('sp-edit') {
                   top: 26%;
-                  height: 22.5%;
                 }
                 img {
                   width: 100%;
@@ -1183,23 +1182,20 @@
                 cursor: pointer;
                 @include mq('pc2-edit') {
                   margin-bottom: 6%;
-                  top: 2.9%;
-                  height: 22.5%;
+                  top: 52.9%;
+                  height: 22.8%;
                   width: 48%;
                 }
                 @include mq('pc-edit') {
-                  top: 6%;
+                  top: 52.4%;
                   margin-bottom: 5%;
-                  height: 27.5%;
-                  width: 48%;
                 }
                 @include mq('tab-edit') {
-                  top: 4%;
+                  top: 53%;
                   height: 26.5%;
                 }
                 @include mq('sp-edit') {
                   top: 53%;
-                  height: 22.5%;
                 }
                 img {
                   width: 100%;

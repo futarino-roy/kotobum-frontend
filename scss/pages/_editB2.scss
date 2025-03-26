@@ -958,22 +958,18 @@
                   right: 29%;
                   border: 2px dashed #ccc;
                   @include mq('pc2-edit') {
-                    top: 10.5%;
-                    right: 6.5%;
-                    height: 23.7%;
+                    top: 10.8%;
+                    right: 29%;
+                    height: 23.9%;
                   }
-                  @media screen and (max-width: 1200px) {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 28%;
-                    right: 7%;
+                    height: 24.5%;
+                    right: 29%;
                   }
                   @include mq('sp-edit') {
-                    height: 25%;
-                    right: 28%;
-                    top: 10%;
+                    height: 24.4%;
+                    right: 29%;
                   }
 
                   img {
@@ -991,21 +987,18 @@
                   border: 2px dashed #ccc;
                   right: 29%;
                   @include mq('pc2-edit') {
-                    top: 10.5%;
-                    right: 6.5%;
-                    height: 23.7%;
+                    top: 37.6%;
+                    right: 29%;
+                    height: 23.9%;
                   }
-                  @media screen and (max-width: 1200px) {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 28%;
-                    right: 7%;
+                    height: 24.5%;
+                    right: 29%;
                   }
                   @include mq('sp-edit') {
-                    height: 25%;
-                    right: 28%;
+                    height: 24.4%;
+                    right: 29%;
                   }
 
                   img {
@@ -1023,21 +1016,18 @@
                   border: 2px dashed #ccc;
                   right: 29%;
                   @include mq('pc2-edit') {
-                    top: 10.5%;
-                    right: 6.5%;
-                    height: 23.7%;
+                    top: 64.5%;
+                    right: 29%;
+                    height: 23.9%;
                   }
-                  @media screen and (max-width: 1200px) {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 28%;
-                    right: 7%;
+                    height: 24.5%;
+                    right: 29%;
                   }
                   @include mq('sp-edit') {
-                    height: 25%;
-                    right: 28%;
+                    height: 24.4%;
+                    right: 29%;
                   }
 
                   img {
