@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const parts = urlParams.get('parts');
   const token = urlParams.get('token');
   const albumId = urlParams.get('albumId');
-  const partnerId = urlParams.get('partner_id');
+  const partner_id = urlParams.get('partner_id');
 
   if (!format) {
     console.warn('format情報が取得できませんでした。');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (albumId) {
     localStorage.setItem('albumId', albumId);
   }
-  if (partnerId) {
+  if (partner_id) {
     localStorage.setItem('partner_id', partner_id);
   }
 
