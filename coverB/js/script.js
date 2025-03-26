@@ -1027,6 +1027,7 @@ function handleSaveOrSend() {
       alert('エラーが発生しました。再度お試しください。');
     });
 }
+
 // ページ読み込み時のアルバムデータ取得処理
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token');
@@ -1036,86 +1037,95 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
-      }
-      return response.json();
+  // URLパラメータから管理者モードかどうかを判定
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.has('admin');
+
+  let albumId, partner_id;
+
+  if (isAdmin) {
+    // 管理者はローカルストレージからデータを取得
+    albumId = localStorage.getItem('albumId');
+    partner_id = localStorage.getItem('partner_id');
+    console.log('管理者モード');
+    console.log('アルバムID:', albumId);
+    console.log('ペアのアルバムID:', partner_id || 'ソロ');
+    showCaptureButton();
+
+    // アルバムデータ取得処理
+    fetchAlbumData(albumId);
+
+    if (partner_id) {
+      fetchAlbumData(partner_id);
+    }
+  } else {
+    // 一般ユーザーはAPIを使用してアルバムIDを取得
+    console.log('一般ユーザーモード');
+    fetch('https://develop-back.kotobum.com/api/user/album', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
     })
-    .then((albums) => {
-      const { albumId, partner_id } = albums;
-      console.log('APIレスポンス', albums);
-
-      if (!albumId) {
-        console.error('アルバムIDを取得できませんでした。');
-        return;
-      }
-      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
-      console.log('ペアのアルバムID:', partner_id || 'ソロ');
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const isAdmin = urlParams.has('admin');
-
-      if (isAdmin) {
-        console.log(`管理者モード: トークン: ${token}`);
-        // 管理者用のアルバムID
-        console.log('管理者モード: albumID:', albumId);
-        // 画像化ボタンの表示
-        showCaptureButton();
-        return;
-      } else {
-        console.log('一般ユーザーです');
-        // 一般ユーザー用のアルバムID
-        console.log('albumID:', albumId);
-      }
-
-      // 画像化ボタンの表示関数
-      function showCaptureButton() {
-        const captureButton = document.getElementById('captureButton');
-        if (captureButton) {
-          captureButton.style.display = 'block';
-        } else {
-          console.warn('画像化ボタンが見つかりません');
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
         }
-      }
+        return response.json();
+      })
+      .then((albums) => {
+        albumId = albums.albumId;
+        partner_id = albums.partner_id;
 
-      // アルバムデータ取得処理
-      const fetchAlbumData = (id) => {
-        return fetch(`https://develop-back.kotobum.com/api/albums/${id}/showCover`, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log(`取得したアルバムデータ (${id}):`, data);
-            processAlbumData(data);
-          })
-          .catch((error) => console.error(`アルバムデータ取得エラー (${id}):`, error));
-      };
+        console.log('取得したアルバムID:', albumId);
+        console.log('ペアのアルバムID:', partner_id || 'ソロ');
 
-      // メインのアルバムデータ取得
-      fetchAlbumData(albumId);
+        // アルバムデータ取得処理
+        fetchAlbumData(albumId);
 
-      // ペアのアルバムがある場合は、そちらも取得
-      if (partner_id) {
-        fetchAlbumData(partner_id);
-      }
-    });
+        if (partner_id) {
+          fetchAlbumData(partner_id);
+        }
+      })
+      .catch((error) => console.error('アルバムID取得エラー:', error));
+  }
+
+  // 画像化ボタンの表示関数
+  function showCaptureButton() {
+    const captureButton = document.getElementById('captureButton');
+    if (captureButton) {
+      captureButton.style.display = 'block';
+    } else {
+      console.warn('画像化ボタンが見つかりません');
+    }
+  }
+
+  // アルバムデータ取得処理
+  function fetchAlbumData(id) {
+    if (!id) {
+      console.warn('アルバムIDが無効です:', id);
+      return;
+    }
+
+    fetch(`https://develop-back.kotobum.com/api/albums/${id}/showCover`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(`取得したアルバムデータ (${id}):`, data);
+        processAlbumData(data);
+      })
+      .catch((error) => console.error(`アルバムデータ取得エラー (${id}):`, error));
+  }
 
   function processAlbumData(data) {
     // 必要に応じてJSON文字列をパース
