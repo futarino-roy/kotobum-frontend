@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('albumId', albumId);
   }
   if (partnerId) {
-    localStorage.setItem('pertnerId', partnerId);
+    localStorage.setItem('partner_id', partner_id);
   }
 
   // 管理者判定用のクエリパラメータの設定
