@@ -326,6 +326,10 @@ changeButtons.forEach((changeButton) => {
     modalF.classList.remove('is-active');
     // 次のモーダルを表示
     modalS.classList.add('is-active');
+    // 完了状態をローカルストレージに保存
+    localStorage.setItem('mainTextCompleted', 'true');
+    // サーバーに完了状態を送信
+    sendCompletionStatusToServer();
   });
 });
 
@@ -338,28 +342,92 @@ modalButton_ls.addEventListener('click', function () {
   window.location.href = 'mypage.html?disable=true&cursor=not-allowed';
 });
 
-//----------- モーダル内の校了ボタンを押した後のモーダル 中身用 -------------------
-const modalF_r = document.querySelector('.js-modal2');
-const modalS_r = document.querySelector('.js-modal2_2');
+// //----------- モーダル内の校了ボタンを押した後のモーダル 中身用 -------------------
+// const modalF_r = document.querySelector('.js-modal2');
+// const modalS_r = document.querySelector('.js-modal2_2');
 
-// 校了ボタンの取得
-const changeButton_rs = document.querySelectorAll('.modal-change_r');
+// // 校了ボタンの取得
+// const changeButton_rs = document.querySelectorAll('.modal-change_r');
 
-changeButton_rs.forEach((changeButton_r) => {
-  changeButton_r.addEventListener('click', function () {
-    // 最初のモーダルを非表示
-    modalF_r.classList.remove('is-active');
-    // 次のモーダルを表示
-    modalS_r.classList.add('is-active');
-  });
-});
+// changeButton_rs.forEach((changeButton_r) => {
+//   changeButton_r.addEventListener('click', function () {
+//     // 最初のモーダルを非表示
+//     modalF_r.classList.remove('is-active');
+//     // 次のモーダルを表示
+//     modalS_r.classList.add('is-active');
+//   });
+//   // 完了状態をローカルストレージに保存
+//   localStorage.setItem('mainTextCompleted', 'true');
 
-// -------------校了後のマイページのボタン無効化に関するJS　中身用----------------
+//   // サーバーに完了状態を送信
+//   sendCompletionStatusToServer();
+// });
 
-// モーダル内の「マイページへ」ボタンを取得
-const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
+// // -------------校了後のマイページのボタン無効化に関するJS　中身用----------------
 
-modalButton_ls.addEventListener('click', function () {
-  window.location.href = 'mypage.html?disable=true&cursor=not-allowed';
-  console.log(window.location.search);
-});
+// // モーダル内の「マイページへ」ボタンを取得
+// const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
+
+// modalButton_ls.addEventListener('click', function () {
+//   window.location.href = 'mypage.html?disable=true&cursor=not-allowed';
+//   console.log(window.location.search);
+// });
+
+// --------------------完了状態をサーバーに送信する関数-----------------------------------
+function sendCompletionStatusToServer() {
+  const token = localStorage.getItem('token'); // 認証トークンを取得
+
+  if (!token) {
+    console.error('認証トークンが見つかりません。ログインしてください。');
+    return;
+  }
+
+  // アルバムIDを取得
+  fetch('https://develop-back.kotobum.com/api/user/album', {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then((albums) => {
+      const albumId = albums.albumId; // サーバーから取得したアルバムID
+
+      if (!albumId) {
+        console.error('アルバムIDを取得できませんでした。');
+        return;
+      }
+
+      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
+
+      // アルバムIDを使って完了状態をサーバーに送信
+      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/cover/send`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          completed: true, // サーバーに送る完了状態
+        }),
+      });
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('サーバーに完了状態を送信しました:', data);
+    })
+    .catch((error) => {
+      console.error('完了状態送信中にエラーが発生しました💦', error);
+    });
+}
