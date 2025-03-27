@@ -7704,7 +7704,7 @@ input:checked + label::after {
 }
 .cover .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
-  top: 36%;
+  top: 35%;
   left: 5%;
   width: 86.8%;
   height: 56%;

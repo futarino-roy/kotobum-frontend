@@ -12,17 +12,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
   <link rel="stylesheet" href="../public/assets/style/style.css" />
-
-  <!--　Noto Sans JP　-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
 </head>
 
 <body class="cover-body">
   <header class="edit-header">
+    <button id="captureButton" onclick="captureToPDF()" class="btn btn-small_bl btn-small_bl-edit"
+      style="display: none">キャプチャ</button>
     <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
     <button id="sendButton" class="btn btn-small_bl">保存する</button>
     <!-- <button class="btn-preview">プレビュー</button> -->
@@ -222,22 +217,32 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="swiper-slide_box uniqueColor">
-              <img src="/cover/images/表紙　写真埋め込み@2x.png" alt="" />
+            <div class="swiper-slide_box uniqueColor target">
+              <!-- <img src="/coverB/images/coverA-textnone.png" alt="" /> -->
+              <div class="swiper-slide_box-pair uniqueColorB target"></div>
+              <img class="coverimg" src="/cover/images/表紙　写真埋め込み@2x.png" alt="" />
               <div class="input-drop">
-                <textarea id="textAreaA-1" rows="1" maxlength="20" class="text-empty text-size"
+                <textarea id="textAreaA-1" rows="1" maxlength="10" class="text-empty text-size"
                   placeholder="入力してください"> </textarea>
 
                 <textarea id="textAreaA-2" rows="1" maxlength="20" class="text-empty text-color"
                   placeholder="入力してください"></textarea>
-                <textarea id="textAreaA-3" rows="1" maxlength="20" class="text-empty text-color"
+                <textarea id="textAreaA-3" rows="1" maxlength="8" class="text-empty text-color"
                   placeholder="入力してください"></textarea>
 
-                <textarea id="textArea-cover" maxlength="50" class="text-empty textArea-cover"
+                <textarea id="textArea-cover" maxlength="30" class="text-empty textArea-cover"
                   placeholder="入力してください"></textarea>
 
                 <div id="dropAreaA" class="empty"></div>
                 <input type="file" id="fileInput" accept="image/jpeg, image/png" style="display: none" />
+              </div>
+              <div class="input-drop-pair">
+                <textarea id="textAreaB-1" rows="1" maxlength="10" class="text-empty text-size"></textarea>
+                <textarea id="textAreaB-2" rows="1" maxlength="20" class="text-empty text-colorB"></textarea>
+                <textarea id="textAreaB-3" rows="1" maxlength="15" class="text-empty text-colorB"></textarea>
+                <!-- <textarea id="textArea-cover" maxlength="50" class="text-empty textArea-cover" disabled></textarea> -->
+                <div id="dropAreaB" class="empty" style="border: none; cursor: default;"></div>
+
               </div>
             </div>
           </div>
@@ -270,6 +275,12 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/croppie/croppie.min.js"></script>
   <script src="/coverB/js/script.js"></script>
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- html-to-image CDN -->
+  <script src="https://unpkg.com/html-to-image"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.10.4"></script>
+  <!-- jsPDF CDN -->
 </body>
 
 </html>
