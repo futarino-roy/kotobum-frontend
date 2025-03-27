@@ -1503,11 +1503,15 @@
               .wave-img {
                 position: absolute;
                 top: 62.5%;
-                height: 30%;
+                height: 32%;
                 left: 7% !important;
                 width: 86%;
                 @include mq('pc2-edit') {
                   bottom: 1.5%;
+                }
+                @include mq('tab-edit') {
+                  left: 6% !important;
+                  width: 88%;
                 }
               }
               .wave {

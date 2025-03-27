@@ -277,7 +277,7 @@
 
                 &6_t4 {
                   position: relative;
-                  top: -5.5%;
+                  top: -0.5%;
                   left: -0.5%;
                   width: 43%;
                   height: 33.5%;
@@ -477,6 +477,7 @@
                 background-color: transparent;
                 border: none;
                 field-sizing: content;
+                color: black;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
@@ -779,7 +780,7 @@
                   max-height: 5%;
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
-                    top: 28%;
+                    top: 27%;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
@@ -796,7 +797,7 @@
                   color: #fdfcf6;
                   margin: 0;
                   position: relative;
-                  top: 28%;
+                  top: 27.7%;
                   font-size: 0.5rem;
                   max-height: 4%;
                   @include mq('pc2-edit') {
@@ -928,7 +929,17 @@
 
               .wave-img {
                 position: absolute;
-                bottom: 13.5%;
+                top: 62.5%;
+                height: 32%;
+                left: 6% !important;
+                width: 88%;
+                @include mq('pc2-edit') {
+                  bottom: 1.5%;
+                }
+                @include mq('tab-edit') {
+                  left: 6% !important;
+                  width: 88%;
+                }
               }
               .wave {
                 position: absolute;

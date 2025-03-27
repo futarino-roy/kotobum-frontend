@@ -7864,7 +7864,7 @@ input:checked + label::after {
   max-width: 16.5%;
   height: 4.7%;
   top: 16.5%;
-  left: 73.5%;
+  left: 73.2%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
@@ -7875,13 +7875,13 @@ input:checked + label::after {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 0.8rem;
     top: 16.3%;
+    left: 73.2%;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
-    font-size: 1.5rem;
-    top: 16.5%;
-    left: 73.4%;
+    top: 16.3%;
+    left: 74%;
     max-width: 15%;
   }
 }
@@ -8877,10 +8877,10 @@ input:checked + label::after {
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  top: 35.5%;
+  top: 35.2%;
   right: 5%;
   width: 88%;
-  height: 56.5%;
+  height: 56.7%;
   border: 2px dashed #ccc;
   font-size: 1rem;
   cursor: pointer;
@@ -9069,7 +9069,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   top: 22%;
-  right: 69.3%;
+  right: 70.1%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -9080,11 +9080,13 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
     font-size: 0.3rem;
+    right: 69.9%;
   }
 }
 @media screen and (min-width: 1500px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
     font-size: 0.6rem;
+    right: 69.9%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -9099,7 +9101,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
-    font-size: 0.8vw;
+    font-size: 1.2vw;
   }
 }
 .coverB .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
@@ -10148,10 +10150,10 @@ input:checked + label::after {
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  top: 35.5%;
+  top: 35.2%;
   right: 5%;
   width: 88%;
-  height: 56.5%;
+  height: 56.7%;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -10338,7 +10340,7 @@ input:checked + label::after {
   margin: 0;
   position: absolute;
   top: 22%;
-  right: 69.3%;
+  right: 70.1%;
   line-height: 1.5;
   font-weight: bold;
   font-size: 0.4rem;
@@ -10349,11 +10351,13 @@ input:checked + label::after {
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
     font-size: 0.3rem;
+    right: 69.9%;
   }
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
     font-size: 0.6rem;
+    right: 69.9%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -10368,7 +10372,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-2 {
-    font-size: 0.8vw;
+    font-size: 1.2vw;
   }
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-3 {
@@ -20613,13 +20617,19 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
   position: absolute;
   top: 62.5%;
-  height: 30%;
+  height: 32%;
   left: 7% !important;
   width: 86%;
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
     bottom: 1.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
+    left: 6% !important;
+    width: 88%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave {
@@ -20984,7 +20994,7 @@ body {
 }
 .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop #dropArea6_t4 {
   position: relative;
-  top: -5.5%;
+  top: -0.5%;
   left: -0.5%;
   width: 43%;
   height: 33.5%;
@@ -21157,6 +21167,7 @@ body {
   background-color: transparent;
   border: none;
   field-sizing: content;
+  color: black;
 }
 @media screen and (max-width: 1200px) {
   .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop textarea {
@@ -21515,7 +21526,7 @@ body {
 @media screen and (min-width: 1500px) {
   .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop #textArea10-2_t4 {
     font-size: 0.9rem;
-    top: 28%;
+    top: 27%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -21536,7 +21547,7 @@ body {
   color: #fdfcf6;
   margin: 0;
   position: relative;
-  top: 28%;
+  top: 27.7%;
   font-size: 0.5rem;
   max-height: 4%;
 }
@@ -21708,7 +21719,21 @@ body {
 }
 .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
   position: absolute;
-  bottom: 13.5%;
+  top: 62.5%;
+  height: 32%;
+  left: 6% !important;
+  width: 88%;
+}
+@media screen and (min-width: 1500px) {
+  .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
+    bottom: 1.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave-img {
+    left: 6% !important;
+    width: 88%;
+  }
 }
 .preview .content .swiper-wrapper .swiper-slide_box4 .input-drop .wave {
   position: absolute;

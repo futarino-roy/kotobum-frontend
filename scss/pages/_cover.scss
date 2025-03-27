@@ -915,7 +915,7 @@
                   max-width: 16.5%;
                   height: 4.7%;
                   top: 16.5%;
-                  left: 73.5%;
+                  left: 73.2%;
                   text-align: center;
                   white-space: nowrap; /* 改行をさせない設定 */
                   line-height: 0.9;
@@ -925,12 +925,12 @@
                   @include mq('pc-edit') {
                     font-size: 0.8rem;
                     top: 16.3%;
+                    left: 73.2%;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 1.5rem;
-                    top: 16.5%;
-                    left: 73.4%;
+                    top: 16.3%;
+                    left: 74%;
                     max-width: 15%;
                   }
 

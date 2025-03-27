@@ -210,10 +210,10 @@
 
               #dropAreaB {
                 position: absolute;
-                top: 35.5%;
+                top: 35.2%;
                 right: 5%;
                 width: 88%;
-                height: 56.5%;
+                height: 56.7%;
 
                 border: none;
                 font-size: 1rem;
@@ -400,7 +400,7 @@
                   margin: 0;
                   position: absolute;
                   top: 22%;
-                  right: 69.3%;
+                  right: 70.1%;
                   line-height: 1.5;
                   font-weight: bold;
                   font-size: 0.4rem;
@@ -410,10 +410,12 @@
                   max-width: 24%;
                   @include mq('pc-edit') {
                     font-size: 0.3rem;
+                    right: 69.9%;
                   }
 
                   @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    right: 69.9%;
                   }
 
                   @include mq('tab-edit') {
@@ -424,7 +426,7 @@
                     font-size: 1.7vw;
                   }
                   @include mq('sp2-edit') {
-                    font-size: 0.8vw;
+                    font-size: 1.2vw;
                   }
                 }
                 &B-3 {

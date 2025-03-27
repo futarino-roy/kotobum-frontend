@@ -632,100 +632,102 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //-------------------------追加-----------------------------
-document.addEventListener('DOMContentLoaded', function () {
-  const textAreas = document.querySelectorAll('.text-size');
+const textArea = document.getElementById('textAreaB-1');
 
-  function adjustLineHeight(textArea) {
-    const textAreaHeight = textArea.clientHeight;
-    const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
-    const textLength = textArea.value.length; // テキストの文字数を取得
+const updateTextAreaStyle = () => {
+  const textLength = textArea.value.length;
+  const windowWidth = window.innerWidth;
+  let fontSize = '0.75rem';
+  let lineHeight = 1.2;
 
-    let lineHeight;
+  if (windowWidth >= 1500) {
+    // モニタサイズ (1500px以上)
     if (textLength <= 4) {
-      // 4文字以内の場合
-      lineHeight = textAreaHeight / fontSize - 0.2; // 独自の調整値を適用
+      fontSize = '0.95rem';
+      lineHeight = 1.5;
+    } else if (textLength <= 6) {
+      fontSize = '0.85rem';
+      lineHeight = 1.6;
+    } else if (textLength === 7) {
+      fontSize = '0.75rem';
+      lineHeight = 1.9;
     } else {
-      // 4文字以上の場合
-      lineHeight = textAreaHeight / fontSize + 0.25; // 別の調整値を適用
+      fontSize = '0.65rem';
+      lineHeight = 2.4;
     }
-
-    textArea.style.lineHeight = lineHeight;
+  } else if (windowWidth >= 1200 && windowWidth < 1500) {
+    // PC① (1200px～1500px)
+    if (textLength <= 4) {
+      fontSize = '0.7rem';
+      lineHeight = 1.3;
+    } else if (textLength <= 6) {
+      fontSize = '0.6rem';
+      lineHeight = 1.5;
+    } else if (textLength === 7) {
+      fontSize = '0.5rem';
+      lineHeight = 1.8;
+    } else {
+      fontSize = '0.4rem';
+      lineHeight = 2.375;
+    }
+  } else if (windowWidth >= 900 && windowWidth < 1200) {
+    // PC② (900px～1200px)
+    if (textLength <= 4) {
+      fontSize = '0.6rem';
+      lineHeight = 1.1;
+    } else if (textLength <= 6) {
+      fontSize = '0.4rem';
+      lineHeight = 1.3;
+    } else if (textLength === 7) {
+      fontSize = '0.4rem';
+      lineHeight = 1.7;
+    } else {
+      fontSize = '0.34rem';
+      lineHeight = 2.0;
+    }
+  } else if (windowWidth >= 480 && windowWidth < 900) {
+    // タブレットサイズ (480px～900px)
+    if (textLength <= 4) {
+      fontSize = '0.75rem';
+      lineHeight = 1.3;
+    } else if (textLength <= 6) {
+      fontSize = '0.65rem';
+      lineHeight = 1.6;
+    } else if (textLength === 7) {
+      fontSize = '0.55rem';
+      lineHeight = 2.0;
+    } else {
+      fontSize = '0.55rem';
+      lineHeight = 2.0;
+    }
+  } else {
+    // スマホサイズ (480px未満)
+    if (textLength <= 4) {
+      fontSize = '0.75rem';
+      lineHeight = 1.2;
+    } else if (textLength <= 6) {
+      fontSize = '0.6rem';
+      lineHeight = 1.5;
+    } else if (textLength === 7) {
+      fontSize = '0.55rem';
+      lineHeight = 1.8;
+    } else {
+      fontSize = '0.45rem';
+      lineHeight = 2.0;
+    }
   }
 
-  function adjustLineHeightForAll() {
-    textAreas.forEach((textArea) => {
-      adjustLineHeight(textArea);
-    });
-  }
+  // スタイル適用
+  textArea.style.fontSize = fontSize;
+  textArea.style.lineHeight = lineHeight.toString();
+};
 
-  window.addEventListener('load', adjustLineHeightForAll);
+// イベントリスナーを追加
+textArea.addEventListener('input', updateTextAreaStyle);
+window.addEventListener('resize', updateTextAreaStyle);
 
-  textAreas.forEach((textArea) => {
-    textArea.addEventListener('input', function () {
-      this.style.height = '';
-      adjustLineHeight(this);
-    });
-
-    textArea.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        adjustLineHeight(this);
-      }
-    });
-  });
-
-  window.addEventListener('resize', adjustLineHeightForAll);
-
-  function remToPx(rem) {
-    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
-  }
-
-  textAreas.forEach((textArea) => {
-    let maxFontSizeRem = 0.85;
-    let minFontSizeRem = 0.4;
-
-    function adjustFontSize() {
-      // ウィンドウサイズに応じたフォントサイズの設定
-      if (window.innerWidth >= 1500) {
-        maxFontSizeRem = 0.95; // 最大フォントサイズ (1500px以上)
-        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px以上)
-      } else if (window.innerWidth >= 1200) {
-        maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
-        minFontSizeRem = 0.4; // 最小フォントサイズ (1500px-1200px)
-      } else if (window.innerWidth >= 900) {
-        maxFontSizeRem = 0.6; // 最大フォントサイズ (1200px-900px)
-        minFontSizeRem = 0.2; // 最小フォントサイズ (1200px-900px)
-      } else if (window.innerWidth >= 380) {
-        maxFontSizeRem = 0.75; // 最大フォントサイズ (900px-480px)
-        minFontSizeRem = 0.2; // 最小フォントサイズ (900px-480px)
-      } else {
-        maxFontSizeRem = 0.6; // デフォルト最大フォントサイズ
-        minFontSizeRem = 0.2; // デフォルト最小フォントサイズ
-      }
-
-      let fontSizeRem = maxFontSizeRem;
-      textArea.style.fontSize = `${fontSizeRem}rem`;
-
-      // テキストエリアの幅に収まるまでフォントサイズを調整
-      while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.1;
-        textArea.style.fontSize = `${fontSizeRem}rem`;
-      }
-    }
-
-    // テキストエリアの入力イベントでフォントサイズを調整
-    textArea.addEventListener('input', function () {
-      adjustFontSize();
-    });
-
-    // 初期状態で値が入っている場合にもフォントサイズを調整
-    if (textArea.value.trim() !== '') {
-      adjustFontSize();
-    }
-
-    // ウィンドウのリサイズ時にもフォントサイズを再調整
-    window.addEventListener('resize', adjustFontSize);
-  });
-});
+// 初期スタイルを適用
+updateTextAreaStyle();
 //------------------------ここまで----------------------------
 
 // 枠変更 12-~3変更できない版
