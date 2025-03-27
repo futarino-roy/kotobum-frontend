@@ -1925,8 +1925,8 @@
   }
 
   @media (max-height: 926px) {
-    left: 22% !important;
-    top: 47vh !important;
+    left: 3% !important;
+    top: 35vh !important;
   }
 }
 
@@ -1952,6 +1952,10 @@
   @media (max-height: 926px) {
     right: 22% !important;
     top: 47vh !important;
+  }
+  @media (max-width: 900px) {
+    right: 3% !important;
+    top: 35vh !important;
   }
 }
 

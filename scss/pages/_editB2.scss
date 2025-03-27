@@ -768,16 +768,16 @@
           }
           &_box2 {
             position: relative;
-            clip-path: inset(19px 19px 28px 19px);
+            clip-path: inset(25px 25px 32px 25px);
             @include mq('pc2-edit') {
-              clip-path: inset(30px 30px 36px 30px);
+              clip-path: inset(38px 37px 44px 37px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(17px 16px 23px 17px);
+              clip-path: inset(19px 19px 25px 19px);
             }
             @include mq('tab-edit') {
               width: 90%;
-              clip-path: inset(5% 7.5% 5.5% 7.5%);
+              clip-path: inset(6% 8% 6.5% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;
@@ -1310,6 +1310,7 @@
               }
             }
             #textAreaB12-1_t2 {
+              font-family: 'League Spartan', sans-serif;
               transform: rotate(270deg);
               position: relative;
               top: 4%;
@@ -1319,6 +1320,7 @@
               font-weight: bold;
               font-size: 0.7rem;
               line-height: 1;
+              letter-spacing: 0.2em;
 
               @include mq('pc-edit') {
                 font-size: 0.6rem;
@@ -1374,26 +1376,28 @@
                 &B12-2_t2 {
                   position: absolute;
                   top: 54%;
-                  font-size: 0.35rem;
+                  font-size: 0.32rem;
                   max-width: 68% !important;
                   width: 68% !important;
+                  height: 30%;
 
                   @include mq('pc-edit') {
-                    font-size: 0.19rem;
+                    font-size: 0.24rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.6rem;
+                    font-size: 0.48rem;
+                    height: 31%;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 0.955vw;
-                    margin-top: 30%;
+                    font-size: 1.25vw;
+                    height: 32%;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 1.1vw;
-                    margin-top: 10%;
+                    font-size: 1.36vw;
+                    height: 30%;
                   }
                 }
                 &B12-3_t2 {

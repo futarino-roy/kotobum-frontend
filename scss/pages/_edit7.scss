@@ -1826,9 +1826,13 @@
     left: 42%;
     top: 10%;
   }
-  @media (max-height: 926px) {
+  @media (max-height: 926px) and (min-width: 900px) {
     left: 22% !important;
     top: 47vh !important;
+  }
+  @media (max-height: 925px) and (max-width: 900px) {
+    left: 3% !important;
+    top: 35vh !important;
   }
 }
 
@@ -1850,9 +1854,13 @@
     right: 42%;
     top: 10%;
   }
-  @media (max-height: 926px) {
+  @media (max-height: 926px) and (min-width: 900px) {
     right: 22% !important;
     top: 47vh !important;
+  }
+  @media (max-height: 925px) and (max-width: 900px) {
+    right: 3% !important;
+    top: 35vh !important;
   }
 }
 

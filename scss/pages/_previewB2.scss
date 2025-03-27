@@ -188,16 +188,16 @@
           }
           &_box2 {
             position: relative;
-            clip-path: inset(19px 19px 28px 19px);
+            clip-path: inset(29px 29px 36px 29px);
             @include mq('pc2-edit') {
-              clip-path: inset(30px 30px 36px 30px);
+              clip-path: inset(38px 36px 45px 36px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(17px 16px 23px 17px);
+              clip-path: inset(19px 19px 26px 19px);
             }
             @include mq('tab-edit') {
               width: 90%;
-              clip-path: inset(5% 7.5% 5.5% 7.5%);
+              clip-path: inset(6% 8% 6.5% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;

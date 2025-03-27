@@ -768,16 +768,16 @@
           }
           &_box2 {
             position: relative;
-            clip-path: inset(19px 19px 28px 19px);
+            clip-path: inset(25px 25px 32px 25px);
             @include mq('pc2-edit') {
-              clip-path: inset(30px 30px 36px 30px);
+              clip-path: inset(38px 37px 44px 37px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(17px 16px 23px 17px);
+              clip-path: inset(19px 19px 25px 19px);
             }
             @include mq('tab-edit') {
               width: 90%;
-              clip-path: inset(5% 7.5% 5.5% 7.5%);
+              clip-path: inset(6% 8% 6.5% 8%);
             }
             @include mq('sp-edit') {
               width: 100%;
@@ -813,9 +813,9 @@
               }
               .textarea-line {
                 position: absolute;
-                height: 91%;
+                height: 74%;
                 left: 13%;
-                top: 5%;
+                top: 10%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -823,21 +823,16 @@
                 // gap: 5%;
                 @include mq('pc2-edit') {
                   left: 13%;
-                  top: 5%;
-                  height: 91%;
+                  top: 10%;
+                  height: 79%;
                 }
-                @include mq('pc-edit') {
-                  height: 94%;
-                  left: 12%;
-                  top: 5%;
-                }
+
                 @include mq('tab-edit') {
-                  height: 88%;
-                  left: 12%;
-                  top: 5%;
+                  left: 11%;
+                  top: 11%;
                 }
                 @include mq('sp-edit') {
-                  height: 90%;
+                  left: 15%;
                 }
 
                 #textArea4_t2 {
@@ -967,33 +962,25 @@
                 }
 
                 #dropArea4-1_t2 {
-                  width: 55.5%;
-                  height: 29%;
+                  width: 55%;
+                  height: 24%;
                   position: absolute;
-                  top: 5%;
-                  left: 6.5%;
+                  top: 10.5%;
+                  left: 29%;
                   border: 2px dashed #ccc;
-
                   @include mq('pc2-edit') {
-                    top: 5%;
-                    left: 6.5%;
-                    height: 28.5%;
+                    top: 10.8%;
+                    left: 29%;
+                    height: 23.9%;
                   }
-                  @include mq('pc-edit') {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 27.7%;
-                    width: 55%;
-                    top: 5.7%;
-                    left: 6.5%;
+                    height: 24.5%;
+                    left: 29%;
                   }
                   @include mq('sp-edit') {
-                    height: 24.7%;
-                    width: 55%;
-                    top: 9.7%;
-                    left: 28.5%;
+                    height: 24.4%;
+                    left: 29%;
                   }
 
                   img {
@@ -1004,33 +991,25 @@
                   }
                 }
                 #dropArea4-2_t2 {
-                  width: 55.5%;
-                  height: 29%;
+                  width: 55%;
+                  height: 24%;
                   position: absolute;
-                  top: 5%;
-                  left: 6.5%;
+                  top: 37.2%;
                   border: 2px dashed #ccc;
-
+                  left: 29%;
                   @include mq('pc2-edit') {
-                    top: 5%;
-                    left: 6.5%;
-                    height: 28.5%;
+                    top: 37.6%;
+                    left: 29%;
+                    height: 23.9%;
                   }
-                  @include mq('pc-edit') {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 27.7%;
-                    width: 55%;
-                    top: 5.7%;
-                    left: 6.5%;
+                    height: 24.5%;
+                    left: 29%;
                   }
                   @include mq('sp-edit') {
-                    height: 24.7%;
-                    width: 55%;
-                    top: 37%;
-                    left: 28.5%;
+                    height: 24.4%;
+                    left: 29%;
                   }
 
                   img {
@@ -1041,33 +1020,23 @@
                   }
                 }
                 #dropArea4-3_t2 {
-                  width: 55.5%;
-                  height: 29%;
+                  width: 55%;
+                  height: 24%;
                   position: absolute;
-                  top: 5%;
-                  left: 6.5%;
+                  top: 64%;
                   border: 2px dashed #ccc;
-
+                  left: 29%;
                   @include mq('pc2-edit') {
-                    top: 5%;
-                    left: 6.5%;
-                    height: 28.5%;
+                    top: 64.5%;
+
+                    height: 23.9%;
                   }
-                  @include mq('pc-edit') {
-                    height: 30%;
-                    width: 56%;
-                  }
+
                   @include mq('tab-edit') {
-                    height: 27.7%;
-                    width: 55%;
-                    top: 5.7%;
-                    left: 6.5%;
+                    height: 24.5%;
                   }
                   @include mq('sp-edit') {
-                    height: 24.7%;
-                    width: 55%;
-                    top: 63.7%;
-                    left: 28.5%;
+                    height: 24.4%;
                   }
 
                   img {
@@ -1151,11 +1120,12 @@
                 @include mq('pc-edit') {
                 }
                 @include mq('tab-edit') {
-                  height: 22.7%;
-                  top: 26.4%;
+                  height: 22.8%;
+                  top: 26.3%;
                 }
                 @include mq('sp-edit') {
                   top: 26.2%;
+                  width: 48.2%;
                 }
                 img {
                   width: 100%;
@@ -1187,7 +1157,8 @@
                   // height: 26.5%;
                 }
                 @include mq('sp-edit') {
-                  top: 53%;
+                  top: 52.8%;
+                  width: 48.2%;
                 }
                 img {
                   width: 100%;
@@ -1205,16 +1176,16 @@
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
-                @include mq('pc-edit') {
+                @include mq('pc2-edit') {
                   top: -0.5%;
                 }
                 @include mq('pc-edit') {
                   top: -1%;
-                  // height: 48%;
+                  height: 39%;
                 }
                 @include mq('tab-edit') {
-                  top: 0;
-                  // height: 46%;
+                  top: -0.5%;
+                  height: 40%;
                 }
                 @include mq('sp-edit') {
                   top: -2px;
@@ -1441,7 +1412,6 @@
                   }
                   @include mq('pc-edit') {
                     font-size: 0.5rem;
-                    bottom: 9%;
                   }
                   @include mq('tab-edit') {
                     bottom: 11.5%;
@@ -1517,27 +1487,22 @@
               height: 100%;
               justify-content: center;
               align-items: center;
-              left: 14.5%;
+              left: 14.4%;
               position: absolute;
               top: -4%;
 
               #dropArea12_t2 {
+                margin-top: 0%;
                 position: absolute;
-                top: 15%;
-                width: 60%;
+                top: 18%;
+                width: 70%;
                 height: 34%;
                 font-size: 1rem;
                 border: 2px dashed #ccc;
                 cursor: pointer;
 
                 @include mq('pc2-edit') {
-                  top: 17%;
-                }
-                @include mq('pc-edit') {
-                  top: 18%;
-                }
-                @include mq('tab-edit') {
-                  top: 15%;
+                  width: 70%;
                 }
 
                 img {
@@ -1550,26 +1515,30 @@
 
               #textArea {
                 &12-2_t2 {
-                  font-size: 0.35rem;
-                  margin-top: 37%;
                   position: absolute;
-                  top: 33%;
+                  top: 54%;
+                  font-size: 0.32rem;
+                  max-width: 68% !important;
+                  width: 68% !important;
+                  height: 30%;
+
                   @include mq('pc-edit') {
-                    font-size: 0.26rem;
+                    font-size: 0.24rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.52rem;
-                    margin-top: 36%;
+                    font-size: 0.48rem;
+                    height: 31%;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.3vw;
-                    margin-top: 33%;
+                    font-size: 1.25vw;
+                    height: 32%;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 1.1vw;
+                    font-size: 1.36vw;
+                    height: 30%;
                   }
                 }
                 &12-3_t2 {
@@ -1577,13 +1546,12 @@
                   font-weight: bold;
                   position: absolute;
                   font-size: 12px;
-                  bottom: 0;
+                  bottom: 5%;
                   text-align: center;
-                  font-style: italic;
 
-                  @include mq('pc-edit') {
-                    font-size: 10px;
-                  }
+                  // @include mq('pc-edit') {
+                  //   margin-bottom: 15%;
+                  // }
 
                   @include mq('pc2-edit') {
                     font-size: 1.2rem;
@@ -1592,14 +1560,14 @@
                   }
 
                   @include mq('tab-edit') {
-                    line-height: 0.9;
-                    font-size: 2.7vw;
-                    margin-bottom: 7%;
+                    line-height: 0.7;
+                    font-size: 3vw;
+                    margin-bottom: 5%;
                   }
 
-                  // @include mq('sp-edit') {
-                  //   font-size: 2.5vw;
-                  // }
+                  @include mq('sp-edit') {
+                    line-height: 2;
+                  }
                 }
               }
             }
