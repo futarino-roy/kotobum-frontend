@@ -1,21 +1,21 @@
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper('.swiper', {
   pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
+    el: '.swiper-pagination',
+    type: 'fraction',
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   slidesPerView: 1, // 常に1枚のスライドを表示
   slidesPerGroup: 1, // 常に1スライドずつ移動
 });
 
 // メインのスライドからプレビュー
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // URLのクエリパラメータを取得
   const urlParams = new URLSearchParams(window.location.search);
-  const slideNumber = urlParams.get("slide");
+  const slideNumber = urlParams.get('slide');
 
   // 取得したスライド番号を使って対応するスライドを表示
   if (slideNumber) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // プレビューからメイン
-document.getElementById("editBack").addEventListener("click", function () {
+document.getElementById('editBack').addEventListener('click', function () {
   const currentSlideIndex = swiper.realIndex; // 現在のスライドインデックスを取得
   const mainPageUrl = `../edit/index.html?slide=${currentSlideIndex + 1}`; // スライド番号をクエリパラメータに追加
   window.location.href = mainPageUrl; // メインページに遷移
@@ -37,20 +37,20 @@ document.getElementById("editBack").addEventListener("click", function () {
 // IndexedDBの初期化
 function initIndexedDBForPreview() {
   // ここでの処理は削除されました
-  console.error("Image saving functionality has been removed.");
+  console.error('Image saving functionality has been removed.');
 }
 
 // ドロップエリアに画像を復元する
 function restoreDropAreasInPreview() {
-  const dropAreas = document.querySelectorAll(".empty"); // すべてのドロップエリアを取得
+  const dropAreas = document.querySelectorAll('.empty'); // すべてのドロップエリアを取得
   dropAreas.forEach((dropArea) => {
     // 画像を復元する処理は削除されました
-    console.log("Restoration of images from IndexedDB has been removed.");
+    console.log('Restoration of images from IndexedDB has been removed.');
   });
 }
 
 // ページが読み込まれたときにIndexedDBを初期化
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   initIndexedDBForPreview();
 });
 
@@ -62,29 +62,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // すべての画像をロードする
 function loadAllImages() {
-  const emptyElements = document.querySelectorAll(".empty");
+  const emptyElements = document.querySelectorAll('.empty');
   emptyElements.forEach(function (dropArea) {
     // 画像をロードする処理は削除されました
-    console.log("Loading images from IndexedDB has been removed.");
+    console.log('Loading images from IndexedDB has been removed.');
   });
 }
 
 // ドキュメントが読み込まれた後の処理
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   loadAllImages(); // ページがロードされたときにすべての画像を表示
 
   // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
 });
 
 // ドキュメントが読み込まれた後の処理
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   loadAllImages(); // ページがロードされたときにすべての画像を表示
 
   // 必要に応じて、ユーザーが画像を操作するためのその他の機能を追加
 });
 
 // 枠 柔軟版
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // 枠のサイズ変更処理
   function applyBorders() {
     // dropAreaを含む全ての要素を取得
@@ -109,20 +109,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function adjustTextareaSize(textarea) {
   // 高さをリセットしてから内容に応じて高さを調整
-  textarea.style.height = "auto";
+  textarea.style.height = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
 
   // 幅をリセットしてから内容に応じて幅を調整
-  textarea.style.width = "auto";
+  textarea.style.width = 'auto';
   textarea.style.width = `${textarea.scrollWidth}px`;
 }
 
 // プレビューページでテキストエリアにローカルストレージからテキストを表示する関数
 function loadTextForPreview() {
   // テキストエリアのIDが"previewTextArea"で始まるすべての要素を取得
-  const textAreas = document.querySelectorAll(
-    'textarea[id^="previewTextArea"]'
-  );
+  const textAreas = document.querySelectorAll('textarea[id^="previewTextArea"]');
 
   textAreas.forEach((textArea) => {
     // テキストエリアの高さと幅を調整
@@ -132,27 +130,27 @@ function loadTextForPreview() {
 }
 
 // ドキュメントが読み込まれたときにテキストを表示
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   loadTextForPreview();
 });
 
 //-------------------------------------追加----------------------------------
 // テキストエリアの高さを調整する関数
 function adjustHeight(textarea) {
-  textarea.style.height = "auto";
+  textarea.style.height = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
 }
 
 // テキストエリアの幅を調整する関数
 function adjustTextareaWidth(textarea) {
-  textarea.style.width = "auto";
+  textarea.style.width = 'auto';
   const scrollWidth = textarea.scrollWidth;
   textarea.style.width = `${scrollWidth}px`;
 }
 
 // 最大文字数の制限を外し、イベントリスナーを追加する関数
 function enforceNoMaxLength(textarea) {
-  textarea.addEventListener("input", function () {
+  textarea.addEventListener('input', function () {
     adjustHeight(this);
     adjustTextareaWidth(this);
   });
@@ -165,66 +163,94 @@ document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('.text-size');
 
   function adjustLineHeight(textArea) {
-    // テキストエリアの高さを取得
     const textAreaHeight = textArea.clientHeight;
-
-    // フォントサイズを取得 (必要に応じて固定)
     const fontSize = parseFloat(window.getComputedStyle(textArea).fontSize);
+    const textLength = textArea.value.length; // テキストの文字数を取得
 
-    // line-height をテキストエリアの高さに応じて計算
-    const lineHeight = textAreaHeight / fontSize + 0.09;
+    let lineHeight;
+    if (textLength <= 4) {
+      // 4文字以内の場合
+      lineHeight = textAreaHeight / fontSize - 0.2; // 独自の調整値を適用
+    } else {
+      // 4文字以上の場合
+      lineHeight = textAreaHeight / fontSize + 0.25; // 別の調整値を適用
+    }
 
-    // line-height を設定
     textArea.style.lineHeight = lineHeight;
   }
 
   function adjustLineHeightForAll() {
-    textAreas.forEach(textArea => {
-      adjustLineHeight(textArea); // 各テキストエリアのline-heightを調整
+    textAreas.forEach((textArea) => {
+      adjustLineHeight(textArea);
     });
   }
 
-  // 初期ロード時にline-heightを設定
   window.addEventListener('load', adjustLineHeightForAll);
 
-  // テキストエリアに入力があったときにline-heightを調整
-  textAreas.forEach(textArea => {
+  textAreas.forEach((textArea) => {
     textArea.addEventListener('input', function () {
-      // 高さを自動調整
       this.style.height = '';
-      adjustLineHeight(this); // line-heightを調整
+      adjustLineHeight(this);
+    });
+
+    textArea.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        adjustLineHeight(this);
+      }
     });
   });
 
-  // ウィンドウサイズがリサイズされた場合にline-heightを再設定
   window.addEventListener('resize', adjustLineHeightForAll);
 
-  // 1remが何pxかを計算する関数
   function remToPx(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
-  textAreas.forEach(textArea => {
-    // フォントサイズの最大と最小を rem で指定
-    const maxFontSizeRem = 0.9; // 1.5rem (例として最大フォントサイズ)
-    const minFontSizeRem = 0.2; // 0.75rem (最小フォントサイズ)
+  textAreas.forEach((textArea) => {
+    let maxFontSizeRem = 0.85;
+    let minFontSizeRem = 0.4;
 
-    // テキスト量に応じてフォントサイズを調整
     function adjustFontSize() {
+      // ウィンドウサイズに応じたフォントサイズの設定
+      if (window.innerWidth >= 1500) {
+        maxFontSizeRem = 0.95; // 最大フォントサイズ (1500px以上)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1500px以上)
+      } else if (window.innerWidth >= 1200) {
+        maxFontSizeRem = 0.7; // 最大フォントサイズ (1500px-1200px)
+        minFontSizeRem = 0.4; // 最小フォントサイズ (1500px-1200px)
+      } else if (window.innerWidth >= 900) {
+        maxFontSizeRem = 0.6; // 最大フォントサイズ (1200px-900px)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (1200px-900px)
+      } else if (window.innerWidth >= 380) {
+        maxFontSizeRem = 0.75; // 最大フォントサイズ (900px-480px)
+        minFontSizeRem = 0.2; // 最小フォントサイズ (900px-480px)
+      } else {
+        maxFontSizeRem = 0.6; // デフォルト最大フォントサイズ
+        minFontSizeRem = 0.2; // デフォルト最小フォントサイズ
+      }
+
       let fontSizeRem = maxFontSizeRem;
       textArea.style.fontSize = `${fontSizeRem}rem`;
 
-      // 最大幅以内に収まるようにフォントサイズを調整
+      // テキストエリアの幅に収まるまでフォントサイズを調整
       while (textArea.scrollWidth > textArea.clientWidth && fontSizeRem > minFontSizeRem) {
-        fontSizeRem -= 0.05; // フォントサイズをremで小さくする
+        fontSizeRem -= 0.1;
         textArea.style.fontSize = `${fontSizeRem}rem`;
       }
     }
 
-    // 初期状態でテキストがある場合の処理
+    // テキストエリアの入力イベントでフォントサイズを調整
+    textArea.addEventListener('input', function () {
+      adjustFontSize();
+    });
+
+    // 初期状態で値が入っている場合にもフォントサイズを調整
     if (textArea.value.trim() !== '') {
       adjustFontSize();
     }
+
+    // ウィンドウのリサイズ時にもフォントサイズを再調整
+    window.addEventListener('resize', adjustFontSize);
   });
 });
 //--------------------------------------ここまで-----------------------------------
@@ -232,16 +258,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // 色変更
 // プレビューページで色を適用する関数
 function applySavedColor() {
-  const savedColor = localStorage.getItem("backgroundColorA");
+  const savedColor = localStorage.getItem('backgroundColorA');
   if (savedColor) {
     // 背景色を適用
-    let elements = document.getElementsByClassName("uniqueColor");
+    let elements = document.getElementsByClassName('uniqueColor');
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.backgroundColor = savedColor;
     }
 
     // テキスト色を適用
-    let textElements = document.getElementsByClassName("text-color");
+    let textElements = document.getElementsByClassName('text-color');
     for (let i = 0; i < textElements.length; i++) {
       textElements[i].style.color = savedColor;
     }
@@ -249,7 +275,7 @@ function applySavedColor() {
 }
 
 // ドキュメントが読み込まれたときに色を適用
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   applySavedColor();
 });
 
@@ -273,13 +299,13 @@ document.addEventListener('DOMContentLoaded', function () {
       'Content-Type': 'application/json',
     },
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(albums => {
+    .then((albums) => {
       albumId = albums.albumId;
 
       if (!albumId) {
@@ -292,23 +318,23 @@ document.addEventListener('DOMContentLoaded', function () {
       return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showCover`, {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       });
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       console.log('取得したデータ:', data);
 
       // テキストデータを反映
       const textData = Array.isArray(data.textData) ? data.textData : JSON.parse(data.textData);
       if (textData && Array.isArray(textData)) {
-        textData.forEach(item => {
+        textData.forEach((item) => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
@@ -323,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const covertext = Array.isArray(data.covertext) ? data.covertext : JSON.parse(data.covertext);
       if (covertext && Array.isArray(covertext)) {
-        covertext.forEach(item => {
+        covertext.forEach((item) => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
@@ -339,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // 画像データを反映
       const imageData = Array.isArray(data.imageData) ? data.imageData : JSON.parse(data.imageData);
       if (imageData && Array.isArray(imageData)) {
-        imageData.forEach(item => {
+        imageData.forEach((item) => {
           const dropArea = document.getElementById(item.id);
           if (dropArea && item.image) {
             const img = document.createElement('img');
@@ -367,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('データ取得エラー:', error);
     });
 });
@@ -376,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //要素を取得
 const openButton = document.querySelector('.js-modal-open');
-const modal = document.getElementById("modal1");
+const modal = document.getElementById('modal1');
 
 //「開くボタン」をクリックしてモーダルを開く
 
@@ -387,7 +413,8 @@ openButton.addEventListener('click', function () {
 
 // モーダルの外側がクリックされたときにモーダルを閉じる
 modal.addEventListener('click', function (event) {
-  if (event.target === modal) { // event.targetを使ってモーダルの外側かどうかをチェック
+  if (event.target === modal) {
+    // event.targetを使ってモーダルの外側かどうかをチェック
     modal.classList.remove('is-active'); // モーダルを閉じる
   }
 });

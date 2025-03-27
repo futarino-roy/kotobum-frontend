@@ -9270,12 +9270,12 @@ input:checked + label::after {
   }
 }
 .cover-preview .content .swiper {
-  width: 600px;
+  width: 700px;
   height: 100%;
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper {
-    width: 900px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -9286,7 +9286,6 @@ input:checked + label::after {
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper {
     display: block;
-    width: 80%;
     min-width: auto;
   }
 }
@@ -9297,59 +9296,75 @@ input:checked + label::after {
   color: #ffffff;
   width: auto;
   height: 100%;
+  margin-left: 0%;
+  width: 85% !important;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide {
+    width: 100% !important;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide {
+    margin-left: -23%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide {
+    width: 150% !important;
+    margin-left: -7%;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box-pair {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box {
-  width: 50%;
-  max-width: 500px;
   position: relative;
-  clip-path: inset(47px 48px 52px 1.5px);
+  clip-path: inset(10.5% 8% 11% 49%);
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(71.5px 71px 77px 3px);
+    clip-path: inset(10.6% 8% 11% 48.8%);
+    width: 50%;
   }
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(36px 36px 41px 2p);
+    clip-path: inset(10.4% 7.9% 11.5% 49%);
   }
 }
 @media screen and (max-width: 900px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
+    width: 100%;
     margin: 50px 0 0;
-    clip-path: inset(11% 16% 11.5% 0.5%);
+    clip-path: inset(10.8% 8% 11.5% 48.8%);
   }
 }
 @media screen and (max-width: 480px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box {
     width: 100%;
-    clip-path: inset(11% 16% 12% 0.5%);
+    clip-path: inset(10.3% 8% 11.5% 49%);
   }
 }
-@media screen and (max-width: 380px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 70%;
-    clip-path: inset(11% 16% 12.5% 0.5%);
-  }
-}
-@media screen and (max-width: 330px) {
-  .cover-preview .content .swiper-wrapper .swiper-slide_box {
-    width: 50%;
-    clip-path: inset(11% 16% 14% 0.5%);
-  }
+.cover-preview .content .swiper-wrapper .swiper-slide_box .coverimg {
+  position: relative;
+  z-index: 1;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  left: 5%;
+  left: 51%;
   top: 8%;
-  width: 82%;
-  height: 84%;
-  opacity: 0.8;
-  display: flex;
+  width: 42.5%;
+  height: 85%;
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  white-space: nowrap;
+  z-index: 99;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .flex-area12-2 {
   width: 60%;
@@ -9370,32 +9385,76 @@ input:checked + label::after {
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 5%;
   width: 86.8%;
-  height: 51%;
+  height: 56%;
+  font-size: 1rem;
+  border: none;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .crop-btn.show {
+  display: flex;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA .delete-btn.show {
+  display: flex;
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
+    top: 35%;
+    left: 4.5%;
+    width: 87.5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaA {
+    top: 35%;
+  }
 }
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
   text-align: center;
   resize: none;
-  width: 60% !important;
   max-width: 60%;
-  height: 20%;
   margin: 5% 0 5%;
   font-size: 0.4rem;
   line-height: 1.9;
   background-color: transparent;
-  border: none;
-  outline: none;
-  pointer-events: none;
-  cursor: not-allowed;
+  white-space: nowrap;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
@@ -9417,6 +9476,10 @@ input:checked + label::after {
     font-size: 1.7vw;
   }
 }
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
+  border: none;
+  color: black;
+}
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
   box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
   overflow: hidden; /* スクロールバーが表示されないようにする */
@@ -9430,7 +9493,7 @@ input:checked + label::after {
   bottom: 9%;
   left: -5.3%;
   font-weight: bold;
-  font-size: 0.4rem !important;
+  font-size: 0.55rem !important;
   text-align: start;
   field-sizing: content;
   writing-mode: vertical-rl; /* 縦書き (右から左) */
@@ -9446,13 +9509,13 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.3rem !important;
+    font-size: 0.4rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.7rem !important;
-    left: -5.3%;
+    font-size: 0.58rem !important;
+    left: -5.4%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -9473,26 +9536,28 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
   margin: 0;
   position: absolute;
-  max-width: 14.5%;
-  height: 4.5%;
-  top: 16.4%;
-  left: 74%;
+  max-width: 16.5%;
+  height: 4.7%;
+  top: 16.5%;
+  left: 73.5%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
-  font-weight: bold;
+  font-weight: 900;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 0.8rem;
+    top: 16.3%;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     font-size: 1.5rem;
-    left: 75%;
-    top: 16.6%;
+    top: 16.5%;
+    left: 73.4%;
+    max-width: 15%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -9508,23 +9573,24 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
   margin: 0;
   position: absolute;
-  top: 22%;
-  left: 71%;
+  top: 21.5%;
+  left: 66.8%;
   line-height: 1.5;
   font-weight: bold;
-  font-size: 0.4rem;
+  font-size: 0.5rem;
   display: block;
   text-align: center;
-  max-width: 22%;
+  max-width: 30%;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-2 {
     font-size: 0.6rem;
+    left: 67%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -9545,22 +9611,23 @@ input:checked + label::after {
 .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
   margin: 0;
   position: absolute;
-  width: 40% !important;
+  max-width: 50% !important;
   height: 10% !important;
-  top: 6%;
+  top: 6.2%;
   left: 5%;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: left;
 }
 @media screen and (max-width: 1200px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1500px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    top: 5.7%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -9575,6 +9642,284 @@ input:checked + label::after {
 }
 @media screen and (max-width: 380px) {
   .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-3 {
+    font-size: 2.7vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair {
+  position: absolute;
+  left: 6.5%;
+  top: 8%;
+  width: 42.5%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  z-index: 99;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+  position: absolute;
+  top: 35.5%;
+  right: 4.5%;
+  width: 87%;
+  height: 57%;
+  border: none;
+  font-size: 1rem;
+  bottom: 10px;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .crop-btn.show {
+  display: flex;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn:hover {
+  opacity: 1;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB .delete-btn.show {
+  display: flex;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    top: 35%;
+    right: 4.5%;
+    width: 86.8%;
+    height: 56.6%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    top: 35%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #dropAreaB {
+    height: 56%;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+  overflow: hidden;
+  text-align: center;
+  resize: none;
+  max-width: 60%;
+  margin: 5% 0 5%;
+  font-size: 0.4rem;
+  line-height: 1.9;
+  background-color: transparent;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 0.3rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair textarea {
+    font-size: 1.7vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-empty {
+  border: none;
+  color: black;
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair .text-size {
+  box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+  overflow: hidden; /* スクロールバーが表示されないようにする */
+  resize: none; /* ユーザーがサイズを変更できないようにする */
+  white-space: nowrap; /* 改行をさせない設定 */
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+  margin: 0;
+  position: absolute;
+  width: 5% !important;
+  bottom: 9%;
+  right: -5.5%;
+  font-weight: bold;
+  font-size: 0.3rem !important;
+  text-align: start;
+  field-sizing: content;
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: mixed; /* テキストの方向を調整 */
+  transform: rotate(180deg); /* テキストを180度回転 */
+  display: inline-block;
+  overflow: hidden; /* スクロールバーを非表示 */
+  resize: none;
+  white-space: nowrap; /* 改行を無効にする */
+  overflow-wrap: normal; /* 自動改行を無効にする */
+  word-wrap: normal; /* 単語の途中での改行を無効にする */
+  word-break: normal; /* 単語の途中での改行を無効にする */
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 0.2rem !important;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 0.58rem !important;
+    right: -5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 1.4vw !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textArea-cover {
+    font-size: 1.5vw !important;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+  margin: 0;
+  position: absolute;
+  max-width: 16.5%;
+  height: 4.7%;
+  top: 16.7%;
+  right: 73%;
+  text-align: center;
+  white-space: nowrap; /* 改行をさせない設定 */
+  font-weight: 900;
+  line-height: 0.9;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 0.8rem;
+    top: 16.7%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 1.5rem;
+    top: 16.7%;
+    right: 73.7%;
+    max-width: 15.5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-1 {
+    font-size: 3vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  right: 65.3%;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 0.5rem;
+  display: block;
+  text-align: center;
+  max-width: 30%;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.4rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-2 {
+    font-size: 0.8vw;
+  }
+}
+.cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+  margin: 0;
+  position: absolute;
+  max-width: 50% !important;
+  height: 10% !important;
+  top: 5.7%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: right;
+}
+@media screen and (max-width: 1200px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 3.3vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
+    font-size: 4.8vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cover-preview .content .swiper-wrapper .swiper-slide_box .input-drop-pair #textAreaB-3 {
     font-size: 2.7vw;
   }
 }
@@ -9761,7 +10106,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box {
-    clip-path: inset(35px 1px 41px 35px);
+    clip-path: inset(35px 1px 40px 35px);
   }
 }
 @media screen and (max-width: 900px) {
@@ -9791,11 +10136,11 @@ input:checked + label::after {
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop {
   position: absolute;
-  left: 13%;
+  left: 13.5%;
   top: 8%;
   width: 82%;
   height: 84%;
-  opacity: 0.8;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9803,39 +10148,87 @@ input:checked + label::after {
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
   position: absolute;
-  top: 40%;
-  right: 4.5%;
-  width: 86.8%;
-  height: 56%;
+  top: 35.5%;
+  right: 5%;
+  width: 88%;
+  height: 56.5%;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
   bottom: 10px;
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
-    top: 40%;
-  }
-}
-.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media screen and (min-width: 1500px) {
-  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
-    top: 35%;
-    right: 4.5%;
-    width: 86.8%;
-    height: 56.6%;
+    top: 35.5%;
+    right: 5%;
+    width: 88%;
+    height: 56.8%;
   }
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
     top: 35%;
+    right: 4.7%;
   }
 }
 @media screen and (max-width: 900px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
-    height: 56%;
+    top: 35.5%;
+    right: 4.9%;
+    height: 57%;
   }
+}
+@media screen and (max-width: 480px) {
+  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB {
+    top: 35%;
+    right: 4.5%;
+    height: 56.8%;
+    width: 88.5%;
+  }
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn {
+  position: absolute;
+  top: 5px;
+  right: 33px;
+  background: url(/edit/images/crop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn:hover {
+  opacity: 1;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .crop-btn.show {
+  display: flex;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/edit/images/delete.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn:hover {
+  opacity: 1;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB .delete-btn.show {
+  display: flex;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #dropAreaB img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
   overflow: hidden;
@@ -9846,27 +10239,10 @@ input:checked + label::after {
   font-size: 0.4rem;
   line-height: 1.9;
   background-color: transparent;
+}
+.coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-empty {
   border: none;
-}
-@media screen and (max-width: 1200px) {
-  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 0.3rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 0.6rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.2vw;
-  }
-}
-@media screen and (max-width: 480px) {
-  .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop textarea {
-    font-size: 1.7vw;
-  }
+  color: black;
 }
 .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop .text-size {
   box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
@@ -9879,7 +10255,7 @@ input:checked + label::after {
   position: absolute;
   width: 5% !important;
   bottom: 9%;
-  right: -5.5%;
+  right: -4.9%;
   font-weight: bold;
   font-size: 0.3rem !important;
   text-align: start;
@@ -9897,7 +10273,7 @@ input:checked + label::after {
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textArea-cover {
-    font-size: 0.2rem !important;
+    font-size: 0.35rem !important;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -9927,25 +10303,24 @@ input:checked + label::after {
   max-width: 16.5%;
   height: 4.7%;
   top: 16.7%;
-  right: 73.4%;
+  right: 73.8%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   font-weight: 900;
   line-height: 0.9;
-  font-weight: bold;
   color: #ffffff;
 }
 @media screen and (max-width: 1200px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     top: 16.7%;
   }
 }
 @media screen and (min-width: 1500px) {
   .coverB-preview .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaB-1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     top: 16.7%;
-    right: 73.7%;
+    right: 74.5%;
     max-width: 15.5%;
   }
 }

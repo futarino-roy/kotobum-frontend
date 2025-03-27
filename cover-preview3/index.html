@@ -12,18 +12,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
   <link rel="stylesheet" href="../public/assets/style/style.css" />
-  <!--　Noto Sans JP　-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
 </head>
 
 <body class="coverB-preview-body">
   <header class="preview-header">
     <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
-    <a href="/cover3/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
+    <a href="/cover/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
     <button class="btn btn-small_bl btn-small_bl-kou js-modal-open">完了</button>
 
     <!-- モーダル本体 -->
@@ -37,11 +31,11 @@
           <button class="btn btn-middle_bl modal-content__button modal-content__button-pc modal-change_l">完了する</button>
           <button class="btn btn-small_bl modal-content__button modal-content__button-sp modal-change_l">完了</button>
 
-          <button class="btn btn-middle_wh modal-content__button modal-content__button-pc js-modal-close">
-            <a href="/cover3/index.html"> 編集ページへ </a>
+          <button class="btn btn-middle_wh modal-content__button modal-content__button-pc">
+            <a href="/cover/index.html"> 編集ページへ </a>
           </button>
-          <button class="btn btn-small_wh modal-content__button modal-content__button-sp js-modal-close">
-            <a href="/cover3/index.html"> 編集ページへ </a>
+          <button class="btn btn-small_wh modal-content__button modal-content__button-sp">
+            <a href="/cover/index.html"> 編集ページへ </a>
           </button>
         </div>
       </div>
@@ -72,10 +66,10 @@
               <div class="input-drop">
                 <!-- <div id="dropAreaB" class="empty"></div> -->
 
-                <textarea id="textAreaB-1" rows="1" maxlength="10" class="text-empty text-size" readonly></textarea>
-                <textarea id="textAreaB-2" rows="1" maxlength="20" class="text-empty text-colorB" readonly></textarea>
-                <textarea id="textAreaB-3" rows="1" maxlength="8" class="text-empty text-colorB" readonly></textarea>
-                <textarea id="textArea-cover" maxlength="8" class="text-empty" readonly></textarea>
+                <textarea id="textAreaB-1" rows="1" class="text-empty text-size" disabled></textarea>
+                <textarea id="textAreaB-2" rows="1" class="text-empty text-colorB" disabled></textarea>
+                <textarea id="textAreaB-3" rows="1" class="text-empty text-colorB" disabled></textarea>
+                <textarea id="textArea-cover" class="text-empty textArea-cover" disabled></textarea>
                 <div id="dropAreaB" class="empty"></div>
               </div>
             </div>
@@ -87,8 +81,8 @@
         <div class="swiper-button-next"></div>
 
         <div class="button-grid">
-          <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
-          <a href="/coverB/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
+          <a href="/mypage/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
+          <a href="/cover/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
         </div>
       </div>
     </div>
@@ -96,7 +90,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/croppie/croppie.min.js"></script>
-  <script src="/cover-preview3/js/script.js"></script>
+  <script src="/cover-preview/js/script.js"></script>
 </body>
 
 </html>

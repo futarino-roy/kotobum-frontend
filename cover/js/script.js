@@ -1077,12 +1077,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const { backgroundColor, textColor } = colors;
 
         // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-        document.querySelectorAll('.uniqueColor').forEach((element) => {
+        document.querySelectorAll('.uniqueColorB').forEach((element) => {
           element.style.backgroundColor = backgroundColor || '#ffffff';
         });
 
         // `.text-color` クラスを持つすべての要素にテキスト色を設定
-        document.querySelectorAll('.text-color').forEach((element) => {
+        document.querySelectorAll('.text-colorB').forEach((element) => {
           element.style.color = textColor || '#000000';
         });
 
