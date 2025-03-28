@@ -1143,13 +1143,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // アルバムデータ取得処理
-  function fetchAlbumData(id) {
-    if (!id) {
-      console.warn('アルバムIDが無効です:', id);
+  function fetchAlbumData(albumId) {
+    if (!albumId) {
+      console.warn('アルバムIDが無効です:', albumId);
       return;
     }
 
-    fetch(`https://develop-back.kotobum.com/api/albums/${id}/showCover`, {
+    fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showCover`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -1162,10 +1162,10 @@ document.addEventListener('DOMContentLoaded', function () {
         return response.json();
       })
       .then((data) => {
-        console.log(`取得したアルバムデータ (${id}):`, data);
+        console.log(`取得したアルバムデータ (${albumId}):`, data);
         processAlbumData(data);
       })
-      .catch((error) => console.error(`アルバムデータ取得エラー (${id}):`, error));
+      .catch((error) => console.error(`アルバムデータ取得エラー (${albumId}):`, error));
   }
 
   function processAlbumData(data) {
