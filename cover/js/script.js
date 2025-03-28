@@ -851,8 +851,8 @@ function saveAlbumData(albumId, token) {
   const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
 
   // 背景色とテキスト色の取得
-  const backgroundColor = document.querySelector('.uniqueColor')?.style.backgroundColor || '#ffffff';
-  const textColor = document.querySelector('.text-color')?.style.color || '#000000';
+  const backgroundColor = document.querySelector('.uniqueColorB')?.style.backgroundColor || '#ffffff';
+  const textColor = document.querySelector('.text-colorB')?.style.color || '#000000';
 
   //背表紙のテキストエリア
   const textAreaCover = document.querySelector('.textArea-cover');

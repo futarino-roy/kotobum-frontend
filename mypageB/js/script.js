@@ -203,104 +203,10 @@ changeButtons.forEach((changeButton) => {
     modalF.classList.remove('is-active');
     // 次のモーダルを表示
     modalS.classList.add('is-active');
-  });
-});
-
-// -------------校了後のマイページのボタン無効化に関するJS　表紙用----------------
-
-// A, C ボタンのセレクタ
-const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
-const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
-
-// モーダルを取得
-const modal = document.querySelector('#modal1_2');
-
-// モーダル内の「マイページへ」ボタンを取得
-const modalButton_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
-
-// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
-modalButton_ls.forEach((modalButton_l) => {
-  modalButton_l.addEventListener('click', function () {
-    buttonA_l.disabled = true;
-    buttonC_l.disabled = true;
-
-    buttonA_l.style.cursor = 'not-allowed'; // cursorのデザインを変更
-    buttonC_l.style.cursor = 'not-allowed';
-
-    // アルバムID取得
-    //バックエンドとのAPI連携（校了後にボタンを押せなくする）
-    fetch('https://develop-back.kotobum.com/api/albums/${albumId}/cover/send', {
-      method: 'POST',
-      headers: {
-        //この辺の処理送信もいらないかも
-        'Content-Type': 'application/json', //送信するデータがJSON形式であることを示す
-        Authorization: `Bearer ${token}`, //これはトークンで識別のために使うからいる
-      },
-      body: JSON.stringify({ isKoryoDone: true }), // 校了済みのフラグを送信
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const koryoButton = document.getElementById('koryoButton');
-        //　データは返ってこなくて、メッセージが返ってくるので、このこーどはいらないかも
-
-        if (data.isKoryoDone) {
-          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
-        } else {
-          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
-        }
-      })
-      .catch((error) => {
-        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
-      });
-  });
-
-  window.addEventListener('load', function () {
-    fetch(' ', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const koryoButton = document.getElementById('koryoButton');
-        // アルバムIDをもとにアルバムのデータを受け取って、そのデータで校了済みか判断
-
-        if (data.isKoryoDone) {
-          koryoButton.disabled = true; // 校了済みの場合はボタンを無効化
-        } else {
-          koryoButton.disabled = false; // 校了がまだの場合はボタンを有効化
-        }
-      })
-      .catch((error) => {
-        console.error('サーバーからのフラグ取得時にエラーが発生しました:', error);
-      });
-  });
-
-  // モーダルを閉じる
-  modalS.classList.remove('is-active');
-});
-
-// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更
-const button_ls = document.querySelectorAll('.modal-checkafter__mypage_l');
-
-// 変更対象(「編集ボタン」と「校了ボタン」)の要素を取得
-//「 A, C ボタンのセレクタ」で以下を取得しているため使いまわします。
-// const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
-// const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
-
-// ボタンがクリックされたときにクラスを切り替える
-button_ls.forEach((button_l) => {
-  button_l.addEventListener('click', function () {
-    if (buttonC_l.classList.contains('btn-small_bl')) {
-      buttonC_l.classList.remove('btn-small_bl');
-      buttonC_l.classList.add('btn-small_wh');
-    } else {
-      buttonC_l.classList.remove('btn-small_wh');
-      buttonC_l.classList.add('btn-small_bl');
-    }
-    buttonC_l.style.opacity = '0.6';
-    buttonA_l.style.opacity = '0.6';
+    // 完了状態をlocalStorageに保存
+    localStorage.setItem('coverCompleted', 'true');
+    // サーバにも送信
+    sendCompletionStatusToServerCover();
   });
 });
 
@@ -317,55 +223,10 @@ changeButton_rs.forEach((changeButton_r) => {
     modalF_r.classList.remove('is-active');
     // 次のモーダルを表示
     modalS_r.classList.add('is-active');
-  });
-});
-
-// -------------校了後のマイページのボタン無効化に関するJS　中身用----------------
-
-// A, C ボタンのセレクタ
-const buttonA_r = document.querySelector('.buttonA_r'); //編集ボタン
-const buttonC_r = document.querySelector('.buttonC_r'); //校了ボタン
-
-// モーダルを取得
-const modal_r = document.querySelector('#modal2_2');
-
-// モーダル内の「マイページへ」ボタンを取得
-const modalButton_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
-
-// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンを無効化
-modalButton_rs.forEach((modalButton_r) => {
-  modalButton_r.addEventListener('click', function () {
-    buttonA_r.disabled = true;
-    buttonC_r.disabled = true;
-
-    buttonA_r.style.cursor = 'not-allowed';
-    buttonC_r.style.cursor = 'not-allowed';
-
-    // モーダルを閉じる
-    modalS_r.classList.remove('is-active');
-  });
-});
-
-// 「マイページへ」ボタンをクリックしたら、AボタンとCボタンのデザインを変更
-const button_rs = document.querySelectorAll('.modal-checkafter__mypage_r');
-
-// 変更対象(「編集ボタン」と「校了ボタン」)の要素を取得
-//「 A, C ボタンのセレクタ」で以下を取得しているため使いまわします。
-// const buttonA_l = document.querySelector('.buttonA_l'); //編集ボタン
-// const buttonC_l = document.querySelector('.buttonC_l'); //校了ボタン
-
-// ボタンがクリックされたときにクラスを切り替える
-button_rs.forEach((button_r) => {
-  button_r.addEventListener('click', function () {
-    if (buttonC_r.classList.contains('btn-small_bl')) {
-      buttonC_r.classList.remove('btn-small_bl');
-      buttonC_r.classList.add('btn-small_wh');
-    } else {
-      buttonC_r.classList.remove('btn-small_wh');
-      buttonC_r.classList.add('btn-small_bl');
-    }
-    buttonC_r.style.opacity = '0.6';
-    buttonA_r.style.opacity = '0.6';
+    // 完了状態をlocalStorageに保存
+    localStorage.setItem('mainTextCompleted', 'true');
+    // サーバにも送信
+    sendCompletionStatusToServerMain();
   });
 });
 
@@ -635,6 +496,8 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
       // 完了状態をlocalStorageに保存
       localStorage.setItem('coverCompleted', 'true');
+      // サーバにも送信
+      sendCompletionStatusToServerCover();
 
       // ステータスを更新
       if (coverStatusText) {
@@ -669,6 +532,8 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
       // 完了状態をlocalStorageに保存
       localStorage.setItem('mainTextCompleted', 'true');
+      // サーバにも送信
+      sendCompletionStatusToServerMain();
 
       // ステータスを更新
       if (mainTextStatusText) {
@@ -800,3 +665,69 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// 校了状態をサーバに送信する関数(中身)
+function sendCompletionStatusToServerMain() {
+  const token = localStorage.getItem('token'); // 認証トークンを取得
+  const userId = userData ? userData.id : null; // グローバルに保存されたデータからIDを取得
+
+  if (!token || !userId) {
+    console.error('トークンまたはアルバムIDが見つかりません💦');
+  } else {
+    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/body/send`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        completed: true, // サーバーに送る完了状態
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('サーバーに完了状態を送信しました:', data);
+      })
+      .catch((error) => {
+        console.error('完了状態送信中にエラーが発生しました💦', error);
+      });
+  }
+}
+
+// 校了状態をサーバに送信する関数(表紙)
+function sendCompletionStatusToServerCover() {
+  const token = localStorage.getItem('token'); // 認証トークンを取得
+  const userId = userData ? userData.id : null; // グローバルに保存されたデータからIDを取得
+
+  if (!token || !userId) {
+    console.error('トークンまたはアルバムIDが見つかりません💦');
+  } else {
+    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/cover/send`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        completed: true, // サーバーに送る完了状態
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('サーバーに完了状態を送信しました:', data);
+      })
+      .catch((error) => {
+        console.error('完了状態送信中にエラーが発生しました💦', error);
+      });
+  }
+}
