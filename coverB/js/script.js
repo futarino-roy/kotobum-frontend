@@ -1182,17 +1182,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // テキストデータの表示処理
     textData.forEach((item) => {
-      const textArea = document.getElementById(item.id);
+      const textArea = document.getElementById(item.albumId);
       if (textArea) {
         textArea.value = item.text;
       } else {
-        console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
+        console.warn(`テキストエリアが見つかりません: ID ${item.albumId}`);
       }
     });
 
     // 表紙テキストデータの表示処理
     const item = covertext;
-    const textAreaCover = document.getElementById(item.id);
+    const textAreaCover = document.getElementById('textArea-cover');
     if (textAreaCover) {
       textAreaCover.value = item.text;
     } else {
