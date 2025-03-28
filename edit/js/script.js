@@ -1439,6 +1439,7 @@ function handleSaveOrSend() {
   if (isAdmin) {
     // 管理者の場合：ローカルストレージからアルバムIDを取得
     albumId = localStorage.getItem('albumId');
+    token = localStorage.getItem('token');
     console.log('管理者アルバムID: ', albumId);
     if (!albumId) {
       console.error('管理者用アルバムIDがローカルストレージに保存されていません。');
@@ -1571,7 +1572,7 @@ function saveAlbumData(albumId, token) {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/json',
     },
     body: body,
   })
