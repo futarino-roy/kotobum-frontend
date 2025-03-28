@@ -231,6 +231,10 @@ changeButtons.forEach((changeButton) => {
     modalF.classList.remove('is-active');
     // 次のモーダルを表示
     modalS.classList.add('is-active');
+    // 完了状態をlocalStorageに保存
+    localStorage.setItem('coverCompleted', 'true');
+    // サーバにも送信
+    sendCompletionStatusToServerCover();
   });
 });
 
@@ -247,6 +251,10 @@ changeButton_rs.forEach((changeButton_r) => {
     modalF_r.classList.remove('is-active');
     // 次のモーダルを表示
     modalS_r.classList.add('is-active');
+    // 完了状態をlocalStorageに保存
+    localStorage.setItem('mainTextCompleted', 'true');
+    // サーバにも送信
+    sendCompletionStatusToServerMain();
   });
 });
 
