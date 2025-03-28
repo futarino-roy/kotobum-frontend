@@ -1051,7 +1051,10 @@ function saveAlbumData(albumId, token) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
+        return response.json().then((errorDetails) => {
+          console.error('サーバーエラー詳細:', errorDetails);
+          throw new Error(`データ送信に失敗しました: ${response.status}`);
+        });
       }
       return response.json();
     })
@@ -1182,11 +1185,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // テキストデータの表示処理
     textData.forEach((item) => {
-      const textArea = document.getElementById(item.albumId);
+      const textArea = document.getElementById(item.id);
       if (textArea) {
         textArea.value = item.text;
       } else {
-        console.warn(`テキストエリアが見つかりません: ID ${item.albumId}`);
+        console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
       }
     });
 
