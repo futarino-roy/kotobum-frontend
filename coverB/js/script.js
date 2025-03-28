@@ -890,134 +890,165 @@ function handleSaveOrSend() {
 
   if (!token) {
     console.error('認証トークンが見つかりません。ログインしてください。');
-    alert('認証トークンが見つかりません。ログインしてください。');
+    alert('認証トークンが見つかりません。ログインしてください。2秒後にログインページに戻ります。');
+    screen_lock();
+    setTimeout(() => {
+      window.location.href = '../login';
+    }, 2000);
     return;
   }
 
+  // URLからユーザー種別を判別
+  const isAdmin = window.location.href.includes('/?admin'); // URLに`/admin`が含まれる場合、管理者と判定
+
   let albumId;
 
-  // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
-    method: 'GET',
+  if (isAdmin) {
+    // 管理者の場合：ローカルストレージからアルバムIDを取得
+    albumId = localStorage.getItem('albumId');
+
+    console.log('管理者アルバムID: ', albumId);
+    if (!albumId) {
+      console.error('管理者用アルバムIDがローカルストレージに保存されていません。');
+      alert('管理者用アルバムIDが見つかりません。');
+      return;
+    }
+
+    // 保存処理を実行
+    saveAlbumData(albumId, token);
+  } else {
+    // 一般ユーザーの場合：APIからアルバムIDを取得
+    fetch('https://develop-back.kotobum.com/api/user/album', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((albums) => {
+        albumId = albums.albumId;
+
+        if (!albumId) {
+          console.error('アルバムIDを取得できませんでした。');
+          return;
+        }
+        console.log('一般ユーザーアルバムID: ', albumId);
+        // 保存処理を実行
+        saveAlbumData(albumId, token);
+      })
+      .catch((error) => {
+        console.error('エラーが発生しました:', error.message);
+        alert('エラーが発生しました。再度お試しください。');
+      });
+  }
+}
+
+function saveAlbumData(albumId, token) {
+  const parentElement = document.querySelector('.input-drop');
+  const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
+
+  // 背景色とテキスト色の取得
+  const backgroundColor = document.querySelector('.uniqueColor')?.style.backgroundColor || '#ffffff';
+  const textColor = document.querySelector('.text-color')?.style.color || '#000000';
+
+  //背表紙のテキストエリア
+  const textAreaCover = document.querySelector('.textArea-cover');
+  const covertext = textAreaCover
+    ? {
+        id: textAreaCover.id,
+        text: textAreaCover.value.trim() || '',
+      }
+    : null;
+
+  // 各ページのデータを収集
+  const pageData = Array.from(swiperSlides).map((slide) => {
+    const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
+    const slideWidth = initialRect.width;
+    const slideHeight = initialRect.height;
+
+    // スライド内のテキストエリアのデータ収集
+    const textAreas = slide.querySelectorAll('.text-empty');
+    const textData = Array.from(textAreas).map((textarea) => {
+      const { top, left, width, height } = textarea.getBoundingClientRect();
+
+      return {
+        id: textarea.id,
+        text: textarea.value || '',
+        top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
+        left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
+        width: (width / slideWidth) * 100, // 幅のパーセンテージ
+        height: (height / slideHeight) * 100, // 高さのパーセンテージ
+      };
+    });
+
+    const dropAreas = document.querySelectorAll('#dropAreaA');
+    const imageData = Array.from(dropAreas).map((dropAreaA) => {
+      // const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
+      const imgElement = dropAreaA.querySelector('img');
+      const originalImage = imgElement ? imgElement.src : null;
+
+      const imageToSend = originalImage;
+
+      const { top, left, width, height } = dropAreaA.getBoundingClientRect();
+      return {
+        id: dropAreaA.id,
+        image: imageToSend,
+        top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
+        left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
+        width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
+        height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
+      };
+    });
+    return {
+      slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
+      textData,
+      imageData,
+      covertext,
+    };
+  });
+
+  // 送信データの構築
+  if (pageData.every((page) => page.textData.every((text) => text.text === '') && page.imageData.every((image) => image.image === null))) {
+    console.error('送信するデータがありません。');
+    alert('送信するデータがありません。');
+    return;
+  }
+
+  // imageDataとtextDataを分離して送信
+  const imageDataToSend = pageData.flatMap((page) => page.imageData);
+  const textDataToSend = pageData.flatMap((page) => page.textData);
+
+  const dataToSend = {
+    imageData: imageDataToSend,
+    textData: textDataToSend,
+    covertext,
+    colors: {
+      backgroundColor,
+      textColor,
+    },
+  };
+
+  // FormDataに追加して送信
+  const body = new FormData();
+  Object.entries(dataToSend).forEach(([key, value]) => {
+    body.append(key, JSON.stringify(value));
+  });
+
+  console.log('送信するデータ:', dataToSend);
+
+  fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/cover`, {
+    method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
     },
+    body: body,
   })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTPエラー: ${response.status} - ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then((albums) => {
-      albumId = albums.albumId;
-
-      if (!albumId) {
-        console.error('アルバムIDを取得できませんでした。');
-        return;
-      }
-
-      const parentElement = document.querySelector('.input-drop');
-      const swiperSlides = document.querySelectorAll('.swiper-slide'); // Swiperの各スライドを取得
-
-      // 背景色とテキスト色の取得
-      const backgroundColor = document.querySelector('.uniqueColor')?.style.backgroundColor || '#ffffff';
-      const textColor = document.querySelector('.text-color')?.style.color || '#000000';
-
-      //背表紙のテキストエリア
-      const textAreaCover = document.querySelector('.textArea-cover');
-      const covertext = textAreaCover
-        ? {
-            id: textAreaCover.id,
-            text: textAreaCover.value.trim() || '',
-          }
-        : null;
-
-      // 各ページのデータを収集
-      const pageData = Array.from(swiperSlides).map((slide) => {
-        const initialRect = slide.getBoundingClientRect(); // 各スライドの初期サイズを取得
-        const slideWidth = initialRect.width;
-        const slideHeight = initialRect.height;
-
-        // スライド内のテキストエリアのデータ収集
-        const textAreas = slide.querySelectorAll('.text-empty');
-        const textData = Array.from(textAreas).map((textarea) => {
-          const { top, left, width, height } = textarea.getBoundingClientRect();
-
-          return {
-            id: textarea.id,
-            text: textarea.value || '',
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージ
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージ
-            width: (width / slideWidth) * 100, // 幅のパーセンテージ
-            height: (height / slideHeight) * 100, // 高さのパーセンテージ
-          };
-        });
-
-        const dropAreas = document.querySelectorAll('#dropAreaA');
-        const imageData = Array.from(dropAreas).map((dropAreaA) => {
-          // const croppedImage = window.croppedImages[dropAreaB.id] || null; // ドロップエリアごとの画像データを取得
-          const imgElement = dropAreaA.querySelector('img');
-          const originalImage = imgElement ? imgElement.src : null;
-
-          const imageToSend = originalImage;
-
-          const { top, left, width, height } = dropAreaA.getBoundingClientRect();
-          return {
-            id: dropAreaA.id,
-            image: imageToSend,
-            top: ((top - initialRect.top) / slideHeight) * 100, // パーセンテージで指定
-            left: ((left - initialRect.left) / slideWidth) * 100, // パーセンテージで指定
-            width: (width / slideWidth) * 100, // 幅をパーセンテージで指定
-            height: (height / slideHeight) * 100, // 高さをパーセンテージで指定
-          };
-        });
-        return {
-          slideId: slide.dataset.slideId || null, // スライドID（必要ならdata属性などで指定）
-          textData,
-          imageData,
-          covertext,
-        };
-      });
-
-      // 送信データの構築
-      if (pageData.every((page) => page.textData.every((text) => text.text === '') && page.imageData.every((image) => image.image === null))) {
-        console.error('送信するデータがありません。');
-        alert('送信するデータがありません。');
-        return;
-      }
-
-      // imageDataとtextDataを分離して送信
-      const imageDataToSend = pageData.flatMap((page) => page.imageData);
-      const textDataToSend = pageData.flatMap((page) => page.textData);
-
-      const dataToSend = {
-        imageData: imageDataToSend,
-        textData: textDataToSend,
-        covertext,
-        colors: {
-          backgroundColor,
-          textColor,
-        },
-      };
-
-      // FormDataに追加して送信
-      const body = new FormData();
-      Object.entries(dataToSend).forEach(([key, value]) => {
-        body.append(key, JSON.stringify(value));
-      });
-
-      console.log('送信するデータ:', dataToSend);
-
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/cover`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: body,
-      });
-    })
     .then((response) => {
       if (!response.ok) {
         throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
