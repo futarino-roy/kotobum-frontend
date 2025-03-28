@@ -85,19 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
   fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     if (file) {
+      console.log('選択されたファイル:', file); // ファイルの詳細を確認
       const reader = new FileReader();
       reader.onload = (e) => {
+        console.log('画像データ:', e.target.result); // Base64データを確認
         // 選択された画像をemptyDivに挿入
         const targetId = fileInput.dataset.target;
         const targetDropArea = document.getElementById(targetId);
 
-        targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
-        targetDropArea.style.border = 'none';
+        if (targetDropArea) {
+          targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
+          targetDropArea.style.border = 'none';
 
-        showButtons(targetDropArea);
-        addButtons(targetDropArea);
+          showButtons(targetDropArea);
+          addButtons(targetDropArea);
+        } else {
+          console.error(`ターゲットエリアが見つかりません: ${targetId}`);
+        }
       };
       reader.readAsDataURL(file);
+    } else {
+      console.error('ファイルが選択されませんでした。');
     }
   });
 });
