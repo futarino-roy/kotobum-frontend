@@ -702,7 +702,7 @@ function sendCompletionStatusToServerMain() {
   if (!token || !userId) {
     console.error('トークンまたはアルバムIDが見つかりません💦');
   } else {
-    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/cover/send`, {
+    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/body/send`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -727,7 +727,7 @@ function sendCompletionStatusToServerMain() {
   }
 }
 
-// 校了状態をサーバに送信する関数(中身)
+// 校了状態をサーバに送信する関数(表紙)
 function sendCompletionStatusToServerCover() {
   const token = localStorage.getItem('token'); // 認証トークンを取得
   const userId = userData ? userData.id : null; // グローバルに保存されたデータからIDを取得
@@ -735,7 +735,7 @@ function sendCompletionStatusToServerCover() {
   if (!token || !userId) {
     console.error('トークンまたはアルバムIDが見つかりません💦');
   } else {
-    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/body/send`, {
+    fetch(`https://develop-back.kotobum.com/api/albums/${userId}/cover/send`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
