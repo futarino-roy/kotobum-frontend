@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return response.json();
     })
     .then((data) => {
+      userData = data; // グローバル変数に保存
       const username = data.name; // サーバーから取得した名前
       const format = data.format;
       console.log('フォーマット情報：', format);
