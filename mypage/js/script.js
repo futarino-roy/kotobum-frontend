@@ -710,7 +710,7 @@ function sendCompletionStatusToServerMain() {
       },
       body: JSON.stringify({
         completed: true, // サーバーに送る完了状態
-        id: Id,
+        id: 'userId',
       }),
     })
       .then((response) => {
@@ -734,7 +734,7 @@ function sendCompletionStatusToServerCover() {
   const Id = userData ? userData.id : null; // グローバルに保存されたデータからIDを取得
 
   if (!token || !Id) {
-    console.error('トークンまたはアルバムIDが見つかりません💦');
+    console.error('トークンまたはアルバムIDが見つかりません');
   } else {
     fetch(`https://develop-back.kotobum.com/api/albums/${Id}/cover/send`, {
       method: 'POST',
@@ -744,7 +744,7 @@ function sendCompletionStatusToServerCover() {
       },
       body: JSON.stringify({
         completed: true, // サーバーに送る完了状態
-        id: Id,
+        id: 'userId',
       }),
     })
       .then((response) => {

@@ -682,7 +682,7 @@ function sendCompletionStatusToServerMain() {
       },
       body: JSON.stringify({
         completed: true, // サーバーに送る完了状態
-        id: userId,
+        id: 'userId',
       }),
     })
       .then((response) => {
@@ -716,7 +716,7 @@ function sendCompletionStatusToServerCover() {
       },
       body: JSON.stringify({
         completed: true, // サーバーに送る完了状態
-        id: userId,
+        id: 'userId',
       }),
     })
       .then((response) => {
