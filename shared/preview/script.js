@@ -410,7 +410,7 @@ function sendCompletionStatusToServer() {
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
 
       // アルバムIDを使って完了状態をサーバーに送信
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body/send`, {
+      return fetch(`https://develop-back.kotobum.com/api/albums/${Id}/body/send`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
