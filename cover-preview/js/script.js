@@ -502,14 +502,14 @@ function sendCompletionStatusToServer() {
       return response.json();
     })
     .then((albums) => {
-      const albumId = albums.albumId; // サーバーから取得したアルバムID
+      const Id = albums.albumId; // サーバーから取得したアルバムID
 
-      if (!albumId) {
+      if (!Id) {
         console.error('アルバムIDを取得できませんでした。');
         return;
       }
 
-      console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
+      console.log('取得したアルバムID:', Id); // 取得したアルバムIDを表示
 
       // アルバムIDを使って完了状態をサーバーに送信
       return fetch(`https://develop-back.kotobum.com/api/albums/${Id}/cover/send`, {
