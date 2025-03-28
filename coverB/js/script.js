@@ -1179,9 +1179,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const colors = typeof data.colors === 'object' ? data.colors : JSON.parse(data.colors || '{}');
 
     console.log('テキストデータ:', textData);
-    console.log('表紙テキストデータ:', covertext);
     console.log('画像データ:', imageData);
     console.log('色情報:', colors);
+
+    // 背表紙のテキストデータ修正
+    if (!covertextFetched) {
+      console.log('表紙テキストデータ:', covertext);
+      covertextFetched = true; // 表紙テキストデータ取得済みに設定
+
+      const textAreaCover = document.getElementById('textArea-cover');
+      if (textAreaCover) {
+        const item = covertext; // 必要に応じてデータ加工
+        textAreaCover.value = item.text;
+      } else {
+        console.warn('表紙テキストエリアが見つかりません');
+      }
+    }
 
     // テキストデータの表示処理
     textData.forEach((item) => {
@@ -1192,15 +1205,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
       }
     });
-
-    // 表紙テキストデータの表示処理
-    const item = covertext;
-    const textAreaCover = document.getElementById('textArea-cover');
-    if (textAreaCover) {
-      textAreaCover.value = item.text;
-    } else {
-      console.warn(`表紙テキストエリアが見つかりません: ID ${item.id}`);
-    }
 
     // 画像データの表示処理
     imageData.forEach((item) => {

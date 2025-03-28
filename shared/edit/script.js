@@ -774,13 +774,13 @@ function adjustTextareaSize(textarea) {
   textarea.style.width = `${textarea.scrollWidth}px`; // 内容に合わせた幅に調整
 
   // 高さを内容に応じて調整
-  // if (textarea.value.trim() === '') {
-  //   textarea.style.height = 'auto'; // 空の時は高さをリセット
-  //   textarea.style.height = '40px'; // 初期の最小高さ（調整可能）
-  // } else {
-  //   textarea.style.height = 'auto'; // 一旦リセット
-  //   textarea.style.height = `${textarea.scrollHeight}px`; // 内容に合わせて高さを再設定
-  // }
+  if (textarea.value.trim() === '') {
+    textarea.style.height = 'auto'; // 空の時は高さをリセット
+    textarea.style.height = '40px'; // 初期の最小高さ（調整可能）
+  } else {
+    textarea.style.height = 'auto'; // 一旦リセット
+    textarea.style.height = `${textarea.scrollHeight}px`; // 内容に合わせて高さを再設定
+  }
 }
 
 // テキストエリアのイベントリスナーを設定し、サイズを動的に調整

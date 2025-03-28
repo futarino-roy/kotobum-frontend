@@ -1042,18 +1042,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       //表紙テキストデータの存在チェック
-      if (!covertext || !Array.isArray(covertext)) {
-        console.warn('テキストデータが存在しないか、配列ではありません。');
-      } else {
-        // 表紙テキストデータを表示
-        textData.forEach((item) => {
-          const textAreaCover = document.getElementById(item.id);
-          if (textAreaCover) {
-            textAreaCover.value = item.text;
+
+      if (covertext && Array.isArray(covertext)) {
+        covertext.forEach((item) => {
+          const textArea = document.getElementById(item.id);
+          if (textArea) {
+            textArea.value = item.text;
+            adjustTextareaSize(textArea);
           } else {
             console.warn(`テキストエリアが見つかりません: ID ${item.id}`);
           }
         });
+      } else {
+        console.warn('テキストデータが存在しないか、配列ではありません。');
       }
 
       if (!imageData || !Array.isArray(imageData)) {
