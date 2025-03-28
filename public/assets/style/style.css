@@ -7864,7 +7864,7 @@ input:checked + label::after {
   max-width: 16.5%;
   height: 4.7%;
   top: 16.5%;
-  left: 73.2%;
+  left: 73.5%;
   text-align: center;
   white-space: nowrap; /* 改行をさせない設定 */
   line-height: 0.9;
@@ -7881,7 +7881,7 @@ input:checked + label::after {
 @media screen and (min-width: 1500px) {
   .cover .content .swiper-wrapper .swiper-slide_box .input-drop #textAreaA-1 {
     top: 16.3%;
-    left: 74%;
+    left: 74.4%;
     max-width: 15%;
   }
 }

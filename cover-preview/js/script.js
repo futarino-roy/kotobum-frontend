@@ -520,6 +520,7 @@ function sendCompletionStatusToServer() {
         },
         body: JSON.stringify({
           completed: true, // サーバーに送る完了状態
+          id: albumId,
         }),
       });
     })

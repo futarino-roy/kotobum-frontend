@@ -676,8 +676,8 @@ const updateTextAreaStyle = () => {
       fontSize = '0.6rem';
       lineHeight = 1.1;
     } else if (textLength <= 6) {
-      fontSize = '0.4rem';
-      lineHeight = 1.3;
+      fontSize = '0.5rem';
+      lineHeight = 1.6;
     } else if (textLength === 7) {
       fontSize = '0.4rem';
       lineHeight = 1.7;

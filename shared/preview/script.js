@@ -211,6 +211,9 @@ function loadAlbumBody(albumId) {
     },
   })
     .then((response) => response.json())
+    .then((data) => {
+      console.log('取得したデータ：', data);
+    })
     .then((albumData) => {
       if (albumData && albumData.images && albumData.texts && albumData.colors) {
         displayImages(albumData.images);
@@ -415,6 +418,7 @@ function sendCompletionStatusToServer() {
         },
         body: JSON.stringify({
           completed: true, // サーバーに送る完了状態
+          id: albumId,
         }),
       });
     })
