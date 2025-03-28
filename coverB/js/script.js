@@ -1086,6 +1086,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const isAdmin = urlParams.has('admin');
 
   let albumId, partner_id;
+  let covertextFetched = false; // 表紙テキストデータ取得フラグ
 
   if (isAdmin) {
     // 管理者はローカルストレージからデータを取得
