@@ -1578,7 +1578,10 @@ function saveAlbumData(albumId, token) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`データ送信に失敗しました: ${response.status} - ${response.statusText}`);
+        return response.json().then((errorDetails) => {
+          console.error('サーバーエラー詳細:', errorDetails);
+          throw new Error(`データ送信に失敗しました: ${response.status}`);
+        });
       }
       return response.json();
     })
