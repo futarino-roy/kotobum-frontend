@@ -1439,7 +1439,7 @@ function handleSaveOrSend() {
   if (isAdmin) {
     // 管理者の場合：ローカルストレージからアルバムIDを取得
     albumId = localStorage.getItem('albumId');
-    token = localStorage.getItem('token');
+
     console.log('管理者アルバムID: ', albumId);
     if (!albumId) {
       console.error('管理者用アルバムIDがローカルストレージに保存されていません。');
