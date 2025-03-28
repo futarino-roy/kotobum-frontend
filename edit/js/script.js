@@ -1586,6 +1586,7 @@ function saveAlbumData(albumId, token) {
     })
     .catch((error) => {
       console.error('エラーが発生しました:', error.message);
+      console.error('詳細エラー:', error); // 詳細エラーをログ出力
       alert('エラーが発生しました。再度お試しください。');
     });
 }
