@@ -636,9 +636,12 @@
 
       @include mq('tab-edit') {
         display: block;
-        // width: 80%;
+        width: 100%;
         min-width: auto;
         // margin-left: 16%;
+      }
+      @include mq('sp-edit') {
+        width: 100%;
       }
 
       &-wrapper {
@@ -666,8 +669,8 @@
             margin-left: -23%;
           }
           @include mq('sp-edit') {
-            width: 150% !important;
-            margin-left: -7%;
+            width: 157% !important;
+            margin-left: -58%;
           }
 
           &_box-pair {

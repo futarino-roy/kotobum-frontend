@@ -768,28 +768,6 @@
             @include mq('sp-edit') {
               width: 100%;
             }
-            // .img8B {
-            //   top: -14px;
-            //   height: 102%;
-            //   position: relative;
-            // }
-            // &-last {
-            //   clip-path: inset(33px 31px 44px 31px);
-            //   @include mq('pc2-edit') {
-            //     clip-path: inset(38px 37px 64px 39px);
-            //   }
-            //   @include mq('pc-edit') {
-            //     clip-path: inset(19px 20px 36px 18px);
-            //   }
-            //   @include mq('tab-edit') {
-            //     width: 90%;
-            //     clip-path: inset(6% 9% 7% 9%);
-            //   }
-            //   @include mq('sp-edit') {
-            //     width: 100%;
-            //   }
-            // }
-
             .input-drop {
               position: absolute;
               width: 100%;
@@ -841,9 +819,9 @@
                   height: 60%;
                   display: flex;
                   flex-direction: row;
-                  justify-content: flex-start;
+                  justify-content: space-between;
                   align-items: center;
-                  gap: 7.6%;
+                  gap: 3%;
                   margin: 2% 0 2.5% 0;
                   @include mq('pc-edit') {
                     width: 68%;
@@ -1333,7 +1311,7 @@
               }
               .text-height {
                 field-sizing: content;
-                max-height: 65%;
+                max-height: 85%;
               }
               .vertical-textarea {
                 writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
@@ -1689,18 +1667,18 @@
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
-                    top: -3.5%;
+                    top: -5%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
-                    top: -6.5%;
+                    top: -8%;
                   }
                 }
 
                 &16-2 {
                   position: absolute;
-                  top: 65%;
+                  top: 63%;
                   min-width: 60%;
                   margin-bottom: 5%;
                   font-size: 0.6rem;
@@ -1723,12 +1701,12 @@
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
-                    top: 67%;
+                    top: 66%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
-                    top: 64%;
+                    top: 62%;
                   }
                 }
 
@@ -1875,7 +1853,7 @@
                 }
                 &24-2 {
                   height: 75% !important;
-                  width: 45% !important;
+                  width: 47% !important;
                   // writing-mode: vertical-rl;
                   font-size: 0.26rem;
                   field-sizing: content;
@@ -1885,7 +1863,7 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.39rem;
+                    font-size: 0.45rem;
                   }
 
                   @include mq('tab-edit') {

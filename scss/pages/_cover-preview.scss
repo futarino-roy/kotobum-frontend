@@ -152,9 +152,12 @@
 
       @include mq('tab-edit') {
         display: block;
-        // width: 80%;
+        width: 100%;
         min-width: auto;
         // margin-left: 16%;
+      }
+      @include mq('sp-edit') {
+        width: 100%;
       }
 
       &-wrapper {
