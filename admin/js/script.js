@@ -64,15 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (format === 5 && template === 'B' && parts === 'body') {
     nextPage = '../edit5_solo1';
   } else if (format === 5 && template === 'B' && parts === 'cover') {
-    nextPage = '../cover5_solo1';
+    nextPage = '../coverB';
   } else if (format === 6 && template === 'B' && parts === 'body') {
     nextPage = '../edit6_solo2';
   } else if (format === 6 && template === 'B' && parts === 'cover') {
-    nextPage = '../cover6_solo2';
+    nextPage = '../coverB';
   } else if (format === 7 && template === 'B' && parts === 'body') {
     nextPage = '../edit7_splo3';
   } else if (format === 7 && template === 'B' && parts === 'cover') {
-    nextPage = '../cover7_solo3';
+    nextPage = '../coverB';
   } else {
     console.warn('対応するページが見つかりませんでした💦');
     return;
