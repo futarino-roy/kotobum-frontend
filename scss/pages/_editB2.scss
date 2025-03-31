@@ -813,9 +813,9 @@
               }
               .textarea-lineB {
                 position: absolute;
-                height: 74%;
+                height: 77%;
                 right: 13%;
-                top: 10%;
+                // top: 10%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -823,8 +823,8 @@
                 // gap: 5%;
                 @include mq('pc2-edit') {
                   right: 13%;
-                  top: 5%;
-                  height: 91%;
+                  // top: 5%;
+                  height: 79%;
                 }
 
                 @include mq('tab-edit') {
@@ -837,12 +837,12 @@
                 #textArea4_t2 {
                   writing-mode: vertical-lr;
                   text-orientation: sideways;
-                  font-size: 1rem;
+                  font-size: 1.3rem;
                   font-weight: bold;
                   color: white;
-                  letter-spacing: 0.5em;
+                  letter-spacing: 0.2em;
 
-                  height: 200px;
+                  // height: 200px;
                   width: auto !important;
                   max-width: 100% !important;
                   white-space: nowrap;
@@ -851,33 +851,39 @@
                   resize: none;
 
                   @include mq('pc2-edit') {
-                    font-size: 1.3rem;
-                    margin-top: 82%;
+                    font-size: 1.8rem;
+                    // margin-top: 82%;
                   }
                   @media screen and (max-width: 1200px) {
-                    font-size: 0.8rem;
+                    font-size: 1rem;
                   }
                   @include mq('tab-edit') {
-                    font-size: 1.5rem;
+                    font-size: 2.3rem;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 1.2rem;
+                    height: 200px;
                   }
                 }
                 #line {
                   position: relative;
-                  top: 5%;
+                  // top: 5%;
+                  margin-top: 30%;
                   width: 2px;
                   height: 300px;
                   background-color: white;
                   transition: height 0.3s ease;
                   @include mq('pc2-edit') {
-                    top: -9%;
+                    // top: -9%;
                   }
                   @include mq('tab-edit') {
                     right: 5%;
+                    height: 350px;
                   }
                   @include mq('sp-edit') {
                     height: 94%;
                     right: 10%;
-                    top: 10%;
+                    // top: 10%;
                   }
                 }
               }
@@ -1311,7 +1317,7 @@
             }
             #textAreaB12-1_t2 {
               font-family: 'League Spartan', sans-serif;
-              transform: rotate(270deg);
+              transform: rotate(90deg);
               position: relative;
               top: 4%;
               left: 38.2%;

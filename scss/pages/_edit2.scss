@@ -813,7 +813,7 @@
               }
               .textarea-line {
                 position: absolute;
-                height: 74%;
+                height: 77%;
                 left: 13%;
                 top: 10%;
                 display: flex;
@@ -833,6 +833,7 @@
                 }
                 @include mq('sp-edit') {
                   left: 15%;
+                  height: 77%;
                 }
 
                 #textArea4_t2 {
@@ -842,9 +843,9 @@
                   font-size: 1rem;
                   font-weight: bold;
                   color: white;
-                  letter-spacing: 0.5em;
+                  letter-spacing: 0.2em;
 
-                  height: 200px;
+                  height: 210px;
                   width: auto !important;
                   max-width: 100% !important;
                   white-space: nowrap;
@@ -853,16 +854,18 @@
                   resize: none;
 
                   @include mq('pc2-edit') {
-                    font-size: 1.5rem;
+                    font-size: 2.1rem;
                   }
                   @include mq('pc-edit') {
                     font-size: 0.8rem;
                   }
                   @include mq('tab-edit') {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
+                    height: 250px;
                   }
                   @include mq('sp-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1.4rem;
+                    height: 200px;
                   }
                 }
                 #line {
@@ -872,6 +875,14 @@
                   background-color: white;
                   transition: height 0.3s ease;
                   margin-top: 30%;
+
+                  @include mq('tab-edit') {
+                    height: 350px;
+                  }
+
+                  @include mq('sp-edit') {
+                    height: 300px;
+                  }
                 }
               }
 
@@ -1285,7 +1296,7 @@
                   color: #ffffff;
                   max-width: 30%;
                   position: absolute;
-                  top: 26.8%;
+                  top: 26.6%;
 
                   @include mq('pc-edit') {
                     font-size: 0.33rem;
@@ -1396,7 +1407,7 @@
                     font-size: 2.5rem;
                   }
                   @include mq('sp-edit') {
-                    font-size: 1.5rem;
+                    font-size: 7vw;
                     top: 15%;
                   }
                 }

@@ -11198,7 +11198,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line {
   position: absolute;
-  height: 74%;
+  height: 77%;
   left: 13%;
   top: 10%;
   display: flex;
@@ -11222,6 +11222,7 @@ body {
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line {
     left: 15%;
+    height: 77%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #textArea4_t2 {
@@ -11231,8 +11232,8 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  letter-spacing: 0.5em;
-  height: 200px;
+  letter-spacing: 0.2em;
+  height: 210px;
   width: auto !important;
   max-width: 100% !important;
   white-space: nowrap;
@@ -11242,7 +11243,7 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #textArea4_t2 {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -11252,12 +11253,14 @@ body {
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #textArea4_t2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    height: 250px;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #textArea4_t2 {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
+    height: 200px;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #line {
@@ -11266,6 +11269,16 @@ body {
   background-color: white;
   transition: height 0.3s ease;
   margin-top: 30%;
+}
+@media screen and (max-width: 900px) {
+  .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #line {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-line #line {
+    height: 300px;
+  }
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop #dropArea1_t2 {
   position: relative;
@@ -11692,7 +11705,7 @@ body {
   color: #ffffff;
   max-width: 30%;
   position: absolute;
-  top: 26.8%;
+  top: 26.6%;
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop #textArea1-2_t2 {
@@ -11825,7 +11838,7 @@ body {
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop #textArea10-1_t2 {
-    font-size: 1.5rem;
+    font-size: 7vw;
     top: 15%;
   }
 }
@@ -13787,9 +13800,8 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB {
   position: absolute;
-  height: 74%;
+  height: 77%;
   right: 13%;
-  top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13798,8 +13810,7 @@ body {
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB {
     right: 13%;
-    top: 5%;
-    height: 91%;
+    height: 79%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -13811,11 +13822,10 @@ body {
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #textArea4_t2 {
   writing-mode: vertical-lr;
   text-orientation: sideways;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: white;
-  letter-spacing: 0.5em;
-  height: 200px;
+  letter-spacing: 0.2em;
   width: auto !important;
   max-width: 100% !important;
   white-space: nowrap;
@@ -13825,43 +13835,43 @@ body {
 }
 @media screen and (min-width: 1500px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #textArea4_t2 {
-    font-size: 1.3rem;
-    margin-top: 82%;
+    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 1200px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #textArea4_t2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #textArea4_t2 {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #textArea4_t2 {
+    font-size: 1.2rem;
+    height: 200px;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #line {
   position: relative;
-  top: 5%;
+  margin-top: 30%;
   width: 2px;
   height: 300px;
   background-color: white;
   transition: height 0.3s ease;
 }
-@media screen and (min-width: 1500px) {
-  .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #line {
-    top: -9%;
-  }
-}
 @media screen and (max-width: 900px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #line {
     right: 5%;
+    height: 350px;
   }
 }
 @media screen and (max-width: 480px) {
   .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .textarea-lineB #line {
     height: 94%;
     right: 10%;
-    top: 10%;
   }
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 .input-drop .flexB4_t2 {
@@ -14059,7 +14069,7 @@ body {
 }
 .edit .content .swiper-wrapper .swiper-slide_box2 #textAreaB12-1_t2 {
   font-family: "League Spartan", sans-serif;
-  transform: rotate(270deg);
+  transform: rotate(90deg);
   position: relative;
   top: 4%;
   left: 38.2%;
