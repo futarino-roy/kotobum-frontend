@@ -330,7 +330,7 @@ changeButtons.forEach((changeButton) => {
     // 次のモーダルを表示
     modalS.classList.add('is-active');
     // 完了状態をローカルストレージに保存
-    localStorage.setItem('mainTextCompleted', 'true');
+    // localStorage.setItem('mainTextCompleted', 'true');
     // サーバーに完了状態を送信
     sendCompletionStatusToServer();
   });
