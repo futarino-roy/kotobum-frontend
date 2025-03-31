@@ -343,7 +343,15 @@
                 height: 37%;
                 font-size: 1rem;
                 // border: 2px dashed #ccc;
-
+                @include mq('pc-edit') {
+                  top: -13%;
+                }
+                @include mq('tab-edit') {
+                  top: -6%;
+                }
+                @include mq('sp-edit') {
+                  top: -9%;
+                }
                 border-radius: 10%;
 
                 img {
@@ -682,7 +690,7 @@
               }
               .text-height {
                 field-sizing: content;
-                max-height: 65%;
+                max-height: 85%;
               }
               .text-empty {
                 border: none;
@@ -880,20 +888,22 @@
 
                   @include mq('pc2-edit') {
                     font-size: 1rem;
-                    top: -6.5%;
+                    top: -7.5%;
                   }
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
+                    top: -5%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                    top: -8%;
                   }
                 }
                 &4-2 {
                   position: absolute;
-                  top: 65%;
+                  top: 63%;
                   min-width: 60%;
                   margin-bottom: 5%;
                   font-size: 0.6rem;
@@ -905,6 +915,7 @@
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: 60%;
                   }
 
                   @include mq('pc2-edit') {
@@ -913,10 +924,12 @@
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
+                    top: 66%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                    top: 62%;
                   }
                 }
 

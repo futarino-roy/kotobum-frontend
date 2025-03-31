@@ -179,10 +179,11 @@
             // clip-path: inset(20px 21px 26px 21px);
             clip-path: inset(20px 20px 28px);
             @include mq('pc2-edit') {
-              clip-path: inset(28px 30px 38px);
+              clip-path: inset(28px 30px 33px);
             }
             @include mq('pc-edit') {
-              clip-path: inset(14px 15px 22px 15px);
+              clip-path: inset(14px 15px 14px 15px);
+              top: -4%;
             }
             @include mq('tab-edit') {
               width: 90%;
@@ -240,15 +241,15 @@
                   height: 85%;
                 }
                 @include mq('pc-edit') {
-                  height: 84%;
-                  // top: 5%;
+                  height: 879%;
+                  top: 5%;
                 }
                 @include mq('tab-edit') {
-                  height: 83%;
-                  // top: 1%;
+                  height: 80.5%;
+                  top: 1%;
                 }
                 @include mq('sp-edit') {
-                  height: 84%;
+                  height: 82%;
                 }
                 .flex-area24 {
                   width: 65%;
@@ -257,7 +258,7 @@
                   flex-direction: row;
                   justify-content: flex-start;
                   align-items: center;
-                  gap: 7.6%;
+                  gap: 3%;
                   margin: 2% 0 2.5% 0;
                   @include mq('pc-edit') {
                     width: 68%;
@@ -283,7 +284,7 @@
                 font-size: 1rem;
                 border-radius: 10%;
                 @include mq('tab-edit') {
-                  top: -1%;
+                  top: -2%;
                   height: 39%;
                 }
 
@@ -687,7 +688,7 @@
               }
               .text-height {
                 field-sizing: content;
-                max-height: 70%;
+                max-height: 85%;
               }
               .vertical-textarea {
                 writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
@@ -714,6 +715,7 @@
                   position: absolute;
                   top: 13.3%;
                   field-sizing: content;
+
                   @include mq('pc-edit') {
                     font-size: 1.1rem;
                   }
@@ -742,22 +744,22 @@
                   color: #ffffff;
                   max-width: 30%;
                   position: absolute;
-                  top: 23.5%;
+                  top: 21.8%;
                   field-sizing: content;
 
                   @include mq('pc-edit') {
-                    font-size: 0.34rem;
-                    top: 23.5%;
+                    font-size: 0.38rem;
+                    top: 21.6%;
                   }
 
                   @include mq('pc2-edit') {
                     font-size: 0.8rem;
-                    top: 23.2%;
+                    top: 21.8%;
                   }
 
                   @include mq('tab-edit') {
                     font-size: 2vw;
-                    top: 23.5%;
+                    top: 21.5%;
                   }
 
                   @include mq('sp-edit') {
@@ -828,6 +830,7 @@
                     top: 1%;
                   }
                 }
+
                 &22 {
                   @include mq('pc-edit') {
                     top: -3%;
@@ -836,6 +839,7 @@
                     top: 1%;
                   }
                 }
+
                 &18 {
                   margin-bottom: 5%;
                   height: auto;
@@ -972,6 +976,7 @@
                     font-size: 1.7vw;
                   }
                 }
+
                 &21 {
                   position: relative;
                   top: 4%;
@@ -1002,6 +1007,7 @@
                     font-size: 1.52vw;
                   }
                 }
+
                 &16-1 {
                   position: relative;
                   top: -7.5%;
@@ -1028,18 +1034,18 @@
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
-                    top: -3.5%;
+                    top: -5%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
-                    top: -6.5%;
+                    top: -8%;
                   }
                 }
 
                 &16-2 {
                   position: absolute;
-                  top: 65%;
+                  top: 63%;
                   min-width: 60%;
                   margin-bottom: 5%;
                   font-size: 0.6rem;
@@ -1062,12 +1068,12 @@
 
                   @include mq('tab-edit') {
                     font-size: 2.3vw;
-                    top: 67%;
+                    top: 66%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
-                    top: 64%;
+                    top: 62%;
                   }
                 }
 
@@ -1214,7 +1220,7 @@
                 }
                 &24-2 {
                   height: 75% !important;
-                  width: 45% !important;
+                  width: 47% !important;
                   // writing-mode: vertical-rl;
                   font-size: 0.26rem;
                   field-sizing: content;
@@ -1224,7 +1230,7 @@
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.39rem;
+                    font-size: 0.45rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1243,7 +1249,7 @@
                   font-weight: bold;
                   color: #fef8f6;
                   font-size: 11px;
-                  top: 97%;
+                  top: 97.3%;
                   width: 63% !important;
                   field-sizing: content;
                   // text-orientation: upright; /* 数字や半角文字を縦向きにする */
@@ -1262,22 +1268,22 @@
                   @include mq('tab-edit') {
                     // line-height: 0.7;
                     font-size: 2.3vw;
-                    top: 98%;
+                    top: 96%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
-                    top: 98%;
+                    top: 96%;
                   }
                   @include mq('sp2-edit') {
                     font-size: 2.5vw;
-                    top: 97.5%;
+                    top: 95.5%;
                   }
                 }
               }
             }
             .input-drop-first {
-              top: 7%;
+              top: 8.5%;
             }
             .input-drop-last {
               top: 6% !important;
