@@ -158,15 +158,26 @@ const showDrawerContent = (contentId) => {
 };
 
 //　画像の挿入（inputタグ）
+//画像挿入
 document.addEventListener('DOMContentLoaded', () => {
   const dropAreas = document.querySelectorAll('.empty'); // .emptyクラスの要素を全て取得
   const fileInput = document.getElementById('fileInput');
 
   dropAreas.forEach((dropArea) => {
-    // .emptyをクリックしたらfileInputをクリック
-    dropArea.addEventListener('click', () => {
-      fileInput.dataset.target = dropArea.id; // 選択したdropAreaのIDを記録
-      fileInput.click();
+    // 画像エリアをクリックしたときの処理
+    dropArea.addEventListener('click', (event) => {
+      event.stopPropagation(); // 他のクリックイベントを防ぐ
+
+      // 画像がすでにある場合はボタンを表示し、fileInput は開かない
+      if (dropArea.querySelector('img')) {
+        removeSelectedState();
+        dropArea.classList.add('selected'); // 選択状態を追加
+        showButtons(dropArea);
+      } else {
+        // 画像がない場合は fileInput を開く
+        fileInput.dataset.target = dropArea.id;
+        fileInput.click();
+      }
     });
   });
 
@@ -175,20 +186,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        // 選択された画像をemptyDivに挿入
         const targetId = fileInput.dataset.target;
         const targetDropArea = document.getElementById(targetId);
 
-        targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
-        targetDropArea.style.border = 'none';
+        if (targetDropArea) {
+          targetDropArea.innerHTML = `<img src="${e.target.result}" alt="Selected Image">`;
+          targetDropArea.style.border = 'none';
 
-        showButtons(targetDropArea);
-        addButtons(targetDropArea);
+          removeSelectedState();
+          targetDropArea.classList.add('selected'); // 画像が入ったエリアを選択状態にする
+          showButtons(targetDropArea);
+          addButtons(targetDropArea);
+        } else {
+          console.error(`ターゲットエリアが見つかりません: ${targetId}`);
+        }
       };
       reader.readAsDataURL(file);
     }
   });
+
+  // 他のエリアをクリックしたらボタンを非表示にする
+  document.addEventListener('click', () => {
+    removeSelectedState();
+  });
 });
+
+// 他の選択状態を解除する関数
+function removeSelectedState() {
+  document.querySelectorAll('.empty.selected').forEach((el) => {
+    el.classList.remove('selected');
+    hideButtons(el);
+  });
+}
 
 // // 画像のアップロードと挿入
 // let selectedImage = null;

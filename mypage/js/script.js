@@ -700,7 +700,7 @@ function sendCompletionStatusToServerMain() {
   const Id = userData ? userData.id : null; // グローバルに保存されたデータからIDを取得
 
   if (!token || !Id) {
-    console.error('トークンまたはアルバムIDが見つかりません💦');
+    console.error('トークンまたはアルバムIDが見つかりません');
   } else {
     fetch(`https://develop-back.kotobum.com/api/albums/${Id}/body/send`, {
       method: 'POST',

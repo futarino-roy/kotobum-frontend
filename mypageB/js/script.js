@@ -205,7 +205,8 @@ changeButtons.forEach((changeButton) => {
     // 次のモーダルを表示
     modalS.classList.add('is-active');
     // 完了状態をlocalStorageに保存
-    localStorage.setItem('coverCompleted', 'true');
+    // localStorage.setItem('coverCompleted', 'true');
+
     // サーバにも送信
     sendCompletionStatusToServerCover();
   });
@@ -682,7 +683,6 @@ function sendCompletionStatusToServerMain() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        completed: true, // サーバーに送る完了状態
         id: 'userId',
       }),
     })
@@ -716,7 +716,6 @@ function sendCompletionStatusToServerCover() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        completed: true, // サーバーに送る完了状態
         id: 'userId',
       }),
     })
