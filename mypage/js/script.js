@@ -1,3 +1,4 @@
+// let userData = {}; //グローバル変数の定義
 document.addEventListener('DOMContentLoaded', function () {
   const token = localStorage.getItem('token'); // トークンを取得
   console.log('取得したトークン:', token); // トークンをコンソールに表示
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then((data) => {
       userData = data; // グローバル変数に保存
-      console.log('取得したデータ：', data);
+      handleCompletionState(userData); // 関数を呼び出し
+      console.log('取得したデータ：', userData);
       const format = data.format;
       const username = data.name; // サーバーから取得した名前
       console.log('フォーマット情報：', format);
@@ -232,7 +234,7 @@ changeButtons.forEach((changeButton) => {
     // 次のモーダルを表示
     modalS.classList.add('is-active');
     // 完了状態をlocalStorageに保存
-    localStorage.setItem('coverCompleted', 'true');
+    // localStorage.setItem('coverCompleted', 'true');
     // サーバにも送信
     sendCompletionStatusToServerCover();
   });
@@ -252,7 +254,7 @@ changeButton_rs.forEach((changeButton_r) => {
     // 次のモーダルを表示
     modalS_r.classList.add('is-active');
     // 完了状態をlocalStorageに保存
-    localStorage.setItem('mainTextCompleted', 'true');
+    // localStorage.setItem('mainTextCompleted', 'true');
     // サーバにも送信
     sendCompletionStatusToServerMain();
   });
@@ -434,7 +436,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 完了ボタンとステータス管理の機能拡張
-document.addEventListener('DOMContentLoaded', function () {
+// ユーザーの完了状態を処理する関数
+function handleCompletionState(userData) {
+  if (!userData) {
+    console.error('userData が未定義です。');
+    return; // データがなければ処理を中止
+  }
+
   // 完了ボタンを取得
   const coverCompletionButton = document.getElementById('end1');
   const mainTextCompletionButton = document.getElementById('end2');
@@ -443,9 +451,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const coverStatusText = document.getElementById('coverStatusText');
   const mainTextStatusText = document.getElementById('maintextStatusText');
 
-  // localStorage から完了状態を取得
-  const coverCompleted = localStorage.getItem('coverCompleted') === 'true';
-  const mainTextCompleted = localStorage.getItem('mainTextCompleted') === 'true';
+  // userData から完了状態を取得
+  const coverCompleted = userData.coverSent === 1;
+  const mainTextCompleted = userData.bodySent === 1;
+
+  console.log('cover', userData.coverSent);
+  console.log('body', userData.bodySent);
 
   // 完了ボタンを初期状態でアクティブにする
   if (coverCompletionButton && !coverCompleted) {
@@ -615,7 +626,16 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     true
   );
-});
+}
+
+// // ページが読み込まれた際に実行
+// document.addEventListener('DOMContentLoaded', function () {
+//   if (!userData) {
+//     console.error('userData が未定義です。');
+//     return;
+//   }
+//   handleCompletionState(userData); // 関数を呼び出し
+// });
 
 // ステータスボタンにスクロール機能を追加
 document.addEventListener('DOMContentLoaded', function () {
