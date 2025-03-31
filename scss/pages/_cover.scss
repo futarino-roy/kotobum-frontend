@@ -754,7 +754,7 @@
 
                 top: 35%;
                 left: 5%;
-                width: 86.8%;
+                width: 87%;
                 height: 56%;
 
                 font-size: 1rem;
@@ -817,7 +817,9 @@
                   width: 87.5%;
                 }
                 @include mq('pc-edit') {
-                  top: 35%;
+                  top: 34.8%;
+                  left: 4.5%;
+                  width: 88.1%;
                 }
               }
 
@@ -907,7 +909,7 @@
                 }
 
                 @include mq('sp2-edit') {
-                  font-size: 1.5vw !important;
+                  font-size: 2.2vw !important;
                 }
               }
 
@@ -973,7 +975,8 @@
                   }
 
                   @include mq('sp2-edit') {
-                    font-size: 0.8vw;
+                    font-size: 1.7vw;
+                    left: 66%;
                   }
                 }
 
@@ -1006,7 +1009,7 @@
                   }
 
                   @include mq('sp2-edit') {
-                    font-size: 2.7vw;
+                    font-size: 4.7vw;
                   }
                 }
               }

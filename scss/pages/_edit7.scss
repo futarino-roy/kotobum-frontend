@@ -1626,7 +1626,7 @@
                 &14-1 {
                   position: absolute;
                   top: 12.5%;
-                  font-size: 1.7rem;
+                  font-size: 1.5rem;
                   font-weight: bold;
                   text-align: center;
 
@@ -1636,6 +1636,8 @@
                   }
 
                   @include mq('pc2-edit') {
+                    top: 15%;
+                    font-size: 2rem;
                   }
 
                   @include mq('tab-edit') {
@@ -1655,7 +1657,7 @@
                   }
                   @include mq('pc-edit') {
                     top: 80%;
-                    font-size: 2.8vw;
+                    font-size: 0.8rem;
                   }
                   @include mq('tab-edit') {
                     top: 79%;
