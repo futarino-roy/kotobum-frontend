@@ -1,4 +1,7 @@
+// ---------マイページへボタンを押されたとき(保存状態確認)--------------------------------
+// 保存状態を取得
 let initialData = {}; // テキストエリアの初期値を保存するオブジェクト
+let initialImages = {}; //画像の初期状態を保存
 let isSaved = true; // データが保存済みかどうかを示すフラグ
 
 // ページ読み込み時にデータを保存(初期データ)
@@ -6,7 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const textAreas = document.querySelectorAll('textarea');
   textAreas.forEach((textarea) => {
     initialData[textarea.id] = textarea.value;
-    console.log('データを保存しました');
+    console.log('テキストエリアのデータを保存しました');
+  });
+
+  // 画像の初期状態を保存（src属性で判別）
+  const dropAreas = document.querySelectorAll('.empty');
+  dropAreas.forEach((dropArea) => {
+    initialImages[dropArea.id] = dropArea.querySelector('img') ? dropArea.querySelector('img').src : null;
+    console.log('画像の初期状態を保存しました');
   });
 });
 
@@ -17,12 +27,31 @@ document.querySelectorAll('textarea').forEach((textarea) => {
   });
 });
 
+// 画像に変更があれば未保存のフラグを設定
+document.querySelectorAll('.empty').forEach((dropArea) => {
+  dropArea.addEventListener('click', () => {
+    if (dropArea.querySelector('img')) {
+      isSaved = checkSave();
+    }
+  });
+});
+
 // 初期データと比較して変更されているか確認する関数
 function checkSave() {
   const textAreas = document.querySelectorAll('textarea');
-  return Array.from(textAreas).every((textarea) => {
+  const dropAreas = document.querySelectorAll('.empty');
+  // テキストエリアの変更をチェック
+  const isTextAreasSaved = Array.from(textAreas).every((textarea) => {
     return textarea.value === initialData[textarea.id];
   });
+
+  // 画像の変更をチェック
+  const isImagesSaved = Array.from(dropAreas).every((dropArea) => {
+    const currentImageSrc = dropArea.querySelector('img') ? dropArea.querySelector('img').src : null;
+    return currentImageSrc === initialImages[dropArea.id];
+  });
+
+  return isTextAreasSaved && isImagesSaved;
 }
 
 // 保存ボタンをクリック時に保存状態を更新
@@ -30,9 +59,16 @@ const saveBtn = document.getElementById('sendButton');
 if (saveBtn) {
   saveBtn.addEventListener('click', function () {
     isSaved = true;
+    // テキストエリアの保存
     const textAreas = document.querySelectorAll('textarea');
     textAreas.forEach((textarea) => {
       initialData[textarea.id] = textarea.value;
+    });
+    // 画像の保存
+    const dropAreas = document.querySelectorAll('.empty');
+    dropAreas.forEach((dropArea) => {
+      const img = dropArea.querySelector('img');
+      initialImages[dropArea.id] = img ? img.src : null;
     });
     console.log('保存内容が保存されました');
   });
@@ -40,7 +76,7 @@ if (saveBtn) {
   console.warn('Save button with ID "saveButton" not found.');
 }
 
-// ページを離れるときに保存されていない場合は警告を表示
+// ページを離れるときに保存されていない場合は警告を表示 (beforeunloadイベント)
 window.addEventListener('beforeunload', function (event) {
   if (!isSaved) {
     event.returnValue = '内容が保存されていません＞＜'; // ブラウザがデフォルトの警告メッセージを表示
@@ -170,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (dropArea.querySelector('img')) {
         removeSelectedState();
         dropArea.classList.add('selected'); // 選択状態を追加
+        addButtons(dropArea);
         showButtons(dropArea);
       } else {
         // 画像がない場合は fileInput を開く

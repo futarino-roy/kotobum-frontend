@@ -2944,6 +2944,7 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
+  z-index: 10;
 }
 
 /* トリミングボタンのスタイル*/
@@ -2960,6 +2961,7 @@ input:checked + label::after {
   cursor: pointer;
   opacity: 0.8;
   display: flex; /* 初期状態で表示 */
+  z-index: 10;
 }
 
 .crop-btn {
@@ -2974,6 +2976,7 @@ input:checked + label::after {
   height: 15%;
   cursor: pointer;
   opacity: 0.8;
+  z-index: 10;
 }
 .crop-btn:hover {
   opacity: 1;
@@ -2994,6 +2997,7 @@ input:checked + label::after {
   height: 15%;
   cursor: pointer;
   opacity: 0.8;
+  z-index: 10;
 }
 .delete-btn:hover {
   opacity: 1;
