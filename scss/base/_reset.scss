@@ -1,41 +1,52 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Zen Maru Gothic", serif;
+  font-family: 'Noto Sans JP', serif;
   font-weight: 400;
   font-style: normal;
 }
 
-button, input, select, textarea {
-  font-family: "Zen Maru Gothic", serif;
+button,
+input,
+select,
+textarea {
+  font-family: 'Noto Sans JP', serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 16px;
 }
 
-input{
+input {
   touch-action: manipulation;
   font-size: 16px;
 }
 
-body{
+body {
   margin: 0;
-  background-color: #FDFCF6;
+  background-color: #fdfcf6;
   // 一応
   height: 100%;
+  // overflow: hidden;
+
+  overflow-y: scroll; /* 縦スクロールを有効にする */
+  -webkit-overflow-scrolling: touch; /* iOSやAndroidでのスムーズスクロール */
 }
 
-html{
+html {
   height: 100%;
 }
 
-h2{
+h2 {
   font-size: 1.5rem;
 }
 
-p{
+p {
   font-size: 1.25rem;
 }
 
-img{
+img {
   max-width: 100%;
+}
+a {
+  text-decoration: none;
 }

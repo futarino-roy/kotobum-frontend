@@ -1,0 +1,982 @@
+.preview-body {
+  background: #d5dadc;
+  overflow: hidden;
+  /* モーダルと背景の指定 */
+  .modal {
+    z-index: 99;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 50%);
+    padding: 40px 20px;
+    overflow: auto;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+
+    // モーダルを非表示にする
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  /* モーダルの擬似要素の指定 */
+  .modal:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: -0.2em;
+  }
+
+  /* クラスが追加された時の指定 */
+  .modal.is-active {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  /* モーダル内側の指定 */
+  .modal-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 451px;
+    max-height: 313px;
+    width: 80%;
+    height: auto;
+    background-color: #fdfcf6;
+    border-radius: 10px;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
+    max-width: 90%;
+    // max-height: 90vh;
+    // overflow-y: auto;
+
+    &__check {
+      font-size: 20px;
+    }
+    &__textl {
+      font-size: 1.25rem;
+      @include mq('sp') {
+        font-size: 1rem;
+      }
+    }
+
+    &__button-sp {
+      display: none;
+    }
+    @include mq('pc-mypage') {
+      .modal-content__button-pc {
+        display: block;
+      }
+      .modal-content__button-sp {
+        display: none;
+      }
+    }
+    @include mq('sp-mypage') {
+      .modal-content__button-pc {
+        display: none;
+      }
+      .modal-content__button-sp {
+        display: block;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .modal-container_S {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px;
+    max-height: 281px;
+    width: 80%;
+    height: auto;
+    background-color: #fdfcf6;
+    border-radius: 10px;
+  }
+}
+.checkafter {
+  width: auto;
+  height: auto;
+}
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  @include mq('tab-edit') {
+    display: block;
+  }
+  .content {
+    @include mq('tab-edit') {
+      // margin: 85px 0 0 0;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .swiper {
+      width: 700px;
+      height: 100%;
+      @include mq('pc2-edit') {
+        width: 900px;
+      }
+      @include mq('pc-edit') {
+        width: 450px;
+      }
+      @include mq('tab-edit') {
+        display: block;
+        width: 80%;
+        min-width: auto;
+      }
+      &-wrapper {
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          color: #ffffff;
+          width: auto;
+          height: 100%;
+          &-hidden {
+            visibility: hidden;
+            @include mq('tab-edit') {
+              display: none;
+            }
+          }
+          &_box2 {
+            position: relative;
+            clip-path: inset(25px 25px 32px 25px);
+            @include mq('pc2-edit') {
+              clip-path: inset(38px 37px 44px 37px);
+            }
+            @include mq('pc-edit') {
+              clip-path: inset(19px 19px 25px 19px);
+            }
+            @include mq('tab-edit') {
+              width: 90%;
+              clip-path: inset(6% 8% 6.5% 8%);
+            }
+            @include mq('sp-edit') {
+              width: 100%;
+            }
+            .input-drop {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              opacity: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              // .page1_text {
+              //   width: 30%;
+              //   height: 5%;
+              //   border-radius: 9999px;
+              //   margin: 2% 0 2% 0;
+              // }
+
+              p {
+                font-family: 'League Spartan', sans-serif;
+                position: absolute;
+                bottom: 4%;
+                font-size: 0.3rem;
+                font-style: italic;
+              }
+              .bottom-text {
+                color: #f8f8f8;
+                bottom: -1%;
+              }
+              .textarea-line {
+                position: absolute;
+                height: 77%;
+                left: 13%;
+                top: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                // gap: 5%;
+                @include mq('pc2-edit') {
+                  left: 13%;
+                  top: 10%;
+                  height: 79%;
+                }
+
+                @include mq('tab-edit') {
+                  left: 11%;
+                  top: 11%;
+                }
+                @include mq('sp-edit') {
+                  left: 15%;
+                  height: 77%;
+                }
+
+                #textArea4_t2 {
+                  font-family: 'League Spartan', sans-serif;
+                  writing-mode: vertical-lr;
+                  text-orientation: sideways;
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: white;
+                  letter-spacing: 0.2em;
+
+                  height: 210px;
+                  width: auto !important;
+                  max-width: 100% !important;
+                  white-space: nowrap;
+                  overflow-x: auto;
+                  overflow: hidden;
+                  resize: none;
+
+                  @include mq('pc2-edit') {
+                    font-size: 2.1rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.8rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2.5rem;
+                    height: 250px;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 1.4rem;
+                    height: 200px;
+                  }
+                }
+                #line {
+                  // position: relative;
+                  width: 2px;
+                  height: 300px;
+                  background-color: white;
+                  transition: height 0.3s ease;
+                  margin-top: 30%;
+
+                  @include mq('tab-edit') {
+                    height: 350px;
+                  }
+
+                  @include mq('sp-edit') {
+                    height: 300px;
+                  }
+                }
+              }
+
+              #dropArea1_t2 {
+                position: relative;
+                top: -3%;
+                width: 45%;
+                height: 25%;
+                font-size: 1rem;
+                border: none;
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea2_t2 {
+                width: 78%;
+                height: 83%;
+                top: -1%;
+                position: relative;
+                border: none;
+
+                @include mq('pc2-edit') {
+                  top: -0.5%;
+                  height: 83%;
+                }
+                @include mq('tab-edit') {
+                  height: 83.5%;
+                  top: 0%;
+                }
+                @include mq('sp-edit') {
+                  height: 83%;
+                  top: -0.4%;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              .flex4_t2 {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 2%;
+                @include mq('pc2-edit') {
+                  gap: 3.3%;
+                }
+                @include mq('tab-edit') {
+                  gap: 3.3%;
+                }
+
+                #dropArea4-1_t2 {
+                  width: 55%;
+                  height: 24%;
+                  position: absolute;
+                  top: 10.5%;
+                  left: 29%;
+                  border: none;
+                  @include mq('pc2-edit') {
+                    top: 10.8%;
+                    left: 29%;
+                    height: 23.9%;
+                  }
+
+                  @include mq('tab-edit') {
+                    height: 24.5%;
+                    left: 29%;
+                  }
+                  @include mq('sp-edit') {
+                    height: 24.4%;
+                    left: 29%;
+                  }
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                #dropArea4-2_t2 {
+                  width: 55%;
+                  height: 24%;
+                  position: absolute;
+                  top: 37.2%;
+                  border: none;
+                  left: 29%;
+                  @include mq('pc2-edit') {
+                    top: 37.6%;
+                    left: 29%;
+                    height: 23.9%;
+                  }
+
+                  @include mq('tab-edit') {
+                    height: 24.5%;
+                    left: 29%;
+                  }
+                  @include mq('sp-edit') {
+                    height: 24.4%;
+                    left: 29%;
+                  }
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                #dropArea4-3_t2 {
+                  width: 55%;
+                  height: 24%;
+                  position: absolute;
+                  top: 64%;
+                  border: none;
+                  left: 29%;
+                  @include mq('pc2-edit') {
+                    top: 64.5%;
+
+                    height: 23.9%;
+                  }
+
+                  @include mq('tab-edit') {
+                    height: 24.5%;
+                  }
+                  @include mq('sp-edit') {
+                    height: 24.4%;
+                  }
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+              }
+
+              #dropArea6_t2 {
+                position: relative;
+                width: 47%;
+                height: 43%;
+                font-size: 1rem;
+                border: none;
+
+                top: -2px;
+                @include mq('pc2-edit') {
+                  height: 43%;
+                }
+                @include mq('pc-edit') {
+                }
+                @include mq('tab-edit') {
+                }
+                @include mq('sp-edit') {
+                  top: -0.4%;
+                  height: 43%;
+                }
+
+                // 枠サイズ変更関連---
+                &.active {
+                  border-color: #00000089;
+                }
+
+                &.square {
+                  width: 45%;
+                  height: 32%;
+                }
+
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
+                }
+
+                &.rectangle43 {
+                  width: 45%;
+                  height: 25%;
+                }
+
+                &.mini {
+                  width: 45%;
+                  height: 20%;
+                }
+
+                // --------------------------
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea8-1_t2 {
+                position: absolute;
+                width: 47.5%;
+                height: 22.5%;
+                top: 26%;
+                margin-bottom: 5.5%;
+                border: none;
+
+                @include mq('pc2-edit') {
+                  margin-bottom: 6%;
+                  top: 26.3%;
+                  height: 22.8%;
+                  width: 48%;
+                }
+                @include mq('pc-edit') {
+                }
+                @include mq('tab-edit') {
+                  height: 22.8%;
+                  top: 26.3%;
+                }
+                @include mq('sp-edit') {
+                  top: 26.2%;
+                  width: 48.2%;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              #dropArea8-2_t2 {
+                position: absolute;
+                width: 47.5%;
+                height: 22.5%;
+                top: 52.5%;
+                margin-bottom: 5.5%;
+                border: none;
+
+                @include mq('pc2-edit') {
+                  margin-bottom: 6%;
+                  top: 52.9%;
+                  // height: 22.8%;
+                  width: 48%;
+                }
+                @include mq('pc-edit') {
+                  top: 52.4%;
+                  margin-bottom: 5%;
+                }
+                @include mq('tab-edit') {
+                  top: 53%;
+                  // height: 26.5%;
+                }
+                @include mq('sp-edit') {
+                  top: 52.8%;
+                  width: 48.2%;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #dropArea10_t2 {
+                position: relative;
+                top: -0.7%;
+                width: 45%;
+                height: 40.5%;
+                font-size: 1rem;
+                border: none;
+
+                @include mq('pc2-edit') {
+                  top: -0.5%;
+                }
+                @include mq('pc-edit') {
+                  top: -1%;
+                  height: 39%;
+                }
+                @include mq('tab-edit') {
+                  top: -0.5%;
+                  height: 40%;
+                }
+                @include mq('sp-edit') {
+                  top: -2px;
+                  height: 40%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              textarea {
+                overflow: hidden;
+                text-align: left;
+                resize: none;
+                width: 60% !important;
+                max-width: 60%;
+                // height: 20%;
+                margin: 5% 0 4%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
+                field-sizing: content;
+                color: black;
+
+                @include mq('pc-edit') {
+                  font-size: 0.3rem;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.6rem;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.55vw;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 1.7vw;
+                }
+              }
+
+              .text-empty {
+                border: none;
+                &.no-border {
+                  border: none;
+                }
+              }
+              #textArea {
+                &1-1_t2::placeholder {
+                  @include mq('sp-edit') {
+                    font-size: 1rem;
+                    line-height: 2.5;
+                  }
+                }
+                &1-1_t2 {
+                  font-family: 'League Spartan', sans-serif;
+                  min-width: 60%;
+                  font-size: 1.2rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  // color: #fef8f6;
+                  text-align: center;
+                  position: absolute;
+                  top: 15.5%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 2.1rem;
+                    top: 14.5%;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 5.5vw;
+                    top: 15%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 7vw;
+                    top: 14%;
+                  }
+                }
+
+                &1-2_t2 {
+                  font-family: 'Noto Sans JP', serif;
+                  min-width: 36%;
+                  margin: 1% 0 5%;
+                  font-size: 0.5rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  text-align: center;
+                  color: #ffffff;
+                  max-width: 30%;
+                  position: absolute;
+                  top: 26.6%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.33rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.8rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.7vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.3vw;
+                  }
+                }
+
+                &1-3_t2 {
+                  position: absolute;
+                  top: 59%;
+                  font-size: 0.36rem;
+                  text-align: left;
+                  max-width: 45%;
+                  max-height: 32% !important;
+                  @include mq('pc-edit') {
+                    font-size: 0.27rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.55rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.35vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.55vw;
+                  }
+                }
+                &3_t2,
+                &5_t2,
+                &7_t2,
+                &9_t2 {
+                  position: relative;
+                  // top: 4%;
+                  font-size: 5px;
+                  max-width: 46%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.246rem;
+                    max-height: 65%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.49rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.26vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
+                    margin-top: 25px;
+                  }
+                }
+
+                &8_t2 {
+                  position: absolute;
+                  top: 16%;
+                  text-align: center;
+                  color: #f8f8f8;
+                  font-size: 0.7rem;
+                  line-height: 1;
+                  font-weight: bold;
+                  @include mq('pc2-edit') {
+                    font-size: 1rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2.6vw;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 3vw;
+                  }
+                }
+
+                &10-1_t2 {
+                  position: absolute;
+                  top: 17%;
+                  color: #f8f8f8;
+                  text-align: center;
+                  font-family: 'League Spartan', sans-serif;
+                  font-size: 1.3rem;
+                  line-height: 1;
+                  font-weight: bold;
+                  @include mq('pc2-edit') {
+                    font-size: 2rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 1rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 2.5rem;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 7vw;
+                    top: 15%;
+                  }
+                }
+                &10-2_t2 {
+                  position: absolute;
+                  top: 72%;
+                  text-align: center;
+                  font-size: 0.6rem;
+                  line-height: 1;
+                  font-weight: bold;
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                  }
+                  @include mq('tab-edit') {
+                    bottom: 11.5%;
+                    font-size: 1rem;
+                  }
+                  @include mq('sp-edit') {
+                    bottom: 17.5%;
+                    font-size: 0.7rem;
+                  }
+                }
+                &11_t2 {
+                  position: relative;
+                  // top: 4%;
+                  font-size: 5px;
+                  max-width: 46%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.246rem;
+                    max-height: 65%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.49rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.26vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
+                    margin-top: 25px;
+                  }
+                }
+              }
+            }
+            #textArea12-1_t2 {
+              font-family: 'League Spartan', sans-serif;
+              transform: rotate(270deg);
+              position: relative;
+              top: 4%;
+              right: 38.2%;
+              text-align: center;
+              color: #f8f8f8;
+              font-weight: bold;
+              font-size: 0.7rem;
+              line-height: 1;
+              letter-spacing: 0.2em;
+
+              @include mq('pc-edit') {
+                font-size: 0.6rem;
+                // margin-bottom: 3%;
+              }
+
+              @include mq('pc2-edit') {
+                font-size: 0.9rem;
+              }
+
+              @include mq('tab-edit') {
+                font-size: 2.2vw;
+                top: 0%;
+                right: 38%;
+              }
+
+              @include mq('sp-edit') {
+                font-size: 3vw;
+              }
+            }
+            .flex12-1 {
+              display: flex;
+              flex-direction: column;
+              width: 77%;
+              height: 100%;
+              justify-content: center;
+              align-items: center;
+              left: 14.4%;
+              position: absolute;
+              top: -4%;
+
+              #dropArea12_t2 {
+                margin-top: 0%;
+                position: absolute;
+                top: 18%;
+                width: 70%;
+                height: 34%;
+                font-size: 1rem;
+                border: none;
+
+                @include mq('pc2-edit') {
+                  width: 70%;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              #textArea {
+                &12-2_t2 {
+                  position: absolute;
+                  top: 54%;
+                  font-size: 0.32rem;
+                  max-width: 68% !important;
+                  width: 68% !important;
+                  height: 30%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.24rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.48rem;
+                    height: 31%;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.25vw;
+                    height: 32%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.36vw;
+                    height: 30%;
+                  }
+                }
+                &12-3_t2 {
+                  font-family: 'League Spartan', sans-serif;
+                  font-weight: bold;
+                  position: absolute;
+                  font-size: 12px;
+                  bottom: 5%;
+                  text-align: center;
+
+                  // @include mq('pc-edit') {
+                  //   margin-bottom: 15%;
+                  // }
+
+                  @include mq('pc2-edit') {
+                    font-size: 1.2rem;
+                    line-height: 0.9;
+                    margin-bottom: 4%;
+                  }
+
+                  @include mq('tab-edit') {
+                    line-height: 0.7;
+                    font-size: 3vw;
+                    margin-bottom: 5%;
+                  }
+
+                  @include mq('sp-edit') {
+                    line-height: 2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .empty {
+//   background-color: brown;
+//   opacity: 0.6;
+// }
+// textarea {
+//   background-color: cornflowerblue !important;
+// }

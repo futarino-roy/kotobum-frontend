@@ -1,350 +1,472 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B面の中身の編集ページ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
-    <link rel="stylesheet" href="../public/assets/style/style.css" />
-  </head>
-  <body class="editB-body">
-    <header class="edit-header">
-      <button class="btn btn-E">保存する</button>
-      <button class="btn-preview">プレビュー</button>
-    </header>
 
-    <div class="editB">
-      <div id="drawer" class="edit_drawer">
-        <button class="close-btn" onclick="toggleDrawer()">
-          <img src="/edit/images/Vector 46.png" alt="" />
-        </button>
-        <div id="drawer-content" class="edit_drawer_container">
-          <div id="content1" class="edit_drawer_container_item">
-            <div class="edit_drawer_container_item_upload">
-              <div id="uploadZone">
-                <div class="uploadZone_wrapper">
-                  <form>
-                    <input id="backInput" type="file" accept="image/*" multiple="multiple" onchange="loadImage(this);" style="display: none" />
-                    <button type="button" id="frontButton" class="btn btn-middle_wh">画像を追加する</button>
-                  </form>
-                </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>B面の中身の編集ページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
+  <link rel="stylesheet" href="../public/assets/style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- 表紙の名前の文字フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
+  <!--　Noto Sans JP　-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="edit-body">
+  <header class="edit-header">
+    <button id="captureButton" onclick="captureToPDF()" class="btn btn-small_bl btn-small_bl-edit"
+      style="display: none">キャプチャ</button>
+    <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc mypage">マイページへ</button></a>
+    <button id="sendButton" class="btn btn-small_bl">保存する</button>
+    <!-- <button class="btn-preview">プレビュー</button> -->
+  </header>
+
+  <div class="edit">
+    <div id="drawer" class="edit_drawer">
+      <button class="close-btn" onclick="toggleDrawer()"><img src="/editB/images/Vector 46.png" alt="" /></button>
+      <div id="drawer-content" class="edit_drawer_container">
+        <div id="content1" class="edit_drawer_container_item">
+          <div class="edit_drawer_container_item_upload">
+            <div id="uploadZone">
+              <div class="uploadZone_wrapper">
+                <form>
+                  <input id="backInput" type="file" accept="image/*" multiple="multiple" onchange="loadImage(this);"
+                    style="display: none" />
+                  <button type="button" id="frontButton" class="btn btn-middle_wh-edit">画像を追加する</button>
+                </form>
               </div>
+            </div>
 
-              <div class="imageList-container">
-                <div id="imgPreviewField"></div>
+            <div class="imageList-container">
+              <div id="imgPreviewField"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="content2" class="edit_drawer_container_item">
+          <div class="edit_drawer_container_item_color">
+            <h2>カラーを選択する</h2>
+
+            <div class="color-container">
+              <div class="color-container_vari">
+                <!-- からし色 -->
+                <!-- <input type="button" class="btn-color btn-color-1" value="Push!!!!" onclick="changeColor('#e6cd00')" /> -->
+                <input type="button" class="btn-color btn-color-1" value="Push!!!!"
+                  onclick="changeColor('rgb(230, 205, 0)')" />
+                <input type="button" class="btn-color btn-color-2" value="Push!!!!"
+                  onclick="changeColor('rgb(230, 195, 0)')" />
+                <!-- <input type="button" class="btn-color btn-color-3" value="Push!!!!" onclick="changeColor('rgb(199, 222, 0)')" /> -->
+                <input type="button" class="btn-color btn-color-4" value="Push!!!!"
+                  onclick="changeColor('rgb(170, 150, 0)')" />
+                <!-- <input type="button" class="btn-color btn-color-5" value="Push!!!!" onclick="changeColor('rgb(140, 125, 0)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-6" value="Push!!!!" onclick="changeColor('rgb(130, 110, 0)')" /> -->
+
+                <!-- 黄緑 -->
+                <input type="button" class="btn-color btn-color-7" value="Push!!!!"
+                  onclick="changeColor('rgb(170, 210, 75)')" />
+                <input type="button" class="btn-color btn-color-8" value="Push!!!!"
+                  onclick="changeColor('rgb(130, 212, 30)')" />
+                <!-- <input type="button" class="btn-color btn-color-9" value="Push!!!!" onclick="changeColor('rgb(125, 170, 25)')" /> -->
+                <input type="button" class="btn-color btn-color-10" value="Push!!!!"
+                  onclick="changeColor('rgb(100, 140, 14)')" />
+                <!-- <input type="button" class="btn-color btn-color-11" value="Push!!!!" onclick="changeColor('rgb(70, 105, 0)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-12" value="Push!!!!" onclick="changeColor('rgb(60, 95, 0)')" /> -->
+
+                <!-- 緑 -->
+                <input type="button" class="btn-color btn-color-13" value="Push!!!!"
+                  onclick="changeColor('rgb(50, 185, 115)')" />
+                <input type="button" class="btn-color btn-color-14" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 145, 65)')" />
+                <!-- <input type="button" class="btn-color btn-color-15" value="Push!!!!" onclick="changeColor('rgb(5, 135, 60)')" /> -->
+                <input type="button" class="btn-color btn-color-16" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 115, 50)')" />
+                <!-- <input type="button" class="btn-color btn-color-17" value="Push!!!!" onclick="changeColor('rgb(0, 85, 30)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-18" value="Push!!!!" onclick="changeColor('rgb(0, 55, 20)')" /> -->
+
+                <!-- エメラルドグリーン -->
+                <input type="button" class="btn-color btn-color-19" value="Push!!!!"
+                  onclick="changeColor('rgb(35, 190, 185)')" />
+                <input type="button" class="btn-color btn-color-20" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 145, 140)')" />
+                <!-- <input type="button" class="btn-color btn-color-21" value="Push!!!!" onclick="changeColor('rgb(0, 135, 130)')" /> -->
+                <input type="button" class="btn-color btn-color-22" value="Push!!!!"
+                  onclick="changeColor('rgb(5, 115, 110)')" />
+                <!-- <input type="button" class="btn-color btn-color-23" value="Push!!!!" onclick="changeColor('rgb(0, 90, 80)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-24" value="Push!!!!" onclick="changeColor('rgb(0, 60, 55)')" /> -->
+
+                <!-- 水色 -->
+                <input type="button" class="btn-color btn-color-25" value="Push!!!!"
+                  onclick="changeColor('rgb(110, 200, 245)')" />
+                <input type="button" class="btn-color btn-color-26" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 160, 220)')" />
+                <!-- <input type="button" class="btn-color btn-color-27" value="Push!!!!" onclick="changeColor('rgb(0, 140, 205)')" /> -->
+                <input type="button" class="btn-color btn-color-28" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 120, 170)')" />
+                <!-- <input type="button" class="btn-color btn-color-29" value="Push!!!!" onclick="changeColor('rgb(0, 90, 130)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-30" value="Push!!!!" onclick="changeColor('rgb(0, 70, 100)')" /> -->
+
+                <!-- 青 -->
+                <input type="button" class="btn-color btn-color-31" value="Push!!!!"
+                  onclick="changeColor('rgb(77, 145, 205)')" />
+                <input type="button" class="btn-color btn-color-32" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 100, 170)')" />
+                <!-- <input type="button" class="btn-color btn-color-33" value="Push!!!!" onclick="changeColor('rgb(0, 90, 160)')" /> -->
+                <input type="button" class="btn-color btn-color-34" value="Push!!!!"
+                  onclick="changeColor('rgb(0, 75, 135)')" />
+                <!-- <input type="button" class="btn-color btn-color-35" value="Push!!!!" onclick="changeColor('rgb(0, 50, 100)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-36" value="Push!!!!" onclick="changeColor('rgb(0, 35, 70)')" /> -->
+
+                <!-- 紺 -->
+                <input type="button" class="btn-color btn-color-37" value="Push!!!!"
+                  onclick="changeColor('rgb(100, 90, 170)')" />
+                <input type="button" class="btn-color btn-color-38" value="Push!!!!"
+                  onclick="changeColor('rgb(50, 50, 140)')" />
+                <!-- <input type="button" class="btn-color btn-color-39" value="Push!!!!" onclick="changeColor('rgb(30, 30, 125)')" /> -->
+                <input type="button" class="btn-color btn-color-40" value="Push!!!!"
+                  onclick="changeColor('rgb(15, 10, 100)')" />
+                <!-- <input type="button" class="btn-color btn-color-41" value="Push!!!!" onclick="changeColor('rgb(5, 0, 77)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-42" value="Push!!!!" onclick="changeColor('rgb(0, 0, 45)')" /> -->
+
+                <!-- 紫 -->
+                <input type="button" class="btn-color btn-color-43" value="Push!!!!"
+                  onclick="changeColor('rgb(180, 100, 170)')" />
+                <input type="button" class="btn-color btn-color-44" value="Push!!!!"
+                  onclick="changeColor('rgb(135, 0, 125)')" />
+                <!-- <input type="button" class="btn-color btn-color-45" value="Push!!!!" onclick="changeColor('rgb(125, 0, 115)')" /> -->
+                <input type="button" class="btn-color btn-color-46" value="Push!!!!"
+                  onclick="changeColor('rgb(105, 0, 95)')" />
+                <!-- <input type="button" class="btn-color btn-color-47" value="Push!!!!" onclick="changeColor('rgb(80, 0, 70)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-48" value="Push!!!!" onclick="changeColor('rgb(50, 0, 45)')" /> -->
+
+                <!-- ピンク -->
+                <input type="button" class="btn-color btn-color-49" value="Push!!!!"
+                  onclick="changeColor('rgb(235, 110, 165)')" />
+                <input type="button" class="btn-color btn-color-50" value="Push!!!!"
+                  onclick="changeColor('rgb(215, 0, 120)')" />
+                <!-- <input type="button" class="btn-color btn-color-51" value="Push!!!!" onclick="changeColor('rgb(200, 0, 110)')" /> -->
+                <input type="button" class="btn-color btn-color-52" value="Push!!!!"
+                  onclick="changeColor('rgb(165, 0, 90)')" />
+                <!-- <input type="button" class="btn-color btn-color-53" value="Push!!!!" onclick="changeColor('rgb(125, 0, 65)')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-54" value="Push!!!!" onclick="changeColor('rgb(95, 0, 50)')"-->
+
+                <!-- コーラル -->
+                <input type="button" class="btn-color btn-color-55" value="Push!!!!"
+                  onclick="changeColor('rgb(240, 110, 125)')" />
+                <input type="button" class="btn-color btn-color-56" value="Push!!!!"
+                  onclick="changeColor('rgb(215, 0, 75)')" />
+                <input type="button" class="btn-color btn-color-58" value="Push!!!!"
+                  onclick="changeColor('rgb(165, 0, 55)')" />
+
+                <!-- オレンジ -->
+                <input type="button" class="btn-color btn-color-61" value="Push!!!!"
+                  onclick="changeColor('rgb(240, 110, 70)')" />
+                <input type="button" class="btn-color btn-color-62" value="Push!!!!"
+                  onclick="changeColor('rgb(215, 0, 70)')" />
+                <input type="button" class="btn-color btn-color-64" value="Push!!!!"
+                  onclick="changeColor('rgb(165, 0, 0)')" />
+
+                <!-- 黄色 -->
+                <input type="button" class="btn-color btn-color-67" value="Push!!!!"
+                  onclick="changeColor('rgb(255, 185, 55)')" />
+                <input type="button" class="btn-color btn-color-68" value="Push!!!!"
+                  onclick="changeColor('rgb(225, 140, 0)')" />
+                <input type="button" class="btn-color btn-color-70" value="Push!!!!"
+                  onclick="changeColor('rgb(170, 105, 0)')" />
+
+                <!-- <input type="button" class="btn-color btn-color-71" value="Push!!!!" onclick="changeColor('#825000')" /> -->
+                <!-- <input type="button" class="btn-color btn-color-72" value="Push!!!!" onclick="changeColor('#643c00')" /> -->
               </div>
             </div>
           </div>
+        </div>
 
-          <div id="content2" class="edit_drawer_container_item">
-            <div class="edit_drawer_container_item_color">
-              <h2>カラーを選択する</h2>
-
-              <div class="color-container">
-                <div class="color-container_vari">
-                  <!-- からし色 -->
-                  <input type="button" class="btn-color btn-color-1" value="Push!!!!" onclick="changeColor('#e6cd00')" />
-                  <input type="button" class="btn-color btn-color-2" value="Push!!!!" onclick="changeColor('#e6c300')" />
-                  <input type="button" class="btn-color btn-color-3" value="Push!!!!" onclick="changeColor('#c7de00')" />
-                  <input type="button" class="btn-color btn-color-4" value="Push!!!!" onclick="changeColor('#aa9600')" />
-                  <input type="button" class="btn-color btn-color-5" value="Push!!!!" onclick="changeColor('#8c7d00')" />
-                  <input type="button" class="btn-color btn-color-6" value="Push!!!!" onclick="changeColor('#826e00')" />
-
-                  <!-- 黄緑 -->
-                  <input type="button" class="btn-color btn-color-7" value="Push!!!!" onclick="changeColor('#aad24b')" />
-                  <input type="button" class="btn-color btn-color-8" value="Push!!!!" onclick="changeColor('#82d41e')" />
-                  <input type="button" class="btn-color btn-color-9" value="Push!!!!" onclick="changeColor('#7daa19')" />
-                  <input type="button" class="btn-color btn-color-10" value="Push!!!!" onclick="changeColor('#648c0e')" />
-                  <input type="button" class="btn-color btn-color-11" value="Push!!!!" onclick="changeColor('#466900')" />
-                  <input type="button" class="btn-color btn-color-12" value="Push!!!!" onclick="changeColor('#3c5f00')" />
-
-                  <!-- 緑 -->
-                  <input type="button" class="btn-color btn-color-13" value="Push!!!!" onclick="changeColor('#32b973')" />
-                  <input type="button" class="btn-color btn-color-14" value="Push!!!!" onclick="changeColor('#009141')" />
-                  <input type="button" class="btn-color btn-color-15" value="Push!!!!" onclick="changeColor('#05873c')" />
-                  <input type="button" class="btn-color btn-color-16" value="Push!!!!" onclick="changeColor('#007332')" />
-                  <input type="button" class="btn-color btn-color-17" value="Push!!!!" onclick="changeColor('#00551e')" />
-                  <input type="button" class="btn-color btn-color-18" value="Push!!!!" onclick="changeColor('#003714')" />
-
-                  <!-- エメラルドグリーン -->
-                  <input type="button" class="btn-color btn-color-19" value="Push!!!!" onclick="changeColor('#23beb9')" />
-                  <input type="button" class="btn-color btn-color-20" value="Push!!!!" onclick="changeColor('#00918c')" />
-                  <input type="button" class="btn-color btn-color-21" value="Push!!!!" onclick="changeColor('#008782')" />
-                  <input type="button" class="btn-color btn-color-22" value="Push!!!!" onclick="changeColor('#05736e')" />
-                  <input type="button" class="btn-color btn-color-23" value="Push!!!!" onclick="changeColor('#005a50')" />
-                  <input type="button" class="btn-color btn-color-24" value="Push!!!!" onclick="changeColor('#003c37')" />
-
-                  <!-- 水色 -->
-                  <input type="button" class="btn-color btn-color-25" value="Push!!!!" onclick="changeColor('#6ec8f5')" />
-                  <input type="button" class="btn-color btn-color-26" value="Push!!!!" onclick="changeColor('#00a0dc')" />
-                  <input type="button" class="btn-color btn-color-27" value="Push!!!!" onclick="changeColor('#008ccd')" />
-                  <input type="button" class="btn-color btn-color-28" value="Push!!!!" onclick="changeColor('#0078aa')" />
-                  <input type="button" class="btn-color btn-color-29" value="Push!!!!" onclick="changeColor('#005a82')" />
-                  <input type="button" class="btn-color btn-color-30" value="Push!!!!" onclick="changeColor('#004664')" />
-
-                  <!-- 青 -->
-                  <input type="button" class="btn-color btn-color-31" value="Push!!!!" onclick="changeColor('#4d91cd')" />
-                  <input type="button" class="btn-color btn-color-32" value="Push!!!!" onclick="changeColor('#0064aa')" />
-                  <input type="button" class="btn-color btn-color-33" value="Push!!!!" onclick="changeColor('#005aa0')" />
-                  <input type="button" class="btn-color btn-color-34" value="Push!!!!" onclick="changeColor('#004b87')" />
-                  <input type="button" class="btn-color btn-color-35" value="Push!!!!" onclick="changeColor('#003264')" />
-                  <input type="button" class="btn-color btn-color-36" value="Push!!!!" onclick="changeColor('#002346')" />
-
-                  <!-- 紺 -->
-                  <input type="button" class="btn-color btn-color-37" value="Push!!!!" onclick="changeColor('#645aaa')" />
-                  <input type="button" class="btn-color btn-color-38" value="Push!!!!" onclick="changeColor('#32328c')" />
-                  <input type="button" class="btn-color btn-color-39" value="Push!!!!" onclick="changeColor('#1e1e7d')" />
-                  <input type="button" class="btn-color btn-color-40" value="Push!!!!" onclick="changeColor('#0f0a64')" />
-                  <input type="button" class="btn-color btn-color-41" value="Push!!!!" onclick="changeColor('#05004d')" />
-                  <input type="button" class="btn-color btn-color-42" value="Push!!!!" onclick="changeColor('#00002d')" />
-
-                  <!-- 紫 -->
-                  <input type="button" class="btn-color btn-color-43" value="Push!!!!" onclick="changeColor('#b464aa')" />
-                  <input type="button" class="btn-color btn-color-44" value="Push!!!!" onclick="changeColor('#87007d')" />
-                  <input type="button" class="btn-color btn-color-45" value="Push!!!!" onclick="changeColor('#7d0073')" />
-                  <input type="button" class="btn-color btn-color-46" value="Push!!!!" onclick="changeColor('#69005f')" />
-                  <input type="button" class="btn-color btn-color-47" value="Push!!!!" onclick="changeColor('#500046')" />
-                  <input type="button" class="btn-color btn-color-48" value="Push!!!!" onclick="changeColor('#32002d')" />
-
-                  <!-- ピンク -->
-                  <input type="button" class="btn-color btn-color-49" value="Push!!!!" onclick="changeColor('#eb6ea5')" />
-                  <input type="button" class="btn-color btn-color-50" value="Push!!!!" onclick="changeColor('#d70078')" />
-                  <input type="button" class="btn-color btn-color-51" value="Push!!!!" onclick="changeColor('#c8006e')" />
-                  <input type="button" class="btn-color btn-color-52" value="Push!!!!" onclick="changeColor('#a5005a')" />
-                  <input type="button" class="btn-color btn-color-53" value="Push!!!!" onclick="changeColor('#7d0041')" />
-                  <input type="button" class="btn-color btn-color-54" value="Push!!!!" onclick="changeColor('#5f0032')" />
-
-                  <!-- コーラル -->
-                  <input type="button" class="btn-color btn-color-55" value="Push!!!!" onclick="changeColor('#f06e7d')" />
-                  <input type="button" class="btn-color btn-color-56" value="Push!!!!" onclick="changeColor('#d7004b')" />
-                  <input type="button" class="btn-color btn-color-57" value="Push!!!!" onclick="changeColor('#c80041')" />
-                  <input type="button" class="btn-color btn-color-58" value="Push!!!!" onclick="changeColor('#a50037')" />
-                  <input type="button" class="btn-color btn-color-59" value="Push!!!!" onclick="changeColor('#7d0023')" />
-                  <input type="button" class="btn-color btn-color-60" value="Push!!!!" onclick="changeColor('#5f0019')" />
-
-                  <!-- オレンジ -->
-                  <input type="button" class="btn-color btn-color-61" value="Push!!!!" onclick="changeColor('#f06e46')" />
-                  <input type="button" class="btn-color btn-color-62" value="Push!!!!" onclick="changeColor('#d7000f')" />
-                  <input type="button" class="btn-color btn-color-63" value="Push!!!!" onclick="changeColor('#c8000a')" />
-                  <input type="button" class="btn-color btn-color-64" value="Push!!!!" onclick="changeColor('#a50000')" />
-                  <input type="button" class="btn-color btn-color-65" value="Push!!!!" onclick="changeColor('#7d0000')" />
-                  <input type="button" class="btn-color btn-color-66" value="Push!!!!" onclick="changeColor('#500000')" />
-
-                  <!-- 黄色 -->
-                  <input type="button" class="btn-color btn-color-67" value="Push!!!!" onclick="changeColor('#ffb937')" />
-                  <input type="button" class="btn-color btn-color-68" value="Push!!!!" onclick="changeColor('#e18c00')" />
-                  <input type="button" class="btn-color btn-color-69" value="Push!!!!" onclick="changeColor('#d28200')" />
-                  <input type="button" class="btn-color btn-color-70" value="Push!!!!" onclick="changeColor('#aa6900')" />
-                  <input type="button" class="btn-color btn-color-71" value="Push!!!!" onclick="changeColor('#825000')" />
-                  <input type="button" class="btn-color btn-color-72" value="Push!!!!" onclick="changeColor('#643c00')" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="content3" class="edit_drawer_container_item">
-            <div class="edit_drawer_container_item_frame">
-              <h2>フレームの選択</h2>
-              <!-- 先に変えたい枠から選ぶパターン -->
-              <div class="frame-container">
-                <div class="frame-container_vari">
-                  <button class="resizeButton" data-size="rectangle">
-                    <img src="/edit/images/Group 297.png" alt="" />
-                  </button>
-                  <button class="resizeButton" data-size="mini">
-                    <img src="/edit/images/Group 299.png" alt="" />
-                  </button>
-                  <button class="resizeButton" data-size="square">
-                    <img src="/edit/images/Group 296.png" alt="" />
-                  </button>
-                </div>
+        <div id="content3" class="edit_drawer_container_item">
+          <div class="edit_drawer_container_item_frame">
+            <h2>フレームの選択</h2>
+            <!-- 先に変えたい枠から選ぶパターン -->
+            <div class="frame-container">
+              <div class="frame-container_vari">
+                <button class="resizeButton" data-size="rectangle43"><img src="/editB/images/Group 297.png"
+                    alt="" /></button>
+                <button class="resizeButton" data-size="mini"><img src="/editB/images/Group 299.png" alt="" /></button>
+                <button class="resizeButton" data-size="square"><img src="/editB/images/Group 296.png"
+                    alt="" /></button>
+                <button class="resizeButton" data-size="rectangle34"><img src="/editB/images/Group 314.png"
+                    alt="" /></button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="sidebar" id="sidebar"></div>
+    <div class="sidebar" id="sidebar"></div>
 
-      <div class="sideBtn">
-        <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
-          <img src="/edit/images/frame.png" alt="" />
+    <div class="sideBtn" id="sideBtn">
+      <!-- <button date-content-id="content3" class="open-btn" onclick="showDrawerContent('content3')">
+          <img src="/editB/images/frame.png" alt="" />
         </button>
         <button date-content-id="content1" class="open-btn" onclick="showDrawerContent('content1')">
-          <img src="/edit/images/Mask group.png" alt="" />
-        </button>
-        <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
-          <img src="/edit/images/color.png" alt="" />
-        </button>
-      </div>
+          <img src="/editB/images/Mask group.png" alt="" />
+        </button> -->
+      <button date-content-id="content2" class="open-btn" onclick="showDrawerContent('content2')">
+        <img src="/editB/images/color.png" alt="" />
+      </button>
+    </div>
 
-      <div class="content" id="content">
-        <!-- スライダー -->
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p13@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea13-1" rows="1" maxlength="16" class="text-empty text-colorB"></textarea>
-                  <textarea id="textArea13-2" rows="1" maxlength="44" class="text-empty text-colorB"></textarea>
-                  <div id="dropArea13" class="empty"></div>
-                  <textarea id="textArea13-3" rows="1" maxlength="100" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p14@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea14" rows="1" maxlength="99" class="text-empty text-colorB"></textarea>
-                  <div id="dropArea14" class="empty"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p15@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea15" rows="1" maxlength="533" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p16@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea16" rows="1" maxlength="99" class="text-empty text-colorB"></textarea>
-                  <div id="dropArea16" class="empty"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p17@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea17" rows="1" maxlength="533" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p18@2x.png" alt="" />
-                <div class="input-drop">
-                  <div class="background-textArea18-1">
-                    <textarea id="textArea18-1" rows="1" maxlength="14" class="text-empty"></textarea>
-                  </div>
-                  <div id="dropArea18" class="empty"></div>
-                  <textarea id="textArea18-2" rows="1" maxlength="32" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p19@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea19" rows="1" maxlength="533" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p20@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea20" rows="1" maxlength="99" class="text-empty text-colorB"></textarea>
-                  <div id="dropArea20" class="empty"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p21@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea21-1" rows="1" maxlength="221" class="text-empty"></textarea>
-                  <textarea id="textArea21-2" rows="1" maxlength="221" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p22@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea22" rows="1" maxlength="99" class="text-empty text-colorB"></textarea>
-                  <div id="dropArea22" class="empty"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p23@2x.png" alt="" />
-                <div class="input-drop">
-                  <textarea id="textArea23-1" rows="1" maxlength="221" class="text-empty"></textarea>
-                  <textarea id="textArea23-2" rows="1" maxlength="221" class="text-empty"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="swiper-slide_box uniqueColorB">
-                <img src="/edit/images/template/p24@2x.png" alt="" />
-                <div class="input-drop">
-                  <!-- <div class="flex-area24-1">
-                            <div id="dropArea24-1" class="empty"></div>
-                            <textarea id="textArea24-1" rows="1" maxlength="44" class="text-empty"></textarea> 
-                        </div>
-                        <div class="flex-area24-2">
-                            <div id="dropArea24-2" class="empty"></div>
-                            <textarea id="textArea24-2" rows="1" maxlength="44" class="text-empty"></textarea>
-                        </div>
-                        <div id="dropArea24-3" class="empty"></div> -->
-
-                  <div class="flex24">
-                    <div class="drop24">
-                      <div id="dropArea24-1" class="empty"></div>
-                      <div id="dropArea24-2" class="empty"></div>
-                    </div>
-
-                    <textarea id="textArea24-1" rows="1" maxlength="44" class="text-empty"></textarea>
-                  </div>
-                  <div class="flex-area24-2"></div>
-                  <div id="dropArea24-3" class="empty"></div>
-                </div>
-              </div>
+    <div class="content" id="content">
+      <!-- スライダー -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-hidden">
+            <div class="swiper-slide_box uniqueColor">
+              <img class="template_img" src="/editB/images/template/p1@2x.png" style="display: none" alt="" />
+              <div class="input-drop"></div>
             </div>
           </div>
 
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-1.png" alt="" />
+              <div class="input-drop input-drop-first">
+                <textarea id="textArea1-1" rows="1" maxlength="16" class="text-empty text-color text-height"
+                  placeholder="入力してください"></textarea>
+                <textarea id="textArea1-2" rows="1" maxlength="25" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea1" class="empty"></div>
+                <input type="file" id="fileInput" accept="image/jpeg, image/png" style="display: none" />
+                <textarea id="textArea1-3" rows="1" maxlength="200" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+              </div>
+            </div>
+            <div class="page-number">1/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-2@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea2" rows="1" maxlength="32" class="text-empty text-color text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea2" class="empty"></div>
+              </div>
+            </div>
+            <div class="page-number">2/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-3@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea3" rows="1" maxlength="600" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <!-- <div id="dropArea3" class="empty"></div> -->
+              </div>
+            </div>
+            <div class="page-number">3/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-4@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea4-1" rows="1" maxlength="32" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea4" class="empty"></div>
+                <textarea id="textArea4-2" rows="1" maxlength="32" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+              </div>
+            </div>
+            <div class="page-number">4/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-5@2x.png" alt="" style="aspect-ratio: 181 / 249" />
+              <div class="input-drop">
+                <textarea id="textArea5" rows="1" maxlength="600" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <!-- <div id="dropArea5" class="empty"></div> -->
+              </div>
+            </div>
+            <div class="page-number">5/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-6@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea6-1" rows="1" maxlength="20" class="text-empty text-color text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea6" class="empty"></div>
+                <!-- <textarea id="textArea6-2" rows="1" maxlength="32" class="text-empty"></textarea> -->
+              </div>
+            </div>
+            <div class="page-number">6/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-7@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea7" rows="1" maxlength="600" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <!-- <div id="dropArea7" class="empty"></div> -->
+              </div>
+            </div>
+            <div class="page-number">7/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box swiper-slide_box-8 uniqueColor target">
+              <img src="/editB/images/template3/新1-8@2x.png" alt="" class="img8" />
+              <div class="input-drop">
+                <textarea id="textArea8" rows="1" maxlength="32" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea8" class="empty"></div>
+              </div>
+            </div>
+            <div class="page-number">8/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-9@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea9" rows="1" maxlength="600" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <!-- <div id="dropArea9" class="empty"></div> -->
+              </div>
+            </div>
+            <div class="page-number">9/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-10@2x.png" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea10" rows="1" maxlength="32" class="text-empty text-color text-height"
+                  placeholder="入力してください"></textarea>
+                <div id="dropArea10" class="empty"></div>
+              </div>
+            </div>
+            <div class="page-number">10/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box uniqueColor target">
+              <img src="/editB/images/template3/新1-11@2x.png" alt="" />
+              <div class="input-drop">
+                <!-- <textarea id="textArea11-1" rows="1" maxlength="30" class="text-empty text-color" placeholder="入力してください"></textarea> -->
+                <textarea id="textArea11-2" rows="1" maxlength="600" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+                <!-- <div id="dropArea11" class="empty"></div> -->
+              </div>
+            </div>
+            <div class="page-number">11/12</div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <div id="target" class="swiper-slide_box swiper-slide_box-last uniqueColor target">
+              <img src="/editB/images/template3/新1-12@2x.png" alt="" />
+              <!-- <img src="/edit/images/example/B_12.png" alt="" /> -->
+              <div class="input-drop input-drop-last">
+                <textarea id="textArea12-1" rows="1" maxlength="30" class="text-empty text-diagonal text-height"
+                  placeholder="入力してください"></textarea>
+                <div class="flex-content12">
+                  <div id="dropArea12-1" class="empty"></div>
+                  <canvas id="myCanvas" style="display: none"></canvas>
+                  <div class="flex-area12">
+                    <textarea id="textArea12-2" rows="1" maxlength="400" class="text-empty text-height"
+                      placeholder="入力してください"></textarea>
+                    <div class="flex-droparea12">
+                      <div id="dropArea12-2" class="empty"></div>
+                      <div id="dropArea12-3" class="empty"></div>
+                    </div>
+                  </div>
+                </div>
+                <textarea id="textArea12-3" rows="1" maxlength="120" class="text-empty text-height"
+                  placeholder="入力してください"></textarea>
+              </div>
+            </div>
+            <div class="page-number">12/12</div>
+          </div>
+
+
+          <div class="swiper-slide swiper-slide-hidden">
+            <div class="swiper-slide_box uniqueColor">
+              <div id="capture-result">
+                <!-- ここに画像が表示される -->
+              </div>
+              <!-- <img src="/editB/images/template/p1@2x.png" alt="" /> -->
+              <div class="input-drop"></div>
+            </div>
+          </div>
         </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+
+      <div class="swiperbutton">
+        <div class="swiper-button-prev swbtnpre" id="swbtnpre"></div>
+        <div class="swiper-button-next swbtnnext" id="swbtnnext"></div>
       </div>
     </div>
+  </div>
 
-    <!-- Croppieモーダル -->
-    <div id="croppieModal" class="croppie-modal">
-      <div id="croppie-container"></div>
-      <div class="btn-wrapper">
-        <button id="crop-button" class="btn btn-G">適用する</button>
-        <button id="close-button" class="btn btn-H">キャンセル</button>
-      </div>
+  <!-- Croppieモーダル -->
+  <div id="croppieModal" class="croppie-modal">
+    <div id="croppie-container"></div>
+    <div class="btn-wrapper">
+      <button id="cancel-button" class="btn btn-small_wh">キャンセル</button>
+      <button id="crop-button" class="btn btn-small_bl">適用する</button>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/croppie/croppie.min.js"></script>
-    <script src="/editB/js/script.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/croppie/croppie.min.js"></script>
+  <!-- html2canvas CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- html-to-image CDN -->
+  <script src="https://unpkg.com/html-to-image"></script>
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="/editB/js/script.js"></script>
+  <script src="/shared/edit/script.js"></script>
+</body>
+
 </html>

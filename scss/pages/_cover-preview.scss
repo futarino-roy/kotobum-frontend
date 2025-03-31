@@ -1,5 +1,117 @@
 .cover-preview-body {
   background: #d5dadc;
+  overflow: hidden;
+  /* モーダルと背景の指定 */
+  .modal {
+    z-index: 99;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 50%);
+    padding: 40px 20px;
+    overflow: auto;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+
+    // モーダルを非表示にする
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  /* モーダルの擬似要素の指定 */
+  .modal:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: -0.2em;
+  }
+
+  /* クラスが追加された時の指定 */
+  .modal.is-active {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  /* モーダル内側の指定 */
+  .modal-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 451px;
+    max-height: 313px;
+    width: 80%;
+    height: auto;
+    background-color: #fdfcf6;
+    border-radius: 10px;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
+    max-width: 90%;
+    // max-height: 90vh;
+    // overflow-y: auto;
+
+    &__check {
+      font-size: 20px;
+    }
+    &__textl {
+      font-size: 1.25rem;
+      @include mq('sp') {
+        font-size: 1rem;
+      }
+    }
+
+    &__button-sp {
+      display: none;
+    }
+    @include mq('pc-mypage') {
+      .modal-content__button-pc {
+        display: block;
+      }
+      .modal-content__button-sp {
+        display: none;
+      }
+    }
+    @include mq('sp-mypage') {
+      .modal-content__button-pc {
+        display: none;
+      }
+      .modal-content__button-sp {
+        display: block;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .modal-container_S {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px;
+    max-height: 281px;
+    width: 80%;
+    height: auto;
+    background-color: #fdfcf6;
+    border-radius: 10px;
+
+    &.checkafter {
+      width: auto;
+      height: auto;
+    }
+  }
 }
 
 .cover-preview {
@@ -9,27 +121,43 @@
   align-items: center;
   height: 90vh;
 
-  @include mq("tab-edit") {
+  @include mq('tab-edit') {
     display: block;
   }
 
   .content {
+    @include mq('tab-edit') {
+      // margin: 85px 0 0 0;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
     .swiper {
-      width: 600px;
+      width: 700px;
       height: 100%;
 
-      @include mq("pc2-edit") {
-        width: 900px;
+      @include mq('pc2-edit') {
+        // width: 900px;
+        width: 100%;
       }
 
-      @include mq("pc-edit") {
+      @include mq('pc-edit') {
         width: 450px;
       }
 
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         display: block;
-        width: 80%;
+        width: 100%;
         min-width: auto;
+        // margin-left: 16%;
+      }
+      @include mq('sp-edit') {
+        width: 100%;
       }
 
       &-wrapper {
@@ -40,51 +168,76 @@
           color: #ffffff;
           width: auto;
           height: 100%;
+          margin-left: 0%;
+          width: 85% !important;
+          @include mq('pc-edit') {
+            width: 100% !important;
+            margin-left: 0;
+          }
+          @include mq('tab-edit') {
+            margin-left: -23%;
+          }
+          @include mq('sp-edit') {
+            width: 157% !important;
+            margin-left: -58%;
+          }
+
+          &_box-pair {
+            position: absolute;
+            // background-color: rgb(230, 205, 0);
+            width: 50%;
+            height: 100%;
+            z-index: 0;
+          }
 
           &_box {
-            width: 50%;
-            max-width: 500px;
+            // max-width: 500px;
             position: relative;
 
-            @include mq("tab-edit") {
-              width: 70%;
-              margin: 50px 0 0;
-            }
+            clip-path: inset(10.5% 8% 11% 49%);
 
-            @include mq("sp-edit") {
+            @include mq('pc2-edit') {
+              clip-path: inset(10.6% 8% 11% 48.8%);
+              width: 50%;
+            }
+            @include mq('pc-edit') {
+              clip-path: inset(10.4% 7.9% 11.5% 49%);
+            }
+            @include mq('tab-edit') {
+              // width: 70%;
               width: 100%;
+              margin: 50px 0 0;
+
+              clip-path: inset(10.8% 8% 11.5% 48.8%);
+            }
+            @include mq('sp-edit') {
+              width: 100%;
+
+              clip-path: inset(10.3% 8% 11.5% 49%);
+            }
+            @include mq('sp2-edit') {
+              // width: 70%;
+            }
+            @include mq('sp3-edit') {
+              // height: 660px;
+              // width: 50%;
             }
 
-            @include mq("sp2-edit") {
-              width: 50%;
+            .coverimg {
+              position: relative;
+              z-index: 1;
             }
-
-            @include mq("sp3-edit") {
-              width: 50%;
-            }
-
             .input-drop {
               position: absolute;
-              left: 5%;
+              left: 51%;
               top: 8%;
-              width: 82%;
-              height: 84%;
-              opacity: 0.8;
-              display: flex;
+              width: 42.5%;
+              height: 85%;
               flex-direction: column;
               align-items: center;
               justify-content: end;
-              // position: absolute;
-              // width: 80%;
-              // // background: aliceblue;
-              // height: 90%;
-              // top: 16px;
-              // opacity: 0.8;
-              // left: 6%;
-              // display: flex;
-              // flex-direction: column;
-              // align-items: center;
-              // justify-content: center;
+              white-space: nowrap;
+              z-index: 99;
 
               .flex-area12-2 {
                 width: 60%;
@@ -107,13 +260,13 @@
 
               #dropAreaA {
                 position: absolute;
-                top: 40%;
-                left: 6%;
+
+                top: 35%;
+                left: 5%;
                 width: 87%;
-                height: 55%;
+                height: 56%;
+
                 font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
                 border: none;
 
                 // ドロップ後ボタン-----------
@@ -127,7 +280,7 @@
                   border: none;
                   width: 28px;
                   height: 28px;
-                  cursor: pointer;
+
                   opacity: 0.8;
 
                   &:hover {
@@ -149,7 +302,7 @@
                   border: none;
                   width: 28px;
                   height: 28px;
-                  cursor: pointer;
+
                   opacity: 0.8;
 
                   &:hover {
@@ -160,288 +313,20 @@
                     display: flex;
                   }
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
-
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
-                  cursor: pointer;
                 }
-              }
-
-              #dropArea12-1 {
-                margin-top: 0%;
-                position: relative;
-                width: 60%;
-                height: 25%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc2-edit') {
+                  top: 35%;
+                  left: 4.5%;
+                  width: 87.5%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                // --------------------------
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
-
-              #dropArea12-2 {
-                position: relative;
-                width: 60%;
-                height: 100%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                // --------------------------
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                }
-              }
-
-              #dropArea12-3 {
-                position: relative;
-                width: 60%;
-                height: 100%;
-                font-size: 1rem;
-                border: 2px dashed #ccc;
-                cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px;
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
-
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
-
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
-
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
-
-                // --------------------------
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
+                @include mq('pc-edit') {
+                  top: 34.8%;
+                  left: 4.5%;
+                  width: 88.1%;
                 }
               }
 
@@ -449,121 +334,452 @@
                 overflow: hidden;
                 text-align: center;
                 resize: none;
-                width: 60% !important;
+                // width: 60% !important;
                 max-width: 60%;
-                height: 20%;
+                // height: 20%;
                 margin: 5% 0 5%;
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
-                border: none;
-                outline: none;
-                pointer-events: none;
-                cursor: not-allowed;
+                white-space: nowrap;
+                // font-family: 'Noto Sans JP', serif;
 
-                @include mq("pc-edit") {
+                @include mq('pc-edit') {
                   font-size: 0.3rem;
                 }
 
-                @include mq("pc2-edit") {
+                @include mq('pc2-edit') {
                   font-size: 0.6rem;
                 }
 
-                @include mq("tab-edit") {
+                @include mq('tab-edit') {
                   font-size: 1.2vw;
                 }
 
-                @include mq("sp-edit") {
+                @include mq('sp-edit') {
                   font-size: 1.7vw;
                 }
               }
+              .text-empty {
+                border: none;
+                color: black;
+              }
 
-              #previewTextArea {
+              .text-size {
+                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                resize: none; /* ユーザーがサイズを変更できないようにする */
+                white-space: nowrap; /* 改行をさせない設定 */
+              }
+
+              #textArea-cover {
+                margin: 0;
+                position: absolute;
+                width: 5% !important;
+                bottom: 9%;
+                left: -5.3%;
+                font-weight: bold;
+                font-size: 0.55rem !important;
+                text-align: start;
+                field-sizing: content;
+
+                // テキストの向きを変更
+                writing-mode: vertical-rl; /* 縦書き (右から左) */
+                text-orientation: mixed; /* テキストの方向を調整 */
+                transform: rotate(180deg); /* テキストを180度回転 */
+                display: inline-block;
+
+                overflow: hidden; /* スクロールバーを非表示 */
+                resize: none;
+                white-space: nowrap; /* 改行を無効にする */
+                overflow-wrap: normal; /* 自動改行を無効にする */
+                word-wrap: normal; /* 単語の途中での改行を無効にする */
+                word-break: normal; /* 単語の途中での改行を無効にする */
+
+                @include mq('pc-edit') {
+                  font-size: 0.4rem !important;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.58rem !important;
+                  left: -5.4%;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.4vw !important;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 2vw !important;
+                }
+
+                @include mq('sp2-edit') {
+                  font-size: 2.2vw !important;
+                }
+              }
+
+              #textArea {
                 &A-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5% !important;
-                  height: 5% !important;
-                  top: 14.5%;
-                  left: 77%;
+                  max-width: 16.5%;
+                  height: 4.7%;
+                  top: 16.5%;
+                  left: 73.5%;
+                  text-align: center;
+                  white-space: nowrap; /* 改行をさせない設定 */
                   line-height: 0.9;
-                  font-weight: bold;
-                  font-size: 1rem;
+                  font-weight: 900;
                   color: #ffffff;
 
-                  @include mq("pc-edit") {
+                  @include mq('pc-edit') {
                     font-size: 0.8rem;
+                    top: 16.3%;
                   }
 
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 1.5rem;
+                    top: 16.5%;
+                    left: 73.4%;
+                    max-width: 15%;
                   }
 
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3vw;
                   }
 
-                  @include mq("sp2-edit") {
-                    font-size: 2vw;
+                  @include mq('sp2-edit') {
+                    font-size: 3vw;
                   }
                 }
 
                 &A-2 {
                   margin: 0;
                   position: absolute;
-                  width: 16% !important;
-                  height: 3% !important;
-                  top: 20%;
-                  left: 76%;
+                  top: 21.5%;
+                  left: 66.8%;
                   line-height: 1.5;
                   font-weight: bold;
-                  font-size: 0.4rem;
+                  font-size: 0.5rem;
+                  display: block;
+                  text-align: center;
+                  max-width: 30%;
 
-                  @include mq("pc-edit") {
-                    font-size: 0.3rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.4rem;
                   }
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    left: 67%;
                   }
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 1.2vw;
                   }
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 1.7vw;
                   }
 
-                  @include mq("sp2-edit") {
-                    font-size: 0.8vw;
+                  @include mq('sp2-edit') {
+                    font-size: 1.7vw;
+                    left: 66%;
                   }
                 }
 
                 &A-3 {
                   margin: 0;
                   position: absolute;
-                  width: 40% !important;
+                  max-width: 50% !important;
                   height: 10% !important;
-                  top: 5%;
+                  top: 6.2%;
                   left: 5%;
                   font-weight: bold;
-                  font-size: 1.1rem;
+                  font-size: 1.3rem;
+                  text-align: left;
 
-                  @include mq("pc-edit") {
-                    font-size: 0.9rem;
+                  @include mq('pc-edit') {
+                    font-size: 1rem;
                   }
 
-                  @include mq("pc2-edit") {
-                    font-size: 1.7rem;
+                  @include mq('pc2-edit') {
+                    font-size: 1.5rem;
+                    top: 5.7%;
                   }
 
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3.3vw;
                   }
 
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 4.8vw;
                   }
 
-                  @include mq("sp2-edit") {
+                  @include mq('sp2-edit') {
+                    font-size: 4.7vw;
+                  }
+                }
+              }
+            }
+            .input-drop-pair {
+              position: absolute;
+              left: 6.5%;
+              top: 8%;
+              width: 42.5%;
+              height: 84%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: end;
+              z-index: 99;
+
+              #dropAreaB {
+                position: absolute;
+                top: 35.5%;
+                right: 4.5%;
+                width: 87%;
+                height: 57%;
+
+                border: none;
+                font-size: 1rem;
+
+                bottom: 10px;
+
+                // ドロップ後ボタン-----------
+                .crop-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 33px;
+                  background: url(/edit/images/crop.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+
+                .delete-btn {
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                  background: url(/edit/images/delete.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  border: none;
+                  width: 28px;
+                  height: 28px;
+
+                  opacity: 0.8;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &.show {
+                    display: flex;
+                  }
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+                @include mq('pc2-edit') {
+                  top: 35%;
+                  right: 4.5%;
+                  width: 86.8%;
+                  height: 56.6%;
+                }
+                @include mq('pc-edit') {
+                  top: 35%;
+                }
+                @include mq('tab-edit') {
+                  height: 56%;
+                }
+              }
+
+              textarea {
+                overflow: hidden;
+                text-align: center;
+                resize: none;
+                // width: 60% !important;
+                max-width: 60%;
+                // height: 20%;
+                margin: 5% 0 5%;
+                font-size: 0.4rem;
+                line-height: 1.9;
+                background-color: transparent;
+                // font-family: 'Noto Sans JP', serif;
+
+                @include mq('pc-edit') {
+                  font-size: 0.3rem;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.6rem;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.2vw;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 1.7vw;
+                }
+              }
+              .text-empty {
+                border: none;
+                color: black;
+              }
+
+              .text-size {
+                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                resize: none; /* ユーザーがサイズを変更できないようにする */
+                white-space: nowrap; /* 改行をさせない設定 */
+              }
+
+              #textArea-cover {
+                margin: 0;
+                position: absolute;
+                width: 5% !important;
+                bottom: 9%;
+                right: -5.5%;
+                font-weight: bold;
+                font-size: 0.3rem !important;
+                text-align: start;
+                field-sizing: content;
+
+                // テキストの向きを変更
+                writing-mode: vertical-rl; /* 縦書き (右から左) */
+                text-orientation: mixed; /* テキストの方向を調整 */
+                transform: rotate(180deg); /* テキストを180度回転 */
+                display: inline-block;
+
+                overflow: hidden; /* スクロールバーを非表示 */
+                resize: none;
+                white-space: nowrap; /* 改行を無効にする */
+                overflow-wrap: normal; /* 自動改行を無効にする */
+                word-wrap: normal; /* 単語の途中での改行を無効にする */
+                word-break: normal; /* 単語の途中での改行を無効にする */
+
+                @include mq('pc-edit') {
+                  font-size: 0.2rem !important;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.58rem !important;
+                  right: -5%;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.4vw !important;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 2vw !important;
+                }
+
+                @include mq('sp2-edit') {
+                  font-size: 1.5vw !important;
+                }
+              }
+
+              #textArea {
+                &B-1 {
+                  margin: 0;
+                  position: absolute;
+                  max-width: 16.5%;
+                  height: 4.7%;
+                  top: 16.7%;
+                  right: 73%;
+                  text-align: center;
+                  white-space: nowrap; /* 改行をさせない設定 */
+                  font-weight: 900;
+                  line-height: 0.9;
+                  color: #ffffff;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.8rem;
+                    top: 16.7%;
+                  }
+                  @include mq('pc2-edit') {
+                    font-size: 1.5rem;
+                    top: 16.7%;
+                    right: 73.7%;
+                    max-width: 15.5%;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 3vw;
+                  }
+                  @include mq('sp2-edit') {
+                    font-size: 3vw;
+                  }
+                }
+                &B-2 {
+                  margin: 0;
+                  position: absolute;
+                  top: 22%;
+                  right: 65.3%;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  font-size: 0.5rem;
+                  display: block;
+                  // field-sizing: content;
+                  text-align: center;
+                  max-width: 30%;
+                  @include mq('pc-edit') {
+                    font-size: 0.4rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.6rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.2vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.7vw;
+                  }
+                  @include mq('sp2-edit') {
+                    font-size: 0.8vw;
+                  }
+                }
+                &B-3 {
+                  margin: 0;
+                  position: absolute;
+                  max-width: 50% !important;
+                  height: 10% !important;
+                  top: 5.7%;
+                  right: 5%;
+                  font-weight: bold;
+                  font-size: 1.3rem;
+                  text-align: right;
+
+                  @include mq('pc-edit') {
+                    font-size: 1rem;
+                  }
+                  @include mq('pc2-edit') {
+                    font-size: 1.5rem;
+                  }
+                  @include mq('tab-edit') {
+                    font-size: 3.3vw;
+                  }
+                  @include mq('sp-edit') {
+                    font-size: 4.8vw;
+                  }
+                  @include mq('sp2-edit') {
                     font-size: 2.7vw;
                   }
                 }
@@ -574,41 +790,15 @@
       }
     }
   }
-}
 
-.swiper-pagination {
-}
+  .button-grid {
+    display: none;
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
+    @include mq('tab') {
+      // display: block;
+      display: grid;
+      place-items: center;
+      height: 15vh;
+    }
+  }
 }
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
-// トリミングボタン、削除ボタン関連

@@ -1,3 +1,8 @@
+// html,
+// body {
+//   touch-action: auto;
+//   overscroll-behavior: contain;
+// }
 .coverB-body {
   background: #d5dadc;
 }
@@ -9,7 +14,7 @@
   align-items: center;
   height: 90vh;
 
-  @include mq("tab-edit") {
+  @include mq('tab-edit') {
     display: block;
   }
 
@@ -30,7 +35,7 @@
       left: 0;
     }
 
-    @include mq("tab-edit") {
+    @include mq('tab-edit') {
       width: 100%;
       left: 0;
       top: 60%;
@@ -86,7 +91,7 @@
             overflow: auto;
             height: calc(100vh - 200px);
 
-            @include mq("tab-edit") {
+            @include mq('tab-edit') {
               height: calc(100vh - 500px);
             }
 
@@ -134,7 +139,7 @@
             overflow: auto;
             height: calc(100vh - 200px);
 
-            @include mq("tab-edit") {
+            @include mq('tab-edit') {
               height: calc(100vh - 500px);
             }
 
@@ -154,100 +159,304 @@
                 color: transparent;
                 cursor: pointer;
 
+                // からし色
                 &-1 {
-                  background-color: #e6cd00;
+                  background-color: rgb(230, 205, 0);
                 }
 
                 &-2 {
-                  background-color: #aad24b;
+                  background-color: rgb(230, 195, 0);
                 }
 
                 &-3 {
-                  background-color: #32b973;
+                  background-color: rgb(199, 222, 0);
                 }
 
                 &-4 {
-                  background-color: #23beb9;
+                  background-color: rgb(170, 150, 0);
                 }
 
                 &-5 {
-                  background-color: #6ec8f5;
+                  background-color: rgb(140, 125, 0);
                 }
 
                 &-6 {
-                  background-color: #4b91cd;
+                  background-color: rgb(130, 110, 0);
                 }
 
+                // 黄緑色
                 &-7 {
-                  background-color: #645aaa;
+                  background-color: rgb(170, 210, 75);
                 }
 
                 &-8 {
-                  background-color: #b464aa;
+                  background-color: rgb(130, 212, 30);
                 }
 
                 &-9 {
-                  background-color: #eb6ea5;
+                  background-color: rgb(125, 170, 25);
                 }
 
                 &-10 {
-                  background-color: #f06e7d;
+                  background-color: rgb(100, 140, 14);
                 }
 
                 &-11 {
-                  background-color: #f06e46;
+                  background-color: rgb(70, 105, 0);
                 }
 
                 &-12 {
-                  background-color: #f06e46;
+                  background-color: rgb(60, 95, 0);
                 }
 
+                // 緑色
                 &-13 {
-                  background-color: #e6c300;
+                  background-color: rgb(50, 185, 115);
                 }
 
                 &-14 {
-                  background-color: #82b41e;
+                  background-color: rgb(0, 145, 65);
                 }
 
                 &-15 {
-                  background-color: #009141;
+                  background-color: rgb(5, 135, 60);
                 }
 
                 &-16 {
-                  background-color: #00918c;
+                  background-color: rgb(0, 115, 50);
                 }
 
                 &-17 {
-                  background-color: #00a0dc;
+                  background-color: rgb(0, 85, 30);
                 }
 
                 &-18 {
-                  background-color: #0064aa;
+                  background-color: rgb(0, 55, 20);
                 }
 
+                // エメラルドグリーン
                 &-19 {
-                  background-color: #32328c;
+                  background-color: rgb(35, 190, 185);
                 }
 
                 &-20 {
-                  background-color: #87007d;
+                  background-color: rgb(0, 145, 140);
                 }
 
                 &-21 {
-                  background-color: #0064aa;
+                  background-color: rgb(0, 135, 130);
                 }
 
                 &-22 {
-                  background-color: #0064aa;
+                  background-color: rgb(5, 115, 110);
                 }
 
                 &-23 {
-                  background-color: #0064aa;
+                  background-color: rgb(0, 90, 80);
                 }
 
-                &-23 {
-                  background-color: #0064aa;
+                &-24 {
+                  background-color: rgb(0, 60, 55);
+                }
+
+                // 水色
+                &-25 {
+                  background-color: rgb(110, 200, 245);
+                }
+
+                &-26 {
+                  background-color: rgb(0, 160, 220);
+                }
+
+                &-27 {
+                  background-color: rgb(0, 140, 205);
+                }
+
+                &-28 {
+                  background-color: rgb(0, 120, 170);
+                }
+
+                &-29 {
+                  background-color: rgb(0, 90, 130);
+                }
+
+                &-30 {
+                  background-color: rgb(0, 70, 100);
+                }
+
+                // 青
+                &-31 {
+                  background-color: rgb(77, 145, 205);
+                }
+
+                &-32 {
+                  background-color: rgb(0, 100, 170);
+                }
+
+                &-33 {
+                  background-color: rgb(0, 90, 160);
+                }
+
+                &-34 {
+                  background-color: rgb(0, 75, 135);
+                }
+
+                &-35 {
+                  background-color: rgb(0, 50, 100);
+                }
+
+                &-36 {
+                  background-color: rgb(0, 35, 70);
+                }
+
+                // 紺色
+                &-37 {
+                  background-color: rgb(100, 90, 170);
+                }
+
+                &-38 {
+                  background-color: rgb(50, 50, 140);
+                }
+
+                &-39 {
+                  background-color: rgb(30, 30, 125);
+                }
+
+                &-40 {
+                  background-color: rgb(15, 10, 100);
+                }
+
+                &-41 {
+                  background-color: rgb(5, 0, 77);
+                }
+
+                &-42 {
+                  background-color: rgb(0, 0, 45);
+                }
+
+                // 紫色
+                &-43 {
+                  background-color: rgb(180, 100, 170);
+                }
+
+                &-44 {
+                  background-color: rgb(135, 0, 125);
+                }
+
+                &-45 {
+                  background-color: rgb(125, 0, 115);
+                }
+
+                &-46 {
+                  background-color: rgb(105, 0, 95);
+                }
+
+                &-47 {
+                  background-color: rgb(80, 0, 70);
+                }
+
+                &-48 {
+                  background-color: rgb(50, 0, 45);
+                }
+
+                // ピンク
+                &-49 {
+                  background-color: rgb(235, 110, 165);
+                }
+
+                &-50 {
+                  background-color: rgb(215, 0, 120);
+                }
+
+                &-51 {
+                  background-color: rgb(200, 0, 110);
+                }
+
+                &-52 {
+                  background-color: rgb(165, 0, 90);
+                }
+
+                &-53 {
+                  background-color: rgb(125, 0, 65);
+                }
+
+                &-54 {
+                  background-color: rgb(95, 0, 50);
+                }
+
+                // コーラル
+                &-55 {
+                  background-color: rgb(240, 110, 125);
+                }
+
+                &-56 {
+                  background-color: rgb(215, 0, 75);
+                }
+
+                &-57 {
+                  background-color: rgb(200, 0, 65);
+                }
+
+                &-58 {
+                  background-color: rgb(165, 0, 55);
+                }
+
+                &-59 {
+                  background-color: rgb(125, 0, 35);
+                }
+
+                &-60 {
+                  background-color: rgb(95, 0, 25);
+                }
+
+                // オレンジ
+                &-61 {
+                  background-color: rgb(240, 110, 70);
+                }
+
+                &-62 {
+                  background-color: rgb(215, 0, 15);
+                }
+
+                &-63 {
+                  background-color: rgb(200, 0, 10);
+                }
+
+                &-64 {
+                  background-color: rgb(165, 0, 0);
+                }
+
+                &-65 {
+                  background-color: rgb(125, 0, 0);
+                }
+
+                &-66 {
+                  background-color: rgb(80, 0, 0);
+                }
+
+                // 黄色
+                &-67 {
+                  background-color: rgb(255, 185, 55);
+                }
+
+                &-68 {
+                  background-color: rgb(225, 140, 0);
+                }
+
+                &-69 {
+                  background-color: rgb(210, 130, 0);
+                }
+
+                &-70 {
+                  background-color: rgb(170, 105, 0);
+                }
+
+                &-71 {
+                  background-color: rgb(130, 80, 0);
+                }
+
+                &-72 {
+                  background-color: rgb(100, 60, 0);
                 }
               }
             }
@@ -271,6 +480,13 @@
           .frame-container {
             overflow: auto;
             height: calc(100vh - 200px);
+            @include mq('tab-edit') {
+              height: calc(100vh - 750px);
+            }
+            @media (max-height: 1000px) and (max-width: 900px) {
+              height: auto; /* 高さを自動で調整 */
+              max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+            }
 
             &_vari {
               display: flex;
@@ -304,14 +520,14 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 81px;
+    top: 45px;
     left: 0;
     height: 100%;
     transition: transform 0.3s ease;
     transform: translateX(0);
     z-index: 1;
 
-    @include mq("tab-edit") {
+    @include mq('tab-edit') {
       // display: none;
       width: 100%;
       background-color: #252525;
@@ -330,7 +546,7 @@
     }
 
     &.open {
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         transform: translateY(0);
       }
     }
@@ -338,14 +554,14 @@
 
   .sideBtn {
     position: fixed;
-    top: 81px;
+    top: 45px;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 3;
 
-    @include mq("tab-edit") {
+    @include mq('tab-edit') {
       // display: none;
       position: fixed;
       top: auto;
@@ -371,7 +587,7 @@
       width: 75px;
       height: 75px;
 
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         flex: 1; /* ボタンを均等に広げる */
         font-size: 16px;
         background: #252525;
@@ -393,7 +609,7 @@
         height: 36px;
         margin-top: 5px;
 
-        @include mq("tab-edit") {
+        @include mq('tab-edit') {
           width: 24px;
           height: 25px;
           margin-top: 5px;
@@ -405,37 +621,34 @@
   .content {
     transition: margin-left 0.3s ease;
 
-    @include mq("pc2-edit") {
+    @include mq('pc2-edit') {
       // margin: 140px 0 0 0;
-      transition: margin-top 0.3s ease, margin-right 0.3s ease,
-        margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
 
-    @include mq("pc3-edit") {
+    @include mq('pc3-edit') {
       // margin: 200px 0 0 0;
-      transition: margin-top 0.3s ease, margin-right 0.3s ease,
-        margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
 
-    @include mq("tab-edit") {
+    @include mq('tab-edit') {
       // margin: 85px 0 0 0;
-      transition: margin-top 0.3s ease, margin-right 0.3s ease,
-        margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
 
     &.open {
       // margin-left: 405px; /* サイドバーが開いているときのマージン */
       margin-left: 32.5%;
 
-      @include mq("pc-edit") {
+      @include mq('pc-edit') {
         margin-left: 33.5%;
       }
 
-      @include mq("pc4-edit") {
+      @include mq('pc4-edit') {
         margin-left: 31.5%;
       }
 
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         margin: 0 10%;
       }
     }
@@ -444,15 +657,15 @@
       width: 600px;
       height: 100%;
 
-      @include mq("pc2-edit") {
+      @include mq('pc2-edit') {
         width: 900px;
       }
 
-      @include mq("pc-edit") {
+      @include mq('pc-edit') {
         width: 450px;
       }
 
-      @include mq("tab-edit") {
+      @include mq('tab-edit') {
         display: block;
         width: 80%;
         min-width: auto;
@@ -466,38 +679,47 @@
           color: #ffffff;
           width: auto;
           height: 100%;
+          -ms-touch-action: auto;
+          touch-action: auto;
 
           &_box {
             width: 50%;
             max-width: 500px;
             position: relative;
-
-            @include mq("tab-edit") {
+            clip-path: inset(45.5px 3px 52.5px 46px);
+            @include mq('pc2-edit') {
+              clip-path: inset(68px 3px 76px 69px);
+            }
+            @include mq('pc-edit') {
+              clip-path: inset(35px 1px 40px 35px);
+            }
+            @include mq('tab-edit') {
               width: 70%;
               margin: 50px 0 0;
+              clip-path: inset(10.3% 1% 12% 15%);
             }
-
-            @include mq("sp-edit") {
+            @include mq('sp-edit') {
               width: 100%;
+              clip-path: inset(10.3% 0.5% 12% 15%);
             }
-
-            @include mq("sp2-edit") {
-              width: 50%;
+            @include mq('sp2-edit') {
+              width: 70%;
+              clip-path: inset(10.5% 0.5% 12% 15.5%);
             }
-
-            @include mq("sp3-edit") {
+            @include mq('sp3-edit') {
               // height: 660px;
               width: 50%;
+              clip-path: inset(10.3% 1% 13% 15%);
             }
 
             .input-drop {
               position: absolute;
-              left: 11%;
+              left: 13.5%;
               top: 8%;
-              width: 84%;
-              height: 83%;
+              width: 82%;
+              height: 84%;
               // background: rgb(178, 203, 225);
-              opacity: 0.8;
+              opacity: 1;
               display: flex;
               flex-direction: column;
               align-items: center;
@@ -505,12 +727,36 @@
 
               #dropAreaB {
                 position: absolute;
-                width: 90%;
-                height: 60%;
-                font-size: 1rem;
+                top: 35.2%;
+                right: 5%;
+                width: 88%;
+                height: 56.7%;
+
                 border: 2px dashed #ccc;
+                font-size: 1rem;
                 cursor: pointer;
                 bottom: 10px;
+                @include mq('pc2-edit') {
+                  top: 35.5%;
+                  right: 5%;
+                  width: 88%;
+                  height: 56.8%;
+                }
+                @include mq('pc-edit') {
+                  top: 35%;
+                  right: 4.7%;
+                }
+                @include mq('tab-edit') {
+                  top: 35.5%;
+                  right: 4.9%;
+                  height: 57%;
+                }
+                @include mq('sp-edit') {
+                  top: 35%;
+                  right: 4.5%;
+                  height: 56.8%;
+                  width: 88.5%;
+                }
 
                 // ドロップ後ボタン-----------
                 .crop-btn {
@@ -556,29 +802,6 @@
                     display: flex;
                   }
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
@@ -594,140 +817,163 @@
                 resize: none;
                 // width: 60% !important;
                 max-width: 60%;
-                height: 20%;
+                // height: 20%;
                 margin: 5% 0 5%;
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
-
-                @include mq("pc-edit") {
-                  font-size: 0.3rem;
-                }
-
-                @include mq("pc2-edit") {
-                  font-size: 0.6rem;
-                }
-
-                @include mq("tab-edit") {
-                  font-size: 1.2vw;
-                }
-
-                @include mq("sp-edit") {
-                  font-size: 1.7vw;
+                // font-family: 'Noto Sans JP', serif;
+              }
+              .text-empty {
+                border: 2px dashed #ccc;
+                &.no-border {
+                  border: none;
                 }
               }
 
-              //　テキストエリア　ここを変える！
+              .text-size {
+                box-sizing: border-box; /* パディングと境界線を含めて要素のサイズを計算 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                resize: none; /* ユーザーがサイズを変更できないようにする */
+                white-space: nowrap; /* 改行をさせない設定 */
+              }
+
+              #textArea-cover {
+                margin: 0;
+                position: absolute;
+                width: 5% !important;
+                bottom: 9%;
+                right: -4.9%;
+                font-weight: bold;
+                font-size: 0.3rem !important;
+                text-align: start;
+                field-sizing: content;
+
+                // テキストの向きを変更
+                writing-mode: vertical-rl; /* 縦書き (右から左) */
+                text-orientation: mixed; /* テキストの方向を調整 */
+                transform: rotate(180deg); /* テキストを180度回転 */
+                display: inline-block;
+
+                overflow: hidden; /* スクロールバーを非表示 */
+                resize: none;
+                white-space: nowrap; /* 改行を無効にする */
+                overflow-wrap: normal; /* 自動改行を無効にする */
+                word-wrap: normal; /* 単語の途中での改行を無効にする */
+                word-break: normal; /* 単語の途中での改行を無効にする */
+
+                @include mq('pc-edit') {
+                  font-size: 0.35rem !important;
+                }
+
+                @include mq('pc2-edit') {
+                  font-size: 0.58rem !important;
+                  right: -5%;
+                }
+
+                @include mq('tab-edit') {
+                  font-size: 1.4vw !important;
+                }
+
+                @include mq('sp-edit') {
+                  font-size: 2vw !important;
+                }
+
+                @include mq('sp2-edit') {
+                  font-size: 1.5vw !important;
+                }
+              }
+
               #textArea {
                 &B-1 {
                   margin: 0;
                   position: absolute;
-                  width: 13.5% !important;
-                  height: 5% !important;
-                  top: 14.5%;
-                  right: 77%;
+                  max-width: 16.5%;
+                  height: 4.7%;
+                  top: 16.7%;
+                  right: 73.8%;
+                  text-align: center;
+                  white-space: nowrap; /* 改行をさせない設定 */
+                  font-weight: 900;
                   line-height: 0.9;
-                  font-weight: bold;
-                  font-size: 1rem;
-                  color: #ffffff !important;
-                  @include mq("pc-edit") {
-                    font-size: 0.8rem;
+                  color: #ffffff;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.7rem;
+                    top: 16.7%;
                   }
-                  @include mq("pc2-edit") {
-                    font-size: 1.5rem;
+                  @include mq('pc2-edit') {
+                    font-size: 1.6rem;
+                    top: 16.7%;
+                    right: 74.5%;
+                    max-width: 15.5%;
                   }
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3vw;
                   }
-                  @include mq("sp2-edit") {
-                    font-size: 2vw;
+                  @include mq('sp2-edit') {
+                    font-size: 3vw;
                   }
                 }
                 &B-2 {
-                  position: absolute;
-                  top: 20%;
-                  left: 7.5%;
-                  height: 3% !important;
-                  width: 16% !important;
-
                   margin: 0;
-                  font-size: 0.4rem;
+                  position: absolute;
+                  top: 22%;
+                  right: 70.1%;
                   line-height: 1.5;
                   font-weight: bold;
-                  color: #fef8f6;
-
-                  @include mq("pc-edit") {
+                  font-size: 0.4rem;
+                  display: block;
+                  // field-sizing: content;
+                  text-align: center;
+                  max-width: 24%;
+                  @include mq('pc-edit') {
                     font-size: 0.3rem;
+                    right: 69.9%;
                   }
 
-                  @include mq("pc2-edit") {
+                  @include mq('pc2-edit') {
                     font-size: 0.6rem;
+                    right: 69.9%;
                   }
 
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 1.2vw;
                   }
 
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 1.7vw;
                   }
-                  @include mq("sp2-edit") {
-                    font-size: 0.8vw;
+                  @include mq('sp2-edit') {
+                    font-size: 1.2vw;
                   }
                 }
                 &B-3 {
                   margin: 0;
                   position: absolute;
-                  width: 40% !important;
+                  max-width: 50% !important;
                   height: 10% !important;
-                  top: 3%;
+                  top: 5.7%;
                   right: 5%;
                   font-weight: bold;
-                  font-size: 1.1rem;
+                  font-size: 1rem;
+                  text-align: right;
 
-                  @include mq("pc-edit") {
-                    font-size: 0.9rem;
+                  @include mq('pc-edit') {
+                    font-size: 0.8rem;
                   }
-                  @include mq("pc2-edit") {
-                    font-size: 1.7rem;
+                  @include mq('pc2-edit') {
+                    font-size: 1.5rem;
                   }
-                  @include mq("tab-edit") {
+                  @include mq('tab-edit') {
                     font-size: 3.3vw;
                   }
-                  @include mq("sp-edit") {
+                  @include mq('sp-edit') {
                     font-size: 4.8vw;
                   }
-                  @include mq("sp2-edit") {
+                  @include mq('sp2-edit') {
                     font-size: 2.7vw;
                   }
-
-                  // position: absolute;
-                  // top: 2%;
-                  // right: 4%;
-                  // height: 8% !important;
-                  // width: 34% !important;
-
-                  // margin: 0;
-                  // font-size: 1.2rem;
-                  // line-height: 1.5;
-                  // font-weight: bold;
-                  // color: #fef8f6;
-
-                  // @include mq("pc-edit") {
-                  //   font-size: 0.9rem;
-                  // }
-
-                  // @include mq("pc2-edit") {
-                  //   font-size: 1.7rem;
-                  // }
-
-                  // @include mq("tab-edit") {
-                  //   font-size: 2.5vw;
-                  // }
-
-                  // @include mq("sp-edit") {
-                  //   font-size: 5vw;
-                  // }
                 }
               }
             }
@@ -736,139 +982,4 @@
       }
     }
   }
-}
-
-.swiper-pagination {
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
-
-.swiper-button-prev {
-  left: 36%;
-}
-
-.swiper-button-next {
-  left: 58%;
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
-.croppie-modal {
-  display: none;
-  border-radius: 20px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fdfcf6;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
-  z-index: 999;
-
-  #croppie-container {
-    margin-bottom: 10px;
-
-    .cr-slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 4px;
-      background-color: #53535359;
-      border-radius: 5px;
-      margin: 0;
-      padding: 0;
-      opacity: 0.8;
-      // box-sizing: border-box;
-    }
-
-    .cr-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 35px;
-      height: 35px;
-      background: url("/edit/images/Ellipse\ 7.png") no-repeat center; /* アイコン画像を指定 */
-      margin-top: -15px;
-
-      cursor: pointer;
-      border: none;
-    }
-  }
-
-  .btn-wrapper {
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-
-    @include mq("tab-edit") {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-  }
-}
-
-#customButton {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#customButton:hover {
-  background-color: #45a049;
-}
-
-.delete-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.crop-button {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
 }

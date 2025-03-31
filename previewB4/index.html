@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>B面の中身のプレビューページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/croppie/croppie.css" />
+  <link rel="stylesheet" href="../public/assets/style/style.css" />
+  <!-- 表紙の名前の文字フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
+  <!--　Noto Sans JP　-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="preview-body">
+  <header class="preview-header">
+    <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mypc">マイページへ</button></a>
+    <a href="/editB4/index.html"><button class="btn btn-small_wh btn-small_wh-edpc" id="editBack">編集</button></a>
+    <button class="btn btn-small_bl btn-small_bl-kou js-modal-open">完了</button>
+
+    <!-- モーダル本体 -->
+    <div class="modal js-modal1" id="modal1">
+      <div class="modal-container">
+        <!-- モーダル内部のコンテンツ -->
+        <div class="modal-content">
+          <p class="modal-content__check">完了しますか？</p>
+          <p class="modal-content__textl">完了すると追加の原稿修正は<br />できなくなります</p>
+
+          <button class="btn btn-middle_bl modal-content__button modal-content__button-pc modal-change_l">完了する</button>
+          <button class="btn btn-small_bl modal-content__button modal-content__button-sp modal-change_l">完了</button>
+
+          <button class="btn btn-middle_wh modal-content__button modal-content__button-pc">
+            <a href="/editB4/index.html"> 編集ページへ </a>
+          </button>
+          <button class="btn btn-small_wh modal-content__button modal-content__button-sp">
+            <a href="/editB4/index.html"> 編集ページへ </a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- モーダル本体 次のモーダル -->
+    <div class="modal js-modal1_2" id="modal1_2">
+      <div class="modal-container_S">
+        <div class="modal-content">
+          <img class="checkafter" src="/mypage/images/checkafter.png" alt="" />
+          <p class="modal-checkafter">完了ありがとうございました</p>
+          <a href="/mypageB/index.html"><button
+              class="btn btn-middle_bl modal-checkafter__mypage_l modal-content__button-pc">マイページへ</button></a>
+          <a href="/mypageB/index.html"><button
+              class="btn btn-small_bl modal-checkafter__mypage_l modal-content__button-sp">マイページへ</button></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="preview">
+    <div class="content" id="content">
+      <!-- スライダー -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-hidden">
+            <div class="swiper-slide_box2 uniqueColor">
+              <img src="/editB/images/template/p1@2x.png" alt="" />
+              <div class="input-drop"></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-1@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea1-1_t4" rows="1" maxlength="16" class="text-empty text-color" disabled></textarea>
+                <textarea id="textArea1-2_t4" rows="1" maxlength="25" class="text-empty text-color" disabled></textarea>
+                <div id="dropArea1_t4" class="empty"></div>
+                <input type="file" id="fileInput" accept="image/jpeg, image/png" style="display: none" />
+                <textarea id="textArea1-3_t4" rows="1" maxlength="200" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">1/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-2@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <div id="dropArea2_t4" class="empty"></div>
+              </div>
+            </div>
+            <div class="page-number">2/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-3@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea3-1_t4" rows="1" maxlength="544" class="text-empty text-color"
+                  disabled></textarea>
+                <textarea id="textArea3-2_t4" rows="1" maxlength="600" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">3/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-4 写真枠なし@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <div id="dropArea4_t4" class="empty"></div>
+                <textarea id="textArea4_t4" rows="1" maxlength="50" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">4/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-5@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea5_t4" rows="1" maxlength="600" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">5/12</div>
+          </div>
+
+          <!-- <div class="swiper-slide">
+              <div class="swiper-slide_box4 uniqueColor">
+                <img src="/edit4/images/template/６　色修正済み@2x.png" alt="" />
+                <div class="input-drop">
+                  <div id="dropArea6_t3" class="empty"></div>
+                  <textarea id="textArea6_t3" rows="1" maxlength="544" class="text-empty text-color"disabled></textarea>
+                </div>
+              </div>
+              <div class="page-number">6/15</div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide_box4 uniqueColor">
+                <img src="/edit4/images/template/７　色修正済み@2x.png" alt="" />
+                <div class="input-drop">
+                  <textarea id="textArea7_t3" rows="1" maxlength="560" class="text-empty"disabled></textarea>
+                </div>
+              </div>
+              <div class="page-number">7/15</div>
+            </div> -->
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-6_1@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <div id="dropArea6_t4" class="empty"></div>
+                <textarea id="textArea6_t4" rows="1" maxlength="120" class="text-empty text-color" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">6/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-7@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea7_t4" rows="1" maxlength="600" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">7/12</div>
+          </div>
+
+          <!-- <div class="swiper-slide">
+              <div class="swiper-slide_box4 uniqueColor">
+                <img src="/edit4/images/template/6-10@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+                <div class="input-drop">
+                  <div id="dropArea12_t4" class="empty"></div>
+                  <div class="round uniqueColor"></div>
+                  <img src="/edit4/images/template/6-10-text@2x.png" class="round-textimg" alt="" />
+                </div>
+              </div>
+              <div class="page-number">8/12</div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide_box4 uniqueColor">
+                <img src="/edit4/images/template/6-11@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+                <div class="input-drop">
+                  <textarea id="textArea11_t4" rows="1" maxlength="544" class="text-empty"disabled></textarea>
+                </div>
+              </div>
+              <div class="page-number">9/12</div>
+            </div> -->
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-8　写真枠なし@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <!-- <textarea id="textArea14-1_t4" rows="1" maxlength="544" class="text-empty text-color"disabled></textarea> -->
+                <!-- <div id="dropArea14_t4" class="empty img-wave"></div> -->
+                <div id="dropArea8_t4" class="empty"></div>
+                <img src="/editB4/images/template2/ペア6-8 波線@2x.png" class="wave-img" alt="" />
+                <textarea id="textArea8-1_t4" rows="1" maxlength="544" class="text-empty text-color"
+                  disabled></textarea>
+                <textarea id="textArea8-2_t4" rows="1" maxlength="544" class="text-empty text-color"
+                  disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">8/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-9@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea9_t4" rows="1" maxlength="600" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">9/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-10@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea10-1_t4" rows="1" maxlength="544" class="text-empty text-color"
+                  placeholder="入力して下さい"></textarea>
+                <div id="dropArea10_t4" class="empty"></div>
+                <textarea id="textArea10-2_t4" rows="1" maxlength="544" class="text-empty" disabled></textarea>
+                <textarea id="textArea10-3_t4" rows="1" maxlength="544" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">10/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-11@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <textarea id="textArea11-1_t4" rows="1" maxlength="600" class="text-empty text-color"
+                  disabled></textarea>
+                <textarea id="textArea11-2_t4" rows="1" maxlength="600" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">11/12</div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-slide_box4 uniqueColor target">
+              <img src="/editB4/images/template2/ペア6-12 B@2x.png" style="aspect-ratio: 181 / 249" alt="" />
+              <div class="input-drop">
+                <div id="dropArea16_t4" class="empty"></div>
+                <!-- <div class="shape-model"></div> -->
+                <p class="last-text_from text-color">from</p>
+                <textarea id="textArea16-1_t4" rows="1" maxlength="544" class="text-empty text-color"
+                  disabled></textarea>
+                <textarea id="textArea16-2_t4" rows="1" maxlength="544" class="text-empty" disabled></textarea>
+              </div>
+            </div>
+            <div class="page-number">12/12</div>
+          </div>
+
+          <div class="swiper-slide swiper-slide-hidden">
+            <div class="swiper-slide_box2 uniqueColor">
+              <img src="/edit/images/template/p1@2x.png" alt="" />
+              <div class="input-drop"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
+        <div class="button-grid">
+          <a href="/mypageB/index.html"><button class="btn btn-small_wh btn-small_wh-mytab">マイページへ</button></a>
+          <a href="/editB4/index.html"><button class="btn btn-small_wh btn-small_wh-edtab" id="editBack">編集</button></a>
+        </div>
+      </div>
+      <div class="swiperbutton">
+        <div class="swiper-button-prev swbtnpre" id="swbtnpre"></div>
+        <div class="swiper-button-next swbtnnext" id="swbtnnext"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Croppieモーダル -->
+  <div id="croppieModal" class="croppie-modal">
+    <div id="croppie-container"></div>
+    <div class="btn-wrapper">
+      <button id="cancel-button" class="btn btn-small_wh">キャンセル</button>
+      <button id="crop-button" class="btn btn-small_bl">適用する</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/croppie/croppie.min.js"></script>
+  <script src="/previewB4/js/script.js"></script>
+  <script src="/shared/preview/script.js"></script>
+</body>
+
+</html>

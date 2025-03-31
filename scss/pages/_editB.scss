@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .editB-body {
   background: #d5dadc;
 
   @include mq('tab-edit') {
   }
 }
+
+// .template_img {
+//   max-width: 101%;
+//   top: -0.5%;
+//   position: relative;
+//   left: -0.4% !important;
+//   height: 100.9%;
+// }
 
 .editB {
   display: flex;
@@ -84,14 +96,14 @@
               position: relative;
               display: inline-block;
 
-              #fileButton {
-                // background-color: #4CAF50; /* ボタンの背景色 */
-                // color: white; /* テキストの色 */
-                // padding: 10px 20px; /* パディング */
-                // border: none; /* ボーダーを無しに */
-                // cursor: pointer; /* カーソルをポインターに */
-                // font-size: 16px; /* フォントサイズ */
-              }
+              // #fileButton {
+              //   // background-color: #4CAF50; /* ボタンの背景色 */
+              //   // color: white; /* テキストの色 */
+              //   // padding: 10px 20px; /* パディング */
+              //   // border: none; /* ボーダーを無しに */
+              //   // cursor: pointer; /* カーソルをポインターに */
+              //   // font-size: 16px; /* フォントサイズ */
+              // }
             }
           }
 
@@ -194,261 +206,302 @@
 
                 // からし色
                 &-1 {
-                  background-color: #e6cd00;
+                  background-color: rgb(230, 205, 0);
                 }
 
                 &-2 {
-                  background-color: #e6c300;
+                  background-color: rgb(230, 195, 0);
                 }
 
                 &-3 {
-                  background-color: #c7de00;
+                  background-color: rgb(199, 222, 0);
                 }
 
                 &-4 {
-                  background-color: #aa9600;
+                  background-color: rgb(170, 150, 0);
                 }
 
                 &-5 {
-                  background-color: #8c7d00;
+                  background-color: rgb(140, 125, 0);
                 }
 
                 &-6 {
-                  background-color: #826e00;
+                  background-color: rgb(130, 110, 0);
                 }
 
                 // 黄緑色
                 &-7 {
-                  background-color: #aad24b;
+                  background-color: rgb(170, 210, 75);
                 }
 
                 &-8 {
-                  background-color: #82d41e;
+                  background-color: rgb(130, 212, 30);
                 }
 
                 &-9 {
-                  background-color: #7daa19;
+                  background-color: rgb(125, 170, 25);
                 }
 
                 &-10 {
-                  background-color: #648c0e;
+                  background-color: rgb(100, 140, 14);
                 }
 
                 &-11 {
-                  background-color: #466900;
+                  background-color: rgb(70, 105, 0);
                 }
 
                 &-12 {
-                  background-color: #3c5f00;
+                  background-color: rgb(60, 95, 0);
                 }
 
                 // 緑色
                 &-13 {
-                  background-color: #32b973;
+                  background-color: rgb(50, 185, 115);
                 }
 
                 &-14 {
-                  background-color: #009141;
+                  background-color: rgb(0, 145, 65);
                 }
 
                 &-15 {
-                  background-color: #05873c;
+                  background-color: rgb(5, 135, 60);
                 }
 
                 &-16 {
-                  background-color: #007332;
+                  background-color: rgb(0, 115, 50);
                 }
 
                 &-17 {
-                  background-color: #00551e;
+                  background-color: rgb(0, 85, 30);
                 }
 
                 &-18 {
-                  background-color: #003714;
+                  background-color: rgb(0, 55, 20);
                 }
 
                 // エメラルドグリーン
                 &-19 {
-                  background-color: #23beb9;
+                  background-color: rgb(35, 190, 185);
                 }
 
                 &-20 {
-                  background-color: #00918c;
+                  background-color: rgb(0, 145, 140);
                 }
 
                 &-21 {
-                  background-color: #008782;
+                  background-color: rgb(0, 135, 130);
                 }
 
                 &-22 {
-                  background-color: #05736e;
+                  background-color: rgb(5, 115, 110);
                 }
 
                 &-23 {
-                  background-color: #005a50;
+                  background-color: rgb(0, 90, 80);
                 }
+
                 &-24 {
-                  background-color: #003c37;
+                  background-color: rgb(0, 60, 55);
                 }
 
                 // 水色
                 &-25 {
-                  background-color: #6ec8f5;
+                  background-color: rgb(110, 200, 245);
                 }
+
                 &-26 {
-                  background-color: #00a0dc;
+                  background-color: rgb(0, 160, 220);
                 }
+
                 &-27 {
-                  background-color: #008ccd;
+                  background-color: rgb(0, 140, 205);
                 }
+
                 &-28 {
-                  background-color: #0078aa;
+                  background-color: rgb(0, 120, 170);
                 }
+
                 &-29 {
-                  background-color: #005a82;
+                  background-color: rgb(0, 90, 130);
                 }
+
                 &-30 {
-                  background-color: #004664;
+                  background-color: rgb(0, 70, 100);
                 }
 
                 // 青
                 &-31 {
-                  background-color: #4d91cd;
+                  background-color: rgb(77, 145, 205);
                 }
+
                 &-32 {
-                  background-color: #0064aa;
+                  background-color: rgb(0, 100, 170);
                 }
+
                 &-33 {
-                  background-color: #005aa0;
+                  background-color: rgb(0, 90, 160);
                 }
+
                 &-34 {
-                  background-color: #004b87;
+                  background-color: rgb(0, 75, 135);
                 }
+
                 &-35 {
-                  background-color: #003264;
+                  background-color: rgb(0, 50, 100);
                 }
+
                 &-36 {
-                  background-color: #002346;
+                  background-color: rgb(0, 35, 70);
                 }
 
                 // 紺色
                 &-37 {
-                  background-color: #645aaa;
+                  background-color: rgb(100, 90, 170);
                 }
+
                 &-38 {
-                  background-color: #32328c;
+                  background-color: rgb(50, 50, 140);
                 }
+
                 &-39 {
-                  background-color: #1e1e7d;
+                  background-color: rgb(30, 30, 125);
                 }
+
                 &-40 {
-                  background-color: #0f0a64;
+                  background-color: rgb(15, 10, 100);
                 }
+
                 &-41 {
-                  background-color: #05004d;
+                  background-color: rgb(5, 0, 77);
                 }
+
                 &-42 {
-                  background-color: #00002d;
+                  background-color: rgb(0, 0, 45);
                 }
 
                 // 紫色
                 &-43 {
-                  background-color: #b464aa;
+                  background-color: rgb(180, 100, 170);
                 }
+
                 &-44 {
-                  background-color: #87007d;
+                  background-color: rgb(135, 0, 125);
                 }
+
                 &-45 {
-                  background-color: #7d0073;
+                  background-color: rgb(125, 0, 115);
                 }
+
                 &-46 {
-                  background-color: #69005f;
+                  background-color: rgb(105, 0, 95);
                 }
+
                 &-47 {
-                  background-color: #500046;
+                  background-color: rgb(80, 0, 70);
                 }
+
                 &-48 {
-                  background-color: #32002d;
+                  background-color: rgb(50, 0, 45);
                 }
 
                 // ピンク
                 &-49 {
-                  background-color: #eb6ea5;
+                  background-color: rgb(235, 110, 165);
                 }
+
                 &-50 {
-                  background-color: #d70078;
+                  background-color: rgb(215, 0, 120);
                 }
+
                 &-51 {
-                  background-color: #c8006e;
+                  background-color: rgb(200, 0, 110);
                 }
+
                 &-52 {
-                  background-color: #a5005a;
+                  background-color: rgb(165, 0, 90);
                 }
+
                 &-53 {
-                  background-color: #7d0041;
+                  background-color: rgb(125, 0, 65);
                 }
+
                 &-54 {
-                  background-color: #5f0032;
+                  background-color: rgb(95, 0, 50);
                 }
 
                 // コーラル
                 &-55 {
-                  background-color: #f06e7d;
+                  background-color: rgb(240, 110, 125);
                 }
+
                 &-56 {
-                  background-color: #d7004b;
+                  background-color: rgb(215, 0, 75);
                 }
+
                 &-57 {
-                  background-color: #c80041;
+                  background-color: rgb(200, 0, 65);
                 }
+
                 &-58 {
-                  background-color: #a50037;
+                  background-color: rgb(165, 0, 55);
                 }
+
                 &-59 {
-                  background-color: #7d0023;
+                  background-color: rgb(125, 0, 35);
                 }
+
                 &-60 {
-                  background-color: #5f0019;
+                  background-color: rgb(95, 0, 25);
                 }
 
                 // オレンジ
                 &-61 {
-                  background-color: #f06e46;
+                  background-color: rgb(240, 110, 70);
                 }
+
                 &-62 {
-                  background-color: #d7000f;
+                  background-color: rgb(215, 0, 15);
                 }
+
                 &-63 {
-                  background-color: #c8000a;
+                  background-color: rgb(200, 0, 10);
                 }
+
                 &-64 {
-                  background-color: #a50000;
+                  background-color: rgb(165, 0, 0);
                 }
+
                 &-65 {
-                  background-color: #7d0000;
+                  background-color: rgb(125, 0, 0);
                 }
+
                 &-66 {
-                  background-color: #500000;
+                  background-color: rgb(80, 0, 0);
                 }
 
                 // 黄色
                 &-67 {
-                  background-color: #ffb937;
+                  background-color: rgb(255, 185, 55);
                 }
+
                 &-68 {
-                  background-color: #e18c00;
+                  background-color: rgb(225, 140, 0);
                 }
+
                 &-69 {
-                  background-color: #d28200;
+                  background-color: rgb(210, 130, 0);
                 }
+
                 &-70 {
-                  background-color: #aa6900;
+                  background-color: rgb(170, 105, 0);
                 }
+
                 &-71 {
-                  background-color: #825000;
+                  background-color: rgb(130, 80, 0);
                 }
+
                 &-72 {
-                  background-color: #643c00;
+                  background-color: rgb(100, 60, 0);
                 }
               }
             }
@@ -469,11 +522,19 @@
           h2 {
             font-size: 1.25rem;
             text-align: left;
+            margin-bottom: 20px;
           }
 
           .frame-container {
             overflow: auto;
             height: calc(100vh - 200px);
+            @include mq('tab-edit') {
+              height: calc(100vh - 750px);
+            }
+            @media (max-height: 1000px) and (max-width: 900px) {
+              height: auto; /* 高さを自動で調整 */
+              max-height: 27vh; /* 画面サイズに合わせて高さを制限 */
+            }
 
             &_vari {
               display: flex;
@@ -507,7 +568,7 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 81px;
+    top: 45px;
     left: 0;
     height: 100%;
     transition: transform 0.3s ease;
@@ -541,7 +602,7 @@
 
   .sideBtn {
     position: fixed;
-    top: 81px;
+    top: 45px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -607,302 +668,225 @@
 
   .content {
     transition: margin-left 0.3s ease;
-
     @include mq('pc2-edit') {
+      // margin: 140px 0 0 0;
       transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
-
     @include mq('pc3-edit') {
+      // margin: 200px 0 0 0;
       transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
     }
-
     @include mq('tab-edit') {
-      transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      // margin: 85px 0 0 0;
+      // transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      transition: none;
+      width: 100%;
+      position: absolute;
+      top: calc(45% + 40.5px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
-
     &.open {
+      // margin-left: 405px; /* サイドバーが開いているときのマージン */
       margin-left: 32.5%;
-
       @include mq('pc-edit') {
         margin-left: 33.5%;
       }
-
       @include mq('pc4-edit') {
         margin-left: 31.5%;
       }
-
       @include mq('tab-edit') {
-        margin: 0 10%;
+        margin: 0;
+        width: 60%;
+        position: absolute;
+        top: calc(30% + 40.5px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
+      // @include mq('sp2-edit'){
+      //     margin: 90px 20% 0 ;
+      //     }
+      //     @include mq('sp3-edit'){
+      //         margin: 90px 10% 0 ;
+      //         }
+      //     @include mq('tab-edit'){
+      //         margin-left: 36%;
+      //         }
     }
-
     .swiper {
       width: 600px;
       height: 100%;
-
       // min-width: 600px;
-
       @include mq('pc2-edit') {
         width: 900px;
       }
-
       @include mq('pc-edit') {
         width: 450px;
       }
-
       @include mq('tab-edit') {
         display: block;
         width: 80%;
         min-width: auto;
       }
-
       &-wrapper {
         .swiper-slide {
           display: flex;
           justify-content: center;
           text-align: center;
-
           color: #ffffff;
           width: auto;
           height: 100%;
-          // background-color: #f7f7f7;
+          // background-color: #F7F7F7;
           // display: flex;
           // gap: 5px;
           // justify-content: center;
           // align-items: center;
-
-          &_box {
-            max-width: 500px;
-            position: relative;
-
+          &-hidden {
+            // visibility: hidden;
             @include mq('tab-edit') {
-              width: 70%;
-              margin: 50px 0 0;
+              display: none;
             }
-
+          }
+          &_box {
+            // max-width: 500px;
+            position: relative;
+            // clip-path: inset(20px 21px 26px 21px);
+            clip-path: inset(20px 20px 28px);
+            @include mq('pc2-edit') {
+              clip-path: inset(28px 30px 33px);
+            }
+            @include mq('pc-edit') {
+              clip-path: inset(14px 15px 14px 15px);
+              top: -4%;
+            }
+            @include mq('tab-edit') {
+              width: 90%;
+              clip-path: inset(5% 7% 6% 7%);
+            }
             @include mq('sp-edit') {
               width: 100%;
             }
-
-            @include mq('sp2-edit') {
-              width: 70%;
-            }
-
-            @include mq('sp3-edit') {
-              // height: 660px;
-              width: 50%;
-            }
-
             .input-drop {
               position: absolute;
-              width: 88%;
-              // background: aliceblue;
-              height: 90%;
-              top: 16px;
-              opacity: 0.8;
-              left: 6%;
+              width: 100%;
+              height: 100%;
+              max-height: 85.5%;
+              top: 25px;
+              opacity: 1;
+              // left: 1%;
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
 
-              .background-textArea18-1 {
+              img {
+                max-width: 101%;
+                top: -0.4%;
                 position: relative;
-                width: 43%;
-                height: 20%;
-                background-image: url(/edit/images/cloud.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                margin-bottom: 5%;
-                margin-right: 22%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                left: -0.4%;
+                height: 100.9%;
               }
 
               .flex24 {
-                width: 60%;
-                height: 40%;
+                position: relative;
+                top: 0%;
+                width: 100%;
+                height: 83.5%;
                 display: flex;
                 justify-content: center;
-                gap: 5%;
+                align-items: center;
+                flex-direction: column;
+                // gap: 10%;
+                @include mq('pc2-edit') {
+                  height: 85%;
+                }
+                @include mq('pc-edit') {
+                  height: 79%;
+                  top: 5%;
+                }
+                @include mq('tab-edit') {
+                  height: 80.5%;
+                  top: 1%;
+                }
+                @include mq('sp-edit') {
+                  height: 82%;
+                }
+
+                .flex-area24 {
+                  width: 65%;
+                  height: 60%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  align-items: center;
+                  gap: 3%;
+                  margin: 2% 0 2.5% 0;
+                  @include mq('pc-edit') {
+                    width: 68%;
+                  }
+                }
 
                 .drop24 {
-                  width: 60%;
+                  width: 45%;
                   height: 100%;
                   display: flex;
                   flex-direction: column;
-                  align-items: center;
                   justify-content: center;
-                  gap: 5%;
+                  align-items: flex-end;
+                  gap: 7%;
                 }
               }
 
               #dropArea13 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: -1.5%;
+                width: 48%;
+                height: 38%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('tab-edit') {
+                  top: -2%;
+                  height: 39%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
               #dropArea14 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: 0%;
+                width: 50%;
+                height: 33%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('pc-edit') {
+                  top: -2%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('tab-edit') {
+                  top: 4%;
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                @include mq('sp-edit') {
+                  top: 1%;
                 }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -911,166 +895,44 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
+                border-radius: 10%;
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
               #dropArea16 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: -9%;
+                width: 48%;
+                height: 37%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('pc-edit') {
+                  top: -13%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('tab-edit') {
+                  top: -6%;
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                @include mq('sp-edit') {
+                  top: -9%;
                 }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1079,166 +941,50 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
+                border-radius: 10%;
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
               #dropArea18 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: -3%;
+                width: 50%;
+                height: 48%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('pc2-edit') {
+                  top: -1%;
+                  height: 48%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  top: -4%;
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                @include mq('tab-edit') {
+                  top: 0%;
+                  height: 49%;
                 }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
+                @include mq('sp-edit') {
+                  top: -2%;
+                  height: 49%;
                 }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1247,166 +993,47 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
-                }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
+                border-radius: 10%;
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
               #dropArea20 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: 0%;
+                width: 50%;
+                height: 44%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('pc2-edit') {
+                  top: 2%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  top: -2%;
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                @include mq('tab-edit') {
+                  top: 4%;
                 }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
+                @include mq('tab-edit') {
+                  top: 2%;
                 }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1415,58 +1042,13 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1474,9 +1056,13 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -1491,90 +1077,35 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
               #dropArea22 {
                 position: relative;
-                width: 45%;
-                height: 25%;
+                top: -1.5%;
+                width: 48%;
+                height: 53%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                border-radius: 10%;
+                @include mq('pc2-edit') {
+                  top: 0;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  top: -1%;
                 }
-                // ----------------------------------
-
-                // 枠サイズ変更関連---
-                &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                @include mq('tab-edit') {
+                  top: 0%;
                 }
-
-                &.square {
-                  width: 45%;
-                  height: 32%;
-                }
-
-                &.rectangle {
-                  width: 45%;
-                  height: 25%;
-                }
-
-                &.mini {
-                  width: 45%;
-                  height: 20%;
-                }
-
-                // --------------------------
 
                 img {
                   width: 100%;
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1583,58 +1114,13 @@
                 width: 45%;
                 height: 25%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
+                border-radius: 10%;
 
                 // 枠サイズ変更関連---
                 &.active {
-                  border-color: rgba(49, 163, 138, 0.534);
+                  border-color: #00000089;
                 }
 
                 &.square {
@@ -1642,9 +1128,13 @@
                   height: 32%;
                 }
 
-                &.rectangle {
+                &.rectangle43 {
                   width: 45%;
                   height: 25%;
+                }
+                &.rectangle34 {
+                  width: 45%;
+                  height: 40%;
                 }
 
                 &.mini {
@@ -1659,6 +1149,7 @@
                   height: 100%;
                   object-fit: cover;
                   cursor: pointer;
+                  border-radius: 10%;
                 }
               }
 
@@ -1666,76 +1157,33 @@
                 position: relative;
                 // width: 60%;
                 width: 100%;
-                height: 100%;
+                min-height: 47%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  min-height: 46%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1751,76 +1199,33 @@
                 position: relative;
                 // width: 60%;
                 width: 100%;
-                height: 100%;
+                min-height: 47%;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  min-height: 46%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1834,78 +1239,37 @@
 
               #dropArea24-3 {
                 position: relative;
-                width: 60%;
-                height: 25%;
-                margin-top: 5%;
+                top: 1.8%;
+                width: 65%;
+                height: 42%;
+                // margin: 4% 0 4% 0;
                 font-size: 1rem;
-                border: 2px dashed #ccc;
+                // border: 2px dashed #ccc;
                 cursor: pointer;
-
-                // ドロップ後ボタン-----------
-                .crop-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 33px; /* 削除ボタンの位置を避けるため、右側に配置 */
-                  background: url(/edit/images/crop.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
+                @include mq('pc-edit') {
+                  min-height: 44%;
+                  width: 68%;
                 }
-
-                .delete-btn {
-                  position: absolute;
-                  top: 5px;
-                  right: 5px;
-                  background: url(/edit/images/delete.png);
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  border: none;
-                  width: 28px;
-                  height: 28px;
-                  cursor: pointer;
-                  opacity: 0.8;
-
-                  &:hover {
-                    opacity: 1;
-                  }
-
-                  &.show {
-                    display: flex;
-                  }
-                }
-                // ----------------------------------
 
                 // 枠サイズ変更関連---
-                &.active {
-                  border-color: #f00;
-                }
+                // &.active {
+                //   border-color: #f00;
+                // }
 
-                &.square {
-                  width: 57%;
-                  height: 40%;
-                }
+                // &.square {
+                //   width: 57%;
+                //   height: 40%;
+                // }
 
-                &.rectangle {
-                  width: 62%;
-                  height: 30%;
-                }
+                // &.rectangle {
+                //   width: 62%;
+                //   height: 30%;
+                // }
 
-                &.mini {
-                  width: 52%;
-                  height: 20%;
-                }
+                // &.mini {
+                //   width: 52%;
+                //   height: 20%;
+                // }
 
                 // --------------------------
 
@@ -1919,13 +1283,15 @@
 
               textarea {
                 overflow: hidden;
-                text-align: center;
+                text-align: left;
                 resize: none;
-                max-width: 60%;
-                height: 20%;
+                width: 60% !important;
+                height: auto;
                 font-size: 0.4rem;
                 line-height: 1.9;
                 background-color: transparent;
+                field-sizing: content;
+                // letter-spacing: 0.5px;
 
                 @include mq('pc-edit') {
                   font-size: 0.3rem;
@@ -1936,140 +1302,480 @@
                 }
 
                 @include mq('tab-edit') {
-                  font-size: 1.2vw;
+                  font-size: 1.6vw;
                 }
 
                 @include mq('sp-edit') {
                   font-size: 1.7vw;
                 }
               }
+              .text-height {
+                field-sizing: content;
+                max-height: 85%;
+              }
+              .vertical-textarea {
+                writing-mode: vertical-rl; /* 縦書きの方向（右から左） */
+                text-orientation: upright; /* 初期設定：数字や半角文字を縦向きにする */
+              }
+              .horizontal-text {
+                text-orientation: sideways; /* 横並びで表示するスタイル */
+                display: inline-block; /* 縦書きの流れの中で横書きを保持 */
+              }
 
+              .text-empty {
+                box-sizing: border-box; /* パディングとボーダーを計算に含める */
+                resize: none; /* ユーザーによるサイズ変更を禁止 */
+                overflow: hidden; /* スクロールバーが表示されないようにする */
+                // border: 2px dashed #ccc;
+                field-sizing: content;
+                &.no-border {
+                  border: none;
+                }
+              }
               #textArea {
                 &13-1 {
+                  font-family: 'League Spartan', sans-serif;
                   min-width: 60%;
-                  font-size: 1.2rem;
+                  font-size: 1.5rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
+                  position: absolute;
+                  top: 13.3%;
+                  field-sizing: content;
 
                   @include mq('pc-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1.1rem;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 1.7rem;
+                    font-size: 2.1rem;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 3.5vw;
+                    font-size: 5.5vw;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 5vw;
+                    font-size: 6vw;
                   }
                 }
 
                 &13-2 {
-                  min-width: 60%;
+                  font-family: 'Noto Sans JP', serif;
+                  min-width: 36%;
                   margin: 1% 0 5%;
-                  font-size: 0.45rem;
+                  font-size: 0.5rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
+                  color: #ffffff;
+                  max-width: 30%;
+                  position: absolute;
+                  top: 21.8%;
+                  field-sizing: content;
 
                   @include mq('pc-edit') {
-                    font-size: 0.33rem;
+                    font-size: 0.38rem;
+                    top: 21.6%;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.65rem;
+                    font-size: 0.8rem;
+                    top: 21.8%;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.3vw;
+                    font-size: 2vw;
+                    top: 21.5%;
                   }
 
                   @include mq('sp-edit') {
-                    font-size: 1.9vw;
+                    font-size: 2.2vw;
                   }
                 }
 
                 &13-3 {
-                  min-height: 15%;
-                  max-height: 15%;
-                  margin-top: 5%;
-                  writing-mode: vertical-rl;
+                  position: absolute;
+                  top: 72%;
+                  font-size: 0.36rem;
+                  text-align: left;
+                  max-width: 55%;
+                  field-sizing: content;
+                  @include mq('pc-edit') {
+                    font-size: 0.27rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.48rem;
+                    top: 70.5%;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.4vw;
+                    top: 71%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.55vw;
+                  }
                 }
 
                 &14,
                 &22 {
-                  max-height: 20%;
-                  min-height: 20%;
                   margin-bottom: 5%;
+                  height: auto;
                   font-size: 0.6rem;
                   line-height: 1.5;
+                  text-align: center;
                   font-weight: bold;
-                  writing-mode: vertical-rl;
+                  // writing-mode: vertical-rl;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  vertical-align: text-bottom;
+                  font-size: 0.6rem;
+                  position: relative;
+                  top: 0;
+                  line-height: 1.8;
+                  field-sizing: content;
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -2%;
                   }
 
                   @include mq('pc2-edit') {
                     font-size: 0.9rem;
+                    top: 2%;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
+                    top: 4%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                    top: 1%;
                   }
                 }
 
-                &15,
-                &17,
-                &19 {
-                  max-height: 70%;
-                  min-height: 70%;
-                  writing-mode: vertical-rl;
+                &22 {
+                  @include mq('pc-edit') {
+                    top: -3%;
+                  }
+                  @include mq('pc-edit') {
+                    top: 1%;
+                  }
                 }
 
-                &16,
+                &18 {
+                  margin-bottom: 5%;
+                  height: auto;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  text-align: center;
+                  font-weight: bold;
+                  // writing-mode: vertical-rl;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  vertical-align: text-bottom;
+                  font-size: 0.6rem;
+                  position: relative;
+                  top: -2%;
+                  field-sizing: content;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                    top: -2%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    line-height: 1.8;
+                    top: 1%;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.3vw;
+                    top: 0%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                    top: -2%;
+                  }
+                }
                 &20 {
+                  margin-bottom: 5%;
+                  height: auto;
+                  font-size: 0.6rem;
+                  line-height: 1.5;
+                  text-align: center;
+                  font-weight: bold;
+                  // writing-mode: vertical-rl;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  vertical-align: text-bottom;
+                  font-size: 0.6rem;
+                  position: relative;
+                  top: 0%;
+                  color: #ffffff;
+                  field-sizing: content;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                    top: -2%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    line-height: 1.8;
+                    top: 4%;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.3vw;
+                    top: 4%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                    top: 1.8%;
+                  }
+                }
+
+                &15 {
+                  position: relative;
+                  top: 4%;
+                  font-size: 4.9px;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  field-sizing: content;
+                  max-width: 55%;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.23rem;
+                    top: 1%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.46rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.16vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.3vw;
+                  }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.3vw;
+                  }
+                }
+                &17,
+                &19 {
+                  position: relative;
+                  top: 4%;
+                  font-size: 5px;
+                  max-width: 46%;
+                  field-sizing: content;
+                  font-size: 0.33rem;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+
+                  @include mq('pc-edit') {
+                    font-size: 0.245rem;
+                    max-height: 100%;
+                    top: 1%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.49rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.25vw;
+                    top: 3%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
+                  }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.7vw;
+                  }
+                }
+
+                &21 {
+                  position: relative;
+                  top: 4%;
+                  font-size: 0.35rem;
+                  max-width: 53%;
+                  field-sizing: content;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+
+                  @include mq('pc-edit') {
+                    font-size: 0.267rem;
+                    top: 0;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.54rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.35vw;
+                    top: 3%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.5vw;
+                  }
+
+                  @include mq('sp2-edit') {
+                    font-size: 1.52vw;
+                  }
+                }
+
+                &16-1 {
+                  position: relative;
+                  top: -7.5%;
                   min-width: 60%;
                   margin-bottom: 5%;
                   font-size: 0.6rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
+                  color: #ffffff;
+                  margin-top: 10%;
+                  field-sizing: content;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: -10.5%;
                   }
 
                   @include mq('pc2-edit') {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
+                    top: -7.5%;
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
+                    top: -5%;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
+                    top: -8%;
                   }
                 }
 
-                &18-1 {
-                  margin: 0;
+                &16-2 {
                   position: absolute;
-                  width: 63%;
-                  color: #fef8f6;
+                  top: 63%;
+                  min-width: 60%;
+                  margin-bottom: 5%;
                   font-size: 0.6rem;
                   line-height: 1.5;
                   font-weight: bold;
+                  text-align: center;
+                  color: #ffffff;
+                  margin-top: 10%;
+                  field-sizing: content;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
 
                   @include mq('pc-edit') {
                     font-size: 0.45rem;
+                    top: 60%;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 1rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 2.3vw;
+                    top: 66%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                    top: 62%;
+                  }
+                }
+
+                // &18-1 {
+                // margin: 0;
+                // position: absolute;
+                // width: 63%;
+                // color: #fef8f6;
+                // font-size: 0.6rem;
+                // line-height: 1.5;
+                // font-weight: bold;
+                // text-align: center;
+
+                // @include mq('pc-edit') {
+                //   font-size: 0.45rem;
+                // }
+
+                // @include mq('pc2-edit') {
+                //   font-size: 0.9rem;
+                // }
+
+                // @include mq('tab-edit') {
+                //   font-size: 2.2vw;
+                // }
+
+                // @include mq('sp-edit') {
+                //   font-size: 2.5vw;
+                // }
+                // }
+
+                // &18-2 {
+                //   min-width: 60%;
+                //   margin: 5% 0 15%;
+                //   color: #fef8f6;
+                //   font-size: 0.6rem;
+                //   line-height: 1.5;
+                //   font-weight: bold;
+                //   color: #00000089;
+                //   text-align: center;
+                //   @include mq('pc-edit') {
+                //     font-size: 0.45rem;
+                //   }
+
+                //   @include mq('pc2-edit') {
+                //     font-size: 0.9rem;
+                //   }
+
+                //   @include mq('tab-edit') {
+                //     font-size: 2.3vw;
+                //   }
+
+                //   @include mq('sp-edit') {
+                //     font-size: 2.5vw;
+                //   }
+                // }
+
+                // &21,
+                // &21-2,
+                &23-1 {
+                  font-family: 'Noto Sans JP', serif;
+                  min-width: 60%;
+                  margin-bottom: 0%;
+                  // margin-top: 5% !important;
+                  font-size: 0.7rem;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  text-align: center;
+                  field-sizing: content;
+                  // margin-top: 10%;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+
+                  @include mq('pc-edit') {
+                    font-size: 0.45rem;
+                    margin-top: -9%;
                   }
 
                   @include mq('pc2-edit') {
@@ -2077,195 +1783,215 @@
                   }
 
                   @include mq('tab-edit') {
-                    font-size: 1.8vw;
+                    font-size: 2.3vw;
                   }
 
                   @include mq('sp-edit') {
                     font-size: 2.5vw;
                   }
                 }
-
-                &18-2 {
-                  margin: 5% 0 15%;
-                  color: #fef8f6;
-                  font-size: 0.6rem;
-                  line-height: 1.5;
-                  font-weight: bold;
-
-                  @include mq('pc-edit') {
-                    font-size: 0.45rem;
-                  }
-
-                  @include mq('pc2-edit') {
-                    font-size: 0.9rem;
-                  }
-
-                  @include mq('tab-edit') {
-                    font-size: 1.8vw;
-                  }
-
-                  @include mq('sp-edit') {
-                    font-size: 2.5vw;
-                  }
-                }
-
-                &21-1,
-                &21-2,
-                &23-1,
                 &23-2 {
-                  min-height: 30%;
-                  max-height: 30%;
-                  margin-bottom: 2.5%;
-                  margin-top: 2.5%;
-                  writing-mode: vertical-rl;
+                  max-width: 53%;
+                  font-size: 0.32rem;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  text-align: left;
+                  field-sizing: content;
+                  // max-height: %;
+                  top: 4%;
+                  position: relative;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.24rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.49rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1.23vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.4vw;
+                  }
                 }
 
-                &24-1,
+                &24-1 {
+                  font-family: 'Montserrat', serif;
+                  margin-top: 3%;
+                  text-align: center;
+                  font-weight: bold;
+                  min-width: 60%;
+                  font-size: 0.7rem;
+                  // line-height: 1;
+                  field-sizing: content;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+
+                  @include mq('pc-edit') {
+                    font-size: 0.47rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    // line-height: 0.7;
+                    font-size: 3vw;
+                    // margin-top: 16%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                  }
+                }
                 &24-2 {
-                  min-height: 100%;
-                  max-height: 100%;
-                  writing-mode: vertical-rl;
+                  height: 75% !important;
+                  width: 47% !important;
+                  // writing-mode: vertical-rl;
+                  font-size: 0.26rem;
+                  field-sizing: content;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.19rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.45rem;
+                  }
+
+                  @include mq('tab-edit') {
+                    font-size: 1vw;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 1.1vw;
+                  }
+                }
+                &24-4 {
+                  font-family: 'Montserrat', serif;
+                  position: absolute;
+                  text-align: center;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  color: #fef8f6;
+                  font-size: 11px;
+                  top: 97.3%;
+                  width: 63% !important;
+                  field-sizing: content;
+                  // text-orientation: upright; /* 数字や半角文字を縦向きにする */
+                  // max-height: 15px;
+
+                  @include mq('pc-edit') {
+                    font-size: 0.5rem;
+                  }
+
+                  @include mq('pc2-edit') {
+                    font-size: 0.9rem;
+                    // line-height: 0.9;
+                    top: 98.5%;
+                  }
+
+                  @include mq('tab-edit') {
+                    // line-height: 0.7;
+                    font-size: 2.3vw;
+                    top: 96%;
+                  }
+
+                  @include mq('sp-edit') {
+                    font-size: 2.5vw;
+                    top: 96%;
+                  }
+                  @include mq('sp2-edit') {
+                    font-size: 2.5vw;
+                    top: 95.5%;
+                  }
                 }
               }
+            }
+            .input-drop-first {
+              top: 8.5%;
+            }
+            .input-drop-last {
+              top: 6% !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-start !important;
+              // max-height: 84% !important;
             }
           }
         }
       }
     }
-  }
-}
+    .swiper-button-prev {
+      margin-left: 0;
+      transition: margin 0.3s ease;
 
-.swiper-pagination {
-}
+      @include mq('pc2-edit') {
+        // margin: 140px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 32px;
-}
+      @include mq('pc3-edit') {
+        // margin: 200px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
 
-.swiper-button-prev {
-  left: 36%;
-}
+      @include mq('tab-edit') {
+        // margin: 85px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
 
-.swiper-button-next {
-  left: 58%;
-}
+      &.open {
+        // margin-left: 405px; /* サイドバーが開いているときのマージン */
+        margin-left: 18.5%;
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: '';
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-}
-
-/* 前に戻る画像パス */
-.swiper-button-prev:after {
-  background-image: url(../../../edit/images/Group\ 293.png);
-}
-/* 次に進む画像パス */
-.swiper-button-next:after {
-  background-image: url(../../../edit/images/Group\ 294.png);
-}
-
-.croppie-modal {
-  display: none;
-  border-radius: 20px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fdfcf6;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
-  z-index: 999;
-
-  #croppie-container {
-    margin-bottom: 10px;
-
-    .cr-slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 4px;
-      background-color: #53535359;
-      border-radius: 5px;
-      margin: 0;
-      padding: 0;
-      opacity: 0.8;
-      // box-sizing: border-box;
+        @include mq('sp-edit') {
+          top: var(--swiper-navigation-top-offset, 50%);
+          left: var(--swiper-navigation-sides-offset, -5%);
+          right: auto;
+        }
+        @include mq('tab-edit') {
+          margin-left: 14%;
+          margin-top: -25vh;
+        }
+      }
     }
+    .swiper-button-next {
+      margin-left: 0;
+      transition: margin 0.3s ease;
 
-    .cr-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 35px;
-      height: 35px;
-      background: url('/edit/images/Ellipse\ 7.png') no-repeat center; /* アイコン画像を指定 */
-      margin-top: -15px;
+      @include mq('pc2-edit') {
+        // margin: 140px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
 
-      cursor: pointer;
-      border: none;
+      @include mq('pc3-edit') {
+        // margin: 200px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+
+      @include mq('tab-edit') {
+        // margin: 85px 0 0 0;
+        transition: margin-top 0.3s ease, margin-right 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease;
+      }
+
+      &.open {
+        // margin-left: 405px; /* サイドバーが開いているときのマージン */
+        margin-right: -14%;
+
+        @include mq('sp-edit') {
+          top: var(--swiper-navigation-top-offset, 50%);
+          right: var(--swiper-navigation-sides-offset, -5%);
+          left: auto;
+        }
+        @include mq('tab-edit') {
+          margin-right: 14%;
+          margin-top: -25vh;
+        }
+      }
     }
   }
-
-  .btn-wrapper {
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-
-    @include mq('tab-edit') {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-  }
-}
-
-#customButton {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#customButton:hover {
-  background-color: #45a049;
-}
-
-.delete-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: url(/edit/images/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.crop-button {
-  position: absolute;
-  top: 5px;
-  right: 33px;
-  background: url(/edit/images/crop.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  opacity: 0.8;
 }

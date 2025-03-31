@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>テンプレート選択</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/assets/style/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../mypage/images/kotobumm.png" alt="" />
+      <p>様</p>
+    </header>
+
+    <div class="template">
+      <div class="template__title">
+        <img src="/mypage/images/mypage.png" alt="" />
+        <h2>テンプレート選択</h2>
+      </div>
+
+      <div class="template__body">
+        <input type="button" value="←" onclick="go_back()" />
+        <div class="template__body-content">
+          <div class="template1">
+            <img src="/mypage/images/image 115.png" />
+            <a href="/preview/index.html"><button class="btn btn-small_bl">選択する</button></a>
+          </div>
+          <div class="template2">
+            <img src="/mypage/images/image 115.png" />
+            <a href=""><button class="btn btn-small_bl">選択する</button></a>
+          </div>
+          <div class="template3">
+            <img src="/mypage/images/image 115.png" />
+            <a href=""><button class="btn btn-small_bl">選択する</button></a>
+          </div>
+          <!-- <div class="template4">
+          <img src="/mypage/images/image 115.png" />
+          <a href=""><button class="btn btn-small_bl">選択する</button></a>
+        </div> -->
+        </div>
+        <input type="button" value="→" onclick="go_forward()" />
+      </div>
+    </div>
+
+    <script src="../template/js/script.js"></script>
+  </body>
+</html>

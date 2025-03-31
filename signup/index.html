@@ -6,13 +6,10 @@
     <title>サインアップ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../public/assets/style/style.css" />
   </head>
-  <body>
+  <body class="signup-body">
     <div class="signup">
       <div class="form">
         <h2 class="form_title">管理者サインアップ</h2>
@@ -20,36 +17,24 @@
           <div class="form_box">
             <p>Name</p>
             <p class="name">
-              <input
-                type="text"
-                name="name"
-                placeholder="入力してください"
-                required
-              />
+              <input type="text" name="name" placeholder="入力してください" required />
             </p>
           </div>
+
           <div class="form_box">
             <p>ID</p>
-            <p class="email">
-              <input
-                type="email"
-                name="email"
-                placeholder="入力してください"
-                required
-              />
+            <p class="login_id">
+              <input type="text" name="login_id" placeholder="入力してください" required />
             </p>
           </div>
+
           <div class="form_box form_box-3">
             <p>Pass</p>
             <p class="pass">
-              <input
-                type="password"
-                name="password"
-                placeholder="入力してください"
-                required
-              />
+              <input type="password" name="password" placeholder="入力してください" required />
             </p>
           </div>
+
           <div class="input-container">
             <div class="radio-set">
               <input type="radio" name="template" value="A" />
@@ -59,20 +44,20 @@
               <input type="radio" name="template" value="B" />
               <label for="">B面</label>
             </div>
-            <!-- <input
-              class="visually-hidden"
-              type="radio"
-              name="fruits"
-              id="apple"
-            />
-            <label for="apple">A</label>
-            <input
-              class="visually-hidden"
-              type="radio"
-              name="fruits"
-              id="orange"
-            />
-            <label for="orange">B</label> -->
+          </div>
+          <div class="pulldown">
+            <p>フォーマット選択</p>
+            <label class="selectbox-2">
+              <select name="format">
+                <option value="4">ペア1</option>
+                <option value="3">ペア2</option>
+                <option value="1">ペア3</option>
+                <option value="2">ペア4</option>
+                <option value="5">ソロ1</option>
+                <option value="6">ソロ2</option>
+                <option value="7">ソロ3</option>
+              </select>
+            </label>
           </div>
           <button type="submit" class="btn btn-large">サインアップ</button>
         </form>

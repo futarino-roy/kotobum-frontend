@@ -1,24 +1,38 @@
 header {
-  //  一応消す。
-  //   position: fixed;
   width: 100%;
-  height: 81px;
-  background: #ccc;
-  padding: 22px 68.74px 21px 59.51px;
+  height: 10%;
+  background: #ffffff;
+  padding: 15px 20px;
   box-sizing: border-box;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 2px 3px 0 rgba(110, 110, 110, 0.5);
 
   img {
     width: 76.95px;
     height: 38px;
   }
 
-  @include mq("sp-header") {
-    padding: 11px 25px;
+  .header-container {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  @include mq('sp-header') {
+    height: 6%;
+    padding: 5px 15px;
 
     img {
       width: 63px;
@@ -29,9 +43,9 @@ header {
 
 .edit-header {
   width: 100%;
-  height: 81px;
+  height: 50px;
   background: #fdfcf6;
-  padding: 22px 41px 22px 41px;
+  padding: 22px 41px 13px 41px;
   display: flex;
   justify-content: flex-end;
   z-index: 999;
@@ -39,9 +53,9 @@ header {
 
 .preview-header {
   width: 100%;
-  height: 81px;
+  height: 45px;
   background: #fdfcf6;
-  padding: 22px 41px 22px 0px;
+  padding: 22px 41px 13px 41px;
   display: flex;
   justify-content: flex-end;
   z-index: 999;
