@@ -382,7 +382,7 @@ if (saveBtn) {
 document.addEventListener('click', function (event) {
   const target = event.target.closest('.mypage'); // クラス名 `mypage` の要素を取得
   if (target && !isSaved) {
-    const confirmation = confirm('⚠️ 内容が保存されていません。マイページに移動しますか？');
+    const confirmation = confirm('内容が保存されていませんが、よろしいいですか？');
     if (!confirmation) {
       event.preventDefault(); // マイページへの遷移をキャンセル
     }
