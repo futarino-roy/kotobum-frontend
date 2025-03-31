@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  fetch('https://develop-back.kotobum.com/api/user', {
+  fetch('https://app-back.kotobum.com/api/user', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -722,7 +722,7 @@ function sendCompletionStatusToServerMain() {
   if (!token || !Id) {
     console.error('トークンまたはアルバムIDが見つかりません');
   } else {
-    fetch(`https://develop-back.kotobum.com/api/albums/${Id}/body/send`, {
+    fetch(`https://app-back.kotobum.com/api/albums/${Id}/body/send`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -756,7 +756,7 @@ function sendCompletionStatusToServerCover() {
   if (!token || !Id) {
     console.error('トークンまたはアルバムIDが見つかりません');
   } else {
-    fetch(`https://develop-back.kotobum.com/api/albums/${Id}/cover/send`, {
+    fetch(`https://app-back.kotobum.com/api/albums/${Id}/cover/send`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,

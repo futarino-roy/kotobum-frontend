@@ -295,20 +295,20 @@ document.addEventListener('DOMContentLoaded', function () {
   let albumId;
 
   // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://app-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`アルバムID取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(albums => {
+    .then((albums) => {
       albumId = albums.albumId;
 
       if (!albumId) {
@@ -318,20 +318,20 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('取得したアルバムID:', albumId); // 取得したアルバムIDを表示
 
       // アルバムデータ取得リクエスト
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showBody`, {
+      return fetch(`https://app-back.kotobum.com/api/albums/${albumId}/showBody`, {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       });
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error(`アルバムデータ取得時のHTTPエラー: ${response.status} - ${response.statusText}`);
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       console.log('取得したデータ:', data);
 
       // 必要に応じてJSON文字列をパースして配列に変換
@@ -341,15 +341,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       console.log(textData); // テキストデータの配列
       console.log(imageData); // 画像データの配列
-      console.log(colors);    // 色情報のオブジェクト
-
+      console.log(colors); // 色情報のオブジェクト
 
       // データの存在チェック
       if (!textData || !Array.isArray(textData)) {
         console.warn('テキストデータが存在しないか、配列ではありません。');
       } else {
         // テキストデータを表示
-        textData.forEach(item => {
+        textData.forEach((item) => {
           const textArea = document.getElementById(item.id);
           if (textArea) {
             textArea.value = item.text;
@@ -363,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('画像データが存在しないか、配列ではありません。');
       } else {
         // 画像データを表示
-        imageData.forEach(item => {
+        imageData.forEach((item) => {
           const dropArea = document.getElementById(item.id);
           if (dropArea && item.image) {
             const img = document.createElement('img');
@@ -382,12 +381,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const { backgroundColor, textColor } = colors;
 
         // `.uniqueColor` クラスを持つすべての要素に背景色を設定
-        document.querySelectorAll('.uniqueColorB').forEach(element => {
+        document.querySelectorAll('.uniqueColorB').forEach((element) => {
           element.style.backgroundColor = backgroundColor || '#ffffff';
         });
 
         // `.text-color` クラスを持つすべての要素にテキスト色を設定
-        document.querySelectorAll('.text-colorB').forEach(element => {
+        document.querySelectorAll('.text-colorB').forEach((element) => {
           element.style.color = textColor || '#000000';
         });
 
@@ -396,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('色データが存在しません。');
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('アルバムデータ取得中にエラーが発生しました:', error.message);
     });
 });

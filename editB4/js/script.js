@@ -214,7 +214,7 @@ function handleSaveOrSend() {
   let albumId;
 
   // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://app-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -277,7 +277,7 @@ function handleSaveOrSend() {
 
       console.log('送信するデータ:', dataToSend);
 
-      return fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/body`, {
+      return fetch(`https://app-back.kotobum.com/api/albums/${albumId}/body`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //一般ユーザー用のアルバムIDの取得
   function fetchAlbumID(token) {
     console.log('取得したトークン:', token); // ← ここでちゃんと表示されるかチェック
-    fetch('https://develop-back.kotobum.com/api/user/album', {
+    fetch('https://app-back.kotobum.com/api/user/album', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // アルバムデータ取得リクエスト用の関数
   function AlbumData(albumId, token) {
-    fetch(`https://develop-back.kotobum.com/api/albums/${albumId}/showBody`, {
+    fetch(`https://app-back.kotobum.com/api/albums/${albumId}/showBody`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

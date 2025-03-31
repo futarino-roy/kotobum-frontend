@@ -881,7 +881,7 @@ function handleSaveOrSend() {
     saveAlbumData(albumId, token);
   } else {
     // 一般ユーザーの場合：APIからアルバムIDを取得
-    fetch('https://develop-back.kotobum.com/api/user/album', {
+    fetch('https://app-back.kotobum.com/api/user/album', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     // 一般ユーザーはAPIを使用してアルバムIDを取得
     console.log('一般ユーザーモード');
-    fetch('https://develop-back.kotobum.com/api/user/album', {
+    fetch('https://app-back.kotobum.com/api/user/album', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

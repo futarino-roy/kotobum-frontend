@@ -1149,7 +1149,7 @@ function handleSaveOrSend() {
   let albumId;
 
   // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://app-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -1370,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //一般ユーザー用のアルバムIDの取得
   function fetchAlbumID(token) {
     console.log('取得したトークン:', token); // ← ここでちゃんと表示されるかチェック
-    fetch('https://develop-back.kotobum.com/api/user/album', {
+    fetch('https://app-back.kotobum.com/api/user/album', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

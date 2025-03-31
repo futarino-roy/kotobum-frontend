@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let albumId;
 
   // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://app-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -488,7 +488,7 @@ function sendCompletionStatusToServer() {
   }
 
   // アルバムIDを取得
-  fetch('https://develop-back.kotobum.com/api/user/album', {
+  fetch('https://app-back.kotobum.com/api/user/album', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
